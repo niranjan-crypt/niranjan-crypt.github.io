@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Niranjan Krishnakumar — Electrical & Computer Engineering</title>
+  <title>Niranjan Krishnakumar — Engineering & Research Portfolio</title>
   
   <meta name="description" content="Engineering & Research Portfolio of Niranjan Krishnakumar. Electrical and Computer Engineering at Amrita Vishwa Vidyapeetham. Specializing in Physics-Informed ML, Computer Vision, DSP, and Embedded AI.">
   <meta name="author" content="Niranjan Krishnakumar">
@@ -64,12 +64,9 @@
     <!-- ===================================================================== -->
     <header class="flex items-center justify-between pb-8 mb-12 sm:mb-16 border-b border-zinc-200 dark:border-zinc-800/80">
       <div class="flex items-center gap-2.5">
-        <a href="#" class="font-heading font-bold text-base tracking-tight text-zinc-900 dark:text-white hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">
+        <a href="#" class="font-heading font-bold text-lg sm:text-xl tracking-tight text-zinc-950 dark:text-white hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">
           Niranjan Krishnakumar
         </a>
-        <span class="text-xs font-mono font-medium px-2 py-0.5 rounded bg-zinc-200/80 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 border border-zinc-300 dark:border-zinc-700">
-          ELC
-        </span>
       </div>
 
       <nav class="flex items-center gap-4 sm:gap-6 text-sm font-sans font-medium text-zinc-600 dark:text-zinc-400">
@@ -93,14 +90,11 @@
     <!-- HERO / IDENTITY SECTION                                               -->
     <!-- ===================================================================== -->
     <section id="about" class="mb-16 sm:mb-20">
-      <!-- Main Heading with ELC badge beside it -->
-      <div class="mb-4">
-        <h1 class="font-heading font-bold text-zinc-950 dark:text-white leading-[1.08] inline" style="font-size: clamp(2.4rem, 5.2vw, 4.5rem); letter-spacing: -0.045em;">
-          Electrical & Computer Engineering
+      <!-- Main Name Heading with Increased Font Size -->
+      <div class="mb-3">
+        <h1 class="font-heading font-extrabold text-zinc-950 dark:text-white leading-[1.05] tracking-tight" style="font-size: clamp(2.6rem, 5.8vw, 4.8rem); letter-spacing: -0.04em;">
+          Niranjan Krishnakumar
         </h1>
-        <span class="inline-block align-middle ml-2.5 sm:ml-3.5 px-2.5 py-1 rounded-md text-xs sm:text-sm font-mono font-medium tracking-normal text-zinc-700 dark:text-zinc-300 bg-zinc-200/80 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 -translate-y-1">
-          ELC
-        </span>
       </div>
 
       <!-- Academic Information -->
@@ -117,13 +111,11 @@
         </div>
       </div>
 
-      <!-- Professional Specialization Line -->
+      <!-- Professional Specialization Line (DSP removed from this line alone) -->
       <div class="font-mono text-xs sm:text-[13px] tracking-wide text-zinc-600 dark:text-zinc-400 mb-6 flex flex-wrap items-center">
         <span class="font-medium text-zinc-800 dark:text-zinc-300">Physics-Informed ML</span>
         <span class="text-zinc-400 dark:text-zinc-600 mx-2">·</span>
         <span class="font-medium text-zinc-800 dark:text-zinc-300">Computer Vision</span>
-        <span class="text-zinc-400 dark:text-zinc-600 mx-2">·</span>
-        <span class="font-medium text-zinc-800 dark:text-zinc-300">DSP</span>
         <span class="text-zinc-400 dark:text-zinc-600 mx-2">·</span>
         <span class="font-medium text-zinc-800 dark:text-zinc-300">Embedded AI</span>
       </div>
@@ -307,20 +299,39 @@
     </section>
 
     <!-- ===================================================================== -->
-    <!-- PROJECTS LIST                                                         -->
+    <!-- PROJECTS LIST (ALL 8 REPOSITORIES FROM GITHUB)                        -->
     <!-- ===================================================================== -->
     <section id="projects" class="mb-16 sm:mb-20">
-      <div class="flex items-center justify-between pb-3 mb-6 border-b border-zinc-200 dark:border-zinc-800/80">
+      <div class="flex flex-col sm:flex-row sm:items-baseline justify-between pb-3 mb-6 border-b border-zinc-200 dark:border-zinc-800/80 gap-2">
         <h2 class="font-heading font-bold text-xl sm:text-2xl tracking-tight text-zinc-950 dark:text-white">
           Selected Engineering Projects
         </h2>
-        <span class="text-xs font-mono text-zinc-500">All 8 Repositories</span>
+        <span class="text-xs font-mono text-zinc-500">All 8 Repositories on GitHub</span>
       </div>
 
-      <div class="space-y-6">
+      <!-- Interactive Filter Pills -->
+      <div class="flex flex-wrap items-center gap-2 mb-6 text-xs font-mono">
+        <button class="project-filter-btn px-3 py-1.5 rounded-lg border border-zinc-900 dark:border-white bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium transition-colors" data-filter="all">
+          All (8)
+        </button>
+        <button class="project-filter-btn px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-600 dark:text-zinc-400 transition-colors" data-filter="cv">
+          Computer Vision
+        </button>
+        <button class="project-filter-btn px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-600 dark:text-zinc-400 transition-colors" data-filter="energy">
+          Energy & Optimization
+        </button>
+        <button class="project-filter-btn px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-600 dark:text-zinc-400 transition-colors" data-filter="embedded">
+          Embedded & IoT
+        </button>
+        <button class="project-filter-btn px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-600 dark:text-zinc-400 transition-colors" data-filter="theory">
+          Theory & Algorithms
+        </button>
+      </div>
+
+      <div class="space-y-6" id="projects-container">
 
         <!-- 1. Hyperspectral Face XAI -->
-        <article class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors">
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="cv">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
             <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
               Real-Time Hyperspectral Face Identification & Explainable AI
@@ -345,7 +356,7 @@
         </article>
 
         <!-- 2. Hybrid CV Transmission Fault Detection -->
-        <article class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors">
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="cv">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
             <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
               Hybrid Computer Vision & Deep Learning for Power Transmission Fault Diagnosis
@@ -370,7 +381,7 @@
         </article>
 
         <!-- 3. IntelliPQ -->
-        <article class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors">
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="energy">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
             <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
               IntelliPQ: AI-Based Power Quality Monitoring & Fault Detection
@@ -395,7 +406,7 @@
         </article>
 
         <!-- 4. KinoSync -->
-        <article class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors">
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="embedded">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
             <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
               KinoSync: Cyber-Physical Smart Glove & 3D Digital Twin Platform
@@ -420,7 +431,7 @@
         </article>
 
         <!-- 5. PSO-GA MRI Segmentation -->
-        <article class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors">
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="cv">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
             <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
               Hybrid PSO-GA Multilevel Otsu MRI Brain Segmentation
@@ -445,7 +456,7 @@
         </article>
 
         <!-- 6. TOC-AV Formal Verification -->
-        <article class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors">
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="theory">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
             <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
               TOC-AV: Formal Safety Verification System for Autonomous Vehicles
@@ -468,6 +479,79 @@
           </div>
         </article>
 
+        <!-- 7. Hybrid Optimization for Congestion Management (GitHub Repo 7) -->
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="energy">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
+              Hybrid Optimization for Congestion Management in Deregulated Power Systems
+            </h3>
+            <span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-medium">IEEE EPREC 2026</span>
+          </div>
+          <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
+            Sensitivity modeling and constrained DC-OPF implementation utilizing Power Transfer Distribution Factors (PTDF) on the IEEE 14-bus transmission system. Features a novel tri-hybrid metaheuristic (OOA, KHA, SHO) coupled with two-stage SciPy SLSQP numerical polishing to relieve line overloads without violation.
+          </p>
+          <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-zinc-100 dark:border-zinc-800/60">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-500">
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">MATLAB</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Jupyter</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">DC-OPF</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Metaheuristics</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">SciPy SLSQP</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a href="https://doi.org/10.1109/EPREC66546.2026.11412040" target="_blank" rel="noopener noreferrer" class="font-sans text-xs font-medium text-emerald-600 dark:text-emerald-400 hover:underline inline-flex items-center gap-1">
+                IEEE DOI ↗
+              </a>
+              <span class="text-zinc-300 dark:text-zinc-700">·</span>
+              <a href="https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems" target="_blank" rel="noopener noreferrer" class="font-sans text-xs font-medium text-zinc-900 dark:text-zinc-100 hover:underline inline-flex items-center gap-1">
+                GitHub ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Physics-Informed ANN-Based MPPT (GitHub Repo 8) -->
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="energy">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
+              Physics-Informed ANN-Based MPPT with Markov-Chain Dynamic Validation
+            </h3>
+            <span class="text-xs font-mono text-blue-600 dark:text-blue-400 font-medium">IEEE SPICES 2026</span>
+          </div>
+          <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
+            Physics-informed maximum power point tracking (MPPT) architecture incorporating semiconductor physics diode equations and a stochastic 2D Markov-chain solar irradiance weather model. Delivers \(R^2 = 0.9994\), \(>99.5\%\) tracking efficiency, and sub-5 ms dynamic settling under cloud-cover transients.
+          </p>
+          <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-zinc-100 dark:border-zinc-800/60">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-500">
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">MATLAB</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Simulink</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">18-15-12 ANN</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Markov Chain</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">PV Solar</span>
+            </div>
+            <a href="https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems" target="_blank" rel="noopener noreferrer" class="font-sans text-xs font-medium text-zinc-900 dark:text-zinc-100 hover:underline inline-flex items-center gap-1">
+              GitHub ↗
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- GitHub Showcase Banner -->
+      <div class="mt-8 p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/60 dark:bg-zinc-900/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-3.5">
+          <div class="p-2.5 rounded-lg bg-zinc-200 dark:bg-zinc-800 text-zinc-900 dark:text-white shrink-0">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </div>
+          <div>
+            <h4 class="font-heading font-semibold text-sm text-zinc-900 dark:text-white">Explore All GitHub Repositories</h4>
+            <p class="font-sans text-xs text-zinc-500 mt-0.5">Open-source code, hardware firmware, simulation models, and research notebooks.</p>
+          </div>
+        </div>
+        <a href="https://github.com/niranjan-crypt?tab=repositories" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-sans text-xs font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors inline-flex items-center gap-1.5 shrink-0 self-start sm:self-center">
+          <span>github.com/niranjan-crypt</span>
+          <span class="text-xs">↗</span>
+        </a>
       </div>
     </section>
 
@@ -612,6 +696,32 @@
         });
       });
     }
+
+    // Interactive Project Filtering
+    const filterButtons = document.querySelectorAll('.project-filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Update active filter style
+        filterButtons.forEach(b => {
+          b.className = 'project-filter-btn px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-600 dark:text-zinc-400 transition-colors';
+        });
+        btn.className = 'project-filter-btn px-3 py-1.5 rounded-lg border border-zinc-900 dark:border-white bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium transition-colors';
+
+        // Filter cards
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
