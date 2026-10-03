@@ -1,0 +1,19 @@
+{
+  "name": "niranjan-krishnakumar-portfolio",
+  "version": "1.0.0",
+  "description": "Ultra-creative research & systems portfolio for Niranjan Krishnakumar (niranjan-crypt)",
+  "scripts": {
+    "start": "npx serve -l 3000 .",
+    "preview": "python3 -m http.server 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "computer-vision",
+    "deep-learning",
+    "cyber-physical-systems",
+    "metaheuristics",
+    "ieee"
+  ],
+  "author": "Niranjan Krishnakumar <niranjankrishnakumar2005@gmail.com>",
+  "license": "MIT"
+}
