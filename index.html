@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,15 @@
   
   <meta name="description" content="Engineering & Research Portfolio of Niranjan Krishnakumar. Electrical and Computer Engineering at Amrita Vishwa Vidyapeetham. Specializing in Physics-Informed ML, Computer Vision, DSP, and Embedded AI.">
   <meta name="author" content="Niranjan Krishnakumar">
+
+  <!-- Immediate Dark Mode Enforcement (Prevents Light Mode Flash) -->
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -36,8 +45,13 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}]});"></script>
 
   <style>
+    :root {
+      color-scheme: dark;
+    }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #09090b;
+      color: #f4f4f5;
     }
     h1, h2, h3, h4, .font-heading {
       font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -47,12 +61,7 @@
     }
   </style>
 </head>
-<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 min-h-screen transition-colors duration-200 antialiased selection:bg-zinc-200 dark:selection:bg-zinc-800 relative">
-
-  <!-- Ambient Technical Background Grid -->
-  <div class="fixed inset-0 -z-10 pointer-events-none opacity-45 dark:opacity-25" 
-       style="background-image: radial-gradient(rgba(120, 120, 120, 0.28) 1px, transparent 1px); background-size: 28px 28px; mask-image: radial-gradient(ellipse at 50% 15%, black 45%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at 50% 15%, black 45%, transparent 80%);">
-  </div>
+<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 min-h-screen transition-colors duration-200 antialiased selection:bg-zinc-200 dark:selection:bg-zinc-800">
 
   <!-- Toast Notification Container -->
   <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 transition-all duration-300 pointer-events-none">
@@ -743,15 +752,14 @@
 
   <!-- Minimalist Interaction Logic -->
   <script>
-    // Theme toggle handling
+    // Theme toggle handling (Dark base by default)
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const storedTheme = localStorage.getItem('theme');
 
-    if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
-      document.documentElement.classList.add('dark');
-    } else {
+    if (storedTheme === 'light') {
       document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
     }
 
     themeToggleBtn.addEventListener('click', () => {
