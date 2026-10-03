@@ -47,25 +47,33 @@
     }
   </style>
 </head>
-<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 min-h-screen transition-colors duration-200 antialiased selection:bg-zinc-200 dark:selection:bg-zinc-800">
+<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 min-h-screen transition-colors duration-200 antialiased selection:bg-zinc-200 dark:selection:bg-zinc-800 relative">
+
+  <!-- Ambient Technical Background Grid -->
+  <div class="fixed inset-0 -z-10 pointer-events-none opacity-45 dark:opacity-25" 
+       style="background-image: radial-gradient(rgba(120, 120, 120, 0.28) 1px, transparent 1px); background-size: 28px 28px; mask-image: radial-gradient(ellipse at 50% 15%, black 45%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at 50% 15%, black 45%, transparent 80%);">
+  </div>
 
   <!-- Toast Notification Container -->
   <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 transition-all duration-300 pointer-events-none">
-    <div class="px-4 py-2.5 rounded-lg bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 text-xs font-mono font-medium shadow-lg">
+    <div class="px-4 py-2.5 rounded-lg bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 text-xs font-mono font-medium shadow-xl border border-zinc-700/50">
       <span id="toast-text">Notification</span>
     </div>
   </div>
 
   <!-- Main Container -->
-  <div class="max-w-4xl lg:max-w-5xl mx-auto px-6 py-12 sm:py-16 md:py-20">
+  <div class="max-w-4xl lg:max-w-5xl mx-auto px-6 py-10 sm:py-14 md:py-18">
 
     <!-- ===================================================================== -->
     <!-- NAVIGATION BAR                                                        -->
     <!-- ===================================================================== -->
-    <header class="flex items-center justify-between pb-8 mb-12 sm:mb-16 border-b border-zinc-200 dark:border-zinc-800/80">
-      <div class="flex items-center gap-2.5">
-        <a href="#" class="font-heading font-bold text-lg sm:text-xl tracking-tight text-zinc-950 dark:text-white hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">
-          Niranjan Krishnakumar
+    <header class="flex items-center justify-between pb-6 mb-12 sm:mb-16 border-b border-zinc-200/80 dark:border-zinc-800/80">
+      <!-- Minimalist Monogram (Only 1 full name on the page, in hero below) -->
+      <div class="flex items-center gap-3">
+        <a href="#" class="group flex items-center gap-2" title="Niranjan Krishnakumar">
+          <span class="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 font-heading font-extrabold text-xs flex items-center justify-center tracking-tight shadow-sm group-hover:scale-105 transition-transform">
+            NK
+          </span>
         </a>
       </div>
 
@@ -90,7 +98,17 @@
     <!-- HERO / IDENTITY SECTION                                               -->
     <!-- ===================================================================== -->
     <section id="about" class="mb-16 sm:mb-20">
-      <!-- Main Name Heading with Increased Font Size -->
+      
+      <!-- Live Research Status Pill -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-emerald-500/25 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-4">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span>Open to Research & Engineering Roles</span>
+      </div>
+
+      <!-- Main Name Heading -->
       <div class="mb-3">
         <h1 class="font-heading font-extrabold text-zinc-950 dark:text-white leading-[1.05] tracking-tight" style="font-size: clamp(2.6rem, 5.8vw, 4.8rem); letter-spacing: -0.04em;">
           Niranjan Krishnakumar
@@ -106,8 +124,6 @@
         </div>
         <div>
           <span>Amrita Vishwa Vidyapeetham, Coimbatore</span>
-          <span class="text-zinc-400 dark:text-zinc-600 mx-1.5">·</span>
-          <span class="font-medium text-zinc-800 dark:text-zinc-300">CGPA 7.42/10</span>
         </div>
       </div>
 
@@ -129,7 +145,7 @@
       <div class="space-y-4">
         <div class="flex flex-wrap items-center gap-3">
           <!-- Email Card -->
-          <a href="mailto:niranjankrishnakumar2005@gmail.com" class="group flex items-center gap-3 px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-all">
+          <a href="mailto:niranjankrishnakumar2005@gmail.com" class="group flex items-center gap-3 px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/60 backdrop-blur-sm hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-all shadow-sm">
             <div class="text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -149,7 +165,7 @@
           </a>
 
           <!-- GitHub Card -->
-          <a href="https://github.com/niranjan-crypt" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-all">
+          <a href="https://github.com/niranjan-crypt" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/60 backdrop-blur-sm hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-all shadow-sm">
             <div class="text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
@@ -201,29 +217,39 @@
 
       <div class="space-y-4">
         <!-- L&T Internship -->
-        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50">
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all shadow-sm">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1.5">
-            <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-900 dark:text-white">
-              Industry Intern — Larsen & Toubro (L&T), Chennai
-            </h3>
+            <div class="flex items-center gap-2.5">
+              <div class="w-7 h-7 rounded-md bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-700 dark:text-zinc-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              </div>
+              <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-900 dark:text-white">
+                Industry Intern — Larsen & Toubro (L&T), Chennai
+              </h3>
+            </div>
             <span class="text-xs font-mono text-zinc-500">June 2026</span>
           </div>
-          <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mt-2 pl-0 sm:pl-9">
             Built simulation models of EV powertrains and battery management systems (BMS) to analyze PMSM/BLDC motor-control behavior, DC–DC converter operation, battery cell integration, and CAN-based bus communications. Evaluated railway electrical systems and SCADA automation infrastructure alongside core powertrain modeling.
           </p>
         </div>
 
         <!-- AWS Academy Certification -->
-        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div>
-            <h4 class="font-heading font-semibold text-sm sm:text-base text-zinc-900 dark:text-white">
-              AWS Academy Graduate — Cloud Foundations
-            </h4>
-            <p class="font-sans text-xs text-zinc-500 mt-0.5">
-              Cloud architecture, compute services, storage, security, and pricing models.
-            </p>
+        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm hover:border-zinc-400 dark:hover:border-zinc-700 transition-all">
+          <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-md bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-700 dark:text-zinc-300">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-heading font-semibold text-sm sm:text-base text-zinc-900 dark:text-white">
+                AWS Academy Graduate — Cloud Foundations
+              </h4>
+              <p class="font-sans text-xs text-zinc-500 mt-0.5">
+                Cloud architecture, compute services, storage, security, and pricing models.
+              </p>
+            </div>
           </div>
-          <a href="https://www.credly.com/badges/eaed5b78-e6d1-426e-8be1-6a1c66f2bc7e/print" target="_blank" rel="noopener noreferrer" class="font-sans text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white underline inline-flex items-center gap-1 shrink-0">
+          <a href="https://www.credly.com/badges/eaed5b78-e6d1-426e-8be1-6a1c66f2bc7e/print" target="_blank" rel="noopener noreferrer" class="font-sans text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white underline inline-flex items-center gap-1 shrink-0 pl-9 sm:pl-0">
             Credly Badge ↗
           </a>
         </div>
@@ -243,7 +269,7 @@
 
       <div class="space-y-4">
         <!-- Paper 1: IEEE EPREC-2026 -->
-        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 shadow-sm">
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 shadow-sm hover:border-zinc-400 dark:hover:border-zinc-700 transition-all">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1.5">
             <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-900 dark:text-white leading-snug">
               Hybrid Optimization for Congestion Management in Deregulated Power Systems
@@ -273,7 +299,7 @@
         </div>
 
         <!-- Paper 2: IEEE SPICES 2026 -->
-        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 shadow-sm">
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 shadow-sm hover:border-zinc-400 dark:hover:border-zinc-700 transition-all">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1.5">
             <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-900 dark:text-white leading-snug">
               Physics-Informed ANN-Based MPPT with Markov-Chain Validation for Photovoltaic Systems
@@ -299,7 +325,7 @@
     </section>
 
     <!-- ===================================================================== -->
-    <!-- PROJECTS LIST (ALL 8 REPOSITORIES FROM GITHUB)                        -->
+    <!-- PROJECTS LIST (ALL 8 REPOSITORIES WITH TECHNICAL SCHEMATICS)           -->
     <!-- ===================================================================== -->
     <section id="projects" class="mb-16 sm:mb-20">
       <div class="flex flex-col sm:flex-row sm:items-baseline justify-between pb-3 mb-6 border-b border-zinc-200 dark:border-zinc-800/80 gap-2">
@@ -331,16 +357,26 @@
       <div class="space-y-6" id="projects-container">
 
         <!-- 1. Hyperspectral Face XAI -->
-        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="cv">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
-            <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
-              Real-Time Hyperspectral Face Identification & Explainable AI
-            </h3>
-            <span class="text-xs font-mono text-zinc-500">Computer Vision & Biometrics</span>
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5 shadow-sm" data-category="cv">
+          <div class="flex items-start gap-3.5 mb-2">
+            <!-- Domain Schematic Icon -->
+            <div class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60 flex items-center justify-center text-zinc-700 dark:text-zinc-300 shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
+                  Real-Time Hyperspectral Face Identification & Explainable AI
+                </h3>
+                <span class="text-xs font-mono text-zinc-500">Computer Vision & Biometrics</span>
+              </div>
+              <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
+                Anti-spoofing biometrics system capturing 1200+ contiguous spectral bands (400–1000 nm) to detect subcutaneous biological signatures. Features 6-component metaheuristic band selection, spectral-spatial 3D-CNN feature fusion, and unit hyperspherical metric embeddings (UISM-Net on \(\mathbb{S}^{127}\)) with ArcFace loss and XAI (SHAP + Grad-CAM++). Edge-quantized for Raspberry Pi 4.
+              </p>
+            </div>
           </div>
-          <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
-            Anti-spoofing biometrics system capturing 1200+ contiguous spectral bands (400–1000 nm) to detect subcutaneous biological signatures. Features 6-component metaheuristic band selection, spectral-spatial 3D-CNN feature fusion, and unit hyperspherical metric embeddings (UISM-Net on \(\mathbb{S}^{127}\)) with ArcFace loss and XAI (SHAP + Grad-CAM++). Edge-quantized for Raspberry Pi 4.
-          </p>
           <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-zinc-100 dark:border-zinc-800/60">
             <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-500">
               <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Python</span>
@@ -356,16 +392,25 @@
         </article>
 
         <!-- 2. Hybrid CV Transmission Fault Detection -->
-        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="cv">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
-            <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
-              Hybrid Computer Vision & Deep Learning for Power Transmission Fault Diagnosis
-            </h3>
-            <span class="text-xs font-mono text-zinc-500">Power Grid Inspection</span>
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5 shadow-sm" data-category="cv">
+          <div class="flex items-start gap-3.5 mb-2">
+            <div class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60 flex items-center justify-center text-zinc-700 dark:text-zinc-300 shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
+                  Hybrid Computer Vision & Deep Learning for Power Transmission Fault Diagnosis
+                </h3>
+                <span class="text-xs font-mono text-zinc-500">Power Grid Inspection</span>
+              </div>
+              <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
+                Multi-class aerial defect classification pipeline for high-voltage power-lines (broken insulator discs, rust corrosion, bird nests). Benchmarks transfer-learning CNNs (ResNet50, VGG16, InceptionV3) and AlexNet against classical feature engineering (Hough circles, HOG, LBP, GLCM), reaching 82% accuracy.
+              </p>
+            </div>
           </div>
-          <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
-            Multi-class aerial defect classification pipeline for high-voltage power-lines (broken insulator discs, rust corrosion, bird nests). Benchmarks transfer-learning CNNs (ResNet50, VGG16, InceptionV3) and AlexNet against classical feature engineering (Hough circles, HOG, LBP, GLCM), reaching 82% accuracy.
-          </p>
           <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-zinc-100 dark:border-zinc-800/60">
             <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-500">
               <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Python</span>
@@ -381,16 +426,25 @@
         </article>
 
         <!-- 3. IntelliPQ -->
-        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="energy">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
-            <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
-              IntelliPQ: AI-Based Power Quality Monitoring & Fault Detection
-            </h3>
-            <span class="text-xs font-mono text-zinc-500">DSP & Smart Grid AI</span>
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5 shadow-sm" data-category="energy">
+          <div class="flex items-start gap-3.5 mb-2">
+            <div class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60 flex items-center justify-center text-zinc-700 dark:text-zinc-300 shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l3-8 4 16 3-8h4"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
+                  IntelliPQ: AI-Based Power Quality Monitoring & Fault Detection
+                </h3>
+                <span class="text-xs font-mono text-zinc-500">DSP & Smart Grid AI</span>
+              </div>
+              <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
+                Automated power quality diagnosis platform integrating Digital Signal Processing (FFT, THD, Crest Factor, RMS) and a 1D-CNN + BiLSTM neural network. Features a neuro-symbolic arbitration layer evaluating IEEE 1159 and IEEE 519 standards against deep model confidence to eliminate false tripping in grid substations.
+              </p>
+            </div>
           </div>
-          <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
-            Automated power quality diagnosis platform integrating Digital Signal Processing (FFT, THD, Crest Factor, RMS) and a 1D-CNN + BiLSTM neural network. Features a neuro-symbolic arbitration layer evaluating IEEE 1159 and IEEE 519 standards against deep model confidence to eliminate false tripping in grid substations.
-          </p>
           <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-zinc-100 dark:border-zinc-800/60">
             <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-500">
               <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Python</span>
@@ -406,16 +460,25 @@
         </article>
 
         <!-- 4. KinoSync -->
-        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="embedded">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
-            <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
-              KinoSync: Cyber-Physical Smart Glove & 3D Digital Twin Platform
-            </h3>
-            <span class="text-xs font-mono text-zinc-500">Embedded Systems & IoT</span>
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5 shadow-sm" data-category="embedded">
+          <div class="flex items-start gap-3.5 mb-2">
+            <div class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60 flex items-center justify-center text-zinc-700 dark:text-zinc-300 shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
+                  KinoSync: Cyber-Physical Smart Glove & 3D Digital Twin Platform
+                </h3>
+                <span class="text-xs font-mono text-zinc-500">Embedded Systems & IoT</span>
+              </div>
+              <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
+                Real-time teleoperation platform wirelessly connected over Bluetooth Low Energy (BLE 5.0 GATT) to an ESP32 sensor glove. Translates raw flex sensor telemetry into joint angles (\(\theta = \text{flexPercent} \times 0.9\)) to drive an interactive 3D digital twin hand, incorporating +12% hysteresis dominant-finger tracking and PPG pulse sensor monitoring.
+              </p>
+            </div>
           </div>
-          <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
-            Real-time teleoperation platform wirelessly connected over Bluetooth Low Energy (BLE 5.0 GATT) to an ESP32 sensor glove. Translates raw flex sensor telemetry into joint angles (\(\theta = \text{flexPercent} \times 0.9\)) to drive an interactive 3D digital twin hand, incorporating +12% hysteresis dominant-finger tracking and PPG pulse sensor monitoring.
-          </p>
           <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-zinc-100 dark:border-zinc-800/60">
             <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-500">
               <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Flutter</span>
@@ -431,16 +494,26 @@
         </article>
 
         <!-- 5. PSO-GA MRI Segmentation -->
-        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="cv">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
-            <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
-              Hybrid PSO-GA Multilevel Otsu MRI Brain Segmentation
-            </h3>
-            <span class="text-xs font-mono text-zinc-500">Bio-Inspired Metaheuristics</span>
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5 shadow-sm" data-category="cv">
+          <div class="flex items-start gap-3.5 mb-2">
+            <div class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60 flex items-center justify-center text-zinc-700 dark:text-zinc-300 shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3a9 9 0 010 18v-9h9"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
+                  Hybrid PSO-GA Multilevel Otsu MRI Brain Segmentation
+                </h3>
+                <span class="text-xs font-mono text-zinc-500">Bio-Inspired Metaheuristics</span>
+              </div>
+              <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
+                Resolves the exponential \(\mathcal{O}(L^K)\) combinatorial complexity of exhaustive Otsu thresholding on brain MRI scans. Combines continuous Particle Swarm Optimization with Genetic Algorithm mutation/crossover to maximize between-class variance (\(\sigma_B^2\)), followed by downstream Random Forest validation on GLCM texture descriptors.
+              </p>
+            </div>
           </div>
-          <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
-            Resolves the exponential \(\mathcal{O}(L^K)\) combinatorial complexity of exhaustive Otsu thresholding on brain MRI scans. Combines continuous Particle Swarm Optimization with Genetic Algorithm mutation/crossover to maximize between-class variance (\(\sigma_B^2\)), followed by downstream Random Forest validation on GLCM texture descriptors.
-          </p>
           <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-zinc-100 dark:border-zinc-800/60">
             <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-500">
               <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Python</span>
@@ -456,16 +529,27 @@
         </article>
 
         <!-- 6. TOC-AV Formal Verification -->
-        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="theory">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
-            <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
-              TOC-AV: Formal Safety Verification System for Autonomous Vehicles
-            </h3>
-            <span class="text-xs font-mono text-zinc-500">Theory of Computation</span>
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5 shadow-sm" data-category="theory">
+          <div class="flex items-start gap-3.5 mb-2">
+            <div class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60 flex items-center justify-center text-zinc-700 dark:text-zinc-300 shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <circle cx="6" cy="12" r="3"/>
+                <circle cx="18" cy="12" r="3"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-3-3l3 3-3 3"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
+                  TOC-AV: Formal Safety Verification System for Autonomous Vehicles
+                </h3>
+                <span class="text-xs font-mono text-zinc-500">Theory of Computation</span>
+              </div>
+              <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
+                Applies formal automata theory to verify safety-critical loops in autonomous driving. Models parking sequences and emergency obstacle braking through Deterministic Finite Automata (DFA), NFA with \(\epsilon\)-transitions, Timed Automata for latency constraints, and Context-Free Grammars in Chomsky Normal Form (CNF).
+              </p>
+            </div>
           </div>
-          <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
-            Applies formal automata theory to verify safety-critical loops in autonomous driving. Models parking sequences and emergency obstacle braking through Deterministic Finite Automata (DFA), NFA with \(\epsilon\)-transitions, Timed Automata for latency constraints, and Context-Free Grammars in Chomsky Normal Form (CNF).
-          </p>
           <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-zinc-100 dark:border-zinc-800/60">
             <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-500">
               <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">JavaScript</span>
@@ -480,16 +564,25 @@
         </article>
 
         <!-- 7. Hybrid Optimization for Congestion Management (GitHub Repo 7) -->
-        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="energy">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
-            <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
-              Hybrid Optimization for Congestion Management in Deregulated Power Systems
-            </h3>
-            <span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-medium">IEEE EPREC 2026</span>
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5 shadow-sm" data-category="energy">
+          <div class="flex items-start gap-3.5 mb-2">
+            <div class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
+                  Hybrid Optimization for Congestion Management in Deregulated Power Systems
+                </h3>
+                <span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-medium">IEEE EPREC 2026</span>
+              </div>
+              <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
+                Sensitivity modeling and constrained DC-OPF implementation utilizing Power Transfer Distribution Factors (PTDF) on the IEEE 14-bus transmission system. Features a novel tri-hybrid metaheuristic (OOA, KHA, SHO) coupled with two-stage SciPy SLSQP numerical polishing to relieve line overloads without violation.
+              </p>
+            </div>
           </div>
-          <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
-            Sensitivity modeling and constrained DC-OPF implementation utilizing Power Transfer Distribution Factors (PTDF) on the IEEE 14-bus transmission system. Features a novel tri-hybrid metaheuristic (OOA, KHA, SHO) coupled with two-stage SciPy SLSQP numerical polishing to relieve line overloads without violation.
-          </p>
           <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-zinc-100 dark:border-zinc-800/60">
             <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-500">
               <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">MATLAB</span>
@@ -511,16 +604,26 @@
         </article>
 
         <!-- 8. Physics-Informed ANN-Based MPPT (GitHub Repo 8) -->
-        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5" data-category="energy">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
-            <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
-              Physics-Informed ANN-Based MPPT with Markov-Chain Dynamic Validation
-            </h3>
-            <span class="text-xs font-mono text-blue-600 dark:text-blue-400 font-medium">IEEE SPICES 2026</span>
+        <article class="project-card p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all hover:-translate-y-0.5 shadow-sm" data-category="energy">
+          <div class="flex items-start gap-3.5 mb-2">
+            <div class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="4"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41m14.14-14.14l-1.41 1.41"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                <h3 class="font-heading font-semibold text-base sm:text-lg text-zinc-950 dark:text-white">
+                  Physics-Informed ANN-Based MPPT with Markov-Chain Dynamic Validation
+                </h3>
+                <span class="text-xs font-mono text-blue-600 dark:text-blue-400 font-medium">IEEE SPICES 2026</span>
+              </div>
+              <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
+                Physics-informed maximum power point tracking (MPPT) architecture incorporating semiconductor physics diode equations and a stochastic 2D Markov-chain solar irradiance weather model. Delivers \(R^2 = 0.9994\), \(>99.5\%\) tracking efficiency, and sub-5 ms dynamic settling under cloud-cover transients.
+              </p>
+            </div>
           </div>
-          <p class="font-sans text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
-            Physics-informed maximum power point tracking (MPPT) architecture incorporating semiconductor physics diode equations and a stochastic 2D Markov-chain solar irradiance weather model. Delivers \(R^2 = 0.9994\), \(>99.5\%\) tracking efficiency, and sub-5 ms dynamic settling under cloud-cover transients.
-          </p>
           <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-zinc-100 dark:border-zinc-800/60">
             <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-500">
               <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">MATLAB</span>
@@ -538,7 +641,7 @@
       </div>
 
       <!-- GitHub Showcase Banner -->
-      <div class="mt-8 p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/60 dark:bg-zinc-900/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="mt-8 p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/40 backdrop-blur-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
         <div class="flex items-center gap-3.5">
           <div class="p-2.5 rounded-lg bg-zinc-200 dark:bg-zinc-800 text-zinc-900 dark:text-white shrink-0">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
@@ -566,28 +669,28 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
-        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50">
+        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 shadow-sm">
           <span class="font-heading font-bold text-sm text-zinc-900 dark:text-zinc-100 block mb-1">Programming & Core Tools</span>
           <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans text-xs sm:text-sm">
             Python, SQL, C, C++, OOP, MATLAB, Bash, Git, Linux, Docker, Data Structures & Algorithms.
           </p>
         </div>
 
-        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50">
+        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 shadow-sm">
           <span class="font-heading font-bold text-sm text-zinc-900 dark:text-zinc-100 block mb-1">Data, ML & Apps</span>
           <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans text-xs sm:text-sm">
             Streamlit, pandas, NumPy, scikit-learn, XGBoost, Random Forest, Feature Engineering, Explainable AI (SHAP/LIME).
           </p>
         </div>
 
-        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50">
+        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 shadow-sm">
           <span class="font-heading font-bold text-sm text-zinc-900 dark:text-zinc-100 block mb-1">Deep Learning & Computer Vision</span>
           <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans text-xs sm:text-sm">
             PyTorch, TensorFlow, Keras, CNNs, LSTMs, Transfer Learning, OpenCV, YOLO, HOG, LBP, GLCM.
           </p>
         </div>
 
-        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50">
+        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/50 shadow-sm">
           <span class="font-heading font-bold text-sm text-zinc-900 dark:text-zinc-100 block mb-1">Systems, Hardware & Cloud</span>
           <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans text-xs sm:text-sm">
             Raspberry Pi (Edge Inference), ESP32 (BLE 5.0), DSP (FFT, THD), EV Powertrains, Metaheuristics (PSO), AWS Cloud Foundations.
@@ -600,7 +703,7 @@
     <!-- RECIPROCAL RESUME BANNER                                              -->
     <!-- ===================================================================== -->
     <section class="mb-16 sm:mb-20">
-      <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/70 dark:bg-zinc-900/70 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/70 dark:bg-zinc-900/70 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
         <div>
           <h3 class="font-heading font-bold text-base sm:text-lg text-zinc-900 dark:text-white">
             Curriculum Vitae / Resume
