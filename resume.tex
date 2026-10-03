@@ -1,0 +1,355 @@
+\documentclass[10pt]{article}
+
+% ============================================================
+% PAGE SETUP
+% ============================================================
+\usepackage[
+    a4paper,
+    left=0.45in,
+    right=0.45in,
+    top=0.35in,
+    bottom=0.35in
+]{geometry}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{helvet}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ============================================================
+% HYPERLINK CONFIGURATION
+% ============================================================
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+    linkcolor=black,
+    pdfborder={0 0 0}
+}
+
+% ============================================================
+% SECTION HEADINGS
+% ============================================================
+\titleformat{\section}
+    {\normalsize\bfseries\scshape}
+    {}{0em}{}
+    [\titlerule]
+
+\titlespacing*{\section}
+    {0pt}
+    {5pt}
+    {4pt}
+
+% ============================================================
+% ENTRY HEADING
+% ============================================================
+\newcommand{\heading}[2]{%
+    \noindent
+    \textbf{#1}
+    \hfill
+    \textit{\small #2}
+    \par
+    \vspace{1pt}
+}
+
+% ============================================================
+% PROJECT HEADING
+% ============================================================
+\newcommand{\project}[3]{%
+    \noindent
+    \textbf{#1}
+    \hspace{2pt}
+    \href{#2}{\small[\textbf{Code}]}
+    \hfill
+    {\small\emph{#3}}
+    \par
+    \vspace{1pt}
+}
+
+% ============================================================
+% BULLET FORMATTING
+% ============================================================
+\setlist[itemize]{
+    leftmargin=14pt,
+    itemsep=0.5pt,
+    topsep=1pt,
+    partopsep=0pt,
+    parsep=0pt,
+    label=\textbullet
+}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+\begin{document}
+
+% ============================================================
+% HEADER
+% ============================================================
+\begin{center}
+
+{\Large\bfseries NIRANJAN KRISHNAKUMAR}\\[3pt]
+
+{\small
+Coimbatore, India
+\enspace\textbullet\enspace
++91 88838 13030
+\enspace\textbullet\enspace
+\href{mailto:niranjankrishnakumar2005@gmail.com}
+{niranjankrishnakumar2005@gmail.com}
+\enspace\textbullet\enspace
+\href{https://github.com/niranjan-crypt}{GitHub}
+\enspace\textbullet\enspace
+\href{https://niranjan-crypt.github.io}{Portfolio}
+}
+
+\end{center}
+
+\vspace{-2pt}
+\hrule
+\vspace{4pt}
+
+% ============================================================
+% SUMMARY
+% ============================================================
+{\small\justifying
+Electrical \& Computer Engineering undergraduate (B.Tech, expected 2027) applying data science and machine learning to real-world problems across computer vision, signal processing, and optimization, with one IEEE paper published and one accepted for presentation. Build end-to-end data pipelines in Python and SQL, benchmark models against classical baselines, use explainable AI (SHAP/LIME), and deliver results as interactive Streamlit apps.
+\par}
+
+% ============================================================
+% EDUCATION
+% ============================================================
+\section{Education}
+
+\heading
+{B.Tech in Electrical and Computer Engineering}
+{Expected 2027}
+
+{\small
+\textit{Amrita Vishwa Vidyapeetham, Coimbatore}
+\hfill
+CGPA: 7.42 / 10
+}
+
+% ============================================================
+% TECHNICAL SKILLS
+% ============================================================
+\section{Technical Skills}
+
+\begin{tabularx}{\linewidth}{@{}l@{\hspace{8pt}}X@{}}
+
+\textbf{\small Programming}
+&
+{\small Python, SQL, C, C++, Object-Oriented Programming (OOP), MATLAB, Bash}
+\\[2pt]
+
+\textbf{\small Data \& Apps}
+&
+{\small Streamlit, pandas, NumPy, Matplotlib, Data Pipelines, Feature Engineering}
+\\[2pt]
+
+\textbf{\small Traditional ML}
+&
+{\small Regression, Decision Trees, Random Forest, XGBoost, scikit-learn, Model Benchmarking}
+\\[2pt]
+
+\textbf{\small Deep Learning}
+&
+{\small PyTorch, TensorFlow, Keras, CNNs, LSTMs, Transfer Learning, Explainable AI (SHAP/LIME)}
+\\[2pt]
+
+\textbf{\small Computer Vision}
+&
+{\small OpenCV, Image Classification, Feature Engineering (HOG, LBP, GLCM), YOLO}
+\\[2pt]
+
+\textbf{\small Core CS \& Tools}
+&
+{\small Data Structures \& Algorithms, Git, Linux, Model Evaluation, MS Excel, MS PowerPoint}
+\\[2pt]
+
+\textbf{\small Systems \& Hardware}
+&
+{\small Raspberry Pi (Edge Inference), DSP (FFT, THD), Docker, Metaheuristics (PSO)}
+\\[2pt]
+
+\textbf{\small Cloud}
+&
+{\small AWS (Cloud Foundations)}
+
+\end{tabularx}
+
+% ============================================================
+% TECHNICAL PROJECTS
+% ============================================================
+\section{Technical Projects}
+
+% ------------------------------------------------------------
+% PROJECT 1
+% ------------------------------------------------------------
+\project
+{Real-Time Hyperspectral Face Identification}
+{https://github.com/niranjan-crypt/Hyperspectral-Face-Identification-XAI}
+{Python \textbullet\ TensorFlow \textbullet\ Raspberry Pi \textbullet\ XAI \textbullet\ Streamlit}
+
+\begin{itemize}
+
+\item Engineered an end-to-end spectral-spatial biometric identification
+pipeline using hyperspectral imaging, mutual-information band selection,
+and CNN-based deep feature representations.
+
+\item Optimized lightweight neural inference for edge deployment on
+Raspberry Pi; integrated SHAP/LIME to provide interpretable and auditable
+decision verification on model predictions.
+
+\end{itemize}
+
+% ------------------------------------------------------------
+% PROJECT 2
+% ------------------------------------------------------------
+\project
+{Hybrid Computer Vision \& Deep Learning for Fault Diagnosis}
+{https://github.com/niranjan-crypt/Hybrid-Computer-Vision-and-Deep-Learning-for-Automated-Power-Transmission-Fault-Detection}
+{Python \textbullet\ TensorFlow \textbullet\ Transfer Learning \textbullet\ OpenCV \textbullet\ Streamlit}
+
+\begin{itemize}
+
+\item Built a multi-class defect classification pipeline for automated
+power-line inspection, benchmarking transfer-learning CNNs (ResNet50,
+VGG16, InceptionV3) and custom AlexNet with data augmentation against a
+9-pair classical CV baseline using HOG, LBP, and GLCM.
+
+\item Reached a 82\% accuracy, outperforming the 77.27\% Random Forest
+baseline across aerial grid defect classes; applied morphological filtering
+and evaluated with confusion matrices and classification reports.
+
+\end{itemize}
+
+% ------------------------------------------------------------
+% PROJECT 3
+% ------------------------------------------------------------
+\project
+{Physics-Informed ANN--Markov MPPT for Solar PV}
+{https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems}
+{Python \textbullet\ MATLAB \textbullet\ ANN \textbullet\ Stochastic Modeling}
+
+\begin{itemize}
+
+\item Designed an 18-15-12 ANN integrated with a Markov-chain irradiance
+model for physics-informed MPPT under dynamic weather variation; scaled
+the simulation dataset from 5,000 to 40,000 synthetic samples.
+
+\item Achieved $R^2=0.9994$, $>99.5\%$ tracking efficiency, MAE = 0.08 V,
+MAPE = 0.31\%, and $<5$ ms settling time in simulation; selected for
+presentation as co-author at IEEE SPICES 2026.
+
+\end{itemize}
+
+% ------------------------------------------------------------
+% PROJECT 4
+% ------------------------------------------------------------
+\project
+{IntelliPQ: AI-Based Power Quality Monitoring \& Fault Detection}
+{https://github.com/niranjan-crypt/IntelliPQ-AI-Based-Power-Quality-Monitoring-Fault-Detection}
+{ TensorFlow \textbullet\ 1D-CNN + BiLSTM \textbullet\ Streamlit}
+
+\begin{itemize}
+
+\item Engineered an automated power-quality diagnosis pipeline using DSP
+(FFT, THD, Crest Factor) and a 1D-CNN + Bi-LSTM model to classify IEEE 1159/519
+grid disturbances.
+
+\item Built a neuro-symbolic arbitration engine overriding AI conflicts with
+physical safety rules; deployed real-time diagnostics and audit certificates
+in Streamlit.
+
+\end{itemize}
+
+% ------------------------------------------------------------
+% PROJECT 5
+% ------------------------------------------------------------
+\project
+{Hybrid Optimization for Power-System Congestion Management}
+{https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems}
+{MATLAB \textbullet\ Constrained Optimization \textbullet\ DC-OPF}
+
+\begin{itemize}
+
+\item Formulated a constrained DC-OPF framework on the IEEE 14-bus
+transmission system to minimize active-power load shedding under line
+congestion constraints.
+
+\item Developed an adaptive hybrid metaheuristic combining Orca, Krill Herd,
+and Spotted Hyena algorithms with stagnant-iteration diversification,
+reducing load shedding to 3.39 MW (IEEE EPREC 2026).
+
+\end{itemize}
+
+% ============================================================
+% INTERNSHIP & CERTIFICATIONS
+% ============================================================
+\section{Internship \& Certifications}
+
+\heading
+{Industry Intern --- Larsen \& Toubro (L\&T), Chennai}
+{June 2026}
+
+\begin{itemize}
+
+\item Built simulation models of EV powertrains and battery management
+systems to analyze PMSM/BLDC motor-control behavior, DC--DC converter
+operation, battery integration, and CAN-based communication across
+subsystems.
+
+\item Worked with railway electrical systems and SCADA infrastructure
+alongside the core powertrain modeling work.
+
+\end{itemize}
+
+% ------------------------------------------------------------
+% AWS CERTIFICATION
+% ------------------------------------------------------------
+\noindent
+\textbf{AWS Academy Graduate --- Cloud Foundations}
+\hspace{2pt}
+\href{https://www.credly.com/badges/eaed5b78-e6d1-426e-8be1-6a1c66f2bc7e/print}
+{\small[\textbf{Certificate}]}
+\hfill
+\textit{\small Feb 2026}
+\par
+\vspace{1pt}
+
+\begin{itemize}
+
+\item Completed an AWS Academy program covering core cloud
+concepts, services, security, architecture, pricing, and support;
+credential issued as a verifiable Credly digital badge.
+
+\end{itemize}
+
+% ============================================================
+% PUBLICATIONS
+% ============================================================
+\section{Publications}
+
+\begin{itemize}
+
+\item Co-author, ``Physics-Informed ANN-Based MPPT with Markov-Chain
+Validation,'' \textit{selected for presentation}, IEEE SPICES 2026.
+
+\item Co-author, ``Hybrid Optimization for Congestion Management in
+Deregulated Power Systems,'' IEEE EPREC 2026.
+\href{https://doi.org/10.1109/EPREC66546.2026.11412040}
+{[\textbf{DOI: 10.1109/EPREC66546.2026.11412040}]}
+
+\end{itemize}
+
+\end{document}
