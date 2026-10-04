@@ -319,17 +319,18 @@
             </h2>
           </div>
           <span class="text-xs font-mono text-zinc-400 bg-zinc-900/80 px-3 py-1.5 rounded-lg border border-zinc-800 self-start sm:self-auto">
-            8 Production Codebases
+            9 Production Codebases
           </span>
         </div>
 
         <!-- Sleek Segmented Category Filters (Clean horizontal row, no awkward wraps) -->
         <div class="flex flex-wrap items-center gap-2" id="project-filters">
-          <button class="project-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-cyan-400 bg-cyan-500/10 text-cyan-300 shadow-[0_0_15px_rgba(56,189,248,0.2)] transition-all" data-filter="all">All (8)</button>
+          <button class="project-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-cyan-400 bg-cyan-500/10 text-cyan-300 shadow-[0_0_15px_rgba(56,189,248,0.2)] transition-all" data-filter="all">All (9)</button>
           <button class="project-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:text-white text-zinc-400 transition-all" data-filter="cv">Computer Vision (3)</button>
           <button class="project-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:text-white text-zinc-400 transition-all" data-filter="energy">Energy &amp; Optimization (3)</button>
+          <button class="project-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:text-white text-zinc-400 transition-all" data-filter="data">Data Engineering (1)</button>
           <button class="project-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:text-white text-zinc-400 transition-all" data-filter="embedded">Embedded &amp; IoT (1)</button>
-          <button class="project-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:text-white text-zinc-400 transition-all" data-filter="theory">Algorithms &amp; Theory (1)</button>
+          <button class="project-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:text-white text-zinc-400 transition-all" data-filter="theory">Algorithms (1)</button>
         </div>
       </div>
 
@@ -417,6 +418,50 @@
               <span class="px-2 py-0.5 rounded bg-zinc-800/80 text-zinc-300 border border-zinc-700/40">HOG / GLCM</span>
             </div>
             <span class="text-[10px] font-mono text-zinc-500">Aerial Grid CV</span>
+          </div>
+        </article>
+
+        <!-- Card: CommerceIQ Data Engineering Platform -->
+        <article class="project-card glass-card p-5 sm:p-6 rounded-2xl flex flex-col justify-between group" data-category="data">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 bg-amber-950/40 border border-amber-800/40 px-2 py-0.5 rounded">
+                Data Engineering · OLTP &amp; Star Schema
+              </span>
+              <a href="https://github.com/niranjan-crypt/CommerceIQ" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-zinc-400 hover:text-amber-300 font-medium inline-flex items-center gap-1 group/btn">
+                <span>Code</span>
+                <span class="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform text-amber-400">↗</span>
+              </a>
+            </div>
+
+            <div class="flex items-start gap-3.5 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-400 shrink-0 group-hover:scale-105 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-amber-300 transition-colors leading-snug">
+                  CommerceIQ: E-Commerce Data Engineering &amp; Analytics
+                </h3>
+              </div>
+            </div>
+
+            <p class="font-sans text-xs sm:text-sm text-zinc-300 leading-relaxed mb-4">
+              Enterprise data pipeline in Python &amp; SQL processing 100K+ orders (1.5M records). Features automated data ingestion with a 22-test Data Quality Gatekeeper, 3NF normalized OLTP schema converted to a Kimball Star Schema warehouse, SQL RFM customer segmentation via window functions, and verified 5.35x (81.3%) query speedup via B-Tree indexing.
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-zinc-800/60 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-zinc-800/80 text-zinc-300 border border-zinc-700/40">Python</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-800/80 text-zinc-300 border border-zinc-700/40">PostgreSQL / SQL</span>
+              <span class="px-2 py-0.5 rounded bg-amber-950/40 text-amber-300 border border-amber-800/40">Star Schema</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-800/80 text-zinc-300 border border-zinc-700/40">Streamlit</span>
+            </div>
+            <span class="text-[10px] font-mono text-zinc-500">Olist 100K+</span>
           </div>
         </article>
 
@@ -686,7 +731,7 @@
           </div>
           <div>
             <h4 class="font-heading font-semibold text-sm sm:text-base text-white">
-              Explore All 8 Repositories on GitHub
+              Explore All 9 Repositories on GitHub
             </h4>
             <p class="font-sans text-xs text-zinc-400 mt-0.5">
               Code, benchmarks, datasets, notebooks, and research implementations.
@@ -992,6 +1037,7 @@
     const typewriterPhrases = [
       "Physics-Informed Neural Networks (PINNs)",
       "Hyperspectral 3D-CNN Biometric Recognition",
+      "E-Commerce Data Engineering & Star Schema Optimization",
       "Cyber-Physical Wearable Telemetry & Digital Twins",
       "Sensitivity Matrix DC-OPF Transmission Optimization",
       "Real-Time Embedded Edge AI & Multi-Sensor Fusion"
