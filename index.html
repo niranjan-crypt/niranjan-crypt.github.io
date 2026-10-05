@@ -204,7 +204,6 @@
       <!-- Center Desktop Navigation Links -->
       <nav class="hidden md:flex items-center gap-8 text-xs font-sans font-medium text-[#86868b]">
         <a href="#about" class="hover:text-white transition-colors duration-200">About</a>
-        <a href="#domains" class="hover:text-white transition-colors duration-200">Research</a>
         <a href="#projects" class="hover:text-white transition-colors duration-200">Work</a>
         <a href="#publications" class="hover:text-white transition-colors duration-200">Papers</a>
         <a href="#experience" class="hover:text-white transition-colors duration-200">Experience</a>
@@ -232,7 +231,6 @@
     <div id="mobile-drawer" class="fixed inset-0 top-[65px] bg-black/95 backdrop-blur-3xl hidden flex-col justify-between p-8 md:hidden border-t border-white/10 z-40">
       <nav class="flex flex-col gap-6 text-lg font-heading font-semibold text-white">
         <a href="#about" class="mobile-nav-link hover:text-sky-400 transition-colors">About</a>
-        <a href="#domains" class="mobile-nav-link hover:text-sky-400 transition-colors">Research Domains</a>
         <a href="#projects" class="mobile-nav-link hover:text-sky-400 transition-colors">Selected Work (9 Projects)</a>
         <a href="#publications" class="mobile-nav-link hover:text-sky-400 transition-colors">IEEE Publications</a>
         <a href="#experience" class="mobile-nav-link hover:text-sky-400 transition-colors">Industry Experience</a>
@@ -337,116 +335,70 @@
       </h2>
     </div>
 
-    <!-- Preserved Verbatim Summary Paragraphs -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#a1a1a6] text-base sm:text-lg leading-relaxed font-sans font-normal">
-      <div>
-        <p class="mb-6">
-          My research integrates physical boundary laws into neural architectures—including Physics-Informed Neural Networks (PINNs), 33-band spatial-spectral 3D-CNNs, and metric learning—for real-time edge and cyber-physical deployment.
-        </p>
-        <p>
-          I focus on rigorous mathematical modeling: converting continuous differential equations into loss residuals, accelerating query latency through Kimball Star Schemas, and formulating metaheuristic sensitivity matrices for deregulated infrastructure.
-        </p>
-      </div>
-      <div>
-        <p class="mb-6">
-          Published author at <strong class="font-medium text-white underline decoration-sky-500/50 underline-offset-4">IEEE EPREC 2026</strong> (IIT Bhilai) for transmission line congestion management; co-author of a paper selected for <strong class="font-medium text-white underline decoration-purple-500/50 underline-offset-4">IEEE SPICES 2026</strong> for physics-informed neural MPPT.
-        </p>
-        <div class="pt-4 border-t border-white/[0.08] flex items-center gap-6 text-xs font-mono text-[#86868b]">
-          <span>Coimbatore, India</span>
-          <span>·</span>
-          <span>+91 88838 13030</span>
-          <span>·</span>
-          <span class="text-emerald-400">B.Tech ELC '27</span>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ===================================================================== -->
-  <!-- RESEARCH DOMAINS (HORIZONTAL EDITORIAL SHOWCASE)                      -->
-  <!-- ===================================================================== -->
-  <section id="domains" class="py-16 sm:py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
-    
-    <div class="mb-12">
-      <span class="text-xs font-mono uppercase tracking-widest text-purple-400 block mb-2">Core Disciplines</span>
-      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight mb-3">
-        Research &amp; Engineering Domains
-      </h2>
-      <p class="text-xs sm:text-sm font-mono text-[#86868b] max-w-2xl leading-relaxed">
-        Coupling continuous physical boundary laws with discrete neural architectures.
-      </p>
-    </div>
-
-    <div class="space-y-4">
+    <!-- Comprehensive 9-Project Research Statement -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#a1a1a6] text-sm sm:text-base leading-relaxed font-sans font-normal mb-8">
       
-      <!-- Domain 01 -->
-      <div class="p-8 sm:p-10 rounded-2xl apple-glass group hover:border-sky-500/40 hover:bg-white/[0.02] transition-all duration-300">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-          <div class="flex items-center gap-3">
-            <span class="px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/25 text-xs font-mono text-sky-400 font-bold">01</span>
-            <h3 class="font-heading font-bold text-xl sm:text-2xl text-white group-hover:text-sky-300 transition-colors">
-              Physics-Informed Machine Learning &amp; Energy Systems
-            </h3>
+      <!-- Pillar 1: Physics-Informed ML & Clean Energy -->
+      <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.07] space-y-3 flex flex-col justify-between hover:border-sky-500/30 transition-colors">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono text-sky-400 font-semibold uppercase tracking-wider mb-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+            <span>Physics-Constrained ML</span>
           </div>
-          <span class="text-xs font-mono text-zinc-400 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] self-start sm:self-auto">PINNs · Boundary Laws · DC-OPF</span>
+          <p class="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+            Embedding physical governing laws into neural architectures—formulating semiconductor diode equations into neural MPPT loss residuals for solar photovoltaic tracking (<strong class="text-white font-medium">R² = 0.9994</strong>, selected for <strong class="text-white font-medium underline decoration-purple-500/50">IEEE SPICES 2026</strong>) and deriving generator sensitivity matrices with DC-OPF for transmission line congestion relief across IEEE test grids (<strong class="text-white font-medium underline decoration-sky-500/50">IEEE EPREC 2026</strong> at IIT Bhilai).
+          </p>
         </div>
-        <p class="text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-4xl">
-          Physics-aware neural architectures incorporating partial differential equations (PDEs), diode semiconductor equations, and sensitivity matrix DC-OPF optimization for thermal power transmission and solar photovoltaic tracking.
-        </p>
+        <div class="text-[11px] font-mono text-zinc-500 pt-2 border-t border-white/[0.05]">PINNs · Solar MPPT · DC-OPF</div>
       </div>
 
-      <!-- Domain 02 -->
-      <div class="p-8 sm:p-10 rounded-2xl apple-glass group hover:border-purple-500/40 hover:bg-white/[0.02] transition-all duration-300">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-          <div class="flex items-center gap-3">
-            <span class="px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/25 text-xs font-mono text-purple-400 font-bold">02</span>
-            <h3 class="font-heading font-bold text-xl sm:text-2xl text-white group-hover:text-purple-300 transition-colors">
-              Computer Vision &amp; Spatial-Spectral 3D Learning
-            </h3>
+      <!-- Pillar 2: High-Dimensional Vision & Diagnostics -->
+      <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.07] space-y-3 flex flex-col justify-between hover:border-purple-500/30 transition-colors">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono text-purple-400 font-semibold uppercase tracking-wider mb-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+            <span>Spatial-Spectral Vision</span>
           </div>
-          <span class="text-xs font-mono text-zinc-400 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] self-start sm:self-auto">33-Band Datacubes · ArcFace · SHAP</span>
+          <p class="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+            Engineering volumetric 3D-CNNs processing 33-band spatial-spectral hyperspectral imagery (400–720 nm) with deep angular-margin ArcFace metric learning and Spectral SHAP explainability on edge silicon. Concurrently formulating dual-stream aerial computer vision fusing 2048-D ResNet50 deep representations with HOG/GLCM texture statistics for transmission defect diagnosis (<strong class="text-white font-medium">82.0% accuracy</strong>).
+          </p>
         </div>
-        <p class="text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-4xl">
-          33-band hyperspectral imaging (400–720 nm) with 3D-CNN feature extraction, deep angular-margin ArcFace metric learning, explainable AI with Spectral SHAP, and classical aerial defect inspection using ResNet50 + HOG/GLCM.
-        </p>
+        <div class="text-[11px] font-mono text-zinc-500 pt-2 border-t border-white/[0.05]">3D-CNN · ArcFace · ResNet50</div>
       </div>
 
-      <!-- Domain 03 -->
-      <div class="p-8 sm:p-10 rounded-2xl apple-glass group hover:border-emerald-500/40 hover:bg-white/[0.02] transition-all duration-300">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-          <div class="flex items-center gap-3">
-            <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/25 text-xs font-mono text-emerald-400 font-bold">03</span>
-            <h3 class="font-heading font-bold text-xl sm:text-2xl text-white group-hover:text-emerald-300 transition-colors">
-              Cyber-Physical Systems, Edge AI &amp; Telemetry
-            </h3>
+      <!-- Pillar 3: Cyber-Physical Edge & Data Warehouses -->
+      <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.07] space-y-3 flex flex-col justify-between hover:border-emerald-500/30 transition-colors">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 font-semibold uppercase tracking-wider mb-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span>Cyber-Physical &amp; Data Systems</span>
           </div>
-          <span class="text-xs font-mono text-zinc-400 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] self-start sm:self-auto">ESP32 · BLE 5.0 · Digital Twins · DSP</span>
+          <p class="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+            Architecting low-latency telemetry and high-throughput data backbones—from ESP32/BLE 5.0 smart glove kinematics streaming to 3D Flutter digital twins (<strong class="text-white font-medium">KinoSync</strong>) and real-time DSP power quality sequence models (<strong class="text-white font-medium">IntelliPQ</strong>, IEEE 1159/519), to enterprise data warehouses transforming 100K+ orders into Kimball Star Schemas with 5.35x B-Tree query acceleration (<strong class="text-white font-medium">CommerceIQ</strong>), backed by formal automata safety proofs (<strong class="text-white font-medium">TOC-AV</strong>) and PSO-GA Multilevel Otsu MRI segmentation.
+          </p>
         </div>
-        <p class="text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-4xl">
-          Wearable telemetry systems integrating ESP32, 6-DoF IMU complementary filter sensor fusion, flex kinematics, BLE 5.0 streaming to Flutter 3D digital twins, and DSP harmonic analysis adhering to IEEE 1159/519 standards.
-        </p>
-      </div>
-
-      <!-- Domain 04 -->
-      <div class="p-8 sm:p-10 rounded-2xl apple-glass group hover:border-amber-500/40 hover:bg-white/[0.02] transition-all duration-300">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-          <div class="flex items-center gap-3">
-            <span class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/25 text-xs font-mono text-amber-400 font-bold">04</span>
-            <h3 class="font-heading font-bold text-xl sm:text-2xl text-white group-hover:text-amber-300 transition-colors">
-              High-Throughput Data Engineering &amp; Star Schema
-            </h3>
-          </div>
-          <span class="text-xs font-mono text-zinc-400 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] self-start sm:self-auto">100K+ Orders · Kimball Star Schema · B-Tree</span>
-        </div>
-        <p class="text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-4xl">
-          Production data warehouses handling 1.5M records. 22-test automated ingestion gatekeepers, 3NF-to-Star Schema conversions, SQL window functions for RFM customer segmentation, and verified 5.35x query acceleration.
-        </p>
+        <div class="text-[11px] font-mono text-zinc-500 pt-2 border-t border-white/[0.05]">ESP32 · Star Schema · Formal Safety</div>
       </div>
 
     </div>
 
+    <!-- Academic Affiliation & Contact Line -->
+    <div class="pt-5 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-[#86868b]">
+      <div class="flex items-center gap-4 sm:gap-6 flex-wrap">
+        <span>Coimbatore, India</span>
+        <span>·</span>
+        <a href="tel:+918883813030" class="hover:text-white transition-colors">+91 88838 13030</a>
+        <span>·</span>
+        <a href="mailto:niranjankrishnakumar2005@gmail.com" class="hover:text-white transition-colors">niranjankrishnakumar2005@gmail.com</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span class="text-emerald-400 font-medium">B.Tech ELC '27 · Amrita Vishwa Vidyapeetham</span>
+      </div>
+    </div>
+
   </section>
+
 
 
   <!-- ===================================================================== -->
@@ -454,23 +406,62 @@
   <!-- ===================================================================== -->
   <section id="projects" class="py-16 sm:py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
     
-    <!-- Section Title -->
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
-      <div>
-        <span class="text-xs font-mono uppercase tracking-widest text-sky-400 block mb-2">Featured Systems</span>
-        <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight">
-          Selected Work
-        </h2>
+    <!-- Creative System Architecture Deck Header -->
+    <div class="mb-14 pb-8 border-b border-white/[0.08]">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#16161a] border border-sky-500/30 text-sky-400 mb-3 shadow-[0_0_15px_rgba(56,189,248,0.15)]">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+            <span>SYSTEM ARCHITECTURES // 09 VERIFIED REPOSITORIES</span>
+          </div>
+          <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight">
+            Selected Work &amp; Systems
+          </h2>
+          <p class="text-sm font-sans text-[#86868b] mt-2 max-w-2xl leading-relaxed">
+            Autonomous edge pipelines, physics-constrained neural models, and verified production data systems.
+          </p>
+        </div>
+        
+        <!-- Active Filter Live Readout Pill -->
+        <div class="hidden sm:flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] text-xs font-mono text-zinc-400 shrink-0">
+          <span class="text-zinc-500">Telemetry:</span>
+          <span id="active-filter-indicator" class="text-emerald-400 font-semibold">All 9 Architectures Active</span>
+        </div>
       </div>
 
-      <!-- Segmented Category Filter Controller -->
-      <div class="p-1 rounded-full bg-[#16161a]/90 border border-white/[0.08] inline-flex flex-wrap gap-1 shadow-2xl backdrop-blur-xl" id="project-filters">
-        <button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium bg-white text-black shadow-md transition-all" data-filter="all">All (9)</button>
-        <button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="cv">Vision (3)</button>
-        <button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="energy">Energy &amp; Opt (3)</button>
-        <button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="data">Data Eng (1)</button>
-        <button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="embedded">Embedded (1)</button>
-        <button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="theory">Algorithms (1)</button>
+      <!-- Creative Horizontal Segmented Control Strip (No Line Wrapping) -->
+      <div class="w-full overflow-x-auto no-scrollbar py-1">
+        <div class="p-1.5 rounded-2xl bg-[#111115]/95 border border-white/[0.1] inline-flex items-center gap-1.5 shadow-2xl backdrop-blur-xl whitespace-nowrap min-w-max" id="project-filters">
+          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-white text-black shadow-lg transition-all flex items-center gap-2" data-filter="all">
+            <span>All Systems</span>
+            <span class="px-1.5 py-0.5 rounded-md bg-black/10 text-[10px] font-bold">9</span>
+          </button>
+          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.06] transition-all flex items-center gap-2" data-filter="cv">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400/80"></span>
+            <span>Vision &amp; 3D</span>
+            <span class="px-1.5 py-0.5 rounded-md bg-white/[0.06] text-[10px]">3</span>
+          </button>
+          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.06] transition-all flex items-center gap-2" data-filter="energy">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400/80"></span>
+            <span>Energy &amp; Grid</span>
+            <span class="px-1.5 py-0.5 rounded-md bg-white/[0.06] text-[10px]">3</span>
+          </button>
+          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.06] transition-all flex items-center gap-2" data-filter="data">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400/80"></span>
+            <span>Data Warehouses</span>
+            <span class="px-1.5 py-0.5 rounded-md bg-white/[0.06] text-[10px]">1</span>
+          </button>
+          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.06] transition-all flex items-center gap-2" data-filter="embedded">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400/80"></span>
+            <span>Edge Telemetry</span>
+            <span class="px-1.5 py-0.5 rounded-md bg-white/[0.06] text-[10px]">1</span>
+          </button>
+          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.06] transition-all flex items-center gap-2" data-filter="theory">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400/80"></span>
+            <span>Formal Theory</span>
+            <span class="px-1.5 py-0.5 rounded-md bg-white/[0.06] text-[10px]">1</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -571,21 +562,166 @@
         
         <div class="lg:col-span-6 order-2 lg:order-1">
           <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
-            <!-- Aerial Transmission Tower Schematic -->
-            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
-              <!-- Grid Horizon & Tower -->
-              <path d="M200 30 L160 210 M200 30 L240 210" stroke="rgba(56,189,248,0.7)" stroke-width="1.8"/>
-              <path d="M140 85 L260 85 M120 135 L280 135 M150 175 L250 175" stroke="rgba(56,189,248,0.7)" stroke-width="1.6"/>
-              <path d="M160 85 L240 135 M240 85 L160 135 M160 135 L240 175 M240 135 L160 175" stroke="rgba(56,189,248,0.3)" stroke-width="1.2"/>
-              <!-- Power Conductors -->
-              <path d="M40 90 Q 140 120 200 85 Q 260 120 360 90" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/>
-              <!-- Defect Bounding Box -->
-              <rect x="250" y="70" width="55" height="40" rx="4" fill="rgba(245,166,35,0.12)" stroke="#f5a623" stroke-width="1.5" stroke-dasharray="4 2"/>
-              <text x="252" y="65" fill="#f5a623" font-family="JetBrains Mono" font-size="9">Insulator Fault</text>
-              <circle cx="277" cy="90" r="4" fill="#f5a623" filter="drop-shadow(0 0 6px #f5a623)"/>
-              <!-- Confidence Tag -->
-              <rect x="24" y="190" width="130" height="26" rx="13" fill="rgba(0,0,0,0.75)" stroke="rgba(255,255,255,0.15)"/>
-              <text x="36" y="207" fill="#34d399" font-family="JetBrains Mono" font-size="10">ResNet50: 82.0% Acc</text>
+            <!-- Ultra-Realistic Aerial Drone Computer Vision Inspection HUD -->
+            <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
+              <defs>
+                <linearGradient id="towerSteelGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95"/>
+                  <stop offset="50%" stop-color="#0284c7" stop-opacity="0.75"/>
+                  <stop offset="100%" stop-color="#0369a1" stop-opacity="0.45"/>
+                </linearGradient>
+                <linearGradient id="faultHeatmap" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#f5a623" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#ef4444" stop-opacity="0.1"/>
+                </linearGradient>
+                <radialGradient id="arcCoreGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+                  <stop offset="40%" stop-color="#f5a623" stop-opacity="0.8"/>
+                  <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+
+              <!-- Drone HUD Crosshairs & Telemetry Graticule -->
+              <g opacity="0.22">
+                <line x1="20" y1="150" x2="80" y2="150" stroke="#38bdf8" stroke-width="1"/>
+                <line x1="420" y1="150" x2="480" y2="150" stroke="#38bdf8" stroke-width="1"/>
+                <line x1="250" y1="20" x2="250" y2="55" stroke="#38bdf8" stroke-width="1"/>
+                <line x1="250" y1="245" x2="250" y2="280" stroke="#38bdf8" stroke-width="1"/>
+                <circle cx="250" cy="150" r="115" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="4 8"/>
+              </g>
+
+              <!-- Corner Flight HUD Telemetry Readouts -->
+              <g font-family="JetBrains Mono" font-size="8.5" fill="#86868b">
+                <text x="24" y="28" fill="#38bdf8" font-weight="bold">UAV-FLIGHT #04 // RECON-GRID</text>
+                <text x="24" y="42">ALT: 42.4m AGL · PITCH: -14.2°</text>
+                <text x="330" y="28" fill="#34d399" font-weight="bold">SENSOR: OPTICAL + IR</text>
+                <text x="330" y="42">LATENCY: 18ms · FPS: 60.0</text>
+              </g>
+
+              <!-- Intricate Lattice Steel Transmission Tower -->
+              <g id="transmission-tower-geometry">
+                <!-- Main Pyramidal Legs -->
+                <path d="M250 45 L190 270 M250 45 L310 270" stroke="url(#towerSteelGrad)" stroke-width="2.2"/>
+                
+                <!-- Earth Wire Apex -->
+                <polygon points="250,30 242,48 258,48" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="1.4"/>
+                <line x1="250" y1="18" x2="250" y2="30" stroke="#38bdf8" stroke-width="1.8"/>
+                <circle cx="250" cy="18" r="2.5" fill="#38bdf8"/>
+
+                <!-- Upper Crossarms -->
+                <line x1="160" y1="90" x2="340" y2="90" stroke="url(#towerSteelGrad)" stroke-width="2"/>
+                <line x1="180" y1="105" x2="320" y2="105" stroke="url(#towerSteelGrad)" stroke-width="1.6"/>
+                <line x1="160" y1="90" x2="180" y2="105" stroke="#38bdf8" stroke-width="1.4"/>
+                <line x1="340" y1="90" x2="320" y2="105" stroke="#38bdf8" stroke-width="1.4"/>
+
+                <!-- Middle Crossarms -->
+                <line x1="130" y1="140" x2="370" y2="140" stroke="url(#towerSteelGrad)" stroke-width="2.2"/>
+                <line x1="155" y1="158" x2="345" y2="158" stroke="url(#towerSteelGrad)" stroke-width="1.6"/>
+                <line x1="130" y1="140" x2="155" y2="158" stroke="#38bdf8" stroke-width="1.4"/>
+                <line x1="370" y1="140" x2="345" y2="158" stroke="#38bdf8" stroke-width="1.4"/>
+
+                <!-- Lower Waist Crossarm -->
+                <line x1="170" y1="195" x2="330" y2="195" stroke="url(#towerSteelGrad)" stroke-width="1.8"/>
+
+                <!-- Diagonal Internal X-Bracing Trusses -->
+                <g stroke="#38bdf8" stroke-width="1" opacity="0.45">
+                  <line x1="238" y1="50" x2="262" y2="90"/>
+                  <line x1="262" y1="50" x2="238" y2="90"/>
+                  <line x1="225" y1="105" x2="275" y2="140"/>
+                  <line x1="275" y1="105" x2="225" y2="140"/>
+                  <line x1="210" y1="158" x2="290" y2="195"/>
+                  <line x1="290" y1="158" x2="210" y2="195"/>
+                  <line x1="200" y1="195" x2="300" y2="235"/>
+                  <line x1="300" y1="195" x2="200" y2="235"/>
+                  <line x1="192" y1="235" x2="308" y2="270"/>
+                  <line x1="308" y1="235" x2="192" y2="270"/>
+                </g>
+
+                <!-- Ceramic Suspension Insulator Strings (Vertical Bell Stacks) -->
+                <!-- Left Upper Insulator -->
+                <g>
+                  <line x1="165" y1="90" x2="165" y2="125" stroke="#38bdf8" stroke-width="1.2"/>
+                  <ellipse cx="165" cy="98" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
+                  <ellipse cx="165" cy="106" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
+                  <ellipse cx="165" cy="114" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
+                  <ellipse cx="165" cy="122" rx="4" ry="2" fill="#38bdf8"/>
+                </g>
+
+                <!-- Left Middle Insulator -->
+                <g>
+                  <line x1="135" y1="140" x2="135" y2="175" stroke="#38bdf8" stroke-width="1.2"/>
+                  <ellipse cx="135" cy="148" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
+                  <ellipse cx="135" cy="156" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
+                  <ellipse cx="135" cy="164" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
+                  <ellipse cx="135" cy="172" rx="4" ry="2" fill="#38bdf8"/>
+                </g>
+
+                <!-- Right Upper Insulator -->
+                <g>
+                  <line x1="335" y1="90" x2="335" y2="125" stroke="#38bdf8" stroke-width="1.2"/>
+                  <ellipse cx="335" cy="98" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
+                  <ellipse cx="335" cy="106" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
+                  <ellipse cx="335" cy="114" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
+                  <ellipse cx="335" cy="122" rx="4" ry="2" fill="#38bdf8"/>
+                </g>
+
+                <!-- Right Middle Insulator (ANOMALY SITE) -->
+                <g>
+                  <line x1="365" y1="140" x2="365" y2="178" stroke="#f5a623" stroke-width="1.4"/>
+                  <ellipse cx="365" cy="148" rx="5" ry="2.5" fill="#16161a" stroke="#f5a623" stroke-width="1"/>
+                  <ellipse cx="365" cy="156" rx="5.5" ry="3" fill="#16161a" stroke="#ef4444" stroke-width="1.2"/>
+                  <ellipse cx="365" cy="165" rx="5" ry="2.5" fill="#16161a" stroke="#f5a623" stroke-width="1"/>
+                  <ellipse cx="365" cy="173" rx="4" ry="2" fill="#f5a623"/>
+                </g>
+
+                <!-- Catenary Hyperbolic Sag Power Lines -->
+                <path d="M20 120 Q 95 140 165 125 T 335 125 T 480 120" stroke="rgba(255,255,255,0.3)" stroke-width="1.4" fill="none"/>
+                <path d="M20 170 Q 75 190 135 175 T 365 175 T 480 170" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" fill="none"/>
+                <circle cx="150" cy="128" r="2" fill="#86868b"/>
+                <line x1="150" y1="128" x2="150" y2="134" stroke="#86868b" stroke-width="1"/>
+                <circle cx="350" cy="178" r="2" fill="#f5a623"/>
+                <line x1="350" y1="178" x2="350" y2="184" stroke="#f5a623" stroke-width="1"/>
+              </g>
+
+              <!-- COMPUTER VISION TARGETING HUD (AI ANOMALY DETECTION) -->
+              <g id="cv-detection-target">
+                <!-- Thermal Flashover Heat Signature -->
+                <rect x="336" y="132" width="70" height="58" rx="6" fill="url(#faultHeatmap)" stroke="#f5a623" stroke-width="1.2" stroke-dasharray="3 3"/>
+                
+                <!-- Corner Targeting Brackets -->
+                <path d="M336 144 L336 132 L348 132" stroke="#f5a623" stroke-width="2" fill="none"/>
+                <path d="M394 132 L406 132 L406 144" stroke="#f5a623" stroke-width="2" fill="none"/>
+                <path d="M336 176 L336 188 L348 188" stroke="#f5a623" stroke-width="2" fill="none"/>
+                <path d="M394 188 L406 188 L406 176" stroke="#f5a623" stroke-width="2" fill="none"/>
+
+                <!-- Dynamic Arc Flash Point -->
+                <circle cx="365" cy="158" r="9" fill="url(#arcCoreGlow)"/>
+                <circle cx="365" cy="158" r="3.5" fill="#ffffff"/>
+                <line x1="359" y1="155" x2="371" y2="161" stroke="#ffffff" stroke-width="1"/>
+
+                <!-- Target Tag -->
+                <rect x="336" y="112" width="100" height="17" rx="4" fill="#0f0f13" stroke="#f5a623" stroke-width="1"/>
+                <text x="342" y="124" fill="#f5a623" font-family="JetBrains Mono" font-size="9" font-weight="bold">! INSULATOR FLASH</text>
+              </g>
+
+              <!-- Real-Time Classification HUD Badge -->
+              <g transform="translate(24, 210)">
+                <rect x="0" y="0" width="195" height="56" rx="10" fill="#0a0a0e" stroke="rgba(255,255,255,0.16)" stroke-width="1.2"/>
+                
+                <circle cx="14" cy="16" r="3.5" fill="#34d399"/>
+                <text x="24" y="20" fill="#ffffff" font-family="JetBrains Mono" font-size="9.5" font-weight="bold">ResNet50 + HOG / GLCM</text>
+                
+                <line x1="12" y1="30" x2="183" y2="30" stroke="rgba(255,255,255,0.08)"/>
+                
+                <text x="12" y="44" fill="#86868b" font-family="JetBrains Mono" font-size="8.5">Diagnostic Accuracy:</text>
+                <text x="130" y="44" fill="#34d399" font-family="JetBrains Mono" font-size="10" font-weight="bold">82.0% Acc</text>
+              </g>
+
+              <!-- Feature Fusion Readout -->
+              <g transform="translate(315, 240)">
+                <rect x="0" y="0" width="165" height="26" rx="6" fill="#0f0f13" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
+                <text x="10" y="17" fill="#38bdf8" font-family="JetBrains Mono" font-size="8.5">Dual Stream: 2048-D + GLCM</text>
+              </g>
             </svg>
           </div>
         </div>
@@ -1691,18 +1827,32 @@
 
     document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
 
-    // Segmented Project Category Filtering
+    // Segmented Project Category Filtering & Telemetry Indicator
     const filterButtons = document.querySelectorAll('.project-filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
+    const activeFilterIndicator = document.getElementById('active-filter-indicator');
+
+    const filterLabels = {
+      'all': 'All 9 Architectures Active',
+      'cv': '3 Computer Vision Systems Active',
+      'energy': '3 Energy & Power Systems Active',
+      'data': '1 Enterprise Data Warehouse Active',
+      'embedded': '1 Cyber-Physical System Active',
+      'theory': '1 Formal Automata Engine Active'
+    };
 
     filterButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         const filter = btn.getAttribute('data-filter');
 
         filterButtons.forEach(b => {
-          b.className = 'project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all';
+          b.className = 'project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.06] transition-all flex items-center gap-2';
         });
-        btn.className = 'project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium bg-white text-black shadow-md transition-all';
+        btn.className = 'project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-white text-black shadow-lg transition-all flex items-center gap-2';
+
+        if (activeFilterIndicator && filterLabels[filter]) {
+          activeFilterIndicator.textContent = filterLabels[filter];
+        }
 
         projectItems.forEach(item => {
           const category = item.getAttribute('data-category');
