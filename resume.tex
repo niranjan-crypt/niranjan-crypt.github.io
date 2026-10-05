@@ -121,7 +121,7 @@ Coimbatore, India
 % SUMMARY
 % ============================================================
 {\small\justifying
-Electrical \& Computer Engineering undergraduate (B.Tech, expected 2027) applying data science and machine learning to real-world problems across computer vision, signal processing, and optimization, with one IEEE paper published and one accepted for presentation. Build end-to-end data pipelines in Python and SQL, benchmark models against classical baselines, use explainable AI (SHAP/LIME), and deliver results as interactive Streamlit apps.
+Electrical \& Computer Engineering undergraduate (B.Tech, expected 2027) applying data science and machine learning across computer vision, signal processing, and optimization, with one IEEE paper published and one accepted. Builds end-to-end data pipelines in Python and SQL, benchmarks ML/DL models against classical baselines, applies explainable AI (SHAP/LIME), and deploys interactive Streamlit analytics dashboards.
 \par}
 
 % ============================================================
@@ -135,6 +135,8 @@ Electrical \& Computer Engineering undergraduate (B.Tech, expected 2027) applyin
 
 {\small
 \textit{Amrita Vishwa Vidyapeetham, Coimbatore}
+\hfill
+CGPA: 7.42 / 10
 }
 
 % ============================================================
@@ -142,46 +144,31 @@ Electrical \& Computer Engineering undergraduate (B.Tech, expected 2027) applyin
 % ============================================================
 \section{Technical Skills}
 
-\begin{tabularx}{\linewidth}{@{}l@{\hspace{8pt}}X@{}}
+\begin{tabularx}{\linewidth}{@{}l@{\hspace{12pt}}X@{}}
 
-\textbf{\small Programming}
+\textbf{\small Languages}
 &
-{\small Python, SQL, C, C++, Object-Oriented Programming (OOP), MATLAB, Bash}
+{\small Python, SQL, C, C++, MATLAB, Bash, Object-Oriented Programming (OOP)}
 \\[2pt]
 
-\textbf{\small Data \& Apps}
+\textbf{\small Data \& Cloud}
 &
-{\small Streamlit, pandas, NumPy, Matplotlib, Data Pipelines, Feature Engineering}
+{\small PostgreSQL, Star Schema, ETL Pipelines, Streamlit, pandas, NumPy, AWS, Docker}
 \\[2pt]
 
-\textbf{\small Traditional ML}
+\textbf{\small Machine Learning}
 &
-{\small Regression, Decision Trees, Random Forest, XGBoost, scikit-learn, Model Benchmarking}
-\\[2pt]
-
-\textbf{\small Deep Learning}
-&
-{\small PyTorch, TensorFlow, Keras, CNNs, LSTMs, Transfer Learning, Explainable AI (SHAP/LIME)}
+{\small PyTorch, TensorFlow, scikit-learn, XGBoost, CNNs, LSTMs, Explainable AI (SHAP/LIME)}
 \\[2pt]
 
 \textbf{\small Computer Vision}
 &
-{\small OpenCV, Image Classification, Feature Engineering (HOG, LBP, GLCM), YOLO}
+{\small OpenCV, YOLO, Image Classification, Feature Engineering (HOG, LBP, GLCM)}
 \\[2pt]
 
-\textbf{\small Core CS \& Tools}
+\textbf{\small Systems \& Tools}
 &
-{\small Data Structures \& Algorithms, Git, Linux, Model Evaluation, MS Excel, MS PowerPoint}
-\\[2pt]
-
-\textbf{\small Systems \& Hardware}
-&
-{\small Raspberry Pi (Edge Inference), DSP (FFT, THD), Docker, Metaheuristics (PSO)}
-\\[2pt]
-
-\textbf{\small Cloud}
-&
-{\small AWS (Cloud Foundations)}
+{\small Raspberry Pi (Edge Inference), DSP (FFT, THD), Git, Linux, Data Structures}
 
 \end{tabularx}
 
@@ -200,13 +187,9 @@ Electrical \& Computer Engineering undergraduate (B.Tech, expected 2027) applyin
 
 \begin{itemize}
 
-\item Engineered an end-to-end spectral-spatial biometric identification
-pipeline using hyperspectral imaging, mutual-information band selection,
-and CNN-based deep feature representations.
+\item Engineered an end-to-end spectral-spatial biometric identification pipeline using hyperspectral imaging, mutual-information band selection, and CNN-based deep feature representations.
 
-\item Optimized lightweight neural inference for edge deployment on
-Raspberry Pi; integrated SHAP/LIME to provide interpretable and auditable
-decision verification on model predictions.
+\item Optimized lightweight neural inference for edge deployment on Raspberry Pi; integrated SHAP/LIME to provide interpretable and auditable decision verification on model predictions.
 
 \end{itemize}
 
@@ -220,14 +203,9 @@ decision verification on model predictions.
 
 \begin{itemize}
 
-\item Built a multi-class defect classification pipeline for automated
-power-line inspection, benchmarking transfer-learning CNNs (ResNet50,
-VGG16, InceptionV3) and custom AlexNet with data augmentation against a
-9-pair classical CV baseline using HOG, LBP, and GLCM.
+\item Built a multi-class defect classification pipeline for automated power-line inspection, benchmarking transfer-learning CNNs (ResNet50, VGG16) and custom AlexNet against classical HOG, LBP, and GLCM baselines.
 
-\item Reached a 82\% accuracy, outperforming the 77.27\% Random Forest
-baseline across aerial grid defect classes; applied morphological filtering
-and evaluated with confusion matrices and classification reports.
+\item Achieved 82.0\% accuracy, outperforming the 77.3\% Random Forest baseline across aerial grid defect classes; applied morphological filtering and evaluated with confusion matrices.
 
 \end{itemize}
 
@@ -235,19 +213,15 @@ and evaluated with confusion matrices and classification reports.
 % PROJECT 3
 % ------------------------------------------------------------
 \project
-{Physics-Informed ANN--Markov MPPT for Solar PV}
-{https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems}
-{Python \textbullet\ MATLAB \textbullet\ ANN \textbullet\ Stochastic Modeling}
+{CommerceIQ: E-Commerce Data Engineering \& Analytics Platform}
+{https://github.com/niranjan-crypt/CommerceIQ}
+{Python \textbullet\ PostgreSQL \textbullet\ SQL \textbullet\ Streamlit}
 
 \begin{itemize}
 
-\item Designed an 18-15-12 ANN integrated with a Markov-chain irradiance
-model for physics-informed MPPT under dynamic weather variation; scaled
-the simulation dataset from 5,000 to 40,000 synthetic samples.
+\item Engineered an ETL pipeline processing 100K+ orders (1.5M+ records across 9 tables), migrating a 3NF OLTP database to a Kimball Star Schema with an automated 22-test Data Quality Gatekeeper.
 
-\item Achieved $R^2=0.9994$, $>99.5\%$ tracking efficiency, MAE = 0.08 V,
-MAPE = 0.31\%, and $<5$ ms settling time in simulation; selected for
-presentation as co-author at IEEE SPICES 2026.
+\item Implemented SQL window functions for RFM customer segmentation into actionable cohorts (Champions, Loyal, At-Risk) and achieved 5.35x (81.3\%) query speedup via B-Tree index optimization.
 
 \end{itemize}
 
@@ -257,17 +231,13 @@ presentation as co-author at IEEE SPICES 2026.
 \project
 {IntelliPQ: AI-Based Power Quality Monitoring \& Fault Detection}
 {https://github.com/niranjan-crypt/IntelliPQ-AI-Based-Power-Quality-Monitoring-Fault-Detection}
-{ TensorFlow \textbullet\ 1D-CNN + BiLSTM \textbullet\ Streamlit}
+{TensorFlow \textbullet\ 1D-CNN + BiLSTM \textbullet\ Streamlit}
 
 \begin{itemize}
 
-\item Engineered an automated power-quality diagnosis pipeline using DSP
-(FFT, THD, Crest Factor) and a 1D-CNN + Bi-LSTM model to classify IEEE 1159/519
-grid disturbances.
+\item Engineered an automated power-quality diagnosis pipeline using DSP (FFT, THD, Crest Factor) and a 1D-CNN + Bi-LSTM model to classify IEEE 1159/519 grid disturbances.
 
-\item Built a neuro-symbolic arbitration engine overriding AI conflicts with
-physical safety rules; deployed real-time diagnostics and audit certificates
-in Streamlit.
+\item Built a neuro-symbolic arbitration engine overriding AI conflicts with physical safety rules; deployed real-time diagnostics and audit certificates in Streamlit.
 
 \end{itemize}
 
@@ -275,19 +245,15 @@ in Streamlit.
 % PROJECT 5
 % ------------------------------------------------------------
 \project
-{Hybrid Optimization for Power-System Congestion Management}
-{https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems}
-{MATLAB \textbullet\ Constrained Optimization \textbullet\ DC-OPF}
+{Physics-Informed ANN--Markov MPPT for Solar PV}
+{https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems}
+{Python \textbullet\ MATLAB \textbullet\ ANN \textbullet\ Stochastic Modeling}
 
 \begin{itemize}
 
-\item Formulated a constrained DC-OPF framework on the IEEE 14-bus
-transmission system to minimize active-power load shedding under line
-congestion constraints.
+\item Designed an 18-15-12 ANN integrated with a Markov-chain irradiance model for physics-informed MPPT under dynamic weather variation; scaled the simulation dataset from 5,000 to 40,000 synthetic samples.
 
-\item Developed an adaptive hybrid metaheuristic combining Orca, Krill Herd,
-and Spotted Hyena algorithms with stagnant-iteration diversification,
-reducing load shedding to 3.39 MW (IEEE EPREC 2026).
+\item Achieved $R^2=0.9994$, $>99.5\%$ tracking efficiency, MAE = 0.08 V, MAPE = 0.31\%, and $<5$ ms settling time in simulation; selected for presentation as co-author at IEEE SPICES 2026.
 
 \end{itemize}
 
@@ -302,13 +268,9 @@ reducing load shedding to 3.39 MW (IEEE EPREC 2026).
 
 \begin{itemize}
 
-\item Built simulation models of EV powertrains and battery management
-systems to analyze PMSM/BLDC motor-control behavior, DC--DC converter
-operation, battery integration, and CAN-based communication across
-subsystems.
+\item Analyzed multivariate simulation datasets and sensor telemetry from EV powertrain and BMS models, evaluating transient motor-control dynamics, DC--DC power conversion, and battery cell degradation curves.
 
-\item Worked with railway electrical systems and SCADA infrastructure
-alongside the core powertrain modeling work.
+\item Logged and preprocessed high-frequency CAN-bus communication data across vehicle subsystems; handled SCADA telemetry streams and operational event logs for railway electrical automation.
 
 \end{itemize}
 
@@ -327,9 +289,7 @@ alongside the core powertrain modeling work.
 
 \begin{itemize}
 
-\item Completed an AWS Academy program covering core cloud
-concepts, services, security, architecture, pricing, and support;
-credential issued as a verifiable Credly digital badge.
+\item Completed AWS Academy program on cloud concepts, services, security, architecture, and pricing; verifiable Credly badge.
 
 \end{itemize}
 
@@ -340,13 +300,15 @@ credential issued as a verifiable Credly digital badge.
 
 \begin{itemize}
 
-\item Co-author of a paper selected for IEEE SPICES 2026: ``Physics-Informed
-ANN-Based MPPT with Markov-Chain Validation for Photovoltaic Systems.''
+\item Co-author, ``Physics-Informed ANN-Based MPPT with Markov-Chain Validation,'' \textit{to be presented}, IEEE SPICES 2026.
+\\ {\small Formulated ANN-based MPPT validated with a Markov irradiance model; achieved $R^2=0.9994$, $>99.5\%$ tracking efficiency.}
 
-\item Co-author, ``Hybrid Optimization for Congestion Management in
-Deregulated Power Systems,'' IEEE EPREC 2026.
+\item Co-author, ``Hybrid Optimization for Congestion Management in Deregulated Power Systems,'' IEEE EPREC 2026.
 \href{https://doi.org/10.1109/EPREC66546.2026.11412040}
 {[\textbf{DOI: 10.1109/EPREC66546.2026.11412040}]}
+\href{https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems}
+{\small[\textbf{Code}]}
+\\ {\small Orca--Krill Herd--Spotted Hyena metaheuristic for DC-OPF on IEEE 14-bus; load shedding cut to 3.39 MW.}
 
 \end{itemize}
 
