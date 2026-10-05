@@ -518,40 +518,113 @@
         </div>
 
         <div class="lg:col-span-6">
-          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
-            <!-- 3D Hyperspectral Isometric Cube Graphic -->
-            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
-              <defs>
-                <linearGradient id="cubeGrad1" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#bf5af2" stop-opacity="0.3"/>
-                  <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.1"/>
-                </linearGradient>
-                <linearGradient id="laserGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9"/>
-                  <stop offset="100%" stop-color="#34d399" stop-opacity="0.9"/>
-                </linearGradient>
-              </defs>
-              <!-- 7 Layered Isometric Spectral Slices -->
-              <g class="transform transition-transform duration-500 group-hover:scale-105">
-                <path d="M120 70 L240 30 L320 80 L200 120 Z" fill="url(#cubeGrad1)" stroke="rgba(191,90,242,0.4)" stroke-width="1.2"/>
-                <path d="M120 88 L240 48 L320 98 L200 138 Z" fill="url(#cubeGrad1)" stroke="rgba(191,90,242,0.4)" stroke-width="1.2"/>
-                <path d="M120 106 L240 66 L320 116 L200 156 Z" fill="url(#cubeGrad1)" stroke="rgba(191,90,242,0.4)" stroke-width="1.2"/>
-                <!-- Laser Scanning Plane -->
-                <path d="M120 124 L240 84 L320 134 L200 174 Z" fill="rgba(56,189,248,0.2)" stroke="url(#laserGrad)" stroke-width="2" filter="drop-shadow(0 0 8px #38bdf8)"/>
-                <path d="M120 142 L240 102 L320 152 L200 192 Z" fill="url(#cubeGrad1)" stroke="rgba(191,90,242,0.4)" stroke-width="1.2"/>
-                <path d="M120 160 L240 120 L320 170 L200 210 Z" fill="url(#cubeGrad1)" stroke="rgba(191,90,242,0.4)" stroke-width="1.2"/>
-              </g>
-              <!-- Axis Annotations -->
-              <text x="60" y="80" fill="#bf5af2" font-family="JetBrains Mono" font-size="10" opacity="0.8">λ = 400nm</text>
-              <text x="60" y="170" fill="#38bdf8" font-family="JetBrains Mono" font-size="10" opacity="0.8">λ = 720nm</text>
-              <line x1="110" y1="80" x2="110" y2="165" stroke="rgba(255,255,255,0.2)" stroke-dasharray="3 3"/>
-              <!-- SHAP Feature Points -->
-              <circle cx="210" cy="125" r="3.5" fill="#34d399" filter="drop-shadow(0 0 5px #34d399)"/>
-              <circle cx="235" cy="115" r="3" fill="#38bdf8"/>
-              <circle cx="195" cy="140" r="3" fill="#bf5af2"/>
-            </svg>
+          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
+            <!-- Realistic Instrument Top Console Bar -->
+            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">SPECTRAL-CORE // 33-BAND SPATIAL-SPECTRAL 3D-CNN</span>
+              </div>
+              <div class="flex items-center gap-3 text-zinc-400">
+                <span class="hidden md:inline text-zinc-500">UWA-HSFD · 42ms LATENCY</span>
+                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  LIVE · 60 FPS
+                </span>
+              </div>
+            </div>
+            <!-- High-Fidelity Canvas -->
+            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
+              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
+  <defs>
+    <linearGradient id="specGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#bf5af2" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="scanLaser" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Coordinate Grids & Spatial Ticks -->
+  <g opacity="0.2" stroke="#38bdf8" stroke-width="0.8">
+    <line x1="20" y1="260" x2="480" y2="260"/>
+    <line x1="20" y1="40" x2="20" y2="260"/>
+    <line x1="140" y1="260" x2="140" y2="265"/>
+    <line x1="260" y1="260" x2="260" y2="265"/>
+    <line x1="380" y1="260" x2="380" y2="265"/>
+  </g>
+
+  <!-- Left: 3D Hyperspectral Isometric Datacube (33 Wavelength Slices) -->
+  <g transform="translate(15, 20)">
+    <!-- 8 Distinct Representative Slices of the 33-Band Cube -->
+    <path d="M50 80 L140 40 L210 75 L120 115 Z" fill="rgba(191,90,242,0.15)" stroke="#bf5af2" stroke-width="1.2"/>
+    <path d="M50 95 L140 55 L210 90 L120 130 Z" fill="rgba(191,90,242,0.12)" stroke="#bf5af2" stroke-width="1.1"/>
+    <path d="M50 110 L140 70 L210 105 L120 145 Z" fill="rgba(129,140,248,0.15)" stroke="#818cf8" stroke-width="1.1"/>
+    <path d="M50 125 L140 85 L210 120 L120 160 Z" fill="rgba(56,189,248,0.18)" stroke="#38bdf8" stroke-width="1.2"/>
+    
+    <!-- Active Scanning Kernel Slice -->
+    <path d="M50 140 L140 100 L210 135 L120 175 Z" fill="rgba(56,189,248,0.3)" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 0 10px #38bdf8)"/>
+    <!-- Simulated Facial Landmark Mesh on Active Slice -->
+    <ellipse cx="130" cy="138" rx="22" ry="14" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="120" cy="135" r="2" fill="#34d399"/>
+    <circle cx="140" cy="135" r="2" fill="#34d399"/>
+    <path d="M125 145 Q 130 148 135 145" stroke="#34d399" stroke-width="1.2" fill="none"/>
+
+    <path d="M50 155 L140 115 L210 150 L120 190 Z" fill="rgba(52,211,153,0.15)" stroke="#34d399" stroke-width="1.1"/>
+    <path d="M50 170 L140 130 L210 165 L120 205 Z" fill="rgba(52,211,153,0.12)" stroke="#34d399" stroke-width="1.1"/>
+    <path d="M50 185 L140 145 L210 180 L120 220 Z" fill="rgba(245,166,35,0.15)" stroke="#f5a623" stroke-width="1.2"/>
+
+    <!-- Depth Dimension Bracket & Scale -->
+    <line x1="38" y1="80" x2="38" y2="185" stroke="#86868b" stroke-width="1.2"/>
+    <polyline points="42,82 38,80 34,82" stroke="#86868b" stroke-width="1.2" fill="none"/>
+    <polyline points="42,183 38,185 34,183" stroke="#86868b" stroke-width="1.2" fill="none"/>
+    <text x="32" y="136" fill="#bf5af2" font-family="JetBrains Mono" font-size="8" text-anchor="end">λ=400nm</text>
+    <text x="32" y="190" fill="#f5a623" font-family="JetBrains Mono" font-size="8" text-anchor="end">λ=720nm</text>
+    <text x="125" y="240" fill="#a1a1a6" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle">33 Spectral Bands [H x W x 33]</text>
+  </g>
+
+  <!-- Right: Spectral SHAP Curve & ArcFace Geodesic Embeddings -->
+  <g transform="translate(260, 40)">
+    <!-- Header -->
+    <text x="0" y="12" fill="#38bdf8" font-family="JetBrains Mono" font-size="9" font-weight="bold">SPECTRAL SHAP ATTRIBUTION</text>
+    <text x="175" y="12" fill="#86868b" font-family="JetBrains Mono" font-size="8">φ(i) Index</text>
+
+    <!-- SHAP Curve Background Grid -->
+    <rect x="0" y="24" width="215" height="95" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.08)"/>
+    <line x1="10" y1="72" x2="205" y2="72" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2 3"/>
+
+    <!-- Continuous Spectral SHAP Importance Waveform -->
+    <path d="M10 85 Q 35 88 55 45 T 95 65 T 135 38 T 175 78 T 205 60" fill="none" stroke="#bf5af2" stroke-width="2" filter="drop-shadow(0 0 6px rgba(191,90,242,0.6))"/>
+    
+    <!-- Peak Feature Identifiers -->
+    <circle cx="55" cy="45" r="3" fill="#34d399"/>
+    <text x="55" y="38" fill="#34d399" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">540nm (Hb)</text>
+    <circle cx="135" cy="38" r="3" fill="#38bdf8"/>
+    <text x="135" y="31" fill="#38bdf8" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">620nm (Melanin)</text>
+
+    <!-- ArcFace Hyperspherical Geodesic Metric Box -->
+    <g transform="translate(0, 130)">
+      <rect x="0" y="0" width="215" height="65" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.08)"/>
+      <circle cx="35" cy="32" r="20" fill="none" stroke="#818cf8" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <line x1="35" y1="32" x2="49" y2="18" stroke="#34d399" stroke-width="1.8"/>
+      <line x1="35" y1="32" x2="53" y2="32" stroke="#38bdf8" stroke-width="1.8"/>
+      <path d="M49 18 A 20 20 0 0 1 53 32" fill="none" stroke="#f5a623" stroke-width="1.5"/>
+      <text x="58" y="27" fill="#f5a623" font-family="JetBrains Mono" font-size="8">θ + m</text>
+
+      <text x="75" y="22" fill="#ffffff" font-family="JetBrains Mono" font-size="9" font-weight="bold">ArcFace (s=30, m=0.5)</text>
+      <text x="75" y="36" fill="#86868b" font-family="JetBrains Mono" font-size="8">Angular Geodesic Loss</text>
+      <text x="75" y="50" fill="#34d399" font-family="JetBrains Mono" font-size="8.5">Edge Target: RPi 4 (42ms)</text>
+    </g>
+  </g>
+</svg>
+            </div>
           </div>
-        </div>
 
       </article>
 
@@ -561,9 +634,26 @@
       <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="cv" data-project-id="2">
         
         <div class="lg:col-span-6 order-2 lg:order-1">
-          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
-            <!-- Ultra-Realistic Aerial Drone Computer Vision Inspection HUD -->
-            <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
+          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
+            <!-- Realistic Instrument Top Console Bar -->
+            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">MISSION TELEMETRY // UAV-GRID-FLIR-02</span>
+              </div>
+              <div class="flex items-center gap-3 text-zinc-400">
+                <span class="hidden md:inline text-zinc-500">ALT: 42.4m AGL · 82.0% Acc</span>
+                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  DEFECT DETECTED
+                </span>
+              </div>
+            </div>
+            <!-- High-Fidelity Canvas -->
+            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
+              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
               <defs>
                 <linearGradient id="towerSteelGrad" x1="0" y1="0" x2="1" y2="1">
                   <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95"/>
@@ -723,8 +813,8 @@
                 <text x="10" y="17" fill="#38bdf8" font-family="JetBrains Mono" font-size="8.5">Dual Stream: 2048-D + GLCM</text>
               </g>
             </svg>
+            </div>
           </div>
-        </div>
 
         <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
           <div class="flex flex-wrap items-center gap-2.5">
@@ -820,37 +910,102 @@
         </div>
 
         <div class="lg:col-span-6">
-          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
-            <!-- Data Pipeline & Star Schema Graphic -->
-            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
-              <!-- Pipeline Ingest Flow -->
-              <rect x="30" y="90" width="70" height="60" rx="8" fill="rgba(245,166,35,0.12)" stroke="#f5a623" stroke-width="1.4"/>
-              <text x="44" y="118" fill="#f5a623" font-family="JetBrains Mono" font-size="10" font-weight="bold">3NF OLTP</text>
-              <text x="38" y="134" fill="#86868b" font-family="JetBrains Mono" font-size="8">1.5M Rows</text>
-              
-              <!-- Gatekeeper Node -->
-              <path d="M100 120 L150 120" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="3 3"/>
-              <polygon points="175,95 205,120 175,145 145,120" fill="rgba(56,189,248,0.12)" stroke="#38bdf8" stroke-width="1.4"/>
-              <text x="160" y="124" fill="#38bdf8" font-family="JetBrains Mono" font-size="9">22 QA</text>
+          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
+            <!-- Realistic Instrument Top Console Bar -->
+            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">DATA ARCHITECTURE // KIMBALL STAR SCHEMA & B-TREE ACCELERATOR</span>
+              </div>
+              <div class="flex items-center gap-3 text-zinc-400">
+                <span class="hidden md:inline text-zinc-500">100K+ Orders · 5.35x Speedup</span>
+                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  OPTIMIZED · 22 QA PASS
+                </span>
+              </div>
+            </div>
+            <!-- High-Fidelity Canvas -->
+            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
+              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
+  <!-- Schema Connection Rays -->
+  <line x1="250" y1="135" x2="90" y2="65" stroke="rgba(245,166,35,0.4)" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <line x1="250" y1="135" x2="410" y2="65" stroke="rgba(56,189,248,0.4)" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <line x1="250" y1="135" x2="90" y2="215" stroke="rgba(191,90,242,0.4)" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <line x1="250" y1="135" x2="410" y2="215" stroke="rgba(52,211,153,0.4)" stroke-width="1.4" stroke-dasharray="3 3"/>
 
-              <!-- Star Schema Hub -->
-              <path d="M205 120 L255 120" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-              <rect x="255" y="85" width="105" height="70" rx="8" fill="rgba(52,211,153,0.12)" stroke="#34d399" stroke-width="1.6"/>
-              <text x="272" y="112" fill="#34d399" font-family="JetBrains Mono" font-size="11" font-weight="bold">Fact Orders</text>
-              <text x="268" y="128" fill="#86868b" font-family="JetBrains Mono" font-size="8">Kimball Star Schema</text>
-              <text x="278" y="144" fill="#34d399" font-family="JetBrains Mono" font-size="9">5.35x Speedup</text>
+  <!-- Center: FACT_ORDERS Table (Kimball Star Schema Core) -->
+  <g transform="translate(170, 75)">
+    <rect x="0" y="0" width="160" height="120" rx="10" fill="#0d0d12" stroke="#f5a623" stroke-width="1.6" filter="drop-shadow(0 0 14px rgba(245,166,35,0.25))"/>
+    <rect x="0" y="0" width="160" height="26" rx="9" fill="#f5a623" fill-opacity="0.15"/>
+    <text x="80" y="17" fill="#f5a623" font-family="JetBrains Mono" font-size="9.5" font-weight="bold" text-anchor="middle">FACT_ORDERS [1.5M]</text>
+    <line x1="0" y1="26" x2="160" y2="26" stroke="#f5a623" stroke-width="1"/>
+    
+    <g font-family="JetBrains Mono" font-size="8" fill="#d1d1d6">
+      <text x="10" y="44"><tspan fill="#f5a623" font-weight="bold">#</tspan> order_id <tspan fill="#86868b">[PK]</tspan></text>
+      <text x="10" y="58"><tspan fill="#38bdf8">&gt;</tspan> customer_id <tspan fill="#86868b">[FK]</tspan></text>
+      <text x="10" y="72"><tspan fill="#bf5af2">&gt;</tspan> product_id <tspan fill="#86868b">[FK]</tspan></text>
+      <text x="10" y="86"><tspan fill="#34d399">$</tspan> payment_value</text>
+      <text x="10" y="100"><tspan fill="#86868b">@</tspan> delivered_timestamp</text>
+      <text x="10" y="112" fill="#34d399" font-weight="bold">✓ 22 QA Gatekeeper Pass</text>
+    </g>
+  </g>
 
-              <!-- Dimension Nodes Floating -->
-              <circle cx="280" cy="40" r="14" fill="#16161a" stroke="rgba(255,255,255,0.2)"/>
-              <text x="273" y="44" fill="#a1a1a6" font-family="JetBrains Mono" font-size="8">Dim</text>
-              <line x1="285" y1="54" x2="295" y2="85" stroke="rgba(255,255,255,0.2)"/>
+  <!-- Dimension 1: DIM_CUSTOMERS -->
+  <g transform="translate(15, 30)">
+    <rect x="0" y="0" width="130" height="65" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+    <rect x="0" y="0" width="130" height="20" rx="7" fill="white" fill-opacity="0.05"/>
+    <text x="65" y="14" fill="#38bdf8" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">DIM_CUSTOMERS</text>
+    <text x="10" y="36" fill="#86868b" font-family="JetBrains Mono" font-size="7.5">customer_id [PK]</text>
+    <text x="10" y="50" fill="#a1a1a6" font-family="JetBrains Mono" font-size="7.5">RFM_Segment: Champions</text>
+  </g>
 
-              <circle cx="330" cy="195" r="14" fill="#16161a" stroke="rgba(255,255,255,0.2)"/>
-              <text x="323" y="199" fill="#a1a1a6" font-family="JetBrains Mono" font-size="8">Dim</text>
-              <line x1="325" y1="181" x2="315" y2="155" stroke="rgba(255,255,255,0.2)"/>
-            </svg>
+  <!-- Dimension 2: DIM_PRODUCTS -->
+  <g transform="translate(355, 30)">
+    <rect x="0" y="0" width="130" height="65" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+    <rect x="0" y="0" width="130" height="20" rx="7" fill="white" fill-opacity="0.05"/>
+    <text x="65" y="14" fill="#bf5af2" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">DIM_PRODUCTS</text>
+    <text x="10" y="36" fill="#86868b" font-family="JetBrains Mono" font-size="7.5">product_id [PK]</text>
+    <text x="10" y="50" fill="#a1a1a6" font-family="JetBrains Mono" font-size="7.5">category_code, weight</text>
+  </g>
+
+  <!-- Dimension 3: DIM_GEOLOCATION -->
+  <g transform="translate(15, 185)">
+    <rect x="0" y="0" width="130" height="60" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+    <rect x="0" y="0" width="130" height="20" rx="7" fill="white" fill-opacity="0.05"/>
+    <text x="65" y="14" fill="#34d399" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">DIM_GEOLOCATION</text>
+    <text x="10" y="36" fill="#86868b" font-family="JetBrains Mono" font-size="7.5">zip_code_prefix [PK]</text>
+    <text x="10" y="48" fill="#a1a1a6" font-family="JetBrains Mono" font-size="7.5">lat / lng coordinates</text>
+  </g>
+
+  <!-- Dimension 4: B-TREE ACCELERATOR BENCHMARK -->
+  <g transform="translate(355, 185)">
+    <rect x="0" y="0" width="130" height="75" rx="8" fill="#0d0d12" stroke="#34d399" stroke-width="1.2"/>
+    <rect x="0" y="0" width="130" height="20" rx="7" fill="#34d399" fill-opacity="0.15"/>
+    <text x="65" y="14" fill="#34d399" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">B-TREE BENCHMARK</text>
+    
+    <!-- Comparison Bars -->
+    <rect x="10" y="28" width="105" height="12" rx="3" fill="#ef4444" fill-opacity="0.6"/>
+    <text x="14" y="37" fill="#ffffff" font-family="JetBrains Mono" font-size="7">Seq Scan: 142ms</text>
+    
+    <rect x="10" y="44" width="20" height="12" rx="3" fill="#34d399"/>
+    <text x="35" y="53" fill="#34d399" font-family="JetBrains Mono" font-size="7" font-weight="bold">26.5ms (5.35x)</text>
+    
+    <text x="10" y="68" fill="#34d399" font-family="JetBrains Mono" font-size="7.5" font-weight="bold">⚡ 81.3% Latency Drop</text>
+  </g>
+
+  <!-- Central Performance Ribbon -->
+  <g transform="translate(145, 215)">
+    <rect x="0" y="0" width="210" height="30" rx="15" fill="#07070a" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
+    <circle cx="16" cy="15" r="4" fill="#34d399"/>
+    <text x="28" y="19" fill="#ffffff" font-family="JetBrains Mono" font-size="8.5" font-weight="bold">PostgreSQL OLAP Engine</text>
+    <text x="140" y="19" fill="#f5a623" font-family="JetBrains Mono" font-size="8.5">RFM Window Fn</text>
+  </g>
+</svg>
+            </div>
           </div>
-        </div>
 
       </article>
 
@@ -860,27 +1015,81 @@
       <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="energy" data-project-id="4">
         
         <div class="lg:col-span-6 order-2 lg:order-1">
-          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
-            <!-- Harmonic Waveform & FFT Spectrum Graphic -->
-            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
-              <!-- Grid lines -->
-              <line x1="40" y1="120" x2="360" y2="120" stroke="rgba(255,255,255,0.15)"/>
-              <line x1="200" y1="20" x2="200" y2="220" stroke="rgba(255,255,255,0.08)"/>
-              <!-- Oscillating Harmonic Wave with Sag Disturbance -->
-              <path d="M40 120 Q 70 40 100 120 T 160 120 Q 180 80 200 120 T 240 120 Q 270 20 300 120 T 360 120" stroke="#38bdf8" stroke-width="2.2" fill="none" filter="drop-shadow(0 0 6px rgba(56,189,248,0.5))"/>
-              <!-- FFT Harmonic Peaks Spectrum -->
-              <rect x="60" y="150" width="8" height="50" rx="2" fill="#38bdf8"/>
-              <rect x="75" y="175" width="8" height="25" rx="2" fill="rgba(56,189,248,0.4)"/>
-              <rect x="90" y="165" width="8" height="35" rx="2" fill="rgba(191,90,242,0.6)"/>
-              <rect x="105" y="185" width="8" height="15" rx="2" fill="rgba(56,189,248,0.3)"/>
-              <text x="56" y="215" fill="#86868b" font-family="JetBrains Mono" font-size="8">50Hz (f0)</text>
-              <text x="92" y="215" fill="#bf5af2" font-family="JetBrains Mono" font-size="8">3rd</text>
-              <!-- 1D-CNN + BiLSTM Badge -->
-              <rect x="230" y="30" width="130" height="26" rx="13" fill="rgba(0,0,0,0.8)" stroke="#38bdf8"/>
-              <text x="242" y="47" fill="#38bdf8" font-family="JetBrains Mono" font-size="9">IEEE 1159 / 519 Class</text>
-            </svg>
+          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
+            <!-- Realistic Instrument Top Console Bar -->
+            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">DSP INSTRUMENT // IEEE 1159 & 519 HARMONIC ANALYZER</span>
+              </div>
+              <div class="flex items-center gap-3 text-zinc-400">
+                <span class="hidden md:inline text-zinc-500">50Hz Grid · THD: 8.42%</span>
+                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  1D-CNN + BiLSTM ACTIVE
+                </span>
+              </div>
+            </div>
+            <!-- High-Fidelity Canvas -->
+            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
+              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
+  <!-- Oscilloscope Display Grid Background -->
+  <rect x="20" y="25" width="460" height="250" rx="10" fill="#05080c" stroke="rgba(56,189,248,0.2)" stroke-width="1.5"/>
+  <g stroke="rgba(56,189,248,0.08)" stroke-width="0.8">
+    <line x1="20" y1="65" x2="480" y2="65"/><line x1="20" y1="105" x2="480" y2="105"/>
+    <line x1="20" y1="145" x2="480" y2="145"/><line x1="20" y1="185" x2="480" y2="185"/>
+    <line x1="20" y1="225" x2="480" y2="225"/>
+    <line x1="77" y1="25" x2="77" y2="275"/><line x1="135" y1="25" x2="135" y2="275"/>
+    <line x1="192" y1="25" x2="192" y2="275"/><line x1="250" y1="25" x2="250" y2="275"/>
+    <line x1="307" y1="25" x2="307" y2="275"/><line x1="365" y1="25" x2="365" y2="275"/>
+    <line x1="422" y1="25" x2="422" y2="275"/>
+  </g>
+  <!-- Center Reticle Cross -->
+  <line x1="20" y1="145" x2="480" y2="145" stroke="rgba(56,189,248,0.25)" stroke-width="1.2"/>
+  <line x1="250" y1="25" x2="250" y2="275" stroke="rgba(56,189,248,0.25)" stroke-width="1.2"/>
+
+  <!-- Channel 1: High-Voltage Waveform with Transient Sag & Harmonic Distortion -->
+  <path d="M25 145 Q 45 45 65 145 T 105 145 T 145 145 Q 165 95 185 145 T 225 145 Q 245 75 265 145 T 305 145 Q 325 35 345 145 T 385 145 T 425 145 T 465 145" fill="none" stroke="#38bdf8" stroke-width="2.4" filter="drop-shadow(0 0 8px rgba(56,189,248,0.6))"/>
+  
+  <!-- Transient Voltage Sag Envelope Marker -->
+  <rect x="140" y="80" width="95" height="130" rx="6" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <text x="187" y="95" fill="#ef4444" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">VOLTAGE SAG (0.68 p.u.)</text>
+
+  <!-- Channel 2 / FFT Bar Spectrum Overlay (Bottom Right) -->
+  <g transform="translate(280, 160)">
+    <rect x="0" y="0" width="185" height="100" rx="8" fill="#090d14" stroke="rgba(255,255,255,0.12)"/>
+    <text x="12" y="16" fill="#bf5af2" font-family="JetBrains Mono" font-size="8" font-weight="bold">FFT HARMONIC SPECTRUM</text>
+    <text x="175" y="16" fill="#34d399" font-family="JetBrains Mono" font-size="8" text-anchor="end">THD: 8.42%</text>
+    
+    <!-- Harmonic Bars: Fundamental (50Hz), 3rd, 5th, 7th, 9th -->
+    <rect x="25" y="30" width="14" height="55" rx="2" fill="#38bdf8"/>
+    <text x="32" y="93" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">50Hz</text>
+
+    <rect x="55" y="60" width="14" height="25" rx="2" fill="#bf5af2"/>
+    <text x="62" y="93" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">3rd</text>
+
+    <rect x="85" y="48" width="14" height="37" rx="2" fill="#ef4444"/>
+    <text x="92" y="93" fill="#ef4444" font-family="JetBrains Mono" font-size="7" font-weight="bold" text-anchor="middle">5th</text>
+
+    <rect x="115" y="68" width="14" height="17" rx="2" fill="#38bdf8" opacity="0.6"/>
+    <text x="122" y="93" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">7th</text>
+
+    <rect x="145" y="76" width="14" height="9" rx="2" fill="#86868b" opacity="0.5"/>
+    <text x="152" y="93" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">9th</text>
+  </g>
+
+  <!-- Classification Output Banner (Top Left) -->
+  <g transform="translate(35, 40)">
+    <rect x="0" y="0" width="200" height="42" rx="8" fill="#090d14" stroke="rgba(255,255,255,0.15)"/>
+    <circle cx="14" cy="14" r="3.5" fill="#34d399"/>
+    <text x="24" y="17" fill="#ffffff" font-family="JetBrains Mono" font-size="9" font-weight="bold">1D-CNN + BiLSTM Classifier</text>
+    <text x="12" y="32" fill="#34d399" font-family="JetBrains Mono" font-size="8">IEEE 1159 &amp; 519 Standard: Pass</text>
+  </g>
+</svg>
+            </div>
           </div>
-        </div>
 
         <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
           <div class="flex flex-wrap items-center gap-2.5">
@@ -976,30 +1185,116 @@
         </div>
 
         <div class="lg:col-span-6">
-          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
-            <!-- 5-Finger Hand Kinematics & IMU Graphic -->
-            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
-              <!-- Wrist Base -->
-              <rect x="160" y="170" width="80" height="45" rx="10" fill="rgba(52,211,153,0.12)" stroke="#34d399" stroke-width="1.6"/>
-              <text x="175" y="197" fill="#34d399" font-family="JetBrains Mono" font-size="9">ESP32 + BLE</text>
-              <!-- 5 Finger Strain Kinematics -->
-              <path d="M165 170 L130 110 L110 80" stroke="rgba(52,211,153,0.7)" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M180 170 L160 90 L155 50" stroke="rgba(52,211,153,0.7)" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M200 170 L200 80 L200 35" stroke="#34d399" stroke-width="2.6" stroke-linecap="round"/>
-              <path d="M220 170 L240 90 L245 50" stroke="rgba(52,211,153,0.7)" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M235 170 L270 120 L285 95" stroke="rgba(52,211,153,0.7)" stroke-width="2.2" stroke-linecap="round"/>
-              <!-- Finger Joints -->
-              <circle cx="110" cy="80" r="3.5" fill="#38bdf8"/>
-              <circle cx="155" cy="50" r="3.5" fill="#38bdf8"/>
-              <circle cx="200" cy="35" r="4" fill="#38bdf8" filter="drop-shadow(0 0 6px #38bdf8)"/>
-              <circle cx="245" cy="50" r="3.5" fill="#38bdf8"/>
-              <circle cx="285" cy="95" r="3.5" fill="#38bdf8"/>
-              <!-- 6-DoF Orientation Rings -->
-              <ellipse cx="200" cy="192" rx="25" ry="12" stroke="rgba(255,255,255,0.4)" stroke-dasharray="2 2"/>
-              <text x="30" y="40" fill="#38bdf8" font-family="JetBrains Mono" font-size="9">IMU: 6-DoF Fusion (Yaw ± 0.05°)</text>
-            </svg>
+          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
+            <!-- Realistic Instrument Top Console Bar -->
+            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">BIOMECHANICAL RIG // 6-DOF IMU & FLEX KINEMATICS</span>
+              </div>
+              <div class="flex items-center gap-3 text-zinc-400">
+                <span class="hidden md:inline text-zinc-500">ESP32 / BLE 5.0 · Sub-20ms Latency</span>
+                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  STREAMING · 3D TWIN
+                </span>
+              </div>
+            </div>
+            <!-- High-Fidelity Canvas -->
+            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
+              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
+  <!-- Biomechanical Grid -->
+  <g stroke="rgba(52,211,153,0.12)" stroke-width="0.8">
+    <circle cx="160" cy="150" r="100" stroke-dasharray="3 4"/>
+    <line x1="60" y1="150" x2="260" y2="150"/>
+    <line x1="160" y1="50" x2="160" y2="250"/>
+  </g>
+
+  <!-- Left: Anatomical Hand Kinematic Skeleton with 14 Articulated Nodes -->
+  <g id="hand-skeleton" transform="translate(40, 20)">
+    <!-- Palm Metacarpal Base -->
+    <path d="M120 230 L80 170 L110 135 L145 130 L175 140 L195 180 Z" fill="rgba(52,211,153,0.08)" stroke="#34d399" stroke-width="1.4"/>
+    <circle cx="120" cy="230" r="5" fill="#10b981" filter="drop-shadow(0 0 8px #10b981)"/>
+    <text x="120" y="248" fill="#34d399" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">Wrist MPU6050 (6-DoF)</text>
+
+    <!-- Thumb Joint Chain -->
+    <line x1="80" y1="170" x2="55" y2="140" stroke="#34d399" stroke-width="2"/>
+    <circle cx="55" cy="140" r="3.5" fill="#38bdf8"/>
+    <line x1="55" y1="140" x2="40" y2="115" stroke="#34d399" stroke-width="1.8"/>
+    <circle cx="40" cy="115" r="3" fill="#38bdf8"/>
+
+    <!-- Index Finger -->
+    <line x1="110" y1="135" x2="105" y2="95" stroke="#34d399" stroke-width="2"/>
+    <circle cx="105" cy="95" r="3.5" fill="#38bdf8"/>
+    <line x1="105" y1="95" x2="100" y2="60" stroke="#34d399" stroke-width="1.8"/>
+    <circle cx="100" cy="60" r="3" fill="#38bdf8"/>
+    <line x1="100" y1="60" x2="98" y2="35" stroke="#34d399" stroke-width="1.5"/>
+    <circle cx="98" cy="35" r="2.5" fill="#a7f3d0"/>
+
+    <!-- Middle Finger -->
+    <line x1="145" y1="130" x2="145" y2="85" stroke="#34d399" stroke-width="2"/>
+    <circle cx="145" cy="85" r="3.5" fill="#38bdf8"/>
+    <line x1="145" y1="85" x2="145" y2="50" stroke="#34d399" stroke-width="1.8"/>
+    <circle cx="145" cy="50" r="3" fill="#38bdf8"/>
+    <line x1="145" y1="50" x2="145" y2="25" stroke="#34d399" stroke-width="1.5"/>
+    <circle cx="145" cy="25" r="2.5" fill="#a7f3d0"/>
+
+    <!-- Ring Finger -->
+    <line x1="175" y1="140" x2="180" y2="95" stroke="#34d399" stroke-width="2"/>
+    <circle cx="180" cy="95" r="3.5" fill="#38bdf8"/>
+    <line x1="180" y1="95" x2="185" y2="65" stroke="#34d399" stroke-width="1.8"/>
+    <circle cx="185" cy="65" r="3" fill="#38bdf8"/>
+    <line x1="185" y1="65" x2="188" y2="40" stroke="#34d399" stroke-width="1.5"/>
+    <circle cx="188" cy="40" r="2.5" fill="#a7f3d0"/>
+
+    <!-- Pinky Finger -->
+    <line x1="195" y1="180" x2="215" y2="135" stroke="#34d399" stroke-width="2"/>
+    <circle cx="215" cy="135" r="3.5" fill="#38bdf8"/>
+    <line x1="215" y1="135" x2="225" y2="105" stroke="#34d399" stroke-width="1.8"/>
+    <circle cx="225" cy="105" r="3" fill="#38bdf8"/>
+    <line x1="225" y1="105" x2="230" y2="80" stroke="#34d399" stroke-width="1.5"/>
+    <circle cx="230" cy="80" r="2.5" fill="#a7f3d0"/>
+  </g>
+
+  <!-- Right: 6-DoF Sensor Fusion Triad & Telemetry Readouts -->
+  <g transform="translate(285, 35)">
+    <!-- 6-DoF Euler Triad Box -->
+    <rect x="0" y="0" width="190" height="90" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.1)"/>
+    <text x="14" y="18" fill="#34d399" font-family="JetBrains Mono" font-size="9" font-weight="bold">6-DoF SENSOR FUSION</text>
+    <text x="14" y="32" fill="#86868b" font-family="JetBrains Mono" font-size="7.5">Complementary Filter: α = 0.98</text>
+    
+    <!-- Triad Coordinate Vectors -->
+    <g transform="translate(35, 62)">
+      <line x1="0" y1="0" x2="25" y2="0" stroke="#ef4444" stroke-width="2"/>
+      <text x="28" y="3" fill="#ef4444" font-family="JetBrains Mono" font-size="7">X (Pitch: -8.1°)</text>
+      <line x1="0" y1="0" x2="0" y2="-22" stroke="#34d399" stroke-width="2"/>
+      <text x="3" y="-22" fill="#34d399" font-family="JetBrains Mono" font-size="7">Y (Roll: 12.4°)</text>
+      <line x1="0" y1="0" x2="-14" y2="14" stroke="#38bdf8" stroke-width="2"/>
+      <text x="-16" y="24" fill="#38bdf8" font-family="JetBrains Mono" font-size="7">Z (Yaw: ±0.05°)</text>
+    </g>
+
+    <!-- PPG Pulse Oximetry Waveform -->
+    <g transform="translate(0, 102)">
+      <rect x="0" y="0" width="190" height="58" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.1)"/>
+      <text x="12" y="16" fill="#f5a623" font-family="JetBrains Mono" font-size="8" font-weight="bold">PPG PULSE WAVEFORM</text>
+      <text x="175" y="16" fill="#34d399" font-family="JetBrains Mono" font-size="8" text-anchor="end">SpO2: 98% · 74 BPM</text>
+      <!-- Pulsatile wave -->
+      <path d="M12 40 Q 25 38 35 25 L 42 48 L 50 32 L 60 40 T 85 40 Q 98 38 108 25 L 115 48 L 123 32 L 133 40 T 175 40" fill="none" stroke="#f5a623" stroke-width="1.8"/>
+    </g>
+
+    <!-- BLE 5.0 Wireless Packet Sync -->
+    <g transform="translate(0, 172)">
+      <rect x="0" y="0" width="190" height="42" rx="8" fill="#090d14" stroke="#34d399" stroke-width="1"/>
+      <circle cx="14" cy="14" r="3.5" fill="#34d399"/>
+      <text x="24" y="17" fill="#ffffff" font-family="JetBrains Mono" font-size="8.5" font-weight="bold">BLE 5.0 Flutter 3D Twin</text>
+      <text x="12" y="32" fill="#86868b" font-family="JetBrains Mono" font-size="8">Packet: 0xFA31 · Latency: 14.8ms</text>
+    </g>
+  </g>
+</svg>
+            </div>
           </div>
-        </div>
 
       </article>
 
@@ -1009,26 +1304,84 @@
       <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="cv" data-project-id="6">
         
         <div class="lg:col-span-6 order-2 lg:order-1">
-          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
-            <!-- MRI Brain Slices & Swarm Particles Graphic -->
-            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
-              <!-- Brain Contour Iso-levels -->
-              <ellipse cx="200" cy="120" rx="90" ry="70" fill="rgba(191,90,242,0.06)" stroke="rgba(191,90,242,0.4)" stroke-width="1.4"/>
-              <ellipse cx="200" cy="120" rx="65" ry="50" stroke="rgba(191,90,242,0.6)" stroke-width="1.2"/>
-              <ellipse cx="200" cy="120" rx="40" ry="30" stroke="#bf5af2" stroke-width="1.6"/>
-              <!-- Multilevel Otsu Threshold Slices -->
-              <path d="M150 120 Q 200 90 250 120" stroke="#38bdf8" stroke-dasharray="3 3"/>
-              <!-- Swarm Convergence Particles -->
-              <circle cx="215" cy="110" r="3" fill="#34d399" filter="drop-shadow(0 0 6px #34d399)"/>
-              <circle cx="225" cy="115" r="2.5" fill="#34d399"/>
-              <circle cx="210" cy="128" r="2" fill="#34d399"/>
-              <circle cx="180" cy="100" r="2" fill="#bf5af2"/>
-              <circle cx="230" cy="140" r="2" fill="#bf5af2"/>
-              <text x="30" y="35" fill="#bf5af2" font-family="JetBrains Mono" font-size="9">PSO + GA Metaheuristics</text>
-              <text x="30" y="50" fill="#86868b" font-family="JetBrains Mono" font-size="9">Between-Class Variance Maxima</text>
-            </svg>
+          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
+            <!-- Realistic Instrument Top Console Bar -->
+            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">NEURO-IMAGING // PSO-GA MULTILEVEL OTSU SEGMENTATION</span>
+              </div>
+              <div class="flex items-center gap-3 text-zinc-400">
+                <span class="hidden md:inline text-zinc-500">Multimodal MRI · Haralick GLCM</span>
+                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  OPTIMAL THRESHOLDS
+                </span>
+              </div>
+            </div>
+            <!-- High-Fidelity Canvas -->
+            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
+              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
+  <!-- Left: Axial Brain MRI Scan Representation -->
+  <g transform="translate(25, 25)">
+    <!-- Skull Outer Bone Cortex -->
+    <ellipse cx="110" cy="120" rx="90" ry="110" fill="#0c0d12" stroke="rgba(255,255,255,0.25)" stroke-width="1.8"/>
+    <ellipse cx="110" cy="120" rx="84" ry="103" fill="#07080b" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    
+    <!-- Cerebral Hemispheres & Sulci Grooves -->
+    <path d="M110 25 C 105 70, 105 170, 110 215" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" stroke-dasharray="2 3"/>
+    <path d="M55 70 Q 80 85 70 120 T 60 170" stroke="rgba(191,90,242,0.3)" stroke-width="1.4" fill="none"/>
+    <path d="M165 70 Q 140 85 150 120 T 160 170" stroke="rgba(191,90,242,0.3)" stroke-width="1.4" fill="none"/>
+
+    <!-- Segmented Brain Tumor / Lesion Mask (Multilevel Otsu Delineation) -->
+    <path d="M125 90 Q 155 75 165 105 T 145 135 T 115 120 Z" fill="rgba(191,90,242,0.35)" stroke="#bf5af2" stroke-width="2" filter="drop-shadow(0 0 10px rgba(191,90,242,0.8))"/>
+    <circle cx="140" cy="105" r="3" fill="#ffffff"/>
+    <text x="140" y="148" fill="#bf5af2" font-family="JetBrains Mono" font-size="8" font-weight="bold" text-anchor="middle">LESION MASK</text>
+
+    <!-- Scan Coordinates -->
+    <text x="110" y="240" fill="#86868b" font-family="JetBrains Mono" font-size="8" text-anchor="middle">AXIAL T2-FLAIR SLICE #42</text>
+  </g>
+
+  <!-- Right: Multilevel Otsu Variance Histogram & GLCM Radar Chart -->
+  <g transform="translate(255, 30)">
+    <!-- Histogram Window -->
+    <rect x="0" y="0" width="220" height="105" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.1)"/>
+    <text x="12" y="16" fill="#bf5af2" font-family="JetBrains Mono" font-size="8.5" font-weight="bold">INTENSITY HISTOGRAM h(i)</text>
+    <text x="205" y="16" fill="#34d399" font-family="JetBrains Mono" font-size="8" text-anchor="end">PSO-GA Optimal</text>
+
+    <!-- Multi-modal Gray Intensity Curve -->
+    <path d="M15 90 Q 35 30 55 75 T 95 40 T 135 70 T 175 45 T 205 90" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.4"/>
+    
+    <!-- Threshold Cutoff Markers (t1, t2, t3) -->
+    <line x1="68" y1="28" x2="68" y2="90" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="2 2"/>
+    <text x="68" y="100" fill="#38bdf8" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">t₁=74</text>
+
+    <line x1="118" y1="28" x2="118" y2="90" stroke="#bf5af2" stroke-width="2"/>
+    <text x="118" y="100" fill="#bf5af2" font-family="JetBrains Mono" font-size="8" font-weight="bold" text-anchor="middle">t₂=138*</text>
+
+    <line x1="165" y1="28" x2="165" y2="90" stroke="#34d399" stroke-width="1.6" stroke-dasharray="2 2"/>
+    <text x="165" y="100" fill="#34d399" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">t₃=192</text>
+
+    <!-- GLCM Haralick Texture Metrics Box -->
+    <g transform="translate(0, 120)">
+      <rect x="0" y="0" width="220" height="90" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.1)"/>
+      <text x="12" y="16" fill="#ffffff" font-family="JetBrains Mono" font-size="8.5" font-weight="bold">GLCM HARALICK TEXTURE METRICS</text>
+      
+      <g font-family="JetBrains Mono" font-size="8" fill="#a1a1a6">
+        <text x="12" y="34">Contrast: <tspan fill="#34d399" font-weight="bold">0.842</tspan></text>
+        <text x="115" y="34">Homogeneity: <tspan fill="#34d399" font-weight="bold">0.912</tspan></text>
+        <text x="12" y="52">Correlation: <tspan fill="#38bdf8" font-weight="bold">0.785</tspan></text>
+        <text x="115" y="52">Energy: <tspan fill="#38bdf8" font-weight="bold">0.654</tspan></text>
+        <text x="12" y="70">Entropy: <tspan fill="#bf5af2" font-weight="bold">2.14 J/K</tspan></text>
+        <text x="115" y="70" fill="#34d399" font-weight="bold">Random Forest: Valid</text>
+      </g>
+    </g>
+  </g>
+</svg>
+            </div>
           </div>
-        </div>
 
         <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
           <div class="flex flex-wrap items-center gap-2.5">
@@ -1124,36 +1477,97 @@
         </div>
 
         <div class="lg:col-span-6">
-          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
-            <!-- Automata State Machine Transition Graphic -->
-            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
-              <!-- States -->
-              <circle cx="80" cy="120" r="24" fill="#16161a" stroke="#38bdf8" stroke-width="1.8"/>
-              <text x="72" y="125" fill="#38bdf8" font-family="JetBrains Mono" font-size="12" font-weight="bold">q0</text>
+          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
+            <!-- Realistic Instrument Top Console Bar -->
+            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">SAFETY KERNEL // DFA/PDA FORMAL STATE INVARIANT PROVER</span>
+              </div>
+              <div class="flex items-center gap-3 text-zinc-400">
+                <span class="hidden md:inline text-zinc-500">ISO 26262 ASIL-D Verifier</span>
+                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  PROVABLY SAFE
+                </span>
+              </div>
+            </div>
+            <!-- High-Fidelity Canvas -->
+            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
+              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
+  <!-- Formal Transition Guards & State Space Network -->
+  <g transform="translate(15, 30)">
+    <!-- State q0: Cruise -->
+    <circle cx="60" cy="80" r="28" fill="#0d0d12" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="60" cy="80" r="24" fill="none" stroke="#38bdf8" stroke-width="0.8"/>
+    <text x="60" y="77" fill="#38bdf8" font-family="JetBrains Mono" font-size="12" font-weight="bold" text-anchor="middle">q₀</text>
+    <text x="60" y="89" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">CRUISE</text>
 
-              <circle cx="200" cy="120" r="24" fill="#16161a" stroke="rgba(255,255,255,0.4)" stroke-width="1.8"/>
-              <text x="192" y="125" fill="#ffffff" font-family="JetBrains Mono" font-size="12" font-weight="bold">q1</text>
+    <!-- Transition q0 -> q1 -->
+    <path d="M88 80 L162 80" stroke="#38bdf8" stroke-width="1.8"/>
+    <polygon points="162,80 152,75 152,85" fill="#38bdf8"/>
+    <text x="125" y="72" fill="#86868b" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">σ_anom / push(E)</text>
 
-              <!-- Double Ring Accepting Safe State -->
-              <circle cx="320" cy="120" r="26" fill="#16161a" stroke="#34d399" stroke-width="1.8" filter="drop-shadow(0 0 8px rgba(52,211,153,0.4))"/>
-              <circle cx="320" cy="120" r="20" fill="none" stroke="#34d399" stroke-width="1.4"/>
-              <text x="303" y="124" fill="#34d399" font-family="JetBrains Mono" font-size="10" font-weight="bold">qSafe</text>
+    <!-- State q1: Sensor Discrepancy -->
+    <circle cx="190" cy="80" r="28" fill="#0d0d12" stroke="#f5a623" stroke-width="2"/>
+    <text x="190" y="77" fill="#f5a623" font-family="JetBrains Mono" font-size="12" font-weight="bold" text-anchor="middle">q₁</text>
+    <text x="190" y="89" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">DISCREPANCY</text>
 
-              <!-- Transitions -->
-              <path d="M104 120 L176 120" stroke="#38bdf8" stroke-width="1.5"/>
-              <polygon points="176,120 166,115 166,125" fill="#38bdf8"/>
-              <text x="125" y="112" fill="#86868b" font-family="JetBrains Mono" font-size="9">telemetry</text>
+    <!-- Transition q1 -> q2 -->
+    <path d="M218 80 L292 80" stroke="#ef4444" stroke-width="1.8"/>
+    <polygon points="292,80 282,75 282,85" fill="#ef4444"/>
+    <text x="255" y="72" fill="#ef4444" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">Δt &gt; τ / brake()</text>
 
-              <path d="M224 120 L294 120" stroke="#34d399" stroke-width="1.5"/>
-              <polygon points="294,120 284,115 284,125" fill="#34d399"/>
-              <text x="242" y="112" fill="#86868b" font-family="JetBrains Mono" font-size="9">verified</text>
+    <!-- State q2: Emergency Brake -->
+    <circle cx="320" cy="80" r="28" fill="#0d0d12" stroke="#ef4444" stroke-width="2"/>
+    <text x="320" y="77" fill="#ef4444" font-family="JetBrains Mono" font-size="12" font-weight="bold" text-anchor="middle">q₂</text>
+    <text x="320" y="89" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">BRAKING</text>
 
-              <!-- Stack / PDA Loop -->
-              <path d="M190 96 C 180 50, 220 50, 210 96" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" fill="none"/>
-              <text x="175" y="44" fill="#86868b" font-family="JetBrains Mono" font-size="9">stack(push)</text>
-            </svg>
+    <!-- State q3 (Accept/Safe Stop): Double Circle -->
+    <circle cx="430" cy="80" r="28" fill="#0d0d12" stroke="#34d399" stroke-width="2"/>
+    <circle cx="430" cy="80" r="22" fill="none" stroke="#34d399" stroke-width="1.4"/>
+    <text x="430" y="77" fill="#34d399" font-family="JetBrains Mono" font-size="12" font-weight="bold" text-anchor="middle">q_safe</text>
+    <text x="430" y="89" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">ZERO RISK</text>
+
+    <!-- Transition q2 -> q3 -->
+    <path d="M348 80 L402 80" stroke="#34d399" stroke-width="1.8"/>
+    <polygon points="402,80 392,75 392,85" fill="#34d399"/>
+  </g>
+
+  <!-- Bottom Left: PDA Stack Memory Tape -->
+  <g transform="translate(30, 170)">
+    <rect x="0" y="0" width="200" height="75" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.1)"/>
+    <text x="12" y="16" fill="#38bdf8" font-family="JetBrains Mono" font-size="8.5" font-weight="bold">PDA STACK INVARIANT MEMORY</text>
+    
+    <!-- Stack Cells -->
+    <g transform="translate(12, 28)">
+      <rect x="0" y="0" width="30" height="32" rx="4" fill="#16161f" stroke="#38bdf8"/>
+      <text x="15" y="20" fill="#38bdf8" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle">E₀</text>
+      
+      <rect x="35" y="0" width="30" height="32" rx="4" fill="#16161f" stroke="#f5a623"/>
+      <text x="50" y="20" fill="#f5a623" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle">S_f</text>
+
+      <rect x="70" y="0" width="30" height="32" rx="4" fill="#16161f" stroke="#ef4444"/>
+      <text x="85" y="20" fill="#ef4444" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle">Z_b</text>
+
+      <text x="110" y="20" fill="#34d399" font-family="JetBrains Mono" font-size="8">Top → Verified</text>
+    </g>
+  </g>
+
+  <!-- Bottom Right: Formal Safety Proof Formula -->
+  <g transform="translate(255, 170)">
+    <rect x="0" y="0" width="215" height="75" rx="8" fill="#0d0d12" stroke="#34d399" stroke-width="1.2"/>
+    <text x="14" y="18" fill="#34d399" font-family="JetBrains Mono" font-size="9" font-weight="bold">FORMAL SAFETY PROOF</text>
+    
+    <text x="14" y="38" fill="#ffffff" font-family="JetBrains Mono" font-size="8.5">∀ t ≥ 0, dist(t) &gt; d_min(v)</text>
+    <text x="14" y="52" fill="#86868b" font-family="JetBrains Mono" font-size="8">Proof Method: Hoare Logic Invariants</text>
+    <text x="14" y="66" fill="#34d399" font-family="JetBrains Mono" font-size="8" font-weight="bold">✓ Provably Deadlock-Free Engine</text>
+  </g>
+</svg>
+            </div>
           </div>
-        </div>
 
       </article>
 
@@ -1163,32 +1577,81 @@
       <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="energy" data-project-id="8">
         
         <div class="lg:col-span-6 order-2 lg:order-1">
-          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
-            <!-- IEEE 14-Bus Electrical Topology Graphic -->
-            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
-              <!-- Electrical Transmission Lines -->
-              <line x1="80" y1="80" x2="200" y2="50" stroke="rgba(52,211,153,0.6)" stroke-width="1.8"/>
-              <line x1="200" y1="50" x2="320" y2="90" stroke="rgba(52,211,153,0.6)" stroke-width="1.8"/>
-              <line x1="80" y1="80" x2="140" y2="160" stroke="rgba(52,211,153,0.4)" stroke-width="1.5"/>
-              <line x1="200" y1="50" x2="200" y2="170" stroke="#34d399" stroke-width="2.2" filter="drop-shadow(0 0 6px #34d399)"/>
-              <line x1="320" y1="90" x2="270" y2="170" stroke="rgba(52,211,153,0.4)" stroke-width="1.5"/>
-              <line x1="140" y1="160" x2="200" y2="170" stroke="rgba(52,211,153,0.6)" stroke-width="1.8"/>
-              <line x1="200" y1="170" x2="270" y2="170" stroke="rgba(52,211,153,0.6)" stroke-width="1.8"/>
+          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
+            <!-- Realistic Instrument Top Console Bar -->
+            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">GRID SCADA // IEEE 14-BUS SENSITIVITY MATRIX & DC-OPF</span>
+              </div>
+              <div class="flex items-center gap-3 text-zinc-400">
+                <span class="hidden md:inline text-zinc-500">IEEE EPREC 2026 · IIT Bhilai</span>
+                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  CONGESTION RELIEVED
+                </span>
+              </div>
+            </div>
+            <!-- High-Fidelity Canvas -->
+            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
+              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
+  <!-- Power Grid Bus Network Topology (IEEE 14-Bus) -->
+  <g stroke="rgba(255,255,255,0.2)" stroke-width="1.6">
+    <!-- Transmission Lines -->
+    <line x1="80" y1="80" x2="200" y2="80"/>
+    <line x1="80" y1="80" x2="120" y2="190"/>
+    <!-- Overloaded Line (Bus 2 to Bus 3) highlighted in Amber/Red with Dynamic Flow -->
+    <line x1="200" y1="80" x2="340" y2="80" stroke="#f5a623" stroke-width="3" filter="drop-shadow(0 0 6px #f5a623)"/>
+    <line x1="200" y1="80" x2="230" y2="190"/>
+    <line x1="340" y1="80" x2="420" y2="150"/>
+    <line x1="120" y1="190" x2="230" y2="190"/>
+    <line x1="230" y1="190" x2="330" y2="210"/>
+    <line x1="330" y1="210" x2="420" y2="150"/>
+  </g>
 
-              <!-- Grid Bus Nodes -->
-              <circle cx="80" cy="80" r="7" fill="#16161a" stroke="#34d399" stroke-width="2"/>
-              <circle cx="200" cy="50" r="9" fill="#34d399" filter="drop-shadow(0 0 8px #34d399)"/>
-              <circle cx="320" cy="90" r="7" fill="#16161a" stroke="#34d399" stroke-width="2"/>
-              <circle cx="140" cy="160" r="7" fill="#16161a" stroke="#34d399" stroke-width="2"/>
-              <circle cx="200" cy="170" r="7" fill="#16161a" stroke="#38bdf8" stroke-width="2"/>
-              <circle cx="270" cy="170" r="7" fill="#16161a" stroke="#34d399" stroke-width="2"/>
+  <!-- Power Flow Direction Arrow on Overloaded Line -->
+  <polygon points="275,76 285,80 275,84" fill="#f5a623"/>
+  <rect x="235" y="55" width="90" height="18" rx="4" fill="#0f0f14" stroke="#f5a623"/>
+  <text x="280" y="67" fill="#f5a623" font-family="JetBrains Mono" font-size="8" font-weight="bold" text-anchor="middle">P_23: 104% LIMIT</text>
 
-              <text x="215" y="55" fill="#ffffff" font-family="JetBrains Mono" font-size="10" font-weight="bold">Bus 1 (Gen)</text>
-              <text x="215" y="115" fill="#34d399" font-family="JetBrains Mono" font-size="9">C = AB Sensitivity</text>
-              <text x="40" y="215" fill="#86868b" font-family="JetBrains Mono" font-size="9">IEEE 14-Bus System · Zero Thermal Violations</text>
-            </svg>
+  <!-- Bus 1 (Slack Generator G1) -->
+  <circle cx="80" cy="80" r="18" fill="#0d0d12" stroke="#34d399" stroke-width="2.2"/>
+  <text x="80" y="78" fill="#34d399" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle">G₁</text>
+  <text x="80" y="89" fill="#86868b" font-family="JetBrains Mono" font-size="6.5" text-anchor="middle">BUS 1</text>
+
+  <!-- Bus 2 (Generator G2) -->
+  <circle cx="200" cy="80" r="18" fill="#0d0d12" stroke="#38bdf8" stroke-width="2.2"/>
+  <text x="200" y="78" fill="#38bdf8" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle">G₂</text>
+  <text x="200" y="89" fill="#86868b" font-family="JetBrains Mono" font-size="6.5" text-anchor="middle">BUS 2</text>
+
+  <!-- Bus 3 (Load Substation) -->
+  <rect x="325" y="65" width="30" height="30" rx="4" fill="#0d0d12" stroke="#bf5af2" stroke-width="2"/>
+  <text x="340" y="83" fill="#bf5af2" font-family="JetBrains Mono" font-size="9" font-weight="bold" text-anchor="middle">B₃</text>
+
+  <!-- Bus 4 (Load Substation) -->
+  <rect x="405" y="135" width="30" height="30" rx="4" fill="#0d0d12" stroke="#a1a1a6" stroke-width="1.8"/>
+  <text x="420" y="153" fill="#ffffff" font-family="JetBrains Mono" font-size="9" text-anchor="middle">B₄</text>
+
+  <!-- Bus 5 (Substation) -->
+  <rect x="105" y="175" width="30" height="30" rx="4" fill="#0d0d12" stroke="#a1a1a6" stroke-width="1.8"/>
+  <text x="120" y="193" fill="#ffffff" font-family="JetBrains Mono" font-size="9" text-anchor="middle">B₅</text>
+
+  <!-- Bus 6 (Substation) -->
+  <rect x="215" y="175" width="30" height="30" rx="4" fill="#0d0d12" stroke="#a1a1a6" stroke-width="1.8"/>
+  <text x="230" y="193" fill="#ffffff" font-family="JetBrains Mono" font-size="9" text-anchor="middle">B₆</text>
+
+  <!-- Generator Sensitivity Matrix (Bottom HUD) -->
+  <g transform="translate(45, 235)">
+    <rect x="0" y="0" width="410" height="48" rx="8" fill="#090d14" stroke="rgba(255,255,255,0.12)"/>
+    <text x="15" y="18" fill="#38bdf8" font-family="JetBrains Mono" font-size="9" font-weight="bold">GENERATOR SENSITIVITY MATRIX [GS_ij]</text>
+    <text x="15" y="34" fill="#86868b" font-family="JetBrains Mono" font-size="8">γ_23 = ∂P_23/∂P_G2 = -0.421 · Optimal Rescheduling: Line loading → 88.5%</text>
+    <text x="395" y="24" fill="#34d399" font-family="JetBrains Mono" font-size="9" font-weight="bold" text-anchor="end">IEEE EPREC 2026</text>
+  </g>
+</svg>
+            </div>
           </div>
-        </div>
 
         <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
           <div class="flex flex-wrap items-center gap-2.5">
@@ -1286,29 +1749,74 @@
         </div>
 
         <div class="lg:col-span-6">
-          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
-            <!-- Photovoltaic P-V Curve & Markov States Graphic -->
-            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
-              <!-- Voltage / Power Axes -->
-              <line x1="50" y1="190" x2="350" y2="190" stroke="rgba(255,255,255,0.2)"/>
-              <line x1="50" y1="40" x2="50" y2="190" stroke="rgba(255,255,255,0.2)"/>
-              <text x="340" y="205" fill="#86868b" font-family="JetBrains Mono" font-size="9">Voltage V</text>
-              <text x="15" y="45" fill="#86868b" font-family="JetBrains Mono" font-size="9">Power P</text>
-              
-              <!-- Non-linear P-V Curves -->
-              <path d="M50 190 Q 200 40 240 70 L 290 190" stroke="#38bdf8" stroke-width="2.4" fill="none" filter="drop-shadow(0 0 8px rgba(56,189,248,0.5))"/>
-              <path d="M50 190 Q 180 80 215 105 L 260 190" stroke="rgba(56,189,248,0.3)" stroke-width="1.6" fill="none"/>
+          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
+            <!-- Realistic Instrument Top Console Bar -->
+            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">SOLAR PHYSICS // PINN PHOTOVOLTAIC SEMICONDUCTOR MPPT</span>
+              </div>
+              <div class="flex items-center gap-3 text-zinc-400">
+                <span class="hidden md:inline text-zinc-500">IEEE SPICES 2026 · R² = 0.9994</span>
+                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  DYNAMIC MPP TRACKING
+                </span>
+              </div>
+            </div>
+            <!-- High-Fidelity Canvas -->
+            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
+              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
+  <!-- Voltage & Power Laboratory Coordinate System -->
+  <g stroke="rgba(255,255,255,0.15)" stroke-width="1.2">
+    <line x1="60" y1="230" x2="450" y2="230"/>
+    <line x1="60" y1="40" x2="60" y2="230"/>
+  </g>
+  <text x="445" y="246" fill="#86868b" font-family="JetBrains Mono" font-size="8.5">Voltage V (Volts)</text>
+  <text x="25" y="45" fill="#38bdf8" font-family="JetBrains Mono" font-size="8.5">Power P (Watts)</text>
 
-              <!-- Maximum Power Point -->
-              <circle cx="240" cy="70" r="5" fill="#34d399" filter="drop-shadow(0 0 8px #34d399)"/>
-              <text x="252" y="72" fill="#34d399" font-family="JetBrains Mono" font-size="10" font-weight="bold">MPP (99.94%)</text>
-              
-              <!-- Markov Weather State Annotation -->
-              <rect x="70" y="70" width="100" height="24" rx="6" fill="#16161a" stroke="rgba(255,255,255,0.15)"/>
-              <text x="78" y="86" fill="#86868b" font-family="JetBrains Mono" font-size="9">2D Markov Grid</text>
-            </svg>
+  <!-- P-V Characteristic Curve Family for Irradiance G = 1000, 800, 600 W/m2 -->
+  <!-- G = 1000 W/m2 -->
+  <path d="M60 230 Q 230 40 290 65 L 350 230" stroke="#38bdf8" stroke-width="2.5" fill="none" filter="drop-shadow(0 0 8px rgba(56,189,248,0.5))"/>
+  <text x="355" y="85" fill="#38bdf8" font-family="JetBrains Mono" font-size="7.5">1000 W/m²</text>
+
+  <!-- G = 800 W/m2 -->
+  <path d="M60 230 Q 210 85 260 105 L 330 230" stroke="rgba(56,189,248,0.5)" stroke-width="1.8" fill="none"/>
+  <text x="335" y="125" fill="rgba(56,189,248,0.7)" font-family="JetBrains Mono" font-size="7.5">800 W/m²</text>
+
+  <!-- G = 600 W/m2 -->
+  <path d="M60 230 Q 190 130 230 145 L 310 230" stroke="rgba(56,189,248,0.25)" stroke-width="1.4" fill="none"/>
+
+  <!-- Maximum Power Point (MPP) Dynamic Locking Point -->
+  <circle cx="290" cy="65" r="6" fill="#34d399" filter="drop-shadow(0 0 10px #34d399)"/>
+  <circle cx="290" cy="65" r="2.5" fill="#ffffff"/>
+  
+  <!-- MPP Coordinates Annotation -->
+  <line x1="290" y1="65" x2="290" y2="230" stroke="#34d399" stroke-width="1" stroke-dasharray="2 3"/>
+  <rect x="235" y="30" width="115" height="22" rx="5" fill="#0d0d12" stroke="#34d399" stroke-width="1.2"/>
+  <text x="292" y="44" fill="#34d399" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">MPP (99.94% EFF)</text>
+
+  <!-- PINN Semiconductor Physics Residual Box -->
+  <g transform="translate(80, 80)">
+    <rect x="0" y="0" width="165" height="65" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.12)"/>
+    <text x="10" y="16" fill="#f5a623" font-family="JetBrains Mono" font-size="8" font-weight="bold">PINN PHYSICS LOSS</text>
+    <text x="10" y="32" fill="#ffffff" font-family="JetBrains Mono" font-size="7.5">f_loss = I - I_ph + I_0(e^qV - 1)</text>
+    <text x="10" y="46" fill="#86868b" font-family="JetBrains Mono" font-size="7">Diode Semiconductor Law</text>
+    <text x="10" y="58" fill="#34d399" font-family="JetBrains Mono" font-size="7.5" font-weight="bold">R² = 0.9994 · Sub-5ms Settling</text>
+  </g>
+
+  <!-- 2D Markov Irradiance Grid HUD -->
+  <g transform="translate(80, 160)">
+    <rect x="0" y="0" width="165" height="55" rx="8" fill="#090d14" stroke="rgba(56,189,248,0.3)"/>
+    <text x="10" y="16" fill="#38bdf8" font-family="JetBrains Mono" font-size="8" font-weight="bold">2D MARKOV WEATHER GRID</text>
+    <text x="10" y="32" fill="#86868b" font-family="JetBrains Mono" font-size="7.5">P(G_t+1 | G_t, G_t-1) Stochastic</text>
+    <text x="10" y="46" fill="#38bdf8" font-family="JetBrains Mono" font-size="7.5">IEEE SPICES 2026 Presentation</text>
+  </g>
+</svg>
+            </div>
           </div>
-        </div>
 
       </article>
 
@@ -1566,7 +2074,7 @@
   <!-- ===================================================================== -->
   <!-- MINIMALIST CINEMATIC FOOTER                                           -->
   <!-- ===================================================================== -->
-  <footer class="py-20 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.08]">
+  <footer class="py-20 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/[0.08]">
     
     <div class="mb-14">
       <h2 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight">
@@ -1574,30 +2082,60 @@
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-white/[0.08] text-xs font-mono">
-      <div>
-        <span class="text-zinc-500 uppercase tracking-widest block mb-3">Direct Contact</span>
-        <a href="mailto:niranjankrishnakumar2005@gmail.com" class="text-white hover:text-sky-400 block mb-1">niranjankrishnakumar2005@gmail.com</a>
-        <span class="text-[#86868b] block">+91 88838 13030</span>
+    <!-- Expanded Elegant Footer Grid (Zero Column Collisions) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-16 border-b border-white/[0.08]">
+      
+      <!-- Left Column: Direct Communication Card (Span 6) -->
+      <div class="lg:col-span-6 space-y-4">
+        <span class="text-xs font-mono uppercase tracking-widest text-sky-400 font-semibold block">Direct Communication &amp; Inquiries</span>
+        <div class="p-6 sm:p-7 rounded-2xl bg-[#0e0e12] border border-white/[0.08] space-y-4 shadow-xl">
+          <div class="flex items-center justify-between gap-4">
+            <span class="text-xs font-mono text-zinc-500 uppercase tracking-wider">Direct Email</span>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Active
+            </span>
+          </div>
+          <a href="mailto:niranjankrishnakumar2005@gmail.com" class="text-white hover:text-sky-400 font-mono text-sm sm:text-base font-semibold block transition-colors break-all leading-snug">
+            niranjankrishnakumar2005@gmail.com
+          </a>
+          <div class="pt-4 border-t border-white/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono text-[#86868b]">
+            <a href="tel:+918883813030" class="hover:text-white transition-colors text-white">+91 88838 13030</a>
+            <span class="text-emerald-400 font-medium">B.Tech ELC '27 (Amrita Vishwa Vidyapeetham)</span>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <span class="text-zinc-500 uppercase tracking-widest block mb-3">Social &amp; Code</span>
-        <a href="https://github.com/niranjan-crypt" target="_blank" rel="noopener noreferrer" class="text-white hover:text-sky-400 block mb-1">GitHub ↗</a>
-        <a href="https://www.credly.com/badges/eaed5b78-e6d1-426e-8be1-6a1c66f2bc7e/print" target="_blank" rel="noopener noreferrer" class="text-white hover:text-sky-400 block">Credly AWS ↗</a>
+      <!-- Right Column: Navigation & Research (Span 6) -->
+      <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-3 gap-8 text-xs font-mono pt-2">
+        <div>
+          <span class="text-zinc-500 uppercase tracking-widest block mb-4 font-semibold">Code &amp; Cloud</span>
+          <ul class="space-y-3">
+            <li><a href="https://github.com/niranjan-crypt" target="_blank" rel="noopener noreferrer" class="text-white hover:text-sky-400 block transition-colors">GitHub Profile ↗</a></li>
+            <li><a href="https://github.com/niranjan-crypt?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-[#a1a1a6] hover:text-white block transition-colors">All Repositories ↗</a></li>
+            <li><a href="https://www.credly.com/badges/eaed5b78-e6d1-426e-8be1-6a1c66f2bc7e/print" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline block transition-colors">AWS Verified Badge ↗</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="text-zinc-500 uppercase tracking-widest block mb-4 font-semibold">Academic</span>
+          <ul class="space-y-3">
+            <li><a href="https://doi.org/10.1109/EPREC66546.2026.11412040" target="_blank" rel="noopener noreferrer" class="text-white hover:text-sky-400 block transition-colors">IEEE EPREC '26 ↗</a></li>
+            <li><span class="text-[#a1a1a6] block">IEEE SPICES '26</span></li>
+            <li><a href="#publications" class="text-sky-400 hover:underline block transition-colors">BibTeX Citations ↓</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="text-zinc-500 uppercase tracking-widest block mb-4 font-semibold">Credentials</span>
+          <ul class="space-y-3">
+            <li><a href="resume.html" class="text-white hover:text-sky-400 font-semibold block transition-colors">Full Resume ↗</a></li>
+            <li><span class="text-[#a1a1a6] block">L&amp;T Powertrain Intern</span></li>
+            <li><span class="text-zinc-500 block">Coimbatore, India</span></li>
+          </ul>
+        </div>
       </div>
 
-      <div>
-        <span class="text-zinc-500 uppercase tracking-widest block mb-3">Research</span>
-        <a href="https://doi.org/10.1109/EPREC66546.2026.11412040" target="_blank" rel="noopener noreferrer" class="text-white hover:text-sky-400 block mb-1">IEEE EPREC Paper ↗</a>
-        <a href="resume.html" class="text-white hover:text-sky-400 block">Full Resume (PDF) ↗</a>
-      </div>
-
-      <div>
-        <span class="text-zinc-500 uppercase tracking-widest block mb-3">Location &amp; Degree</span>
-        <span class="text-white block mb-1">Coimbatore, India</span>
-        <span class="text-emerald-400 block">B.Tech ELC (Amrita '27)</span>
-      </div>
     </div>
 
     <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
