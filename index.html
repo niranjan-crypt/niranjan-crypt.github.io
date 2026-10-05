@@ -29,8 +29,8 @@
           colors: {
             brand: {
               black: '#000000',
-              canvas: '#040507',
-              card: 'rgba(13, 14, 18, 0.75)',
+              canvas: '#050507',
+              card: 'rgba(16, 16, 20, 0.75)',
               border: 'rgba(255, 255, 255, 0.08)',
               subtext: '#86868b',
               body: '#d1d1d6',
@@ -72,52 +72,48 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Top Scroll Progress Line */
+    /* Top Scroll Progress Line (Fine & Restrained) */
     #scroll-progress {
       position: fixed;
       top: 0;
       left: 0;
-      height: 2.5px;
+      height: 2px;
       width: 0%;
-      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 35%, #bf5af2 70%, #34d399 100%);
+      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 40%, #bf5af2 70%, #34d399 100%);
       z-index: 100;
       transition: width 0.08s ease-out;
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.65);
     }
 
-    /* Ambient Dynamic Cursor Aura */
-    #cursor-glow {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 600px;
-      height: 600px;
-      margin-left: -300px;
-      margin-top: -300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.07) 0%, rgba(191, 90, 242, 0.035) 45%, transparent 70%);
-      pointer-events: none;
-      z-index: 1;
-      will-change: transform;
-      filter: blur(40px);
+    /* Professional Masked Name Slide-Up Animation */
+    @keyframes heroNameSlideUp {
+      0% {
+        transform: translateY(115%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .hero-name-slide {
+      display: inline-block;
+      transform: translateY(115%);
+      opacity: 0;
+      animation: heroNameSlideUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    /* Real-Time Specular Glint Lighting on Name */
-    .realistic-titanium-text {
-      background: radial-gradient(
-        circle 500px at var(--light-x, 50%) var(--light-y, 35%),
-        #ffffff 0%,
-        #e2e8f0 25%,
-        #94a3b8 55%,
-        #475569 85%
-      );
+    /* Executive Titanium Shimmer Gradient */
+    @keyframes titaniumShimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .text-shimmer-titanium {
+      background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 25%, #94a3b8 50%, #f1f5f9 75%, #ffffff 100%);
+      background-size: 250% 250%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.7));
-      transition: filter 0.3s ease;
-    }
-    .realistic-titanium-text:hover {
-      filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.25));
+      animation: titaniumShimmer 12s ease-in-out infinite;
     }
 
     .subheading-gradient-text {
@@ -126,190 +122,112 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* Holographic Domain Glass Badges */
-    .holo-badge {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.18), 0 4px 16px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Line-by-Line Staggered Summary Text Reveal */
+    @keyframes lineRevealUp {
+      0% {
+        transform: translateY(105%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
-    .holo-badge:hover {
-      border-color: rgba(255, 255, 255, 0.3);
-      box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.3), 0 0 20px rgba(56, 189, 248, 0.25);
+    .reveal-line {
+      display: block;
+      transform: translateY(105%);
+      opacity: 0;
+      animation: lineRevealUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    /* Awwwards-Level 3D Holographic Card with Multi-Plane Parallax */
-    .award-card {
+    /* Badges Staggered Pop */
+    @keyframes badgeFadeIn {
+      0% {
+        transform: translateY(14px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .pop-badge {
+      opacity: 0;
+      transform: translateY(14px);
+      animation: badgeFadeIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Elegant Glass Bento Card */
+    .pro-glass-card {
       position: relative;
-      background: rgba(13, 14, 18, 0.76);
+      background: rgba(16, 16, 20, 0.75);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 0 20px 40px -15px rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(28px);
-      -webkit-backdrop-filter: blur(28px);
-      border-radius: 1.5rem;
-      transform-style: preserve-3d;
-      perspective: 1200px;
-      will-change: transform;
-      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
-                  border-color 0.25s ease, 
-                  box-shadow 0.25s ease;
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 1.25rem;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                  border-color 0.3s ease, 
+                  box-shadow 0.3s ease;
       overflow: hidden;
     }
-    .award-card::before {
+    .pro-glass-card::before {
       content: '';
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      background: radial-gradient(450px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(255, 255, 255, 0.09), transparent 60%);
+      background: radial-gradient(450px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(255, 255, 255, 0.07), transparent 60%);
       opacity: 0;
       transition: opacity 0.3s ease;
       pointer-events: none;
       z-index: 1;
     }
-    .award-card:hover::before {
+    .pro-glass-card:hover::before {
       opacity: 1;
     }
-    .award-card:hover {
-      border-color: rgba(255, 255, 255, 0.22);
-      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.25), 0 35px 70px -20px rgba(0, 0, 0, 0.95);
+    .pro-glass-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.22), 0 30px 60px -20px rgba(0, 0, 0, 0.9);
     }
-    .award-card::after {
+
+    /* Subtle Border Beam */
+    .pro-glass-card::after {
       content: '';
       position: absolute;
       top: 0;
-      left: 10%;
-      right: 10%;
+      left: 15%;
+      right: 15%;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.6), rgba(191, 90, 242, 0.6), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
       opacity: 0;
       transition: opacity 0.35s ease;
       pointer-events: none;
       z-index: 2;
     }
-    .award-card:hover::after {
+    .pro-glass-card:hover::after {
       opacity: 1;
     }
 
-    /* 3D Stereoscopic Parallax Layers inside Cards */
-    .card-3d-visual {
-      transform: translateZ(30px);
-      transform-style: preserve-3d;
-      transition: transform 0.28s ease;
-    }
-    .award-card:hover .card-3d-visual {
-      transform: translateZ(46px) scale(1.03);
-    }
-    .card-3d-title {
-      transform: translateZ(24px);
-    }
-    .card-3d-badge {
-      transform: translateZ(20px);
-    }
-
-    /* Primary Button Animated Sheen Sweep */
-    .shimmer-button {
-      position: relative;
-      overflow: hidden;
-    }
-    .shimmer-button::before {
-      content: '';
+    /* Ambient Aurora Lighting (Quiet & Calm) */
+    .ambient-aurora {
       position: absolute;
-      top: 0;
-      left: -120%;
-      width: 60%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
-      transform: skewX(-25deg);
-      animation: buttonGleam 4.5s ease-in-out infinite;
-    }
-    @keyframes buttonGleam {
-      0% { left: -120%; }
-      25% { left: 220%; }
-      100% { left: 220%; }
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 900px;
+      height: 480px;
+      background: radial-gradient(ellipse 65% 380px at 50% 20%, rgba(56, 189, 248, 0.1), rgba(191, 90, 242, 0.04), transparent 75%);
+      pointer-events: none;
+      z-index: 0;
     }
 
-    /* Interactive Live SVG Keyframes */
-    @keyframes waveDash {
-      0% { stroke-dashoffset: 0; }
-      100% { stroke-dashoffset: -40; }
-    }
-    .animate-wave-flow {
-      stroke-dasharray: 6 3;
-      animation: waveDash 1.8s linear infinite;
-    }
-
-    @keyframes pulseFlow {
-      0% { stroke-dashoffset: 24; opacity: 0.35; }
-      50% { opacity: 1; }
-      100% { stroke-dashoffset: 0; opacity: 0.35; }
-    }
-    .animate-data-flow {
-      stroke-dasharray: 4 2;
-      animation: pulseFlow 2.4s ease-in-out infinite;
-    }
-
-    @keyframes spectrumPulse1 { 0%, 100% { height: 6px; } 50% { height: 22px; } }
-    @keyframes spectrumPulse2 { 0%, 100% { height: 20px; } 50% { height: 9px; } }
-    @keyframes spectrumPulse3 { 0%, 100% { height: 12px; } 50% { height: 26px; } }
-    @keyframes spectrumPulse4 { 0%, 100% { height: 25px; } 50% { height: 14px; } }
-    @keyframes spectrumPulse5 { 0%, 100% { height: 8px; } 50% { height: 19px; } }
-
-    .anim-bar-1 { animation: spectrumPulse1 1.4s ease-in-out infinite; }
-    .anim-bar-2 { animation: spectrumPulse2 1.6s ease-in-out infinite 0.2s; }
-    .anim-bar-3 { animation: spectrumPulse3 1.2s ease-in-out infinite 0.4s; }
-    .anim-bar-4 { animation: spectrumPulse4 1.5s ease-in-out infinite 0.1s; }
-    .anim-bar-5 { animation: spectrumPulse5 1.3s ease-in-out infinite 0.3s; }
-
-    @keyframes radioRipple {
-      0% { r: 3; opacity: 0.9; }
-      100% { r: 16; opacity: 0; }
-    }
-    .animate-radio-ring {
-      animation: radioRipple 1.8s cubic-bezier(0.1, 0.4, 0.8, 1) infinite;
-    }
-
-    @keyframes laserSweep {
-      0% { transform: translateY(0); opacity: 0.2; }
-      50% { opacity: 0.95; }
-      100% { transform: translateY(26px); opacity: 0.2; }
-    }
-    .animate-laser {
-      animation: laserSweep 2.5s ease-in-out infinite alternate;
-    }
-
-    @keyframes mppBeacon {
-      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px #38bdf8); }
-      50% { transform: scale(1.4); filter: drop-shadow(0 0 10px #38bdf8); }
-    }
-    .animate-mpp-beacon {
-      animation: mppBeacon 1.8s ease-in-out infinite;
-      transform-origin: center;
-    }
-
-    @keyframes tokenMove {
-      0% { cx: 20; cy: 15; }
-      50% { cx: 60; cy: 15; }
-      100% { cx: 100; cy: 15; }
-    }
-    .animate-token {
-      animation: tokenMove 2.6s ease-in-out infinite;
-    }
-
-    /* Ambient Background Mesh */
-    .bg-mesh-pattern {
-      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-      background-size: 36px 36px;
-      mask-image: radial-gradient(ellipse 70% 60% at 50% 15%, black 40%, transparent 80%);
-      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 15%, black 40%, transparent 80%);
-    }
-
-    /* Scroll Reveal Animation */
+    /* Subtle Scroll Reveal */
     .reveal {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(22px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .reveal.visible {
       opacity: 1;
@@ -322,14 +240,8 @@
   <!-- Top Real-Time Scroll Progress Indicator -->
   <div id="scroll-progress"></div>
 
-  <!-- Interactive 60fps Neural Constellation Physics Canvas -->
-  <canvas id="neural-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
-
-  <!-- Smooth Fluid Ambient Cursor Follower -->
-  <div id="cursor-glow"></div>
-
-  <!-- Background Architecture Mesh Pattern -->
-  <div class="fixed inset-0 pointer-events-none z-0 bg-mesh-pattern opacity-50"></div>
+  <!-- Ambient Quiet Aurora Glow -->
+  <div class="ambient-aurora"></div>
 
   <!-- Toast Notification Container -->
   <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 transition-all duration-300 pointer-events-none">
@@ -345,9 +257,9 @@
   <header class="sticky top-0 z-50 backdrop-blur-2xl bg-black/75 border-b border-white/[0.08] transition-all">
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       
-      <!-- Minimalist Monogram Badge (NK Only, No Full Name) -->
-      <a href="#" class="group flex items-center magnetic-hover" title="Niranjan Krishnakumar (NK)">
-        <span class="w-9 h-9 rounded-xl bg-gradient-to-b from-white/[0.18] to-white/[0.04] border border-white/[0.18] text-white font-mono font-bold text-xs flex items-center justify-center tracking-tight shadow-[inset_0_1px_0_0_rgba(255,255,255,0.3)] group-hover:border-white/40 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all">
+      <!-- Minimalist Monogram Badge (NK Only) -->
+      <a href="#" class="group flex items-center" title="Niranjan Krishnakumar (NK)">
+        <span class="w-9 h-9 rounded-xl bg-gradient-to-b from-white/[0.18] to-white/[0.04] border border-white/[0.18] text-white font-mono font-bold text-xs flex items-center justify-center tracking-tight shadow-[inset_0_1px_0_0_rgba(255,255,255,0.3)] group-hover:border-white/40 group-hover:scale-105 transition-all">
           NK
         </span>
       </a>
@@ -363,7 +275,7 @@
 
       <!-- Apple Action Pill CTA Button -->
       <div class="flex items-center gap-2">
-        <a href="resume.html" class="px-4 py-1.5 rounded-full text-xs font-medium bg-white/10 hover:bg-white/20 border border-white/15 text-white backdrop-blur-md transition-all duration-200 hover:scale-[1.03] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)] inline-flex items-center gap-1.5 magnetic-hover">
+        <a href="resume.html" class="px-4 py-1.5 rounded-full text-xs font-medium bg-white/10 hover:bg-white/20 border border-white/15 text-white backdrop-blur-md transition-all duration-200 hover:scale-[1.03] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)] inline-flex items-center gap-1.5">
           <span>Resume</span>
           <span class="text-[10px] text-white/60">↗</span>
         </a>
@@ -376,13 +288,13 @@
   <div class="relative z-10 max-w-4xl lg:max-w-5xl mx-auto px-6 py-10 sm:py-16 md:py-20">
 
     <!-- ===================================================================== -->
-    <!-- HERO PRESENTATION (INTERACTIVE REALISTIC SPECULAR EFFECTS)            -->
+    <!-- HERO PRESENTATION (PROFESSIONAL MASKED SLIDE-UP ANIMATIONS)           -->
     <!-- ===================================================================== -->
-    <section id="about" class="mb-20 sm:mb-24 reveal visible relative">
+    <section id="about" class="mb-20 sm:mb-24 relative">
       
       <!-- Live Dynamic Status Pill -->
-      <div class="mb-7 sm:mb-8">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-[#1d1d1f]/85 border border-emerald-500/30 text-emerald-400 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.14)]">
+      <div class="mb-7 sm:mb-8 pop-badge" style="animation-delay: 0.05s;">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-[#1d1d1f]/85 border border-emerald-500/30 text-emerald-400 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.12)]">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_8px_#10b981]"></span>
@@ -391,66 +303,87 @@
         </div>
       </div>
 
-      <!-- Main Name Heading with Interactive Dynamic Specular Lighting -->
+      <!-- Professional Masked Sliding Name -->
       <div class="mb-5 sm:mb-6">
-        <h1 id="hero-heading" class="realistic-titanium-text font-heading font-extrabold pb-1 select-none cursor-default" style="font-size: clamp(2.8rem, 6.6vw, 5.2rem); letter-spacing: -0.035em; line-height: 1.08;">
-          Niranjan Krishnakumar
+        <h1 class="font-heading font-extrabold pb-1 leading-[1.08] tracking-[-0.035em]" style="font-size: clamp(2.8rem, 6.6vw, 5.2rem);">
+          <span class="inline-block overflow-hidden mr-2 sm:mr-3">
+            <span class="hero-name-slide text-shimmer-titanium" style="animation-delay: 0.12s;">Niranjan</span>
+          </span>
+          <span class="inline-block overflow-hidden">
+            <span class="hero-name-slide text-shimmer-titanium" style="animation-delay: 0.26s;">Krishnakumar</span>
+          </span>
         </h1>
       </div>
 
-      <!-- Academic Pedigree (ELC Department) -->
+      <!-- Academic Subtitle (Staggered Masked Slide) -->
       <div class="font-sans text-sm sm:text-base text-[#a1a1a6] space-y-1 mb-8">
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="font-semibold text-white">B.Tech Electrical &amp; Computer Engineering (ELC)</span>
-          <span class="text-zinc-600">·</span>
-          <span class="text-[#86868b] font-mono text-xs sm:text-sm">Expected 2027</span>
+        <div class="overflow-hidden">
+          <div class="reveal-line flex flex-wrap items-center gap-2" style="animation-delay: 0.4s;">
+            <span class="font-semibold text-white">B.Tech Electrical &amp; Computer Engineering (ELC)</span>
+            <span class="text-zinc-600">·</span>
+            <span class="text-[#86868b] font-mono text-xs sm:text-sm">Expected 2027</span>
+          </div>
         </div>
-        <div class="text-[#86868b] text-xs sm:text-sm">
-          <span>Amrita Vishwa Vidyapeetham, Coimbatore</span>
+        <div class="overflow-hidden">
+          <div class="reveal-line text-[#86868b] text-xs sm:text-sm" style="animation-delay: 0.52s;">
+            <span>Amrita Vishwa Vidyapeetham, Coimbatore</span>
+          </div>
         </div>
       </div>
 
-      <!-- Live Dynamic Engineering Domain Switcher Capsules (Holographic Badges) -->
+      <!-- Engineering Domain Capsules (Staggered Pop) -->
       <div class="space-y-4 mb-8">
         <div class="flex flex-wrap items-center gap-2.5 font-mono text-xs">
-          <span class="holo-badge px-3.5 py-1.5 rounded-full text-sky-300 font-medium hover:border-sky-400/50 hover:text-white transition-all magnetic-hover cursor-default">
+          <span class="pop-badge px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-sky-300 font-medium hover:border-sky-400/50 hover:bg-white/[0.08] transition-all cursor-default" style="animation-delay: 0.58s;">
             ⚡ Physics-Informed ML
           </span>
-          <span class="holo-badge px-3.5 py-1.5 rounded-full text-purple-300 font-medium hover:border-purple-400/50 hover:text-white transition-all magnetic-hover cursor-default">
+          <span class="pop-badge px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-purple-300 font-medium hover:border-purple-400/50 hover:bg-white/[0.08] transition-all cursor-default" style="animation-delay: 0.68s;">
             👁️ Computer Vision &amp; 3D-CNNs
           </span>
-          <span class="holo-badge px-3.5 py-1.5 rounded-full text-emerald-300 font-medium hover:border-emerald-400/50 hover:text-white transition-all magnetic-hover cursor-default">
+          <span class="pop-badge px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-emerald-300 font-medium hover:border-emerald-400/50 hover:bg-white/[0.08] transition-all cursor-default" style="animation-delay: 0.78s;">
             📟 Cyber-Physical &amp; Edge AI
           </span>
-          <span class="holo-badge px-3.5 py-1.5 rounded-full text-amber-300 font-medium hover:border-amber-400/50 hover:text-white transition-all magnetic-hover cursor-default">
+          <span class="pop-badge px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-amber-300 font-medium hover:border-amber-400/50 hover:bg-white/[0.08] transition-all cursor-default" style="animation-delay: 0.88s;">
             📊 High-Throughput Data Eng
           </span>
         </div>
 
-        <!-- High-Tech Cybernetic Terminal Capsule with Mini Oscilloscope -->
-        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#13141a]/95 border border-sky-500/25 font-mono text-xs text-[#86868b] shadow-[0_0_25px_-5px_rgba(56,189,248,0.2)] backdrop-blur-md">
-          <div class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="text-sky-400 font-bold">$</span>
-          </div>
+        <!-- Terminal Capsule -->
+        <div class="pop-badge inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#16161a]/90 border border-white/[0.08] font-mono text-xs text-[#86868b] shadow-inner backdrop-blur-md" style="animation-delay: 0.96s;">
+          <span class="text-sky-400 font-bold">$</span>
           <span class="text-zinc-500">active_research:</span>
           <span id="typewriter" class="text-white font-medium"></span>
           <span class="w-1.5 h-3.5 bg-sky-400 inline-block animate-pulse"></span>
-          <!-- Real-Time Mini Oscilloscope Visualizer -->
-          <canvas id="oscilloscope" class="w-14 h-4 ml-1 opacity-70 hidden sm:inline-block"></canvas>
         </div>
       </div>
 
-      <!-- Narrative Lead Thesis -->
-      <p class="font-sans text-[1.125rem] sm:text-[1.25rem] leading-[1.7] text-[#d1d1d6] max-w-[960px] mb-9 font-normal">
-        I engineer intelligent systems at the intersection of <strong class="text-white font-medium">physics-domain dynamics</strong>, <strong class="text-white font-medium">computer vision</strong>, <strong class="text-white font-medium">signal processing</strong>, and <strong class="text-white font-medium">high-performance data pipelines</strong>. My research integrates physical boundary laws into neural architectures—including Physics-Informed Neural Networks (PINNs), 33-band spatial-spectral 3D-CNNs, and metric learning—for real-time edge and cyber-physical deployment. Published author at <strong class="font-medium text-white underline decoration-sky-500/50 underline-offset-4">IEEE EPREC 2026</strong>; co-author of a paper selected for <strong class="font-medium text-white underline decoration-purple-500/50 underline-offset-4">IEEE SPICES 2026</strong>.
-      </p>
+      <!-- Professional Summary: Popping / Sliding In Line by Line -->
+      <div class="font-sans text-[1.125rem] sm:text-[1.25rem] leading-[1.75] text-[#d1d1d6] max-w-[960px] mb-9 space-y-3 font-normal">
+        <!-- Line 1 -->
+        <div class="overflow-hidden">
+          <p class="reveal-line" style="animation-delay: 0.68s;">
+            I engineer intelligent systems at the intersection of <strong class="text-white font-medium">physics-domain dynamics</strong>, <strong class="text-white font-medium">computer vision</strong>, <strong class="text-white font-medium">signal processing</strong>, and <strong class="text-white font-medium">high-performance data pipelines</strong>.
+          </p>
+        </div>
+        <!-- Line 2 -->
+        <div class="overflow-hidden">
+          <p class="reveal-line" style="animation-delay: 0.88s;">
+            My research integrates physical boundary laws into neural architectures—including Physics-Informed Neural Networks (PINNs), 33-band spatial-spectral 3D-CNNs, and metric learning—for real-time edge and cyber-physical deployment.
+          </p>
+        </div>
+        <!-- Line 3 -->
+        <div class="overflow-hidden">
+          <p class="reveal-line" style="animation-delay: 1.08s;">
+            Published author at <strong class="font-medium text-white underline decoration-sky-500/50 underline-offset-4">IEEE EPREC 2026</strong>; co-author of a paper selected for <strong class="font-medium text-white underline decoration-purple-500/50 underline-offset-4">IEEE SPICES 2026</strong>.
+          </p>
+        </div>
+      </div>
 
-      <!-- Award-Winning Action Pill Buttons & Contact Dock -->
-      <div class="space-y-6">
+      <!-- Action Pill Buttons & Contact Dock (Staggered Pop) -->
+      <div class="space-y-6 pop-badge" style="animation-delay: 1.22s;">
         <div class="flex flex-wrap items-center gap-3 sm:gap-4">
-          <!-- Primary White Pill with Animated Sheen -->
-          <a href="mailto:niranjankrishnakumar2005@gmail.com" class="shimmer-button px-6 py-3 rounded-full bg-white text-black font-sans text-xs sm:text-sm font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.03] active:scale-[0.98] shadow-[0_4px_24px_rgba(255,255,255,0.25)] inline-flex items-center gap-2 magnetic-hover">
+          <!-- Primary White Pill -->
+          <a href="mailto:niranjankrishnakumar2005@gmail.com" class="px-6 py-3 rounded-full bg-white text-black font-sans text-xs sm:text-sm font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_24px_rgba(255,255,255,0.22)] inline-flex items-center gap-2">
             <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
@@ -458,7 +391,7 @@
           </a>
 
           <!-- Secondary Translucent Space Capsule -->
-          <a href="https://github.com/niranjan-crypt" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.12] font-sans text-xs sm:text-sm font-semibold backdrop-blur-xl transition-all transform hover:scale-[1.03] active:scale-[0.98] inline-flex items-center gap-2 magnetic-hover">
+          <a href="https://github.com/niranjan-crypt" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.12] font-sans text-xs sm:text-sm font-semibold backdrop-blur-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
             </svg>
@@ -490,7 +423,7 @@
     </section>
 
     <!-- ===================================================================== -->
-    <!-- PROJECTS SECTION: 3D MULTI-PLANE BENTO GRID (ALL 9 SYSTEMS)           -->
+    <!-- PROJECTS SECTION: PRO BENTO GRID SHOWCASE (ALL 9 SYSTEMS)             -->
     <!-- ===================================================================== -->
     <section id="projects" class="mb-20 sm:mb-24 reveal">
       
@@ -522,23 +455,23 @@
         </div>
       </div>
 
-      <!-- 2-Column Responsive 3D Parallax Bento Grid -->
+      <!-- 2-Column Responsive Bento Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6" id="project-grid">
 
         <!-- Card 1: Hyperspectral Face ID & XAI -->
-        <article class="project-card award-card p-6 sm:p-7 flex flex-col justify-between group" data-category="cv">
+        <article class="project-card pro-glass-card p-6 sm:p-7 flex flex-col justify-between group" data-category="cv">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4 card-3d-badge">
+            <div class="flex items-center justify-between gap-2 mb-4">
               <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400 bg-purple-950/40 border border-purple-800/40 px-2.5 py-1 rounded-full">
                 Computer Vision · 3D-CNN
               </span>
-              <a href="https://github.com/niranjan-crypt/Hyperspectral-Face-Identification-XAI" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all magnetic-hover">
+              <a href="https://github.com/niranjan-crypt/Hyperspectral-Face-Identification-XAI" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
                 <span>Code</span>
                 <span class="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform text-purple-400">↗</span>
               </a>
             </div>
 
-            <div class="flex items-start gap-4 mb-4 card-3d-title">
+            <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/25 flex items-center justify-center text-purple-400 shrink-0 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(191,90,242,0.15)]">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/>
@@ -553,15 +486,13 @@
               </div>
             </div>
 
-            <!-- Living Technical Schematic Box with Laser Scan (Holographic Parallax) -->
-            <div class="card-3d-visual relative overflow-hidden my-3.5 p-3 rounded-xl bg-black/55 border border-white/[0.08] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between shadow-lg">
-              <!-- Animated Laser Scan Beam -->
-              <div class="absolute inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-purple-400 to-transparent animate-laser pointer-events-none"></div>
-              <span class="text-purple-400 font-semibold">λ ∈ [400, 720 nm]</span>
+            <!-- Technical Schematic Box -->
+            <div class="my-3.5 p-3 rounded-xl bg-black/45 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
+              <span class="text-purple-400 font-medium">λ ∈ [400, 720 nm]</span>
               <span class="text-zinc-600">→</span>
               <span>ArcFace (s=30, m=0.5)</span>
               <span class="text-zinc-600">→</span>
-              <span class="text-emerald-400 font-semibold">SHAP XAI</span>
+              <span class="text-emerald-400 font-medium">SHAP XAI</span>
             </div>
 
             <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-5">
@@ -581,19 +512,19 @@
         </article>
 
         <!-- Card 2: Power Transmission Fault Detection -->
-        <article class="project-card award-card p-6 sm:p-7 flex flex-col justify-between group" data-category="cv">
+        <article class="project-card pro-glass-card p-6 sm:p-7 flex flex-col justify-between group" data-category="cv">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4 card-3d-badge">
+            <div class="flex items-center justify-between gap-2 mb-4">
               <span class="text-[10px] font-mono uppercase tracking-wider text-sky-400 bg-sky-950/40 border border-sky-800/40 px-2.5 py-1 rounded-full">
                 Computer Vision · ResNet50
               </span>
-              <a href="https://github.com/niranjan-crypt/Hybrid-Computer-Vision-and-Deep-Learning-for-Automated-Power-Transmission-Fault-Detection" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all magnetic-hover">
+              <a href="https://github.com/niranjan-crypt/Hybrid-Computer-Vision-and-Deep-Learning-for-Automated-Power-Transmission-Fault-Detection" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
                 <span>Code</span>
                 <span class="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform text-sky-400">↗</span>
               </a>
             </div>
 
-            <div class="flex items-start gap-4 mb-4 card-3d-title">
+            <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/25 flex items-center justify-center text-sky-400 shrink-0 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(56,189,248,0.15)]">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
@@ -607,16 +538,13 @@
               </div>
             </div>
 
-            <!-- Living Technical Schematic Box with Traveling Wave -->
-            <div class="card-3d-visual relative overflow-hidden my-3.5 p-3 rounded-xl bg-black/55 border border-white/[0.08] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between shadow-lg">
-              <span class="text-sky-400 font-semibold">ResNet50 Deep</span>
-              <!-- Animated Sine Wave SVG -->
-              <svg class="w-16 h-4 text-sky-400/80 animate-wave-flow" viewBox="0 0 100 20" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M0 10 Q 12.5 0, 25 10 T 50 10 T 75 10 T 100 10" />
-              </svg>
+            <!-- Technical Schematic Box -->
+            <div class="my-3.5 p-3 rounded-xl bg-black/45 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
+              <span class="text-sky-400 font-medium">ResNet50 Deep</span>
+              <span class="text-zinc-600">+</span>
               <span>HOG / GLCM</span>
               <span class="text-zinc-600">→</span>
-              <span class="text-emerald-400 font-semibold">82.0% Acc</span>
+              <span class="text-emerald-400 font-medium">82.0% Accuracy</span>
             </div>
 
             <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-5">
@@ -636,19 +564,19 @@
         </article>
 
         <!-- Card 3: CommerceIQ Data Engineering Platform -->
-        <article class="project-card award-card p-6 sm:p-7 flex flex-col justify-between group" data-category="data">
+        <article class="project-card pro-glass-card p-6 sm:p-7 flex flex-col justify-between group" data-category="data">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4 card-3d-badge">
+            <div class="flex items-center justify-between gap-2 mb-4">
               <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 bg-amber-950/40 border border-amber-800/40 px-2.5 py-1 rounded-full">
                 Data Engineering · OLTP &amp; Star Schema
               </span>
-              <a href="https://github.com/niranjan-crypt/CommerceIQ" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all magnetic-hover">
+              <a href="https://github.com/niranjan-crypt/CommerceIQ" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
                 <span>Code</span>
                 <span class="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform text-amber-400">↗</span>
               </a>
             </div>
 
-            <div class="flex items-start gap-4 mb-4 card-3d-title">
+            <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-400 shrink-0 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(245,166,35,0.15)]">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                   <ellipse cx="12" cy="5" rx="9" ry="3"/>
@@ -664,15 +592,13 @@
               </div>
             </div>
 
-            <!-- Living Technical Schematic Box with Data Flow -->
-            <div class="card-3d-visual relative overflow-hidden my-3.5 p-3 rounded-xl bg-black/55 border border-white/[0.08] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between shadow-lg">
-              <span class="text-amber-400 font-semibold">3NF OLTP</span>
-              <svg class="w-12 h-2 text-amber-400/80 animate-data-flow" viewBox="0 0 50 10" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="0" y1="5" x2="50" y2="5" />
-              </svg>
+            <!-- Technical Schematic Box -->
+            <div class="my-3.5 p-3 rounded-xl bg-black/45 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
+              <span class="text-amber-400 font-medium">3NF OLTP</span>
+              <span class="text-zinc-600">→</span>
               <span>22 Gatekeeper Tests</span>
               <span class="text-zinc-600">→</span>
-              <span class="text-emerald-400 font-semibold">5.35x B-Tree</span>
+              <span class="text-emerald-400 font-medium">5.35x B-Tree Speedup</span>
             </div>
 
             <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-5">
@@ -692,19 +618,19 @@
         </article>
 
         <!-- Card 4: IntelliPQ -->
-        <article class="project-card award-card p-6 sm:p-7 flex flex-col justify-between group" data-category="energy">
+        <article class="project-card pro-glass-card p-6 sm:p-7 flex flex-col justify-between group" data-category="energy">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4 card-3d-badge">
+            <div class="flex items-center justify-between gap-2 mb-4">
               <span class="text-[10px] font-mono uppercase tracking-wider text-sky-400 bg-sky-950/40 border border-sky-800/40 px-2.5 py-1 rounded-full">
                 Signal Processing · DSP &amp; FFT
               </span>
-              <a href="https://github.com/niranjan-crypt/IntelliPQ-AI-Based-Power-Quality-Monitoring-Fault-Detection" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all magnetic-hover">
+              <a href="https://github.com/niranjan-crypt/IntelliPQ-AI-Based-Power-Quality-Monitoring-Fault-Detection" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
                 <span>Code</span>
                 <span class="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform text-sky-400">↗</span>
               </a>
             </div>
 
-            <div class="flex items-start gap-4 mb-4 card-3d-title">
+            <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/25 flex items-center justify-center text-sky-400 shrink-0 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(56,189,248,0.15)]">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l3 8 4-16 3 8h4"/>
@@ -718,20 +644,13 @@
               </div>
             </div>
 
-            <!-- Living Technical Schematic Box with Spectrum Bars -->
-            <div class="card-3d-visual relative overflow-hidden my-3.5 p-3 rounded-xl bg-black/55 border border-white/[0.08] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between shadow-lg">
-              <span class="text-sky-400 font-semibold">DSP / FFT</span>
-              <!-- Dancing FFT Spectrum Bars -->
-              <div class="flex items-end gap-1 h-6 px-1">
-                <div class="w-1 bg-sky-400/80 rounded-full anim-bar-1"></div>
-                <div class="w-1 bg-sky-300/80 rounded-full anim-bar-2"></div>
-                <div class="w-1 bg-indigo-400/80 rounded-full anim-bar-3"></div>
-                <div class="w-1 bg-purple-400/80 rounded-full anim-bar-4"></div>
-                <div class="w-1 bg-emerald-400/80 rounded-full anim-bar-5"></div>
-              </div>
+            <!-- Technical Schematic Box -->
+            <div class="my-3.5 p-3 rounded-xl bg-black/45 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
+              <span class="text-sky-400 font-medium">DSP / FFT</span>
+              <span class="text-zinc-600">→</span>
               <span>1D-CNN + BiLSTM</span>
               <span class="text-zinc-600">→</span>
-              <span class="text-emerald-400 font-semibold">Neuro-Symbolic</span>
+              <span class="text-emerald-400 font-medium">Neuro-Symbolic</span>
             </div>
 
             <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-5">
@@ -750,19 +669,19 @@
         </article>
 
         <!-- Card 5: KinoSync Smart Glove -->
-        <article class="project-card award-card p-6 sm:p-7 flex flex-col justify-between group" data-category="embedded">
+        <article class="project-card pro-glass-card p-6 sm:p-7 flex flex-col justify-between group" data-category="embedded">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4 card-3d-badge">
+            <div class="flex items-center justify-between gap-2 mb-4">
               <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 px-2.5 py-1 rounded-full">
                 Cyber-Physical · BLE 5.0
               </span>
-              <a href="https://github.com/niranjan-crypt/KinoSync-Cyber-Physical-Smart-Glove-Telemetry-3D-Digital-Twin-System" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all magnetic-hover">
+              <a href="https://github.com/niranjan-crypt/KinoSync-Cyber-Physical-Smart-Glove-Telemetry-3D-Digital-Twin-System" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
                 <span>Code</span>
                 <span class="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform text-emerald-400">↗</span>
               </a>
             </div>
 
-            <div class="flex items-start gap-4 mb-4 card-3d-title">
+            <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(52,211,153,0.15)]">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/>
@@ -776,18 +695,13 @@
               </div>
             </div>
 
-            <!-- Living Technical Schematic Box with BLE Ripples -->
-            <div class="card-3d-visual relative overflow-hidden my-3.5 p-3 rounded-xl bg-black/55 border border-white/[0.08] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between shadow-lg">
-              <span class="text-emerald-400 font-semibold">ESP32 + MPU6050</span>
-              <!-- Concentric BLE Ripples -->
-              <svg class="w-8 h-8 text-emerald-400/80" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="20" cy="20" r="3" fill="currentColor"/>
-                <circle cx="20" cy="20" r="8" class="animate-radio-ring"/>
-                <circle cx="20" cy="20" r="14" class="animate-radio-ring" style="animation-delay: 0.6s"/>
-              </svg>
+            <!-- Technical Schematic Box -->
+            <div class="my-3.5 p-3 rounded-xl bg-black/45 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
+              <span class="text-emerald-400 font-medium">ESP32 + MPU6050</span>
+              <span class="text-zinc-600">→</span>
               <span>BLE 5.0 Stream</span>
               <span class="text-zinc-600">→</span>
-              <span class="text-sky-400 font-semibold">Flutter 3D</span>
+              <span class="text-sky-400 font-medium">Flutter 3D Skeletal</span>
             </div>
 
             <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-5">
@@ -806,19 +720,19 @@
         </article>
 
         <!-- Card 6: PSO-GA MRI Segmentation -->
-        <article class="project-card award-card p-6 sm:p-7 flex flex-col justify-between group" data-category="cv">
+        <article class="project-card pro-glass-card p-6 sm:p-7 flex flex-col justify-between group" data-category="cv">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4 card-3d-badge">
+            <div class="flex items-center justify-between gap-2 mb-4">
               <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400 bg-purple-950/40 border border-purple-800/40 px-2.5 py-1 rounded-full">
                 Optimization &amp; Vision · PSO + GA
               </span>
-              <a href="https://github.com/niranjan-crypt/Hybrid-PSO-GA-Based-Multilevel-Otsu-MRI-Segmentation-with-Machine-Learning-Validation" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all magnetic-hover">
+              <a href="https://github.com/niranjan-crypt/Hybrid-PSO-GA-Based-Multilevel-Otsu-MRI-Segmentation-with-Machine-Learning-Validation" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
                 <span>Code</span>
                 <span class="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform text-purple-400">↗</span>
               </a>
             </div>
 
-            <div class="flex items-start gap-4 mb-4 card-3d-title">
+            <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/25 flex items-center justify-center text-purple-400 shrink-0 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(191,90,242,0.15)]">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                   <circle cx="12" cy="12" r="9"/>
@@ -834,13 +748,13 @@
               </div>
             </div>
 
-            <!-- Living Technical Schematic Box with Histogram Convergence -->
-            <div class="card-3d-visual relative overflow-hidden my-3.5 p-3 rounded-xl bg-black/55 border border-white/[0.08] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between shadow-lg">
-              <span class="text-purple-400 font-semibold">PSO Swarm</span>
+            <!-- Technical Schematic Box -->
+            <div class="my-3.5 p-3 rounded-xl bg-black/45 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
+              <span class="text-purple-400 font-medium">PSO Swarm</span>
               <span class="text-zinc-600">+</span>
               <span>GA Crossover</span>
               <span class="text-zinc-600">→</span>
-              <span class="text-emerald-400 font-semibold">Haralick GLCM</span>
+              <span class="text-emerald-400 font-medium">Haralick GLCM</span>
             </div>
 
             <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-5">
@@ -859,19 +773,19 @@
         </article>
 
         <!-- Card 7: TOC-AV Safety Verification -->
-        <article class="project-card award-card p-6 sm:p-7 flex flex-col justify-between group" data-category="theory">
+        <article class="project-card pro-glass-card p-6 sm:p-7 flex flex-col justify-between group" data-category="theory">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4 card-3d-badge">
+            <div class="flex items-center justify-between gap-2 mb-4">
               <span class="text-[10px] font-mono uppercase tracking-wider text-sky-400 bg-sky-950/40 border border-sky-800/40 px-2.5 py-1 rounded-full">
                 Automata Theory · Formal Methods
               </span>
-              <a href="https://github.com/niranjan-crypt/Computation-and-Compiler-design" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all magnetic-hover">
+              <a href="https://github.com/niranjan-crypt/Computation-and-Compiler-design" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
                 <span>Code</span>
                 <span class="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform text-sky-400">↗</span>
               </a>
             </div>
 
-            <div class="flex items-start gap-4 mb-4 card-3d-title">
+            <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/25 flex items-center justify-center text-sky-400 shrink-0 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(56,189,248,0.15)]">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                   <circle cx="6" cy="18" r="3"/>
@@ -887,21 +801,13 @@
               </div>
             </div>
 
-            <!-- Living Technical Schematic Box with Automaton Token -->
-            <div class="card-3d-visual relative overflow-hidden my-3.5 p-3 rounded-xl bg-black/55 border border-white/[0.08] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between shadow-lg">
-              <span class="text-sky-400 font-semibold">q0 [Ingest]</span>
-              <!-- State Machine Transition Token -->
-              <svg class="w-20 h-4 text-sky-400/60" viewBox="0 0 120 30" fill="none">
-                <circle cx="20" cy="15" r="8" stroke="currentColor" stroke-width="1.5"/>
-                <circle cx="60" cy="15" r="8" stroke="currentColor" stroke-width="1.5"/>
-                <circle cx="100" cy="15" r="8" stroke="#34d399" stroke-width="1.5"/>
-                <path d="M28 15 L52 15" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 2"/>
-                <path d="M68 15 L92 15" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 2"/>
-                <circle class="animate-token" r="3.5" fill="#38bdf8"/>
-              </svg>
-              <span>PDA Stack</span>
+            <!-- Technical Schematic Box -->
+            <div class="my-3.5 p-3 rounded-xl bg-black/45 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
+              <span class="text-sky-400 font-medium">q0 [Ingest]</span>
               <span class="text-zinc-600">→</span>
-              <span class="text-emerald-400 font-semibold">qSafe</span>
+              <span>PDA Stack Verification</span>
+              <span class="text-zinc-600">→</span>
+              <span class="text-emerald-400 font-medium">qSafe Proof</span>
             </div>
 
             <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-5">
@@ -920,19 +826,19 @@
         </article>
 
         <!-- Card 8: Congestion Management (IEEE EPREC-2026) -->
-        <article class="project-card award-card p-6 sm:p-7 flex flex-col justify-between group" data-category="energy">
+        <article class="project-card pro-glass-card p-6 sm:p-7 flex flex-col justify-between group" data-category="energy">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4 card-3d-badge">
+            <div class="flex items-center justify-between gap-2 mb-4">
               <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 px-2.5 py-1 rounded-full">
                 IEEE EPREC 2026 · DC-OPF
               </span>
-              <a href="https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all magnetic-hover">
+              <a href="https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
                 <span>Code</span>
                 <span class="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform text-emerald-400">↗</span>
               </a>
             </div>
 
-            <div class="flex items-start gap-4 mb-4 card-3d-title">
+            <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(52,211,153,0.15)]">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3m15.364 6.364l-12.728-12.728m12.728 0L4.636 18.364"/>
@@ -946,13 +852,13 @@
               </div>
             </div>
 
-            <!-- Living Technical Schematic Box with Sensitivity Formula -->
-            <div class="card-3d-visual relative overflow-hidden my-3.5 p-3 rounded-xl bg-black/55 border border-white/[0.08] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between shadow-lg">
-              <span class="text-emerald-400 font-semibold">Sensitivity C = AB</span>
+            <!-- Technical Schematic Box -->
+            <div class="my-3.5 p-3 rounded-xl bg-black/45 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
+              <span class="text-emerald-400 font-medium">Sensitivity C = AB</span>
               <span class="text-zinc-600">→</span>
               <span>Orca + Krill + Hyena</span>
               <span class="text-zinc-600">→</span>
-              <span class="text-sky-400 font-semibold">0 Thermal Violations</span>
+              <span class="text-sky-400 font-medium">0 Thermal Violations</span>
             </div>
 
             <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-5">
@@ -973,19 +879,19 @@
         </article>
 
         <!-- Card 9: PINN MPPT (IEEE SPICES 2026) -->
-        <article class="project-card award-card p-6 sm:p-7 flex flex-col justify-between group" data-category="energy">
+        <article class="project-card pro-glass-card p-6 sm:p-7 flex flex-col justify-between group" data-category="energy">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4 card-3d-badge">
+            <div class="flex items-center justify-between gap-2 mb-4">
               <span class="text-[10px] font-mono uppercase tracking-wider text-sky-400 bg-sky-950/40 border border-sky-800/40 px-2.5 py-1 rounded-full">
                 IEEE SPICES 2026 · PINN
               </span>
-              <a href="https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all magnetic-hover">
+              <a href="https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 group/btn px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
                 <span>Code</span>
                 <span class="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform text-sky-400">↗</span>
               </a>
             </div>
 
-            <div class="flex items-start gap-4 mb-4 card-3d-title">
+            <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/25 flex items-center justify-center text-sky-400 shrink-0 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(56,189,248,0.15)]">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                   <circle cx="12" cy="12" r="4"/>
@@ -1000,17 +906,13 @@
               </div>
             </div>
 
-            <!-- Living Technical Schematic Box with Pulsing MPP Tracker -->
-            <div class="card-3d-visual relative overflow-hidden my-3.5 p-3 rounded-xl bg-black/55 border border-white/[0.08] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between shadow-lg">
-              <span class="text-sky-400 font-semibold">Diode Physics Loss</span>
-              <!-- Animated P-V Curve with MPP Beacon -->
-              <svg class="w-16 h-5 text-sky-400/80" viewBox="0 0 80 25" fill="none">
-                <path d="M 5 22 Q 40 2, 75 22" stroke="currentColor" stroke-width="1.8"/>
-                <circle cx="40" cy="7" r="3.5" fill="#38bdf8" class="animate-mpp-beacon"/>
-              </svg>
+            <!-- Technical Schematic Box -->
+            <div class="my-3.5 p-3 rounded-xl bg-black/45 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
+              <span class="text-sky-400 font-medium">Diode Physics Loss</span>
+              <span class="text-zinc-600">+</span>
               <span>2D Markov</span>
               <span class="text-zinc-600">→</span>
-              <span class="text-emerald-400 font-semibold">R² = 0.9994</span>
+              <span class="text-emerald-400 font-medium">R² = 0.9994</span>
             </div>
 
             <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-5">
@@ -1034,7 +936,7 @@
       </div>
 
       <!-- GitHub Ecosystem Showcase Banner -->
-      <div class="mt-8 award-card p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+      <div class="mt-8 pro-glass-card p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
         <div class="flex items-center gap-4">
           <div class="w-12 h-12 rounded-2xl bg-white/[0.08] border border-white/15 text-white flex items-center justify-center shrink-0 shadow-lg">
             <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
@@ -1048,7 +950,7 @@
             </p>
           </div>
         </div>
-        <a href="https://github.com/niranjan-crypt?tab=repositories" target="_blank" rel="noopener noreferrer" class="shimmer-button px-5 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center justify-center gap-1.5 shrink-0 shadow-lg magnetic-hover">
+        <a href="https://github.com/niranjan-crypt?tab=repositories" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center justify-center gap-1.5 shrink-0 shadow-lg">
           <span>github.com/niranjan-crypt</span>
           <span class="text-xs">↗</span>
         </a>
@@ -1067,8 +969,8 @@
 
       <div class="space-y-4">
         <!-- L&T Internship -->
-        <div class="award-card p-6 sm:p-7">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-3 card-3d-title">
+        <div class="pro-glass-card p-6 sm:p-7">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-3">
             <div class="flex items-center gap-3.5">
               <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/25 flex items-center justify-center text-purple-400">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
@@ -1088,8 +990,8 @@
         </div>
 
         <!-- AWS Academy Certification -->
-        <div class="award-card p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div class="flex items-center gap-3.5 card-3d-title">
+        <div class="pro-glass-card p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5">
             <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
             </div>
@@ -1102,7 +1004,7 @@
               </p>
             </div>
           </div>
-          <a href="https://www.credly.com/badges/eaed5b78-e6d1-426e-8be1-6a1c66f2bc7e/print" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.12] font-sans text-xs font-medium inline-flex items-center gap-1.5 shrink-0 pl-14 sm:pl-4 transition-all magnetic-hover">
+          <a href="https://www.credly.com/badges/eaed5b78-e6d1-426e-8be1-6a1c66f2bc7e/print" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.12] font-sans text-xs font-medium inline-flex items-center gap-1.5 shrink-0 pl-14 sm:pl-4 transition-all">
             <span>Credly Badge</span>
             <span class="text-xs text-sky-400">↗</span>
           </a>
@@ -1123,8 +1025,8 @@
 
       <div class="space-y-4">
         <!-- Paper 1: IEEE EPREC-2026 -->
-        <div class="award-card p-6 sm:p-7">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2 card-3d-title">
+        <div class="pro-glass-card p-6 sm:p-7">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
             <h3 class="font-heading font-semibold text-base sm:text-lg text-white leading-snug">
               Hybrid Optimization for Congestion Management in Deregulated Power Systems
             </h3>
@@ -1140,14 +1042,14 @@
           </p>
 
           <div class="flex flex-wrap items-center gap-2.5 pt-4 border-t border-white/[0.08] font-sans text-xs">
-            <a href="https://doi.org/10.1109/EPREC66546.2026.11412040" target="_blank" rel="noopener noreferrer" class="shimmer-button px-4 py-2 rounded-full bg-white text-black font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5 magnetic-hover">
+            <a href="https://doi.org/10.1109/EPREC66546.2026.11412040" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full bg-white text-black font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5">
               <span>IEEE Xplore (DOI: 10.1109)</span>
               <span>↗</span>
             </a>
-            <a href="https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full border border-white/[0.1] hover:border-white/20 bg-white/[0.06] text-white font-medium transition-all magnetic-hover">
+            <a href="https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full border border-white/[0.1] hover:border-white/20 bg-white/[0.06] text-white font-medium transition-all">
               Code [GitHub] ↗
             </a>
-            <button id="copy-citation-btn" class="px-4 py-2 rounded-full border border-white/[0.1] hover:border-white/20 bg-white/[0.06] text-white font-medium transition-all inline-flex items-center gap-1 magnetic-hover">
+            <button id="copy-citation-btn" class="px-4 py-2 rounded-full border border-white/[0.1] hover:border-white/20 bg-white/[0.06] text-white font-medium transition-all inline-flex items-center gap-1">
               <span id="copy-citation-icon">📋</span>
               <span id="copy-citation-text">Copy BibTeX</span>
             </button>
@@ -1155,8 +1057,8 @@
         </div>
 
         <!-- Paper 2: IEEE SPICES 2026 -->
-        <div class="award-card p-6 sm:p-7">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2 card-3d-title">
+        <div class="pro-glass-card p-6 sm:p-7">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
             <h3 class="font-heading font-semibold text-base sm:text-lg text-white leading-snug">
               Physics-Informed ANN-Based MPPT with Markov-Chain Validation for Photovoltaic Systems
             </h3>
@@ -1172,7 +1074,7 @@
           </p>
 
           <div class="flex flex-wrap items-center gap-2.5 pt-4 border-t border-white/[0.08] font-sans text-xs">
-            <a href="https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full border border-white/[0.1] hover:border-white/20 bg-white/[0.06] text-white font-medium transition-all magnetic-hover">
+            <a href="https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full border border-white/[0.1] hover:border-white/20 bg-white/[0.06] text-white font-medium transition-all">
               Code [GitHub] ↗
             </a>
           </div>
@@ -1191,7 +1093,7 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 text-xs font-mono">
-        <div class="award-card p-6">
+        <div class="pro-glass-card p-6">
           <div class="flex items-center justify-between mb-3">
             <span class="font-heading font-bold text-sm text-sky-400">01 / Core Languages &amp; Systems</span>
             <span class="text-[10px] text-zinc-500">Foundation</span>
@@ -1201,7 +1103,7 @@
           </p>
         </div>
 
-        <div class="award-card p-6">
+        <div class="pro-glass-card p-6">
           <div class="flex items-center justify-between mb-3">
             <span class="font-heading font-bold text-sm text-purple-400">02 / Deep Learning &amp; Computer Vision</span>
             <span class="text-[10px] text-zinc-500">Neural Engine</span>
@@ -1211,7 +1113,7 @@
           </p>
         </div>
 
-        <div class="award-card p-6">
+        <div class="pro-glass-card p-6">
           <div class="flex items-center justify-between mb-3">
             <span class="font-heading font-bold text-sm text-emerald-400">03 / Applied ML &amp; High-Throughput Data</span>
             <span class="text-[10px] text-zinc-500">Data Pipelines</span>
@@ -1221,7 +1123,7 @@
           </p>
         </div>
 
-        <div class="award-card p-6">
+        <div class="pro-glass-card p-6">
           <div class="flex items-center justify-between mb-3">
             <span class="font-heading font-bold text-sm text-amber-400">04 / Cyber-Physical, Edge &amp; Cloud</span>
             <span class="text-[10px] text-zinc-500">Edge &amp; Compute</span>
@@ -1237,7 +1139,7 @@
     <!-- RECIPROCAL RESUME BANNER                                              -->
     <!-- ===================================================================== -->
     <section class="mb-20 sm:mb-24 reveal">
-      <div class="award-card p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+      <div class="pro-glass-card p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
         <div>
           <h3 class="font-heading font-bold text-base sm:text-xl text-white">
             Curriculum Vitae / Comprehensive Resume
@@ -1246,7 +1148,7 @@
             Clean, print-optimized document with complete academic coursework, publications, engineering project breakdowns, and credentials.
           </p>
         </div>
-        <a href="resume.html" class="shimmer-button px-6 py-3 rounded-full bg-white text-black font-sans text-xs sm:text-sm font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center justify-center gap-1.5 shrink-0 shadow-lg magnetic-hover">
+        <a href="resume.html" class="px-6 py-3 rounded-full bg-white text-black font-sans text-xs sm:text-sm font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center justify-center gap-1.5 shrink-0 shadow-lg">
           <span>View / Print Resume</span>
           <span class="text-xs">↗</span>
         </a>
@@ -1277,7 +1179,7 @@
 
   </div>
 
-  <!-- Interactive JavaScript Engine (Realistic Physics & Visuals) -->
+  <!-- Interactive JavaScript Engine (Clean, Robust, 100% Professional) -->
   <script>
     // Enforce dark mode permanently
     localStorage.setItem('theme', 'dark');
@@ -1294,270 +1196,15 @@
       }
     });
 
-    // High-Performance Interactive Neural Constellation Physics Canvas
-    const canvas = document.getElementById('neural-canvas');
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      let width, height;
-      let particles = [];
-      let shockwaves = [];
-
-      function resizeCanvas() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-      }
-      window.addEventListener('resize', resizeCanvas);
-      resizeCanvas();
-
-      const particleCount = window.innerWidth < 768 ? 40 : 75;
-      const colors = ['#38bdf8', '#818cf8', '#34d399', '#bf5af2'];
-      for (let i = 0; i < particleCount; i++) {
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.7,
-          vy: (Math.random() - 0.5) * 0.7,
-          radius: Math.random() * 1.8 + 1.2,
-          color: colors[Math.floor(Math.random() * colors.length)],
-          alpha: Math.random() * 0.45 + 0.35
-        });
-      }
-
-      let canvasMouse = { x: -1000, y: -1000, active: false };
-      window.addEventListener('mousemove', (e) => {
-        canvasMouse.x = e.clientX;
-        canvasMouse.y = e.clientY;
-        canvasMouse.active = true;
-      });
-      window.addEventListener('mouseleave', () => {
-        canvasMouse.active = false;
-      });
-
-      // Click Shockwave
-      window.addEventListener('click', (e) => {
-        shockwaves.push({
-          x: e.clientX,
-          y: e.clientY,
-          radius: 0,
-          maxRadius: 180,
-          opacity: 0.8
-        });
-      });
-
-      function drawCanvas() {
-        ctx.clearRect(0, 0, width, height);
-
-        // Update & Draw Shockwaves
-        for (let s = shockwaves.length - 1; s >= 0; s--) {
-          const sw = shockwaves[s];
-          sw.radius += 5.5;
-          sw.opacity -= 0.024;
-          if (sw.opacity <= 0 || sw.radius >= sw.maxRadius) {
-            shockwaves.splice(s, 1);
-            continue;
-          }
-          ctx.beginPath();
-          ctx.arc(sw.x, sw.y, sw.radius, 0, Math.PI * 2);
-          ctx.strokeStyle = `rgba(56, 189, 248, ${sw.opacity})`;
-          ctx.lineWidth = 1.5;
-          ctx.stroke();
-        }
-
-        // Update & Draw Particles & Synaptic Connections
-        for (let i = 0; i < particles.length; i++) {
-          const p = particles[i];
-
-          p.x += p.vx;
-          p.y += p.vy;
-
-          if (p.x < 0 || p.x > width) p.vx *= -1;
-          if (p.y < 0 || p.y > height) p.vy *= -1;
-
-          // Mouse Repulsion Field
-          if (canvasMouse.active) {
-            const dx = canvasMouse.x - p.x;
-            const dy = canvasMouse.y - p.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 160 && dist > 0) {
-              const force = (160 - dist) / 160;
-              p.x -= (dx / dist) * force * 3.5;
-              p.y -= (dy / dist) * force * 3.5;
-            }
-          }
-
-          // Shockwave Push
-          for (let s = 0; s < shockwaves.length; s++) {
-            const sw = shockwaves[s];
-            const dx = p.x - sw.x;
-            const dy = p.y - sw.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (Math.abs(dist - sw.radius) < 30) {
-              p.x += (dx / (dist || 1)) * 3.5;
-              p.y += (dy / (dist || 1)) * 3.5;
-            }
-          }
-
-          // Draw Node
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = p.color;
-          ctx.globalAlpha = p.alpha;
-          ctx.shadowBlur = 8;
-          ctx.shadowColor = p.color;
-          ctx.fill();
-          ctx.shadowBlur = 0;
-
-          // Draw Synapses
-          for (let j = i + 1; j < particles.length; j++) {
-            const p2 = particles[j];
-            const dx = p.x - p2.x;
-            const dy = p.y - p2.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-
-            if (dist < 110) {
-              const lineAlpha = (1 - dist / 110) * 0.22;
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(p2.x, p2.y);
-              ctx.strokeStyle = '#38bdf8';
-              ctx.globalAlpha = lineAlpha;
-              ctx.lineWidth = 0.8;
-              ctx.stroke();
-            }
-          }
-        }
-
-        // Draw Interactive Cursor Connector
-        if (canvasMouse.active) {
-          for (let i = 0; i < particles.length; i++) {
-            const p = particles[i];
-            const dx = canvasMouse.x - p.x;
-            const dy = canvasMouse.y - p.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 140) {
-              ctx.beginPath();
-              ctx.moveTo(canvasMouse.x, canvasMouse.y);
-              ctx.lineTo(p.x, p.y);
-              ctx.strokeStyle = 'rgba(56, 189, 248, 0.28)';
-              ctx.globalAlpha = (1 - dist / 140) * 0.35;
-              ctx.lineWidth = 1;
-              ctx.stroke();
-            }
-          }
-        }
-
-        ctx.globalAlpha = 1;
-        requestAnimationFrame(drawCanvas);
-      }
-      requestAnimationFrame(drawCanvas);
-    }
-
-    // Realistic Specular Lighting on Hero Heading (Tracks Cursor Angle)
-    const heroHeading = document.getElementById('hero-heading');
-    const heroSection = document.getElementById('about');
-    if (heroHeading && heroSection) {
-      heroSection.addEventListener('mousemove', (e) => {
-        const rect = heroHeading.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const xPct = Math.max(0, Math.min(100, (x / rect.width) * 100));
-        const yPct = Math.max(0, Math.min(100, (y / rect.height) * 100));
-
-        heroHeading.style.setProperty('--light-x', `${xPct.toFixed(1)}%`);
-        heroHeading.style.setProperty('--light-y', `${yPct.toFixed(1)}%`);
-      });
-
-      heroSection.addEventListener('mouseleave', () => {
-        heroHeading.style.setProperty('--light-x', '50%');
-        heroHeading.style.setProperty('--light-y', '35%');
-      });
-    }
-
-    // Mini Live Oscilloscope in Terminal Capsule
-    const oscCanvas = document.getElementById('oscilloscope');
-    if (oscCanvas) {
-      const oscCtx = oscCanvas.getContext('2d');
-      oscCanvas.width = 60;
-      oscCanvas.height = 18;
-      let oscPhase = 0;
-
-      function drawOscilloscope() {
-        oscCtx.clearRect(0, 0, 60, 18);
-        oscCtx.beginPath();
-        oscCtx.strokeStyle = '#38bdf8';
-        oscCtx.lineWidth = 1.4;
-        oscCtx.shadowBlur = 4;
-        oscCtx.shadowColor = '#38bdf8';
-
-        for (let x = 0; x < 60; x++) {
-          const y = 9 + Math.sin(x * 0.2 + oscPhase) * 4.5 + Math.sin(x * 0.08 - oscPhase * 1.5) * 2;
-          if (x === 0) oscCtx.moveTo(x, y);
-          else oscCtx.lineTo(x, y);
-        }
-        oscCtx.stroke();
-        oscCtx.shadowBlur = 0;
-        oscPhase += 0.08;
-        requestAnimationFrame(drawOscilloscope);
-      }
-      drawOscilloscope();
-    }
-
-    // Realistic Magnetic Cursor Pull
-    const magneticEls = document.querySelectorAll('.magnetic-hover');
-    magneticEls.forEach(el => {
-      el.addEventListener('mousemove', (e) => {
-        const rect = el.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        el.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px) scale(1.03)`;
-      });
-      el.addEventListener('mouseleave', () => {
-        el.style.transform = 'translate(0px, 0px) scale(1)';
-      });
-    });
-
-    // Smooth Fluid Ambient Cursor Follower
-    const cursorGlow = document.getElementById('cursor-glow');
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let curX = mouseX;
-    let curY = mouseY;
-
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-
-    function animateCursor() {
-      curX += (mouseX - curX) * 0.08;
-      curY += (mouseY - curY) * 0.08;
-      if (cursorGlow) {
-        cursorGlow.style.transform = `translate3d(${curX}px, ${curY}px, 0)`;
-      }
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // 3D Perspective Card Tilt on Mousemove
-    const awardCards = document.querySelectorAll('.award-card');
-    awardCards.forEach(card => {
+    // Dynamic Card Mouse Spotlight
+    const glassCards = document.querySelectorAll('.pro-glass-card');
+    glassCards.forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = ((y - centerY) / centerY) * -6;
-        const rotateY = ((x - centerX) / centerX) * 6;
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
         card.style.setProperty('--mouse-x', `${x}px`);
         card.style.setProperty('--mouse-y', `${y}px`);
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
       });
     });
 
