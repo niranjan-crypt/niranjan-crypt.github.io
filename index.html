@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Niranjan Krishnakumar (NK) — Electrical &amp; Computer Engineering (ELC) Researcher</title>
+  <title>Niranjan Krishnakumar — Electrical &amp; Computer Engineering (ELC) Researcher</title>
   
-  <meta name="description" content="Engineering &amp; Research Portfolio of Niranjan Krishnakumar. Electrical and Computer Engineering (ELC) at Amrita Vishwa Vidyapeetham. Specializing in Physics-Informed ML, Computer Vision, Edge AI, and Cyber-Physical Systems.">
+  <meta name="description" content="Engineering &amp; Research Portfolio of Niranjan Krishnakumar. Electrical and Computer Engineering (ELC) at Amrita Vishwa Vidyapeetham. Specializing in Physics-Informed ML, Computer Vision, Edge AI, and High-Throughput Data Systems.">
   <meta name="author" content="Niranjan Krishnakumar">
   
-  <!-- Immediate Dark Theme Lock -->
+  <!-- Immediate Theme Lock -->
   <script>
     localStorage.setItem('theme', 'dark');
     document.documentElement.classList.add('dark');
@@ -22,15 +22,16 @@
       theme: {
         extend: {
           fontFamily: {
-            heading: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Manrope', 'Helvetica Neue', 'sans-serif'],
-            sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Text', 'Inter', 'Helvetica Neue', 'sans-serif'],
+            heading: ['Manrope', '-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'sans-serif'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'SF Pro Text', 'Segoe UI', 'Roboto', 'sans-serif'],
             mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
           },
           colors: {
             brand: {
               black: '#000000',
-              canvas: '#050507',
-              card: 'rgba(16, 16, 20, 0.75)',
+              canvas: '#050505',
+              surface: '#0a0a0a',
+              card: 'rgba(16, 16, 20, 0.65)',
               border: 'rgba(255, 255, 255, 0.08)',
               subtext: '#86868b',
               body: '#d1d1d6',
@@ -61,16 +62,12 @@
       color-scheme: dark;
     }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
       background-color: #000000;
       color: #d1d1d6;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
     h1, h2, h3, h4, .font-heading {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Manrope', sans-serif;
-      letter-spacing: -0.02em;
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
     }
     .font-mono {
       font-family: 'JetBrains Mono', monospace;
@@ -88,72 +85,89 @@
       transition: width 0.08s ease-out;
     }
 
-    /* Ambient Subtle Lighting */
+    /* Ambient Cinematic Radial Lighting (Extremely Subtle) */
     .bg-ambient-aurora {
       background: 
-        radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.05), transparent 40%),
-        radial-gradient(circle at 85% 40%, rgba(191, 90, 242, 0.03), transparent 45%),
-        radial-gradient(circle at 50% 80%, rgba(52, 211, 153, 0.03), transparent 50%);
+        radial-gradient(circle at 20% 15%, rgba(80, 100, 255, 0.07), transparent 45%),
+        radial-gradient(circle at 80% 65%, rgba(0, 200, 180, 0.04), transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(191, 90, 242, 0.03), transparent 50%);
     }
 
-    /* Executive Titanium Shimmer Gradient (With generous inline padding to prevent clipping) */
+    /* Titanium Metallic Shimmer Gradient */
     @keyframes titaniumShimmer {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
     .text-shimmer-titanium {
-      display: inline-block;
-      padding-right: 0.06em;
-      padding-bottom: 0.04em;
-      background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 25%, #94a3b8 50%, #f8fafc 75%, #ffffff 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 25%, #94a3b8 50%, #f8fafc 75%, #ffffff 100%);
       background-size: 250% 250%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: titaniumShimmer 10s ease-in-out infinite;
     }
 
-    /* Apple Obsidian Glass Card */
-    .apple-glass {
-      background: rgba(16, 16, 20, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 0 20px 40px -15px rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
-                  border-color 0.25s ease, 
-                  box-shadow 0.25s ease;
-    }
-    .apple-glass:hover {
-      border-color: rgba(255, 255, 255, 0.16);
-      transform: translateY(-2px);
-      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2), 0 25px 50px -15px rgba(0, 0, 0, 0.9);
+    .subheading-gradient-text {
+      color: #ffffff;
     }
 
     /* Smooth Scroll Reveal */
     .reveal {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(28px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Modal Animation */
+    /* Editorial Text Line Reveal */
+    .hero-reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes heroEntrance {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Soft Glow Container */
+    .apple-glass {
+      background: rgba(18, 18, 22, 0.65);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    /* Project Visual Frame */
+    .project-visual-frame {
+      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, rgba(10, 10, 14, 0.8) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease;
+    }
+    .project-visual-frame:hover {
+      transform: translateY(-4px) scale(1.01);
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Modal Backdrop */
     #project-modal {
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
     }
     #project-modal.active {
       opacity: 1;
       visibility: visible;
     }
     #project-modal .modal-content {
-      transform: scale(0.97) translateY(15px);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(0.96) translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     #project-modal.active .modal-content {
       transform: scale(1) translateY(0);
@@ -162,68 +176,69 @@
 </head>
 <body class="bg-black text-[#d1d1d6] min-h-screen antialiased selection:bg-white/20 selection:text-white relative overflow-x-hidden bg-ambient-aurora">
 
+
   <!-- Top Scroll Progress Line -->
   <div id="scroll-progress"></div>
 
   <!-- Toast Notification Container -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 transition-all duration-300 pointer-events-none">
-    <div class="px-4 py-2.5 rounded-full bg-[#1c1c1e]/90 text-white text-xs font-mono font-medium shadow-2xl border border-white/15 backdrop-blur-xl flex items-center gap-2.5">
+  <div id="toast" class="fixed bottom-8 right-8 z-50 transform translate-y-12 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="px-5 py-3 rounded-full bg-[#1c1c1e]/90 text-white text-xs font-mono font-medium shadow-2xl border border-white/15 backdrop-blur-xl flex items-center gap-3">
       <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
       <span id="toast-text">Notification</span>
     </div>
   </div>
 
   <!-- ===================================================================== -->
-  <!-- DOCKED FROSTED GLASS NAVIGATION BAR (NK ONLY)                         -->
+  <!-- FLOATING MINIMAL NAVIGATION (APPLE-STYLE)                             -->
   <!-- ===================================================================== -->
-  <header class="sticky top-0 z-50 backdrop-blur-2xl bg-black/80 border-b border-white/[0.08] transition-all">
-    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-12 bg-transparent">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
       
-      <!-- Minimalist Monogram Badge (NK Only) -->
-      <a href="#" class="group flex items-center" title="Niranjan Krishnakumar (NK)">
-        <span class="w-9 h-9 rounded-xl bg-gradient-to-b from-white/[0.18] to-white/[0.04] border border-white/[0.18] text-white font-mono font-bold text-xs flex items-center justify-center tracking-tight shadow-[inset_0_1px_0_0_rgba(255,255,255,0.3)] group-hover:border-white/40 group-hover:scale-105 transition-all">
+      <!-- Minimalist Monogram Badge (NK) -->
+      <a href="#" class="group flex items-center gap-3" title="Niranjan Krishnakumar (NK)">
+        <span class="w-8 h-8 rounded-lg bg-white/[0.08] border border-white/15 text-white font-mono font-bold text-xs flex items-center justify-center tracking-tight shadow-[inset_0_1px_0_0_rgba(255,255,255,0.25)] group-hover:border-white/40 group-hover:scale-105 transition-all">
           NK
         </span>
       </a>
 
-      <!-- Center Nav Links -->
-      <nav class="hidden md:flex items-center gap-7 text-xs font-sans font-medium text-[#86868b]">
+      <!-- Center Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-sans font-medium text-[#86868b]">
         <a href="#about" class="hover:text-white transition-colors duration-200">About</a>
         <a href="#domains" class="hover:text-white transition-colors duration-200">Research</a>
-        <a href="#projects" class="hover:text-white transition-colors duration-200">Projects</a>
-        <a href="#publications" class="hover:text-white transition-colors duration-200">Publications</a>
+        <a href="#projects" class="hover:text-white transition-colors duration-200">Work</a>
+        <a href="#publications" class="hover:text-white transition-colors duration-200">Papers</a>
         <a href="#experience" class="hover:text-white transition-colors duration-200">Experience</a>
-        <a href="#skills" class="hover:text-white transition-colors duration-200">Skills</a>
+        <a href="#skills" class="hover:text-white transition-colors duration-200">Capabilities</a>
       </nav>
 
       <!-- Desktop Resume Link -->
-      <div class="flex items-center gap-3">
-        <a href="resume.html" class="px-4 py-1.5 rounded-full text-xs font-medium bg-white/10 hover:bg-white/20 border border-white/15 text-white backdrop-blur-md transition-all duration-200 hover:scale-[1.03] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)] inline-flex items-center gap-1.5">
+      <div class="hidden md:flex items-center gap-3">
+        <a href="resume.html" class="px-4 py-1.5 rounded-full text-xs font-medium bg-white/10 hover:bg-white/20 border border-white/15 text-white backdrop-blur-md transition-all duration-200 hover:scale-[1.03] inline-flex items-center gap-1.5">
           <span>Resume</span>
           <span class="text-[10px] text-white/60">↗</span>
         </a>
-
-        <!-- Mobile Hamburger Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-white p-1.5 focus:outline-none" aria-label="Toggle navigation menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
       </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none" aria-label="Toggle navigation menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
 
     </div>
 
     <!-- Mobile Drawer Overlay -->
     <div id="mobile-drawer" class="fixed inset-0 top-[65px] bg-black/95 backdrop-blur-3xl hidden flex-col justify-between p-8 md:hidden border-t border-white/10 z-40">
-      <nav class="flex flex-col gap-5 text-base font-heading font-semibold text-white">
+      <nav class="flex flex-col gap-6 text-lg font-heading font-semibold text-white">
         <a href="#about" class="mobile-nav-link hover:text-sky-400 transition-colors">About</a>
         <a href="#domains" class="mobile-nav-link hover:text-sky-400 transition-colors">Research Domains</a>
-        <a href="#projects" class="mobile-nav-link hover:text-sky-400 transition-colors">Selected Projects (9 Systems)</a>
+        <a href="#projects" class="mobile-nav-link hover:text-sky-400 transition-colors">Selected Work (9 Projects)</a>
         <a href="#publications" class="mobile-nav-link hover:text-sky-400 transition-colors">IEEE Publications</a>
-        <a href="#experience" class="mobile-nav-link hover:text-sky-400 transition-colors">Experience &amp; Credentials</a>
+        <a href="#experience" class="mobile-nav-link hover:text-sky-400 transition-colors">Industry Experience</a>
         <a href="#skills" class="mobile-nav-link hover:text-sky-400 transition-colors">Technical Capabilities</a>
       </nav>
-      <div class="pt-6 border-t border-white/10 flex flex-col gap-3">
+      <div class="pt-6 border-t border-white/10 flex flex-col gap-4">
         <a href="resume.html" class="w-full py-3 rounded-full text-center text-sm font-semibold bg-white text-black">
           View Resume ↗
         </a>
@@ -235,178 +250,196 @@
   </header>
 
   <!-- ===================================================================== -->
-  <!-- HERO & ABOUT SECTION (CONTINUOUS NARRATIVE FLOW, NO DISJOINTED VOIDS) -->
+  <!-- HERO SECTION (~100VH CINEMATIC PRODUCT LAUNCH OPENING)                -->
   <!-- ===================================================================== -->
-  <section id="about" class="max-w-5xl mx-auto px-6 pt-16 sm:pt-20 pb-16">
+  <section id="hero" class="min-h-screen flex flex-col justify-center relative px-6 md:px-12 pt-28 pb-16 max-w-6xl mx-auto">
     
-    <!-- Dynamic Availability Pill -->
-    <div class="mb-6">
-      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-[#16161a]/90 border border-emerald-500/30 text-emerald-400 backdrop-blur-md shadow-[0_0_24px_rgba(16,185,129,0.12)]">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_8px_#10b981]"></span>
-        </span>
-        <span class="tracking-wide">Available for Research &amp; Engineering Roles</span>
+    <!-- Subtle Background Typography Radial Halo -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/[0.08] blur-[140px] pointer-events-none rounded-full"></div>
+
+    <div class="relative z-10 max-w-4xl">
+      
+      <!-- Live Dynamic Status Pill -->
+      <div class="mb-8 hero-reveal" style="animation-delay: 0.1s;">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-[#16161a]/90 border border-emerald-500/30 text-emerald-400 backdrop-blur-md shadow-[0_0_24px_rgba(16,185,129,0.12)]">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_8px_#10b981]"></span>
+          </span>
+          <span class="tracking-wide">Available for Research &amp; Engineering Roles</span>
+        </div>
       </div>
-    </div>
 
-    <!-- Name Heading (Clean, Crisp Typography, Zero Clipping) -->
-    <div class="mb-4">
-      <h1 class="font-heading font-extrabold text-4xl sm:text-6xl md:text-7xl text-white tracking-tight leading-tight">
-        <span>Niranjan</span>
-        <span class="text-shimmer-titanium ml-2 sm:ml-3">Krishnakumar</span>
-      </h1>
-    </div>
-
-    <!-- Academic Credential & Institution -->
-    <div class="font-sans text-sm sm:text-base text-[#a1a1a6] space-y-1 mb-6">
-      <div class="flex flex-wrap items-center gap-2">
-        <span class="font-semibold text-white">B.Tech Electrical &amp; Computer Engineering (ELC)</span>
-        <span class="text-zinc-600">·</span>
-        <span class="text-zinc-400 font-mono text-xs sm:text-sm">Expected 2027</span>
+      <!-- Continuous Cinematic Name Presentation -->
+      <div class="mb-8 hero-reveal" style="animation-delay: 0.25s;">
+        <h1 class="font-heading font-extrabold tracking-tight leading-[1.08] text-white" style="font-size: clamp(3rem, 7.5vw, 6.2rem);">
+          <span class="text-white">Niranjan</span> <span class="text-[#f5f5f7]">Krishnakumar</span>
+        </h1>
       </div>
-      <div class="text-[#86868b] text-xs sm:text-sm">
-        <span>Amrita Vishwa Vidyapeetham, Coimbatore</span>
+
+      <!-- Academic Credential & Institution -->
+      <div class="font-sans text-base sm:text-xl text-[#a1a1a6] space-y-1.5 mb-8 hero-reveal" style="animation-delay: 0.4s;">
+        <div class="flex flex-wrap items-center gap-2.5">
+          <span class="font-semibold text-white">B.Tech Electrical &amp; Computer Engineering (ELC)</span>
+          <span class="text-zinc-600">·</span>
+          <span class="text-zinc-400 font-mono text-sm sm:text-base">Expected 2027</span>
+        </div>
+        <div class="text-[#86868b] text-sm sm:text-base">
+          <span>Amrita Vishwa Vidyapeetham, Coimbatore</span>
+        </div>
       </div>
-    </div>
 
-    <!-- Research Domain Badges -->
-    <div class="flex flex-wrap items-center gap-2 mb-8 font-mono text-xs">
-      <span class="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-sky-300 font-medium hover:border-sky-400/50 hover:bg-white/[0.08] transition-all">
-        Physics-Informed ML
-      </span>
-      <span class="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-purple-300 font-medium hover:border-purple-400/50 hover:bg-white/[0.08] transition-all">
-        Computer Vision &amp; 3D-CNNs
-      </span>
-      <span class="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-emerald-300 font-medium hover:border-emerald-400/50 hover:bg-white/[0.08] transition-all">
-        Cyber-Physical &amp; Edge AI
-      </span>
-      <span class="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-amber-300 font-medium hover:border-amber-400/50 hover:bg-white/[0.08] transition-all">
-        High-Throughput Data Eng
-      </span>
-    </div>
+      <!-- Disciplines Line -->
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm font-mono text-[#86868b] mb-10 hero-reveal" style="animation-delay: 0.55s;">
+        <span class="text-sky-400">Physics-Informed ML</span>
+        <span class="text-zinc-700">·</span>
+        <span class="text-purple-400">Computer Vision</span>
+        <span class="text-zinc-700">·</span>
+        <span class="text-emerald-400">Cyber-Physical AI</span>
+        <span class="text-zinc-700">·</span>
+        <span class="text-amber-400">Data Engineering</span>
+      </div>
 
-    <!-- Continuous Professional Summary (Preserved Verbatim) -->
-    <div class="space-y-4 text-base sm:text-lg leading-relaxed text-[#d1d1d6] max-w-4xl mb-8 font-normal">
-      <p>
-        I engineer intelligent systems at the intersection of <strong class="text-white font-medium">physics-domain dynamics</strong>, <strong class="text-white font-medium">computer vision</strong>, <strong class="text-white font-medium">signal processing</strong>, and <strong class="text-white font-medium">high-performance data pipelines</strong>.
-      </p>
-      <p>
-        My research integrates physical boundary laws into neural architectures—including Physics-Informed Neural Networks (PINNs), 33-band spatial-spectral 3D-CNNs, and metric learning—for real-time edge and cyber-physical deployment. I focus on rigorous mathematical modeling: converting continuous differential equations into loss residuals, accelerating query latency through Kimball Star Schemas, and formulating metaheuristic sensitivity matrices for deregulated infrastructure.
-      </p>
-      <p>
-        Published author at <strong class="font-medium text-white underline decoration-sky-500/50 underline-offset-4">IEEE EPREC 2026</strong> (IIT Bhilai) for transmission line congestion management; co-author of a paper selected for <strong class="font-medium text-white underline decoration-purple-500/50 underline-offset-4">IEEE SPICES 2026</strong> for physics-informed neural MPPT.
-      </p>
-    </div>
-
-    <!-- Action Buttons & Direct Meta Dock -->
-    <div class="space-y-4">
-      <div class="flex flex-wrap items-center gap-3 sm:gap-4">
-        <a href="#projects" class="px-6 py-3 rounded-full bg-white text-black font-sans text-xs sm:text-sm font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_24px_rgba(255,255,255,0.2)] inline-flex items-center gap-2">
+      <!-- Primary CTA Actions -->
+      <div class="flex flex-wrap items-center gap-4 hero-reveal" style="animation-delay: 0.7s;">
+        <a href="#projects" class="px-7 py-3.5 rounded-full bg-white text-black font-sans text-xs sm:text-sm font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_24px_rgba(255,255,255,0.22)] inline-flex items-center gap-2">
           <span>Explore Selected Work ↓</span>
         </a>
-        <a href="mailto:niranjankrishnakumar2005@gmail.com" class="px-6 py-3 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.12] font-sans text-xs sm:text-sm font-semibold backdrop-blur-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2">
-          <svg class="w-4 h-4 text-white/80" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
+        <a href="mailto:niranjankrishnakumar2005@gmail.com" class="px-7 py-3.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.12] font-sans text-xs sm:text-sm font-semibold backdrop-blur-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2">
           <span>Get in Touch / Email</span>
+          <span class="text-xs text-white/60">↗</span>
         </a>
-        <a href="https://github.com/niranjan-crypt" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-full bg-white/[0.04] hover:bg-white/[0.08] text-[#86868b] hover:text-white border border-white/[0.08] font-sans text-xs sm:text-sm font-medium transition-all inline-flex items-center gap-2">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-          </svg>
+        <a href="https://github.com/niranjan-crypt" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-full text-[#86868b] hover:text-white text-xs sm:text-sm font-mono font-medium transition-colors inline-flex items-center gap-1.5">
           <span>GitHub</span>
-          <span class="text-xs text-white/50">↗</span>
+          <span>↗</span>
         </a>
       </div>
 
-      <!-- Quick Metadata Bar -->
-      <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-[#86868b] pt-1">
-        <span class="inline-flex items-center gap-1.5 text-[#a1a1a6]">
-          <span>+91 88838 13030</span>
-        </span>
-        <span class="text-zinc-700">·</span>
-        <span class="inline-flex items-center gap-1.5 text-[#a1a1a6]">
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-zinc-600 text-xs font-mono tracking-widest uppercase flex flex-col items-center gap-2 opacity-60">
+      <span>Scroll</span>
+      <span class="w-px h-6 bg-gradient-to-b from-zinc-600 to-transparent animate-pulse"></span>
+    </div>
+
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- INTRO & EDITORIAL PHILOSOPHY (APPLE TYPOGRAPHY INTERLUDE)             -->
+  <!-- ===================================================================== -->
+  <section id="about" class="py-16 sm:py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
+    
+    <div class="max-w-4xl mb-16">
+      <span class="text-xs font-mono uppercase tracking-widest text-sky-400 block mb-4">Engineering Philosophy</span>
+      <h2 class="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.15]">
+        I engineer intelligent systems at the intersection of <span class="text-white underline decoration-sky-400/40 underline-offset-8">physics</span>, <span class="text-white underline decoration-purple-400/40 underline-offset-8">computer vision</span>, <span class="text-white underline decoration-emerald-400/40 underline-offset-8">signal processing</span>, and <span class="text-white underline decoration-amber-400/40 underline-offset-8">data</span>.
+      </h2>
+    </div>
+
+    <!-- Preserved Verbatim Summary Paragraphs -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#a1a1a6] text-base sm:text-lg leading-relaxed font-sans font-normal">
+      <div>
+        <p class="mb-6">
+          My research integrates physical boundary laws into neural architectures—including Physics-Informed Neural Networks (PINNs), 33-band spatial-spectral 3D-CNNs, and metric learning—for real-time edge and cyber-physical deployment.
+        </p>
+        <p>
+          I focus on rigorous mathematical modeling: converting continuous differential equations into loss residuals, accelerating query latency through Kimball Star Schemas, and formulating metaheuristic sensitivity matrices for deregulated infrastructure.
+        </p>
+      </div>
+      <div>
+        <p class="mb-6">
+          Published author at <strong class="font-medium text-white underline decoration-sky-500/50 underline-offset-4">IEEE EPREC 2026</strong> (IIT Bhilai) for transmission line congestion management; co-author of a paper selected for <strong class="font-medium text-white underline decoration-purple-500/50 underline-offset-4">IEEE SPICES 2026</strong> for physics-informed neural MPPT.
+        </p>
+        <div class="pt-4 border-t border-white/[0.08] flex items-center gap-6 text-xs font-mono text-[#86868b]">
           <span>Coimbatore, India</span>
-        </span>
-        <span class="text-zinc-700">·</span>
-        <span class="text-emerald-400 font-medium">B.Tech ELC '27</span>
+          <span>·</span>
+          <span>+91 88838 13030</span>
+          <span>·</span>
+          <span class="text-emerald-400">B.Tech ELC '27</span>
+        </div>
       </div>
     </div>
 
   </section>
 
   <!-- ===================================================================== -->
-  <!-- RESEARCH & ENGINEERING DOMAINS (CLEAN, SOLID HEADINGS, ZERO CLIPPING)  -->
+  <!-- RESEARCH DOMAINS (HORIZONTAL EDITORIAL SHOWCASE)                      -->
   <!-- ===================================================================== -->
-  <section id="domains" class="max-w-5xl mx-auto px-6 py-12 border-t border-white/[0.08] reveal">
+  <section id="domains" class="py-16 sm:py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
     
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-8">
-      <div>
-        <span class="text-xs font-mono uppercase tracking-wider text-purple-400 block mb-1">Core Disciplines</span>
-        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
-          Research &amp; Engineering Domains
-        </h2>
-      </div>
-      <p class="text-xs font-mono text-[#86868b]">
+    <div class="mb-12">
+      <span class="text-xs font-mono uppercase tracking-widest text-purple-400 block mb-2">Core Disciplines</span>
+      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight mb-3">
+        Research &amp; Engineering Domains
+      </h2>
+      <p class="text-xs sm:text-sm font-mono text-[#86868b] max-w-2xl leading-relaxed">
         Coupling continuous physical boundary laws with discrete neural architectures.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="space-y-4">
       
       <!-- Domain 01 -->
-      <div class="apple-glass p-6 sm:p-7 rounded-2xl group">
-        <div class="flex items-center justify-between gap-2 mb-2">
-          <span class="text-xs font-mono text-sky-400 font-bold">01 // PHYSICS-INFORMED ML</span>
-          <span class="text-[11px] font-mono text-zinc-500">PINNs · Boundary Laws · DC-OPF</span>
+      <div class="p-8 sm:p-10 rounded-2xl apple-glass group hover:border-sky-500/40 hover:bg-white/[0.02] transition-all duration-300">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+          <div class="flex items-center gap-3">
+            <span class="px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/25 text-xs font-mono text-sky-400 font-bold">01</span>
+            <h3 class="font-heading font-bold text-xl sm:text-2xl text-white group-hover:text-sky-300 transition-colors">
+              Physics-Informed Machine Learning &amp; Energy Systems
+            </h3>
+          </div>
+          <span class="text-xs font-mono text-zinc-400 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] self-start sm:self-auto">PINNs · Boundary Laws · DC-OPF</span>
         </div>
-        <h3 class="font-heading font-bold text-lg text-white mb-2 group-hover:text-sky-300 transition-colors">
-          Physics-Informed Machine Learning &amp; Energy Systems
-        </h3>
-        <p class="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+        <p class="text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-4xl">
           Physics-aware neural architectures incorporating partial differential equations (PDEs), diode semiconductor equations, and sensitivity matrix DC-OPF optimization for thermal power transmission and solar photovoltaic tracking.
         </p>
       </div>
 
       <!-- Domain 02 -->
-      <div class="apple-glass p-6 sm:p-7 rounded-2xl group">
-        <div class="flex items-center justify-between gap-2 mb-2">
-          <span class="text-xs font-mono text-purple-400 font-bold">02 // COMPUTER VISION</span>
-          <span class="text-[11px] font-mono text-zinc-500">33-Band Datacubes · ArcFace · SHAP</span>
+      <div class="p-8 sm:p-10 rounded-2xl apple-glass group hover:border-purple-500/40 hover:bg-white/[0.02] transition-all duration-300">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+          <div class="flex items-center gap-3">
+            <span class="px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/25 text-xs font-mono text-purple-400 font-bold">02</span>
+            <h3 class="font-heading font-bold text-xl sm:text-2xl text-white group-hover:text-purple-300 transition-colors">
+              Computer Vision &amp; Spatial-Spectral 3D Learning
+            </h3>
+          </div>
+          <span class="text-xs font-mono text-zinc-400 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] self-start sm:self-auto">33-Band Datacubes · ArcFace · SHAP</span>
         </div>
-        <h3 class="font-heading font-bold text-lg text-white mb-2 group-hover:text-purple-300 transition-colors">
-          Computer Vision &amp; Spatial-Spectral 3D Learning
-        </h3>
-        <p class="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+        <p class="text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-4xl">
           33-band hyperspectral imaging (400–720 nm) with 3D-CNN feature extraction, deep angular-margin ArcFace metric learning, explainable AI with Spectral SHAP, and classical aerial defect inspection using ResNet50 + HOG/GLCM.
         </p>
       </div>
 
       <!-- Domain 03 -->
-      <div class="apple-glass p-6 sm:p-7 rounded-2xl group">
-        <div class="flex items-center justify-between gap-2 mb-2">
-          <span class="text-xs font-mono text-emerald-400 font-bold">03 // EDGE &amp; EMBEDDED AI</span>
-          <span class="text-[11px] font-mono text-zinc-500">ESP32 · BLE 5.0 · Digital Twins · DSP</span>
+      <div class="p-8 sm:p-10 rounded-2xl apple-glass group hover:border-emerald-500/40 hover:bg-white/[0.02] transition-all duration-300">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+          <div class="flex items-center gap-3">
+            <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/25 text-xs font-mono text-emerald-400 font-bold">03</span>
+            <h3 class="font-heading font-bold text-xl sm:text-2xl text-white group-hover:text-emerald-300 transition-colors">
+              Cyber-Physical Systems, Edge AI &amp; Telemetry
+            </h3>
+          </div>
+          <span class="text-xs font-mono text-zinc-400 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] self-start sm:self-auto">ESP32 · BLE 5.0 · Digital Twins · DSP</span>
         </div>
-        <h3 class="font-heading font-bold text-lg text-white mb-2 group-hover:text-emerald-300 transition-colors">
-          Cyber-Physical Systems, Edge AI &amp; Telemetry
-        </h3>
-        <p class="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+        <p class="text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-4xl">
           Wearable telemetry systems integrating ESP32, 6-DoF IMU complementary filter sensor fusion, flex kinematics, BLE 5.0 streaming to Flutter 3D digital twins, and DSP harmonic analysis adhering to IEEE 1159/519 standards.
         </p>
       </div>
 
       <!-- Domain 04 -->
-      <div class="apple-glass p-6 sm:p-7 rounded-2xl group">
-        <div class="flex items-center justify-between gap-2 mb-2">
-          <span class="text-xs font-mono text-amber-400 font-bold">04 // DATA ENGINEERING</span>
-          <span class="text-[11px] font-mono text-zinc-500">100K+ Orders · Star Schema · B-Tree</span>
+      <div class="p-8 sm:p-10 rounded-2xl apple-glass group hover:border-amber-500/40 hover:bg-white/[0.02] transition-all duration-300">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+          <div class="flex items-center gap-3">
+            <span class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/25 text-xs font-mono text-amber-400 font-bold">04</span>
+            <h3 class="font-heading font-bold text-xl sm:text-2xl text-white group-hover:text-amber-300 transition-colors">
+              High-Throughput Data Engineering &amp; Star Schema
+            </h3>
+          </div>
+          <span class="text-xs font-mono text-zinc-400 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] self-start sm:self-auto">100K+ Orders · Kimball Star Schema · B-Tree</span>
         </div>
-        <h3 class="font-heading font-bold text-lg text-white mb-2 group-hover:text-amber-300 transition-colors">
-          High-Throughput Data Engineering &amp; Star Schema
-        </h3>
-        <p class="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+        <p class="text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-4xl">
           Production data warehouses handling 1.5M records. 22-test automated ingestion gatekeepers, 3NF-to-Star Schema conversions, SQL window functions for RFM customer segmentation, and verified 5.35x query acceleration.
         </p>
       </div>
@@ -415,54 +448,61 @@
 
   </section>
 
+
   <!-- ===================================================================== -->
-  <!-- SELECTED WORK (ALL 9 PROJECTS, REFINED OBSIDIAN BENTO GRID)          -->
+  <!-- SELECTED WORK (ALTERNATING CINEMATIC PRODUCT SHOWCASE — ALL 9)        -->
   <!-- ===================================================================== -->
-  <section id="projects" class="max-w-5xl mx-auto px-6 py-16 border-t border-white/[0.08] reveal">
+  <section id="projects" class="py-16 sm:py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
     
-    <!-- Section Header -->
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+    <!-- Section Title -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
       <div>
-        <span class="text-xs font-mono uppercase tracking-wider text-sky-400 block mb-1">Featured Systems</span>
-        <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
-          Selected Projects (9)
+        <span class="text-xs font-mono uppercase tracking-widest text-sky-400 block mb-2">Featured Systems</span>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight">
+          Selected Work
         </h2>
       </div>
 
       <!-- Segmented Category Filter Controller -->
-      <div class="p-1 rounded-full bg-[#16161a] border border-white/[0.08] inline-flex flex-wrap gap-1 shadow-md" id="project-filters">
-        <button class="project-filter-btn px-3.5 py-1 rounded-full text-xs font-mono font-medium bg-white text-black shadow-sm transition-all" data-filter="all">All (9)</button>
-        <button class="project-filter-btn px-3.5 py-1 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="cv">Vision (3)</button>
-        <button class="project-filter-btn px-3.5 py-1 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="energy">Energy &amp; Opt (3)</button>
-        <button class="project-filter-btn px-3.5 py-1 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="data">Data Eng (1)</button>
-        <button class="project-filter-btn px-3.5 py-1 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="embedded">Embedded (1)</button>
-        <button class="project-filter-btn px-3.5 py-1 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="theory">Algorithms (1)</button>
+      <div class="p-1 rounded-full bg-[#16161a]/90 border border-white/[0.08] inline-flex flex-wrap gap-1 shadow-2xl backdrop-blur-xl" id="project-filters">
+        <button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium bg-white text-black shadow-md transition-all" data-filter="all">All (9)</button>
+        <button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="cv">Vision (3)</button>
+        <button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="energy">Energy &amp; Opt (3)</button>
+        <button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="data">Data Eng (1)</button>
+        <button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="embedded">Embedded (1)</button>
+        <button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all" data-filter="theory">Algorithms (1)</button>
       </div>
     </div>
 
-    <!-- 2-Column Responsive Bento Grid (All 9 Systems) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="project-list">
+    <!-- The 9 Cinematic Alternating Project Showcases -->
+    <div class="space-y-16 sm:space-y-20" id="project-list">
 
-      <!-- PROJECT 01: Hyperspectral Face ID -->
-      <article class="project-item apple-glass p-6 sm:p-7 rounded-2xl flex flex-col justify-between group" data-category="cv" data-project-id="1">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-3">
-            <span class="text-[11px] font-mono uppercase tracking-wider text-purple-400 bg-purple-950/40 border border-purple-800/40 px-2.5 py-0.5 rounded-full">
-              Computer Vision · 3D-CNN
+      <!-- =================================================================== -->
+      <!-- PROJECT 01: Hyperspectral Face Identification (Left Text / Right Visual) -->
+      <!-- =================================================================== -->
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="cv" data-project-id="1">
+        
+        <div class="lg:col-span-6 space-y-5">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-purple-500/10 border border-purple-500/25 text-purple-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              01 · Computer Vision · 3D-CNN
             </span>
-            <a href="https://github.com/niranjan-crypt/Hyperspectral-Face-Identification-XAI" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
-              <span>Code</span>
-              <span class="text-purple-400">↗</span>
-            </a>
+            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
+              UWA-HSFD Benchmark
+            </span>
           </div>
 
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-white group-hover:text-purple-300 transition-colors leading-snug mb-1">
+          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
             Real-Time Hyperspectral Face ID &amp; Explainable AI
           </h3>
-          <div class="text-xs font-mono text-zinc-500 mb-3">33-Band Spatial-Spectral Datacube · ArcFace Biometric Loss</div>
 
-          <!-- Technical Schematic Pill -->
-          <div class="my-3 p-2.5 rounded-xl bg-black/50 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
+          <p class="font-mono text-xs text-purple-300">
+            33-Band Spatial-Spectral Datacube · ArcFace Biometric Loss
+          </p>
+
+          <!-- Technical Formula Pill -->
+          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
             <span class="text-purple-400 font-medium">λ ∈ [400, 720 nm]</span>
             <span class="text-zinc-600">→</span>
             <span>ArcFace (s=30, m=0.5)</span>
@@ -470,44 +510,106 @@
             <span class="text-emerald-400 font-medium">Spectral SHAP</span>
           </div>
 
-          <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-4">
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
             Full-stack biometric system processing 33-band hyperspectral imagery (400–720 nm) with 3D-CNN spatial-spectral feature extraction, ArcFace angular-margin loss (\(s=30, m=0.5\)), Spectral SHAP explainability, and edge deployment on Raspberry Pi 4.
           </p>
-        </div>
 
-        <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-2">
-          <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Python</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">TensorFlow</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-purple-950/40 text-purple-300 border border-purple-800/40">3D-CNN</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Raspberry Pi 4</span>
-          </div>
-          <button class="open-modal-btn text-xs font-mono text-purple-400 hover:text-white hover:underline transition-colors shrink-0" data-project="1">
-            Details ↗
-          </button>
-        </div>
-      </article>
-
-      <!-- PROJECT 02: Power Transmission Fault Detection -->
-      <article class="project-item apple-glass p-6 sm:p-7 rounded-2xl flex flex-col justify-between group" data-category="cv" data-project-id="2">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-3">
-            <span class="text-[11px] font-mono uppercase tracking-wider text-sky-400 bg-sky-950/40 border border-sky-800/40 px-2.5 py-0.5 rounded-full">
-              Computer Vision · ResNet50
-            </span>
-            <a href="https://github.com/niranjan-crypt/Hybrid-Computer-Vision-and-Deep-Learning-for-Automated-Power-Transmission-Fault-Detection" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
-              <span>Code</span>
-              <span class="text-sky-400">↗</span>
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="1">
+              <span>Explore Project</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/niranjan-crypt/Hyperspectral-Face-Identification-XAI" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+              <span>Code Repository</span>
+              <span class="text-purple-400">↗</span>
             </a>
           </div>
+        </div>
 
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-white group-hover:text-sky-300 transition-colors leading-snug mb-1">
+        <div class="lg:col-span-6">
+          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
+            <!-- 3D Hyperspectral Isometric Cube Graphic -->
+            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
+              <defs>
+                <linearGradient id="cubeGrad1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#bf5af2" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.1"/>
+                </linearGradient>
+                <linearGradient id="laserGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#34d399" stop-opacity="0.9"/>
+                </linearGradient>
+              </defs>
+              <!-- 7 Layered Isometric Spectral Slices -->
+              <g class="transform transition-transform duration-500 group-hover:scale-105">
+                <path d="M120 70 L240 30 L320 80 L200 120 Z" fill="url(#cubeGrad1)" stroke="rgba(191,90,242,0.4)" stroke-width="1.2"/>
+                <path d="M120 88 L240 48 L320 98 L200 138 Z" fill="url(#cubeGrad1)" stroke="rgba(191,90,242,0.4)" stroke-width="1.2"/>
+                <path d="M120 106 L240 66 L320 116 L200 156 Z" fill="url(#cubeGrad1)" stroke="rgba(191,90,242,0.4)" stroke-width="1.2"/>
+                <!-- Laser Scanning Plane -->
+                <path d="M120 124 L240 84 L320 134 L200 174 Z" fill="rgba(56,189,248,0.2)" stroke="url(#laserGrad)" stroke-width="2" filter="drop-shadow(0 0 8px #38bdf8)"/>
+                <path d="M120 142 L240 102 L320 152 L200 192 Z" fill="url(#cubeGrad1)" stroke="rgba(191,90,242,0.4)" stroke-width="1.2"/>
+                <path d="M120 160 L240 120 L320 170 L200 210 Z" fill="url(#cubeGrad1)" stroke="rgba(191,90,242,0.4)" stroke-width="1.2"/>
+              </g>
+              <!-- Axis Annotations -->
+              <text x="60" y="80" fill="#bf5af2" font-family="JetBrains Mono" font-size="10" opacity="0.8">λ = 400nm</text>
+              <text x="60" y="170" fill="#38bdf8" font-family="JetBrains Mono" font-size="10" opacity="0.8">λ = 720nm</text>
+              <line x1="110" y1="80" x2="110" y2="165" stroke="rgba(255,255,255,0.2)" stroke-dasharray="3 3"/>
+              <!-- SHAP Feature Points -->
+              <circle cx="210" cy="125" r="3.5" fill="#34d399" filter="drop-shadow(0 0 5px #34d399)"/>
+              <circle cx="235" cy="115" r="3" fill="#38bdf8"/>
+              <circle cx="195" cy="140" r="3" fill="#bf5af2"/>
+            </svg>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- =================================================================== -->
+      <!-- PROJECT 02: Power Transmission Fault Detection (Right Text / Left Visual) -->
+      <!-- =================================================================== -->
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="cv" data-project-id="2">
+        
+        <div class="lg:col-span-6 order-2 lg:order-1">
+          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
+            <!-- Aerial Transmission Tower Schematic -->
+            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
+              <!-- Grid Horizon & Tower -->
+              <path d="M200 30 L160 210 M200 30 L240 210" stroke="rgba(56,189,248,0.7)" stroke-width="1.8"/>
+              <path d="M140 85 L260 85 M120 135 L280 135 M150 175 L250 175" stroke="rgba(56,189,248,0.7)" stroke-width="1.6"/>
+              <path d="M160 85 L240 135 M240 85 L160 135 M160 135 L240 175 M240 135 L160 175" stroke="rgba(56,189,248,0.3)" stroke-width="1.2"/>
+              <!-- Power Conductors -->
+              <path d="M40 90 Q 140 120 200 85 Q 260 120 360 90" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/>
+              <!-- Defect Bounding Box -->
+              <rect x="250" y="70" width="55" height="40" rx="4" fill="rgba(245,166,35,0.12)" stroke="#f5a623" stroke-width="1.5" stroke-dasharray="4 2"/>
+              <text x="252" y="65" fill="#f5a623" font-family="JetBrains Mono" font-size="9">Insulator Fault</text>
+              <circle cx="277" cy="90" r="4" fill="#f5a623" filter="drop-shadow(0 0 6px #f5a623)"/>
+              <!-- Confidence Tag -->
+              <rect x="24" y="190" width="130" height="26" rx="13" fill="rgba(0,0,0,0.75)" stroke="rgba(255,255,255,0.15)"/>
+              <text x="36" y="207" fill="#34d399" font-family="JetBrains Mono" font-size="10">ResNet50: 82.0% Acc</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-sky-500/10 border border-sky-500/25 text-sky-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+              02 · Computer Vision · ResNet50
+            </span>
+            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
+              Aerial Infrastructure
+            </span>
+          </div>
+
+          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
             Power Transmission Fault Detection via Hybrid CV
           </h3>
-          <div class="text-xs font-mono text-zinc-500 mb-3">Aerial Infrastructure Fault Classification</div>
 
-          <!-- Technical Schematic Pill -->
-          <div class="my-3 p-2.5 rounded-xl bg-black/50 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
+          <p class="font-mono text-xs text-sky-300">
+            Aerial Grid Defect Classification · Classical &amp; Deep Feature Fusion
+          </p>
+
+          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
             <span class="text-sky-400 font-medium">ResNet50 Deep</span>
             <span class="text-zinc-600">+</span>
             <span>HOG / GLCM Texture</span>
@@ -515,353 +617,578 @@
             <span class="text-emerald-400 font-medium">82.0% Accuracy</span>
           </div>
 
-          <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-4">
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
             Automated transmission infrastructure inspection pipeline combining ResNet50 deep features with classical texture descriptors (HOG, LBP, GLCM). Diagnoses insulator flashover, conductor breakage, and structural defects with an interactive triage web app.
           </p>
-        </div>
 
-        <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-2">
-          <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">OpenCV</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">ResNet50</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-sky-950/40 text-sky-300 border border-sky-800/40">HOG / GLCM</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Streamlit</span>
-          </div>
-          <button class="open-modal-btn text-xs font-mono text-sky-400 hover:text-white hover:underline transition-colors shrink-0" data-project="2">
-            Details ↗
-          </button>
-        </div>
-      </article>
-
-      <!-- PROJECT 03: CommerceIQ -->
-      <article class="project-item apple-glass p-6 sm:p-7 rounded-2xl flex flex-col justify-between group" data-category="data" data-project-id="3">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-3">
-            <span class="text-[11px] font-mono uppercase tracking-wider text-amber-400 bg-amber-950/40 border border-amber-800/40 px-2.5 py-0.5 rounded-full">
-              Data Engineering · Star Schema
-            </span>
-            <a href="https://github.com/niranjan-crypt/CommerceIQ" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
-              <span>Code</span>
-              <span class="text-amber-400">↗</span>
-            </a>
-          </div>
-
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-white group-hover:text-amber-300 transition-colors leading-snug mb-1">
-            CommerceIQ: E-Commerce Data Engineering &amp; Analytics
-          </h3>
-          <div class="text-xs font-mono text-zinc-500 mb-3">100K+ Orders · 1.5M Records Data Warehouse</div>
-
-          <!-- Technical Schematic Pill -->
-          <div class="my-3 p-2.5 rounded-xl bg-black/50 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-amber-400 font-medium">OLTP 3NF</span>
-            <span class="text-zinc-600">→</span>
-            <span>22 Data Gates</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-emerald-400 font-medium">5.35× Query Speedup</span>
-          </div>
-
-          <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-4">
-            Enterprise data pipeline in Python &amp; SQL processing 100K+ orders (1.5M records). Features automated data ingestion with a 22-test Data Quality Gatekeeper, 3NF normalized OLTP schema converted to a Kimball Star Schema warehouse, SQL RFM customer segmentation via window functions, and verified 5.35x (81.3%) query speedup via B-Tree indexing.
-          </p>
-        </div>
-
-        <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-2">
-          <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">PostgreSQL</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Kimball Star</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-amber-950/40 text-amber-300 border border-amber-800/40">RFM Window</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">B-Tree</span>
-          </div>
-          <button class="open-modal-btn text-xs font-mono text-amber-400 hover:text-white hover:underline transition-colors shrink-0" data-project="3">
-            Details ↗
-          </button>
-        </div>
-      </article>
-
-      <!-- PROJECT 04: IntelliPQ Analyzer -->
-      <article class="project-item apple-glass p-6 sm:p-7 rounded-2xl flex flex-col justify-between group" data-category="energy" data-project-id="4">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-3">
-            <span class="text-[11px] font-mono uppercase tracking-wider text-sky-400 bg-sky-950/40 border border-sky-800/40 px-2.5 py-0.5 rounded-full">
-              Signal Processing · DSP &amp; ANN
-            </span>
-            <a href="https://github.com/niranjan-crypt/IntelliPQ-Power-Quality-Disturbance-Analyzer" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
-              <span>Code</span>
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="2">
+              <span>Explore Project</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/niranjan-crypt/Hybrid-Computer-Vision-and-Deep-Learning-for-Automated-Power-Transmission-Fault-Detection" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+              <span>Code Repository</span>
               <span class="text-sky-400">↗</span>
             </a>
           </div>
-
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-white group-hover:text-sky-300 transition-colors leading-snug mb-1">
-            IntelliPQ: Power Quality Disturbance Analyzer
-          </h3>
-          <div class="text-xs font-mono text-zinc-500 mb-3">IEEE 1159 &amp; 519 Standard Compliance</div>
-
-          <!-- Technical Schematic Pill -->
-          <div class="my-3 p-2.5 rounded-xl bg-black/50 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-sky-400 font-medium">Wavelet DWT (db4)</span>
-            <span class="text-zinc-600">+</span>
-            <span>FFT THD</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-emerald-400 font-medium">10 Disturbance Classes</span>
-          </div>
-
-          <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-4">
-            Signal processing suite detecting and classifying 10 power quality disturbance classes (sags, swells, harmonics, flickers) adhering to IEEE 1159/519 standards. Couples discrete wavelet transforms (db4) with ANN classification and automatic synthetic signal generation.
-          </p>
         </div>
 
-        <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-2">
-          <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">MATLAB</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Wavelet DWT</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-sky-950/40 text-sky-300 border border-sky-800/40">ANN</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">THD FFT</span>
-          </div>
-          <button class="open-modal-btn text-xs font-mono text-sky-400 hover:text-white hover:underline transition-colors shrink-0" data-project="4">
-            Details ↗
-          </button>
-        </div>
       </article>
 
-      <!-- PROJECT 05: KinoSync Smart Glove -->
-      <article class="project-item apple-glass p-6 sm:p-7 rounded-2xl flex flex-col justify-between group" data-category="embedded" data-project-id="5">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-3">
-            <span class="text-[11px] font-mono uppercase tracking-wider text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 px-2.5 py-0.5 rounded-full">
-              Cyber-Physical · BLE 5.0
+      <!-- =================================================================== -->
+      <!-- PROJECT 03: CommerceIQ Data Engineering (Left Text / Right Visual)   -->
+      <!-- =================================================================== -->
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="data" data-project-id="3">
+        
+        <div class="lg:col-span-6 space-y-5">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-amber-500/10 border border-amber-500/25 text-amber-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              03 · Data Engineering · Star Schema
             </span>
-            <a href="https://github.com/niranjan-crypt/KinoSync-Smart-Glove" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
-              <span>Code</span>
+            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
+              Olist 100K+ Dataset
+            </span>
+          </div>
+
+          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
+            CommerceIQ: E-Commerce Data Engineering &amp; Analytics
+          </h3>
+
+          <p class="font-mono text-xs text-amber-300">
+            100K+ Orders · 1.5M Records Data Warehouse
+          </p>
+
+          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
+            <span class="text-amber-400 font-medium">3NF OLTP</span>
+            <span class="text-zinc-600">→</span>
+            <span>22 Gatekeeper Tests</span>
+            <span class="text-zinc-600">→</span>
+            <span class="text-emerald-400 font-medium">5.35x B-Tree Speedup</span>
+          </div>
+
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
+            Enterprise data pipeline in Python &amp; SQL processing 100K+ orders (1.5M records). Features automated data ingestion with a 22-test Data Quality Gatekeeper, 3NF normalized OLTP schema converted to a Kimball Star Schema warehouse, SQL RFM customer segmentation via window functions, and verified 5.35x (81.3%) query speedup via B-Tree indexing.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="3">
+              <span>Explore Project</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/niranjan-crypt/CommerceIQ" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+              <span>Code Repository</span>
+              <span class="text-amber-400">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
+            <!-- Data Pipeline & Star Schema Graphic -->
+            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
+              <!-- Pipeline Ingest Flow -->
+              <rect x="30" y="90" width="70" height="60" rx="8" fill="rgba(245,166,35,0.12)" stroke="#f5a623" stroke-width="1.4"/>
+              <text x="44" y="118" fill="#f5a623" font-family="JetBrains Mono" font-size="10" font-weight="bold">3NF OLTP</text>
+              <text x="38" y="134" fill="#86868b" font-family="JetBrains Mono" font-size="8">1.5M Rows</text>
+              
+              <!-- Gatekeeper Node -->
+              <path d="M100 120 L150 120" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="3 3"/>
+              <polygon points="175,95 205,120 175,145 145,120" fill="rgba(56,189,248,0.12)" stroke="#38bdf8" stroke-width="1.4"/>
+              <text x="160" y="124" fill="#38bdf8" font-family="JetBrains Mono" font-size="9">22 QA</text>
+
+              <!-- Star Schema Hub -->
+              <path d="M205 120 L255 120" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+              <rect x="255" y="85" width="105" height="70" rx="8" fill="rgba(52,211,153,0.12)" stroke="#34d399" stroke-width="1.6"/>
+              <text x="272" y="112" fill="#34d399" font-family="JetBrains Mono" font-size="11" font-weight="bold">Fact Orders</text>
+              <text x="268" y="128" fill="#86868b" font-family="JetBrains Mono" font-size="8">Kimball Star Schema</text>
+              <text x="278" y="144" fill="#34d399" font-family="JetBrains Mono" font-size="9">5.35x Speedup</text>
+
+              <!-- Dimension Nodes Floating -->
+              <circle cx="280" cy="40" r="14" fill="#16161a" stroke="rgba(255,255,255,0.2)"/>
+              <text x="273" y="44" fill="#a1a1a6" font-family="JetBrains Mono" font-size="8">Dim</text>
+              <line x1="285" y1="54" x2="295" y2="85" stroke="rgba(255,255,255,0.2)"/>
+
+              <circle cx="330" cy="195" r="14" fill="#16161a" stroke="rgba(255,255,255,0.2)"/>
+              <text x="323" y="199" fill="#a1a1a6" font-family="JetBrains Mono" font-size="8">Dim</text>
+              <line x1="325" y1="181" x2="315" y2="155" stroke="rgba(255,255,255,0.2)"/>
+            </svg>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- =================================================================== -->
+      <!-- PROJECT 04: IntelliPQ AI Power Quality (Right Text / Left Visual)    -->
+      <!-- =================================================================== -->
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="energy" data-project-id="4">
+        
+        <div class="lg:col-span-6 order-2 lg:order-1">
+          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
+            <!-- Harmonic Waveform & FFT Spectrum Graphic -->
+            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
+              <!-- Grid lines -->
+              <line x1="40" y1="120" x2="360" y2="120" stroke="rgba(255,255,255,0.15)"/>
+              <line x1="200" y1="20" x2="200" y2="220" stroke="rgba(255,255,255,0.08)"/>
+              <!-- Oscillating Harmonic Wave with Sag Disturbance -->
+              <path d="M40 120 Q 70 40 100 120 T 160 120 Q 180 80 200 120 T 240 120 Q 270 20 300 120 T 360 120" stroke="#38bdf8" stroke-width="2.2" fill="none" filter="drop-shadow(0 0 6px rgba(56,189,248,0.5))"/>
+              <!-- FFT Harmonic Peaks Spectrum -->
+              <rect x="60" y="150" width="8" height="50" rx="2" fill="#38bdf8"/>
+              <rect x="75" y="175" width="8" height="25" rx="2" fill="rgba(56,189,248,0.4)"/>
+              <rect x="90" y="165" width="8" height="35" rx="2" fill="rgba(191,90,242,0.6)"/>
+              <rect x="105" y="185" width="8" height="15" rx="2" fill="rgba(56,189,248,0.3)"/>
+              <text x="56" y="215" fill="#86868b" font-family="JetBrains Mono" font-size="8">50Hz (f0)</text>
+              <text x="92" y="215" fill="#bf5af2" font-family="JetBrains Mono" font-size="8">3rd</text>
+              <!-- 1D-CNN + BiLSTM Badge -->
+              <rect x="230" y="30" width="130" height="26" rx="13" fill="rgba(0,0,0,0.8)" stroke="#38bdf8"/>
+              <text x="242" y="47" fill="#38bdf8" font-family="JetBrains Mono" font-size="9">IEEE 1159 / 519 Class</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-sky-500/10 border border-sky-500/25 text-sky-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+              04 · Signal Processing · DSP &amp; FFT
+            </span>
+            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
+              IEEE 1159/519 Standard
+            </span>
+          </div>
+
+          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
+            IntelliPQ: AI Power Quality &amp; Fault Detection
+          </h3>
+
+          <p class="font-mono text-xs text-sky-300">
+            IEEE 1159 &amp; 519 Grid Disturbance Engine · 1D-CNN + BiLSTM
+          </p>
+
+          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
+            <span class="text-sky-400 font-medium">DSP / FFT</span>
+            <span class="text-zinc-600">→</span>
+            <span>1D-CNN + BiLSTM</span>
+            <span class="text-zinc-600">→</span>
+            <span class="text-emerald-400 font-medium">Neuro-Symbolic</span>
+          </div>
+
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
+            Real-time harmonic analysis, sag/swell detection, and disturbance classification using combined 1D-CNN + BiLSTM architectures evaluated against IEEE 1159 and IEEE 519 standards. Includes full DSP/FFT spectral decomposition pipeline.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="4">
+              <span>Explore Project</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/niranjan-crypt/IntelliPQ-AI-Based-Power-Quality-Monitoring-Fault-Detection" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+              <span>Code Repository</span>
+              <span class="text-sky-400">↗</span>
+            </a>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- =================================================================== -->
+      <!-- PROJECT 05: KinoSync Smart Glove (Left Text / Right Visual)          -->
+      <!-- =================================================================== -->
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="embedded" data-project-id="5">
+        
+        <div class="lg:col-span-6 space-y-5">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/25 text-emerald-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              05 · Cyber-Physical · BLE 5.0
+            </span>
+            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
+              Wearable Telemetry
+            </span>
+          </div>
+
+          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
+            KinoSync: Smart Glove Telemetry &amp; 3D Digital Twin
+          </h3>
+
+          <p class="font-mono text-xs text-emerald-300">
+            6-DoF IMU &amp; Flex Kinematics · Real-Time Flutter 3D
+          </p>
+
+          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
+            <span class="text-emerald-400 font-medium">ESP32 + MPU6050</span>
+            <span class="text-zinc-600">→</span>
+            <span>BLE 5.0 Stream</span>
+            <span class="text-zinc-600">→</span>
+            <span class="text-sky-400 font-medium">Flutter 3D Skeletal</span>
+          </div>
+
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
+            Wearable telemetry system integrating ESP32, 5-finger flex sensors, MPU6050 6-DoF IMU with complementary filter sensor fusion, and PPG pulse oximetry. Streams kinematics over BLE 5.0 to a real-time Flutter 3D skeletal digital twin with emergency alerts.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="5">
+              <span>Explore Project</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/niranjan-crypt/KinoSync-Cyber-Physical-Smart-Glove-Telemetry-3D-Digital-Twin-System" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+              <span>Code Repository</span>
               <span class="text-emerald-400">↗</span>
             </a>
           </div>
-
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-white group-hover:text-emerald-300 transition-colors leading-snug mb-1">
-            KinoSync: Telemetric Smart Glove &amp; 3D Digital Twin
-          </h3>
-          <div class="text-xs font-mono text-zinc-500 mb-3">Sensor Fusion &amp; Real-Time Kinematics</div>
-
-          <!-- Technical Schematic Pill -->
-          <div class="my-3 p-2.5 rounded-xl bg-black/50 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-emerald-400 font-medium">MPU-6050 6-DoF</span>
-            <span class="text-zinc-600">+</span>
-            <span>5 Flex Sensors</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-sky-400 font-medium">50 Hz BLE Stream</span>
-          </div>
-
-          <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-4">
-            Wireless wearable kinematic telemetry glove integrating 5 flex sensors and an MPU-6050 6-DoF IMU. Employs complementary filter sensor fusion on an ESP32 micro-controller to drive a real-time Flutter 3D digital twin mesh via low-latency BLE 5.0.
-          </p>
         </div>
 
-        <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-2">
-          <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">ESP32</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">C++</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-emerald-950/40 text-emerald-300 border border-emerald-800/40">Flutter 3D</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">BLE 5.0</span>
+        <div class="lg:col-span-6">
+          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
+            <!-- 5-Finger Hand Kinematics & IMU Graphic -->
+            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
+              <!-- Wrist Base -->
+              <rect x="160" y="170" width="80" height="45" rx="10" fill="rgba(52,211,153,0.12)" stroke="#34d399" stroke-width="1.6"/>
+              <text x="175" y="197" fill="#34d399" font-family="JetBrains Mono" font-size="9">ESP32 + BLE</text>
+              <!-- 5 Finger Strain Kinematics -->
+              <path d="M165 170 L130 110 L110 80" stroke="rgba(52,211,153,0.7)" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M180 170 L160 90 L155 50" stroke="rgba(52,211,153,0.7)" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M200 170 L200 80 L200 35" stroke="#34d399" stroke-width="2.6" stroke-linecap="round"/>
+              <path d="M220 170 L240 90 L245 50" stroke="rgba(52,211,153,0.7)" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M235 170 L270 120 L285 95" stroke="rgba(52,211,153,0.7)" stroke-width="2.2" stroke-linecap="round"/>
+              <!-- Finger Joints -->
+              <circle cx="110" cy="80" r="3.5" fill="#38bdf8"/>
+              <circle cx="155" cy="50" r="3.5" fill="#38bdf8"/>
+              <circle cx="200" cy="35" r="4" fill="#38bdf8" filter="drop-shadow(0 0 6px #38bdf8)"/>
+              <circle cx="245" cy="50" r="3.5" fill="#38bdf8"/>
+              <circle cx="285" cy="95" r="3.5" fill="#38bdf8"/>
+              <!-- 6-DoF Orientation Rings -->
+              <ellipse cx="200" cy="192" rx="25" ry="12" stroke="rgba(255,255,255,0.4)" stroke-dasharray="2 2"/>
+              <text x="30" y="40" fill="#38bdf8" font-family="JetBrains Mono" font-size="9">IMU: 6-DoF Fusion (Yaw ± 0.05°)</text>
+            </svg>
           </div>
-          <button class="open-modal-btn text-xs font-mono text-emerald-400 hover:text-white hover:underline transition-colors shrink-0" data-project="5">
-            Details ↗
-          </button>
         </div>
+
       </article>
 
-      <!-- PROJECT 06: Multilevel Otsu Segmentation -->
-      <article class="project-item apple-glass p-6 sm:p-7 rounded-2xl flex flex-col justify-between group" data-category="cv" data-project-id="6">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-3">
-            <span class="text-[11px] font-mono uppercase tracking-wider text-purple-400 bg-purple-950/40 border border-purple-800/40 px-2.5 py-0.5 rounded-full">
-              Medical Imaging · Metaheuristics
+      <!-- =================================================================== -->
+      <!-- PROJECT 06: Hybrid PSO-GA Brain MRI (Right Text / Left Visual)       -->
+      <!-- =================================================================== -->
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="cv" data-project-id="6">
+        
+        <div class="lg:col-span-6 order-2 lg:order-1">
+          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
+            <!-- MRI Brain Slices & Swarm Particles Graphic -->
+            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
+              <!-- Brain Contour Iso-levels -->
+              <ellipse cx="200" cy="120" rx="90" ry="70" fill="rgba(191,90,242,0.06)" stroke="rgba(191,90,242,0.4)" stroke-width="1.4"/>
+              <ellipse cx="200" cy="120" rx="65" ry="50" stroke="rgba(191,90,242,0.6)" stroke-width="1.2"/>
+              <ellipse cx="200" cy="120" rx="40" ry="30" stroke="#bf5af2" stroke-width="1.6"/>
+              <!-- Multilevel Otsu Threshold Slices -->
+              <path d="M150 120 Q 200 90 250 120" stroke="#38bdf8" stroke-dasharray="3 3"/>
+              <!-- Swarm Convergence Particles -->
+              <circle cx="215" cy="110" r="3" fill="#34d399" filter="drop-shadow(0 0 6px #34d399)"/>
+              <circle cx="225" cy="115" r="2.5" fill="#34d399"/>
+              <circle cx="210" cy="128" r="2" fill="#34d399"/>
+              <circle cx="180" cy="100" r="2" fill="#bf5af2"/>
+              <circle cx="230" cy="140" r="2" fill="#bf5af2"/>
+              <text x="30" y="35" fill="#bf5af2" font-family="JetBrains Mono" font-size="9">PSO + GA Metaheuristics</text>
+              <text x="30" y="50" fill="#86868b" font-family="JetBrains Mono" font-size="9">Between-Class Variance Maxima</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-purple-500/10 border border-purple-500/25 text-purple-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              06 · Optimization &amp; Vision · PSO + GA
             </span>
-            <a href="https://github.com/niranjan-crypt/Accelerated-Multilevel-Otsu-Image-Segmentation-Using-Advanced-Metaheuristic-Algorithms" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
-              <span>Code</span>
+            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
+              Medical Imaging
+            </span>
+          </div>
+
+          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
+            Hybrid PSO-GA Multilevel Otsu Brain MRI Segmentation
+          </h3>
+
+          <p class="font-mono text-xs text-purple-300">
+            Between-Class Variance Metaheuristics · Haralick GLCM Classifiers
+          </p>
+
+          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
+            <span class="text-purple-400 font-medium">PSO Swarm</span>
+            <span class="text-zinc-600">+</span>
+            <span>GA Crossover</span>
+            <span class="text-zinc-600">→</span>
+            <span class="text-emerald-400 font-medium">Haralick GLCM</span>
+          </div>
+
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
+            Coupled Particle Swarm Optimization (PSO) and Genetic Algorithms (GA) to optimize multilevel Otsu between-class variance for brain tumor delineation. Benchmarks segmented slices against Random Forest classifiers trained on GLCM haralick textures.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="6">
+              <span>Explore Project</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/niranjan-crypt/Hybrid-PSO-GA-Based-Multilevel-Otsu-MRI-Segmentation-with-Machine-Learning-Validation" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+              <span>Code Repository</span>
               <span class="text-purple-400">↗</span>
             </a>
           </div>
-
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-white group-hover:text-purple-300 transition-colors leading-snug mb-1">
-            Multilevel Otsu Image Segmentation via Metaheuristics
-          </h3>
-          <div class="text-xs font-mono text-zinc-500 mb-3">Accelerated MRI Brain Scan Thresholding</div>
-
-          <!-- Technical Schematic Pill -->
-          <div class="my-3 p-2.5 rounded-xl bg-black/50 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-purple-400 font-medium">Variance \(\sigma_B^2\)</span>
-            <span class="text-zinc-600">→</span>
-            <span>Particle Swarm (PSO)</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-emerald-400 font-medium">92% Latency Drop</span>
-          </div>
-
-          <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-4">
-            Accelerated multilevel thresholding for medical MRI brain scan segmentation. Overcomes exponential \(O(L^K)\) brute-force Otsu complexity using Particle Swarm Optimization (PSO) and Firefly Algorithms, achieving up to 92% runtime reduction while preserving segmentation fidelity.
-          </p>
         </div>
 
-        <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-2">
-          <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Python</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">PSO / Firefly</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-purple-950/40 text-purple-300 border border-purple-800/40">MRI Slices</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Otsu Threshold</span>
-          </div>
-          <button class="open-modal-btn text-xs font-mono text-purple-400 hover:text-white hover:underline transition-colors shrink-0" data-project="6">
-            Details ↗
-          </button>
-        </div>
       </article>
 
-      <!-- PROJECT 07: TOC-AV Simulator -->
-      <article class="project-item apple-glass p-6 sm:p-7 rounded-2xl flex flex-col justify-between group" data-category="theory" data-project-id="7">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-3">
-            <span class="text-[11px] font-mono uppercase tracking-wider text-amber-400 bg-amber-950/40 border border-amber-800/40 px-2.5 py-0.5 rounded-full">
-              Theoretical CS · State Machines
+      <!-- =================================================================== -->
+      <!-- PROJECT 07: TOC-AV Formal Safety Verification (Left Text / Right)    -->
+      <!-- =================================================================== -->
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="theory" data-project-id="7">
+        
+        <div class="lg:col-span-6 space-y-5">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-sky-500/10 border border-sky-500/25 text-sky-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+              07 · Automata Theory · Formal Methods
             </span>
-            <a href="https://github.com/niranjan-crypt/TOC-AV" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
-              <span>Code</span>
-              <span class="text-amber-400">↗</span>
-            </a>
+            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
+              Autonomous Safety
+            </span>
           </div>
 
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-white group-hover:text-amber-300 transition-colors leading-snug mb-1">
-            TOC-AV: Theory of Computation Interactive Visualizer
+          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
+            TOC-AV: Formal Safety Verification for Autonomous Driving
           </h3>
-          <div class="text-xs font-mono text-zinc-500 mb-3">Automata &amp; Formal Language Processing</div>
 
-          <!-- Technical Schematic Pill -->
-          <div class="my-3 p-2.5 rounded-xl bg-black/50 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-amber-400 font-medium">DFA / NFA</span>
-            <span class="text-zinc-600">→</span>
-            <span>Pushdown / Turing</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-emerald-400 font-medium">Step-by-Step Trace</span>
-          </div>
-
-          <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-4">
-            Interactive software suite simulating DFA, NFA, PDA, and Turing Machine computation. Provides step-by-step state transition tracing, tape visualization, formal grammar conversions, and string acceptance evaluation for formal language education.
+          <p class="font-mono text-xs text-sky-300">
+            DFA, PDA &amp; Turing Machine State Engines · Mathematical Proofs
           </p>
-        </div>
 
-        <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-2">
-          <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Python</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Automata</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-amber-950/40 text-amber-300 border border-amber-800/40">Turing Machines</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Tkinter UI</span>
-          </div>
-          <button class="open-modal-btn text-xs font-mono text-amber-400 hover:text-white hover:underline transition-colors shrink-0" data-project="7">
-            Details ↗
-          </button>
-        </div>
-      </article>
-
-      <!-- PROJECT 08: Congestion Management (IEEE EPREC 2026) -->
-      <article class="project-item apple-glass p-6 sm:p-7 rounded-2xl flex flex-col justify-between group" data-category="energy" data-project-id="8">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-3">
-            <span class="text-[11px] font-mono uppercase tracking-wider text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 px-2.5 py-0.5 rounded-full">
-              Power Systems · IEEE EPREC 2026
-            </span>
-            <a href="https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
-              <span>Code</span>
-              <span class="text-emerald-400">↗</span>
-            </a>
-          </div>
-
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-white group-hover:text-emerald-300 transition-colors leading-snug mb-1">
-            Hybrid Optimization for Grid Congestion Management
-          </h3>
-          <div class="text-xs font-mono text-zinc-500 mb-3">IEEE 14-Bus DC-OPF Sensitivity Formulation</div>
-
-          <!-- Technical Schematic Pill -->
-          <div class="my-3 p-2.5 rounded-xl bg-black/50 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-emerald-400 font-medium">\(\mathbf{C} = \mathbf{A}\mathbf{B}\) Matrix</span>
+          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
+            <span class="text-sky-400 font-medium">q0 [Ingest]</span>
             <span class="text-zinc-600">→</span>
-            <span>Orcas + Krill Herd</span>
+            <span>PDA Stack Verification</span>
             <span class="text-zinc-600">→</span>
-            <span class="text-sky-400 font-medium">Zero Violation</span>
+            <span class="text-emerald-400 font-medium">qSafe Proof</span>
           </div>
 
-          <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-4">
-            Published research formulating a constrained DC-OPF sensitivity matrix framework (\(\mathbf{C} = \mathbf{A}\mathbf{B}\)) on the IEEE 14-bus transmission grid. Employs Orca Predation and Krill Herd optimization to eliminate transmission line thermal overload while minimizing generation rescheduling cost.
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
+            Formal language engine applying Deterministic Finite Automata (DFA), Pushdown Automata (PDA), and Turing Machines to mathematically verify sensor-fusion telemetry, detect anomalous transitions, and prevent hazardous control states.
           </p>
-        </div>
 
-        <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-2">
-          <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">MATLAB</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">DC-OPF</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-emerald-950/40 text-emerald-300 border border-emerald-800/40">IEEE 14-Bus</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Metaheuristics</span>
-          </div>
-          <button class="open-modal-btn text-xs font-mono text-emerald-400 hover:text-white hover:underline transition-colors shrink-0" data-project="8">
-            Details ↗
-          </button>
-        </div>
-      </article>
-
-      <!-- PROJECT 09: Physics-Informed ANN (IEEE SPICES 2026) -->
-      <article class="project-item apple-glass p-6 sm:p-7 rounded-2xl flex flex-col justify-between group md:col-span-2" data-category="energy" data-project-id="9">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-3">
-            <span class="text-[11px] font-mono uppercase tracking-wider text-sky-400 bg-sky-950/40 border border-sky-800/40 px-2.5 py-0.5 rounded-full">
-              Renewable Energy · IEEE SPICES 2026 · PINN
-            </span>
-            <a href="https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#86868b] hover:text-white font-medium inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] hover:border-white/20 transition-all">
-              <span>Code</span>
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="7">
+              <span>Explore Project</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/niranjan-crypt/Computation-and-Compiler-design" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+              <span>Code Repository</span>
               <span class="text-sky-400">↗</span>
             </a>
           </div>
+        </div>
 
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-white group-hover:text-sky-300 transition-colors leading-snug mb-1">
+        <div class="lg:col-span-6">
+          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
+            <!-- Automata State Machine Transition Graphic -->
+            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
+              <!-- States -->
+              <circle cx="80" cy="120" r="24" fill="#16161a" stroke="#38bdf8" stroke-width="1.8"/>
+              <text x="72" y="125" fill="#38bdf8" font-family="JetBrains Mono" font-size="12" font-weight="bold">q0</text>
+
+              <circle cx="200" cy="120" r="24" fill="#16161a" stroke="rgba(255,255,255,0.4)" stroke-width="1.8"/>
+              <text x="192" y="125" fill="#ffffff" font-family="JetBrains Mono" font-size="12" font-weight="bold">q1</text>
+
+              <!-- Double Ring Accepting Safe State -->
+              <circle cx="320" cy="120" r="26" fill="#16161a" stroke="#34d399" stroke-width="1.8" filter="drop-shadow(0 0 8px rgba(52,211,153,0.4))"/>
+              <circle cx="320" cy="120" r="20" fill="none" stroke="#34d399" stroke-width="1.4"/>
+              <text x="303" y="124" fill="#34d399" font-family="JetBrains Mono" font-size="10" font-weight="bold">qSafe</text>
+
+              <!-- Transitions -->
+              <path d="M104 120 L176 120" stroke="#38bdf8" stroke-width="1.5"/>
+              <polygon points="176,120 166,115 166,125" fill="#38bdf8"/>
+              <text x="125" y="112" fill="#86868b" font-family="JetBrains Mono" font-size="9">telemetry</text>
+
+              <path d="M224 120 L294 120" stroke="#34d399" stroke-width="1.5"/>
+              <polygon points="294,120 284,115 284,125" fill="#34d399"/>
+              <text x="242" y="112" fill="#86868b" font-family="JetBrains Mono" font-size="9">verified</text>
+
+              <!-- Stack / PDA Loop -->
+              <path d="M190 96 C 180 50, 220 50, 210 96" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" fill="none"/>
+              <text x="175" y="44" fill="#86868b" font-family="JetBrains Mono" font-size="9">stack(push)</text>
+            </svg>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- =================================================================== -->
+      <!-- PROJECT 08: Congestion Management IEEE EPREC (Right Text / Left)     -->
+      <!-- =================================================================== -->
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="energy" data-project-id="8">
+        
+        <div class="lg:col-span-6 order-2 lg:order-1">
+          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
+            <!-- IEEE 14-Bus Electrical Topology Graphic -->
+            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
+              <!-- Electrical Transmission Lines -->
+              <line x1="80" y1="80" x2="200" y2="50" stroke="rgba(52,211,153,0.6)" stroke-width="1.8"/>
+              <line x1="200" y1="50" x2="320" y2="90" stroke="rgba(52,211,153,0.6)" stroke-width="1.8"/>
+              <line x1="80" y1="80" x2="140" y2="160" stroke="rgba(52,211,153,0.4)" stroke-width="1.5"/>
+              <line x1="200" y1="50" x2="200" y2="170" stroke="#34d399" stroke-width="2.2" filter="drop-shadow(0 0 6px #34d399)"/>
+              <line x1="320" y1="90" x2="270" y2="170" stroke="rgba(52,211,153,0.4)" stroke-width="1.5"/>
+              <line x1="140" y1="160" x2="200" y2="170" stroke="rgba(52,211,153,0.6)" stroke-width="1.8"/>
+              <line x1="200" y1="170" x2="270" y2="170" stroke="rgba(52,211,153,0.6)" stroke-width="1.8"/>
+
+              <!-- Grid Bus Nodes -->
+              <circle cx="80" cy="80" r="7" fill="#16161a" stroke="#34d399" stroke-width="2"/>
+              <circle cx="200" cy="50" r="9" fill="#34d399" filter="drop-shadow(0 0 8px #34d399)"/>
+              <circle cx="320" cy="90" r="7" fill="#16161a" stroke="#34d399" stroke-width="2"/>
+              <circle cx="140" cy="160" r="7" fill="#16161a" stroke="#34d399" stroke-width="2"/>
+              <circle cx="200" cy="170" r="7" fill="#16161a" stroke="#38bdf8" stroke-width="2"/>
+              <circle cx="270" cy="170" r="7" fill="#16161a" stroke="#34d399" stroke-width="2"/>
+
+              <text x="215" y="55" fill="#ffffff" font-family="JetBrains Mono" font-size="10" font-weight="bold">Bus 1 (Gen)</text>
+              <text x="215" y="115" fill="#34d399" font-family="JetBrains Mono" font-size="9">C = AB Sensitivity</text>
+              <text x="40" y="215" fill="#86868b" font-family="JetBrains Mono" font-size="9">IEEE 14-Bus System · Zero Thermal Violations</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/25 text-emerald-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              08 · Power Systems · DC-OPF
+            </span>
+            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
+              IEEE EPREC 2026 Paper
+            </span>
+          </div>
+
+          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
+            Hybrid Optimization for Congestion Management in Power Systems
+          </h3>
+
+          <p class="font-mono text-xs text-emerald-300">
+            IEEE 14-Bus Deregulated Power Systems · Sensitivity Matrix Formulation
+          </p>
+
+          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
+            <span class="text-emerald-400 font-medium">Sensitivity C = AB</span>
+            <span class="text-zinc-600">→</span>
+            <span>Orca + Krill + Hyena</span>
+            <span class="text-zinc-600">→</span>
+            <span class="text-sky-400 font-medium">0 Thermal Violations</span>
+          </div>
+
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
+            Sensitivity matrix DC-OPF implementation with multi-algorithm metaheuristics for transmission line thermal relief on the IEEE 14-bus system. Reallocates generator active-power outputs with minimum cost and zero thermal line violations.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="8">
+              <span>Explore Project</span>
+              <span>→</span>
+            </button>
+            <a href="https://doi.org/10.1109/EPREC66546.2026.11412040" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+              <span>IEEE DOI ↗</span>
+            </a>
+            <a href="https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-full text-[#86868b] hover:text-white text-xs font-mono transition-colors">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- =================================================================== -->
+      <!-- PROJECT 09: PINN MPPT IEEE SPICES 2026 (Left Text / Right Visual)    -->
+      <!-- =================================================================== -->
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="energy" data-project-id="9">
+        
+        <div class="lg:col-span-6 space-y-5">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-sky-500/10 border border-sky-500/25 text-sky-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+              09 · Physics-Informed ML · Solar MPPT
+            </span>
+            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
+              IEEE SPICES 2026
+            </span>
+          </div>
+
+          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
             Physics-Informed ANN MPPT with Markov-Chain Validation
           </h3>
-          <div class="text-xs font-mono text-zinc-500 mb-3">Stochastic Weather Irradiance Model · Sub-5ms Dynamic Settling</div>
 
-          <!-- Technical Schematic Pill -->
-          <div class="my-3 p-2.5 rounded-xl bg-black/50 border border-white/[0.06] font-mono text-[11px] text-[#a1a1a6] flex items-center justify-between max-w-xl">
-            <span class="text-sky-400 font-medium">Diode Semiconductor Physics Loss</span>
+          <p class="font-mono text-xs text-sky-300">
+            Stochastic Weather Irradiance Model · Sub-5ms Dynamic Settling
+          </p>
+
+          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
+            <span class="text-sky-400 font-medium">Diode Physics Loss</span>
             <span class="text-zinc-600">+</span>
-            <span>2D Markov Chain</span>
+            <span>2D Markov</span>
             <span class="text-zinc-600">→</span>
-            <span class="text-emerald-400 font-medium">R² = 0.9994 (MPPT)</span>
+            <span class="text-emerald-400 font-medium">R² = 0.9994</span>
           </div>
 
-          <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed mb-4 max-w-4xl">
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
             Physics-informed maximum power point tracking (MPPT) architecture incorporating semiconductor physics diode equations and a stochastic 2D Markov-chain solar irradiance weather model. Delivers \(R^2 = 0.9994\), \(>99.5\%\) tracking efficiency, and sub-5 ms dynamic settling.
           </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="9">
+              <span>Explore Project</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+              <span>Code Repository</span>
+              <span class="text-sky-400">↗</span>
+            </a>
+          </div>
         </div>
 
-        <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-2">
-          <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Python</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">PyTorch</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-sky-950/40 text-sky-300 border border-sky-800/40">PINN</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white/90 border border-white/[0.08]">Markov Chains</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-emerald-950/40 text-emerald-300 border border-emerald-800/40">PV MPPT</span>
+        <div class="lg:col-span-6">
+          <div class="project-visual-frame p-8 sm:p-10 rounded-3xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
+            <!-- Photovoltaic P-V Curve & Markov States Graphic -->
+            <svg class="w-full h-full max-h-[260px]" viewBox="0 0 400 240" fill="none">
+              <!-- Voltage / Power Axes -->
+              <line x1="50" y1="190" x2="350" y2="190" stroke="rgba(255,255,255,0.2)"/>
+              <line x1="50" y1="40" x2="50" y2="190" stroke="rgba(255,255,255,0.2)"/>
+              <text x="340" y="205" fill="#86868b" font-family="JetBrains Mono" font-size="9">Voltage V</text>
+              <text x="15" y="45" fill="#86868b" font-family="JetBrains Mono" font-size="9">Power P</text>
+              
+              <!-- Non-linear P-V Curves -->
+              <path d="M50 190 Q 200 40 240 70 L 290 190" stroke="#38bdf8" stroke-width="2.4" fill="none" filter="drop-shadow(0 0 8px rgba(56,189,248,0.5))"/>
+              <path d="M50 190 Q 180 80 215 105 L 260 190" stroke="rgba(56,189,248,0.3)" stroke-width="1.6" fill="none"/>
+
+              <!-- Maximum Power Point -->
+              <circle cx="240" cy="70" r="5" fill="#34d399" filter="drop-shadow(0 0 8px #34d399)"/>
+              <text x="252" y="72" fill="#34d399" font-family="JetBrains Mono" font-size="10" font-weight="bold">MPP (99.94%)</text>
+              
+              <!-- Markov Weather State Annotation -->
+              <rect x="70" y="70" width="100" height="24" rx="6" fill="#16161a" stroke="rgba(255,255,255,0.15)"/>
+              <text x="78" y="86" fill="#86868b" font-family="JetBrains Mono" font-size="9">2D Markov Grid</text>
+            </svg>
           </div>
-          <button class="open-modal-btn text-xs font-mono text-sky-400 hover:text-white hover:underline transition-colors shrink-0" data-project="9">
-            Details ↗
-          </button>
         </div>
+
       </article>
 
     </div>
 
-    <!-- GitHub Ecosystem Card -->
-    <div class="mt-8 p-6 sm:p-8 rounded-2xl apple-glass flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <!-- GitHub Ecosystem Full-Width Minimal Banner -->
+    <div class="mt-24 p-8 sm:p-12 rounded-3xl apple-glass flex flex-col sm:flex-row sm:items-center justify-between gap-6">
       <div>
-        <h4 class="font-heading font-bold text-lg sm:text-xl text-white">
+        <h4 class="font-heading font-extrabold text-xl sm:text-2xl text-white">
           Explore All 9 Open Source Repositories on GitHub
         </h4>
-        <p class="font-sans text-xs sm:text-sm text-[#86868b] mt-0.5">
+        <p class="font-sans text-xs sm:text-sm text-[#86868b] mt-1 max-w-xl">
           Production models, automated pipelines, datasets, notebooks, and research codebases.
         </p>
       </div>
-      <a href="https://github.com/niranjan-crypt?tab=repositories" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs sm:text-sm font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center justify-center gap-2 shrink-0">
+      <a href="https://github.com/niranjan-crypt?tab=repositories" target="_blank" rel="noopener noreferrer" class="px-7 py-3 rounded-full bg-white text-black font-sans text-xs sm:text-sm font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center justify-center gap-2 shrink-0">
         <span>github.com/niranjan-crypt</span>
         <span>↗</span>
       </a>
@@ -872,48 +1199,48 @@
   <!-- ===================================================================== -->
   <!-- PEER-REVIEWED PUBLICATIONS (ACADEMIC EDITORIAL LAYOUT)                -->
   <!-- ===================================================================== -->
-  <section id="publications" class="max-w-5xl mx-auto px-6 py-16 border-t border-white/[0.08] reveal">
+  <section id="publications" class="py-16 sm:py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
     
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-8">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16">
       <div>
-        <span class="text-xs font-mono uppercase tracking-wider text-sky-400 block mb-1">Academic Research</span>
-        <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+        <span class="text-xs font-mono uppercase tracking-widest text-sky-400 block mb-2">Academic Research</span>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight">
           Selected Publications
         </h2>
       </div>
       <span class="text-xs font-mono text-[#86868b]">IEEE Conference Proceedings</span>
     </div>
 
-    <div class="space-y-6">
+    <div class="space-y-8">
       
       <!-- Publication 01: IEEE EPREC 2026 -->
-      <article class="apple-glass p-6 sm:p-8 rounded-2xl space-y-4">
+      <article class="p-8 sm:p-10 rounded-3xl apple-glass hover:border-white/20 transition-all space-y-6">
         <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
           <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">01 // IEEE Published Paper</span>
           <span class="text-xs font-mono text-zinc-500">IEEE EPREC 2026</span>
         </div>
 
-        <h3 class="font-heading font-bold text-xl sm:text-2xl text-white leading-snug">
+        <h3 class="font-heading font-bold text-2xl sm:text-3xl text-white leading-snug">
           Hybrid Optimization for Congestion Management in Deregulated Power Systems
         </h3>
 
-        <p class="font-mono text-xs text-sky-400">
+        <p class="font-mono text-xs sm:text-sm text-sky-400">
           6th IEEE International Conference on Electric Power and Renewable Energy (EPREC-2026), IIT Bhilai · Published by IEEE
         </p>
 
-        <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+        <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-4xl">
           Formulates a constrained DC-OPF sensitivity framework (\(\mathbf{C} = \mathbf{A}\mathbf{B}\)) on the IEEE 14-bus transmission system to minimize active-power load shedding. Couples Orcas, Krill Herd, and Spotted Hyena algorithms with stagnant-iteration diversification to relieve thermal overloads without violation.
         </p>
 
         <div class="flex flex-wrap items-center gap-3 pt-2 font-sans text-xs">
-          <a href="https://doi.org/10.1109/EPREC66546.2026.11412040" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white text-black font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5">
+          <a href="https://doi.org/10.1109/EPREC66546.2026.11412040" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white text-black font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5">
             <span>IEEE Xplore (DOI: 10.1109)</span>
             <span>↗</span>
           </a>
-          <a href="https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.12] font-medium transition-all">
+          <a href="https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.12] font-medium transition-all">
             Code [GitHub] ↗
           </a>
-          <button id="copy-citation-btn" class="px-5 py-2 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.12] font-medium transition-all inline-flex items-center gap-1.5">
+          <button id="copy-citation-btn" class="px-5 py-2.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.12] font-medium transition-all inline-flex items-center gap-1.5">
             <span id="copy-citation-icon">📋</span>
             <span id="copy-citation-text">Copy BibTeX Citation</span>
           </button>
@@ -921,26 +1248,26 @@
       </article>
 
       <!-- Publication 02: IEEE SPICES 2026 -->
-      <article class="apple-glass p-6 sm:p-8 rounded-2xl space-y-4">
+      <article class="p-8 sm:p-10 rounded-3xl apple-glass hover:border-white/20 transition-all space-y-6">
         <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
           <span class="text-xs font-mono text-sky-400 font-bold uppercase tracking-wider">02 // Selected for Presentation</span>
           <span class="text-xs font-mono text-zinc-500">IEEE SPICES 2026</span>
         </div>
 
-        <h3 class="font-heading font-bold text-xl sm:text-2xl text-white leading-snug">
+        <h3 class="font-heading font-bold text-2xl sm:text-3xl text-white leading-snug">
           Physics-Informed ANN-Based MPPT with Markov-Chain Validation for Photovoltaic Systems
         </h3>
 
-        <p class="font-mono text-xs text-sky-400">
+        <p class="font-mono text-xs sm:text-sm text-sky-400">
           IEEE International Conference on Signal Processing, Informatics, Communication and Energy Systems (SPICES 2026)
         </p>
 
-        <p class="font-sans text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+        <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-4xl">
           Designed an 18-15-12 Artificial Neural Network integrated with a stochastic 2D Markov-chain irradiance weather model for physics-informed MPPT under dynamic solar variation. Achieved \(R^2 = 0.9994\), \(>99.5\%\) tracking efficiency, and \(<5\text{ ms}\) settling time.
         </p>
 
         <div class="flex flex-wrap items-center gap-3 pt-2 font-sans text-xs">
-          <a href="https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.12] font-medium transition-all">
+          <a href="https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.12] font-medium transition-all">
             Code [GitHub] ↗
           </a>
         </div>
@@ -951,65 +1278,65 @@
   </section>
 
   <!-- ===================================================================== -->
-  <!-- INDUSTRY EXPERIENCE & CREDENTIALS TIMELINE                            -->
+  <!-- INDUSTRY EXPERIENCE & TIMELINE (L&T, AWS, EDUCATION)                  -->
   <!-- ===================================================================== -->
-  <section id="experience" class="max-w-5xl mx-auto px-6 py-16 border-t border-white/[0.08] reveal">
+  <section id="experience" class="py-16 sm:py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
     
-    <div class="mb-10">
-      <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 block mb-1">Professional Path</span>
-      <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+    <div class="mb-16">
+      <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 block mb-2">Professional Path</span>
+      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight">
         Industry Experience &amp; Credentials
       </h2>
     </div>
 
-    <!-- Vertical Timeline -->
-    <div class="relative pl-6 sm:pl-8 border-l border-white/10 space-y-10">
+    <!-- Vertical Timeline with Subtle Glowing Nodes -->
+    <div class="relative pl-6 sm:pl-8 border-l border-white/10 space-y-12">
       
-      <!-- Node 1: L&T -->
+      <!-- Timeline Node 1: L&T -->
       <div class="relative">
         <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-purple-500 border-4 border-black shadow-[0_0_10px_#bf5af2]"></span>
         
-        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-white">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+          <h3 class="font-heading font-bold text-xl text-white">
             Industry Intern — Larsen &amp; Toubro (L&amp;T), Chennai
           </h3>
           <span class="text-xs font-mono text-purple-400 font-medium">June 2026</span>
         </div>
-        <div class="text-xs font-mono text-zinc-500 mb-2">Electric Powertrain &amp; Railway Systems Unit</div>
-        <p class="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed max-w-3xl">
+        <div class="text-xs font-mono text-zinc-500 mb-3">Electric Powertrain &amp; Railway Systems Unit</div>
+        <p class="text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-3xl">
           Built simulation models of EV powertrains and battery management systems (BMS) to analyze PMSM/BLDC motor-control behavior, DC–DC converter operation, battery cell integration, and CAN-based bus communications. Evaluated railway electrical systems and SCADA automation infrastructure alongside core powertrain modeling.
         </p>
       </div>
 
-      <!-- Node 2: AWS Academy -->
+      <!-- Timeline Node 2: AWS Academy -->
       <div class="relative">
         <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-4 border-black shadow-[0_0_10px_#10b981]"></span>
         
-        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-white">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+          <h3 class="font-heading font-bold text-xl text-white">
             AWS Academy Graduate — Cloud Foundations
           </h3>
           <a href="https://www.credly.com/badges/eaed5b78-e6d1-426e-8be1-6a1c66f2bc7e/print" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-emerald-400 hover:underline">
             Verified Credly Badge ↗
           </a>
         </div>
-        <p class="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed max-w-3xl">
+        <p class="text-sm sm:text-base text-[#a1a1a6] leading-relaxed max-w-3xl">
           Cloud architecture, distributed compute infrastructure, storage pipelines, security, and IAM policies.
         </p>
       </div>
 
-      <!-- Node 3: Academic Degree -->
+      <!-- Timeline Node 3: Academic Degree -->
       <div class="relative">
         <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-sky-500 border-4 border-black shadow-[0_0_10px_#38bdf8]"></span>
         
-        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-white">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+          <h3 class="font-heading font-bold text-xl text-white">
             B.Tech in Electrical &amp; Computer Engineering (ELC)
           </h3>
           <span class="text-xs font-mono text-sky-400 font-medium">Expected 2027</span>
         </div>
         <div class="text-xs font-mono text-zinc-500 mb-1">Amrita Vishwa Vidyapeetham, Coimbatore</div>
-        <p class="text-xs sm:text-sm text-[#86868b] leading-relaxed max-w-3xl">
+        <p class="text-sm text-[#86868b] leading-relaxed max-w-3xl">
           Core coursework spanning physics-informed machine learning, computer vision, signal processing, autonomous cyber-physical systems, embedded architectures, and data engineering.
         </p>
       </div>
@@ -1021,57 +1348,57 @@
   <!-- ===================================================================== -->
   <!-- TECHNICAL CAPABILITIES & SKILLS (4 EDITORIAL QUADRANTS)              -->
   <!-- ===================================================================== -->
-  <section id="skills" class="max-w-5xl mx-auto px-6 py-16 border-t border-white/[0.08] reveal">
+  <section id="skills" class="py-16 sm:py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
     
-    <div class="mb-10">
-      <span class="text-xs font-mono uppercase tracking-wider text-amber-400 block mb-1">Engineering Toolkit</span>
-      <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+    <div class="mb-16">
+      <span class="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2">Engineering Toolkit</span>
+      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight">
         Technical Capabilities
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       
       <!-- Quadrant 01 -->
-      <div class="apple-glass p-6 sm:p-7 rounded-2xl space-y-3">
-        <div class="flex items-center justify-between border-b border-white/[0.08] pb-3">
-          <span class="text-xs font-mono text-sky-400 font-bold">01 // CORE LANGUAGES &amp; SYSTEMS</span>
-          <span class="text-[11px] font-mono text-zinc-500">Foundation</span>
+      <div class="p-8 sm:p-10 rounded-3xl apple-glass space-y-4">
+        <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
+          <span class="text-sm font-mono text-sky-400 font-bold">01 // CORE LANGUAGES &amp; SYSTEMS</span>
+          <span class="text-xs font-mono text-zinc-500">Foundation</span>
         </div>
-        <p class="text-sm text-white font-medium leading-relaxed font-sans">
+        <p class="text-base text-white font-medium leading-relaxed font-sans">
           Python, SQL (PostgreSQL), C, C++, Object-Oriented Programming (OOP), MATLAB, Bash, Git, Linux, Docker, Data Structures &amp; Algorithms (DSA), Memory Optimization.
         </p>
       </div>
 
       <!-- Quadrant 02 -->
-      <div class="apple-glass p-6 sm:p-7 rounded-2xl space-y-3">
-        <div class="flex items-center justify-between border-b border-white/[0.08] pb-3">
-          <span class="text-xs font-mono text-purple-400 font-bold">02 // DEEP LEARNING &amp; COMPUTER VISION</span>
-          <span class="text-[11px] font-mono text-zinc-500">Neural Engine</span>
+      <div class="p-8 sm:p-10 rounded-3xl apple-glass space-y-4">
+        <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
+          <span class="text-sm font-mono text-purple-400 font-bold">02 // DEEP LEARNING &amp; COMPUTER VISION</span>
+          <span class="text-xs font-mono text-zinc-500">Neural Engine</span>
         </div>
-        <p class="text-sm text-white font-medium leading-relaxed font-sans">
+        <p class="text-base text-white font-medium leading-relaxed font-sans">
           PyTorch, TensorFlow, Keras, 3D-CNNs, 1D-CNN + BiLSTM, Transfer Learning (ResNet50), OpenCV, YOLO, HOG, LBP, GLCM, ArcFace.
         </p>
       </div>
 
       <!-- Quadrant 03 -->
-      <div class="apple-glass p-6 sm:p-7 rounded-2xl space-y-3">
-        <div class="flex items-center justify-between border-b border-white/[0.08] pb-3">
-          <span class="text-xs font-mono text-emerald-400 font-bold">03 // APPLIED ML &amp; HIGH-THROUGHPUT DATA</span>
-          <span class="text-[11px] font-mono text-zinc-500">Data Pipelines</span>
+      <div class="p-8 sm:p-10 rounded-3xl apple-glass space-y-4">
+        <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
+          <span class="text-sm font-mono text-emerald-400 font-bold">03 // APPLIED ML &amp; HIGH-THROUGHPUT DATA</span>
+          <span class="text-xs font-mono text-zinc-500">Data Pipelines</span>
         </div>
-        <p class="text-sm text-white font-medium leading-relaxed font-sans">
+        <p class="text-base text-white font-medium leading-relaxed font-sans">
           Kimball Star Schema, OLTP-to-OLAP ETL, Streamlit, pandas, NumPy, scikit-learn, XGBoost, Explainable AI (SHAP / LIME), RFM Segmentation.
         </p>
       </div>
 
       <!-- Quadrant 04 -->
-      <div class="apple-glass p-6 sm:p-7 rounded-2xl space-y-3">
-        <div class="flex items-center justify-between border-b border-white/[0.08] pb-3">
-          <span class="text-xs font-mono text-amber-400 font-bold">04 // CYBER-PHYSICAL, EDGE &amp; CLOUD</span>
-          <span class="text-[11px] font-mono text-zinc-500">Edge &amp; Compute</span>
+      <div class="p-8 sm:p-10 rounded-3xl apple-glass space-y-4">
+        <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
+          <span class="text-sm font-mono text-amber-400 font-bold">04 // CYBER-PHYSICAL, EDGE &amp; CLOUD</span>
+          <span class="text-xs font-mono text-zinc-500">Edge &amp; Compute</span>
         </div>
-        <p class="text-sm text-white font-medium leading-relaxed font-sans">
+        <p class="text-base text-white font-medium leading-relaxed font-sans">
           Raspberry Pi (Edge Inference), ESP32 (BLE 5.0), DSP (FFT, THD), EV Powertrains, Metaheuristics (PSO / GA / DC-OPF), AWS Cloud Foundations.
         </p>
       </div>
@@ -1083,17 +1410,17 @@
   <!-- ===================================================================== -->
   <!-- RESUME BANNER                                                         -->
   <!-- ===================================================================== -->
-  <section class="max-w-5xl mx-auto px-6 py-12 border-t border-white/[0.08] reveal">
-    <div class="apple-glass p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+  <section class="py-16 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
+    <div class="p-8 sm:p-12 rounded-3xl apple-glass flex flex-col sm:flex-row sm:items-center justify-between gap-6">
       <div>
-        <h3 class="font-heading font-bold text-xl text-white">
+        <h3 class="font-heading font-extrabold text-2xl text-white">
           Curriculum Vitae / Comprehensive Resume
         </h3>
-        <p class="font-sans text-xs sm:text-sm text-[#86868b] mt-0.5">
+        <p class="font-sans text-xs sm:text-sm text-[#86868b] mt-1 max-w-xl">
           Clean, print-optimized document with complete academic coursework, publications, engineering project breakdowns, and credentials.
         </p>
       </div>
-      <a href="resume.html" class="px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs sm:text-sm font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center justify-center gap-1.5 shrink-0">
+      <a href="resume.html" class="px-8 py-3.5 rounded-full bg-white text-black font-sans text-xs sm:text-sm font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center justify-center gap-2 shrink-0">
         <span>View / Print Resume</span>
         <span>↗</span>
       </a>
@@ -1103,41 +1430,41 @@
   <!-- ===================================================================== -->
   <!-- MINIMALIST CINEMATIC FOOTER                                           -->
   <!-- ===================================================================== -->
-  <footer class="max-w-5xl mx-auto px-6 pt-16 pb-12 border-t border-white/[0.08]">
+  <footer class="py-20 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.08]">
     
-    <div class="mb-10">
-      <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
-        Let's build something <span class="text-[#86868b]">meaningful.</span>
+    <div class="mb-14">
+      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight">
+        Let's build something<br><span class="text-[#86868b]">meaningful.</span>
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pb-10 border-b border-white/[0.08] text-xs font-mono">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-white/[0.08] text-xs font-mono">
       <div>
-        <span class="text-zinc-500 uppercase tracking-wider block mb-2">Direct Contact</span>
+        <span class="text-zinc-500 uppercase tracking-widest block mb-3">Direct Contact</span>
         <a href="mailto:niranjankrishnakumar2005@gmail.com" class="text-white hover:text-sky-400 block mb-1">niranjankrishnakumar2005@gmail.com</a>
         <span class="text-[#86868b] block">+91 88838 13030</span>
       </div>
 
       <div>
-        <span class="text-zinc-500 uppercase tracking-wider block mb-2">Social &amp; Code</span>
+        <span class="text-zinc-500 uppercase tracking-widest block mb-3">Social &amp; Code</span>
         <a href="https://github.com/niranjan-crypt" target="_blank" rel="noopener noreferrer" class="text-white hover:text-sky-400 block mb-1">GitHub ↗</a>
         <a href="https://www.credly.com/badges/eaed5b78-e6d1-426e-8be1-6a1c66f2bc7e/print" target="_blank" rel="noopener noreferrer" class="text-white hover:text-sky-400 block">Credly AWS ↗</a>
       </div>
 
       <div>
-        <span class="text-zinc-500 uppercase tracking-wider block mb-2">Research</span>
+        <span class="text-zinc-500 uppercase tracking-widest block mb-3">Research</span>
         <a href="https://doi.org/10.1109/EPREC66546.2026.11412040" target="_blank" rel="noopener noreferrer" class="text-white hover:text-sky-400 block mb-1">IEEE EPREC Paper ↗</a>
         <a href="resume.html" class="text-white hover:text-sky-400 block">Full Resume (PDF) ↗</a>
       </div>
 
       <div>
-        <span class="text-zinc-500 uppercase tracking-wider block mb-2">Location &amp; Degree</span>
+        <span class="text-zinc-500 uppercase tracking-widest block mb-3">Location &amp; Degree</span>
         <span class="text-white block mb-1">Coimbatore, India</span>
         <span class="text-emerald-400 block">B.Tech ELC (Amrita '27)</span>
       </div>
     </div>
 
-    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
       <div class="flex items-center gap-2">
         <span class="w-6 h-6 rounded-md bg-white/[0.08] border border-white/10 text-white font-bold text-[10px] flex items-center justify-center">NK</span>
         <span>© 2026 Niranjan Krishnakumar. All rights reserved.</span>
@@ -1151,18 +1478,18 @@
   </footer>
 
   <!-- ===================================================================== -->
-  <!-- PROJECT DETAIL MODAL (CLEAN & RELIABLE)                               -->
+  <!-- CINEMATIC PROJECT DETAIL MODAL (EXPLORE PROJECT EXPERIENCE)            -->
   <!-- ===================================================================== -->
   <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-2xl">
-    <div class="modal-content relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl apple-glass p-6 sm:p-10 text-[#d1d1d6] shadow-2xl border border-white/15">
+    <div class="modal-content relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl apple-glass p-8 sm:p-12 text-[#d1d1d6] shadow-2xl border border-white/15">
       
       <!-- Modal Close Button -->
-      <button id="modal-close-btn" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all text-sm focus:outline-none" aria-label="Close modal">
+      <button id="modal-close-btn" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all text-base focus:outline-none" aria-label="Close modal">
         ✕
       </button>
 
       <!-- Modal Content Injected via JS -->
-      <div id="modal-body" class="space-y-5">
+      <div id="modal-body" class="space-y-6">
         <!-- Dynamically populated -->
       </div>
 
@@ -1170,7 +1497,7 @@
   </div>
 
   <!-- ===================================================================== -->
-  <!-- JAVASCRIPT ENGINE (NO ARTIFICIAL CURSOR, CLEAN & SNAPPY)               -->
+  <!-- INTERACTIVE JAVASCRIPT ENGINE (CLEAN, 100% RELIABLE)                  -->
   <!-- ===================================================================== -->
   <script>
     // Project Database (Preserved 100% Verbatim)
@@ -1204,103 +1531,113 @@
         subtitle: "100K+ Orders · 1.5M Records Warehouse",
         description: "Enterprise data pipeline in Python & SQL processing 100K+ orders (1.5M records). Features automated data ingestion with a 22-test Data Quality Gatekeeper, 3NF normalized OLTP schema converted to a Kimball Star Schema warehouse, SQL RFM customer segmentation via window functions, and verified 5.35x (81.3%) query speedup via B-Tree indexing.",
         architecture: "End-to-end ELT pipeline converting normalized 3NF transactional tables into a dimensional Kimball Star Schema (Fact Orders, Dim Customers, Dim Products, Dim Geolocation). Automates pre-load schema validation with a 22-test quality gatekeeper.",
-        results: "Accelerated analytical aggregations by 5.35x (81.3% runtime drop), automated 22 data quality checks, and generated RFM segmentation for 100K+ customers.",
-        tags: ["Python", "PostgreSQL", "ETL Pipelines", "Kimball Star Schema", "B-Tree", "Window Functions"],
+        results: "Verified 5.35x (81.3%) query latency acceleration through targeted B-Tree composite indexing. Segmented 100K+ customers into RFM loyalty cohorts.",
+        tags: ["Python", "PostgreSQL", "Kimball Star Schema", "B-Tree Indexing", "Streamlit"],
         codeUrl: "https://github.com/niranjan-crypt/CommerceIQ"
       },
       4: {
         num: "04",
-        title: "IntelliPQ: Power Quality Disturbance Analyzer",
-        category: "Signal Processing · Wavelets & Neural Nets",
-        subtitle: "IEEE 1159 / 519 Standard Compliance",
-        description: "Signal processing suite detecting and classifying 10 power quality disturbance classes (sags, swells, harmonics, flickers) adhering to IEEE 1159/519 standards. Couples discrete wavelet transforms (db4) with ANN classification and automatic synthetic signal generation.",
-        architecture: "Discrete Wavelet Transform (Daubechies-4 / db4) multi-resolution decomposition coupled with Fast Fourier Transform (FFT) harmonic order calculation. Features feedforward neural network disturbance classification.",
-        results: "Compliant with IEEE 1159 and IEEE 519 standards. Accurately segments and classifies 10 discrete disturbance profiles under noisy grid conditions.",
-        tags: ["MATLAB", "Wavelet DWT", "ANN", "FFT / THD", "Signal Processing"],
-        codeUrl: "https://github.com/niranjan-crypt/IntelliPQ-Power-Quality-Disturbance-Analyzer"
+        title: "IntelliPQ: AI-Based Power Quality Monitoring & Fault Detection",
+        category: "Signal Processing · Grid Disturbance Classification",
+        subtitle: "IEEE 1159 & 519 Grid Disturbance Engine",
+        description: "Real-time harmonic analysis, sag/swell detection, and disturbance classification using combined 1D-CNN + BiLSTM architectures evaluated against IEEE 1159 and IEEE 519 standards. Includes full DSP/FFT spectral decomposition pipeline.",
+        architecture: "Hybrid neural sequence model: 1D-CNN extracts local transient waveform distortions, while Bidirectional Long Short-Term Memory (BiLSTM) units capture temporal context across multiple power cycles.",
+        results: "Classifies voltage sags, swells, harmonics, and interruptions in compliance with IEEE 1159 and IEEE 519 standards.",
+        tags: ["Python", "1D-CNN + BiLSTM", "DSP", "FFT", "IEEE 1159"],
+        codeUrl: "https://github.com/niranjan-crypt/IntelliPQ-AI-Based-Power-Quality-Monitoring-Fault-Detection"
       },
       5: {
         num: "05",
-        title: "KinoSync: Telemetric Smart Glove & 3D Digital Twin Mesh",
-        category: "Cyber-Physical Systems · Sensor Fusion",
-        subtitle: "50 Hz BLE 5.0 Real-Time Telemetry",
-        description: "Wireless wearable kinematic telemetry glove integrating 5 flex sensors and an MPU-6050 6-DoF IMU. Employs complementary filter sensor fusion on an ESP32 micro-controller to drive a real-time Flutter 3D digital twin mesh via low-latency BLE 5.0.",
-        architecture: "Embedded C++ pipeline reading 5 analog flex channels and I2C 6-DoF inertial readings at 50 Hz. Implements a complementary filter to compute pitch, roll, and yaw angles, serializing into compact binary payloads broadcast via BLE 5.0.",
-        results: "Sustained 50 Hz streaming rate over BLE 5.0 with low latency; zero-drift complementary filtering driving real-time 3D hand bone mesh in Flutter.",
-        tags: ["ESP32", "C++", "Flutter", "BLE 5.0", "MPU-6050", "Sensor Fusion"],
-        codeUrl: "https://github.com/niranjan-crypt/KinoSync-Smart-Glove"
+        title: "KinoSync: Cyber-Physical Smart Glove Telemetry & 3D Digital Twin",
+        category: "Cyber-Physical Systems · BLE 5.0 Sensor Fusion",
+        subtitle: "6-DoF IMU & Flex Kinematics",
+        description: "Wearable telemetry system integrating ESP32, 5-finger flex sensors, MPU6050 6-DoF IMU with complementary filter sensor fusion, and PPG pulse oximetry. Streams kinematics over BLE 5.0 to a real-time Flutter 3D skeletal digital twin with emergency alerts.",
+        architecture: "Microcontroller edge firmware executing analog-to-digital flex conversion and IMU sensor fusion. Transmits low-latency binary packets over Bluetooth Low Energy 5.0 to a cross-platform Flutter application rendering an interactive 3D skeletal digital twin.",
+        results: "Sub-20ms wireless transmission latency with continuous real-time joint angle reconstruction and automated threshold emergency alerts.",
+        tags: ["ESP32 (C++)", "BLE 5.0", "MPU6050", "Complementary Filter", "Flutter 3D"],
+        codeUrl: "https://github.com/niranjan-crypt/KinoSync-Cyber-Physical-Smart-Glove-Telemetry-3D-Digital-Twin-System"
       },
       6: {
         num: "06",
-        title: "Accelerated Multilevel Otsu Segmentation via Metaheuristics",
-        category: "Computer Vision & Medical Imaging",
-        subtitle: "PSO & Firefly Algorithm Thresholding",
-        description: "Accelerated multilevel thresholding for medical MRI brain scan segmentation. Overcomes exponential O(L^K) brute-force Otsu complexity using Particle Swarm Optimization (PSO) and Firefly Algorithms, achieving up to 92% runtime reduction while preserving segmentation fidelity.",
-        architecture: "Formulates maximum between-class variance maximization as a continuous metaheuristic search problem. Employs multi-agent swarm vectors to locate optimal multi-threshold values without exhaustive histogram combinatorial evaluation.",
-        results: "Benchmarked on clinical MRI brain imaging slices. Delivered up to 92% computation time reduction over traditional exhaustive multilevel Otsu methods with equal PSNR.",
-        tags: ["Python", "OpenCV", "PSO", "Firefly Algorithm", "Medical Imaging", "Otsu"],
-        codeUrl: "https://github.com/niranjan-crypt/Accelerated-Multilevel-Otsu-Image-Segmentation-Using-Advanced-Metaheuristic-Algorithms"
+        title: "Hybrid PSO-GA Multilevel Otsu Brain MRI Segmentation",
+        category: "Optimization & Vision · Metaheuristic Thresholding",
+        subtitle: "Between-Class Variance Metaheuristics",
+        description: "Coupled Particle Swarm Optimization (PSO) and Genetic Algorithms (GA) to optimize multilevel Otsu between-class variance for brain tumor delineation. Benchmarks segmented slices against Random Forest classifiers trained on GLCM haralick textures.",
+        architecture: "Hybrid metaheuristic combining global exploration from Genetic Algorithm crossover/mutation operators with rapid local convergence from Particle Swarm velocity updates, maximizing multidimensional between-class variance objective functions.",
+        results: "Delineates brain lesion boundaries across multimodal MRI datasets with rapid convergence and validated GLCM textural feature integrity.",
+        tags: ["Python", "PSO + GA", "Multilevel Otsu", "Random Forest", "Haralick GLCM"],
+        codeUrl: "https://github.com/niranjan-crypt/Hybrid-PSO-GA-Based-Multilevel-Otsu-MRI-Segmentation-with-Machine-Learning-Validation"
       },
       7: {
         num: "07",
-        title: "TOC-AV: Theory of Computation Interactive Visualizer",
-        category: "Theoretical Computer Science",
-        subtitle: "Automata & State Machine Simulator",
-        description: "Interactive software suite simulating DFA, NFA, PDA, and Turing Machine computation. Provides step-by-step state transition tracing, tape visualization, formal grammar conversions, and string acceptance evaluation for formal language education.",
-        architecture: "Formal grammar and graph traversal engine supporting arbitrary 5-tuple / 7-tuple automata definitions. Features interactive dynamic tape rendering, delta transition lookups, and non-deterministic branch exploration.",
-        results: "Comprehensive pedagogical test suite successfully verifying regular, context-free, and recursively enumerable languages with animated tape heads.",
-        tags: ["Python", "Tkinter", "Graph Algorithms", "Formal Languages", "Automata Theory"],
-        codeUrl: "https://github.com/niranjan-crypt/TOC-AV"
+        title: "TOC-AV: Formal Safety Verification for Autonomous Driving",
+        category: "Automata Theory · Formal Verification & Compilers",
+        subtitle: "DFA, PDA & Turing Machine State Engines",
+        description: "Formal language engine applying Deterministic Finite Automata (DFA), Pushdown Automata (PDA), and Turing Machines to mathematically verify sensor-fusion telemetry, detect anomalous transitions, and prevent hazardous control states.",
+        architecture: "Formal grammar pipeline parsing continuous sensor streams into discrete state tokens. Leverages stack-based Pushdown Automata for nested event validation and Turing-complete models for unbounded safety invariant verification.",
+        results: "Mathematically verifies telemetry transitions and provably prevents forbidden control states in autonomous trajectory planning.",
+        tags: ["Python", "DFA / PDA / TM", "Formal Methods", "Compiler Design", "Safety Proofs"],
+        codeUrl: "https://github.com/niranjan-crypt/Computation-and-Compiler-design"
       },
       8: {
         num: "08",
-        title: "Hybrid Optimization for Congestion Management in Deregulated Power Systems",
-        category: "Power Systems · IEEE EPREC 2026",
-        subtitle: "IEEE 14-Bus DC-OPF Sensitivity Formulation",
-        description: "Published research formulating a constrained DC-OPF sensitivity matrix framework (C = AB) on the IEEE 14-bus transmission grid. Employs Orca Predation and Krill Herd optimization to eliminate transmission line thermal overload while minimizing generation rescheduling cost.",
-        architecture: "Formulates transmission line power flow equations as sensitivity matrix products (C = AB). Implements a combined Orca and Krill Herd metaheuristic optimizer with stagnant-iteration diversification to search non-convex generator active power limits.",
-        results: "Published in IEEE EPREC 2026 (IIT Bhilai). Successfully removed line overloads across all tested contingency scenarios with zero line thermal limit violations and minimal generation redispatch costs.",
-        tags: ["MATLAB", "Power Systems", "DC-OPF", "Orca Algorithm", "Krill Herd", "Sensitivity Matrix"],
+        title: "Hybrid Optimization for Congestion Management in Power Systems",
+        category: "Power Systems · IEEE EPREC 2026 Publication",
+        subtitle: "IEEE 14-Bus Deregulated Power Systems",
+        description: "Sensitivity matrix DC-OPF implementation with multi-algorithm metaheuristics for transmission line thermal relief on the IEEE 14-bus system. Reallocates generator active-power outputs with minimum cost and zero thermal line violations.",
+        architecture: "Formulates transmission line active-power sensitivity matrix (C = AB) to model generator influence on congested branches. Evaluates Orcas, Krill Herd, and Spotted Hyena algorithms with stagnant-iteration diversification.",
+        results: "Published in IEEE EPREC 2026 proceedings (DOI: 10.1109/EPREC66546.2026.11412040). Relieves thermal line congestion with optimal redispatch cost.",
+        tags: ["MATLAB", "DC-OPF", "Sensitivity Matrix", "IEEE 14-Bus", "Metaheuristics"],
         codeUrl: "https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems",
         doiUrl: "https://doi.org/10.1109/EPREC66546.2026.11412040"
       },
       9: {
         num: "09",
         title: "Physics-Informed ANN MPPT with Markov-Chain Validation",
-        category: "Renewable Energy · IEEE SPICES 2026 · PINN",
-        subtitle: "Stochastic Weather Irradiance Model · Sub-5ms Settling",
+        category: "Renewable Energy · IEEE SPICES 2026 Selected",
+        subtitle: "Stochastic Weather Irradiance Model",
         description: "Physics-informed maximum power point tracking (MPPT) architecture incorporating semiconductor physics diode equations and a stochastic 2D Markov-chain solar irradiance weather model. Delivers R² = 0.9994, >99.5% tracking efficiency, and sub-5 ms dynamic settling.",
-        architecture: "Custom loss function combining mean squared error with semiconductor diode equation residuals (I = I_ph - I_0 * (exp(qV / nkT) - 1)). Validated against synthetic weather trajectories generated via a 2D stochastic Markov state matrix.",
-        results: "Accepted for presentation at IEEE SPICES 2026. Achieved R² = 0.9994 regression accuracy, >99.5% dynamic tracking efficiency, and <5ms settling time during severe irradiance transitions.",
-        tags: ["Python", "PyTorch", "PINN", "Markov Chain", "Photovoltaics", "MPPT"],
+        architecture: "Custom 18-15-12 Artificial Neural Network trained with hybrid loss combining MSE and semiconductor I-V diode physical equations. Validated under stochastic irradiance transitions generated via 2D Markov transition matrices.",
+        results: "Selected for presentation at IEEE SPICES 2026. Achieves R² = 0.9994, >99.5% steady-state tracking efficiency, and <5ms settling time under rapid irradiance shifts.",
+        tags: ["MATLAB", "Simulink", "PINN", "2D Markov", "Photovoltaics"],
         codeUrl: "https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems"
       }
     };
 
-    // Scroll Progress Bar
+    // Sticky Header Scroll Transition
+    const header = document.getElementById('main-header');
     const scrollProgress = document.getElementById('scroll-progress');
-    window.addEventListener('scroll', () => {
-      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-      if (scrollProgress) scrollProgress.style.width = `${scrolled}%`;
-    }, { passive: true });
 
-    // Mobile Drawer Navigation
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+      
+      if (scrollProgress) {
+        scrollProgress.style.width = `${progress}%`;
+      }
+
+      if (header) {
+        if (scrollY > 30) {
+          header.classList.add('bg-black/75', 'backdrop-blur-2xl', 'border-b', 'border-white/[0.06]', 'shadow-2xl');
+          header.classList.remove('bg-transparent', 'py-4');
+          header.classList.add('py-3');
+        } else {
+          header.classList.remove('bg-black/75', 'backdrop-blur-2xl', 'border-b', 'border-white/[0.06]', 'shadow-2xl', 'py-3');
+          header.classList.add('bg-transparent', 'py-4');
+        }
+      }
+    });
+
+    // Mobile Hamburger Menu
+    const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileDrawer = document.getElementById('mobile-drawer');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-    if (mobileMenuBtn && mobileDrawer) {
-      mobileMenuBtn.addEventListener('click', () => {
-        const isHidden = mobileDrawer.classList.contains('hidden');
-        if (isHidden) {
-          mobileDrawer.classList.remove('hidden');
-          mobileDrawer.classList.add('flex');
-        } else {
-          mobileDrawer.classList.add('hidden');
-          mobileDrawer.classList.remove('flex');
-        }
+    if (mobileBtn && mobileDrawer) {
+      mobileBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+        mobileDrawer.classList.toggle('flex');
       });
 
       mobileLinks.forEach(link => {
@@ -1311,19 +1648,50 @@
       });
     }
 
-    // Scroll Reveal Engine
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    // Scroll Reveal Intersection Observer
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Category Filtering
+    // Numbers Count-Up Animation
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-target'), 10);
+          const suffix = el.getAttribute('data-suffix') || '';
+          if (!isNaN(target)) {
+            let start = 0;
+            const duration = 1200;
+            const startTime = performance.now();
+
+            function updateCount(currentTime) {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const current = Math.floor(progress * target);
+              el.textContent = `${current}${suffix}`;
+              if (progress < 1) {
+                requestAnimationFrame(updateCount);
+              } else {
+                el.textContent = `${target}${suffix}`;
+              }
+            }
+            requestAnimationFrame(updateCount);
+          }
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
+
+    // Segmented Project Category Filtering
     const filterButtons = document.querySelectorAll('.project-filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
 
@@ -1332,14 +1700,14 @@
         const filter = btn.getAttribute('data-filter');
 
         filterButtons.forEach(b => {
-          b.className = 'project-filter-btn px-3.5 py-1 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all';
+          b.className = 'project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.05] transition-all';
         });
-        btn.className = 'project-filter-btn px-3.5 py-1 rounded-full text-xs font-mono font-medium bg-white text-black shadow-sm transition-all';
+        btn.className = 'project-filter-btn px-4 py-1.5 rounded-full text-xs font-mono font-medium bg-white text-black shadow-md transition-all';
 
         projectItems.forEach(item => {
           const category = item.getAttribute('data-category');
           if (filter === 'all' || category === filter) {
-            item.style.display = 'flex';
+            item.style.display = 'grid';
             item.style.opacity = '1';
           } else {
             item.style.display = 'none';
@@ -1358,38 +1726,38 @@
       if (!p || !modal || !modalBody) return;
 
       modalBody.innerHTML = `
-        <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div class="flex items-center justify-between border-b border-white/10 pb-4">
           <span class="text-xs font-mono text-sky-400 font-bold uppercase tracking-wider">${p.num} // ${p.category}</span>
           <span class="text-xs font-mono text-zinc-500">${p.subtitle}</span>
         </div>
 
-        <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-white tracking-tight leading-snug">
+        <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
           ${p.title}
         </h3>
 
-        <div class="space-y-4 text-xs sm:text-sm leading-relaxed text-[#a1a1a6] font-sans">
+        <div class="space-y-4 text-sm sm:text-base leading-relaxed text-[#a1a1a6] font-sans">
           <p class="text-white font-medium">${p.description}</p>
-          <div class="p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] space-y-1.5">
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] space-y-2">
             <h4 class="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider">Architecture &amp; Methodology</h4>
             <p class="text-xs sm:text-sm text-[#d1d1d6]">${p.architecture}</p>
           </div>
-          <div class="p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] space-y-1.5">
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] space-y-2">
             <h4 class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">Empirical Validation &amp; Results</h4>
             <p class="text-xs sm:text-sm text-[#d1d1d6]">${p.results}</p>
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-1.5 pt-2">
-          ${p.tags.map(t => `<span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/[0.06] text-white border border-white/10">${t}</span>`).join('')}
+        <div class="flex flex-wrap gap-2 pt-2">
+          ${p.tags.map(t => `<span class="px-3 py-1 rounded-full text-xs font-mono bg-white/[0.06] text-white border border-white/10">${t}</span>`).join('')}
         </div>
 
-        <div class="flex flex-wrap items-center gap-3 pt-3 border-t border-white/10">
-          <a href="${p.codeUrl}" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5">
+        <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-white/10">
+          <a href="${p.codeUrl}" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5">
             <span>View Code on GitHub</span>
             <span>↗</span>
           </a>
           ${p.doiUrl ? `
-            <a href="${p.doiUrl}" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-sans text-xs font-semibold transition-all inline-flex items-center gap-1.5">
+            <a href="${p.doiUrl}" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-sans text-xs font-semibold transition-all inline-flex items-center gap-1.5">
               <span>IEEE DOI Link</span>
               <span>↗</span>
             </a>
@@ -1412,8 +1780,7 @@
     }
 
     document.querySelectorAll('.open-modal-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
+      btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-project');
         openProjectModal(id);
       });
