@@ -22,7 +22,7 @@
       theme: {
         extend: {
           fontFamily: {
-            heading: ['Manrope', '-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', 'sans-serif'],
             sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'SF Pro Text', 'Segoe UI', 'Roboto', 'sans-serif'],
             mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
           },
@@ -50,7 +50,7 @@
   <!-- Google Fonts: Inter, Manrope & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
   <!-- KaTeX for Mathematical Typesetting -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -335,22 +335,51 @@
       </h2>
     </div>
 
-    <!-- Comprehensive 9-Project Research Statement -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#a1a1a6] text-sm sm:text-base leading-relaxed font-sans font-normal mb-8">
-      
-      <!-- Pillar 1: Physics-Informed ML & Clean Energy -->
-      <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.07] space-y-3 flex flex-col justify-between hover:border-sky-500/30 transition-colors">
-        <div>
-          <div class="flex items-center gap-2 text-xs font-mono text-sky-400 font-semibold uppercase tracking-wider mb-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
-            <span>Physics-Constrained ML</span>
+    <!-- Comprehensive 9-Project Research Foundation (Unified Executive Showcase) -->
+    <div class="rounded-3xl bg-[#08080c]/90 border border-white/[0.08] p-8 sm:p-12 lg:p-14 shadow-[0_20px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl mb-10 relative overflow-hidden">
+      <!-- Ambient Backlight Elements -->
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-sky-500/[0.05] rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-500/[0.05] rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative space-y-8 text-sm sm:text-base leading-relaxed text-[#a1a1a6] font-sans font-normal">
+        <!-- Area 1: Physics-Constrained ML -->
+        <div class="space-y-2.5">
+          <div class="flex items-center gap-2.5">
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+            <span class="font-mono text-xs font-semibold uppercase tracking-wider text-sky-400">Physics-Constrained ML &amp; Clean Energy</span>
           </div>
-          <p class="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+          <p class="pl-4 sm:pl-5 border-l border-sky-500/25 text-[#d1d1d6] leading-relaxed">
             Embedding physical governing laws into neural architectures—formulating semiconductor diode equations into neural MPPT loss residuals for solar photovoltaic tracking (<strong class="text-white font-medium">R² = 0.9994</strong>, selected for <strong class="text-white font-medium underline decoration-purple-500/50">IEEE SPICES 2026</strong>) and deriving generator sensitivity matrices with DC-OPF for transmission line congestion relief across IEEE test grids (<strong class="text-white font-medium underline decoration-sky-500/50">IEEE EPREC 2026</strong> at IIT Bhilai).
           </p>
         </div>
-        <div class="text-[11px] font-mono text-zinc-500 pt-2 border-t border-white/[0.05]">PINNs · Solar MPPT · DC-OPF</div>
+
+        <div class="w-full h-px bg-white/[0.06]"></div>
+
+        <!-- Area 2: Spatial-Spectral Vision -->
+        <div class="space-y-2.5">
+          <div class="flex items-center gap-2.5">
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+            <span class="font-mono text-xs font-semibold uppercase tracking-wider text-purple-400">Spatial-Spectral Vision &amp; Diagnostics</span>
+          </div>
+          <p class="pl-4 sm:pl-5 border-l border-purple-500/25 text-[#d1d1d6] leading-relaxed">
+            Engineering volumetric 3D-CNNs processing 33-band spatial-spectral hyperspectral imagery (400–720 nm) with deep angular-margin ArcFace metric learning and Spectral SHAP explainability on edge silicon. Concurrently formulating dual-stream aerial computer vision fusing 2048-D ResNet50 deep representations with HOG/GLCM texture statistics for transmission defect diagnosis (<strong class="text-white font-medium">82.0% accuracy</strong>).
+          </p>
+        </div>
+
+        <div class="w-full h-px bg-white/[0.06]"></div>
+
+        <!-- Area 3: Cyber-Physical & Data Systems -->
+        <div class="space-y-2.5">
+          <div class="flex items-center gap-2.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="font-mono text-xs font-semibold uppercase tracking-wider text-emerald-400">Cyber-Physical AI &amp; High-Throughput Data</span>
+          </div>
+          <p class="pl-4 sm:pl-5 border-l border-emerald-500/25 text-[#d1d1d6] leading-relaxed">
+            Architecting low-latency telemetry and high-throughput data backbones—from ESP32/BLE 5.0 smart glove kinematics streaming to 3D Flutter digital twins (<strong class="text-white font-medium">KinoSync</strong>) and real-time DSP power quality sequence models (<strong class="text-white font-medium">IntelliPQ</strong>, IEEE 1159/519), to enterprise data warehouses transforming 100K+ orders into Kimball Star Schemas with 5.35x B-Tree query acceleration (<strong class="text-white font-medium">CommerceIQ</strong>), backed by formal automata safety proofs (<strong class="text-white font-medium">TOC-AV</strong>) and PSO-GA Multilevel Otsu MRI segmentation.
+          </p>
+        </div>
       </div>
+    </div>
 
       <!-- Pillar 2: High-Dimensional Vision & Diagnostics -->
       <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.07] space-y-3 flex flex-col justify-between hover:border-purple-500/30 transition-colors">
@@ -404,7 +433,7 @@
   <!-- ===================================================================== -->
   <!-- SELECTED WORK (ALTERNATING CINEMATIC PRODUCT SHOWCASE — ALL 9)        -->
   <!-- ===================================================================== -->
-  <section id="projects" class="py-16 sm:py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
+  <section id="projects" class="py-20 sm:py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/[0.06] reveal">
     
     <!-- Creative System Architecture Deck Header -->
     <div class="mb-14 pb-8 border-b border-white/[0.08]">
@@ -466,1360 +495,1056 @@
     </div>
 
     <!-- The 9 Cinematic Alternating Project Showcases -->
-    <div class="space-y-16 sm:space-y-20" id="project-list">
-
+    <div class="space-y-24 sm:space-y-36 lg:space-y-44" id="project-list">
       <!-- =================================================================== -->
-      <!-- PROJECT 01: Hyperspectral Face Identification (Left Text / Right Visual) -->
+      <!-- PROJECT 01: Real-Time Hyperspectral Face ID &amp; Explainable AI -->
       <!-- =================================================================== -->
-      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="cv" data-project-id="1">
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[50vh]" data-category="cv" data-project-id="1">
         
-        <div class="lg:col-span-6 space-y-5">
+        <!-- Text Column (~45% on desktop) -->
+        <div class="order-1 lg:order-1 lg:col-span-5 space-y-6">
+          <!-- Category Badge & Optional Benchmark Pill -->
           <div class="flex flex-wrap items-center gap-2.5">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-purple-500/10 border border-purple-500/25 text-purple-300">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.04] border border-white/[0.08] text-purple-300">
               <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
               01 · Computer Vision · 3D-CNN
             </span>
-            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
-              UWA-HSFD Benchmark
-            </span>
+            <span class="text-xs font-mono text-zinc-400 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06]">UWA-HSFD Benchmark</span>
           </div>
 
-          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
+          <!-- Dominant Apple-Style Project Title -->
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] text-white tracking-[-0.03em] leading-[1.12]">
             Real-Time Hyperspectral Face ID &amp; Explainable AI
           </h3>
 
-          <p class="font-mono text-xs text-purple-300">
+          <!-- Subtitle -->
+          <p class="font-sans text-base sm:text-lg text-zinc-400 font-normal leading-snug">
             33-Band Spatial-Spectral Datacube · ArcFace Biometric Loss
           </p>
 
-          <!-- Technical Formula Pill -->
-          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-purple-400 font-medium">λ ∈ [400, 720 nm]</span>
-            <span class="text-zinc-600">→</span>
-            <span>ArcFace (s=30, m=0.5)</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-emerald-400 font-medium">Spectral SHAP</span>
+          <!-- Minimal Technical Metric Pill (Not a dashboard card) -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/[0.07] font-mono text-xs text-zinc-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+            <span>λ ∈ [400, 720 nm] · ArcFace (s=30, m=0.5) · Spectral SHAP</span>
           </div>
 
-          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
+          <!-- Project Description -->
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed font-normal">
             Full-stack biometric system processing 33-band hyperspectral imagery (400–720 nm) with 3D-CNN spatial-spectral feature extraction, ArcFace angular-margin loss (\(s=30, m=0.5\)), Spectral SHAP explainability, and edge deployment on Raspberry Pi 4.
           </p>
 
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="1">
+          <!-- Actions -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5 shadow-[0_4px_20px_rgba(255,255,255,0.18)]" data-project="1">
               <span>Explore Project</span>
               <span>→</span>
             </button>
-            <a href="https://github.com/niranjan-crypt/Hyperspectral-Face-Identification-XAI" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+            <a href="https://github.com/niranjan-crypt/Hyperspectral-Face-Identification-XAI" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5">
               <span>Code Repository</span>
-              <span class="text-purple-400">↗</span>
+              <span class="text-zinc-400">↗</span>
             </a>
           </div>
         </div>
 
-        <div class="lg:col-span-6">
-          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
-            <!-- Realistic Instrument Top Console Bar -->
-            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">SPECTRAL-CORE // 33-BAND SPATIAL-SPECTRAL 3D-CNN</span>
-              </div>
-              <div class="flex items-center gap-3 text-zinc-400">
-                <span class="hidden md:inline text-zinc-500">UWA-HSFD · 42ms LATENCY</span>
-                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  LIVE · 60 FPS
-                </span>
-              </div>
-            </div>
-            <!-- High-Fidelity Canvas -->
-            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
-              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
+        <!-- Hero Visual Column (~55% on desktop) -->
+        <div class="order-2 lg:order-2 lg:col-span-7">
+          <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-gradient-to-b from-[#090a10] to-[#040407] border border-white/[0.08] shadow-[0_24px_70px_rgba(0,0,0,0.85)] p-6 sm:p-10 flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10]">
+            <!-- Subtle Ambient Light Reflection -->
+            <div class="absolute inset-0 bg-radial from-[#bf5af2]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
+            <!-- Clean Hero Product Visual -->
+            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 540 360" fill="none">
   <defs>
-    <linearGradient id="specGrad" x1="0" y1="0" x2="1" y2="1">
+    <radialGradient id="p1Ambient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#bf5af2" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="spectralRibbon" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#bf5af2" stop-opacity="0.8"/>
-      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#34d399" stop-opacity="0.2"/>
-    </linearGradient>
-    <linearGradient id="scanLaser" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#34d399" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#f5a623" stop-opacity="0.8"/>
     </linearGradient>
   </defs>
 
-  <!-- Coordinate Grids & Spatial Ticks -->
-  <g opacity="0.2" stroke="#38bdf8" stroke-width="0.8">
-    <line x1="20" y1="260" x2="480" y2="260"/>
-    <line x1="20" y1="40" x2="20" y2="260"/>
-    <line x1="140" y1="260" x2="140" y2="265"/>
-    <line x1="260" y1="260" x2="260" y2="265"/>
-    <line x1="380" y1="260" x2="380" y2="265"/>
+  <circle cx="270" cy="180" r="180" fill="url(#p1Ambient)"/>
+
+  <!-- Layered Spectral Light Sheets (Volumetric 33-band wavelength refraction) -->
+  <g opacity="0.85">
+    <path d="M140 100 Q 220 50 340 70 T 420 160 Q 340 220 220 200 Z" fill="rgba(191,90,242,0.12)" stroke="#bf5af2" stroke-width="1.2" stroke-dasharray="4 2"/>
+    <path d="M120 130 Q 210 80 360 95 T 440 200 Q 320 250 180 230 Z" fill="rgba(56,189,248,0.15)" stroke="#38bdf8" stroke-width="1.4"/>
+    <path d="M100 160 Q 200 110 380 120 T 450 240 Q 300 290 150 260 Z" fill="rgba(52,211,153,0.18)" stroke="#34d399" stroke-width="1.8" filter="drop-shadow(0 0 12px rgba(52,211,153,0.3))"/>
+    <path d="M90 190 Q 190 145 390 150 T 450 270 Q 280 320 130 285 Z" fill="rgba(245,166,35,0.12)" stroke="#f5a623" stroke-width="1.3"/>
+    <path d="M80 220 Q 180 180 400 180 T 440 300 Q 260 340 110 310 Z" fill="rgba(244,63,94,0.08)" stroke="#f43f5e" stroke-width="1.1"/>
   </g>
 
-  <!-- Left: 3D Hyperspectral Isometric Datacube (33 Wavelength Slices) -->
-  <g transform="translate(15, 20)">
-    <!-- 8 Distinct Representative Slices of the 33-Band Cube -->
-    <path d="M50 80 L140 40 L210 75 L120 115 Z" fill="rgba(191,90,242,0.15)" stroke="#bf5af2" stroke-width="1.2"/>
-    <path d="M50 95 L140 55 L210 90 L120 130 Z" fill="rgba(191,90,242,0.12)" stroke="#bf5af2" stroke-width="1.1"/>
-    <path d="M50 110 L140 70 L210 105 L120 145 Z" fill="rgba(129,140,248,0.15)" stroke="#818cf8" stroke-width="1.1"/>
-    <path d="M50 125 L140 85 L210 120 L120 160 Z" fill="rgba(56,189,248,0.18)" stroke="#38bdf8" stroke-width="1.2"/>
-    
-    <!-- Active Scanning Kernel Slice -->
-    <path d="M50 140 L140 100 L210 135 L120 175 Z" fill="rgba(56,189,248,0.3)" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 0 10px #38bdf8)"/>
-    <!-- Simulated Facial Landmark Mesh on Active Slice -->
-    <ellipse cx="130" cy="138" rx="22" ry="14" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1" stroke-dasharray="2 2"/>
-    <circle cx="120" cy="135" r="2" fill="#34d399"/>
-    <circle cx="140" cy="135" r="2" fill="#34d399"/>
-    <path d="M125 145 Q 130 148 135 145" stroke="#34d399" stroke-width="1.2" fill="none"/>
-
-    <path d="M50 155 L140 115 L210 150 L120 190 Z" fill="rgba(52,211,153,0.15)" stroke="#34d399" stroke-width="1.1"/>
-    <path d="M50 170 L140 130 L210 165 L120 205 Z" fill="rgba(52,211,153,0.12)" stroke="#34d399" stroke-width="1.1"/>
-    <path d="M50 185 L140 145 L210 180 L120 220 Z" fill="rgba(245,166,35,0.15)" stroke="#f5a623" stroke-width="1.2"/>
-
-    <!-- Depth Dimension Bracket & Scale -->
-    <line x1="38" y1="80" x2="38" y2="185" stroke="#86868b" stroke-width="1.2"/>
-    <polyline points="42,82 38,80 34,82" stroke="#86868b" stroke-width="1.2" fill="none"/>
-    <polyline points="42,183 38,185 34,183" stroke="#86868b" stroke-width="1.2" fill="none"/>
-    <text x="32" y="136" fill="#bf5af2" font-family="JetBrains Mono" font-size="8" text-anchor="end">λ=400nm</text>
-    <text x="32" y="190" fill="#f5a623" font-family="JetBrains Mono" font-size="8" text-anchor="end">λ=720nm</text>
-    <text x="125" y="240" fill="#a1a1a6" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle">33 Spectral Bands [H x W x 33]</text>
+  <!-- Sculpted Biometric Face Silhouette & Surface Contours -->
+  <g transform="translate(170, 60)" stroke="url(#spectralRibbon)" stroke-width="1.2" fill="none">
+    <path d="M60 20 Q 100 10 130 40 T 145 90 Q 150 120 140 135 L 148 148 L 138 158 Q 142 178 132 188 L 110 215 Q 80 230 40 225 L 30 250" stroke-width="2" stroke="rgba(255,255,255,0.85)"/>
+    <ellipse cx="90" cy="100" rx="18" ry="10" stroke="rgba(56,189,248,0.7)" stroke-width="1"/>
+    <circle cx="90" cy="100" r="3" fill="#38bdf8"/>
+    <ellipse cx="125" cy="105" rx="14" ry="9" stroke="rgba(56,189,248,0.6)" stroke-width="1"/>
+    <circle cx="125" cy="105" r="2.5" fill="#38bdf8"/>
+    <path d="M65 110 Q 85 140 120 145" stroke="rgba(191,90,242,0.8)" stroke-width="1.5"/>
+    <path d="M108 90 L 115 130 L 105 138" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+    <path d="M95 165 Q 110 162 120 168" stroke="rgba(245,166,35,0.7)" stroke-width="1.2"/>
+    <path d="M98 178 Q 110 185 118 178" stroke="rgba(245,166,35,0.7)" stroke-width="1.2"/>
+    <circle cx="90" cy="80" r="2" fill="#34d399"/>
+    <circle cx="125" cy="85" r="2" fill="#34d399"/>
+    <circle cx="108" cy="115" r="2.5" fill="#ffffff" filter="drop-shadow(0 0 6px #fff)"/>
+    <circle cx="105" cy="138" r="2" fill="#38bdf8"/>
+    <circle cx="75" cy="150" r="2" fill="#bf5af2"/>
+    <circle cx="108" cy="200" r="2" fill="#34d399"/>
   </g>
 
-  <!-- Right: Spectral SHAP Curve & ArcFace Geodesic Embeddings -->
-  <g transform="translate(260, 40)">
-    <!-- Header -->
-    <text x="0" y="12" fill="#38bdf8" font-family="JetBrains Mono" font-size="9" font-weight="bold">SPECTRAL SHAP ATTRIBUTION</text>
-    <text x="175" y="12" fill="#86868b" font-family="JetBrains Mono" font-size="8">φ(i) Index</text>
-
-    <!-- SHAP Curve Background Grid -->
-    <rect x="0" y="24" width="215" height="95" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.08)"/>
-    <line x1="10" y1="72" x2="205" y2="72" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2 3"/>
-
-    <!-- Continuous Spectral SHAP Importance Waveform -->
-    <path d="M10 85 Q 35 88 55 45 T 95 65 T 135 38 T 175 78 T 205 60" fill="none" stroke="#bf5af2" stroke-width="2" filter="drop-shadow(0 0 6px rgba(191,90,242,0.6))"/>
-    
-    <!-- Peak Feature Identifiers -->
-    <circle cx="55" cy="45" r="3" fill="#34d399"/>
-    <text x="55" y="38" fill="#34d399" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">540nm (Hb)</text>
-    <circle cx="135" cy="38" r="3" fill="#38bdf8"/>
-    <text x="135" y="31" fill="#38bdf8" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">620nm (Melanin)</text>
-
-    <!-- ArcFace Hyperspherical Geodesic Metric Box -->
-    <g transform="translate(0, 130)">
-      <rect x="0" y="0" width="215" height="65" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.08)"/>
-      <circle cx="35" cy="32" r="20" fill="none" stroke="#818cf8" stroke-width="1.2" stroke-dasharray="3 2"/>
-      <line x1="35" y1="32" x2="49" y2="18" stroke="#34d399" stroke-width="1.8"/>
-      <line x1="35" y1="32" x2="53" y2="32" stroke="#38bdf8" stroke-width="1.8"/>
-      <path d="M49 18 A 20 20 0 0 1 53 32" fill="none" stroke="#f5a623" stroke-width="1.5"/>
-      <text x="58" y="27" fill="#f5a623" font-family="JetBrains Mono" font-size="8">θ + m</text>
-
-      <text x="75" y="22" fill="#ffffff" font-family="JetBrains Mono" font-size="9" font-weight="bold">ArcFace (s=30, m=0.5)</text>
-      <text x="75" y="36" fill="#86868b" font-family="JetBrains Mono" font-size="8">Angular Geodesic Loss</text>
-      <text x="75" y="50" fill="#34d399" font-family="JetBrains Mono" font-size="8.5">Edge Target: RPi 4 (42ms)</text>
-    </g>
-  </g>
+  <circle cx="278" cy="175" r="4" fill="#ffffff" filter="drop-shadow(0 0 10px #38bdf8)"/>
+  <line x1="278" y1="135" x2="278" y2="215" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" stroke-dasharray="2 3"/>
+  <line x1="238" y1="175" x2="318" y2="175" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" stroke-dasharray="2 3"/>
 </svg>
-            </div>
-          </div>
-
-      </article>
-
-      <!-- =================================================================== -->
-      <!-- PROJECT 02: Power Transmission Fault Detection (Right Text / Left Visual) -->
-      <!-- =================================================================== -->
-      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="cv" data-project-id="2">
-        
-        <div class="lg:col-span-6 order-2 lg:order-1">
-          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
-            <!-- Realistic Instrument Top Console Bar -->
-            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">MISSION TELEMETRY // UAV-GRID-FLIR-02</span>
-              </div>
-              <div class="flex items-center gap-3 text-zinc-400">
-                <span class="hidden md:inline text-zinc-500">ALT: 42.4m AGL · 82.0% Acc</span>
-                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  DEFECT DETECTED
-                </span>
-              </div>
-            </div>
-            <!-- High-Fidelity Canvas -->
-            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
-              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
-              <defs>
-                <linearGradient id="towerSteelGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95"/>
-                  <stop offset="50%" stop-color="#0284c7" stop-opacity="0.75"/>
-                  <stop offset="100%" stop-color="#0369a1" stop-opacity="0.45"/>
-                </linearGradient>
-                <linearGradient id="faultHeatmap" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#f5a623" stop-opacity="0.35"/>
-                  <stop offset="100%" stop-color="#ef4444" stop-opacity="0.1"/>
-                </linearGradient>
-                <radialGradient id="arcCoreGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
-                  <stop offset="40%" stop-color="#f5a623" stop-opacity="0.8"/>
-                  <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
-                </radialGradient>
-              </defs>
-
-              <!-- Drone HUD Crosshairs & Telemetry Graticule -->
-              <g opacity="0.22">
-                <line x1="20" y1="150" x2="80" y2="150" stroke="#38bdf8" stroke-width="1"/>
-                <line x1="420" y1="150" x2="480" y2="150" stroke="#38bdf8" stroke-width="1"/>
-                <line x1="250" y1="20" x2="250" y2="55" stroke="#38bdf8" stroke-width="1"/>
-                <line x1="250" y1="245" x2="250" y2="280" stroke="#38bdf8" stroke-width="1"/>
-                <circle cx="250" cy="150" r="115" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="4 8"/>
-              </g>
-
-              <!-- Corner Flight HUD Telemetry Readouts -->
-              <g font-family="JetBrains Mono" font-size="8.5" fill="#86868b">
-                <text x="24" y="28" fill="#38bdf8" font-weight="bold">UAV-FLIGHT #04 // RECON-GRID</text>
-                <text x="24" y="42">ALT: 42.4m AGL · PITCH: -14.2°</text>
-                <text x="330" y="28" fill="#34d399" font-weight="bold">SENSOR: OPTICAL + IR</text>
-                <text x="330" y="42">LATENCY: 18ms · FPS: 60.0</text>
-              </g>
-
-              <!-- Intricate Lattice Steel Transmission Tower -->
-              <g id="transmission-tower-geometry">
-                <!-- Main Pyramidal Legs -->
-                <path d="M250 45 L190 270 M250 45 L310 270" stroke="url(#towerSteelGrad)" stroke-width="2.2"/>
-                
-                <!-- Earth Wire Apex -->
-                <polygon points="250,30 242,48 258,48" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="1.4"/>
-                <line x1="250" y1="18" x2="250" y2="30" stroke="#38bdf8" stroke-width="1.8"/>
-                <circle cx="250" cy="18" r="2.5" fill="#38bdf8"/>
-
-                <!-- Upper Crossarms -->
-                <line x1="160" y1="90" x2="340" y2="90" stroke="url(#towerSteelGrad)" stroke-width="2"/>
-                <line x1="180" y1="105" x2="320" y2="105" stroke="url(#towerSteelGrad)" stroke-width="1.6"/>
-                <line x1="160" y1="90" x2="180" y2="105" stroke="#38bdf8" stroke-width="1.4"/>
-                <line x1="340" y1="90" x2="320" y2="105" stroke="#38bdf8" stroke-width="1.4"/>
-
-                <!-- Middle Crossarms -->
-                <line x1="130" y1="140" x2="370" y2="140" stroke="url(#towerSteelGrad)" stroke-width="2.2"/>
-                <line x1="155" y1="158" x2="345" y2="158" stroke="url(#towerSteelGrad)" stroke-width="1.6"/>
-                <line x1="130" y1="140" x2="155" y2="158" stroke="#38bdf8" stroke-width="1.4"/>
-                <line x1="370" y1="140" x2="345" y2="158" stroke="#38bdf8" stroke-width="1.4"/>
-
-                <!-- Lower Waist Crossarm -->
-                <line x1="170" y1="195" x2="330" y2="195" stroke="url(#towerSteelGrad)" stroke-width="1.8"/>
-
-                <!-- Diagonal Internal X-Bracing Trusses -->
-                <g stroke="#38bdf8" stroke-width="1" opacity="0.45">
-                  <line x1="238" y1="50" x2="262" y2="90"/>
-                  <line x1="262" y1="50" x2="238" y2="90"/>
-                  <line x1="225" y1="105" x2="275" y2="140"/>
-                  <line x1="275" y1="105" x2="225" y2="140"/>
-                  <line x1="210" y1="158" x2="290" y2="195"/>
-                  <line x1="290" y1="158" x2="210" y2="195"/>
-                  <line x1="200" y1="195" x2="300" y2="235"/>
-                  <line x1="300" y1="195" x2="200" y2="235"/>
-                  <line x1="192" y1="235" x2="308" y2="270"/>
-                  <line x1="308" y1="235" x2="192" y2="270"/>
-                </g>
-
-                <!-- Ceramic Suspension Insulator Strings (Vertical Bell Stacks) -->
-                <!-- Left Upper Insulator -->
-                <g>
-                  <line x1="165" y1="90" x2="165" y2="125" stroke="#38bdf8" stroke-width="1.2"/>
-                  <ellipse cx="165" cy="98" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
-                  <ellipse cx="165" cy="106" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
-                  <ellipse cx="165" cy="114" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
-                  <ellipse cx="165" cy="122" rx="4" ry="2" fill="#38bdf8"/>
-                </g>
-
-                <!-- Left Middle Insulator -->
-                <g>
-                  <line x1="135" y1="140" x2="135" y2="175" stroke="#38bdf8" stroke-width="1.2"/>
-                  <ellipse cx="135" cy="148" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
-                  <ellipse cx="135" cy="156" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
-                  <ellipse cx="135" cy="164" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
-                  <ellipse cx="135" cy="172" rx="4" ry="2" fill="#38bdf8"/>
-                </g>
-
-                <!-- Right Upper Insulator -->
-                <g>
-                  <line x1="335" y1="90" x2="335" y2="125" stroke="#38bdf8" stroke-width="1.2"/>
-                  <ellipse cx="335" cy="98" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
-                  <ellipse cx="335" cy="106" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
-                  <ellipse cx="335" cy="114" rx="5" ry="2.5" fill="#16161a" stroke="#38bdf8" stroke-width="1"/>
-                  <ellipse cx="335" cy="122" rx="4" ry="2" fill="#38bdf8"/>
-                </g>
-
-                <!-- Right Middle Insulator (ANOMALY SITE) -->
-                <g>
-                  <line x1="365" y1="140" x2="365" y2="178" stroke="#f5a623" stroke-width="1.4"/>
-                  <ellipse cx="365" cy="148" rx="5" ry="2.5" fill="#16161a" stroke="#f5a623" stroke-width="1"/>
-                  <ellipse cx="365" cy="156" rx="5.5" ry="3" fill="#16161a" stroke="#ef4444" stroke-width="1.2"/>
-                  <ellipse cx="365" cy="165" rx="5" ry="2.5" fill="#16161a" stroke="#f5a623" stroke-width="1"/>
-                  <ellipse cx="365" cy="173" rx="4" ry="2" fill="#f5a623"/>
-                </g>
-
-                <!-- Catenary Hyperbolic Sag Power Lines -->
-                <path d="M20 120 Q 95 140 165 125 T 335 125 T 480 120" stroke="rgba(255,255,255,0.3)" stroke-width="1.4" fill="none"/>
-                <path d="M20 170 Q 75 190 135 175 T 365 175 T 480 170" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" fill="none"/>
-                <circle cx="150" cy="128" r="2" fill="#86868b"/>
-                <line x1="150" y1="128" x2="150" y2="134" stroke="#86868b" stroke-width="1"/>
-                <circle cx="350" cy="178" r="2" fill="#f5a623"/>
-                <line x1="350" y1="178" x2="350" y2="184" stroke="#f5a623" stroke-width="1"/>
-              </g>
-
-              <!-- COMPUTER VISION TARGETING HUD (AI ANOMALY DETECTION) -->
-              <g id="cv-detection-target">
-                <!-- Thermal Flashover Heat Signature -->
-                <rect x="336" y="132" width="70" height="58" rx="6" fill="url(#faultHeatmap)" stroke="#f5a623" stroke-width="1.2" stroke-dasharray="3 3"/>
-                
-                <!-- Corner Targeting Brackets -->
-                <path d="M336 144 L336 132 L348 132" stroke="#f5a623" stroke-width="2" fill="none"/>
-                <path d="M394 132 L406 132 L406 144" stroke="#f5a623" stroke-width="2" fill="none"/>
-                <path d="M336 176 L336 188 L348 188" stroke="#f5a623" stroke-width="2" fill="none"/>
-                <path d="M394 188 L406 188 L406 176" stroke="#f5a623" stroke-width="2" fill="none"/>
-
-                <!-- Dynamic Arc Flash Point -->
-                <circle cx="365" cy="158" r="9" fill="url(#arcCoreGlow)"/>
-                <circle cx="365" cy="158" r="3.5" fill="#ffffff"/>
-                <line x1="359" y1="155" x2="371" y2="161" stroke="#ffffff" stroke-width="1"/>
-
-                <!-- Target Tag -->
-                <rect x="336" y="112" width="100" height="17" rx="4" fill="#0f0f13" stroke="#f5a623" stroke-width="1"/>
-                <text x="342" y="124" fill="#f5a623" font-family="JetBrains Mono" font-size="9" font-weight="bold">! INSULATOR FLASH</text>
-              </g>
-
-              <!-- Real-Time Classification HUD Badge -->
-              <g transform="translate(24, 210)">
-                <rect x="0" y="0" width="195" height="56" rx="10" fill="#0a0a0e" stroke="rgba(255,255,255,0.16)" stroke-width="1.2"/>
-                
-                <circle cx="14" cy="16" r="3.5" fill="#34d399"/>
-                <text x="24" y="20" fill="#ffffff" font-family="JetBrains Mono" font-size="9.5" font-weight="bold">ResNet50 + HOG / GLCM</text>
-                
-                <line x1="12" y1="30" x2="183" y2="30" stroke="rgba(255,255,255,0.08)"/>
-                
-                <text x="12" y="44" fill="#86868b" font-family="JetBrains Mono" font-size="8.5">Diagnostic Accuracy:</text>
-                <text x="130" y="44" fill="#34d399" font-family="JetBrains Mono" font-size="10" font-weight="bold">82.0% Acc</text>
-              </g>
-
-              <!-- Feature Fusion Readout -->
-              <g transform="translate(315, 240)">
-                <rect x="0" y="0" width="165" height="26" rx="6" fill="#0f0f13" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
-                <text x="10" y="17" fill="#38bdf8" font-family="JetBrains Mono" font-size="8.5">Dual Stream: 2048-D + GLCM</text>
-              </g>
-            </svg>
-            </div>
-          </div>
-
-        <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
-          <div class="flex flex-wrap items-center gap-2.5">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-sky-500/10 border border-sky-500/25 text-sky-300">
-              <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
-              02 · Computer Vision · ResNet50
-            </span>
-            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
-              Aerial Infrastructure
-            </span>
-          </div>
-
-          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
-            Power Transmission Fault Detection via Hybrid CV
-          </h3>
-
-          <p class="font-mono text-xs text-sky-300">
-            Aerial Grid Defect Classification · Classical &amp; Deep Feature Fusion
-          </p>
-
-          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-sky-400 font-medium">ResNet50 Deep</span>
-            <span class="text-zinc-600">+</span>
-            <span>HOG / GLCM Texture</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-emerald-400 font-medium">82.0% Accuracy</span>
-          </div>
-
-          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
-            Automated transmission infrastructure inspection pipeline combining ResNet50 deep features with classical texture descriptors (HOG, LBP, GLCM). Diagnoses insulator flashover, conductor breakage, and structural defects with an interactive triage web app.
-          </p>
-
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="2">
-              <span>Explore Project</span>
-              <span>→</span>
-            </button>
-            <a href="https://github.com/niranjan-crypt/Hybrid-Computer-Vision-and-Deep-Learning-for-Automated-Power-Transmission-Fault-Detection" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
-              <span>Code Repository</span>
-              <span class="text-sky-400">↗</span>
-            </a>
           </div>
         </div>
 
       </article>
 
       <!-- =================================================================== -->
-      <!-- PROJECT 03: CommerceIQ Data Engineering (Left Text / Right Visual)   -->
+      <!-- PROJECT 02: Automated Power Transmission Fault Detection -->
       <!-- =================================================================== -->
-      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="data" data-project-id="3">
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[50vh]" data-category="cv" data-project-id="2">
         
-        <div class="lg:col-span-6 space-y-5">
+        <!-- Text Column (~45% on desktop) -->
+        <div class="order-1 lg:order-2 lg:col-span-5 space-y-6">
+          <!-- Category Badge & Optional Benchmark Pill -->
           <div class="flex flex-wrap items-center gap-2.5">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-amber-500/10 border border-amber-500/25 text-amber-300">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.04] border border-white/[0.08] text-sky-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+              02 · Computer Vision · Deep Learning
+            </span>
+            <span class="text-xs font-mono text-zinc-400 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06]">Aerial Defect Classification</span>
+          </div>
+
+          <!-- Dominant Apple-Style Project Title -->
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] text-white tracking-[-0.03em] leading-[1.12]">
+            Automated Power Transmission Fault Detection
+          </h3>
+
+          <!-- Subtitle -->
+          <p class="font-sans text-base sm:text-lg text-zinc-400 font-normal leading-snug">
+            Dual-Stream ResNet50 + HOG/GLCM Texture · 82.0% Accuracy
+          </p>
+
+          <!-- Minimal Technical Metric Pill (Not a dashboard card) -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/[0.07] font-mono text-xs text-zinc-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+            <span>2048-D Deep Feature Vectors + Haralick Texture · Drone Inspection HUD</span>
+          </div>
+
+          <!-- Project Description -->
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed font-normal">
+            Hybrid computer vision pipeline combining deep convolutional features (ResNet50) with handcrafted texture descriptors (HOG &amp; GLCM) to classify transmission line insulator defects from high-resolution aerial imagery.
+          </p>
+
+          <!-- Actions -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5 shadow-[0_4px_20px_rgba(255,255,255,0.18)]" data-project="2">
+              <span>Explore Project</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/niranjan-crypt/Hybrid-Computer-Vision-and-Deep-Learning-for-Automated-Power-Transmission-Fault-Detection" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5">
+              <span>Code Repository</span>
+              <span class="text-zinc-400">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Column (~55% on desktop) -->
+        <div class="order-2 lg:order-1 lg:col-span-7">
+          <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-gradient-to-b from-[#090a10] to-[#040407] border border-white/[0.08] shadow-[0_24px_70px_rgba(0,0,0,0.85)] p-6 sm:p-10 flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10]">
+            <!-- Subtle Ambient Light Reflection -->
+            <div class="absolute inset-0 bg-radial from-[#38bdf8]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
+            <!-- Clean Hero Product Visual -->
+            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 540 360" fill="none">
+  <defs>
+    <radialGradient id="p2Ambient" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#f5a623" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="defectGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff7b00" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#f5a623" stop-opacity="0.6"/>
+      <stop offset="80%" stop-color="#38bdf8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="steelGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="270" cy="170" r="190" fill="url(#p2Ambient)"/>
+
+  <!-- High-Angle Aerial Catenary Conductors -->
+  <g stroke="rgba(255,255,255,0.35)" stroke-width="1.8">
+    <path d="M-20 110 Q 230 190 560 90" stroke="#94a3b8" stroke-width="2.2"/>
+    <path d="M-20 114 Q 230 194 560 94" stroke="#64748b" stroke-width="1.4" opacity="0.6"/>
+    <path d="M-40 180 Q 220 270 580 160" stroke="#94a3b8" stroke-width="2.4"/>
+    <path d="M-30 60 Q 240 110 570 40" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="6 3" opacity="0.4"/>
+  </g>
+
+  <!-- Galvanized Steel Lattice Transmission Tower Top Structure -->
+  <g transform="translate(180, 50)">
+    <polygon points="90,10 65,110 115,110" fill="none" stroke="url(#steelGrad)" stroke-width="2"/>
+    <line x1="20" y1="90" x2="160" y2="90" stroke="url(#steelGrad)" stroke-width="3"/>
+    <line x1="10" y1="110" x2="170" y2="110" stroke="url(#steelGrad)" stroke-width="2.5"/>
+    <line x1="20" y1="90" x2="10" y2="110" stroke="url(#steelGrad)" stroke-width="2"/>
+    <line x1="160" y1="90" x2="170" y2="110" stroke="url(#steelGrad)" stroke-width="2"/>
+    <line x1="65" y1="110" x2="115" y2="60" stroke="#475569" stroke-width="1.2"/>
+    <line x1="115" y1="110" x2="65" y2="60" stroke="#475569" stroke-width="1.2"/>
+    <line x1="75" y1="60" x2="105" y2="60" stroke="#475569" stroke-width="1.2"/>
+    
+    <line x1="50" y1="180" x2="65" y2="110" stroke="url(#steelGrad)" stroke-width="2.2"/>
+    <line x1="130" y1="180" x2="115" y2="110" stroke="url(#steelGrad)" stroke-width="2.2"/>
+    <line x1="50" y1="180" x2="130" y2="180" stroke="url(#steelGrad)" stroke-width="2"/>
+    <line x1="50" y1="180" x2="115" y2="110" stroke="#475569" stroke-width="1.2"/>
+    <line x1="130" y1="180" x2="65" y2="110" stroke="#475569" stroke-width="1.2"/>
+
+    <!-- Left Insulator String (Normal Discs) -->
+    <g transform="translate(18, 110)">
+      <line x1="0" y1="0" x2="0" y2="45" stroke="#94a3b8" stroke-width="2"/>
+      <ellipse cx="0" cy="10" rx="8" ry="3" fill="#334155" stroke="#94a3b8" stroke-width="1"/>
+      <ellipse cx="0" cy="20" rx="8" ry="3" fill="#334155" stroke="#94a3b8" stroke-width="1"/>
+      <ellipse cx="0" cy="30" rx="8" ry="3" fill="#334155" stroke="#94a3b8" stroke-width="1"/>
+      <ellipse cx="0" cy="40" rx="8" ry="3" fill="#334155" stroke="#94a3b8" stroke-width="1"/>
+    </g>
+
+    <!-- Right Insulator String (THE DEFECT SITE - FLASH OVER BLOOM) -->
+    <g transform="translate(162, 110)">
+      <line x1="0" y1="0" x2="0" y2="45" stroke="#94a3b8" stroke-width="2"/>
+      <ellipse cx="0" cy="10" rx="8" ry="3" fill="#334155" stroke="#94a3b8" stroke-width="1"/>
+      <ellipse cx="0" cy="20" rx="8" ry="3" fill="#334155" stroke="#94a3b8" stroke-width="1"/>
+      <ellipse cx="0" cy="30" rx="9" ry="3.5" fill="#f5a623" stroke="#fff" stroke-width="1.5" filter="drop-shadow(0 0 10px #ff7b00)"/>
+      <ellipse cx="0" cy="40" rx="8" ry="3" fill="#334155" stroke="#94a3b8" stroke-width="1"/>
+
+      <circle cx="0" cy="30" r="32" fill="url(#defectGlow)"/>
+      <circle cx="0" cy="30" r="22" stroke="rgba(255,255,255,0.7)" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle cx="0" cy="30" r="3" fill="#ffffff" filter="drop-shadow(0 0 6px #fff)"/>
+    </g>
+  </g>
+</svg>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- =================================================================== -->
+      <!-- PROJECT 03: CommerceIQ: Enterprise E-Commerce Data Warehouse -->
+      <!-- =================================================================== -->
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[50vh]" data-category="data" data-project-id="3">
+        
+        <!-- Text Column (~45% on desktop) -->
+        <div class="order-1 lg:order-1 lg:col-span-5 space-y-6">
+          <!-- Category Badge & Optional Benchmark Pill -->
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.04] border border-white/[0.08] text-amber-300">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-              03 · Data Engineering · Star Schema
+              03 · Data Engineering · Cloud Architecture
             </span>
-            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
-              Olist 100K+ Dataset
-            </span>
+            <span class="text-xs font-mono text-zinc-400 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06]">100K+ Synthetic Transactions</span>
           </div>
 
-          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
-            CommerceIQ: E-Commerce Data Engineering &amp; Analytics
+          <!-- Dominant Apple-Style Project Title -->
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] text-white tracking-[-0.03em] leading-[1.12]">
+            CommerceIQ: Enterprise E-Commerce Data Warehouse
           </h3>
 
-          <p class="font-mono text-xs text-amber-300">
-            100K+ Orders · 1.5M Records Data Warehouse
+          <!-- Subtitle -->
+          <p class="font-sans text-base sm:text-lg text-zinc-400 font-normal leading-snug">
+            PostgreSQL · Redshift · dbt (22 Tests) · Airflow · Metabase
           </p>
 
-          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-amber-400 font-medium">3NF OLTP</span>
-            <span class="text-zinc-600">→</span>
-            <span>22 Gatekeeper Tests</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-emerald-400 font-medium">5.35x B-Tree Speedup</span>
+          <!-- Minimal Technical Metric Pill (Not a dashboard card) -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/[0.07] font-mono text-xs text-zinc-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+            <span>5.35x Query Speedup (124ms vs 663ms) · Kimball Star Schema</span>
           </div>
 
-          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
-            Enterprise data pipeline in Python &amp; SQL processing 100K+ orders (1.5M records). Features automated data ingestion with a 22-test Data Quality Gatekeeper, 3NF normalized OLTP schema converted to a Kimball Star Schema warehouse, SQL RFM customer segmentation via window functions, and verified 5.35x (81.3%) query speedup via B-Tree indexing.
+          <!-- Project Description -->
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed font-normal">
+            Production-grade data warehouse modeling 100K+ transactional records into a Kimball star schema with 1 fact and 4 dimension tables. Features automated ELT pipelines, 22 dbt data-quality tests, and comprehensive query optimization.
           </p>
 
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="3">
+          <!-- Actions -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5 shadow-[0_4px_20px_rgba(255,255,255,0.18)]" data-project="3">
               <span>Explore Project</span>
               <span>→</span>
             </button>
-            <a href="https://github.com/niranjan-crypt/CommerceIQ" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+            <a href="https://github.com/niranjan-crypt/CommerceIQ" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5">
               <span>Code Repository</span>
-              <span class="text-amber-400">↗</span>
+              <span class="text-zinc-400">↗</span>
             </a>
           </div>
         </div>
 
-        <div class="lg:col-span-6">
-          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
-            <!-- Realistic Instrument Top Console Bar -->
-            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">DATA ARCHITECTURE // KIMBALL STAR SCHEMA & B-TREE ACCELERATOR</span>
-              </div>
-              <div class="flex items-center gap-3 text-zinc-400">
-                <span class="hidden md:inline text-zinc-500">100K+ Orders · 5.35x Speedup</span>
-                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  OPTIMIZED · 22 QA PASS
-                </span>
-              </div>
-            </div>
-            <!-- High-Fidelity Canvas -->
-            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
-              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
-  <!-- Schema Connection Rays -->
-  <line x1="250" y1="135" x2="90" y2="65" stroke="rgba(245,166,35,0.4)" stroke-width="1.4" stroke-dasharray="3 3"/>
-  <line x1="250" y1="135" x2="410" y2="65" stroke="rgba(56,189,248,0.4)" stroke-width="1.4" stroke-dasharray="3 3"/>
-  <line x1="250" y1="135" x2="90" y2="215" stroke="rgba(191,90,242,0.4)" stroke-width="1.4" stroke-dasharray="3 3"/>
-  <line x1="250" y1="135" x2="410" y2="215" stroke="rgba(52,211,153,0.4)" stroke-width="1.4" stroke-dasharray="3 3"/>
+        <!-- Hero Visual Column (~55% on desktop) -->
+        <div class="order-2 lg:order-2 lg:col-span-7">
+          <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-gradient-to-b from-[#090a10] to-[#040407] border border-white/[0.08] shadow-[0_24px_70px_rgba(0,0,0,0.85)] p-6 sm:p-10 flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10]">
+            <!-- Subtle Ambient Light Reflection -->
+            <div class="absolute inset-0 bg-radial from-[#f5a623]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
+            <!-- Clean Hero Product Visual -->
+            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 540 360" fill="none">
+  <defs>
+    <radialGradient id="p3Ambient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f5a623" stop-opacity="0.2"/>
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glassTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.22)"/>
+      <stop offset="100%" stop-color="rgba(245,166,35,0.06)"/>
+    </linearGradient>
+    <linearGradient id="glassSide" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(245,166,35,0.25)"/>
+      <stop offset="100%" stop-color="rgba(10,12,18,0.85)"/>
+    </linearGradient>
+    <linearGradient id="laserBeam" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#f5a623" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
 
-  <!-- Center: FACT_ORDERS Table (Kimball Star Schema Core) -->
-  <g transform="translate(170, 75)">
-    <rect x="0" y="0" width="160" height="120" rx="10" fill="#0d0d12" stroke="#f5a623" stroke-width="1.6" filter="drop-shadow(0 0 14px rgba(245,166,35,0.25))"/>
-    <rect x="0" y="0" width="160" height="26" rx="9" fill="#f5a623" fill-opacity="0.15"/>
-    <text x="80" y="17" fill="#f5a623" font-family="JetBrains Mono" font-size="9.5" font-weight="bold" text-anchor="middle">FACT_ORDERS [1.5M]</text>
-    <line x1="0" y1="26" x2="160" y2="26" stroke="#f5a623" stroke-width="1"/>
+  <circle cx="270" cy="180" r="170" fill="url(#p3Ambient)"/>
+
+  <!-- 3 Floating Isometric Smoked-Glass Data Monolith Slabs -->
+  <!-- 1. Bottom Monolith: Ingestion & Staging -->
+  <g transform="translate(140, 195)">
+    <polygon points="130,0 260,65 130,130 0,65" fill="rgba(16,18,26,0.85)" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+    <polygon points="0,65 130,130 130,148 0,83" fill="rgba(10,11,16,0.95)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <polygon points="130,130 260,65 260,83 130,148" fill="rgba(14,16,22,0.95)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <line x1="65" y1="32" x2="195" y2="97" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <line x1="195" y1="32" x2="65" y2="97" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  </g>
+
+  <!-- 2. Middle Monolith: Kimball Star Schema Core (Radiant Amber Glass Core) -->
+  <g transform="translate(155, 125)">
+    <polygon points="115,0 230,58 115,116 0,58" fill="url(#glassTop)" stroke="rgba(245,166,35,0.6)" stroke-width="1.8" filter="drop-shadow(0 0 16px rgba(245,166,35,0.25))"/>
+    <polygon points="0,58 115,116 115,134 0,76" fill="url(#glassSide)" stroke="rgba(245,166,35,0.4)" stroke-width="1"/>
+    <polygon points="115,116 230,58 230,76 115,134" fill="url(#glassSide)" stroke="rgba(245,166,35,0.4)" stroke-width="1"/>
     
-    <g font-family="JetBrains Mono" font-size="8" fill="#d1d1d6">
-      <text x="10" y="44"><tspan fill="#f5a623" font-weight="bold">#</tspan> order_id <tspan fill="#86868b">[PK]</tspan></text>
-      <text x="10" y="58"><tspan fill="#38bdf8">&gt;</tspan> customer_id <tspan fill="#86868b">[FK]</tspan></text>
-      <text x="10" y="72"><tspan fill="#bf5af2">&gt;</tspan> product_id <tspan fill="#86868b">[FK]</tspan></text>
-      <text x="10" y="86"><tspan fill="#34d399">$</tspan> payment_value</text>
-      <text x="10" y="100"><tspan fill="#86868b">@</tspan> delivered_timestamp</text>
-      <text x="10" y="112" fill="#34d399" font-weight="bold">✓ 22 QA Gatekeeper Pass</text>
-    </g>
+    <circle cx="115" cy="58" r="7" fill="#f5a623" filter="drop-shadow(0 0 12px #f5a623)"/>
+    <circle cx="115" cy="58" r="3" fill="#ffffff"/>
+
+    <circle cx="60" cy="40" r="3" fill="#38bdf8"/>
+    <circle cx="170" cy="40" r="3" fill="#38bdf8"/>
+    <circle cx="60" cy="76" r="3" fill="#38bdf8"/>
+    <circle cx="170" cy="76" r="3" fill="#38bdf8"/>
+    <line x1="60" y1="40" x2="115" y2="58" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
+    <line x1="170" y1="40" x2="115" y2="58" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
+    <line x1="60" y1="76" x2="115" y2="58" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
+    <line x1="170" y1="76" x2="115" y2="58" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
   </g>
 
-  <!-- Dimension 1: DIM_CUSTOMERS -->
-  <g transform="translate(15, 30)">
-    <rect x="0" y="0" width="130" height="65" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
-    <rect x="0" y="0" width="130" height="20" rx="7" fill="white" fill-opacity="0.05"/>
-    <text x="65" y="14" fill="#38bdf8" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">DIM_CUSTOMERS</text>
-    <text x="10" y="36" fill="#86868b" font-family="JetBrains Mono" font-size="7.5">customer_id [PK]</text>
-    <text x="10" y="50" fill="#a1a1a6" font-family="JetBrains Mono" font-size="7.5">RFM_Segment: Champions</text>
+  <!-- 3. Top Monolith: Analytical Serving Layer -->
+  <g transform="translate(175, 55)">
+    <polygon points="95,0 190,48 95,96 0,48" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.4)" stroke-width="1.4"/>
+    <polygon points="0,48 95,96 95,110 0,62" fill="rgba(20,24,36,0.9)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <polygon points="95,96 190,48 190,62 95,110" fill="rgba(24,28,42,0.9)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
   </g>
 
-  <!-- Dimension 2: DIM_PRODUCTS -->
-  <g transform="translate(355, 30)">
-    <rect x="0" y="0" width="130" height="65" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
-    <rect x="0" y="0" width="130" height="20" rx="7" fill="white" fill-opacity="0.05"/>
-    <text x="65" y="14" fill="#bf5af2" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">DIM_PRODUCTS</text>
-    <text x="10" y="36" fill="#86868b" font-family="JetBrains Mono" font-size="7.5">product_id [PK]</text>
-    <text x="10" y="50" fill="#a1a1a6" font-family="JetBrains Mono" font-size="7.5">category_code, weight</text>
-  </g>
-
-  <!-- Dimension 3: DIM_GEOLOCATION -->
-  <g transform="translate(15, 185)">
-    <rect x="0" y="0" width="130" height="60" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
-    <rect x="0" y="0" width="130" height="20" rx="7" fill="white" fill-opacity="0.05"/>
-    <text x="65" y="14" fill="#34d399" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">DIM_GEOLOCATION</text>
-    <text x="10" y="36" fill="#86868b" font-family="JetBrains Mono" font-size="7.5">zip_code_prefix [PK]</text>
-    <text x="10" y="48" fill="#a1a1a6" font-family="JetBrains Mono" font-size="7.5">lat / lng coordinates</text>
-  </g>
-
-  <!-- Dimension 4: B-TREE ACCELERATOR BENCHMARK -->
-  <g transform="translate(355, 185)">
-    <rect x="0" y="0" width="130" height="75" rx="8" fill="#0d0d12" stroke="#34d399" stroke-width="1.2"/>
-    <rect x="0" y="0" width="130" height="20" rx="7" fill="#34d399" fill-opacity="0.15"/>
-    <text x="65" y="14" fill="#34d399" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">B-TREE BENCHMARK</text>
-    
-    <!-- Comparison Bars -->
-    <rect x="10" y="28" width="105" height="12" rx="3" fill="#ef4444" fill-opacity="0.6"/>
-    <text x="14" y="37" fill="#ffffff" font-family="JetBrains Mono" font-size="7">Seq Scan: 142ms</text>
-    
-    <rect x="10" y="44" width="20" height="12" rx="3" fill="#34d399"/>
-    <text x="35" y="53" fill="#34d399" font-family="JetBrains Mono" font-size="7" font-weight="bold">26.5ms (5.35x)</text>
-    
-    <text x="10" y="68" fill="#34d399" font-family="JetBrains Mono" font-size="7.5" font-weight="bold">⚡ 81.3% Latency Drop</text>
-  </g>
-
-  <!-- Central Performance Ribbon -->
-  <g transform="translate(145, 215)">
-    <rect x="0" y="0" width="210" height="30" rx="15" fill="#07070a" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
-    <circle cx="16" cy="15" r="4" fill="#34d399"/>
-    <text x="28" y="19" fill="#ffffff" font-family="JetBrains Mono" font-size="8.5" font-weight="bold">PostgreSQL OLAP Engine</text>
-    <text x="140" y="19" fill="#f5a623" font-family="JetBrains Mono" font-size="8.5">RFM Window Fn</text>
+  <!-- Vertical Luminous Optical Light Streams Flowing Between Layers -->
+  <g stroke="url(#laserBeam)" stroke-width="1.8">
+    <line x1="270" y1="260" x2="270" y2="185"/>
+    <line x1="215" y1="225" x2="215" y2="165" stroke-dasharray="3 3"/>
+    <line x1="325" y1="225" x2="325" y2="165" stroke-dasharray="3 3"/>
+    <line x1="270" y1="180" x2="270" y2="105"/>
   </g>
 </svg>
-            </div>
           </div>
+        </div>
 
       </article>
 
       <!-- =================================================================== -->
-      <!-- PROJECT 04: IntelliPQ AI Power Quality (Right Text / Left Visual)    -->
+      <!-- PROJECT 04: IntelliPQ: AI-Powered Power Quality Monitoring -->
       <!-- =================================================================== -->
-      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="energy" data-project-id="4">
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[50vh]" data-category="energy" data-project-id="4">
         
-        <div class="lg:col-span-6 order-2 lg:order-1">
-          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
-            <!-- Realistic Instrument Top Console Bar -->
-            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">DSP INSTRUMENT // IEEE 1159 & 519 HARMONIC ANALYZER</span>
-              </div>
-              <div class="flex items-center gap-3 text-zinc-400">
-                <span class="hidden md:inline text-zinc-500">50Hz Grid · THD: 8.42%</span>
-                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  1D-CNN + BiLSTM ACTIVE
-                </span>
-              </div>
-            </div>
-            <!-- High-Fidelity Canvas -->
-            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
-              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
-  <!-- Oscilloscope Display Grid Background -->
-  <rect x="20" y="25" width="460" height="250" rx="10" fill="#05080c" stroke="rgba(56,189,248,0.2)" stroke-width="1.5"/>
-  <g stroke="rgba(56,189,248,0.08)" stroke-width="0.8">
-    <line x1="20" y1="65" x2="480" y2="65"/><line x1="20" y1="105" x2="480" y2="105"/>
-    <line x1="20" y1="145" x2="480" y2="145"/><line x1="20" y1="185" x2="480" y2="185"/>
-    <line x1="20" y1="225" x2="480" y2="225"/>
-    <line x1="77" y1="25" x2="77" y2="275"/><line x1="135" y1="25" x2="135" y2="275"/>
-    <line x1="192" y1="25" x2="192" y2="275"/><line x1="250" y1="25" x2="250" y2="275"/>
-    <line x1="307" y1="25" x2="307" y2="275"/><line x1="365" y1="25" x2="365" y2="275"/>
-    <line x1="422" y1="25" x2="422" y2="275"/>
-  </g>
-  <!-- Center Reticle Cross -->
-  <line x1="20" y1="145" x2="480" y2="145" stroke="rgba(56,189,248,0.25)" stroke-width="1.2"/>
-  <line x1="250" y1="25" x2="250" y2="275" stroke="rgba(56,189,248,0.25)" stroke-width="1.2"/>
-
-  <!-- Channel 1: High-Voltage Waveform with Transient Sag & Harmonic Distortion -->
-  <path d="M25 145 Q 45 45 65 145 T 105 145 T 145 145 Q 165 95 185 145 T 225 145 Q 245 75 265 145 T 305 145 Q 325 35 345 145 T 385 145 T 425 145 T 465 145" fill="none" stroke="#38bdf8" stroke-width="2.4" filter="drop-shadow(0 0 8px rgba(56,189,248,0.6))"/>
-  
-  <!-- Transient Voltage Sag Envelope Marker -->
-  <rect x="140" y="80" width="95" height="130" rx="6" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3 3"/>
-  <text x="187" y="95" fill="#ef4444" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">VOLTAGE SAG (0.68 p.u.)</text>
-
-  <!-- Channel 2 / FFT Bar Spectrum Overlay (Bottom Right) -->
-  <g transform="translate(280, 160)">
-    <rect x="0" y="0" width="185" height="100" rx="8" fill="#090d14" stroke="rgba(255,255,255,0.12)"/>
-    <text x="12" y="16" fill="#bf5af2" font-family="JetBrains Mono" font-size="8" font-weight="bold">FFT HARMONIC SPECTRUM</text>
-    <text x="175" y="16" fill="#34d399" font-family="JetBrains Mono" font-size="8" text-anchor="end">THD: 8.42%</text>
-    
-    <!-- Harmonic Bars: Fundamental (50Hz), 3rd, 5th, 7th, 9th -->
-    <rect x="25" y="30" width="14" height="55" rx="2" fill="#38bdf8"/>
-    <text x="32" y="93" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">50Hz</text>
-
-    <rect x="55" y="60" width="14" height="25" rx="2" fill="#bf5af2"/>
-    <text x="62" y="93" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">3rd</text>
-
-    <rect x="85" y="48" width="14" height="37" rx="2" fill="#ef4444"/>
-    <text x="92" y="93" fill="#ef4444" font-family="JetBrains Mono" font-size="7" font-weight="bold" text-anchor="middle">5th</text>
-
-    <rect x="115" y="68" width="14" height="17" rx="2" fill="#38bdf8" opacity="0.6"/>
-    <text x="122" y="93" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">7th</text>
-
-    <rect x="145" y="76" width="14" height="9" rx="2" fill="#86868b" opacity="0.5"/>
-    <text x="152" y="93" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">9th</text>
-  </g>
-
-  <!-- Classification Output Banner (Top Left) -->
-  <g transform="translate(35, 40)">
-    <rect x="0" y="0" width="200" height="42" rx="8" fill="#090d14" stroke="rgba(255,255,255,0.15)"/>
-    <circle cx="14" cy="14" r="3.5" fill="#34d399"/>
-    <text x="24" y="17" fill="#ffffff" font-family="JetBrains Mono" font-size="9" font-weight="bold">1D-CNN + BiLSTM Classifier</text>
-    <text x="12" y="32" fill="#34d399" font-family="JetBrains Mono" font-size="8">IEEE 1159 &amp; 519 Standard: Pass</text>
-  </g>
-</svg>
-            </div>
-          </div>
-
-        <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
+        <!-- Text Column (~45% on desktop) -->
+        <div class="order-1 lg:order-2 lg:col-span-5 space-y-6">
+          <!-- Category Badge & Optional Benchmark Pill -->
           <div class="flex flex-wrap items-center gap-2.5">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-sky-500/10 border border-sky-500/25 text-sky-300">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.04] border border-white/[0.08] text-sky-300">
               <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
-              04 · Signal Processing · DSP &amp; FFT
+              04 · Signal Processing · Deep Learning
             </span>
-            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
-              IEEE 1159/519 Standard
-            </span>
+            <span class="text-xs font-mono text-zinc-400 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06]">IEEE 1159/519 Compliance</span>
           </div>
 
-          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
-            IntelliPQ: AI Power Quality &amp; Fault Detection
+          <!-- Dominant Apple-Style Project Title -->
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] text-white tracking-[-0.03em] leading-[1.12]">
+            IntelliPQ: AI-Powered Power Quality Monitoring
           </h3>
 
-          <p class="font-mono text-xs text-sky-300">
-            IEEE 1159 &amp; 519 Grid Disturbance Engine · 1D-CNN + BiLSTM
+          <!-- Subtitle -->
+          <p class="font-sans text-base sm:text-lg text-zinc-400 font-normal leading-snug">
+            Dual-Channel Analysis · IEEE 1159/519 Compliance · 98.5% Accuracy
           </p>
 
-          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-sky-400 font-medium">DSP / FFT</span>
-            <span class="text-zinc-600">→</span>
-            <span>1D-CNN + BiLSTM</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-emerald-400 font-medium">Neuro-Symbolic</span>
+          <!-- Minimal Technical Metric Pill (Not a dashboard card) -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/[0.07] font-mono text-xs text-zinc-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+            <span>1D-CNN + BiLSTM · Real-Time Voltage Sag, Swell &amp; Harmonic Detection</span>
           </div>
 
-          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
-            Real-time harmonic analysis, sag/swell detection, and disturbance classification using combined 1D-CNN + BiLSTM architectures evaluated against IEEE 1159 and IEEE 519 standards. Includes full DSP/FFT spectral decomposition pipeline.
+          <!-- Project Description -->
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed font-normal">
+            End-to-end power quality disturbance classification system combining 1D-CNN feature extraction with Bidirectional LSTM temporal modeling. Classifies voltage sags, swells, harmonics, and transients per IEEE standards with hardware-accelerated inference.
           </p>
 
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="4">
+          <!-- Actions -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5 shadow-[0_4px_20px_rgba(255,255,255,0.18)]" data-project="4">
               <span>Explore Project</span>
               <span>→</span>
             </button>
-            <a href="https://github.com/niranjan-crypt/IntelliPQ-AI-Based-Power-Quality-Monitoring-Fault-Detection" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+            <a href="https://github.com/niranjan-crypt/IntelliPQ-AI-Based-Power-Quality-Monitoring-Fault-Detection" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5">
               <span>Code Repository</span>
-              <span class="text-sky-400">↗</span>
+              <span class="text-zinc-400">↗</span>
             </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Column (~55% on desktop) -->
+        <div class="order-2 lg:order-1 lg:col-span-7">
+          <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-gradient-to-b from-[#090a10] to-[#040407] border border-white/[0.08] shadow-[0_24px_70px_rgba(0,0,0,0.85)] p-6 sm:p-10 flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10]">
+            <!-- Subtle Ambient Light Reflection -->
+            <div class="absolute inset-0 bg-radial from-[#38bdf8]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
+            <!-- Clean Hero Product Visual -->
+            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 540 360" fill="none">
+  <defs>
+    <radialGradient id="p4Ambient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
+      <stop offset="70%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="waveGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#38bdf8" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#34d399" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="sagRipple" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="270" cy="180" r="170" fill="url(#p4Ambient)"/>
+
+  <!-- Minimal Dark Obsidian Perspective Floor Grid -->
+  <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+    <line x1="40" y1="280" x2="500" y2="280"/>
+    <line x1="70" y1="300" x2="470" y2="300"/>
+    <line x1="120" y1="250" x2="20" y2="320"/>
+    <line x1="270" y1="250" x2="270" y2="320"/>
+    <line x1="420" y1="250" x2="520" y2="320"/>
+  </g>
+
+  <!-- Mirrored Floor Reflection of Wave (Subtle Caustic) -->
+  <path d="M40 280 Q 95 240 150 280 T 260 280 Q 285 272 310 280 T 420 280 T 500 280" stroke="rgba(56,189,248,0.12)" stroke-width="3" fill="none" filter="blur(3px)"/>
+
+  <!-- Center Datum Axis Line -->
+  <line x1="40" y1="180" x2="500" y2="180" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- Pure Luminous Oscilloscopic Sine Wave Ribbon -->
+  <path d="M 40 180 C 80 80, 110 80, 150 180 C 190 280, 220 280, 260 180" stroke="url(#waveGlow)" stroke-width="3.5" fill="none" stroke-linecap="round" filter="drop-shadow(0 0 10px rgba(56,189,248,0.5))"/>
+
+  <!-- Cycle 3: THE TRANSIENT SAG ANOMALY & HARMONIC RIPPLE -->
+  <path d="M 260 180 C 275 140, 285 155, 295 180 C 305 205, 315 190, 330 180" stroke="url(#sagRipple)" stroke-width="4" fill="none" stroke-linecap="round" filter="drop-shadow(0 0 14px #34d399)"/>
+  
+  <path d="M 260 180 C 275 125, 290 125, 305 180" stroke="rgba(52,211,153,0.3)" stroke-width="1.5" stroke-dasharray="3 3" fill="none"/>
+  <circle cx="288" cy="148" r="4.5" fill="#34d399" filter="drop-shadow(0 0 8px #34d399)"/>
+  <circle cx="288" cy="148" r="2" fill="#ffffff"/>
+
+  <!-- Cycles 4 & 5: Return to Pure Sine Wave -->
+  <path d="M 330 180 C 370 280, 400 280, 440 180 C 470 100, 490 100, 500 180" stroke="url(#waveGlow)" stroke-width="3.5" fill="none" stroke-linecap="round" filter="drop-shadow(0 0 10px rgba(56,189,248,0.5))"/>
+</svg>
           </div>
         </div>
 
       </article>
 
       <!-- =================================================================== -->
-      <!-- PROJECT 05: KinoSync Smart Glove (Left Text / Right Visual)          -->
+      <!-- PROJECT 05: KinoSync: Cyber-Physical Smart Glove &amp; 3D Digital Twin -->
       <!-- =================================================================== -->
-      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="embedded" data-project-id="5">
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[50vh]" data-category="embedded" data-project-id="5">
         
-        <div class="lg:col-span-6 space-y-5">
+        <!-- Text Column (~45% on desktop) -->
+        <div class="order-1 lg:order-1 lg:col-span-5 space-y-6">
+          <!-- Category Badge & Optional Benchmark Pill -->
           <div class="flex flex-wrap items-center gap-2.5">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/25 text-emerald-300">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.04] border border-white/[0.08] text-emerald-300">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              05 · Cyber-Physical · BLE 5.0
+              05 · Embedded Systems · IoT · Digital Twin
             </span>
-            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
-              Wearable Telemetry
-            </span>
+            <span class="text-xs font-mono text-zinc-400 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06]">BLE 5.0 Low-Latency Telemetry</span>
           </div>
 
-          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
-            KinoSync: Smart Glove Telemetry &amp; 3D Digital Twin
+          <!-- Dominant Apple-Style Project Title -->
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] text-white tracking-[-0.03em] leading-[1.12]">
+            KinoSync: Cyber-Physical Smart Glove &amp; 3D Digital Twin
           </h3>
 
-          <p class="font-mono text-xs text-emerald-300">
-            6-DoF IMU &amp; Flex Kinematics · Real-Time Flutter 3D
+          <!-- Subtitle -->
+          <p class="font-sans text-base sm:text-lg text-zinc-400 font-normal leading-snug">
+            ESP32 · 5-Channel Flex Sensors · MPU6050 6-DoF IMU · MAX30102 · BLE 5.0
           </p>
 
-          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-emerald-400 font-medium">ESP32 + MPU6050</span>
-            <span class="text-zinc-600">→</span>
-            <span>BLE 5.0 Stream</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-sky-400 font-medium">Flutter 3D Skeletal</span>
+          <!-- Minimal Technical Metric Pill (Not a dashboard card) -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/[0.07] font-mono text-xs text-zinc-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span>Real-Time 3D Hand Telemetry in Flutter · Bio-Sensing (SpO2 &amp; Heart Rate)</span>
           </div>
 
-          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
-            Wearable telemetry system integrating ESP32, 5-finger flex sensors, MPU6050 6-DoF IMU with complementary filter sensor fusion, and PPG pulse oximetry. Streams kinematics over BLE 5.0 to a real-time Flutter 3D skeletal digital twin with emergency alerts.
+          <!-- Project Description -->
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed font-normal">
+            Cyber-physical wearable glove capturing 14 joint angles via custom resistive flex sensors, hand orientation via 6-DoF IMU, and vital signs via photoplethysmography. Streams low-latency telemetry over BLE 5.0 to a cross-platform 3D digital twin visualization engine.
           </p>
 
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="5">
+          <!-- Actions -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5 shadow-[0_4px_20px_rgba(255,255,255,0.18)]" data-project="5">
               <span>Explore Project</span>
               <span>→</span>
             </button>
-            <a href="https://github.com/niranjan-crypt/KinoSync-Cyber-Physical-Smart-Glove-Telemetry-3D-Digital-Twin-System" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+            <a href="https://github.com/niranjan-crypt/KinoSync-Cyber-Physical-Smart-Glove-Telemetry-3D-Digital-Twin-System" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5">
               <span>Code Repository</span>
-              <span class="text-emerald-400">↗</span>
+              <span class="text-zinc-400">↗</span>
             </a>
           </div>
         </div>
 
-        <div class="lg:col-span-6">
-          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
-            <!-- Realistic Instrument Top Console Bar -->
-            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">BIOMECHANICAL RIG // 6-DOF IMU & FLEX KINEMATICS</span>
-              </div>
-              <div class="flex items-center gap-3 text-zinc-400">
-                <span class="hidden md:inline text-zinc-500">ESP32 / BLE 5.0 · Sub-20ms Latency</span>
-                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  STREAMING · 3D TWIN
-                </span>
-              </div>
-            </div>
-            <!-- High-Fidelity Canvas -->
-            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
-              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
-  <!-- Biomechanical Grid -->
-  <g stroke="rgba(52,211,153,0.12)" stroke-width="0.8">
-    <circle cx="160" cy="150" r="100" stroke-dasharray="3 4"/>
-    <line x1="60" y1="150" x2="260" y2="150"/>
-    <line x1="160" y1="50" x2="160" y2="250"/>
-  </g>
+        <!-- Hero Visual Column (~55% on desktop) -->
+        <div class="order-2 lg:order-2 lg:col-span-7">
+          <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-gradient-to-b from-[#090a10] to-[#040407] border border-white/[0.08] shadow-[0_24px_70px_rgba(0,0,0,0.85)] p-6 sm:p-10 flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10]">
+            <!-- Subtle Ambient Light Reflection -->
+            <div class="absolute inset-0 bg-radial from-[#34d399]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
+            <!-- Clean Hero Product Visual -->
+            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 540 360" fill="none">
+  <defs>
+    <radialGradient id="p5Ambient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.2"/>
+      <stop offset="70%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gloveChassis" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
 
-  <!-- Left: Anatomical Hand Kinematic Skeleton with 14 Articulated Nodes -->
-  <g id="hand-skeleton" transform="translate(40, 20)">
-    <!-- Palm Metacarpal Base -->
-    <path d="M120 230 L80 170 L110 135 L145 130 L175 140 L195 180 Z" fill="rgba(52,211,153,0.08)" stroke="#34d399" stroke-width="1.4"/>
-    <circle cx="120" cy="230" r="5" fill="#10b981" filter="drop-shadow(0 0 8px #10b981)"/>
-    <text x="120" y="248" fill="#34d399" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">Wrist MPU6050 (6-DoF)</text>
+  <circle cx="270" cy="180" r="170" fill="url(#p5Ambient)"/>
 
-    <!-- Thumb Joint Chain -->
-    <line x1="80" y1="170" x2="55" y2="140" stroke="#34d399" stroke-width="2"/>
-    <circle cx="55" cy="140" r="3.5" fill="#38bdf8"/>
-    <line x1="55" y1="140" x2="40" y2="115" stroke="#34d399" stroke-width="1.8"/>
-    <circle cx="40" cy="115" r="3" fill="#38bdf8"/>
-
-    <!-- Index Finger -->
-    <line x1="110" y1="135" x2="105" y2="95" stroke="#34d399" stroke-width="2"/>
-    <circle cx="105" cy="95" r="3.5" fill="#38bdf8"/>
-    <line x1="105" y1="95" x2="100" y2="60" stroke="#34d399" stroke-width="1.8"/>
-    <circle cx="100" cy="60" r="3" fill="#38bdf8"/>
-    <line x1="100" y1="60" x2="98" y2="35" stroke="#34d399" stroke-width="1.5"/>
-    <circle cx="98" cy="35" r="2.5" fill="#a7f3d0"/>
-
-    <!-- Middle Finger -->
-    <line x1="145" y1="130" x2="145" y2="85" stroke="#34d399" stroke-width="2"/>
-    <circle cx="145" cy="85" r="3.5" fill="#38bdf8"/>
-    <line x1="145" y1="85" x2="145" y2="50" stroke="#34d399" stroke-width="1.8"/>
-    <circle cx="145" cy="50" r="3" fill="#38bdf8"/>
-    <line x1="145" y1="50" x2="145" y2="25" stroke="#34d399" stroke-width="1.5"/>
-    <circle cx="145" cy="25" r="2.5" fill="#a7f3d0"/>
-
-    <!-- Ring Finger -->
-    <line x1="175" y1="140" x2="180" y2="95" stroke="#34d399" stroke-width="2"/>
-    <circle cx="180" cy="95" r="3.5" fill="#38bdf8"/>
-    <line x1="180" y1="95" x2="185" y2="65" stroke="#34d399" stroke-width="1.8"/>
-    <circle cx="185" cy="65" r="3" fill="#38bdf8"/>
-    <line x1="185" y1="65" x2="188" y2="40" stroke="#34d399" stroke-width="1.5"/>
-    <circle cx="188" cy="40" r="2.5" fill="#a7f3d0"/>
-
-    <!-- Pinky Finger -->
-    <line x1="195" y1="180" x2="215" y2="135" stroke="#34d399" stroke-width="2"/>
-    <circle cx="215" cy="135" r="3.5" fill="#38bdf8"/>
-    <line x1="215" y1="135" x2="225" y2="105" stroke="#34d399" stroke-width="1.8"/>
-    <circle cx="225" cy="105" r="3" fill="#38bdf8"/>
-    <line x1="225" y1="105" x2="230" y2="80" stroke="#34d399" stroke-width="1.5"/>
-    <circle cx="230" cy="80" r="2.5" fill="#a7f3d0"/>
-  </g>
-
-  <!-- Right: 6-DoF Sensor Fusion Triad & Telemetry Readouts -->
-  <g transform="translate(285, 35)">
-    <!-- 6-DoF Euler Triad Box -->
-    <rect x="0" y="0" width="190" height="90" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.1)"/>
-    <text x="14" y="18" fill="#34d399" font-family="JetBrains Mono" font-size="9" font-weight="bold">6-DoF SENSOR FUSION</text>
-    <text x="14" y="32" fill="#86868b" font-family="JetBrains Mono" font-size="7.5">Complementary Filter: α = 0.98</text>
+  <!-- Physical Smart Glove (Matte Black Ergonomic Hand Silhouette) -->
+  <g transform="translate(140, 70)">
+    <path d="M50 240 L 70 160 L 160 160 L 180 240 Z" fill="url(#gloveChassis)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+    <path d="M70 160 L 60 110 L 80 50 L 115 40 L 145 45 L 175 60 L 180 120 L 160 160 Z" fill="url(#gloveChassis)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
     
-    <!-- Triad Coordinate Vectors -->
-    <g transform="translate(35, 62)">
-      <line x1="0" y1="0" x2="25" y2="0" stroke="#ef4444" stroke-width="2"/>
-      <text x="28" y="3" fill="#ef4444" font-family="JetBrains Mono" font-size="7">X (Pitch: -8.1°)</text>
-      <line x1="0" y1="0" x2="0" y2="-22" stroke="#34d399" stroke-width="2"/>
-      <text x="3" y="-22" fill="#34d399" font-family="JetBrains Mono" font-size="7">Y (Roll: 12.4°)</text>
-      <line x1="0" y1="0" x2="-14" y2="14" stroke="#38bdf8" stroke-width="2"/>
-      <text x="-16" y="24" fill="#38bdf8" font-family="JetBrains Mono" font-size="7">Z (Yaw: ±0.05°)</text>
-    </g>
+    <!-- Glove Fingers -->
+    <path d="M60 110 L 25 90 L 10 65 L 25 55 L 45 75 L 70 100" fill="url(#gloveChassis)" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
+    <path d="M80 50 L 75 10 L 92 8 L 98 48" fill="url(#gloveChassis)" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
+    <path d="M100 45 L 102 0 L 120 0 L 122 42" fill="url(#gloveChassis)" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
+    <path d="M125 45 L 128 15 L 145 15 L 146 50" fill="url(#gloveChassis)" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
+    <path d="M150 55 L 160 30 L 175 32 L 168 70" fill="url(#gloveChassis)" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
 
-    <!-- PPG Pulse Oximetry Waveform -->
-    <g transform="translate(0, 102)">
-      <rect x="0" y="0" width="190" height="58" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.1)"/>
-      <text x="12" y="16" fill="#f5a623" font-family="JetBrains Mono" font-size="8" font-weight="bold">PPG PULSE WAVEFORM</text>
-      <text x="175" y="16" fill="#34d399" font-family="JetBrains Mono" font-size="8" text-anchor="end">SpO2: 98% · 74 BPM</text>
-      <!-- Pulsatile wave -->
-      <path d="M12 40 Q 25 38 35 25 L 42 48 L 50 32 L 60 40 T 85 40 Q 98 38 108 25 L 115 48 L 123 32 L 133 40 T 175 40" fill="none" stroke="#f5a623" stroke-width="1.8"/>
-    </g>
+    <!-- Luminous Emerald Flex Sensor Traces -->
+    <path d="M30 65 L 60 100 L 90 150 L 110 200" stroke="#34d399" stroke-width="2" stroke-linecap="round" filter="drop-shadow(0 0 6px #34d399)"/>
+    <path d="M85 15 L 88 50 L 100 150 L 110 200" stroke="#34d399" stroke-width="2" stroke-linecap="round" filter="drop-shadow(0 0 6px #34d399)"/>
+    <path d="M110 8 L 112 45 L 112 150 L 112 200" stroke="#34d399" stroke-width="2.2" stroke-linecap="round" filter="drop-shadow(0 0 6px #34d399)"/>
+    <path d="M136 20 L 136 50 L 125 150 L 115 200" stroke="#34d399" stroke-width="2" stroke-linecap="round" filter="drop-shadow(0 0 6px #34d399)"/>
+    <path d="M165 35 L 160 70 L 138 150 L 120 200" stroke="#34d399" stroke-width="1.8" stroke-linecap="round" filter="drop-shadow(0 0 6px #34d399)"/>
 
-    <!-- BLE 5.0 Wireless Packet Sync -->
-    <g transform="translate(0, 172)">
-      <rect x="0" y="0" width="190" height="42" rx="8" fill="#090d14" stroke="#34d399" stroke-width="1"/>
-      <circle cx="14" cy="14" r="3.5" fill="#34d399"/>
-      <text x="24" y="17" fill="#ffffff" font-family="JetBrains Mono" font-size="8.5" font-weight="bold">BLE 5.0 Flutter 3D Twin</text>
-      <text x="12" y="32" fill="#86868b" font-family="JetBrains Mono" font-size="8">Packet: 0xFA31 · Latency: 14.8ms</text>
-    </g>
+    <!-- Micro-Sensor Nodes at Articulation Joints -->
+    <circle cx="30" cy="65" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 6px #34d399)"/>
+    <circle cx="85" cy="15" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 6px #34d399)"/>
+    <circle cx="110" cy="8" r="4" fill="#ffffff" filter="drop-shadow(0 0 8px #34d399)"/>
+    <circle cx="136" cy="20" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 6px #34d399)"/>
+    <circle cx="165" cy="35" r="3" fill="#ffffff" filter="drop-shadow(0 0 6px #34d399)"/>
+    <!-- Wrist Hub Node -->
+    <rect x="100" y="190" width="24" height="20" rx="4" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <circle cx="112" cy="200" r="3" fill="#38bdf8" filter="drop-shadow(0 0 6px #38bdf8)"/>
+  </g>
+
+  <!-- Floating Holographic Digital Twin Wireframe Hand -->
+  <g transform="translate(190, 45)" stroke="rgba(56,189,248,0.4)" stroke-width="1" fill="none">
+    <path d="M50 240 L 70 160 L 160 160 L 180 240" stroke-dasharray="2 2"/>
+    <line x1="70" y1="160" x2="88" y2="50"/>
+    <line x1="88" y1="50" x2="85" y2="15"/>
+    <line x1="115" y1="160" x2="112" y2="45"/>
+    <line x1="112" y1="45" x2="110" y2="8"/>
+    <line x1="145" y1="160" x2="136" y2="50"/>
+    <line x1="136" y1="50" x2="136" y2="20"/>
+    <circle cx="110" cy="8" r="6" stroke="#38bdf8" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="85" cy="15" r="5" stroke="#38bdf8" stroke-width="1" stroke-dasharray="2 2"/>
   </g>
 </svg>
-            </div>
           </div>
+        </div>
 
       </article>
 
       <!-- =================================================================== -->
-      <!-- PROJECT 06: Hybrid PSO-GA Brain MRI (Right Text / Left Visual)       -->
+      <!-- PROJECT 06: Hybrid PSO-GA Multilevel Otsu MRI Segmentation -->
       <!-- =================================================================== -->
-      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="cv" data-project-id="6">
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[50vh]" data-category="cv" data-project-id="6">
         
-        <div class="lg:col-span-6 order-2 lg:order-1">
-          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
-            <!-- Realistic Instrument Top Console Bar -->
-            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">NEURO-IMAGING // PSO-GA MULTILEVEL OTSU SEGMENTATION</span>
-              </div>
-              <div class="flex items-center gap-3 text-zinc-400">
-                <span class="hidden md:inline text-zinc-500">Multimodal MRI · Haralick GLCM</span>
-                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  OPTIMAL THRESHOLDS
-                </span>
-              </div>
-            </div>
-            <!-- High-Fidelity Canvas -->
-            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
-              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
-  <!-- Left: Axial Brain MRI Scan Representation -->
-  <g transform="translate(25, 25)">
-    <!-- Skull Outer Bone Cortex -->
-    <ellipse cx="110" cy="120" rx="90" ry="110" fill="#0c0d12" stroke="rgba(255,255,255,0.25)" stroke-width="1.8"/>
-    <ellipse cx="110" cy="120" rx="84" ry="103" fill="#07080b" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    
-    <!-- Cerebral Hemispheres & Sulci Grooves -->
-    <path d="M110 25 C 105 70, 105 170, 110 215" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" stroke-dasharray="2 3"/>
-    <path d="M55 70 Q 80 85 70 120 T 60 170" stroke="rgba(191,90,242,0.3)" stroke-width="1.4" fill="none"/>
-    <path d="M165 70 Q 140 85 150 120 T 160 170" stroke="rgba(191,90,242,0.3)" stroke-width="1.4" fill="none"/>
-
-    <!-- Segmented Brain Tumor / Lesion Mask (Multilevel Otsu Delineation) -->
-    <path d="M125 90 Q 155 75 165 105 T 145 135 T 115 120 Z" fill="rgba(191,90,242,0.35)" stroke="#bf5af2" stroke-width="2" filter="drop-shadow(0 0 10px rgba(191,90,242,0.8))"/>
-    <circle cx="140" cy="105" r="3" fill="#ffffff"/>
-    <text x="140" y="148" fill="#bf5af2" font-family="JetBrains Mono" font-size="8" font-weight="bold" text-anchor="middle">LESION MASK</text>
-
-    <!-- Scan Coordinates -->
-    <text x="110" y="240" fill="#86868b" font-family="JetBrains Mono" font-size="8" text-anchor="middle">AXIAL T2-FLAIR SLICE #42</text>
-  </g>
-
-  <!-- Right: Multilevel Otsu Variance Histogram & GLCM Radar Chart -->
-  <g transform="translate(255, 30)">
-    <!-- Histogram Window -->
-    <rect x="0" y="0" width="220" height="105" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.1)"/>
-    <text x="12" y="16" fill="#bf5af2" font-family="JetBrains Mono" font-size="8.5" font-weight="bold">INTENSITY HISTOGRAM h(i)</text>
-    <text x="205" y="16" fill="#34d399" font-family="JetBrains Mono" font-size="8" text-anchor="end">PSO-GA Optimal</text>
-
-    <!-- Multi-modal Gray Intensity Curve -->
-    <path d="M15 90 Q 35 30 55 75 T 95 40 T 135 70 T 175 45 T 205 90" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.4"/>
-    
-    <!-- Threshold Cutoff Markers (t1, t2, t3) -->
-    <line x1="68" y1="28" x2="68" y2="90" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="2 2"/>
-    <text x="68" y="100" fill="#38bdf8" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">t₁=74</text>
-
-    <line x1="118" y1="28" x2="118" y2="90" stroke="#bf5af2" stroke-width="2"/>
-    <text x="118" y="100" fill="#bf5af2" font-family="JetBrains Mono" font-size="8" font-weight="bold" text-anchor="middle">t₂=138*</text>
-
-    <line x1="165" y1="28" x2="165" y2="90" stroke="#34d399" stroke-width="1.6" stroke-dasharray="2 2"/>
-    <text x="165" y="100" fill="#34d399" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">t₃=192</text>
-
-    <!-- GLCM Haralick Texture Metrics Box -->
-    <g transform="translate(0, 120)">
-      <rect x="0" y="0" width="220" height="90" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.1)"/>
-      <text x="12" y="16" fill="#ffffff" font-family="JetBrains Mono" font-size="8.5" font-weight="bold">GLCM HARALICK TEXTURE METRICS</text>
-      
-      <g font-family="JetBrains Mono" font-size="8" fill="#a1a1a6">
-        <text x="12" y="34">Contrast: <tspan fill="#34d399" font-weight="bold">0.842</tspan></text>
-        <text x="115" y="34">Homogeneity: <tspan fill="#34d399" font-weight="bold">0.912</tspan></text>
-        <text x="12" y="52">Correlation: <tspan fill="#38bdf8" font-weight="bold">0.785</tspan></text>
-        <text x="115" y="52">Energy: <tspan fill="#38bdf8" font-weight="bold">0.654</tspan></text>
-        <text x="12" y="70">Entropy: <tspan fill="#bf5af2" font-weight="bold">2.14 J/K</tspan></text>
-        <text x="115" y="70" fill="#34d399" font-weight="bold">Random Forest: Valid</text>
-      </g>
-    </g>
-  </g>
-</svg>
-            </div>
-          </div>
-
-        <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
+        <!-- Text Column (~45% on desktop) -->
+        <div class="order-1 lg:order-2 lg:col-span-5 space-y-6">
+          <!-- Category Badge & Optional Benchmark Pill -->
           <div class="flex flex-wrap items-center gap-2.5">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-purple-500/10 border border-purple-500/25 text-purple-300">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.04] border border-white/[0.08] text-purple-300">
               <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-              06 · Optimization &amp; Vision · PSO + GA
+              06 · Medical Imaging · Optimization · Machine Learning
             </span>
-            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
-              Medical Imaging
-            </span>
+            <span class="text-xs font-mono text-zinc-400 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06]">PSO + GA Hybrid Optimization</span>
           </div>
 
-          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
-            Hybrid PSO-GA Multilevel Otsu Brain MRI Segmentation
+          <!-- Dominant Apple-Style Project Title -->
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] text-white tracking-[-0.03em] leading-[1.12]">
+            Hybrid PSO-GA Multilevel Otsu MRI Segmentation
           </h3>
 
-          <p class="font-mono text-xs text-purple-300">
-            Between-Class Variance Metaheuristics · Haralick GLCM Classifiers
+          <!-- Subtitle -->
+          <p class="font-sans text-base sm:text-lg text-zinc-400 font-normal leading-snug">
+            Multilevel Thresholding · Swarm Intelligence · Haralick Textures
           </p>
 
-          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-purple-400 font-medium">PSO Swarm</span>
-            <span class="text-zinc-600">+</span>
-            <span>GA Crossover</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-emerald-400 font-medium">Haralick GLCM</span>
+          <!-- Minimal Technical Metric Pill (Not a dashboard card) -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/[0.07] font-mono text-xs text-zinc-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+            <span>Swarm Optimization · Multi-Threshold Grayscale Histogram · GLCM Texture</span>
           </div>
 
-          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
-            Coupled Particle Swarm Optimization (PSO) and Genetic Algorithms (GA) to optimize multilevel Otsu between-class variance for brain tumor delineation. Benchmarks segmented slices against Random Forest classifiers trained on GLCM haralick textures.
+          <!-- Project Description -->
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed font-normal">
+            Biomedical image segmentation pipeline using hybrid Particle Swarm Optimization and Genetic Algorithms to determine optimal multilevel Otsu thresholds on brain MRI scans. Extracts Haralick GLCM features for automated tissue characterization.
           </p>
 
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="6">
+          <!-- Actions -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5 shadow-[0_4px_20px_rgba(255,255,255,0.18)]" data-project="6">
               <span>Explore Project</span>
               <span>→</span>
             </button>
-            <a href="https://github.com/niranjan-crypt/Hybrid-PSO-GA-Based-Multilevel-Otsu-MRI-Segmentation-with-Machine-Learning-Validation" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+            <a href="https://github.com/niranjan-crypt/Hybrid-PSO-GA-Based-Multilevel-Otsu-MRI-Segmentation-with-Machine-Learning-Validation" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5">
               <span>Code Repository</span>
-              <span class="text-purple-400">↗</span>
+              <span class="text-zinc-400">↗</span>
             </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Column (~55% on desktop) -->
+        <div class="order-2 lg:order-1 lg:col-span-7">
+          <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-gradient-to-b from-[#090a10] to-[#040407] border border-white/[0.08] shadow-[0_24px_70px_rgba(0,0,0,0.85)] p-6 sm:p-10 flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10]">
+            <!-- Subtle Ambient Light Reflection -->
+            <div class="absolute inset-0 bg-radial from-[#bf5af2]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
+            <!-- Clean Hero Product Visual -->
+            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 540 360" fill="none">
+  <defs>
+    <radialGradient id="p6Ambient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#bf5af2" stop-opacity="0.2"/>
+      <stop offset="70%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="tumorBloom" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cranialBone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.4)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.08)"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="270" cy="180" r="170" fill="url(#p6Ambient)"/>
+
+  <!-- Axial Cranial Silhouette & Skull Rim -->
+  <ellipse cx="270" cy="180" rx="145" ry="160" fill="#08090f" stroke="url(#cranialBone)" stroke-width="2.5" filter="drop-shadow(0 0 20px rgba(255,255,255,0.06))"/>
+  <ellipse cx="270" cy="180" rx="138" ry="153" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
+
+  <!-- Midline Fissure -->
+  <path d="M270 30 Q 268 110 270 180 T 270 330" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- Anatomical Cortical Sulci & Gyri (Brain Tissue Folds) -->
+  <g stroke="rgba(255,255,255,0.22)" stroke-width="1.4" fill="none">
+    <path d="M190 70 Q 210 100 180 130 T 210 180 Q 180 230 200 270"/>
+    <path d="M150 120 Q 180 140 160 180 T 170 240"/>
+    <path d="M230 80 Q 250 120 235 160 T 250 250"/>
+    
+    <path d="M255 140 C 240 160, 240 190, 255 210 C 265 190, 265 160, 255 140 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.4)"/>
+    <path d="M285 140 C 300 160, 300 190, 285 210 C 275 190, 275 160, 285 140 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.4)"/>
+
+    <path d="M350 70 Q 330 100 360 130 T 330 180 Q 360 230 340 270"/>
+    <path d="M390 120 Q 360 140 380 180 T 370 240"/>
+    <path d="M310 80 Q 290 120 305 160 T 290 250"/>
+  </g>
+
+  <!-- THE SEGMENTED LESION / TUMOR (Multilevel Otsu Delineation) -->
+  <g transform="translate(315, 125)">
+    <circle cx="35" cy="35" r="45" fill="url(#tumorBloom)"/>
+    <path d="M20 15 Q 45 5 60 25 T 55 55 Q 35 65 15 50 T 20 15 Z" fill="rgba(52,211,153,0.35)" stroke="#34d399" stroke-width="2" filter="drop-shadow(0 0 10px #34d399)"/>
+    <path d="M15 10 Q 50 -2 70 25 T 65 65 Q 35 75 10 55 T 15 10 Z" fill="none" stroke="rgba(56,189,248,0.7)" stroke-width="1.2" stroke-dasharray="3 3"/>
+    <circle cx="38" cy="36" r="8" fill="#ffffff" filter="drop-shadow(0 0 8px #fff)"/>
+  </g>
+</svg>
           </div>
         </div>
 
       </article>
 
       <!-- =================================================================== -->
-      <!-- PROJECT 07: TOC-AV Formal Safety Verification (Left Text / Right)    -->
+      <!-- PROJECT 07: TOC-AV: Formal Automata Safety Verifier for Autonomous Vehicles -->
       <!-- =================================================================== -->
-      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="theory" data-project-id="7">
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[50vh]" data-category="theory" data-project-id="7">
         
-        <div class="lg:col-span-6 space-y-5">
+        <!-- Text Column (~45% on desktop) -->
+        <div class="order-1 lg:order-1 lg:col-span-5 space-y-6">
+          <!-- Category Badge & Optional Benchmark Pill -->
           <div class="flex flex-wrap items-center gap-2.5">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-sky-500/10 border border-sky-500/25 text-sky-300">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.04] border border-white/[0.08] text-sky-300">
               <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
-              07 · Automata Theory · Formal Methods
+              07 · Formal Methods · Automata Theory · Safety Verification
             </span>
-            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
-              Autonomous Safety
-            </span>
+            <span class="text-xs font-mono text-zinc-400 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06]">Deterministic &amp; Pushdown Automata</span>
           </div>
 
-          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
-            TOC-AV: Formal Safety Verification for Autonomous Driving
+          <!-- Dominant Apple-Style Project Title -->
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] text-white tracking-[-0.03em] leading-[1.12]">
+            TOC-AV: Formal Automata Safety Verifier for Autonomous Vehicles
           </h3>
 
-          <p class="font-mono text-xs text-sky-300">
-            DFA, PDA &amp; Turing Machine State Engines · Mathematical Proofs
+          <!-- Subtitle -->
+          <p class="font-sans text-base sm:text-lg text-zinc-400 font-normal leading-snug">
+            DFA/NFA Models · Pushdown Automata · Turing Decidability · Temporal Logic
           </p>
 
-          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-sky-400 font-medium">q0 [Ingest]</span>
-            <span class="text-zinc-600">→</span>
-            <span>PDA Stack Verification</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-emerald-400 font-medium">qSafe Proof</span>
+          <!-- Minimal Technical Metric Pill (Not a dashboard card) -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/[0.07] font-mono text-xs text-zinc-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+            <span>Mathematical Invariant Proofs · State Machine Trajectory Validation</span>
           </div>
 
-          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
-            Formal language engine applying Deterministic Finite Automata (DFA), Pushdown Automata (PDA), and Turing Machines to mathematically verify sensor-fusion telemetry, detect anomalous transitions, and prevent hazardous control states.
+          <!-- Project Description -->
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed font-normal">
+            Theoretical computer science framework applying formal automata theory to safety verification in autonomous driving. Models obstacle avoidance and cruise transitions as deterministic finite automata and pushdown automata with rigorous invariant validation.
           </p>
 
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="7">
+          <!-- Actions -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5 shadow-[0_4px_20px_rgba(255,255,255,0.18)]" data-project="7">
               <span>Explore Project</span>
               <span>→</span>
             </button>
-            <a href="https://github.com/niranjan-crypt/Computation-and-Compiler-design" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
+            <a href="https://github.com/niranjan-crypt/Computation-and-Compiler-design" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5">
               <span>Code Repository</span>
-              <span class="text-sky-400">↗</span>
+              <span class="text-zinc-400">↗</span>
             </a>
           </div>
         </div>
 
-        <div class="lg:col-span-6">
-          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
-            <!-- Realistic Instrument Top Console Bar -->
-            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">SAFETY KERNEL // DFA/PDA FORMAL STATE INVARIANT PROVER</span>
-              </div>
-              <div class="flex items-center gap-3 text-zinc-400">
-                <span class="hidden md:inline text-zinc-500">ISO 26262 ASIL-D Verifier</span>
-                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  PROVABLY SAFE
-                </span>
-              </div>
-            </div>
-            <!-- High-Fidelity Canvas -->
-            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
-              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
-  <!-- Formal Transition Guards & State Space Network -->
-  <g transform="translate(15, 30)">
-    <!-- State q0: Cruise -->
-    <circle cx="60" cy="80" r="28" fill="#0d0d12" stroke="#38bdf8" stroke-width="2"/>
-    <circle cx="60" cy="80" r="24" fill="none" stroke="#38bdf8" stroke-width="0.8"/>
-    <text x="60" y="77" fill="#38bdf8" font-family="JetBrains Mono" font-size="12" font-weight="bold" text-anchor="middle">q₀</text>
-    <text x="60" y="89" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">CRUISE</text>
+        <!-- Hero Visual Column (~55% on desktop) -->
+        <div class="order-2 lg:order-2 lg:col-span-7">
+          <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-gradient-to-b from-[#090a10] to-[#040407] border border-white/[0.08] shadow-[0_24px_70px_rgba(0,0,0,0.85)] p-6 sm:p-10 flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10]">
+            <!-- Subtle Ambient Light Reflection -->
+            <div class="absolute inset-0 bg-radial from-[#38bdf8]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
+            <!-- Clean Hero Product Visual -->
+            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 540 360" fill="none">
+  <defs>
+    <radialGradient id="p7Ambient" cx="50%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
+      <stop offset="70%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="safetyField" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#34d399" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="carBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
 
-    <!-- Transition q0 -> q1 -->
-    <path d="M88 80 L162 80" stroke="#38bdf8" stroke-width="1.8"/>
-    <polygon points="162,80 152,75 152,85" fill="#38bdf8"/>
-    <text x="125" y="72" fill="#86868b" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">σ_anom / push(E)</text>
+  <circle cx="270" cy="190" r="170" fill="url(#p7Ambient)"/>
 
-    <!-- State q1: Sensor Discrepancy -->
-    <circle cx="190" cy="80" r="28" fill="#0d0d12" stroke="#f5a623" stroke-width="2"/>
-    <text x="190" y="77" fill="#f5a623" font-family="JetBrains Mono" font-size="12" font-weight="bold" text-anchor="middle">q₁</text>
-    <text x="190" y="89" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">DISCREPANCY</text>
-
-    <!-- Transition q1 -> q2 -->
-    <path d="M218 80 L292 80" stroke="#ef4444" stroke-width="1.8"/>
-    <polygon points="292,80 282,75 282,85" fill="#ef4444"/>
-    <text x="255" y="72" fill="#ef4444" font-family="JetBrains Mono" font-size="7.5" text-anchor="middle">Δt &gt; τ / brake()</text>
-
-    <!-- State q2: Emergency Brake -->
-    <circle cx="320" cy="80" r="28" fill="#0d0d12" stroke="#ef4444" stroke-width="2"/>
-    <text x="320" y="77" fill="#ef4444" font-family="JetBrains Mono" font-size="12" font-weight="bold" text-anchor="middle">q₂</text>
-    <text x="320" y="89" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">BRAKING</text>
-
-    <!-- State q3 (Accept/Safe Stop): Double Circle -->
-    <circle cx="430" cy="80" r="28" fill="#0d0d12" stroke="#34d399" stroke-width="2"/>
-    <circle cx="430" cy="80" r="22" fill="none" stroke="#34d399" stroke-width="1.4"/>
-    <text x="430" y="77" fill="#34d399" font-family="JetBrains Mono" font-size="12" font-weight="bold" text-anchor="middle">q_safe</text>
-    <text x="430" y="89" fill="#86868b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">ZERO RISK</text>
-
-    <!-- Transition q2 -> q3 -->
-    <path d="M348 80 L402 80" stroke="#34d399" stroke-width="1.8"/>
-    <polygon points="402,80 392,75 392,85" fill="#34d399"/>
+  <!-- Perspective Highway Roadway Markings -->
+  <g stroke="rgba(255,255,255,0.15)" stroke-width="1.5">
+    <line x1="270" y1="120" x2="60" y2="340"/>
+    <line x1="270" y1="120" x2="480" y2="340"/>
+    <line x1="270" y1="140" x2="270" y2="170" stroke-width="2"/>
+    <line x1="270" y1="200" x2="270" y2="240" stroke-width="2.5"/>
+    <line x1="270" y1="280" x2="270" y2="340" stroke-width="3"/>
   </g>
 
-  <!-- Bottom Left: PDA Stack Memory Tape -->
-  <g transform="translate(30, 170)">
-    <rect x="0" y="0" width="200" height="75" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.1)"/>
-    <text x="12" y="16" fill="#38bdf8" font-family="JetBrains Mono" font-size="8.5" font-weight="bold">PDA STACK INVARIANT MEMORY</text>
+  <!-- Forward-Projecting LiDAR Beams -->
+  <polygon points="270,180 180,120 360,120" fill="rgba(56,189,248,0.06)" stroke="rgba(56,189,248,0.2)" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Sleek Aerodynamic Autonomous Vehicle -->
+  <g transform="translate(195, 170)">
+    <path d="M15 65 Q 25 35 45 28 L 75 22 Q 105 28 125 35 Q 140 45 135 65 L 125 75 Q 75 80 25 75 Z" fill="url(#carBody)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+    <path d="M45 32 Q 55 10 75 8 Q 95 10 105 32 Z" fill="#090d16" stroke="rgba(56,189,248,0.5)" stroke-width="1.2"/>
+    <path d="M22 62 Q 75 66 128 62" stroke="#f43f5e" stroke-width="2.5" filter="drop-shadow(0 0 8px #f43f5e)"/>
+    <ellipse cx="28" cy="74" rx="12" ry="4" fill="#000000"/>
+    <ellipse cx="122" cy="74" rx="12" ry="4" fill="#000000"/>
+  </g>
+
+  <!-- THE FORMAL SAFETY BOUNDARY ENVELOPE (3D Geodesic Protective Bubble) -->
+  <g transform="translate(160, 130)">
+    <ellipse cx="110" cy="75" rx="135" ry="58" fill="url(#safetyField)" stroke="#38bdf8" stroke-width="1.8" filter="drop-shadow(0 0 16px rgba(56,189,248,0.4))"/>
+    <ellipse cx="110" cy="75" rx="110" ry="44" fill="none" stroke="rgba(52,211,153,0.7)" stroke-width="1.2" stroke-dasharray="4 4"/>
+    <circle cx="0" cy="75" r="3" fill="#38bdf8"/>
+    <circle cx="220" cy="75" r="3" fill="#38bdf8"/>
+    <circle cx="110" cy="17" r="3" fill="#34d399"/>
+    <circle cx="110" cy="133" r="3" fill="#34d399"/>
+  </g>
+</svg>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- =================================================================== -->
+      <!-- PROJECT 08: Congestion Management in Deregulated Power Systems -->
+      <!-- =================================================================== -->
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[50vh]" data-category="energy" data-project-id="8">
+        
+        <!-- Text Column (~45% on desktop) -->
+        <div class="order-1 lg:order-2 lg:col-span-5 space-y-6">
+          <!-- Category Badge & Optional Benchmark Pill -->
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.04] border border-white/[0.08] text-sky-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+              08 · Power Systems · IEEE EPREC 2026 · Optimization
+            </span>
+            <span class="text-xs font-mono text-zinc-400 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06]">IEEE 14-Bus &amp; 30-Bus Test Grids</span>
+          </div>
+
+          <!-- Dominant Apple-Style Project Title -->
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] text-white tracking-[-0.03em] leading-[1.12]">
+            Congestion Management in Deregulated Power Systems
+          </h3>
+
+          <!-- Subtitle -->
+          <p class="font-sans text-base sm:text-lg text-zinc-400 font-normal leading-snug">
+            IEEE EPREC 2026 · IEEE 14-Bus &amp; 30-Bus Test Systems · DC-OPF
+          </p>
+
+          <!-- Minimal Technical Metric Pill (Not a dashboard card) -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/[0.07] font-mono text-xs text-zinc-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+            <span>Generator Sensitivity Matrix (GSF) · 88.5% Congestion Relief · IEEE EPREC 2026</span>
+          </div>
+
+          <!-- Project Description -->
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed font-normal">
+            Hybrid metaheuristic optimization (PSO-GWO-DE) for transmission line congestion management in deregulated electricity markets. Computes generator sensitivity factors via DC optimal power flow to minimize redispatch costs while enforcing thermal and voltage limits.
+          </p>
+
+          <!-- Actions -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5 shadow-[0_4px_20px_rgba(255,255,255,0.18)]" data-project="8">
+              <span>Explore Project</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5">
+              <span>Code Repository</span>
+              <span class="text-zinc-400">↗</span>
+            </a>
+            <a href="https://doi.org/10.1109/EPREC66546.2026.11412040" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-sans text-xs font-semibold transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5">
+              <span>IEEE DOI Link</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Column (~55% on desktop) -->
+        <div class="order-2 lg:order-1 lg:col-span-7">
+          <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-gradient-to-b from-[#090a10] to-[#040407] border border-white/[0.08] shadow-[0_24px_70px_rgba(0,0,0,0.85)] p-6 sm:p-10 flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10]">
+            <!-- Subtle Ambient Light Reflection -->
+            <div class="absolute inset-0 bg-radial from-[#ff7b00]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
+            <!-- Clean Hero Product Visual -->
+            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 540 360" fill="none">
+  <defs>
+    <radialGradient id="p8Ambient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.18"/>
+      <stop offset="70%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hotCorridorGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff7b00" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#f5a623" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="coolFlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="270" cy="180" r="170" fill="url(#p8Ambient)"/>
+
+  <!-- Topographical Elevation Contours -->
+  <g stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none">
+    <path d="M50 120 Q 150 70 280 90 T 480 80"/>
+    <path d="M30 190 Q 160 160 290 190 T 510 180"/>
+    <path d="M60 270 Q 180 250 310 270 T 490 280"/>
+  </g>
+
+  <!-- High-Voltage Interconnected Power Grid Transmission Corridors -->
+  <g stroke-linecap="round">
+    <line x1="120" y1="110" x2="220" y2="80" stroke="url(#coolFlow)" stroke-width="2" filter="drop-shadow(0 0 6px #38bdf8)"/>
+    <line x1="220" y1="80" x2="380" y2="100" stroke="url(#coolFlow)" stroke-width="2" filter="drop-shadow(0 0 6px #38bdf8)"/>
+    <line x1="120" y1="110" x2="160" y2="230" stroke="url(#coolFlow)" stroke-width="2" filter="drop-shadow(0 0 6px #38bdf8)"/>
+    <line x1="160" y1="230" x2="320" y2="270" stroke="url(#coolFlow)" stroke-width="2" filter="drop-shadow(0 0 6px #38bdf8)"/>
+    <line x1="320" y1="270" x2="440" y2="220" stroke="url(#coolFlow)" stroke-width="2" filter="drop-shadow(0 0 6px #38bdf8)"/>
+    <line x1="440" y1="220" x2="380" y2="100" stroke="url(#coolFlow)" stroke-width="2" filter="drop-shadow(0 0 6px #38bdf8)"/>
+
+    <!-- THE CONGESTED THERMAL BOTTLENECK CORRIDOR (Warm Amber Glow) -->
+    <line x1="220" y1="180" x2="350" y2="180" stroke="#ff7b00" stroke-width="4.5" filter="drop-shadow(0 0 14px #ff7b00)"/>
+    <circle cx="285" cy="180" r="30" fill="url(#hotCorridorGlow)"/>
+
+    <!-- Dynamic Redispatch Optimal Bypass Route (Curved Arc) -->
+    <path d="M220 180 Q 285 130 350 180" stroke="#34d399" stroke-width="2" stroke-dasharray="4 3" fill="none" filter="drop-shadow(0 0 8px #34d399)"/>
+  </g>
+
+  <!-- Substation Hub Nodes -->
+  <g fill="#ffffff">
+    <circle cx="120" cy="110" r="6" fill="#38bdf8" filter="drop-shadow(0 0 8px #38bdf8)"/>
+    <circle cx="120" cy="110" r="2.5" fill="#fff"/>
+    <circle cx="220" cy="80" r="5" fill="#38bdf8"/>
+    <circle cx="220" cy="180" r="7" fill="#f5a623" filter="drop-shadow(0 0 10px #f5a623)"/>
+    <circle cx="220" cy="180" r="3" fill="#fff"/>
+    <circle cx="350" cy="180" r="7" fill="#f5a623" filter="drop-shadow(0 0 10px #f5a623)"/>
+    <circle cx="350" cy="180" r="3" fill="#fff"/>
+    <circle cx="380" cy="100" r="5" fill="#38bdf8"/>
+    <circle cx="160" cy="230" r="5" fill="#34d399"/>
+    <circle cx="320" cy="270" r="5" fill="#34d399"/>
+    <circle cx="440" cy="220" r="6" fill="#38bdf8"/>
+  </g>
+</svg>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- =================================================================== -->
+      <!-- PROJECT 09: Physics-Informed ANN MPPT with Markov Validation -->
+      <!-- =================================================================== -->
+      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[50vh]" data-category="energy" data-project-id="9">
+        
+        <!-- Text Column (~45% on desktop) -->
+        <div class="order-1 lg:order-1 lg:col-span-5 space-y-6">
+          <!-- Category Badge & Optional Benchmark Pill -->
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.04] border border-white/[0.08] text-purple-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              09 · Renewable Energy · IEEE SPICES 2026 Selected · Physics-Informed ML
+            </span>
+            <span class="text-xs font-mono text-zinc-400 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06]">Selected for IEEE SPICES 2026</span>
+          </div>
+
+          <!-- Dominant Apple-Style Project Title -->
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] text-white tracking-[-0.03em] leading-[1.12]">
+            Physics-Informed ANN MPPT with Markov Validation
+          </h3>
+
+          <!-- Subtitle -->
+          <p class="font-sans text-base sm:text-lg text-zinc-400 font-normal leading-snug">
+            IEEE SPICES 2026 Selected · R² = 0.9994 · 2D Markov Chain Dynamic Validation
+          </p>
+
+          <!-- Minimal Technical Metric Pill (Not a dashboard card) -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/[0.07] font-mono text-xs text-zinc-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+            <span>Semiconductor Diode Physics Loss Residual · &lt;5ms Settling Time · &gt;99.5% Steady-State Tracking</span>
+          </div>
+
+          <!-- Project Description -->
+          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed font-normal">
+            Physics-informed artificial neural network (PINN) for maximum power point tracking in solar photovoltaic systems under dynamic partial shading conditions. Incorporates diode physics constraints into the loss function and validates via a 2D Markov chain irradiance model.
+          </p>
+
+          <!-- Actions -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5 shadow-[0_4px_20px_rgba(255,255,255,0.18)]" data-project="9">
+              <span>Explore Project</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-1.5">
+              <span>Code Repository</span>
+              <span class="text-zinc-400">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Column (~55% on desktop) -->
+        <div class="order-2 lg:order-2 lg:col-span-7">
+          <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-gradient-to-b from-[#090a10] to-[#040407] border border-white/[0.08] shadow-[0_24px_70px_rgba(0,0,0,0.85)] p-6 sm:p-10 flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10]">
+            <!-- Subtle Ambient Light Reflection -->
+            <div class="absolute inset-0 bg-radial from-[#f5a623]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
+            <!-- Clean Hero Product Visual -->
+            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 540 360" fill="none">
+  <defs>
+    <radialGradient id="p9Ambient" cx="45%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#f5a623" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sunFlare" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#f5a623" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="siliconCell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="260" cy="160" r="170" fill="url(#p9Ambient)"/>
+
+  <!-- Dramatic Perspective Photovoltaic Silicon Solar Array Surface -->
+  <g transform="translate(100, 70)">
+    <polygon points="170,0 340,110 170,220 0,110" fill="url(#siliconCell)" stroke="rgba(255,255,255,0.25)" stroke-width="2" filter="drop-shadow(0 20px 40px rgba(0,0,0,0.9))"/>
+
+    <line x1="85" y1="55" x2="255" y2="165" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+    <line x1="255" y1="55" x2="85" y2="165" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
     
-    <!-- Stack Cells -->
-    <g transform="translate(12, 28)">
-      <rect x="0" y="0" width="30" height="32" rx="4" fill="#16161f" stroke="#38bdf8"/>
-      <text x="15" y="20" fill="#38bdf8" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle">E₀</text>
-      
-      <rect x="35" y="0" width="30" height="32" rx="4" fill="#16161f" stroke="#f5a623"/>
-      <text x="50" y="20" fill="#f5a623" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle">S_f</text>
+    <line x1="128" y1="27" x2="298" y2="137" stroke="rgba(255,255,255,0.2)" stroke-width="1.4"/>
+    <line x1="42" y1="82" x2="212" y2="192" stroke="rgba(255,255,255,0.2)" stroke-width="1.4"/>
 
-      <rect x="70" y="0" width="30" height="32" rx="4" fill="#16161f" stroke="#ef4444"/>
-      <text x="85" y="20" fill="#ef4444" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle">Z_b</text>
-
-      <text x="110" y="20" fill="#34d399" font-family="JetBrains Mono" font-size="8">Top → Verified</text>
+    <!-- Luminous Energy Flow Streams Converging on MPP -->
+    <g stroke="rgba(245,166,35,0.7)" stroke-width="1.2" stroke-linecap="round">
+      <path d="M40 110 Q 110 110 170 110" stroke-dasharray="3 2"/>
+      <path d="M300 110 Q 230 110 170 110" stroke-dasharray="3 2"/>
+      <path d="M170 30 L 170 110" stroke-dasharray="3 2"/>
+      <path d="M170 190 L 170 110" stroke-dasharray="3 2"/>
     </g>
+
+    <!-- THE MAXIMUM POWER POINT (MPP) RADIANT SPARK -->
+    <circle cx="170" cy="110" r="10" fill="#f5a623" filter="drop-shadow(0 0 16px #f5a623)"/>
+    <circle cx="170" cy="110" r="4.5" fill="#ffffff" filter="drop-shadow(0 0 8px #ffffff)"/>
+
+    <line x1="120" y1="135" x2="220" y2="85" stroke="#34d399" stroke-width="2" filter="drop-shadow(0 0 8px #34d399)"/>
   </g>
 
-  <!-- Bottom Right: Formal Safety Proof Formula -->
-  <g transform="translate(255, 170)">
-    <rect x="0" y="0" width="215" height="75" rx="8" fill="#0d0d12" stroke="#34d399" stroke-width="1.2"/>
-    <text x="14" y="18" fill="#34d399" font-family="JetBrains Mono" font-size="9" font-weight="bold">FORMAL SAFETY PROOF</text>
-    
-    <text x="14" y="38" fill="#ffffff" font-family="JetBrains Mono" font-size="8.5">∀ t ≥ 0, dist(t) &gt; d_min(v)</text>
-    <text x="14" y="52" fill="#86868b" font-family="JetBrains Mono" font-size="8">Proof Method: Hoare Logic Invariants</text>
-    <text x="14" y="66" fill="#34d399" font-family="JetBrains Mono" font-size="8" font-weight="bold">✓ Provably Deadlock-Free Engine</text>
-  </g>
+  <!-- Anamorphic Sunlight Flare Ray Splashing across the Surface -->
+  <line x1="160" y1="20" x2="380" y2="240" stroke="url(#sunFlare)" stroke-width="1.8" opacity="0.6"/>
+  <circle cx="270" cy="130" r="5" fill="#ffffff" filter="drop-shadow(0 0 12px #f5a623)"/>
 </svg>
-            </div>
-          </div>
-
-      </article>
-
-      <!-- =================================================================== -->
-      <!-- PROJECT 08: Congestion Management IEEE EPREC (Right Text / Left)     -->
-      <!-- =================================================================== -->
-      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="energy" data-project-id="8">
-        
-        <div class="lg:col-span-6 order-2 lg:order-1">
-          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
-            <!-- Realistic Instrument Top Console Bar -->
-            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">GRID SCADA // IEEE 14-BUS SENSITIVITY MATRIX & DC-OPF</span>
-              </div>
-              <div class="flex items-center gap-3 text-zinc-400">
-                <span class="hidden md:inline text-zinc-500">IEEE EPREC 2026 · IIT Bhilai</span>
-                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  CONGESTION RELIEVED
-                </span>
-              </div>
-            </div>
-            <!-- High-Fidelity Canvas -->
-            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
-              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
-  <!-- Power Grid Bus Network Topology (IEEE 14-Bus) -->
-  <g stroke="rgba(255,255,255,0.2)" stroke-width="1.6">
-    <!-- Transmission Lines -->
-    <line x1="80" y1="80" x2="200" y2="80"/>
-    <line x1="80" y1="80" x2="120" y2="190"/>
-    <!-- Overloaded Line (Bus 2 to Bus 3) highlighted in Amber/Red with Dynamic Flow -->
-    <line x1="200" y1="80" x2="340" y2="80" stroke="#f5a623" stroke-width="3" filter="drop-shadow(0 0 6px #f5a623)"/>
-    <line x1="200" y1="80" x2="230" y2="190"/>
-    <line x1="340" y1="80" x2="420" y2="150"/>
-    <line x1="120" y1="190" x2="230" y2="190"/>
-    <line x1="230" y1="190" x2="330" y2="210"/>
-    <line x1="330" y1="210" x2="420" y2="150"/>
-  </g>
-
-  <!-- Power Flow Direction Arrow on Overloaded Line -->
-  <polygon points="275,76 285,80 275,84" fill="#f5a623"/>
-  <rect x="235" y="55" width="90" height="18" rx="4" fill="#0f0f14" stroke="#f5a623"/>
-  <text x="280" y="67" fill="#f5a623" font-family="JetBrains Mono" font-size="8" font-weight="bold" text-anchor="middle">P_23: 104% LIMIT</text>
-
-  <!-- Bus 1 (Slack Generator G1) -->
-  <circle cx="80" cy="80" r="18" fill="#0d0d12" stroke="#34d399" stroke-width="2.2"/>
-  <text x="80" y="78" fill="#34d399" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle">G₁</text>
-  <text x="80" y="89" fill="#86868b" font-family="JetBrains Mono" font-size="6.5" text-anchor="middle">BUS 1</text>
-
-  <!-- Bus 2 (Generator G2) -->
-  <circle cx="200" cy="80" r="18" fill="#0d0d12" stroke="#38bdf8" stroke-width="2.2"/>
-  <text x="200" y="78" fill="#38bdf8" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle">G₂</text>
-  <text x="200" y="89" fill="#86868b" font-family="JetBrains Mono" font-size="6.5" text-anchor="middle">BUS 2</text>
-
-  <!-- Bus 3 (Load Substation) -->
-  <rect x="325" y="65" width="30" height="30" rx="4" fill="#0d0d12" stroke="#bf5af2" stroke-width="2"/>
-  <text x="340" y="83" fill="#bf5af2" font-family="JetBrains Mono" font-size="9" font-weight="bold" text-anchor="middle">B₃</text>
-
-  <!-- Bus 4 (Load Substation) -->
-  <rect x="405" y="135" width="30" height="30" rx="4" fill="#0d0d12" stroke="#a1a1a6" stroke-width="1.8"/>
-  <text x="420" y="153" fill="#ffffff" font-family="JetBrains Mono" font-size="9" text-anchor="middle">B₄</text>
-
-  <!-- Bus 5 (Substation) -->
-  <rect x="105" y="175" width="30" height="30" rx="4" fill="#0d0d12" stroke="#a1a1a6" stroke-width="1.8"/>
-  <text x="120" y="193" fill="#ffffff" font-family="JetBrains Mono" font-size="9" text-anchor="middle">B₅</text>
-
-  <!-- Bus 6 (Substation) -->
-  <rect x="215" y="175" width="30" height="30" rx="4" fill="#0d0d12" stroke="#a1a1a6" stroke-width="1.8"/>
-  <text x="230" y="193" fill="#ffffff" font-family="JetBrains Mono" font-size="9" text-anchor="middle">B₆</text>
-
-  <!-- Generator Sensitivity Matrix (Bottom HUD) -->
-  <g transform="translate(45, 235)">
-    <rect x="0" y="0" width="410" height="48" rx="8" fill="#090d14" stroke="rgba(255,255,255,0.12)"/>
-    <text x="15" y="18" fill="#38bdf8" font-family="JetBrains Mono" font-size="9" font-weight="bold">GENERATOR SENSITIVITY MATRIX [GS_ij]</text>
-    <text x="15" y="34" fill="#86868b" font-family="JetBrains Mono" font-size="8">γ_23 = ∂P_23/∂P_G2 = -0.421 · Optimal Rescheduling: Line loading → 88.5%</text>
-    <text x="395" y="24" fill="#34d399" font-family="JetBrains Mono" font-size="9" font-weight="bold" text-anchor="end">IEEE EPREC 2026</text>
-  </g>
-</svg>
-            </div>
-          </div>
-
-        <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
-          <div class="flex flex-wrap items-center gap-2.5">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/25 text-emerald-300">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              08 · Power Systems · DC-OPF
-            </span>
-            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
-              IEEE EPREC 2026 Paper
-            </span>
-          </div>
-
-          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
-            Hybrid Optimization for Congestion Management in Power Systems
-          </h3>
-
-          <p class="font-mono text-xs text-emerald-300">
-            IEEE 14-Bus Deregulated Power Systems · Sensitivity Matrix Formulation
-          </p>
-
-          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-emerald-400 font-medium">Sensitivity C = AB</span>
-            <span class="text-zinc-600">→</span>
-            <span>Orca + Krill + Hyena</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-sky-400 font-medium">0 Thermal Violations</span>
-          </div>
-
-          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
-            Sensitivity matrix DC-OPF implementation with multi-algorithm metaheuristics for transmission line thermal relief on the IEEE 14-bus system. Reallocates generator active-power outputs with minimum cost and zero thermal line violations.
-          </p>
-
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="8">
-              <span>Explore Project</span>
-              <span>→</span>
-            </button>
-            <a href="https://doi.org/10.1109/EPREC66546.2026.11412040" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
-              <span>IEEE DOI ↗</span>
-            </a>
-            <a href="https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-full text-[#86868b] hover:text-white text-xs font-mono transition-colors">
-              GitHub ↗
-            </a>
           </div>
         </div>
 
       </article>
-
-      <!-- =================================================================== -->
-      <!-- PROJECT 09: PINN MPPT IEEE SPICES 2026 (Left Text / Right Visual)    -->
-      <!-- =================================================================== -->
-      <article class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center" data-category="energy" data-project-id="9">
-        
-        <div class="lg:col-span-6 space-y-5">
-          <div class="flex flex-wrap items-center gap-2.5">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-sky-500/10 border border-sky-500/25 text-sky-300">
-              <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
-              09 · Physics-Informed ML · Solar MPPT
-            </span>
-            <span class="text-xs font-mono text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
-              IEEE SPICES 2026
-            </span>
-          </div>
-
-          <h3 class="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
-            Physics-Informed ANN MPPT with Markov-Chain Validation
-          </h3>
-
-          <p class="font-mono text-xs text-sky-300">
-            Stochastic Weather Irradiance Model · Sub-5ms Dynamic Settling
-          </p>
-
-          <div class="p-3 rounded-xl bg-[#111115] border border-white/[0.08] font-mono text-xs text-[#a1a1a6] flex items-center justify-between">
-            <span class="text-sky-400 font-medium">Diode Physics Loss</span>
-            <span class="text-zinc-600">+</span>
-            <span>2D Markov</span>
-            <span class="text-zinc-600">→</span>
-            <span class="text-emerald-400 font-medium">R² = 0.9994</span>
-          </div>
-
-          <p class="font-sans text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
-            Physics-informed maximum power point tracking (MPPT) architecture incorporating semiconductor physics diode equations and a stochastic 2D Markov-chain solar irradiance weather model. Delivers \(R^2 = 0.9994\), \(>99.5\%\) tracking efficiency, and sub-5 ms dynamic settling.
-          </p>
-
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <button class="open-modal-btn px-6 py-2.5 rounded-full bg-white text-black font-sans text-xs font-semibold hover:bg-[#e5e5ea] transition-all inline-flex items-center gap-1.5" data-project="9">
-              <span>Explore Project</span>
-              <span>→</span>
-            </button>
-            <a href="https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] font-sans text-xs font-medium transition-all inline-flex items-center gap-1.5">
-              <span>Code Repository</span>
-              <span class="text-sky-400">↗</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-6">
-          <div class="project-visual-frame rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.1] bg-[#07070a] shadow-2xl flex flex-col group">
-            <!-- Realistic Instrument Top Console Bar -->
-            <div class="px-4 sm:px-5 py-3 bg-[#101015] border-b border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                <span class="text-zinc-300 font-semibold ml-2 font-mono tracking-tight">SOLAR PHYSICS // PINN PHOTOVOLTAIC SEMICONDUCTOR MPPT</span>
-              </div>
-              <div class="flex items-center gap-3 text-zinc-400">
-                <span class="hidden md:inline text-zinc-500">IEEE SPICES 2026 · R² = 0.9994</span>
-                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  DYNAMIC MPP TRACKING
-                </span>
-              </div>
-            </div>
-            <!-- High-Fidelity Canvas -->
-            <div class="p-5 sm:p-7 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#09090e] to-[#030305]">
-              <svg class="w-full h-full max-h-[300px]" viewBox="0 0 500 300" fill="none">
-  <!-- Voltage & Power Laboratory Coordinate System -->
-  <g stroke="rgba(255,255,255,0.15)" stroke-width="1.2">
-    <line x1="60" y1="230" x2="450" y2="230"/>
-    <line x1="60" y1="40" x2="60" y2="230"/>
-  </g>
-  <text x="445" y="246" fill="#86868b" font-family="JetBrains Mono" font-size="8.5">Voltage V (Volts)</text>
-  <text x="25" y="45" fill="#38bdf8" font-family="JetBrains Mono" font-size="8.5">Power P (Watts)</text>
-
-  <!-- P-V Characteristic Curve Family for Irradiance G = 1000, 800, 600 W/m2 -->
-  <!-- G = 1000 W/m2 -->
-  <path d="M60 230 Q 230 40 290 65 L 350 230" stroke="#38bdf8" stroke-width="2.5" fill="none" filter="drop-shadow(0 0 8px rgba(56,189,248,0.5))"/>
-  <text x="355" y="85" fill="#38bdf8" font-family="JetBrains Mono" font-size="7.5">1000 W/m²</text>
-
-  <!-- G = 800 W/m2 -->
-  <path d="M60 230 Q 210 85 260 105 L 330 230" stroke="rgba(56,189,248,0.5)" stroke-width="1.8" fill="none"/>
-  <text x="335" y="125" fill="rgba(56,189,248,0.7)" font-family="JetBrains Mono" font-size="7.5">800 W/m²</text>
-
-  <!-- G = 600 W/m2 -->
-  <path d="M60 230 Q 190 130 230 145 L 310 230" stroke="rgba(56,189,248,0.25)" stroke-width="1.4" fill="none"/>
-
-  <!-- Maximum Power Point (MPP) Dynamic Locking Point -->
-  <circle cx="290" cy="65" r="6" fill="#34d399" filter="drop-shadow(0 0 10px #34d399)"/>
-  <circle cx="290" cy="65" r="2.5" fill="#ffffff"/>
-  
-  <!-- MPP Coordinates Annotation -->
-  <line x1="290" y1="65" x2="290" y2="230" stroke="#34d399" stroke-width="1" stroke-dasharray="2 3"/>
-  <rect x="235" y="30" width="115" height="22" rx="5" fill="#0d0d12" stroke="#34d399" stroke-width="1.2"/>
-  <text x="292" y="44" fill="#34d399" font-family="JetBrains Mono" font-size="8.5" font-weight="bold" text-anchor="middle">MPP (99.94% EFF)</text>
-
-  <!-- PINN Semiconductor Physics Residual Box -->
-  <g transform="translate(80, 80)">
-    <rect x="0" y="0" width="165" height="65" rx="8" fill="#0d0d12" stroke="rgba(255,255,255,0.12)"/>
-    <text x="10" y="16" fill="#f5a623" font-family="JetBrains Mono" font-size="8" font-weight="bold">PINN PHYSICS LOSS</text>
-    <text x="10" y="32" fill="#ffffff" font-family="JetBrains Mono" font-size="7.5">f_loss = I - I_ph + I_0(e^qV - 1)</text>
-    <text x="10" y="46" fill="#86868b" font-family="JetBrains Mono" font-size="7">Diode Semiconductor Law</text>
-    <text x="10" y="58" fill="#34d399" font-family="JetBrains Mono" font-size="7.5" font-weight="bold">R² = 0.9994 · Sub-5ms Settling</text>
-  </g>
-
-  <!-- 2D Markov Irradiance Grid HUD -->
-  <g transform="translate(80, 160)">
-    <rect x="0" y="0" width="165" height="55" rx="8" fill="#090d14" stroke="rgba(56,189,248,0.3)"/>
-    <text x="10" y="16" fill="#38bdf8" font-family="JetBrains Mono" font-size="8" font-weight="bold">2D MARKOV WEATHER GRID</text>
-    <text x="10" y="32" fill="#86868b" font-family="JetBrains Mono" font-size="7.5">P(G_t+1 | G_t, G_t-1) Stochastic</text>
-    <text x="10" y="46" fill="#38bdf8" font-family="JetBrains Mono" font-size="7.5">IEEE SPICES 2026 Presentation</text>
-  </g>
-</svg>
-            </div>
-          </div>
-
-      </article>
-
     </div>
 
     <!-- GitHub Ecosystem Full-Width Minimal Banner -->
