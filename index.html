@@ -393,11 +393,11 @@
     }
     .p6-swarm-particle-a {
       animation: p6SwarmOrbitA 6s linear infinite;
-      transform-origin: 388px 178px;
+      transform-origin: 36px 36px;
     }
     .p6-swarm-particle-b {
       animation: p6SwarmOrbitB 8.5s linear infinite;
-      transform-origin: 388px 178px;
+      transform-origin: 36px 36px;
     }
 
     /* Project 07: TOC-AV Autonomous Vehicle Safety */
@@ -987,90 +987,223 @@
             <!-- Subtle Ambient Light Reflection -->
             <div class="absolute inset-0 bg-radial from-[#bf5af2]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
             <!-- Clean Hero Product Visual -->
-            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 600 400" fill="none">
+            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <radialGradient id="hfdKeyLight" cx="65%" cy="35%" r="60%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
-      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.04"/>
+    <!-- Studio Ambient Lighting & Caustics -->
+    <radialGradient id="faceStudioLight" cx="60%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15"/>
+      <stop offset="45%" stop-color="#bf5af2" stop-opacity="0.06"/>
+      <stop offset="90%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ballisticGlow" cx="52%" cy="42%" r="50%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.22"/>
+      <stop offset="50%" stop-color="#6366f1" stop-opacity="0.08"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="hfdSpectralBloom" cx="45%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#bf5af2" stop-opacity="0.22"/>
-      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.12"/>
-      <stop offset="80%" stop-color="#34d399" stop-opacity="0.04"/>
+    <radialGradient id="headDropShadow" cx="48%" cy="52%" r="48%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.95"/>
+      <stop offset="65%" stop-color="#000000" stop-opacity="0.4"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="hfdSpectralSheaf" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#bf5af2" stop-opacity="0.75"/>
-      <stop offset="35%" stop-color="#38bdf8" stop-opacity="0.75"/>
-      <stop offset="70%" stop-color="#34d399" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#f5a623" stop-opacity="0.3"/>
+
+    <!-- Ballistic Material Gradients (Sculpted Translucent Polymer Bust) -->
+    <linearGradient id="ballisticBase" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#222a3d"/>
+      <stop offset="30%" stop-color="#161d2a"/>
+      <stop offset="70%" stop-color="#0e121b"/>
+      <stop offset="100%" stop-color="#06080d"/>
     </linearGradient>
-    <linearGradient id="hfdSkinVol" x1="0" y1="0" x2="1" y2="0.8">
-      <stop offset="0%" stop-color="#242838"/>
-      <stop offset="40%" stop-color="#181a24"/>
-      <stop offset="80%" stop-color="#0f1118"/>
-      <stop offset="100%" stop-color="#07080c"/>
+
+    <linearGradient id="ballisticSubsurface" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+      <stop offset="0%" stop-color="rgba(56,189,248,0.25)"/>
+      <stop offset="40%" stop-color="rgba(191,90,242,0.18)"/>
+      <stop offset="80%" stop-color="rgba(14,165,233,0.08)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
     </linearGradient>
-    <linearGradient id="hfdPrismShell" x1="0" y1="0" x2="0.8" y2="1">
-      <stop offset="0%" stop-color="rgba(191,90,242,0.3)"/>
-      <stop offset="50%" stop-color="rgba(56,189,248,0.25)"/>
-      <stop offset="100%" stop-color="rgba(52,211,153,0.1)"/>
+
+    <linearGradient id="ballisticRimLight" x1="0.4" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.85)"/>
+      <stop offset="25%" stop-color="rgba(56,189,248,0.65)"/>
+      <stop offset="65%" stop-color="rgba(191,90,242,0.45)"/>
+      <stop offset="100%" stop-color="rgba(56,189,248,0.1)"/>
     </linearGradient>
+
+    <linearGradient id="laserScanGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(56,189,248,0)"/>
+      <stop offset="25%" stop-color="rgba(56,189,248,0.8)"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="75%" stop-color="rgba(56,189,248,0.8)"/>
+      <stop offset="100%" stop-color="rgba(56,189,248,0)"/>
+    </linearGradient>
+
+    <filter id="laserBloom" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glintGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.3  0 0 0 0 0.8  0 0 0 0 1  0 0 0 1 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
-  <!-- Ambient Studio Backdrop Light -->
+  <!-- Deep Matte Studio Backdrop -->
   <rect width="600" height="400" fill="#040508"/>
-  <circle cx="300" cy="200" r="240" fill="url(#hfdSpectralBloom)"/>
-  <circle cx="380" cy="160" r="180" fill="url(#hfdKeyLight)"/>
+  <ellipse cx="300" cy="200" rx="260" ry="190" fill="url(#faceStudioLight)"/>
+  <circle cx="330" cy="180" r="170" fill="url(#ballisticGlow)"/>
+  <ellipse cx="280" cy="240" rx="150" ry="130" fill="url(#headDropShadow)"/>
 
-  <!-- Photorealistic Sculpted Head & Face in Studio Profile -->
-  <g transform="translate(190, 45)">
-    <!-- Base Cranium & Neck Volume -->
-    <path d="M40 280 C 40 240, 50 200, 60 170 C 40 140, 45 60, 90 25 C 130 -5, 180 5, 205 35 C 220 55, 222 80, 218 105 C 226 112, 230 125, 225 140 C 235 150, 240 162, 236 172 C 242 182, 238 195, 228 202 C 220 220, 205 242, 175 255 C 160 262, 155 275, 150 300 Z" fill="url(#hfdSkinVol)" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/>
+  <!-- ======================================================== -->
+  <!-- 3D REALISTIC SCULPTED BALLISTIC HEAD & BIOMETRIC BUST    -->
+  <!-- ======================================================== -->
+  <g id="ballistic-bust-model">
 
-    <!-- Sculpted Facial Anatomy Highlights (Cheekbone, Brow, Jaw, Philtrum) -->
-    <!-- Forehead & Brow Ridge -->
-    <path d="M165 45 C 185 55, 200 70, 205 95" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
-    <!-- Eye Orbit & Eyelid Shadow -->
-    <ellipse cx="192" cy="112" rx="14" ry="7" fill="#0b0d14" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-    <circle cx="194" cy="112" r="2.5" fill="#38bdf8" filter="drop-shadow(0 0 5px #38bdf8)"/>
-    <circle cx="195" cy="111" r="0.8" fill="#ffffff"/>
+    <!-- 1. SOLID VOLUMETRIC BALLISTIC BUST CRANIUM, FACE & NECK CHASSIS -->
+    <path d="M 175 360 
+             C 170 310 168 260 178 220 
+             C 168 180 176 125 205 85 
+             C 235 45 285 30 335 42 
+             C 365 50 395 72 410 100 
+             C 416 112 418 126 412 138 
+             C 406 148 402 152 406 160 
+             C 414 175 426 186 430 196 
+             C 434 205 428 212 418 215 
+             C 412 216 414 222 418 228 
+             C 424 235 422 244 414 248 
+             C 406 252 410 262 408 272 
+             C 404 286 388 296 370 298 
+             C 340 302 315 292 292 284 
+             C 280 292 288 320 295 360 
+             Z" 
+          fill="url(#ballisticBase)" 
+          stroke="rgba(255,255,255,0.18)" 
+          stroke-width="1.4"/>
+
+    <!-- Volumetric Subsurface Scattering Glow Layer -->
+    <path d="M 185 350 
+             C 180 305 180 260 188 225 
+             C 180 185 188 135 212 98 
+             C 240 60 285 45 330 55 
+             C 358 62 385 82 398 108 
+             C 404 120 405 132 400 142 
+             C 395 152 396 162 404 175 
+             C 410 184 416 194 415 202 
+             C 405 208 404 216 410 224 
+             C 412 232 408 240 402 244 
+             C 396 250 398 258 396 266 
+             C 392 278 378 288 362 290 
+             C 335 294 310 285 288 278 
+             C 278 288 284 315 290 350 
+             Z" 
+          fill="url(#ballisticSubsurface)" 
+          opacity="0.85"/>
+
+    <!-- 2. ANATOMICAL 3D PLANAR SCULPTING (FOREHEAD, BROW, EYE, NOSE, LIPS, CHIN, JAW) -->
+
+    <!-- Forehead & Glabella Brow Ridge Planar Highlights -->
+    <path d="M 320 58 C 352 68 382 88 398 114" stroke="url(#ballisticRimLight)" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M 335 85 C 362 96 384 112 392 128" stroke="rgba(255,255,255,0.16)" stroke-width="1.2" fill="none"/>
+    <!-- Superciliary Arch (Brow Line) -->
+    <path d="M 360 125 C 382 128 402 134 412 142" stroke="rgba(255,255,255,0.35)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+
+    <!-- Deep-Set Orbital Cavity & Anatomical Eye -->
+    <path d="M 362 138 C 352 148 354 165 368 172 C 382 178 398 174 402 162 C 404 150 388 136 362 138 Z" fill="#080b12" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <!-- Upper Eyelid Fold (Palpebral Crease) -->
+    <path d="M 360 148 C 374 142 390 145 398 154" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+    <!-- Lower Eyelid Margin -->
+    <path d="M 364 158 C 375 165 388 164 396 156" stroke="rgba(255,255,255,0.22)" stroke-width="1" fill="none"/>
+    <!-- Cornea & Iris (Biometric Iris Core) -->
+    <ellipse cx="382" cy="152" rx="7" ry="6.5" fill="#0d1524" stroke="#38bdf8" stroke-width="1.2"/>
+    <circle cx="382" cy="152" r="3.5" fill="#04060a"/>
+    <circle class="p1-keypoint-glint" cx="384" cy="150" r="2" fill="#ffffff" filter="url(#glintGlow)"/>
+
+    <!-- Sculpted Anatomical Nose (Dorsum, Tip, Ala, Columella) -->
+    <!-- Nose Dorsal Bridge -->
+    <path d="M 408 140 L 424 188 C 428 194 426 200 418 202 L 398 200" stroke="url(#ballisticRimLight)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Nasal Tip Highlight -->
+    <ellipse cx="423" cy="193" rx="4.5" ry="4" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+    <!-- Alar Wing Flare (Nostril) -->
+    <path d="M 398 198 C 405 194 412 196 414 204 C 412 208 402 210 395 206" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" fill="none"/>
+
+    <!-- Sculpted Philtrum & Anatomical Lips -->
+    <!-- Philtrum Column -->
+    <path d="M 408 205 L 412 218" stroke="rgba(255,255,255,0.3)" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Upper Lip (Vermilion Border & Cupid's Bow) -->
+    <path d="M 390 220 C 402 218 414 218 420 224 C 415 228 404 230 392 227" fill="rgba(191,90,242,0.18)" stroke="url(#ballisticRimLight)" stroke-width="1.4" stroke-linejoin="round"/>
+    <!-- Oral Commissure (Mouth Separation Line) -->
+    <path d="M 388 226 C 400 227 412 227 418 228" stroke="rgba(255,255,255,0.45)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+    <!-- Lower Lip Fullness -->
+    <path d="M 390 228 C 404 230 416 232 414 242 C 405 246 392 245 386 238" fill="rgba(56,189,248,0.15)" stroke="rgba(255,255,255,0.35)" stroke-width="1.3"/>
+    <!-- Labiomental Crease -->
+    <path d="M 388 248 C 396 250 404 250 408 247" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+
+    <!-- Sculpted Chin & Strong Mandibular Jawline -->
+    <path d="M 408 252 C 414 260 412 270 404 278 C 392 288 375 294 350 292" stroke="url(#ballisticRimLight)" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M 350 292 C 322 290 295 280 274 270" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" fill="none"/>
+
+    <!-- Zygomatic Arch (Cheekbone Volume Highlight) -->
+    <path d="M 330 178 C 360 185 390 192 405 186" stroke="rgba(56,189,248,0.35)" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#laserBloom)"/>
+
+    <!-- Realistic Anatomical Ear (Helix, Antihelix, Concha, Tragus, Lobule) -->
+    <g transform="translate(230, 150)">
+      <!-- Outer Helix Rim -->
+      <path d="M 18 5 C 34 5 44 18 42 38 C 40 56 30 72 16 75 C 6 76 2 68 6 58 C 10 48 18 40 16 28 C 14 18 10 12 18 5 Z" fill="#0c101a" stroke="rgba(255,255,255,0.28)" stroke-width="1.3"/>
+      <!-- Inner Antihelix & Concha Cavity -->
+      <path d="M 26 18 C 34 24 32 38 28 48 C 24 56 18 58 14 52" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" fill="none"/>
+      <path d="M 18 30 C 22 34 22 42 16 46" stroke="rgba(255,255,255,0.18)" stroke-width="1.2" fill="none"/>
+      <!-- Tragus Flap -->
+      <path d="M 10 32 C 14 34 14 40 10 42" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" fill="none"/>
+    </g>
+
+    <!-- Sternocleidomastoid Muscle & Neck Column -->
+    <path d="M 248 225 C 265 260 278 305 288 355" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M 345 305 C 335 325 320 342 305 358" stroke="rgba(255,255,255,0.12)" stroke-width="1.2" fill="none"/>
+
+    <!-- 3. VOLUMETRIC HYPERSPECTRAL SPECTRAL WAVE SLICES (CURVING PRECISELY OVER FACIAL PLANES) -->
+    <!-- 400nm Violet Wave (Dorsal Forehead to Jaw) -->
+    <path class="p1-spectral-layer" d="M 280 48 C 330 65 385 95 408 135 C 428 175 422 225 390 270 C 360 305 315 325 270 340" 
+          stroke="#bf5af2" stroke-width="1.4" stroke-dasharray="4 3" fill="none" opacity="0.65" filter="drop-shadow(0 0 8px #bf5af2)"/>
     
-    <!-- Realistic Nose Bridge & Tip Sculpt -->
-    <path d="M198 105 L 222 145 C 224 150, 220 156, 212 156 L 195 154" stroke="rgba(255,255,255,0.3)" stroke-width="1.4" fill="none"/>
-    <!-- Lips & Philtrum -->
-    <path d="M202 168 C 214 167, 218 172, 212 176 C 206 179, 198 178, 195 178" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" fill="none"/>
-    <path d="M200 182 C 208 183, 212 188, 204 192 C 196 194, 190 192, 186 190" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" fill="none"/>
-    <!-- Chin & Strong Jawline Contour -->
-    <path d="M202 205 C 204 216, 192 226, 175 234 C 145 246, 120 220, 105 180" stroke="rgba(255,255,255,0.35)" stroke-width="1.8" fill="none"/>
-    <!-- Cheekbone Zygomatic Light Arc -->
-    <path d="M150 120 C 170 135, 188 140, 202 135" stroke="rgba(191,90,242,0.4)" stroke-width="2" fill="none" filter="blur(1px)"/>
-    <!-- Ear Helix & Concha -->
-    <path d="M110 130 C 115 115, 130 115, 132 130 C 135 150, 125 165, 115 168 C 110 162, 112 145, 118 142" stroke="rgba(255,255,255,0.15)" stroke-width="1.2" fill="none"/>
-    <!-- Sternocleidomastoid Neck Muscle -->
-    <path d="M125 170 C 135 210, 145 250, 150 295" stroke="rgba(255,255,255,0.1)" stroke-width="1.4" fill="none"/>
+    <!-- 480nm Sapphire Wave -->
+    <path class="p1-spectral-layer" style="animation-delay: -1.5s;" d="M 295 55 C 342 75 392 105 414 145 C 434 185 428 232 396 275 C 368 308 325 328 280 342" 
+          stroke="#3b82f6" stroke-width="1.6" fill="none" opacity="0.75" filter="drop-shadow(0 0 10px #3b82f6)"/>
+    
+    <!-- 540nm Radiant Cyan Wave (Hugging Cheekbone & Nose Ridge) -->
+    <path class="p1-spectral-layer" style="animation-delay: -3s;" d="M 315 65 C 358 85 404 118 424 160 C 440 200 432 242 402 282 C 374 312 335 330 292 344" 
+          stroke="#06b6d4" stroke-width="2" fill="none" opacity="0.85" filter="drop-shadow(0 0 14px #06b6d4)"/>
+    
+    <!-- 620nm Soft Emerald Wave -->
+    <path class="p1-spectral-layer" style="animation-delay: -4.5s;" d="M 335 78 C 372 98 414 130 430 172 C 444 212 435 250 408 288 C 382 316 345 332 304 346" 
+          stroke="#10b981" stroke-width="1.6" fill="none" opacity="0.75" filter="drop-shadow(0 0 10px #10b981)"/>
+
+    <!-- 4. DYNAMIC BIOMETRIC OPTICAL LIDAR LASER SCANLINE -->
+    <line class="p1-laser-beam" x1="220" y1="85" x2="460" y2="85" stroke="url(#laserScanGrad)" stroke-width="2" stroke-linecap="round" filter="url(#laserBloom)"/>
+
+    <!-- 5. TOPOLOGICAL BIOMETRIC LANDMARK KEYPOINTS (DENSE FORENSIC MESH NODES) -->
+    <!-- Glabella & Brow Keypoints -->
+    <circle class="p1-keypoint-glint" cx="392" cy="128" r="2.5" fill="#ffffff" filter="url(#glintGlow)"/>
+    <circle class="p1-keypoint-glint" style="animation-delay: -0.6s;" cx="412" cy="142" r="2.2" fill="#38bdf8"/>
+    <!-- Eye Landmark Nodes -->
+    <circle class="p1-keypoint-glint" style="animation-delay: -1.2s;" cx="362" cy="148" r="2" fill="#38bdf8"/>
+    <circle class="p1-keypoint-glint" style="animation-delay: -1.8s;" cx="398" cy="154" r="2.2" fill="#ffffff"/>
+    <!-- Nasal Landmark Nodes (Apex & Alae) -->
+    <circle class="p1-keypoint-glint" style="animation-delay: -2.4s;" cx="423" cy="193" r="3" fill="#ffffff" filter="url(#glintGlow)"/>
+    <circle class="p1-keypoint-glint" style="animation-delay: -0.8s;" cx="402" cy="204" r="2" fill="#38bdf8"/>
+    <!-- Oral Commissure & Lip Nodes -->
+    <circle class="p1-keypoint-glint" style="animation-delay: -1.4s;" cx="418" cy="228" r="2.2" fill="#38bdf8"/>
+    <circle class="p1-keypoint-glint" style="animation-delay: -2s;" cx="388" cy="226" r="2" fill="#38bdf8"/>
+    <!-- Mentalis Chin Node -->
+    <circle class="p1-keypoint-glint" style="animation-delay: -2.8s;" cx="404" cy="278" r="3" fill="#ffffff" filter="url(#glintGlow)"/>
+    <!-- Gonion Jaw Node -->
+    <circle class="p1-keypoint-glint" style="animation-delay: -1s;" cx="274" cy="270" r="2" fill="#38bdf8"/>
   </g>
-
-  <!-- Volumetric Spectral Light Slices Passing Elegantly Across the Face -->
-  <!-- Layer 1: Ultraviolet-Purple (400nm) -->
-  <path class="p1-spectral-layer" d="M240 70 C 330 40, 420 80, 460 160 C 500 240, 420 310, 310 330 C 270 290, 250 200, 240 70 Z" fill="rgba(191,90,242,0.12)" stroke="#bf5af2" stroke-width="1.2" stroke-dasharray="3 3"/>
-  <!-- Layer 2: Sapphire-Blue (480nm) -->
-  <path class="p1-spectral-layer" style="animation-delay: -1.5s;" d="M260 85 C 345 60, 430 95, 465 175 C 495 250, 415 320, 325 335 C 285 295, 270 210, 260 85 Z" fill="rgba(59,130,246,0.14)" stroke="#3b82f6" stroke-width="1.4"/>
-  <!-- Layer 3: Radiant Cyan (540nm) -->
-  <path class="p1-spectral-layer" style="animation-delay: -3s;" d="M280 100 C 360 80, 440 115, 470 190 C 490 260, 410 330, 340 340 C 300 300, 290 220, 280 100 Z" fill="rgba(6,182,212,0.18)" stroke="#06b6d4" stroke-width="1.8" filter="drop-shadow(0 0 14px rgba(6,182,212,0.4))"/>
-  <!-- Layer 4: Soft Emerald (620nm) -->
-  <path class="p1-spectral-layer" style="animation-delay: -4.5s;" d="M300 120 C 375 105, 445 135, 470 210 C 485 275, 410 335, 355 342 C 320 305, 310 235, 300 120 Z" fill="rgba(16,185,129,0.12)" stroke="#10b981" stroke-width="1.4"/>
-
-  <!-- Dynamic Biometric Optical Laser Scanline -->
-  <line class="p1-laser-beam" x1="220" y1="80" x2="470" y2="80" stroke="rgba(56,189,248,0.75)" stroke-width="1.6" stroke-linecap="round" filter="drop-shadow(0 0 10px #38bdf8)"/>
-
-  <!-- Translucent Glass-Like Spectral Refraction Shell Hugging Facial Profile -->
-  <path d="M360 70 C 390 100, 435 150, 425 210 C 415 260, 375 300, 335 325" fill="none" stroke="url(#hfdSpectralSheaf)" stroke-width="2.5" filter="drop-shadow(0 0 10px rgba(56,189,248,0.5))"/>
-
-  <!-- Microscopic Optical Keypoint Glints -->
-  <circle class="p1-keypoint-glint" cx="384" cy="157" r="2.5" fill="#ffffff" filter="drop-shadow(0 0 6px #fff)"/>
-  <circle class="p1-keypoint-glint" style="animation-delay: -1.6s;" cx="415" cy="200" r="3" fill="#38bdf8" filter="drop-shadow(0 0 8px #38bdf8)"/>
 </svg>
           </div>
         </div>
@@ -1943,72 +2076,199 @@
             <!-- Subtle Ambient Light Reflection -->
             <div class="absolute inset-0 bg-radial from-[#bf5af2]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
             <!-- Clean Hero Product Visual -->
-            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 600 400" fill="none">
+            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <radialGradient id="mriHalo" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.18"/>
-      <stop offset="65%" stop-color="#3b82f6" stop-opacity="0.04"/>
+    <!-- Diagnostic Studio Ambient Lighting -->
+    <radialGradient id="brainHalo" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.16"/>
+      <stop offset="45%" stop-color="#38bdf8" stop-opacity="0.06"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="mriTumorBloom" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
-      <stop offset="30%" stop-color="#c084fc" stop-opacity="0.8"/>
-      <stop offset="70%" stop-color="#a855f7" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    <radialGradient id="brainDropShadow" cx="50%" cy="55%" r="48%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.95"/>
+      <stop offset="70%" stop-color="#000000" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="skullBone" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.4)"/>
-      <stop offset="100%" stop-color="rgba(255,255,255,0.06)"/>
+
+    <!-- Transparent Glass Brain Materials -->
+    <linearGradient id="brainGlassChassis" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="rgba(30, 41, 59, 0.7)"/>
+      <stop offset="30%" stop-color="rgba(15, 23, 42, 0.55)"/>
+      <stop offset="70%" stop-color="rgba(10, 15, 28, 0.65)"/>
+      <stop offset="100%" stop-color="rgba(6, 9, 18, 0.8)"/>
     </linearGradient>
+
+    <linearGradient id="brainGlassRim" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.85)"/>
+      <stop offset="25%" stop-color="rgba(56, 189, 248, 0.65)"/>
+      <stop offset="65%" stop-color="rgba(192, 132, 252, 0.5)"/>
+      <stop offset="100%" stop-color="rgba(56, 189, 248, 0.2)"/>
+    </linearGradient>
+
+    <radialGradient id="internalOpticCore" cx="52%" cy="48%" r="45%">
+      <stop offset="0%" stop-color="rgba(56, 189, 248, 0.22)"/>
+      <stop offset="50%" stop-color="rgba(139, 92, 246, 0.12)"/>
+      <stop offset="100%" stop-color="rgba(0, 0, 0, 0)"/>
+    </radialGradient>
+
+    <!-- Pathological Neoplasm / Tumor Diagnostic Radiance -->
+    <radialGradient id="tumorDiagnosticBloom" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="25%" stop-color="#c084fc" stop-opacity="0.85"/>
+      <stop offset="65%" stop-color="#a855f7" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#7e22ce" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="mriScanRay" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0)"/>
+      <stop offset="20%" stop-color="rgba(255, 255, 255, 0.5)"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="80%" stop-color="rgba(255, 255, 255, 0.5)"/>
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0)"/>
+    </linearGradient>
+
+    <filter id="lesionGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
-  <!-- Dark Diagnostic Space -->
+  <!-- Dark Diagnostic Space Backdrop -->
   <rect width="600" height="400" fill="#040508"/>
-  <circle cx="300" cy="200" r="210" fill="url(#mriHalo)"/>
+  <ellipse cx="300" cy="200" rx="240" ry="180" fill="url(#brainHalo)"/>
+  <ellipse cx="300" cy="240" rx="170" ry="120" fill="url(#brainDropShadow)"/>
 
-  <!-- High-Fidelity Axial Brain MRI Slice Silhouette -->
-  <!-- Outer Cranial Bone Ring -->
-  <ellipse cx="300" cy="200" rx="160" ry="175" fill="#080a12" stroke="url(#skullBone)" stroke-width="2.5" filter="drop-shadow(0 0 24px rgba(255,255,255,0.06))"/>
-  <ellipse cx="300" cy="200" rx="152" ry="167" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+  <!-- ======================================================== -->
+  <!-- 3D HIGH-FIDELITY TRANSPARENT HUMAN BRAIN ASSEMBLY        -->
+  <!-- ======================================================== -->
+  <g id="transparent-human-brain">
 
-  <!-- Interhemispheric Fissure (Brain Midline) -->
-  <path d="M300 35 Q 297 120 300 200 T 300 365" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <!-- 1. TRANSLUCENT GLASS CEREBRAL CORTEX CHASSIS (ACCURATE NEUROANATOMICAL PROFILE) -->
+    <!-- Frontal Lobe -> Parietal -> Occipital -> Temporal -> Cerebellum -> Brainstem -->
+    <path d="M 175 190 
+             C 160 170 162 140 180 115 
+             C 202 85 240 65 295 62 
+             C 345 60 395 75 425 105 
+             C 445 125 455 155 450 185 
+             C 446 205 432 225 415 238 
+             C 425 248 430 265 425 285 
+             C 418 310 392 325 365 320 
+             C 345 316 335 305 330 295 
+             C 328 315 325 340 324 365 
+             L 302 365 
+             C 300 340 298 320 295 300 
+             C 285 298 275 295 265 290 
+             C 245 280 230 265 220 248 
+             C 205 255 185 252 176 240 
+             C 165 225 168 205 175 190 
+             Z" 
+          fill="url(#brainGlassChassis)" 
+          stroke="url(#brainGlassRim)" 
+          stroke-width="1.8" 
+          filter="drop-shadow(0 16px 40px rgba(0,0,0,0.85))"/>
 
-  <!-- Realistic Anatomical Cortical Sulci & Gyri (Brain Tissue Grooves) -->
-  <g stroke="rgba(255,255,255,0.2)" stroke-width="1.4" fill="none">
-    <!-- Left Hemisphere Convolutions -->
-    <path d="M210 80 Q 230 110 200 140 T 230 190 Q 200 245 220 290"/>
-    <path d="M170 130 Q 200 155 180 195 T 190 260"/>
-    <path d="M255 90 Q 275 130 260 170 T 275 270"/>
-    
-    <!-- Central Ventricles (CSF Fluid Cavities) -->
-    <path d="M285 155 C 270 175, 270 210, 285 230 C 295 210, 295 175, 285 155 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.35)"/>
-    <path d="M315 155 C 330 175, 330 210, 315 230 C 305 210, 305 175, 315 155 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.35)"/>
+    <!-- Internal Luminous White Matter Subsurface Volume -->
+    <path d="M 185 185 
+             C 172 168 175 145 190 125 
+             C 210 98 245 80 295 78 
+             C 340 76 385 90 412 118 
+             C 430 136 438 160 434 185 
+             C 430 202 418 218 402 228 
+             C 410 240 414 258 408 275 
+             C 402 295 380 308 358 304 
+             C 340 300 332 290 326 280 
+             C 316 280 298 280 286 282 
+             C 255 272 235 258 226 240 
+             C 210 246 194 242 186 232 
+             C 176 218 178 200 185 185 
+             Z" 
+          fill="url(#internalOpticCore)"/>
 
-    <!-- Right Hemisphere Convolutions -->
-    <path d="M390 80 Q 370 110 400 140 T 370 190 Q 400 245 380 290"/>
-    <path d="M430 130 Q 400 155 420 195 T 410 260"/>
-    <path d="M345 90 Q 325 130 340 170 T 325 270"/>
+    <!-- 2. DEEP NEURAL STRUCTURES VISIBLE THROUGH TRANSPARENT CORTEX -->
+    <!-- Sweeping Arc of Corpus Callosum (C-Shaped Major White Matter Commissure) -->
+    <path d="M 235 175 C 235 135 275 118 325 120 C 365 122 385 142 380 168 C 375 180 355 186 330 182 C 285 176 250 186 235 175 Z" 
+          fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.45)" stroke-width="1.4" stroke-dasharray="3 2"/>
+
+    <!-- Lateral Ventricles (Fluid CSF Cavities) -->
+    <path d="M 255 168 C 265 148 295 138 335 142 C 358 145 365 158 358 168 C 348 174 325 170 295 168 Z" 
+          fill="rgba(192, 132, 252, 0.15)" stroke="rgba(192, 132, 252, 0.5)" stroke-width="1.2"/>
+
+    <!-- Thalamic Core Core (Sensory Relay Hub) -->
+    <ellipse cx="315" cy="185" rx="22" ry="16" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1"/>
+
+    <!-- 3. INTRICATE ANATOMICAL CORTICAL SULCI & GYRI (AUTHENTIC CEREBRAL FOLDING) -->
+    <g stroke="rgba(255, 255, 255, 0.32)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      
+      <!-- FRONTAL LOBE CONVOLUTIONS -->
+      <!-- Superior & Middle Frontal Sulci -->
+      <path d="M 188 128 C 205 134 218 122 238 130 C 255 136 265 125 285 128"/>
+      <path d="M 175 152 C 192 148 202 162 222 158 C 242 154 252 165 272 160"/>
+      <path d="M 178 178 C 196 172 208 185 228 178 C 248 172 258 186 278 182"/>
+      <path d="M 205 102 C 222 112 238 98 258 108 C 278 116 292 105 310 110"/>
+
+      <!-- CENTRAL SULCUS (ROLANDIC FISSURE) & PRE/POSTCENTRAL GYRI -->
+      <path d="M 302 65 C 298 90 305 115 298 140 C 292 165 296 195 290 220" stroke="rgba(56, 189, 248, 0.55)" stroke-width="1.6"/>
+      <path d="M 326 68 C 322 95 328 120 322 145 C 316 170 320 200 314 225" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.4"/>
+
+      <!-- PARIETAL LOBE CONVOLUTIONS -->
+      <path d="M 345 74 C 358 92 375 85 392 102 C 405 114 418 108 428 122"/>
+      <path d="M 338 105 C 356 112 370 128 390 122 C 408 118 422 135 435 142"/>
+      <path d="M 332 138 C 352 144 368 136 386 148 C 402 156 418 152 432 168"/>
+
+      <!-- LATERAL SULCUS (SYLVIAN FISSURE) -->
+      <path d="M 215 210 C 245 205 275 215 305 210 C 342 204 375 218 408 215" stroke="rgba(192, 132, 252, 0.65)" stroke-width="1.8"/>
+
+      <!-- TEMPORAL LOBE CONVOLUTIONS -->
+      <path d="M 188 232 C 205 224 220 238 238 230 C 258 222 272 236 295 230"/>
+      <path d="M 215 248 C 235 242 248 256 270 248 C 290 240 302 254 322 248"/>
+      <path d="M 245 268 C 265 262 278 274 300 266 C 315 260 328 270 342 265"/>
+
+      <!-- OCCIPITAL LOBE SULCI -->
+      <path d="M 428 158 C 418 175 432 192 425 210 C 418 222 426 235 418 245"/>
+      <path d="M 405 178 C 395 195 408 208 400 225"/>
+    </g>
+
+    <!-- 4. CEREBELLUM WITH FINELY TEXTURED HORIZONTAL FOLIA (ARBOR VITAE) -->
+    <g stroke="rgba(255, 255, 255, 0.28)" stroke-width="1.1" stroke-linecap="round" fill="none">
+      <path d="M 345 292 C 365 285 390 286 414 278"/>
+      <path d="M 340 300 C 362 294 388 296 412 288"/>
+      <path d="M 342 308 C 360 302 382 305 405 298"/>
+      <path d="M 346 315 C 362 310 380 314 398 308"/>
+      <!-- Primary Fissure of Cerebellum -->
+      <path d="M 338 284 C 362 276 392 278 418 268" stroke="rgba(56, 189, 248, 0.5)" stroke-width="1.4"/>
+    </g>
+
+    <!-- 5. BRAINSTEM (PONS & MEDULLA OBLONGATA) -->
+    <!-- Pons Ventral Bulge -->
+    <path d="M 292 292 C 285 310 288 328 298 338" stroke="rgba(255, 255, 255, 0.35)" stroke-width="1.4" fill="none"/>
+    <!-- Longitudinal Fiber Tracts of Medulla -->
+    <line x1="308" y1="320" x2="308" y2="365" stroke="rgba(56, 189, 248, 0.45)" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="316" y1="320" x2="316" y2="365" stroke="rgba(56, 189, 248, 0.45)" stroke-width="1" stroke-dasharray="3 3"/>
+
+    <!-- 6. PATHOLOGICAL LESION ROI (MULTILEVEL OTSU SEGMENTED BRAIN TUMOR) -->
+    <g transform="translate(355, 142)">
+      <!-- Radiometric Diagnostic Tumor Bloom -->
+      <circle class="p6-tumor-core" cx="36" cy="36" r="48" fill="url(#tumorDiagnosticBloom)"/>
+
+      <!-- High-Precision Otsu Segmented Boundary Contour -->
+      <path class="p6-tumor-core" d="M 20 18 C 38 8 56 12 68 28 C 78 44 72 65 56 72 C 38 78 18 68 14 50 C 10 34 14 22 20 18 Z" 
+            fill="rgba(192, 132, 252, 0.38)" stroke="#c084fc" stroke-width="2.2" filter="url(#lesionGlow)"/>
+
+      <!-- Inner Hyperintense Neoplasm Core -->
+      <circle class="p6-tumor-core" cx="40" cy="40" r="9" fill="#ffffff" filter="drop-shadow(0 0 10px #ffffff)"/>
+      <circle class="p6-tumor-core" cx="40" cy="40" r="4" fill="#c084fc"/>
+
+      <!-- Particle Swarm Optimization (PSO) Converging Search Agents -->
+      <circle class="p6-swarm-particle-a" cx="36" cy="36" r="2.4" fill="#38bdf8" filter="drop-shadow(0 0 6px #38bdf8)"/>
+      <circle class="p6-swarm-particle-b" cx="36" cy="36" r="2" fill="#c084fc" filter="drop-shadow(0 0 6px #c084fc)"/>
+    </g>
+
+    <!-- 7. HORIZONTAL MRI AXIAL SCANNING SHEEN RAY -->
+    <line class="p6-scan-line" x1="140" y1="190" x2="460" y2="190" stroke="url(#mriScanRay)" stroke-width="1.8" stroke-dasharray="4 2" filter="drop-shadow(0 0 8px #fff)"/>
   </g>
-
-  <!-- SUBTLY HIGHLIGHTED TUMOR REGION (Soft Purple Translucent Overlay) -->
-  <g transform="translate(350, 140)">
-    <!-- Volumetric Radiant Bloom -->
-    <circle class="p6-tumor-core" cx="38" cy="38" r="50" fill="url(#mriTumorBloom)"/>
-
-    <!-- Delineated Segmented Lesion Boundary (Elegant & Minimal) -->
-    <path class="p6-tumor-core" d="M22 18 Q 48 8 65 28 T 60 62 Q 38 72 16 56 T 22 18 Z" fill="rgba(192,132,252,0.35)" stroke="#c084fc" stroke-width="2" filter="drop-shadow(0 0 12px #a855f7)"/>
-
-    <!-- Fine Internal Hyperintense Core -->
-    <circle class="p6-tumor-core" cx="40" cy="38" r="9" fill="#ffffff" filter="drop-shadow(0 0 10px #ffffff)"/>
-
-    <!-- Particle Swarm Optimization (PSO) Converging Search Particles -->
-    <circle class="p6-swarm-particle-a" cx="38" cy="38" r="2.2" fill="#38bdf8" filter="drop-shadow(0 0 6px #38bdf8)"/>
-    <circle class="p6-swarm-particle-b" cx="38" cy="38" r="1.8" fill="#c084fc" filter="drop-shadow(0 0 6px #c084fc)"/>
-  </g>
-
-  <!-- Subtle Medical Scan Plane Ray (Horizontal Sheen) -->
-  <line class="p6-scan-line" x1="140" y1="200" x2="460" y2="200" stroke="rgba(255,255,255,0.22)" stroke-width="1.2" stroke-dasharray="3 3"/>
 </svg>
           </div>
         </div>
