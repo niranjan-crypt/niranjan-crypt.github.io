@@ -198,6 +198,56 @@
       transform: scale(0.94);
     }
 
+    /* Floating iPhone Liquid Glass Category Filter Capsule */
+    .liquid-filter-capsule {
+      position: relative;
+      background: rgba(14, 14, 20, 0.68);
+      backdrop-filter: blur(32px) saturate(200%);
+      -webkit-backdrop-filter: blur(32px) saturate(200%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 
+        0 16px 44px -10px rgba(0, 0, 0, 0.85),
+        inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.35),
+        inset 0 -1px 2px 0 rgba(0, 0, 0, 0.5);
+      border-radius: 9999px;
+      padding: 6px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .liquid-filter-capsule:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow: 
+        0 20px 50px -10px rgba(0, 0, 0, 0.9),
+        0 0 25px rgba(56, 189, 248, 0.12),
+        inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45);
+    }
+    .liquid-filter-capsule::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 9999px;
+      padding: 1px;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.45) 0%,
+        rgba(255, 255, 255, 0.08) 35%,
+        rgba(56, 189, 248, 0.35) 55%,
+        rgba(191, 90, 242, 0.3) 75%,
+        rgba(255, 255, 255, 0.3) 100%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+    .liquid-filter-capsule:hover .liquid-glow {
+      opacity: 1;
+    }
+
     /* Floating iPhone Liquid Glass Capsule */
     .liquid-nav-capsule {
       position: relative;
@@ -555,36 +605,37 @@
       </div>
 
       <!-- Creative Horizontal Segmented Control Strip (No Line Wrapping) -->
-      <div class="w-full overflow-x-auto no-scrollbar py-1">
-        <div class="p-1.5 rounded-2xl bg-[#111115]/95 border border-white/[0.1] inline-flex items-center gap-1.5 shadow-2xl backdrop-blur-xl whitespace-nowrap min-w-max" id="project-filters">
-          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-white text-black shadow-lg transition-all flex items-center gap-2" data-filter="all">
+      <div class="w-full overflow-x-auto no-scrollbar py-2">
+        <div class="liquid-filter-capsule whitespace-nowrap min-w-max" id="project-filters">
+          <div class="liquid-glow" id="filter-liquid-glow"></div>
+          <button class="project-filter-btn relative z-10 px-5 py-2.5 rounded-full text-sm font-sans font-semibold bg-white text-black shadow-[0_4px_22px_rgba(255,255,255,0.25)] transition-all duration-300 transform scale-[1.02] flex items-center gap-2.5 shrink-0" data-filter="all">
             <span>All Systems</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-black/10 text-[10px] font-bold">9</span>
+            <span class="filter-count-badge px-2 py-0.5 rounded-full bg-black/10 text-xs font-bold">9</span>
           </button>
-          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.06] transition-all flex items-center gap-2" data-filter="cv">
-            <span class="w-1.5 h-1.5 rounded-full bg-purple-400/80"></span>
+          <button class="project-filter-btn relative z-10 px-5 py-2.5 rounded-full text-sm font-sans font-medium text-[#a1a1a6] hover:text-white hover:bg-white/[0.12] transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.97] flex items-center gap-2.5 shrink-0" data-filter="cv">
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
             <span>Vision &amp; 3D</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-white/[0.06] text-[10px]">3</span>
+            <span class="filter-count-badge px-2 py-0.5 rounded-full bg-white/[0.08] text-xs font-medium">3</span>
           </button>
-          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.06] transition-all flex items-center gap-2" data-filter="energy">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-400/80"></span>
+          <button class="project-filter-btn relative z-10 px-5 py-2.5 rounded-full text-sm font-sans font-medium text-[#a1a1a6] hover:text-white hover:bg-white/[0.12] transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.97] flex items-center gap-2.5 shrink-0" data-filter="energy">
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
             <span>Energy &amp; Grid</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-white/[0.06] text-[10px]">3</span>
+            <span class="filter-count-badge px-2 py-0.5 rounded-full bg-white/[0.08] text-xs font-medium">3</span>
           </button>
-          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.06] transition-all flex items-center gap-2" data-filter="data">
-            <span class="w-1.5 h-1.5 rounded-full bg-amber-400/80"></span>
+          <button class="project-filter-btn relative z-10 px-5 py-2.5 rounded-full text-sm font-sans font-medium text-[#a1a1a6] hover:text-white hover:bg-white/[0.12] transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.97] flex items-center gap-2.5 shrink-0" data-filter="data">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
             <span>Data Warehouses</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-white/[0.06] text-[10px]">1</span>
+            <span class="filter-count-badge px-2 py-0.5 rounded-full bg-white/[0.08] text-xs font-medium">1</span>
           </button>
-          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.06] transition-all flex items-center gap-2" data-filter="embedded">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400/80"></span>
+          <button class="project-filter-btn relative z-10 px-5 py-2.5 rounded-full text-sm font-sans font-medium text-[#a1a1a6] hover:text-white hover:bg-white/[0.12] transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.97] flex items-center gap-2.5 shrink-0" data-filter="embedded">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
             <span>Edge Telemetry</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-white/[0.06] text-[10px]">1</span>
+            <span class="filter-count-badge px-2 py-0.5 rounded-full bg-white/[0.08] text-xs font-medium">1</span>
           </button>
-          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.06] transition-all flex items-center gap-2" data-filter="theory">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-400/80"></span>
+          <button class="project-filter-btn relative z-10 px-5 py-2.5 rounded-full text-sm font-sans font-medium text-[#a1a1a6] hover:text-white hover:bg-white/[0.12] transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.97] flex items-center gap-2.5 shrink-0" data-filter="theory">
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
             <span>Formal Theory</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-white/[0.06] text-[10px]">1</span>
+            <span class="filter-count-badge px-2 py-0.5 rounded-full bg-white/[0.08] text-xs font-medium">1</span>
           </button>
         </div>
       </div>
@@ -1290,86 +1341,254 @@
             <!-- Subtle Ambient Light Reflection -->
             <div class="absolute inset-0 bg-radial from-[#34d399]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
             <!-- Clean Hero Product Visual -->
-            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 600 400" fill="none">
+            <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <radialGradient id="gloveStudioLight" cx="50%" cy="40%" r="55%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
-      <stop offset="60%" stop-color="#10b981" stop-opacity="0.06"/>
+    <!-- Studio Ambient Lighting & Caustics -->
+    <radialGradient id="handStudioLight" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.14"/>
+      <stop offset="40%" stop-color="#06b6d4" stop-opacity="0.06"/>
+      <stop offset="80%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="handDropShadow" cx="50%" cy="52%" r="48%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.95"/>
+      <stop offset="65%" stop-color="#000000" stop-opacity="0.4"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="matteCarbon" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1e2433"/>
+
+    <!-- Photorealistic 3D Glove Materials -->
+    <linearGradient id="gloveChassis" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#222a3a"/>
+      <stop offset="25%" stop-color="#181e2b"/>
+      <stop offset="65%" stop-color="#10141e"/>
+      <stop offset="100%" stop-color="#0a0c13"/>
+    </linearGradient>
+
+    <linearGradient id="fingerCylinder" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="20%" stop-color="rgba(255,255,255,0.06)"/>
+      <stop offset="60%" stop-color="rgba(0,0,0,0.3)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.65)"/>
+    </linearGradient>
+
+    <!-- Articulation Titanium Plates -->
+    <linearGradient id="titaniumPlate" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#3b485d"/>
+      <stop offset="45%" stop-color="#252f40"/>
+      <stop offset="85%" stop-color="#151b26"/>
+      <stop offset="100%" stop-color="#0c1017"/>
+    </linearGradient>
+
+    <!-- Flex Sensor Glowing Micro-Traces -->
+    <linearGradient id="flexTraceNeon" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="45%" stop-color="#10b981"/>
+      <stop offset="85%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#6ee7b7"/>
+    </linearGradient>
+
+    <!-- Wrist Cuff Smart Module -->
+    <linearGradient id="wristModule" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c2230"/>
       <stop offset="50%" stop-color="#121622"/>
-      <stop offset="100%" stop-color="#0a0c14"/>
+      <stop offset="100%" stop-color="#090b10"/>
     </linearGradient>
-    <linearGradient id="sensorGlow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#34d399"/>
-      <stop offset="100%" stop-color="#06b6d4"/>
-    </linearGradient>
+
+    <!-- Specular Glow Filters -->
+    <filter id="traceGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.2  0 0 0 0 0.85  0 0 0 0 0.6  0 0 0 1 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
-  <!-- Dark Studio Setting -->
+  <!-- Deep Matte Studio Backdrop -->
   <rect width="600" height="400" fill="#040508"/>
-  <circle cx="300" cy="200" r="220" fill="url(#gloveStudioLight)"/>
+  <ellipse cx="300" cy="190" rx="260" ry="190" fill="url(#handStudioLight)"/>
+  <!-- Ambient Volumetric Hand Contact Shadow -->
+  <ellipse cx="300" cy="230" rx="145" ry="125" fill="url(#handDropShadow)"/>
 
-  <!-- Sculpted Human Hand & Advanced Wearable Smart Glove -->
-  <g transform="translate(180, 50)">
-    <!-- Wrist & Forearm Cuff Chassis -->
-    <path d="M50 290 L 75 190 L 175 190 L 200 290 Z" fill="url(#matteCarbon)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
-    <rect x="75" y="195" width="100" height="12" rx="3" fill="#0b0e17" stroke="rgba(52,211,153,0.3)" stroke-width="1"/>
+  <!-- ======================================================== -->
+  <!-- 3D ORGANIC CYBER-PHYSICAL SMART GLOVE & HAND ASSEMBLY     -->
+  <!-- ======================================================== -->
+  <g id="smart-glove-model">
+
+    <!-- 1. FOREARM & ERGONOMIC WRIST CUFF -->
+    <path d="M242 385 C244 340 248 305 252 282 L348 282 C352 305 356 340 358 385 Z" 
+          fill="url(#gloveChassis)" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
     
-    <!-- Palm Body Contour -->
-    <path d="M75 190 L 60 130 L 85 60 L 125 45 L 165 55 L 195 70 L 200 145 L 175 190 Z" fill="url(#matteCarbon)" stroke="rgba(255,255,255,0.22)" stroke-width="1.8"/>
+    <!-- Forearm Micro-Mesh Texture & Subtle Seam Lines -->
+    <path d="M252 330 C275 334 325 334 348 330" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 3"/>
+    <path d="M248 355 C275 360 325 360 352 355" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 3"/>
 
-    <!-- Ergonomic Glove Finger Pods (Natural Human Reach Posture) -->
-    <!-- Thumb -->
-    <path d="M60 130 L 20 105 L 5 75 L 22 62 L 48 85 L 75 120" fill="url(#matteCarbon)" stroke="rgba(255,255,255,0.16)" stroke-width="1.4"/>
-    <!-- Index Finger -->
-    <path d="M85 60 L 80 15 L 100 12 L 108 55" fill="url(#matteCarbon)" stroke="rgba(255,255,255,0.16)" stroke-width="1.4"/>
-    <!-- Middle Finger (Apex) -->
-    <path d="M110 50 L 112 5 L 132 4 L 135 50" fill="url(#matteCarbon)" stroke="rgba(255,255,255,0.16)" stroke-width="1.4"/>
-    <!-- Ring Finger -->
-    <path d="M138 52 L 142 18 L 160 18 L 162 60" fill="url(#matteCarbon)" stroke="rgba(255,255,255,0.16)" stroke-width="1.4"/>
-    <!-- Pinky Finger -->
-    <path d="M165 65 L 178 35 L 194 38 L 186 85" fill="url(#matteCarbon)" stroke="rgba(255,255,255,0.16)" stroke-width="1.4"/>
+    <!-- 2. ANATOMICAL DORSAL HAND & FINGERS SILHOUETTE (ORGANIC CURVES) -->
+    <!-- Continuous Smooth Glove Body Silhouette -->
+    <path d="M 252 282 
+             C 240 255 224 228 214 206
+             C 200 188 174 168 152 146
+             C 144 138 140 126 148 118
+             C 156 110 168 114 176 122
+             C 192 138 212 162 226 182
+             C 230 170 236 156 240 144
+             C 236 116 232 78 231 46
+             C 231 34 240 26 250 26
+             C 260 26 268 34 268 46
+             C 267 78 266 112 268 136
+             C 272 136 278 134 282 130
+             C 281 98 281 54 282 22
+             C 282 10 292 2 302 2
+             C 312 2 322 10 322 22
+             C 322 54 321 98 322 130
+             C 326 134 332 136 336 136
+             C 338 112 338 78 338 46
+             C 338 34 346 26 356 26
+             C 366 26 375 34 374 46
+             C 373 78 369 116 366 144
+             C 370 152 376 160 380 166
+             C 384 142 388 112 390 88
+             C 391 76 399 70 408 72
+             C 417 74 423 82 421 94
+             C 417 124 411 158 404 184
+             C 396 214 384 248 376 272
+             C 368 280 358 282 348 282
+             Z"
+          fill="url(#gloveChassis)"
+          stroke="rgba(255,255,255,0.22)"
+          stroke-width="1.4"/>
 
-    <!-- Subtle Translucent Phalangeal Skeletal Bones (Underneath Glove Material) -->
-    <g stroke="rgba(56,189,248,0.25)" stroke-width="1" fill="none">
-      <!-- Finger Joint Bones -->
-      <line x1="90" y1="20" x2="95" y2="50" stroke-dasharray="2 2"/>
-      <line x1="122" y1="12" x2="124" y2="45" stroke-dasharray="2 2"/>
-      <line x1="151" y1="25" x2="150" y2="50" stroke-dasharray="2 2"/>
-      <line x1="186" y1="42" x2="175" y2="70" stroke-dasharray="2 2"/>
-      <line x1="18" y1="70" x2="45" y2="90" stroke-dasharray="2 2"/>
-      <!-- Metacarpal Palm Bone Rays -->
-      <line x1="95" y1="50" x2="120" y2="180" stroke-dasharray="3 3"/>
-      <line x1="124" y1="45" x2="125" y2="180" stroke-dasharray="3 3"/>
-      <line x1="150" y1="50" x2="135" y2="180" stroke-dasharray="3 3"/>
+    <!-- Volumetric Light Sheen Across Cylindrical Fingers -->
+    <!-- Thumb 3D Sheen -->
+    <path d="M154 122 C170 138 190 162 206 186 C216 174 218 168 204 150 C188 132 170 114 154 122 Z" 
+          fill="url(#fingerCylinder)" opacity="0.6"/>
+    <!-- Index 3D Sheen -->
+    <path d="M234 44 C234 80 238 120 242 144 L252 144 C248 120 246 80 246 44 Z" 
+          fill="url(#fingerCylinder)" opacity="0.7"/>
+    <!-- Middle 3D Sheen -->
+    <path d="M284 20 C284 60 285 106 286 132 L298 132 C297 106 296 60 296 20 Z" 
+          fill="url(#fingerCylinder)" opacity="0.8"/>
+    <!-- Ring 3D Sheen -->
+    <path d="M340 44 C340 80 342 120 344 140 L354 140 C352 120 350 80 350 44 Z" 
+          fill="url(#fingerCylinder)" opacity="0.7"/>
+    <!-- Pinky 3D Sheen -->
+    <path d="M392 90 C390 120 384 154 380 178 L390 178 C394 154 398 120 400 90 Z" 
+          fill="url(#fingerCylinder)" opacity="0.6"/>
+
+    <!-- 3. ANATOMICAL ARTICULATION KNUCKLE PADS (TITANIUM/GRAPHITE CARAPACES) -->
+    <!-- MCP Arch Joint Nodes (Knuckles) -->
+    <!-- Index Knuckle -->
+    <ellipse cx="254" cy="142" rx="11" ry="8" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <!-- Middle Knuckle -->
+    <ellipse cx="302" cy="128" rx="12" ry="9" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.35)" stroke-width="1.1"/>
+    <!-- Ring Knuckle -->
+    <ellipse cx="350" cy="138" rx="11" ry="8" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <!-- Pinky Knuckle -->
+    <ellipse cx="392" cy="166" rx="9" ry="7" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+    <!-- Thumb MCP -->
+    <ellipse cx="214" cy="194" rx="10" ry="8" transform="rotate(-35 214 194)" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+
+    <!-- PIP & DIP Finger Joint Pods -->
+    <!-- Thumb IP Joint -->
+    <ellipse cx="176" cy="146" rx="8" ry="6" transform="rotate(-35 176 146)" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+    <!-- Index PIP & DIP -->
+    <ellipse cx="249" cy="96" rx="8" ry="5.5" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
+    <ellipse cx="249" cy="62" rx="7" ry="5" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+    <!-- Middle PIP & DIP -->
+    <ellipse cx="302" cy="82" rx="9" ry="6" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.25)" stroke-width="0.9"/>
+    <ellipse cx="302" cy="48" rx="8" ry="5" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
+    <!-- Ring PIP & DIP -->
+    <ellipse cx="356" cy="92" rx="8" ry="5.5" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
+    <ellipse cx="356" cy="58" rx="7" ry="5" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+    <!-- Pinky PIP & DIP -->
+    <ellipse cx="400" cy="124" rx="7" ry="5" transform="rotate(12 400 124)" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+    <ellipse cx="405" cy="98" rx="6" ry="4.5" transform="rotate(12 405 98)" fill="url(#titaniumPlate)" stroke="rgba(255,255,255,0.18)" stroke-width="0.8"/>
+
+    <!-- 4. CONTINUOUS EMBEDDED FLEX-STRAIN SENSOR RIBBONS (SMOOTH ORGANIC BEZIERS) -->
+    <!-- Channel 1: Thumb Flex Ribbon -->
+    <path d="M290 282 C275 250 240 225 214 194 C195 170 178 152 155 124" 
+          stroke="url(#flexTraceNeon)" stroke-width="2.4" stroke-linecap="round" filter="url(#traceGlow)"/>
+    <!-- Channel 2: Index Flex Ribbon -->
+    <path d="M295 282 C285 240 262 195 254 142 C248 105 249 70 249 32" 
+          stroke="url(#flexTraceNeon)" stroke-width="2.4" stroke-linecap="round" filter="url(#traceGlow)"/>
+    <!-- Channel 3: Middle Flex Ribbon -->
+    <path d="M300 282 C300 235 301 180 302 128 C302 90 302 52 302 10" 
+          stroke="url(#flexTraceNeon)" stroke-width="2.6" stroke-linecap="round" filter="url(#traceGlow)"/>
+    <!-- Channel 4: Ring Flex Ribbon -->
+    <path d="M305 282 C318 240 342 195 350 138 C355 102 356 68 356 34" 
+          stroke="url(#flexTraceNeon)" stroke-width="2.4" stroke-linecap="round" filter="url(#traceGlow)"/>
+    <!-- Channel 5: Pinky Flex Ribbon -->
+    <path d="M310 282 C335 250 375 215 392 166 C402 138 406 112 412 80" 
+          stroke="url(#flexTraceNeon)" stroke-width="2.2" stroke-linecap="round" filter="url(#traceGlow)"/>
+
+    <!-- Micro-Capacitive Strain Sensor Segment Lines Along Ribbons -->
+    <g stroke="rgba(255,255,255,0.5)" stroke-width="1">
+      <!-- Thumb Strain Elements -->
+      <line x1="182" y1="152" x2="174" y2="142"/>
+      <line x1="204" y1="180" x2="196" y2="170"/>
+      <!-- Index Strain Elements -->
+      <line x1="244" y1="115" x2="254" y2="115"/>
+      <line x1="244" y1="78" x2="254" y2="78"/>
+      <!-- Middle Strain Elements -->
+      <line x1="297" y1="102" x2="307" y2="102"/>
+      <line x1="297" y1="62" x2="307" y2="62"/>
+      <!-- Ring Strain Elements -->
+      <line x1="351" y1="110" x2="361" y2="110"/>
+      <line x1="351" y1="74" x2="361" y2="74"/>
+      <!-- Pinky Strain Elements -->
+      <line x1="395" y1="145" x2="403" y2="142"/>
+      <line x1="401" y1="108" x2="409" y2="105"/>
     </g>
 
-    <!-- Embedded Conductive Sensor Channels Along Dorsal Tendons -->
-    <path d="M22 62 L 50 90 L 85 160 L 115 220" stroke="url(#sensorGlow)" stroke-width="2" stroke-linecap="round" filter="drop-shadow(0 0 6px #10b981)"/>
-    <path d="M90 15 L 95 55 L 105 160 L 118 220" stroke="url(#sensorGlow)" stroke-width="2" stroke-linecap="round" filter="drop-shadow(0 0 6px #10b981)"/>
-    <path d="M122 5 L 124 50 L 124 160 L 125 220" stroke="url(#sensorGlow)" stroke-width="2.2" stroke-linecap="round" filter="drop-shadow(0 0 8px #10b981)"/>
-    <path d="M151 18 L 150 55 L 140 160 L 132 220" stroke="url(#sensorGlow)" stroke-width="2" stroke-linecap="round" filter="drop-shadow(0 0 6px #10b981)"/>
-    <path d="M186 38 L 178 75 L 155 160 L 138 220" stroke="url(#sensorGlow)" stroke-width="1.8" stroke-linecap="round" filter="drop-shadow(0 0 6px #10b981)"/>
+    <!-- 5. EMISSIVE BIOMETRIC NODES & HAPTIC CONTACT PADS -->
+    <!-- Fingertip Active Bio-Sensors (Glowing Emerald/Cyan Core) -->
+    <circle cx="153" cy="122" r="4.5" fill="#ffffff" filter="url(#nodeGlow)"/>
+    <circle cx="153" cy="122" r="2.5" fill="#10b981"/>
 
-    <!-- Subtle Cyan/Green Sensor Illumination at Fingertips & Joints -->
-    <!-- Fingertip Micro-Sensors -->
-    <circle cx="22" cy="62" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 8px #34d399)"/>
-    <circle cx="90" cy="15" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 8px #34d399)"/>
-    <circle cx="122" cy="5" r="4" fill="#ffffff" filter="drop-shadow(0 0 10px #34d399)"/>
-    <circle cx="151" cy="18" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 8px #34d399)"/>
-    <circle cx="186" cy="38" r="3" fill="#ffffff" filter="drop-shadow(0 0 8px #34d399)"/>
+    <circle cx="249" cy="30" r="4.5" fill="#ffffff" filter="url(#nodeGlow)"/>
+    <circle cx="249" cy="30" r="2.5" fill="#10b981"/>
 
-    <!-- Knuckle Joint Sensor Nodes -->
-    <circle cx="95" cy="55" r="2.5" fill="#38bdf8"/>
-    <circle cx="124" cy="50" r="3" fill="#38bdf8"/>
-    <circle cx="150" cy="55" r="2.5" fill="#38bdf8"/>
-    <circle cx="178" cy="75" r="2" fill="#38bdf8"/>
+    <circle cx="302" cy="8" r="5" fill="#ffffff" filter="url(#nodeGlow)"/>
+    <circle cx="302" cy="8" r="2.8" fill="#10b981"/>
+
+    <circle cx="356" cy="32" r="4.5" fill="#ffffff" filter="url(#nodeGlow)"/>
+    <circle cx="356" cy="32" r="2.5" fill="#10b981"/>
+
+    <circle cx="412" cy="78" r="4" fill="#ffffff" filter="url(#nodeGlow)"/>
+    <circle cx="412" cy="78" r="2.2" fill="#10b981"/>
+
+    <!-- Joint Optical Tracking Dots -->
+    <circle cx="254" cy="142" r="2" fill="#38bdf8"/>
+    <circle cx="302" cy="128" r="2.5" fill="#38bdf8"/>
+    <circle cx="350" cy="138" r="2" fill="#38bdf8"/>
+    <circle cx="392" cy="166" r="1.8" fill="#38bdf8"/>
+    <circle cx="214" cy="194" r="2" fill="#38bdf8"/>
+
+    <!-- 6. HIGH-PRECISION WRIST TELEMETRY MODULE & CHASSIS (ESP32 / IMU / BLE HUB) -->
+    <!-- Sculpted Cuff Bevel Band -->
+    <rect x="246" y="274" width="108" height="16" rx="5" 
+          fill="url(#wristModule)" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"/>
     
-    <!-- Central Hub Biometric Optical Node -->
-    <circle cx="125" cy="201" r="3.5" fill="#34d399" filter="drop-shadow(0 0 8px #34d399)"/>
+    <!-- Central Sapphire Glass Sensor Window -->
+    <rect x="280" y="277" width="40" height="10" rx="4" 
+          fill="#06080d" stroke="rgba(52,211,153,0.4)" stroke-width="1"/>
+    
+    <!-- Optical Pulse / IMU Status Ring (Bioluminescent Heartbeat Indicator) -->
+    <circle cx="300" cy="282" r="3.5" fill="#10b981" filter="url(#nodeGlow)"/>
+    <circle cx="300" cy="282" r="1.8" fill="#ffffff"/>
+
+    <!-- Micro RF Antenna Trace Etch on Cuff -->
+    <path d="M254 282 L270 282 M258 279 L258 285 M264 279 L264 285" 
+          stroke="rgba(56,189,248,0.45)" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M330 282 L346 282 M336 279 L336 285 M342 279 L342 285" 
+          stroke="rgba(56,189,248,0.45)" stroke-width="0.8" stroke-linecap="round"/>
   </g>
 </svg>
           </div>
@@ -2447,9 +2666,17 @@
         const filter = btn.getAttribute('data-filter');
 
         filterButtons.forEach(b => {
-          b.className = 'project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium text-[#86868b] hover:text-white hover:bg-white/[0.06] transition-all flex items-center gap-2';
+          b.className = 'project-filter-btn relative z-10 px-5 py-2.5 rounded-full text-sm font-sans font-medium text-[#a1a1a6] hover:text-white hover:bg-white/[0.12] transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.97] flex items-center gap-2.5 shrink-0';
+          const badge = b.querySelector('.filter-count-badge');
+          if (badge) {
+            badge.className = 'filter-count-badge px-2 py-0.5 rounded-full bg-white/[0.08] text-xs font-medium';
+          }
         });
-        btn.className = 'project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-white text-black shadow-lg transition-all flex items-center gap-2';
+        btn.className = 'project-filter-btn relative z-10 px-5 py-2.5 rounded-full text-sm font-sans font-semibold bg-white text-black shadow-[0_4px_22px_rgba(255,255,255,0.25)] transition-all duration-300 transform scale-[1.02] flex items-center gap-2.5 shrink-0';
+        const activeBadge = btn.querySelector('.filter-count-badge');
+        if (activeBadge) {
+          activeBadge.className = 'filter-count-badge px-2 py-0.5 rounded-full bg-black/10 text-xs font-bold';
+        }
 
         if (activeFilterIndicator && filterLabels[filter]) {
           activeFilterIndicator.textContent = filterLabels[filter];
@@ -2610,6 +2837,19 @@
         const y = e.clientY - rect.top;
         navLiquidGlow.style.left = `${x}px`;
         navLiquidGlow.style.top = `${y}px`;
+      });
+    }
+
+    // iPhone Liquid Filter Capsule Caustic Pointer Glow
+    const projectFilters = document.getElementById('project-filters');
+    const filterLiquidGlow = document.getElementById('filter-liquid-glow');
+    if (projectFilters && filterLiquidGlow) {
+      projectFilters.addEventListener('mousemove', (e) => {
+        const rect = projectFilters.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        filterLiquidGlow.style.left = `${x}px`;
+        filterLiquidGlow.style.top = `${y}px`;
       });
     }
 </script>
