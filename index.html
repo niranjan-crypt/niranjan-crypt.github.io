@@ -652,6 +652,64 @@
     .liquid-resume-btn:active {
       transform: scale(0.95);
     }
+
+    /* Project 01: Biometric Wireframe Constellation Animations */
+    @keyframes p1NodeShimmer {
+      0%, 100% { transform: scale(1); opacity: 0.75; }
+      50% { transform: scale(1.45); opacity: 1; filter: drop-shadow(0 0 8px #38bdf8); }
+    }
+    @keyframes p1WireCurrent {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 0.95; }
+    }
+    .p1-constellation-node {
+      animation: p1NodeShimmer 3.2s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .p1-major-node {
+      animation: p1NodeShimmer 2.2s ease-in-out infinite;
+    }
+    .p1-wire-mesh {
+      animation: p1WireCurrent 4s ease-in-out infinite;
+    }
+
+    /* Project 06: Cascading Data Rain & Hologram Brain Animations */
+    @keyframes p6RainStreamPulse {
+      0% { stroke-dashoffset: 120; opacity: 0.35; }
+      50% { opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 0.35; }
+    }
+    @keyframes p6DropGlowPulse {
+      0%, 100% { transform: translateY(0); opacity: 0.6; }
+      50% { transform: translateY(5px); opacity: 1; }
+    }
+    @keyframes p6PinkClusterThrob {
+      0%, 100% { transform: scale(0.96); opacity: 0.85; }
+      50% { transform: scale(1.06); opacity: 1; filter: drop-shadow(0 0 20px #f43f5e); }
+    }
+    @keyframes p6AnamorphicDrift {
+      0%, 100% { opacity: 0.45; transform: scaleX(0.96); }
+      50% { opacity: 0.95; transform: scaleX(1.04); }
+    }
+    .p6-cascade-stream {
+      stroke-dasharray: 60 20;
+      animation: p6RainStreamPulse 2.8s linear infinite;
+    }
+    .p6-cascade-drop {
+      animation: p6DropGlowPulse 2.4s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .p6-pink-cluster {
+      animation: p6PinkClusterThrob 3s ease-in-out infinite;
+      transform-origin: 375px 165px;
+    }
+    .p6-anamorphic-streak {
+      animation: p6AnamorphicDrift 4s ease-in-out infinite;
+      transform-origin: center;
+    }
+
 </style>
 </head>
 <body class="bg-black text-[#d1d1d6] min-h-screen antialiased selection:bg-white/20 selection:text-white relative overflow-x-hidden bg-ambient-aurora">
@@ -989,220 +1047,340 @@
             <!-- Clean Hero Product Visual -->
             <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Studio Ambient Lighting & Caustics -->
-    <radialGradient id="faceStudioLight" cx="60%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15"/>
-      <stop offset="45%" stop-color="#bf5af2" stop-opacity="0.06"/>
-      <stop offset="90%" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="ballisticGlow" cx="52%" cy="42%" r="50%">
-      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.22"/>
-      <stop offset="50%" stop-color="#6366f1" stop-opacity="0.08"/>
+    <!-- Deep Space Atmospheric Lighting -->
+    <radialGradient id="hfdSpaceAura" cx="52%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.22"/>
+      <stop offset="40%" stop-color="#0369a1" stop-opacity="0.1"/>
+      <stop offset="80%" stop-color="#020617" stop-opacity="0.5"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="headDropShadow" cx="48%" cy="52%" r="48%">
+    <radialGradient id="faceCoreLight" cx="62%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#0284c7" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="headVignette" cx="50%" cy="52%" r="48%">
       <stop offset="0%" stop-color="#000000" stop-opacity="0.95"/>
       <stop offset="65%" stop-color="#000000" stop-opacity="0.4"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Ballistic Material Gradients (Sculpted Translucent Polymer Bust) -->
-    <linearGradient id="ballisticBase" x1="0.1" y1="0" x2="0.9" y2="1">
-      <stop offset="0%" stop-color="#222a3d"/>
-      <stop offset="30%" stop-color="#161d2a"/>
-      <stop offset="70%" stop-color="#0e121b"/>
-      <stop offset="100%" stop-color="#06080d"/>
-    </linearGradient>
-
-    <linearGradient id="ballisticSubsurface" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
-      <stop offset="0%" stop-color="rgba(56,189,248,0.25)"/>
-      <stop offset="40%" stop-color="rgba(191,90,242,0.18)"/>
-      <stop offset="80%" stop-color="rgba(14,165,233,0.08)"/>
-      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
-    </linearGradient>
-
-    <linearGradient id="ballisticRimLight" x1="0.4" y1="0" x2="0.8" y2="1">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.85)"/>
-      <stop offset="25%" stop-color="rgba(56,189,248,0.65)"/>
-      <stop offset="65%" stop-color="rgba(191,90,242,0.45)"/>
-      <stop offset="100%" stop-color="rgba(56,189,248,0.1)"/>
-    </linearGradient>
-
-    <linearGradient id="laserScanGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="rgba(56,189,248,0)"/>
-      <stop offset="25%" stop-color="rgba(56,189,248,0.8)"/>
-      <stop offset="50%" stop-color="#ffffff"/>
-      <stop offset="75%" stop-color="rgba(56,189,248,0.8)"/>
-      <stop offset="100%" stop-color="rgba(56,189,248,0)"/>
-    </linearGradient>
-
-    <filter id="laserBloom" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <!-- Node & Line Specular Filters -->
+    <filter id="nodeHalo" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.2  0 0 0 0 0.85  0 0 0 0 1  0 0 0 1 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="meshGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <filter id="glintGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.3  0 0 0 0 0.8  0 0 0 0 1  0 0 0 1 0"/>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <linearGradient id="scanBeamGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(56,189,248,0)"/>
+      <stop offset="25%" stop-color="rgba(56,189,248,0.7)"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="75%" stop-color="rgba(56,189,248,0.7)"/>
+      <stop offset="100%" stop-color="rgba(56,189,248,0)"/>
+    </linearGradient>
   </defs>
 
-  <!-- Deep Matte Studio Backdrop -->
-  <rect width="600" height="400" fill="#040508"/>
-  <ellipse cx="300" cy="200" rx="260" ry="190" fill="url(#faceStudioLight)"/>
-  <circle cx="330" cy="180" r="170" fill="url(#ballisticGlow)"/>
-  <ellipse cx="280" cy="240" rx="150" ry="130" fill="url(#headDropShadow)"/>
+  <!-- Deep Obsidian Space Backdrop -->
+  <rect width="600" height="400" fill="#03050a"/>
+  <ellipse cx="300" cy="190" rx="260" ry="190" fill="url(#hfdSpaceAura)"/>
+  <circle cx="370" cy="180" r="150" fill="url(#faceCoreLight)"/>
+  <ellipse cx="280" cy="240" rx="150" ry="130" fill="url(#headVignette)"/>
 
   <!-- ======================================================== -->
-  <!-- 3D REALISTIC SCULPTED BALLISTIC HEAD & BIOMETRIC BUST    -->
+  <!-- 3D LUMINOUS BIOMETRIC WIREFRAME CONSTELLATION HEAD        -->
   <!-- ======================================================== -->
-  <g id="ballistic-bust-model">
+  <g id="biometric-constellation-head">
 
-    <!-- 1. SOLID VOLUMETRIC BALLISTIC BUST CRANIUM, FACE & NECK CHASSIS -->
-    <path d="M 175 360 
-             C 170 310 168 260 178 220 
-             C 168 180 176 125 205 85 
-             C 235 45 285 30 335 42 
-             C 365 50 395 72 410 100 
-             C 416 112 418 126 412 138 
-             C 406 148 402 152 406 160 
-             C 414 175 426 186 430 196 
-             C 434 205 428 212 418 215 
-             C 412 216 414 222 418 228 
-             C 424 235 422 244 414 248 
-             C 406 252 410 262 408 272 
-             C 404 286 388 296 370 298 
-             C 340 302 315 292 292 284 
-             C 280 292 288 320 295 360 
-             Z" 
-          fill="url(#ballisticBase)" 
-          stroke="rgba(255,255,255,0.18)" 
-          stroke-width="1.4"/>
+    <!-- Translucent Subsurface 3D Cranial Depth Silhouette -->
+    <path d="M 175 360 C 170 310 168 260 178 220 C 168 180 176 125 205 85 C 235 45 285 30 335 42 C 365 50 395 72 410 100 C 416 112 418 126 412 138 C 406 148 402 152 406 160 C 414 175 426 186 430 196 C 434 205 428 212 418 215 C 412 216 414 222 418 228 C 424 235 422 244 414 248 C 406 252 410 262 408 272 C 404 286 388 296 370 298 C 340 302 315 292 292 284 C 280 292 288 320 295 360 Z" 
+          fill="rgba(14, 165, 233, 0.05)" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1"/>
 
-    <!-- Volumetric Subsurface Scattering Glow Layer -->
-    <path d="M 185 350 
-             C 180 305 180 260 188 225 
-             C 180 185 188 135 212 98 
-             C 240 60 285 45 330 55 
-             C 358 62 385 82 398 108 
-             C 404 120 405 132 400 142 
-             C 395 152 396 162 404 175 
-             C 410 184 416 194 415 202 
-             C 405 208 404 216 410 224 
-             C 412 232 408 240 402 244 
-             C 396 250 398 258 396 266 
-             C 392 278 378 288 362 290 
-             C 335 294 310 285 288 278 
-             C 278 288 284 315 290 350 
-             Z" 
-          fill="url(#ballisticSubsurface)" 
-          opacity="0.85"/>
+    <!-- Outward LiDAR Distance Telemetry Rays -->
+    <line class="p1-telemetry-ray" x1="382" y1="102" x2="420" y2="92" stroke="#38bdf8" stroke-width="1.2" opacity="0.65" stroke-dasharray="3 3"/>
+    <circle class="p1-constellation-node" cx="420" cy="92" r="2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <line class="p1-telemetry-ray" x1="375" y1="68" x2="408" y2="50" stroke="#38bdf8" stroke-width="1.2" opacity="0.65" stroke-dasharray="3 3"/>
+    <circle class="p1-constellation-node" cx="408" cy="50" r="2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <line class="p1-telemetry-ray" x1="290" y1="42" x2="290" y2="20" stroke="#38bdf8" stroke-width="1.2" opacity="0.65" stroke-dasharray="3 3"/>
+    <circle class="p1-constellation-node" cx="290" cy="20" r="2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <line class="p1-telemetry-ray" x1="205" y1="68" x2="178" y2="50" stroke="#38bdf8" stroke-width="1.2" opacity="0.65" stroke-dasharray="3 3"/>
+    <circle class="p1-constellation-node" cx="178" cy="50" r="2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <line class="p1-telemetry-ray" x1="155" y1="145" x2="122" y2="132" stroke="#38bdf8" stroke-width="1.2" opacity="0.65" stroke-dasharray="3 3"/>
+    <circle class="p1-constellation-node" cx="122" cy="132" r="2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <line class="p1-telemetry-ray" x1="150" y1="195" x2="118" y2="195" stroke="#38bdf8" stroke-width="1.2" opacity="0.65" stroke-dasharray="3 3"/>
+    <circle class="p1-constellation-node" cx="118" cy="195" r="2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <line class="p1-telemetry-ray" x1="448" y1="196" x2="482" y2="196" stroke="#38bdf8" stroke-width="1.2" opacity="0.65" stroke-dasharray="3 3"/>
+    <circle class="p1-constellation-node" cx="482" cy="196" r="2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <line class="p1-telemetry-ray" x1="426" y1="274" x2="458" y2="282" stroke="#38bdf8" stroke-width="1.2" opacity="0.65" stroke-dasharray="3 3"/>
+    <circle class="p1-constellation-node" cx="458" cy="282" r="2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <line class="p1-telemetry-ray" x1="436" y1="220" x2="472" y2="224" stroke="#38bdf8" stroke-width="1.2" opacity="0.65" stroke-dasharray="3 3"/>
+    <circle class="p1-constellation-node" cx="472" cy="224" r="2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <line class="p1-telemetry-ray" x1="446" y1="146" x2="480" y2="142" stroke="#38bdf8" stroke-width="1.2" opacity="0.65" stroke-dasharray="3 3"/>
+    <circle class="p1-constellation-node" cx="480" cy="142" r="2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <line class="p1-telemetry-ray" x1="242" y1="152" x2="215" y2="138" stroke="#38bdf8" stroke-width="1.2" opacity="0.65" stroke-dasharray="3 3"/>
+    <circle class="p1-constellation-node" cx="215" cy="138" r="2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <line class="p1-telemetry-ray" x1="185" y1="280" x2="155" y2="290" stroke="#38bdf8" stroke-width="1.2" opacity="0.65" stroke-dasharray="3 3"/>
+    <circle class="p1-constellation-node" cx="155" cy="290" r="2" fill="#ffffff" filter="url(#nodeHalo)"/>
 
-    <!-- 2. ANATOMICAL 3D PLANAR SCULPTING (FOREHEAD, BROW, EYE, NOSE, LIPS, CHIN, JAW) -->
-
-    <!-- Forehead & Glabella Brow Ridge Planar Highlights -->
-    <path d="M 320 58 C 352 68 382 88 398 114" stroke="url(#ballisticRimLight)" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-    <path d="M 335 85 C 362 96 384 112 392 128" stroke="rgba(255,255,255,0.16)" stroke-width="1.2" fill="none"/>
-    <!-- Superciliary Arch (Brow Line) -->
-    <path d="M 360 125 C 382 128 402 134 412 142" stroke="rgba(255,255,255,0.35)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
-
-    <!-- Deep-Set Orbital Cavity & Anatomical Eye -->
-    <path d="M 362 138 C 352 148 354 165 368 172 C 382 178 398 174 402 162 C 404 150 388 136 362 138 Z" fill="#080b12" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-    <!-- Upper Eyelid Fold (Palpebral Crease) -->
-    <path d="M 360 148 C 374 142 390 145 398 154" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-    <!-- Lower Eyelid Margin -->
-    <path d="M 364 158 C 375 165 388 164 396 156" stroke="rgba(255,255,255,0.22)" stroke-width="1" fill="none"/>
-    <!-- Cornea & Iris (Biometric Iris Core) -->
-    <ellipse cx="382" cy="152" rx="7" ry="6.5" fill="#0d1524" stroke="#38bdf8" stroke-width="1.2"/>
-    <circle cx="382" cy="152" r="3.5" fill="#04060a"/>
-    <circle class="p1-keypoint-glint" cx="384" cy="150" r="2" fill="#ffffff" filter="url(#glintGlow)"/>
-
-    <!-- Sculpted Anatomical Nose (Dorsum, Tip, Ala, Columella) -->
-    <!-- Nose Dorsal Bridge -->
-    <path d="M 408 140 L 424 188 C 428 194 426 200 418 202 L 398 200" stroke="url(#ballisticRimLight)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <!-- Nasal Tip Highlight -->
-    <ellipse cx="423" cy="193" rx="4.5" ry="4" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
-    <!-- Alar Wing Flare (Nostril) -->
-    <path d="M 398 198 C 405 194 412 196 414 204 C 412 208 402 210 395 206" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" fill="none"/>
-
-    <!-- Sculpted Philtrum & Anatomical Lips -->
-    <!-- Philtrum Column -->
-    <path d="M 408 205 L 412 218" stroke="rgba(255,255,255,0.3)" stroke-width="1.2" stroke-linecap="round"/>
-    <!-- Upper Lip (Vermilion Border & Cupid's Bow) -->
-    <path d="M 390 220 C 402 218 414 218 420 224 C 415 228 404 230 392 227" fill="rgba(191,90,242,0.18)" stroke="url(#ballisticRimLight)" stroke-width="1.4" stroke-linejoin="round"/>
-    <!-- Oral Commissure (Mouth Separation Line) -->
-    <path d="M 388 226 C 400 227 412 227 418 228" stroke="rgba(255,255,255,0.45)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-    <!-- Lower Lip Fullness -->
-    <path d="M 390 228 C 404 230 416 232 414 242 C 405 246 392 245 386 238" fill="rgba(56,189,248,0.15)" stroke="rgba(255,255,255,0.35)" stroke-width="1.3"/>
-    <!-- Labiomental Crease -->
-    <path d="M 388 248 C 396 250 404 250 408 247" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-
-    <!-- Sculpted Chin & Strong Mandibular Jawline -->
-    <path d="M 408 252 C 414 260 412 270 404 278 C 392 288 375 294 350 292" stroke="url(#ballisticRimLight)" stroke-width="2" stroke-linecap="round" fill="none"/>
-    <path d="M 350 292 C 322 290 295 280 274 270" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" fill="none"/>
-
-    <!-- Zygomatic Arch (Cheekbone Volume Highlight) -->
-    <path d="M 330 178 C 360 185 390 192 405 186" stroke="rgba(56,189,248,0.35)" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#laserBloom)"/>
-
-    <!-- Realistic Anatomical Ear (Helix, Antihelix, Concha, Tragus, Lobule) -->
-    <g transform="translate(230, 150)">
-      <!-- Outer Helix Rim -->
-      <path d="M 18 5 C 34 5 44 18 42 38 C 40 56 30 72 16 75 C 6 76 2 68 6 58 C 10 48 18 40 16 28 C 14 18 10 12 18 5 Z" fill="#0c101a" stroke="rgba(255,255,255,0.28)" stroke-width="1.3"/>
-      <!-- Inner Antihelix & Concha Cavity -->
-      <path d="M 26 18 C 34 24 32 38 28 48 C 24 56 18 58 14 52" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" fill="none"/>
-      <path d="M 18 30 C 22 34 22 42 16 46" stroke="rgba(255,255,255,0.18)" stroke-width="1.2" fill="none"/>
-      <!-- Tragus Flap -->
-      <path d="M 10 32 C 14 34 14 40 10 42" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" fill="none"/>
+    <!-- 3D Topological Polygonal Mesh Lattice -->
+    <g class="p1-wire-mesh" filter="url(#meshGlow)">
+    <line class="p1-wire-line" x1="290" y1="42" x2="335" y2="48" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="335" y1="48" x2="375" y2="68" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="290" y1="42" x2="245" y2="48" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="245" y1="48" x2="205" y2="68" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="205" y1="68" x2="175" y2="102" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="175" y1="102" x2="155" y2="145" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="155" y1="145" x2="150" y2="195" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="150" y1="195" x2="162" y2="240" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="162" y1="240" x2="185" y2="280" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="185" y1="280" x2="212" y2="320" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="212" y1="320" x2="238" y2="360" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="375" y1="68" x2="382" y2="102" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="382" y1="102" x2="398" y2="126" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="398" y1="126" x2="410" y2="134" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="410" y1="134" x2="428" y2="136" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="428" y1="136" x2="446" y2="146" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="446" y1="146" x2="438" y2="172" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="438" y1="172" x2="428" y2="208" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="428" y1="208" x2="448" y2="196" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="448" y1="196" x2="432" y2="206" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="432" y1="206" x2="426" y2="212" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="426" y1="212" x2="436" y2="220" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="436" y1="220" x2="432" y2="234" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="432" y1="234" x2="416" y2="246" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="416" y1="246" x2="422" y2="260" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="422" y1="260" x2="426" y2="274" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="426" y1="274" x2="406" y2="286" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="406" y1="286" x2="376" y2="302" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="376" y1="302" x2="362" y2="332" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="362" y1="332" x2="348" y2="360" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="290" y1="42" x2="342" y2="92" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="335" y1="48" x2="342" y2="92" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="375" y1="68" x2="342" y2="92" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="335" y1="48" x2="382" y2="102" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="290" y1="42" x2="298" y2="82" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="245" y1="48" x2="298" y2="82" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="205" y1="68" x2="298" y2="82" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="298" y1="82" x2="342" y2="92" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="342" y1="92" x2="382" y2="102" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="298" y1="82" x2="265" y2="105" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="342" y1="92" x2="372" y2="128" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="382" y1="102" x2="372" y2="128" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="342" y1="92" x2="398" y2="126" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="372" y1="128" x2="398" y2="126" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="372" y1="128" x2="428" y2="136" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="372" y1="128" x2="446" y2="146" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="265" y1="105" x2="338" y2="140" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="265" y1="105" x2="358" y2="132" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="298" y1="82" x2="378" y2="130" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="398" y1="126" x2="378" y2="130" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="398" y1="126" x2="404" y2="140" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="410" y1="134" x2="404" y2="140" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="378" y1="130" x2="404" y2="140" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="410" y1="134" x2="402" y2="150" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="428" y1="136" x2="420" y2="152" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="446" y1="146" x2="436" y2="154" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="402" y1="150" x2="420" y2="152" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="420" y1="152" x2="436" y2="154" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="402" y1="150" x2="418" y2="162" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="420" y1="152" x2="418" y2="162" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="436" y1="154" x2="418" y2="162" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="404" y1="140" x2="402" y2="150" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="420" y1="165" x2="402" y2="150" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="418" y1="162" x2="420" y2="165" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="418" y1="162" x2="398" y2="170" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="436" y1="154" x2="398" y2="170" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="446" y1="146" x2="398" y2="170" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="398" y1="170" x2="438" y2="172" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="378" y1="130" x2="372" y2="146" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="358" y1="132" x2="355" y2="148" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="338" y1="140" x2="340" y2="150" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="372" y1="146" x2="355" y2="148" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="355" y1="148" x2="340" y2="150" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="372" y1="146" x2="356" y2="156" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="355" y1="148" x2="356" y2="156" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="340" y1="150" x2="356" y2="156" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="404" y1="140" x2="372" y2="146" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="372" y1="146" x2="362" y2="192" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="356" y1="156" x2="362" y2="192" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="340" y1="150" x2="315" y2="152" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="404" y1="140" x2="420" y2="165" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="420" y1="165" x2="430" y2="182" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="430" y1="182" x2="448" y2="196" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="420" y1="165" x2="420" y2="202" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="430" y1="182" x2="420" y2="202" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="448" y1="196" x2="420" y2="202" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="420" y1="165" x2="394" y2="196" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="430" y1="182" x2="394" y2="196" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="448" y1="196" x2="394" y2="196" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="432" y1="206" x2="420" y2="202" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="432" y1="206" x2="394" y2="196" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="420" y1="202" x2="428" y2="208" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="398" y1="170" x2="428" y2="208" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="438" y1="172" x2="428" y2="208" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="420" y1="202" x2="398" y2="170" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="394" y1="196" x2="362" y2="192" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="315" y1="152" x2="362" y2="192" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="428" y1="208" x2="408" y2="238" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="408" y1="238" x2="416" y2="226" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="420" y1="202" x2="426" y2="212" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="394" y1="196" x2="426" y2="212" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="426" y1="212" x2="416" y2="226" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="426" y1="212" x2="382" y2="218" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="416" y1="226" x2="436" y2="220" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="382" y1="218" x2="436" y2="220" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="416" y1="226" x2="432" y2="234" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="382" y1="218" x2="432" y2="234" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="416" y1="226" x2="416" y2="246" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="382" y1="218" x2="416" y2="246" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="408" y1="238" x2="416" y2="246" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="408" y1="238" x2="422" y2="260" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="416" y1="246" x2="422" y2="260" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="422" y1="260" x2="426" y2="274" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="426" y1="274" x2="406" y2="286" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="426" y1="274" x2="376" y2="280" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="406" y1="286" x2="376" y2="280" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="408" y1="238" x2="376" y2="280" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="376" y1="280" x2="322" y2="272" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="428" y1="208" x2="322" y2="272" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="398" y1="170" x2="322" y2="272" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="322" y1="272" x2="248" y2="218" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="315" y1="152" x2="278" y2="252" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="362" y1="192" x2="278" y2="252" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="278" y1="252" x2="322" y2="272" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="265" y1="105" x2="242" y2="152" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="315" y1="152" x2="242" y2="152" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="242" y1="152" x2="232" y2="172" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="232" y1="172" x2="245" y2="182" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="245" y1="182" x2="248" y2="218" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="242" y1="152" x2="255" y2="188" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="255" y1="188" x2="248" y2="218" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="248" y1="218" x2="262" y2="208" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="262" y1="208" x2="322" y2="272" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="175" y1="102" x2="242" y2="152" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="155" y1="145" x2="232" y2="172" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="150" y1="195" x2="248" y2="218" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="245" y1="48" x2="205" y2="68" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="205" y1="68" x2="265" y2="105" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="175" y1="102" x2="265" y2="105" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="155" y1="145" x2="265" y2="105" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="150" y1="195" x2="262" y2="208" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="162" y1="240" x2="262" y2="208" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="162" y1="240" x2="268" y2="308" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="185" y1="280" x2="268" y2="308" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="212" y1="320" x2="268" y2="308" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="238" y1="360" x2="302" y2="318" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="406" y1="286" x2="376" y2="302" stroke="#67e8f9" stroke-width="1.3" opacity="0.75"/>
+    <line class="p1-wire-line" x1="376" y1="280" x2="376" y2="302" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="376" y1="280" x2="336" y2="298" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="322" y1="272" x2="336" y2="298" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="376" y1="302" x2="362" y2="332" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="376" y1="302" x2="336" y2="298" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="336" y1="298" x2="362" y2="332" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="336" y1="298" x2="302" y2="318" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="322" y1="272" x2="268" y2="308" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="248" y1="218" x2="268" y2="308" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="268" y1="308" x2="302" y2="318" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="362" y1="332" x2="348" y2="360" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="362" y1="332" x2="302" y2="318" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="302" y1="318" x2="348" y2="360" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
+    <line class="p1-wire-line" x1="268" y1="308" x2="238" y2="360" stroke="#38bdf8" stroke-width="0.9" opacity="0.42"/>
     </g>
 
-    <!-- Sternocleidomastoid Muscle & Neck Column -->
-    <path d="M 248 225 C 265 260 278 305 288 355" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-    <path d="M 345 305 C 335 325 320 342 305 358" stroke="rgba(255,255,255,0.12)" stroke-width="1.2" fill="none"/>
+    <!-- Biometric Keypoint Constellation Nodes -->
+    <circle class="p1-constellation-node p1-major-node" cx="290" cy="42" r="3.2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <circle cx="290" cy="42" r="1.5" fill="#38bdf8"/>
+    <circle class="p1-constellation-node" cx="335" cy="48" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="375" cy="68" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="245" cy="48" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="205" cy="68" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="175" cy="102" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="155" cy="145" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="150" cy="195" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="162" cy="240" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="185" cy="280" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="212" cy="320" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="238" cy="360" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="342" cy="92" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node p1-major-node" cx="382" cy="102" r="3.2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <circle cx="382" cy="102" r="1.5" fill="#38bdf8"/>
+    <circle class="p1-constellation-node" cx="298" cy="82" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="372" cy="128" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="265" cy="105" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node p1-major-node" cx="398" cy="126" r="3.2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <circle cx="398" cy="126" r="1.5" fill="#38bdf8"/>
+    <circle class="p1-constellation-node" cx="410" cy="134" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node p1-major-node" cx="428" cy="136" r="3.2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <circle cx="428" cy="136" r="1.5" fill="#38bdf8"/>
+    <circle class="p1-constellation-node" cx="446" cy="146" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="402" cy="150" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node p1-major-node" cx="420" cy="152" r="3.2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <circle cx="420" cy="152" r="1.5" fill="#38bdf8"/>
+    <circle class="p1-constellation-node" cx="436" cy="154" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="418" cy="162" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="378" cy="130" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="358" cy="132" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="338" cy="140" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="372" cy="146" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node p1-major-node" cx="355" cy="148" r="3.2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <circle cx="355" cy="148" r="1.5" fill="#38bdf8"/>
+    <circle class="p1-constellation-node" cx="340" cy="150" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="356" cy="156" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="404" cy="140" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="420" cy="165" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="430" cy="182" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node p1-major-node" cx="448" cy="196" r="3.2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <circle cx="448" cy="196" r="1.5" fill="#38bdf8"/>
+    <circle class="p1-constellation-node" cx="432" cy="206" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="420" cy="202" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="394" cy="196" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="438" cy="172" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="428" cy="208" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="408" cy="238" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="362" cy="192" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node p1-major-node" cx="398" cy="170" r="3.2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <circle cx="398" cy="170" r="1.5" fill="#38bdf8"/>
+    <circle class="p1-constellation-node" cx="315" cy="152" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="426" cy="212" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node p1-major-node" cx="436" cy="220" r="3.2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <circle cx="436" cy="220" r="1.5" fill="#38bdf8"/>
+    <circle class="p1-constellation-node" cx="416" cy="226" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="382" cy="218" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="432" cy="234" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="416" cy="246" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="422" cy="260" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node p1-major-node" cx="426" cy="274" r="3.2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <circle cx="426" cy="274" r="1.5" fill="#38bdf8"/>
+    <circle class="p1-constellation-node" cx="406" cy="286" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="376" cy="280" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node p1-major-node" cx="322" cy="272" r="3.2" fill="#ffffff" filter="url(#nodeHalo)"/>
+    <circle cx="322" cy="272" r="1.5" fill="#38bdf8"/>
+    <circle class="p1-constellation-node" cx="278" cy="252" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="242" cy="152" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="232" cy="172" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="245" cy="182" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="255" cy="188" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="248" cy="218" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="262" cy="208" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="376" cy="302" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="362" cy="332" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="348" cy="360" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="302" cy="318" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="268" cy="308" r="1.8" fill="#67e8f9" opacity="0.85"/>
+    <circle class="p1-constellation-node" cx="336" cy="298" r="1.8" fill="#67e8f9" opacity="0.85"/>
 
-    <!-- 3. VOLUMETRIC HYPERSPECTRAL SPECTRAL WAVE SLICES (CURVING PRECISELY OVER FACIAL PLANES) -->
-    <!-- 400nm Violet Wave (Dorsal Forehead to Jaw) -->
-    <path class="p1-spectral-layer" d="M 280 48 C 330 65 385 95 408 135 C 428 175 422 225 390 270 C 360 305 315 325 270 340" 
-          stroke="#bf5af2" stroke-width="1.4" stroke-dasharray="4 3" fill="none" opacity="0.65" filter="drop-shadow(0 0 8px #bf5af2)"/>
-    
-    <!-- 480nm Sapphire Wave -->
-    <path class="p1-spectral-layer" style="animation-delay: -1.5s;" d="M 295 55 C 342 75 392 105 414 145 C 434 185 428 232 396 275 C 368 308 325 328 280 342" 
-          stroke="#3b82f6" stroke-width="1.6" fill="none" opacity="0.75" filter="drop-shadow(0 0 10px #3b82f6)"/>
-    
-    <!-- 540nm Radiant Cyan Wave (Hugging Cheekbone & Nose Ridge) -->
-    <path class="p1-spectral-layer" style="animation-delay: -3s;" d="M 315 65 C 358 85 404 118 424 160 C 440 200 432 242 402 282 C 374 312 335 330 292 344" 
-          stroke="#06b6d4" stroke-width="2" fill="none" opacity="0.85" filter="drop-shadow(0 0 14px #06b6d4)"/>
-    
-    <!-- 620nm Soft Emerald Wave -->
-    <path class="p1-spectral-layer" style="animation-delay: -4.5s;" d="M 335 78 C 372 98 414 130 430 172 C 444 212 435 250 408 288 C 382 316 345 332 304 346" 
-          stroke="#10b981" stroke-width="1.6" fill="none" opacity="0.75" filter="drop-shadow(0 0 10px #10b981)"/>
-
-    <!-- 4. DYNAMIC BIOMETRIC OPTICAL LIDAR LASER SCANLINE -->
-    <line class="p1-laser-beam" x1="220" y1="85" x2="460" y2="85" stroke="url(#laserScanGrad)" stroke-width="2" stroke-linecap="round" filter="url(#laserBloom)"/>
-
-    <!-- 5. TOPOLOGICAL BIOMETRIC LANDMARK KEYPOINTS (DENSE FORENSIC MESH NODES) -->
-    <!-- Glabella & Brow Keypoints -->
-    <circle class="p1-keypoint-glint" cx="392" cy="128" r="2.5" fill="#ffffff" filter="url(#glintGlow)"/>
-    <circle class="p1-keypoint-glint" style="animation-delay: -0.6s;" cx="412" cy="142" r="2.2" fill="#38bdf8"/>
-    <!-- Eye Landmark Nodes -->
-    <circle class="p1-keypoint-glint" style="animation-delay: -1.2s;" cx="362" cy="148" r="2" fill="#38bdf8"/>
-    <circle class="p1-keypoint-glint" style="animation-delay: -1.8s;" cx="398" cy="154" r="2.2" fill="#ffffff"/>
-    <!-- Nasal Landmark Nodes (Apex & Alae) -->
-    <circle class="p1-keypoint-glint" style="animation-delay: -2.4s;" cx="423" cy="193" r="3" fill="#ffffff" filter="url(#glintGlow)"/>
-    <circle class="p1-keypoint-glint" style="animation-delay: -0.8s;" cx="402" cy="204" r="2" fill="#38bdf8"/>
-    <!-- Oral Commissure & Lip Nodes -->
-    <circle class="p1-keypoint-glint" style="animation-delay: -1.4s;" cx="418" cy="228" r="2.2" fill="#38bdf8"/>
-    <circle class="p1-keypoint-glint" style="animation-delay: -2s;" cx="388" cy="226" r="2" fill="#38bdf8"/>
-    <!-- Mentalis Chin Node -->
-    <circle class="p1-keypoint-glint" style="animation-delay: -2.8s;" cx="404" cy="278" r="3" fill="#ffffff" filter="url(#glintGlow)"/>
-    <!-- Gonion Jaw Node -->
-    <circle class="p1-keypoint-glint" style="animation-delay: -1s;" cx="274" cy="270" r="2" fill="#38bdf8"/>
+    <!-- Dynamic Optical LiDAR Scanning Laser Beam -->
+    <line class="p1-laser-beam" x1="160" y1="80" x2="480" y2="80" stroke="url(#scanBeamGrad)" stroke-width="2" stroke-linecap="round" filter="url(#nodeHalo)"/>
   </g>
 </svg>
           </div>
@@ -2078,57 +2256,59 @@
             <!-- Clean Hero Product Visual -->
             <svg class="w-full h-full max-h-[380px] transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Diagnostic Studio Ambient Lighting -->
-    <radialGradient id="brainHalo" cx="50%" cy="45%" r="55%">
-      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.16"/>
-      <stop offset="45%" stop-color="#38bdf8" stop-opacity="0.06"/>
+    <!-- Deep Space Atmospheric Lighting -->
+    <radialGradient id="brainSpaceAura" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25"/>
+      <stop offset="35%" stop-color="#7c3aed" stop-opacity="0.12"/>
+      <stop offset="75%" stop-color="#020617" stop-opacity="0.6"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="brainDropShadow" cx="50%" cy="55%" r="48%">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0.95"/>
-      <stop offset="70%" stop-color="#000000" stop-opacity="0.3"/>
+    <radialGradient id="brainGlowCore" cx="52%" cy="38%" r="48%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.28"/>
+      <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.1"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Transparent Glass Brain Materials -->
-    <linearGradient id="brainGlassChassis" x1="0.1" y1="0" x2="0.9" y2="1">
-      <stop offset="0%" stop-color="rgba(30, 41, 59, 0.7)"/>
-      <stop offset="30%" stop-color="rgba(15, 23, 42, 0.55)"/>
-      <stop offset="70%" stop-color="rgba(10, 15, 28, 0.65)"/>
-      <stop offset="100%" stop-color="rgba(6, 9, 18, 0.8)"/>
-    </linearGradient>
-
-    <linearGradient id="brainGlassRim" x1="0.2" y1="0" x2="0.8" y2="1">
-      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.85)"/>
-      <stop offset="25%" stop-color="rgba(56, 189, 248, 0.65)"/>
-      <stop offset="65%" stop-color="rgba(192, 132, 252, 0.5)"/>
-      <stop offset="100%" stop-color="rgba(56, 189, 248, 0.2)"/>
-    </linearGradient>
-
-    <radialGradient id="internalOpticCore" cx="52%" cy="48%" r="45%">
-      <stop offset="0%" stop-color="rgba(56, 189, 248, 0.22)"/>
-      <stop offset="50%" stop-color="rgba(139, 92, 246, 0.12)"/>
-      <stop offset="100%" stop-color="rgba(0, 0, 0, 0)"/>
+    <!-- Pathological Neoplasm / Tumor Brilliant Pink Radiance -->
+    <radialGradient id="tumorPinkRadiance" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="25%" stop-color="#fb7185" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#f43f5e" stop-opacity="0.75"/>
+      <stop offset="85%" stop-color="#e11d48" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#881337" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Pathological Neoplasm / Tumor Diagnostic Radiance -->
-    <radialGradient id="tumorDiagnosticBloom" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
-      <stop offset="25%" stop-color="#c084fc" stop-opacity="0.85"/>
-      <stop offset="65%" stop-color="#a855f7" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#7e22ce" stop-opacity="0"/>
+    <radialGradient id="cortexFillGrad" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="rgba(14, 165, 233, 0.12)"/>
+      <stop offset="40%" stop-color="rgba(99, 102, 241, 0.08)"/>
+      <stop offset="80%" stop-color="rgba(6, 9, 18, 0.4)"/>
+      <stop offset="100%" stop-color="rgba(2, 6, 23, 0.7)"/>
     </radialGradient>
 
-    <linearGradient id="mriScanRay" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="rgba(255, 255, 255, 0)"/>
-      <stop offset="20%" stop-color="rgba(255, 255, 255, 0.5)"/>
+    <linearGradient id="horizFlareGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(56,189,248,0)"/>
+      <stop offset="25%" stop-color="rgba(56,189,248,0.7)"/>
       <stop offset="50%" stop-color="#ffffff"/>
-      <stop offset="80%" stop-color="rgba(255, 255, 255, 0.5)"/>
-      <stop offset="100%" stop-color="rgba(255, 255, 255, 0)"/>
+      <stop offset="75%" stop-color="rgba(244,63,94,0.7)"/>
+      <stop offset="100%" stop-color="rgba(56,189,248,0)"/>
     </linearGradient>
 
-    <filter id="lesionGlow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
+    <filter id="pinkHalo" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="dropHalo" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="cortexGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -2136,138 +2316,166 @@
     </filter>
   </defs>
 
-  <!-- Dark Diagnostic Space Backdrop -->
-  <rect width="600" height="400" fill="#040508"/>
-  <ellipse cx="300" cy="200" rx="240" ry="180" fill="url(#brainHalo)"/>
-  <ellipse cx="300" cy="240" rx="170" ry="120" fill="url(#brainDropShadow)"/>
+  <!-- Deep Dark Diagnostics Backdrop -->
+  <rect width="600" height="400" fill="#03050a"/>
+  <ellipse cx="300" cy="180" rx="270" ry="190" fill="url(#brainSpaceAura)"/>
+  <circle cx="320" cy="160" r="160" fill="url(#brainGlowCore)"/>
 
   <!-- ======================================================== -->
-  <!-- 3D HIGH-FIDELITY TRANSPARENT HUMAN BRAIN ASSEMBLY        -->
+  <!-- HOLOGRAPHIC BRAIN WITH CASCADING NEURAL DATA STREAMS      -->
   <!-- ======================================================== -->
-  <g id="transparent-human-brain">
+  <g id="holographic-neural-brain">
 
-    <!-- 1. TRANSLUCENT GLASS CEREBRAL CORTEX CHASSIS (ACCURATE NEUROANATOMICAL PROFILE) -->
-    <!-- Frontal Lobe -> Parietal -> Occipital -> Temporal -> Cerebellum -> Brainstem -->
-    <path d="M 175 190 
-             C 160 170 162 140 180 115 
-             C 202 85 240 65 295 62 
-             C 345 60 395 75 425 105 
-             C 445 125 455 155 450 185 
-             C 446 205 432 225 415 238 
-             C 425 248 430 265 425 285 
-             C 418 310 392 325 365 320 
-             C 345 316 335 305 330 295 
-             C 328 315 325 340 324 365 
-             L 302 365 
-             C 300 340 298 320 295 300 
-             C 285 298 275 295 265 290 
-             C 245 280 230 265 220 248 
-             C 205 255 185 252 176 240 
-             C 165 225 168 205 175 190 
+    <!-- 1. VERTICAL CASCADING OPTIC FIBER STREAMS & TERMINAL DROPLETS (DATA RAIN) -->
+    <g id="cascading-data-rain">
+    <line class="p6-cascade-stream" style="animation-delay: -0.2s;" x1="210" y1="220" x2="210" y2="340" stroke="#38bdf8" stroke-width="1.6" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -0.2s;" cx="210" cy="340" r="1.9" fill="#38bdf8" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -1.1s;" x1="222" y1="230" x2="222" y2="375" stroke="#f43f5e" stroke-width="1.8" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -1.1s;" cx="222" cy="375" r="2.2" fill="#ffffff" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -0.7s;" x1="235" y1="235" x2="235" y2="330" stroke="#38bdf8" stroke-width="1.4" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -0.7s;" cx="235" cy="330" r="1.7" fill="#38bdf8" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -1.8s;" x1="248" y1="245" x2="248" y2="390" stroke="#06b6d4" stroke-width="2.0" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -1.8s;" cx="248" cy="390" r="2.4" fill="#06b6d4" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -0.4s;" x1="258" y1="250" x2="258" y2="355" stroke="#f43f5e" stroke-width="1.5" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -0.4s;" cx="258" cy="355" r="1.8" fill="#ffffff" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -1.5s;" x1="270" y1="255" x2="270" y2="380" stroke="#38bdf8" stroke-width="1.8" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -1.5s;" cx="270" cy="380" r="2.2" fill="#38bdf8" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -2.1s;" x1="282" y1="260" x2="282" y2="365" stroke="#a855f7" stroke-width="1.6" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -2.1s;" cx="282" cy="365" r="1.9" fill="#a855f7" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -0.9s;" x1="295" y1="265" x2="295" y2="395" stroke="#38bdf8" stroke-width="2.2" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -0.9s;" cx="295" cy="395" r="2.6" fill="#ffffff" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -1.3s;" x1="308" y1="270" x2="308" y2="370" stroke="#f43f5e" stroke-width="1.9" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -1.3s;" cx="308" cy="370" r="2.3" fill="#ffffff" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -0.5s;" x1="320" y1="270" x2="320" y2="385" stroke="#06b6d4" stroke-width="2.0" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -0.5s;" cx="320" cy="385" r="2.4" fill="#06b6d4" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -2.3s;" x1="332" y1="270" x2="332" y2="360" stroke="#38bdf8" stroke-width="1.5" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -2.3s;" cx="332" cy="360" r="1.8" fill="#38bdf8" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -1.6s;" x1="345" y1="268" x2="345" y2="392" stroke="#f43f5e" stroke-width="2.2" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -1.6s;" cx="345" cy="392" r="2.6" fill="#ffffff" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -0.8s;" x1="358" y1="265" x2="358" y2="375" stroke="#38bdf8" stroke-width="1.8" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -0.8s;" cx="358" cy="375" r="2.2" fill="#38bdf8" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -1.2s;" x1="370" y1="260" x2="370" y2="390" stroke="#ec4899" stroke-width="2.0" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -1.2s;" cx="370" cy="390" r="2.4" fill="#ec4899" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -2.0s;" x1="382" y1="255" x2="382" y2="365" stroke="#06b6d4" stroke-width="1.7" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -2.0s;" cx="382" cy="365" r="2.0" fill="#06b6d4" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -0.3s;" x1="395" y1="250" x2="395" y2="385" stroke="#f43f5e" stroke-width="2.1" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -0.3s;" cx="395" cy="385" r="2.5" fill="#ffffff" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -1.7s;" x1="408" y1="245" x2="408" y2="360" stroke="#38bdf8" stroke-width="1.6" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -1.7s;" cx="408" cy="360" r="1.9" fill="#38bdf8" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -1.0s;" x1="420" y1="235" x2="420" y2="378" stroke="#38bdf8" stroke-width="1.8" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -1.0s;" cx="420" cy="378" r="2.2" fill="#38bdf8" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -2.4s;" x1="432" y1="225" x2="432" y2="350" stroke="#f43f5e" stroke-width="1.5" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -2.4s;" cx="432" cy="350" r="1.8" fill="#ffffff" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -0.6s;" x1="445" y1="215" x2="445" y2="385" stroke="#06b6d4" stroke-width="1.9" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -0.6s;" cx="445" cy="385" r="2.3" fill="#06b6d4" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -1.4s;" x1="455" y1="205" x2="455" y2="365" stroke="#38bdf8" stroke-width="1.4" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -1.4s;" cx="455" cy="365" r="1.7" fill="#38bdf8" filter="url(#dropHalo)"/>
+    <line class="p6-cascade-stream" style="animation-delay: -2.2s;" x1="468" y1="195" x2="468" y2="340" stroke="#f43f5e" stroke-width="1.6" opacity="0.85"/>
+    <circle class="p6-cascade-drop" style="animation-delay: -2.2s;" cx="468" cy="340" r="1.9" fill="#ffffff" filter="url(#dropHalo)"/>
+    </g>
+
+    <!-- 2. ANATOMICAL CEREBRAL CORTEX CHASSIS (ACCURATE NEUROANATOMICAL PROFILE) -->
+    <path d="M 185 195 
+             C 168 175 170 145 188 118 
+             C 210 88 248 68 300 65 
+             C 350 62 400 78 430 108 
+             C 450 128 460 158 454 188 
+             C 450 208 436 228 418 240 
+             C 428 250 432 268 428 288 
+             C 420 312 395 328 368 322 
+             C 348 318 338 306 332 296 
+             C 330 316 328 340 326 365 
+             L 304 365 
+             C 302 340 300 320 298 300 
+             C 288 298 278 295 268 290 
+             C 248 280 232 265 222 248 
+             C 208 255 188 252 178 240 
+             C 168 225 172 205 185 195 
              Z" 
-          fill="url(#brainGlassChassis)" 
-          stroke="url(#brainGlassRim)" 
+          fill="url(#cortexFillGrad)" 
+          stroke="#38bdf8" 
           stroke-width="1.8" 
-          filter="drop-shadow(0 16px 40px rgba(0,0,0,0.85))"/>
+          filter="url(#cortexGlow)"/>
 
-    <!-- Internal Luminous White Matter Subsurface Volume -->
-    <path d="M 185 185 
-             C 172 168 175 145 190 125 
-             C 210 98 245 80 295 78 
-             C 340 76 385 90 412 118 
-             C 430 136 438 160 434 185 
-             C 430 202 418 218 402 228 
-             C 410 240 414 258 408 275 
-             C 402 295 380 308 358 304 
-             C 340 300 332 290 326 280 
-             C 316 280 298 280 286 282 
-             C 255 272 235 258 226 240 
-             C 210 246 194 242 186 232 
-             C 176 218 178 200 185 185 
-             Z" 
-          fill="url(#internalOpticCore)"/>
+    <!-- 3. INTRICATE ANATOMICAL CORTICAL SULCI & GYRI CONVOLUTIONS -->
+    <g stroke="#38bdf8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85" filter="url(#cortexGlow)">
+      <!-- Frontal Lobe Undulations -->
+      <path d="M 195 130 C 215 136 228 124 248 132 C 265 138 275 126 295 130"/>
+      <path d="M 182 154 C 200 150 210 164 230 160 C 250 156 260 168 280 162"/>
+      <path d="M 185 180 C 205 174 218 188 238 180 C 258 174 268 188 288 184"/>
+      <path d="M 212 104 C 230 114 246 100 266 110 C 286 118 300 106 318 112"/>
 
-    <!-- 2. DEEP NEURAL STRUCTURES VISIBLE THROUGH TRANSPARENT CORTEX -->
-    <!-- Sweeping Arc of Corpus Callosum (C-Shaped Major White Matter Commissure) -->
-    <path d="M 235 175 C 235 135 275 118 325 120 C 365 122 385 142 380 168 C 375 180 355 186 330 182 C 285 176 250 186 235 175 Z" 
-          fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.45)" stroke-width="1.4" stroke-dasharray="3 2"/>
+      <!-- Central Sulcus & Pre/Postcentral Gyri -->
+      <path d="M 310 68 C 306 94 314 118 306 144 C 300 170 304 200 298 225" stroke="#67e8f9" stroke-width="1.7"/>
+      <path d="M 334 72 C 330 98 336 124 330 150 C 324 175 328 205 322 230" stroke="#67e8f9" stroke-width="1.5"/>
 
-    <!-- Lateral Ventricles (Fluid CSF Cavities) -->
-    <path d="M 255 168 C 265 148 295 138 335 142 C 358 145 365 158 358 168 C 348 174 325 170 295 168 Z" 
-          fill="rgba(192, 132, 252, 0.15)" stroke="rgba(192, 132, 252, 0.5)" stroke-width="1.2"/>
+      <!-- Parietal & Occipital Convolutions -->
+      <path d="M 352 78 C 366 96 384 88 402 106 C 415 118 428 112 438 126"/>
+      <path d="M 345 110 C 364 116 378 132 398 126 C 416 122 430 140 442 146"/>
+      <path d="M 338 142 C 358 148 375 140 394 152 C 410 160 426 156 440 172"/>
 
-    <!-- Thalamic Core Core (Sensory Relay Hub) -->
-    <ellipse cx="315" cy="185" rx="22" ry="16" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1"/>
+      <!-- Lateral Sylvian Fissure -->
+      <path d="M 222 214 C 252 208 282 220 312 214 C 350 208 382 222 416 218" stroke="#a855f7" stroke-width="2"/>
 
-    <!-- 3. INTRICATE ANATOMICAL CORTICAL SULCI & GYRI (AUTHENTIC CEREBRAL FOLDING) -->
-    <g stroke="rgba(255, 255, 255, 0.32)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <!-- Temporal Lobe Gyri -->
+      <path d="M 195 236 C 212 228 228 242 246 234 C 266 226 280 240 302 234"/>
+      <path d="M 222 252 C 242 246 256 260 278 252 C 298 244 310 258 330 252"/>
+      <path d="M 252 272 C 272 266 286 278 308 270 C 322 264 336 274 350 268"/>
+
+      <!-- Occipital Sulci -->
+      <path d="M 436 162 C 426 180 440 198 432 216 C 426 228 434 242 426 252"/>
+      <path d="M 412 182 C 402 200 416 214 408 230"/>
+    </g>
+
+    <!-- 4. CEREBELLUM WITH FINELY TEXTURED HORIZONTAL FOLIA STRIATIONS -->
+    <g stroke="#38bdf8" stroke-width="1.1" stroke-linecap="round" fill="none" opacity="0.8">
+      <path d="M 348 294 C 368 288 392 288 416 280"/>
+      <path d="M 344 302 C 365 296 390 298 414 290"/>
+      <path d="M 346 310 C 364 304 385 307 408 300"/>
+      <path d="M 350 318 C 366 312 384 316 402 310"/>
+      <path d="M 342 286 C 366 278 395 280 420 270" stroke="#67e8f9" stroke-width="1.4"/>
+    </g>
+
+    <!-- 5. BRAINSTEM FIBER TRACTS -->
+    <path d="M 296 295 C 288 312 292 330 302 340" stroke="#38bdf8" stroke-width="1.4" fill="none"/>
+    <line x1="310" y1="322" x2="310" y2="365" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="3 3"/>
+    <line x1="318" y1="322" x2="318" y2="365" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+    <!-- 6. HYPERINTENSE TUMOR DIAGNOSTIC LESION (BRILLIANT MAGENTA/PINK CLUSTER AS IN IMAGE 2) -->
+    <g class="p6-pink-cluster" transform="translate(325, 115)">
+      <!-- Giant Radiometric Pink/Magenta Bloom -->
+      <circle cx="50" cy="45" r="55" fill="url(#tumorPinkRadiance)" opacity="0.85" filter="url(#pinkHalo)"/>
+
+      <!-- Complex Delineated Neoplasm ROI Multi-Cluster -->
+      <path d="M 28 28 C 45 15 70 20 85 38 C 96 55 88 80 70 88 C 48 95 24 85 18 64 C 12 45 16 32 28 28 Z" 
+            fill="rgba(244, 63, 94, 0.42)" stroke="#fb7185" stroke-width="2.2" filter="url(#pinkHalo)"/>
       
-      <!-- FRONTAL LOBE CONVOLUTIONS -->
-      <!-- Superior & Middle Frontal Sulci -->
-      <path d="M 188 128 C 205 134 218 122 238 130 C 255 136 265 125 285 128"/>
-      <path d="M 175 152 C 192 148 202 162 222 158 C 242 154 252 165 272 160"/>
-      <path d="M 178 178 C 196 172 208 185 228 178 C 248 172 258 186 278 182"/>
-      <path d="M 205 102 C 222 112 238 98 258 108 C 278 116 292 105 310 110"/>
+      <!-- Interconnected High-Activity Tumor Hotspots -->
+      <line x1="35" y1="35" x2="65" y2="42" stroke="#f43f5e" stroke-width="2"/>
+      <line x1="65" y1="42" x2="72" y2="68" stroke="#f43f5e" stroke-width="1.8"/>
+      <line x1="72" y1="68" x2="42" y2="65" stroke="#f43f5e" stroke-width="1.8"/>
+      <line x1="42" y1="65" x2="35" y2="35" stroke="#f43f5e" stroke-width="1.8"/>
+      <line x1="35" y1="35" x2="52" y2="52" stroke="#ffffff" stroke-width="1.5"/>
+      <line x1="65" y1="42" x2="52" y2="52" stroke="#ffffff" stroke-width="1.5"/>
+      <line x1="72" y1="68" x2="52" y2="52" stroke="#ffffff" stroke-width="1.5"/>
+      <line x1="42" y1="65" x2="52" y2="52" stroke="#ffffff" stroke-width="1.5"/>
 
-      <!-- CENTRAL SULCUS (ROLANDIC FISSURE) & PRE/POSTCENTRAL GYRI -->
-      <path d="M 302 65 C 298 90 305 115 298 140 C 292 165 296 195 290 220" stroke="rgba(56, 189, 248, 0.55)" stroke-width="1.6"/>
-      <path d="M 326 68 C 322 95 328 120 322 145 C 316 170 320 200 314 225" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.4"/>
+      <!-- Glowing White Hyperintense Hotspot Cores -->
+      <circle cx="52" cy="52" r="7.5" fill="#ffffff" filter="url(#pinkHalo)"/>
+      <circle cx="52" cy="52" r="3.5" fill="#f43f5e"/>
+      <circle cx="35" cy="35" r="4.5" fill="#ffffff" filter="url(#pinkHalo)"/>
+      <circle cx="65" cy="42" r="5" fill="#ffffff" filter="url(#pinkHalo)"/>
+      <circle cx="72" cy="68" r="4.2" fill="#ffffff" filter="url(#pinkHalo)"/>
+      <circle cx="42" cy="65" r="4.2" fill="#ffffff" filter="url(#pinkHalo)"/>
 
-      <!-- PARIETAL LOBE CONVOLUTIONS -->
-      <path d="M 345 74 C 358 92 375 85 392 102 C 405 114 418 108 428 122"/>
-      <path d="M 338 105 C 356 112 370 128 390 122 C 408 118 422 135 435 142"/>
-      <path d="M 332 138 C 352 144 368 136 386 148 C 402 156 418 152 432 168"/>
-
-      <!-- LATERAL SULCUS (SYLVIAN FISSURE) -->
-      <path d="M 215 210 C 245 205 275 215 305 210 C 342 204 375 218 408 215" stroke="rgba(192, 132, 252, 0.65)" stroke-width="1.8"/>
-
-      <!-- TEMPORAL LOBE CONVOLUTIONS -->
-      <path d="M 188 232 C 205 224 220 238 238 230 C 258 222 272 236 295 230"/>
-      <path d="M 215 248 C 235 242 248 256 270 248 C 290 240 302 254 322 248"/>
-      <path d="M 245 268 C 265 262 278 274 300 266 C 315 260 328 270 342 265"/>
-
-      <!-- OCCIPITAL LOBE SULCI -->
-      <path d="M 428 158 C 418 175 432 192 425 210 C 418 222 426 235 418 245"/>
-      <path d="M 405 178 C 395 195 408 208 400 225"/>
+      <!-- Satellite Micro-Lesion Nodes -->
+      <circle cx="85" cy="35" r="3" fill="#fb7185" filter="url(#pinkHalo)"/>
+      <circle cx="22" cy="55" r="2.8" fill="#fb7185" filter="url(#pinkHalo)"/>
     </g>
 
-    <!-- 4. CEREBELLUM WITH FINELY TEXTURED HORIZONTAL FOLIA (ARBOR VITAE) -->
-    <g stroke="rgba(255, 255, 255, 0.28)" stroke-width="1.1" stroke-linecap="round" fill="none">
-      <path d="M 345 292 C 365 285 390 286 414 278"/>
-      <path d="M 340 300 C 362 294 388 296 412 288"/>
-      <path d="M 342 308 C 360 302 382 305 405 298"/>
-      <path d="M 346 315 C 362 310 380 314 398 308"/>
-      <!-- Primary Fissure of Cerebellum -->
-      <path d="M 338 284 C 362 276 392 278 418 268" stroke="rgba(56, 189, 248, 0.5)" stroke-width="1.4"/>
-    </g>
-
-    <!-- 5. BRAINSTEM (PONS & MEDULLA OBLONGATA) -->
-    <!-- Pons Ventral Bulge -->
-    <path d="M 292 292 C 285 310 288 328 298 338" stroke="rgba(255, 255, 255, 0.35)" stroke-width="1.4" fill="none"/>
-    <!-- Longitudinal Fiber Tracts of Medulla -->
-    <line x1="308" y1="320" x2="308" y2="365" stroke="rgba(56, 189, 248, 0.45)" stroke-width="1" stroke-dasharray="3 3"/>
-    <line x1="316" y1="320" x2="316" y2="365" stroke="rgba(56, 189, 248, 0.45)" stroke-width="1" stroke-dasharray="3 3"/>
-
-    <!-- 6. PATHOLOGICAL LESION ROI (MULTILEVEL OTSU SEGMENTED BRAIN TUMOR) -->
-    <g transform="translate(355, 142)">
-      <!-- Radiometric Diagnostic Tumor Bloom -->
-      <circle class="p6-tumor-core" cx="36" cy="36" r="48" fill="url(#tumorDiagnosticBloom)"/>
-
-      <!-- High-Precision Otsu Segmented Boundary Contour -->
-      <path class="p6-tumor-core" d="M 20 18 C 38 8 56 12 68 28 C 78 44 72 65 56 72 C 38 78 18 68 14 50 C 10 34 14 22 20 18 Z" 
-            fill="rgba(192, 132, 252, 0.38)" stroke="#c084fc" stroke-width="2.2" filter="url(#lesionGlow)"/>
-
-      <!-- Inner Hyperintense Neoplasm Core -->
-      <circle class="p6-tumor-core" cx="40" cy="40" r="9" fill="#ffffff" filter="drop-shadow(0 0 10px #ffffff)"/>
-      <circle class="p6-tumor-core" cx="40" cy="40" r="4" fill="#c084fc"/>
-
-      <!-- Particle Swarm Optimization (PSO) Converging Search Agents -->
-      <circle class="p6-swarm-particle-a" cx="36" cy="36" r="2.4" fill="#38bdf8" filter="drop-shadow(0 0 6px #38bdf8)"/>
-      <circle class="p6-swarm-particle-b" cx="36" cy="36" r="2" fill="#c084fc" filter="drop-shadow(0 0 6px #c084fc)"/>
-    </g>
-
-    <!-- 7. HORIZONTAL MRI AXIAL SCANNING SHEEN RAY -->
-    <line class="p6-scan-line" x1="140" y1="190" x2="460" y2="190" stroke="url(#mriScanRay)" stroke-width="1.8" stroke-dasharray="4 2" filter="drop-shadow(0 0 8px #fff)"/>
+    <!-- 7. HORIZONTAL ANAMORPHIC LASER FLARE STREAK (FROM IMAGE 2) -->
+    <line class="p6-anamorphic-streak" x1="60" y1="165" x2="540" y2="165" stroke="url(#horizFlareGrad)" stroke-width="2" stroke-linecap="round" filter="url(#pinkHalo)"/>
+    <line class="p6-anamorphic-streak" style="animation-delay: -2s;" x1="120" y1="165" x2="480" y2="165" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
   </g>
 </svg>
           </div>
