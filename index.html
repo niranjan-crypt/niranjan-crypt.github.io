@@ -198,6 +198,294 @@
       transform: scale(0.94);
     }
 
+    /* ========================================================== */
+    /* REALISTIC 3D & MOTION EFFECTS FOR PROJECT HERO VISUALS     */
+    /* ========================================================== */
+
+    /* 3D Perspective Container Physics */
+    .project-hero-container {
+      perspective: 1200px;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+    .project-hero-container:hover {
+      box-shadow: 0 32px 90px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(56, 189, 248, 0.08);
+    }
+
+    /* Specular Surface Light Glare */
+    .hero-specular-glare {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      background: radial-gradient(circle 340px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.12), transparent 70%);
+      mix-blend-mode: overlay;
+      z-index: 10;
+    }
+    .project-hero-container:hover .hero-specular-glare {
+      opacity: 1;
+    }
+
+    /* Project 01: Biometric Hyperspectral Face ID */
+    @keyframes p1SpectralSweep {
+      0%, 100% { opacity: 0.18; transform: translateY(-3px) scale(0.99); }
+      50% { opacity: 0.55; transform: translateY(3px) scale(1.01); }
+    }
+    @keyframes p1LaserScan {
+      0% { transform: translateY(0px); opacity: 0.15; }
+      20% { opacity: 0.85; }
+      50% { transform: translateY(180px); opacity: 0.2; }
+      75% { opacity: 0.85; }
+      100% { transform: translateY(0px); opacity: 0.15; }
+    }
+    @keyframes p1Glint {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.6); opacity: 1; filter: drop-shadow(0 0 10px #38bdf8); }
+    }
+    .p1-spectral-layer {
+      animation: p1SpectralSweep 6s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .p1-laser-beam {
+      animation: p1LaserScan 5.5s ease-in-out infinite;
+    }
+    .p1-keypoint-glint {
+      animation: p1Glint 3.2s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+
+    /* Project 02: Power Transmission Fault Detection */
+    @keyframes p2DroneScan {
+      0%, 100% { transform: translateY(-28px); opacity: 0.35; }
+      50% { transform: translateY(40px); opacity: 0.95; }
+    }
+    @keyframes p2ThermalPulse {
+      0%, 100% { transform: scale(0.92); opacity: 0.6; }
+      50% { transform: scale(1.18); opacity: 1; filter: drop-shadow(0 0 16px #f97316); }
+    }
+    @keyframes p2LineVibration {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(1.5px); }
+    }
+    .p2-laser-scan {
+      animation: p2DroneScan 4.8s ease-in-out infinite;
+    }
+    .p2-fault-glow {
+      animation: p2ThermalPulse 2.8s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .p2-catenary-wire {
+      animation: p2LineVibration 7s ease-in-out infinite;
+    }
+
+    /* Project 03: CommerceIQ Data Warehouse */
+    @keyframes p3FiberFlow {
+      0% { stroke-dashoffset: 80; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes p3LedFlickerA {
+      0%, 100% { opacity: 0.95; }
+      30% { opacity: 0.3; }
+      40% { opacity: 1; }
+      70% { opacity: 0.45; }
+    }
+    @keyframes p3LedFlickerB {
+      0%, 100% { opacity: 0.35; }
+      20% { opacity: 1; }
+      60% { opacity: 0.2; }
+      80% { opacity: 0.95; }
+    }
+    .p3-fiber-stream {
+      stroke-dasharray: 12 8;
+      animation: p3FiberFlow 2.4s linear infinite;
+    }
+    .p3-led-a {
+      animation: p3LedFlickerA 1.6s ease-in-out infinite;
+    }
+    .p3-led-b {
+      animation: p3LedFlickerB 2.2s ease-in-out infinite;
+    }
+
+    /* Project 04: IntelliPQ Power Quality */
+    @keyframes p4SineWaveFlow {
+      0% { stroke-dashoffset: 200; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes p4CoronaDischarge {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      25% { transform: scale(1.4); opacity: 1; filter: drop-shadow(0 0 14px #34d399); }
+      50% { transform: scale(0.9); opacity: 0.5; }
+      75% { transform: scale(1.5); opacity: 1; filter: drop-shadow(0 0 16px #6ee7b7); }
+    }
+    .p4-sine-wave {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 0;
+      animation: p4SineWaveFlow 4.5s linear infinite;
+    }
+    .p4-corona-spark {
+      animation: p4CoronaDischarge 1.8s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+
+    /* Project 05: KinoSync Smart Glove */
+    @keyframes p5NervePulse {
+      0% { stroke-dashoffset: 240; opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 0.4; }
+    }
+    @keyframes p5Heartbeat {
+      0% { transform: scale(1); opacity: 0.75; }
+      14% { transform: scale(1.35); opacity: 1; filter: drop-shadow(0 0 12px #34d399); }
+      28% { transform: scale(1.08); opacity: 0.85; }
+      42% { transform: scale(1.28); opacity: 0.98; filter: drop-shadow(0 0 10px #34d399); }
+      60% { transform: scale(1); opacity: 0.75; }
+      100% { transform: scale(1); opacity: 0.75; }
+    }
+    @keyframes p5FingertipGlow {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; filter: drop-shadow(0 0 10px #10b981); }
+    }
+    .p5-flex-ribbon {
+      stroke-dasharray: 120 40;
+      animation: p5NervePulse 3.2s linear infinite;
+    }
+    .p5-heartbeat-node {
+      animation: p5Heartbeat 1.4s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .p5-fingertip-sensor {
+      animation: p5FingertipGlow 2.5s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+
+    /* Project 06: Hybrid PSO-GA MRI Brain Segmentation */
+    @keyframes p6ScanPlaneSweep {
+      0%, 100% { transform: translateY(-70px); opacity: 0.15; }
+      50% { transform: translateY(70px); opacity: 0.75; }
+    }
+    @keyframes p6TumorResonance {
+      0%, 100% { transform: scale(0.96); opacity: 0.75; }
+      50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 18px #c084fc); }
+    }
+    @keyframes p6SwarmOrbitA {
+      0% { transform: rotate(0deg) translateX(24px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(24px) rotate(-360deg); }
+    }
+    @keyframes p6SwarmOrbitB {
+      0% { transform: rotate(0deg) translateX(36px) rotate(0deg); }
+      100% { transform: rotate(-360deg) translateX(36px) rotate(360deg); }
+    }
+    .p6-scan-line {
+      animation: p6ScanPlaneSweep 5.5s ease-in-out infinite;
+    }
+    .p6-tumor-core {
+      animation: p6TumorResonance 3s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .p6-swarm-particle-a {
+      animation: p6SwarmOrbitA 6s linear infinite;
+      transform-origin: 388px 178px;
+    }
+    .p6-swarm-particle-b {
+      animation: p6SwarmOrbitB 8.5s linear infinite;
+      transform-origin: 388px 178px;
+    }
+
+    /* Project 07: TOC-AV Autonomous Vehicle Safety */
+    @keyframes p7SafetyEnvelopePulse {
+      0%, 100% { transform: scale(0.97); opacity: 0.65; }
+      50% { transform: scale(1.04); opacity: 1; filter: drop-shadow(0 0 22px rgba(56,189,248,0.55)); }
+    }
+    @keyframes p7LidarFanSweep {
+      0%, 100% { opacity: 0.25; transform: scaleY(0.92); }
+      50% { opacity: 0.75; transform: scaleY(1.06); }
+    }
+    @keyframes p7TaillightGlow {
+      0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 8px #f43f5e); }
+      50% { opacity: 1; filter: drop-shadow(0 0 16px #f43f5e); }
+    }
+    .p7-safety-bubble {
+      animation: p7SafetyEnvelopePulse 3.8s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .p7-lidar-fan {
+      animation: p7LidarFanSweep 2.8s ease-in-out infinite;
+      transform-origin: 300px 280px;
+    }
+    .p7-taillight {
+      animation: p7TaillightGlow 2.2s ease-in-out infinite;
+    }
+
+    /* Project 08: Congestion Management Power Grid */
+    @keyframes p8CongestionPulse {
+      0%, 100% { transform: scale(0.92); opacity: 0.55; }
+      50% { transform: scale(1.22); opacity: 1; filter: drop-shadow(0 0 18px #ea580c); }
+    }
+    @keyframes p8BypassFlow {
+      0% { stroke-dashoffset: 40; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes p8SubstationPulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; }
+    }
+    .p8-congested-glow {
+      animation: p8CongestionPulse 2.4s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .p8-bypass-arc {
+      animation: p8BypassFlow 1.8s linear infinite;
+    }
+    .p8-substation-node {
+      animation: p8SubstationPulse 3s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+
+    /* Project 09: Physics-Informed Solar MPPT */
+    @keyframes p9MppGlint {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      35% { transform: scale(1.6); opacity: 1; filter: drop-shadow(0 0 14px #fbbf24); }
+      50% { transform: scale(1.1); opacity: 0.9; }
+      65% { transform: scale(1.4); opacity: 1; filter: drop-shadow(0 0 12px #ffffff); }
+    }
+    @keyframes p9SolarFlow {
+      0% { stroke-dashoffset: 35; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes p9AnamorphicSheen {
+      0%, 100% { opacity: 0.45; transform: translateX(-6px); }
+      50% { opacity: 0.95; transform: translateX(6px); }
+    }
+    .p9-mpp-spark {
+      animation: p9MppGlint 2.8s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .p9-energy-trace {
+      animation: p9SolarFlow 2s linear infinite;
+    }
+    .p9-anamorphic-flare {
+      animation: p9AnamorphicSheen 4s ease-in-out infinite;
+    }
+
+    /* Subtle Ambient Floating Physics for Project SVGs */
+    .project-hero-svg {
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
     /* Floating iPhone Liquid Glass Category Filter Capsule */
     .liquid-filter-capsule {
       position: relative;
@@ -766,20 +1054,23 @@
 
   <!-- Volumetric Spectral Light Slices Passing Elegantly Across the Face -->
   <!-- Layer 1: Ultraviolet-Purple (400nm) -->
-  <path d="M240 70 C 330 40, 420 80, 460 160 C 500 240, 420 310, 310 330 C 270 290, 250 200, 240 70 Z" fill="rgba(191,90,242,0.12)" stroke="#bf5af2" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <path class="p1-spectral-layer" d="M240 70 C 330 40, 420 80, 460 160 C 500 240, 420 310, 310 330 C 270 290, 250 200, 240 70 Z" fill="rgba(191,90,242,0.12)" stroke="#bf5af2" stroke-width="1.2" stroke-dasharray="3 3"/>
   <!-- Layer 2: Sapphire-Blue (480nm) -->
-  <path d="M260 85 C 345 60, 430 95, 465 175 C 495 250, 415 320, 325 335 C 285 295, 270 210, 260 85 Z" fill="rgba(59,130,246,0.14)" stroke="#3b82f6" stroke-width="1.4"/>
+  <path class="p1-spectral-layer" style="animation-delay: -1.5s;" d="M260 85 C 345 60, 430 95, 465 175 C 495 250, 415 320, 325 335 C 285 295, 270 210, 260 85 Z" fill="rgba(59,130,246,0.14)" stroke="#3b82f6" stroke-width="1.4"/>
   <!-- Layer 3: Radiant Cyan (540nm) -->
-  <path d="M280 100 C 360 80, 440 115, 470 190 C 490 260, 410 330, 340 340 C 300 300, 290 220, 280 100 Z" fill="rgba(6,182,212,0.18)" stroke="#06b6d4" stroke-width="1.8" filter="drop-shadow(0 0 14px rgba(6,182,212,0.4))"/>
+  <path class="p1-spectral-layer" style="animation-delay: -3s;" d="M280 100 C 360 80, 440 115, 470 190 C 490 260, 410 330, 340 340 C 300 300, 290 220, 280 100 Z" fill="rgba(6,182,212,0.18)" stroke="#06b6d4" stroke-width="1.8" filter="drop-shadow(0 0 14px rgba(6,182,212,0.4))"/>
   <!-- Layer 4: Soft Emerald (620nm) -->
-  <path d="M300 120 C 375 105, 445 135, 470 210 C 485 275, 410 335, 355 342 C 320 305, 310 235, 300 120 Z" fill="rgba(16,185,129,0.12)" stroke="#10b981" stroke-width="1.4"/>
+  <path class="p1-spectral-layer" style="animation-delay: -4.5s;" d="M300 120 C 375 105, 445 135, 470 210 C 485 275, 410 335, 355 342 C 320 305, 310 235, 300 120 Z" fill="rgba(16,185,129,0.12)" stroke="#10b981" stroke-width="1.4"/>
+
+  <!-- Dynamic Biometric Optical Laser Scanline -->
+  <line class="p1-laser-beam" x1="220" y1="80" x2="470" y2="80" stroke="rgba(56,189,248,0.75)" stroke-width="1.6" stroke-linecap="round" filter="drop-shadow(0 0 10px #38bdf8)"/>
 
   <!-- Translucent Glass-Like Spectral Refraction Shell Hugging Facial Profile -->
   <path d="M360 70 C 390 100, 435 150, 425 210 C 415 260, 375 300, 335 325" fill="none" stroke="url(#hfdSpectralSheaf)" stroke-width="2.5" filter="drop-shadow(0 0 10px rgba(56,189,248,0.5))"/>
 
   <!-- Microscopic Optical Keypoint Glints -->
-  <circle cx="384" cy="157" r="2.5" fill="#ffffff" filter="drop-shadow(0 0 6px #fff)"/>
-  <circle cx="415" cy="200" r="3" fill="#38bdf8" filter="drop-shadow(0 0 8px #38bdf8)"/>
+  <circle class="p1-keypoint-glint" cx="384" cy="157" r="2.5" fill="#ffffff" filter="drop-shadow(0 0 6px #fff)"/>
+  <circle class="p1-keypoint-glint" style="animation-delay: -1.6s;" cx="415" cy="200" r="3" fill="#38bdf8" filter="drop-shadow(0 0 8px #38bdf8)"/>
 </svg>
           </div>
         </div>
@@ -876,7 +1167,7 @@
   <path d="M0 350 Q 200 310 400 335 T 600 320 L 600 400 L 0 400 Z" fill="#070a12"/>
 
   <!-- Realistic Catenary High-Voltage Conductors (Sagging into horizon) -->
-  <g stroke="#94a3b8" opacity="0.6">
+  <g class="p2-catenary-wire" stroke="#94a3b8" opacity="0.6">
     <!-- Top Phase Bundle -->
     <path d="M -40 120 Q 250 230 650 90" stroke-width="2.2" fill="none"/>
     <path d="M -40 124 Q 250 234 650 94" stroke-width="1.4" fill="none" opacity="0.5"/>
@@ -949,13 +1240,13 @@
       <ellipse cx="0" cy="50" rx="9" ry="3.5" fill="#334155" stroke="#64748b"/>
 
       <!-- Radiant Defect Heat Bloom -->
-      <circle cx="0" cy="26" r="38" fill="url(#faultGlow)"/>
-      <circle cx="0" cy="26" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 6px #fff)"/>
+      <circle class="p2-fault-glow" cx="0" cy="26" r="38" fill="url(#faultGlow)"/>
+      <circle class="p2-fault-glow" cx="0" cy="26" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 6px #fff)"/>
     </g>
   </g>
 
   <!-- Razor-Thin Drone Optical Scanning Laser Plane -->
-  <line x1="80" y1="180" x2="520" y2="180" stroke="url(#droneLaser)" stroke-width="1.4" filter="drop-shadow(0 0 8px #38bdf8)"/>
+  <line class="p2-laser-scan" x1="80" y1="180" x2="520" y2="180" stroke="url(#droneLaser)" stroke-width="1.4" filter="drop-shadow(0 0 8px #38bdf8)"/>
 </svg>
           </div>
         </div>
@@ -1072,13 +1363,13 @@
     <line x1="55" y1="250" x2="165" y2="255"/>
   </g>
   <!-- Micro-LED Activity Indicators (Left Foreground) -->
-  <circle cx="160" cy="98" r="1.8" fill="#10b981" filter="drop-shadow(0 0 4px #10b981)"/>
-  <circle cx="152" cy="97" r="1.5" fill="#38bdf8"/>
-  <circle cx="160" cy="136" r="1.8" fill="#10b981" filter="drop-shadow(0 0 4px #10b981)"/>
-  <circle cx="152" cy="135" r="1.5" fill="#f59e0b"/>
-  <circle cx="160" cy="175" r="1.8" fill="#10b981"/>
-  <circle cx="160" cy="214" r="1.8" fill="#38bdf8"/>
-  <circle cx="160" cy="252" r="1.8" fill="#10b981"/>
+  <circle class="p3-led-a" cx="160" cy="98" r="1.8" fill="#10b981" filter="drop-shadow(0 0 4px #10b981)"/>
+  <circle class="p3-led-b" cx="152" cy="97" r="1.5" fill="#38bdf8"/>
+  <circle class="p3-led-a" cx="160" cy="136" r="1.8" fill="#10b981" filter="drop-shadow(0 0 4px #10b981)"/>
+  <circle class="p3-led-b" cx="152" cy="135" r="1.5" fill="#f59e0b"/>
+  <circle class="p3-led-a" cx="160" cy="175" r="1.8" fill="#10b981"/>
+  <circle class="p3-led-b" cx="160" cy="214" r="1.8" fill="#38bdf8"/>
+  <circle class="p3-led-a" cx="160" cy="252" r="1.8" fill="#10b981"/>
 
   <!-- Rack 2 (Midground Left) -->
   <polygon points="180,60 240,90 240,250 180,310" fill="#070910" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
@@ -1112,9 +1403,9 @@
   <line x1="420" y1="60" x2="300" y2="90" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
 
   <!-- Golden/Amber Physical Data Light Streams (Curving between racks) -->
-  <path d="M 175 140 C 230 110, 370 110, 425 140" stroke="url(#goldPulse)" stroke-width="2.5" fill="none" filter="drop-shadow(0 0 8px #f59e0b)"/>
-  <path d="M 175 180 C 250 150, 350 150, 425 180" stroke="url(#goldPulse)" stroke-width="2" fill="none" filter="drop-shadow(0 0 6px #f59e0b)"/>
-  <path d="M 235 150 C 270 135, 330 135, 365 150" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+  <path class="p3-fiber-stream" d="M 175 140 C 230 110, 370 110, 425 140" stroke="url(#goldPulse)" stroke-width="2.5" fill="none" filter="drop-shadow(0 0 8px #f59e0b)"/>
+  <path class="p3-fiber-stream" style="animation-delay: -1.2s;" d="M 175 180 C 250 150, 350 150, 425 180" stroke="url(#goldPulse)" stroke-width="2" fill="none" filter="drop-shadow(0 0 6px #f59e0b)"/>
+  <path class="p3-fiber-stream" style="animation-delay: -0.6s;" d="M 235 150 C 270 135, 330 135, 365 150" stroke="#fbbf24" stroke-width="1.5" fill="none"/>
 
   <!-- Subtle Floor Reflections of Gold Fiber Pulses -->
   <path d="M 180 290 C 240 310, 360 310, 420 290" stroke="rgba(245,158,11,0.2)" stroke-width="3" fill="none" filter="blur(4px)"/>
@@ -1266,16 +1557,16 @@
   <!-- THE ELECTROMAGNETIC WAVEFORM DISTURBANCE (Cinematic Light Ribbon) -->
   <!-- Traveling horizontally through the electrical environment -->
   <!-- Cycle 1 (Pure Sine Wave) -->
-  <path d="M 40 140 C 80 50, 120 50, 160 140 C 200 230, 240 230, 280 140" stroke="url(#sineGlow)" stroke-width="3" fill="none" stroke-linecap="round" filter="drop-shadow(0 0 10px #38bdf8)"/>
+  <path class="p4-sine-wave" d="M 40 140 C 80 50, 120 50, 160 140 C 200 230, 240 230, 280 140" stroke="url(#sineGlow)" stroke-width="3" fill="none" stroke-linecap="round" filter="drop-shadow(0 0 10px #38bdf8)"/>
   
   <!-- Cycle 2 (THE TRANSIENT SAG & HARMONIC DISTURBANCE) -->
   <!-- Subtle authentic voltage sag notch and high-frequency flutter -->
-  <path d="M 280 140 C 295 105, 305 120, 315 140 C 325 160, 335 150, 350 140" stroke="#34d399" stroke-width="3.5" fill="none" stroke-linecap="round" filter="drop-shadow(0 0 14px #34d399)"/>
+  <path class="p4-sine-wave" style="animation-delay: -1.5s;" d="M 280 140 C 295 105, 305 120, 315 140 C 325 160, 335 150, 350 140" stroke="#34d399" stroke-width="3.5" fill="none" stroke-linecap="round" filter="drop-shadow(0 0 14px #34d399)"/>
   <!-- Corona Micro-Discharge Spark on Transient -->
-  <circle cx="315" cy="140" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 8px #34d399)"/>
+  <circle class="p4-corona-spark" cx="315" cy="140" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 8px #34d399)"/>
 
   <!-- Cycle 3 (Recovery to Pure Sine Wave) -->
-  <path d="M 350 140 C 390 230, 430 230, 470 140 C 510 50, 550 50, 590 140" stroke="url(#sineGlow)" stroke-width="3" fill="none" stroke-linecap="round" filter="drop-shadow(0 0 10px #38bdf8)"/>
+  <path class="p4-sine-wave" style="animation-delay: -3s;" d="M 350 140 C 390 230, 430 230, 470 140 C 510 50, 550 50, 590 140" stroke="url(#sineGlow)" stroke-width="3" fill="none" stroke-linecap="round" filter="drop-shadow(0 0 10px #38bdf8)"/>
 
   <!-- Ground Reflection of Waveform Light -->
   <path d="M 40 310 C 120 300, 240 320, 315 310 C 390 320, 510 300, 590 310" stroke="rgba(56,189,248,0.12)" stroke-width="4" fill="none" filter="blur(5px)"/>
@@ -1513,19 +1804,19 @@
 
     <!-- 4. CONTINUOUS EMBEDDED FLEX-STRAIN SENSOR RIBBONS (SMOOTH ORGANIC BEZIERS) -->
     <!-- Channel 1: Thumb Flex Ribbon -->
-    <path d="M290 282 C275 250 240 225 214 194 C195 170 178 152 155 124" 
+    <path class="p5-flex-ribbon" d="M290 282 C275 250 240 225 214 194 C195 170 178 152 155 124" 
           stroke="url(#flexTraceNeon)" stroke-width="2.4" stroke-linecap="round" filter="url(#traceGlow)"/>
     <!-- Channel 2: Index Flex Ribbon -->
-    <path d="M295 282 C285 240 262 195 254 142 C248 105 249 70 249 32" 
+    <path class="p5-flex-ribbon" style="animation-delay: -0.6s;" d="M295 282 C285 240 262 195 254 142 C248 105 249 70 249 32" 
           stroke="url(#flexTraceNeon)" stroke-width="2.4" stroke-linecap="round" filter="url(#traceGlow)"/>
     <!-- Channel 3: Middle Flex Ribbon -->
-    <path d="M300 282 C300 235 301 180 302 128 C302 90 302 52 302 10" 
+    <path class="p5-flex-ribbon" style="animation-delay: -1.2s;" d="M300 282 C300 235 301 180 302 128 C302 90 302 52 302 10" 
           stroke="url(#flexTraceNeon)" stroke-width="2.6" stroke-linecap="round" filter="url(#traceGlow)"/>
     <!-- Channel 4: Ring Flex Ribbon -->
-    <path d="M305 282 C318 240 342 195 350 138 C355 102 356 68 356 34" 
+    <path class="p5-flex-ribbon" style="animation-delay: -1.8s;" d="M305 282 C318 240 342 195 350 138 C355 102 356 68 356 34" 
           stroke="url(#flexTraceNeon)" stroke-width="2.4" stroke-linecap="round" filter="url(#traceGlow)"/>
     <!-- Channel 5: Pinky Flex Ribbon -->
-    <path d="M310 282 C335 250 375 215 392 166 C402 138 406 112 412 80" 
+    <path class="p5-flex-ribbon" style="animation-delay: -2.4s;" d="M310 282 C335 250 375 215 392 166 C402 138 406 112 412 80" 
           stroke="url(#flexTraceNeon)" stroke-width="2.2" stroke-linecap="round" filter="url(#traceGlow)"/>
 
     <!-- Micro-Capacitive Strain Sensor Segment Lines Along Ribbons -->
@@ -1549,20 +1840,20 @@
 
     <!-- 5. EMISSIVE BIOMETRIC NODES & HAPTIC CONTACT PADS -->
     <!-- Fingertip Active Bio-Sensors (Glowing Emerald/Cyan Core) -->
-    <circle cx="153" cy="122" r="4.5" fill="#ffffff" filter="url(#nodeGlow)"/>
-    <circle cx="153" cy="122" r="2.5" fill="#10b981"/>
+    <circle class="p5-fingertip-sensor" cx="153" cy="122" r="4.5" fill="#ffffff" filter="url(#nodeGlow)"/>
+    <circle class="p5-fingertip-sensor" cx="153" cy="122" r="2.5" fill="#10b981"/>
 
-    <circle cx="249" cy="30" r="4.5" fill="#ffffff" filter="url(#nodeGlow)"/>
-    <circle cx="249" cy="30" r="2.5" fill="#10b981"/>
+    <circle class="p5-fingertip-sensor" style="animation-delay: -0.5s;" cx="249" cy="30" r="4.5" fill="#ffffff" filter="url(#nodeGlow)"/>
+    <circle class="p5-fingertip-sensor" style="animation-delay: -0.5s;" cx="249" cy="30" r="2.5" fill="#10b981"/>
 
-    <circle cx="302" cy="8" r="5" fill="#ffffff" filter="url(#nodeGlow)"/>
-    <circle cx="302" cy="8" r="2.8" fill="#10b981"/>
+    <circle class="p5-fingertip-sensor" style="animation-delay: -1s;" cx="302" cy="8" r="5" fill="#ffffff" filter="url(#nodeGlow)"/>
+    <circle class="p5-fingertip-sensor" style="animation-delay: -1s;" cx="302" cy="8" r="2.8" fill="#10b981"/>
 
-    <circle cx="356" cy="32" r="4.5" fill="#ffffff" filter="url(#nodeGlow)"/>
-    <circle cx="356" cy="32" r="2.5" fill="#10b981"/>
+    <circle class="p5-fingertip-sensor" style="animation-delay: -1.5s;" cx="356" cy="32" r="4.5" fill="#ffffff" filter="url(#nodeGlow)"/>
+    <circle class="p5-fingertip-sensor" style="animation-delay: -1.5s;" cx="356" cy="32" r="2.5" fill="#10b981"/>
 
-    <circle cx="412" cy="78" r="4" fill="#ffffff" filter="url(#nodeGlow)"/>
-    <circle cx="412" cy="78" r="2.2" fill="#10b981"/>
+    <circle class="p5-fingertip-sensor" style="animation-delay: -2s;" cx="412" cy="78" r="4" fill="#ffffff" filter="url(#nodeGlow)"/>
+    <circle class="p5-fingertip-sensor" style="animation-delay: -2s;" cx="412" cy="78" r="2.2" fill="#10b981"/>
 
     <!-- Joint Optical Tracking Dots -->
     <circle cx="254" cy="142" r="2" fill="#38bdf8"/>
@@ -1581,8 +1872,8 @@
           fill="#06080d" stroke="rgba(52,211,153,0.4)" stroke-width="1"/>
     
     <!-- Optical Pulse / IMU Status Ring (Bioluminescent Heartbeat Indicator) -->
-    <circle cx="300" cy="282" r="3.5" fill="#10b981" filter="url(#nodeGlow)"/>
-    <circle cx="300" cy="282" r="1.8" fill="#ffffff"/>
+    <circle class="p5-heartbeat-node" cx="300" cy="282" r="3.5" fill="#10b981" filter="url(#nodeGlow)"/>
+    <circle class="p5-heartbeat-node" cx="300" cy="282" r="1.8" fill="#ffffff"/>
 
     <!-- Micro RF Antenna Trace Etch on Cuff -->
     <path d="M254 282 L270 282 M258 279 L258 285 M264 279 L264 285" 
@@ -1703,17 +1994,21 @@
   <!-- SUBTLY HIGHLIGHTED TUMOR REGION (Soft Purple Translucent Overlay) -->
   <g transform="translate(350, 140)">
     <!-- Volumetric Radiant Bloom -->
-    <circle cx="38" cy="38" r="50" fill="url(#mriTumorBloom)"/>
+    <circle class="p6-tumor-core" cx="38" cy="38" r="50" fill="url(#mriTumorBloom)"/>
 
     <!-- Delineated Segmented Lesion Boundary (Elegant & Minimal) -->
-    <path d="M22 18 Q 48 8 65 28 T 60 62 Q 38 72 16 56 T 22 18 Z" fill="rgba(192,132,252,0.35)" stroke="#c084fc" stroke-width="2" filter="drop-shadow(0 0 12px #a855f7)"/>
+    <path class="p6-tumor-core" d="M22 18 Q 48 8 65 28 T 60 62 Q 38 72 16 56 T 22 18 Z" fill="rgba(192,132,252,0.35)" stroke="#c084fc" stroke-width="2" filter="drop-shadow(0 0 12px #a855f7)"/>
 
     <!-- Fine Internal Hyperintense Core -->
-    <circle cx="40" cy="38" r="9" fill="#ffffff" filter="drop-shadow(0 0 10px #ffffff)"/>
+    <circle class="p6-tumor-core" cx="40" cy="38" r="9" fill="#ffffff" filter="drop-shadow(0 0 10px #ffffff)"/>
+
+    <!-- Particle Swarm Optimization (PSO) Converging Search Particles -->
+    <circle class="p6-swarm-particle-a" cx="38" cy="38" r="2.2" fill="#38bdf8" filter="drop-shadow(0 0 6px #38bdf8)"/>
+    <circle class="p6-swarm-particle-b" cx="38" cy="38" r="1.8" fill="#c084fc" filter="drop-shadow(0 0 6px #c084fc)"/>
   </g>
 
   <!-- Subtle Medical Scan Plane Ray (Horizontal Sheen) -->
-  <line x1="140" y1="200" x2="460" y2="200" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="3 3"/>
+  <line class="p6-scan-line" x1="140" y1="200" x2="460" y2="200" stroke="rgba(255,255,255,0.22)" stroke-width="1.2" stroke-dasharray="3 3"/>
 </svg>
           </div>
         </div>
@@ -1811,7 +2106,7 @@
   </g>
 
   <!-- Forward-Facing LiDAR Sensory Illumination Fan -->
-  <polygon points="300,280 200,220 400,220" fill="rgba(56,189,248,0.06)" stroke="rgba(56,189,248,0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+  <polygon class="p7-lidar-fan" points="300,280 200,220 400,220" fill="rgba(56,189,248,0.06)" stroke="rgba(56,189,248,0.25)" stroke-width="1" stroke-dasharray="4 4"/>
 
   <!-- Sleek Modern Autonomous Electric Vehicle (Low-Angle Rear-Quarter View) -->
   <g transform="translate(210, 240)">
@@ -1820,7 +2115,7 @@
     <!-- Fastback Glass Canopy -->
     <path d="M60 34 Q 72 10 100 8 Q 128 10 142 34 Z" fill="#060810" stroke="rgba(56,189,248,0.4)" stroke-width="1.2"/>
     <!-- Horizontal Red LED Taillight Ribbon -->
-    <path d="M28 72 Q 100 76 172 72" stroke="#f43f5e" stroke-width="3" stroke-linecap="round" filter="drop-shadow(0 0 10px #f43f5e)"/>
+    <path class="p7-taillight" d="M28 72 Q 100 76 172 72" stroke="#f43f5e" stroke-width="3" stroke-linecap="round" filter="drop-shadow(0 0 10px #f43f5e)"/>
     <!-- Ground Tire Shadows & Wet Road Reflection -->
     <ellipse cx="38" cy="88" rx="16" ry="5" fill="#000000"/>
     <ellipse cx="162" cy="88" rx="16" ry="5" fill="#000000"/>
@@ -1830,9 +2125,9 @@
   <!-- SUBTLE TRANSPARENT SAFETY BOUNDARY ENVELOPE (Faint Protective Bubble) -->
   <g transform="translate(160, 200)">
     <!-- 3D Ellipsoidal Dynamic Clearance Envelope -->
-    <ellipse cx="140" cy="90" rx="165" ry="70" fill="url(#avSafetyField)" stroke="#38bdf8" stroke-width="1.8" filter="drop-shadow(0 0 16px rgba(56,189,248,0.35))"/>
+    <ellipse class="p7-safety-bubble" cx="140" cy="90" rx="165" ry="70" fill="url(#avSafetyField)" stroke="#38bdf8" stroke-width="1.8" filter="drop-shadow(0 0 16px rgba(56,189,248,0.35))"/>
     <!-- Inner Faint Green Safe-Zone Clearance Ring -->
-    <ellipse cx="140" cy="90" rx="140" ry="54" fill="none" stroke="rgba(52,211,153,0.6)" stroke-width="1.2" stroke-dasharray="4 4"/>
+    <ellipse class="p7-safety-bubble" cx="140" cy="90" rx="140" ry="54" fill="none" stroke="rgba(52,211,153,0.6)" stroke-width="1.2" stroke-dasharray="4 4"/>
   </g>
 </svg>
           </div>
@@ -1936,11 +2231,11 @@
   <!-- Substation 2 (North Hub) -->
   <circle cx="230" cy="85" r="4.5" fill="#64748b"/>
   <!-- Substation 3 (Congested Corridor Entrance) -->
-  <circle cx="230" cy="200" r="7" fill="#f59e0b" filter="drop-shadow(0 0 10px #f59e0b)"/>
-  <circle cx="230" cy="200" r="2.5" fill="#fff"/>
+  <circle class="p8-substation-node" cx="230" cy="200" r="7" fill="#f59e0b" filter="drop-shadow(0 0 10px #f59e0b)"/>
+  <circle class="p8-substation-node" cx="230" cy="200" r="2.5" fill="#fff"/>
   <!-- Substation 4 (Congested Corridor Exit) -->
-  <circle cx="390" cy="200" r="7" fill="#f59e0b" filter="drop-shadow(0 0 10px #f59e0b)"/>
-  <circle cx="390" cy="200" r="2.5" fill="#fff"/>
+  <circle class="p8-substation-node" style="animation-delay: -1.5s;" cx="390" cy="200" r="7" fill="#f59e0b" filter="drop-shadow(0 0 10px #f59e0b)"/>
+  <circle class="p8-substation-node" style="animation-delay: -1.5s;" cx="390" cy="200" r="2.5" fill="#fff"/>
   <!-- Substation 5 (East Grid) -->
   <circle cx="430" cy="105" r="4.5" fill="#64748b"/>
   <!-- Substation 6 (South-West) -->
@@ -1961,11 +2256,11 @@
     <line x1="500" y1="245" x2="430" y2="105" stroke="url(#coolConductor)" stroke-width="2" opacity="0.8"/>
 
     <!-- THE CONGESTED CORRIDOR (Warm Amber-Orange Overload Highlight) -->
-    <line x1="230" y1="200" x2="390" y2="200" stroke="#f97316" stroke-width="4.5" filter="drop-shadow(0 0 14px #ea580c)"/>
-    <circle cx="310" cy="200" r="32" fill="url(#congestedCorridorGlow)"/>
+    <line class="p8-congested-glow" x1="230" y1="200" x2="390" y2="200" stroke="#f97316" stroke-width="4.5" filter="drop-shadow(0 0 14px #ea580c)"/>
+    <circle class="p8-congested-glow" cx="310" cy="200" r="32" fill="url(#congestedCorridorGlow)"/>
 
     <!-- Subtle Dynamic Energy-Flow Redirection Wave (Bypass Arc) -->
-    <path d="M 230 200 Q 310 145 390 200" stroke="#34d399" stroke-width="2" stroke-dasharray="4 3" fill="none" filter="drop-shadow(0 0 8px #34d399)"/>
+    <path class="p8-bypass-arc" d="M 230 200 Q 310 145 390 200" stroke="#34d399" stroke-width="2" stroke-dasharray="6 4" fill="none" filter="drop-shadow(0 0 8px #34d399)"/>
   </g>
 </svg>
           </div>
@@ -2083,20 +2378,20 @@
     <line x1="48" y1="100" x2="238" y2="220" stroke="rgba(255,255,255,0.22)" stroke-width="1.4"/>
 
     <!-- Subtle Sunlight Energy Flow Waves (Traveling across silicon matrix) -->
-    <g stroke="rgba(251,191,36,0.6)" stroke-width="1.2" stroke-linecap="round">
-      <path d="M 40 130 Q 120 130 190 130" stroke-dasharray="4 3"/>
-      <path d="M 340 130 Q 260 130 190 130" stroke-dasharray="4 3"/>
-      <path d="M 190 40 L 190 130" stroke-dasharray="4 3"/>
-      <path d="M 190 220 L 190 130" stroke-dasharray="4 3"/>
+    <g class="p9-energy-trace" stroke="rgba(251,191,36,0.75)" stroke-width="1.3" stroke-linecap="round">
+      <path d="M 40 130 Q 120 130 190 130" stroke-dasharray="6 4"/>
+      <path d="M 340 130 Q 260 130 190 130" stroke-dasharray="6 4"/>
+      <path d="M 190 40 L 190 130" stroke-dasharray="6 4"/>
+      <path d="M 190 220 L 190 130" stroke-dasharray="6 4"/>
     </g>
 
     <!-- THE MAXIMUM POWER POINT (MPP) PINPOINT RADIANT SPARK -->
-    <circle cx="190" cy="130" r="12" fill="url(#solarMppGlow)"/>
-    <circle cx="190" cy="130" r="4.5" fill="#ffffff" filter="drop-shadow(0 0 8px #ffffff)"/>
+    <circle class="p9-mpp-spark" cx="190" cy="130" r="12" fill="url(#solarMppGlow)"/>
+    <circle class="p9-mpp-spark" cx="190" cy="130" r="4.5" fill="#ffffff" filter="drop-shadow(0 0 8px #ffffff)"/>
   </g>
 
   <!-- Low-Angled Sunlight Anamorphic Flare Skimming Across the Glass Surface -->
-  <line x1="240" y1="50" x2="490" y2="290" stroke="url(#sunbeamSheen)" stroke-width="2.5" opacity="0.75"/>
+  <line class="p9-anamorphic-flare" x1="240" y1="50" x2="490" y2="290" stroke="url(#sunbeamSheen)" stroke-width="2.5" opacity="0.75"/>
 </svg>
           </div>
         </div>
@@ -2852,6 +3147,62 @@
         filterLiquidGlow.style.top = `${y}px`;
       });
     }
+    // 3D Parallax Tilt & Specular Glare Physics Engine for Project Hero Visuals
+    const heroContainers = document.querySelectorAll('.project-hero-container');
+    heroContainers.forEach(container => {
+      // Create glare overlay if not present
+      if (!container.querySelector('.hero-specular-glare')) {
+        const glare = document.createElement('div');
+        glare.className = 'hero-specular-glare';
+        container.appendChild(glare);
+      }
+
+      const svg = container.querySelector('svg');
+      if (svg) svg.classList.add('project-hero-svg');
+
+      let bounds = null;
+
+      function onMouseEnter() {
+        bounds = container.getBoundingClientRect();
+      }
+
+      function onMouseMove(e) {
+        if (!bounds) bounds = container.getBoundingClientRect();
+        const x = e.clientX - bounds.left;
+        const y = e.clientY - bounds.top;
+        const centerX = bounds.width / 2;
+        const centerY = bounds.height / 2;
+        const percentX = (x / bounds.width) * 100;
+        const percentY = (y / bounds.height) * 100;
+
+        container.style.setProperty('--mouse-x', `${percentX}%`);
+        container.style.setProperty('--mouse-y', `${percentY}%`);
+
+        // Subtly rotate card in 3D: max 5.5 degrees for premium, subtle Apple physics
+        const rotateY = ((x - centerX) / centerX) * 5.5;
+        const rotateX = -((y - centerY) / centerY) * 5.5;
+
+        container.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateZ(8px)`;
+        if (svg) {
+          // Subtle multi-layer parallax depth on inner SVG
+          const transX = ((x - centerX) / centerX) * 6;
+          const transY = ((y - centerY) / centerY) * 6;
+          svg.style.transform = `translate3d(${transX.toFixed(2)}px, ${transY.toFixed(2)}px, 12px) scale(1.02)`;
+        }
+      }
+
+      function onMouseLeave() {
+        container.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+        if (svg) {
+          svg.style.transform = 'translate3d(0px, 0px, 0px) scale(1)';
+        }
+        bounds = null;
+      }
+
+      container.addEventListener('mouseenter', onMouseEnter);
+      container.addEventListener('mousemove', onMouseMove);
+      container.addEventListener('mouseleave', onMouseLeave);
+    });
 </script>
 </body>
 </html>
