@@ -4,8 +4,8 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "cp index.template.html index.html && vite",
-    "build": "cp index.template.html index.html && vite build && cp -r dist/* .",
+    "dev": "vite",
+    "build": "vite build && cp dist/assets/three-bundle.js assets/ && cp dist/assets/main.css assets/",
     "preview": "vite preview"
   },
   "dependencies": {
