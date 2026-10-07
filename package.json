@@ -1,19 +1,33 @@
 {
-  "name": "niranjan-krishnakumar-portfolio",
-  "version": "1.0.0",
-  "description": "Ultra-creative research & systems portfolio for Niranjan Krishnakumar (niranjan-crypt)",
+  "name": "niranjan-portfolio-3d",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
   "scripts": {
-    "start": "npx serve -l 3000 .",
-    "preview": "python3 -m http.server 3000"
+    "dev": "cp index.template.html index.html && vite",
+    "build": "cp index.template.html index.html && vite build && cp -r dist/* .",
+    "preview": "vite preview"
   },
-  "keywords": [
-    "portfolio",
-    "computer-vision",
-    "deep-learning",
-    "cyber-physical-systems",
-    "metaheuristics",
-    "ieee"
-  ],
-  "author": "Niranjan Krishnakumar <niranjankrishnakumar2005@gmail.com>",
-  "license": "MIT"
+  "dependencies": {
+    "@react-three/drei": "^9.114.3",
+    "@react-three/fiber": "^8.17.10",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.11",
+    "lucide-react": "^0.453.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.4",
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.169.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  }
 }
