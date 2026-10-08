@@ -88,8 +88,8 @@
       --glass-fill: rgba(0,0,0,.78);
       --glass-line: rgba(255,255,255,.09);
 
-      --dx: 8.5;    /* hero block optical offset, solved against the reference render */
-      --dy: 13.1;
+      --dx: 0;      /* centered directly over the rotating 3D Earth globe */
+      --dy: 0;
 
       --e-reveal: cubic-bezier(.16, 1, .3, 1);   /* long, graceful settle */
       --e-soft:   cubic-bezier(.25, .8, .3, 1);  /* supporting elements   */
@@ -98,9 +98,14 @@
       :root{ --u: min(calc(100vw / 1280), calc(100vh / 760)); }
     }
 
+    html {
+      scroll-behavior: smooth;
+      background-color: #0b0d14;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
-      background-color: #000000;
+      background-color: #0b0d14;
       color: #d1d1d6;
     }
     h1, h2, h3, h4, .font-heading {
@@ -122,12 +127,13 @@
       transition: width 0.08s ease-out;
     }
 
-    /* Ambient Cinematic Radial Lighting (Extremely Subtle) */
+    /* Ambient Cinematic Radial Lighting (20% Reduced Background Black) */
     .bg-ambient-aurora {
       background: 
-        radial-gradient(circle at 20% 15%, rgba(80, 100, 255, 0.07), transparent 45%),
-        radial-gradient(circle at 80% 65%, rgba(0, 200, 180, 0.04), transparent 40%),
-        radial-gradient(circle at 50% 90%, rgba(191, 90, 242, 0.03), transparent 50%);
+        radial-gradient(circle at 20% 15%, rgba(99, 102, 241, 0.08), transparent 45%),
+        radial-gradient(circle at 80% 65%, rgba(14, 165, 233, 0.06), transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(168, 85, 247, 0.05), transparent 50%),
+        #0b0d14;
     }
 
     /* Titanium Metallic Shimmer Gradient */
@@ -148,11 +154,12 @@
       color: #ffffff;
     }
 
-    /* Smooth Scroll Reveal */
+    /* Smooth Fluid Section Entrance Physics */
     .reveal {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(32px);
+      transition: opacity 1.15s cubic-bezier(0.16, 1, 0.3, 1), transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
     }
     .reveal.visible {
       opacity: 1;
@@ -756,7 +763,7 @@
       width: 100vw;
       height: 100dvh;
       overflow: hidden;
-      background: #000000;
+      background: #0b0d14;
       font-family: 'PJS', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -767,48 +774,45 @@
       .hero { height: 100vh; }
     }
 
-    /* 1280:800 bleed box, always covering the viewport */
+    /* Full-bleed realistic globe stage with bottom feathered dissolution */
     .bg {
       position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: max(100vw, calc(100dvh * 1.6));
-      height: max(62.5vw, 100dvh);
-      background-color: #000;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #0b0d14;
       z-index: 1;
+      mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
     }
-    @supports not (height: 100dvh) {
-      .bg {
-        width: max(100vw, calc(100vh * 1.6));
-        height: max(62.5vw, 100vh);
-      }
-    }
+
     .bg-video {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 51% 8%;      /* framing inherited from the still it replaces */
+      object-position: center center;
       display: block;
-      background-color: #000;
+      background-color: transparent;
       pointer-events: none;
       opacity: 0;
       transition: opacity .9s linear;
+      filter: brightness(1.15) contrast(1.08) saturate(1.1);
     }
     .bg-video.is-active {
       opacity: 1;
     }
 
-    /* Cinematic Gradual Vignette Transition to Subsequent Sections */
+    /* Gentle optical gradient protecting text readability while leaving stars & globe radiant */
     .hero-vignette-overlay {
       position: absolute;
       inset: 0;
       pointer-events: none;
       z-index: 2;
-      background: radial-gradient(circle at 50% 45%, transparent 35%, rgba(0, 0, 0, 0.4) 75%, rgba(0, 0, 0, 0.85) 100%),
-                  linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, transparent 18%, transparent 60%, rgba(0, 0, 0, 0.6) 80%, #000000 100%);
+      background: radial-gradient(circle at 50% 50%, rgba(11, 13, 20, 0.12) 0%, rgba(11, 13, 20, 0.35) 65%, rgba(11, 13, 20, 0.72) 100%),
+                  linear-gradient(to bottom, transparent 60%, rgba(11, 13, 20, 0.5) 85%, #0b0d14 100%);
     }
 
     /* NAV (desktop) */
@@ -1021,20 +1025,22 @@
     .ln-i { display: block; }
     .hero-inner h1 {
       margin: 0;
-      font-weight: 500;
+      font-weight: 600;
       font-size: calc(89 * var(--u));
       line-height: calc(90 * var(--u));
       letter-spacing: calc(-1 * var(--u));
       color: var(--ink);
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.75);
     }
 
     .hero-inner .sub {
       margin: calc(16.1 * var(--u)) 0 0;
-      font-weight: 300;
+      font-weight: 350;
       font-size: calc(17.4 * var(--u));
       line-height: calc(27 * var(--u));
       letter-spacing: calc(-0.30 * var(--u));
       color: #f6f6f6;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
     }
 
     .ctas {
@@ -1437,7 +1443,7 @@
     })();
   </script>
 </head>
-<body class="bg-black text-[#d1d1d6] min-h-screen antialiased selection:bg-white/20 selection:text-white relative overflow-x-hidden bg-ambient-aurora">
+<body class="bg-[#0b0d14] text-[#d1d1d6] min-h-screen antialiased selection:bg-white/20 selection:text-white relative overflow-x-hidden bg-ambient-aurora">
 
 
   <!-- Top Scroll Progress Line -->
@@ -1562,7 +1568,7 @@
   <!-- ===================================================================== -->
   <!-- INTRO & EDITORIAL PHILOSOPHY (APPLE TYPOGRAPHY INTERLUDE)             -->
   <!-- ===================================================================== -->
-  <section id="about" class="py-20 sm:py-28 px-6 md:px-12 max-w-5xl mx-auto border-t border-white/[0.06] reveal">
+  <section id="about" class="py-28 sm:py-36 px-6 md:px-12 max-w-5xl mx-auto relative reveal">
     
     <div class="mb-12">
       <span class="text-xs font-mono uppercase tracking-widest text-sky-400 block mb-4">About Me</span>
@@ -1621,7 +1627,7 @@
   <!-- ===================================================================== -->
   <!-- SELECTED WORK (ALTERNATING CINEMATIC PRODUCT SHOWCASE — ALL 9)        -->
   <!-- ===================================================================== -->
-  <section id="projects" class="py-20 sm:py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/[0.06] reveal">
+  <section id="projects" class="py-24 sm:py-32 px-6 md:px-12 max-w-7xl mx-auto relative reveal">
     
     <!-- Creative System Architecture Deck Header -->
     <div class="mb-14 pb-8 border-b border-white/[0.08]">
@@ -2764,7 +2770,7 @@
   <!-- ===================================================================== -->
   <!-- PEER-REVIEWED PUBLICATIONS (ACADEMIC EDITORIAL LAYOUT)                -->
   <!-- ===================================================================== -->
-  <section id="publications" class="py-16 sm:py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
+  <section id="publications" class="py-20 sm:py-28 px-6 md:px-12 max-w-6xl mx-auto relative reveal">
     
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16">
       <div>
@@ -2845,7 +2851,7 @@
   <!-- ===================================================================== -->
   <!-- INDUSTRY EXPERIENCE & TIMELINE (L&T, AWS, EDUCATION)                  -->
   <!-- ===================================================================== -->
-  <section id="experience" class="py-16 sm:py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
+  <section id="experience" class="py-20 sm:py-28 px-6 md:px-12 max-w-6xl mx-auto relative reveal">
     
     <div class="mb-16">
       <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 block mb-2">Professional Path</span>
@@ -2913,7 +2919,7 @@
   <!-- ===================================================================== -->
   <!-- TECHNICAL CAPABILITIES & SKILLS (4 EDITORIAL QUADRANTS)              -->
   <!-- ===================================================================== -->
-  <section id="skills" class="py-16 sm:py-24 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
+  <section id="skills" class="py-20 sm:py-28 px-6 md:px-12 max-w-6xl mx-auto relative reveal">
     
     <div class="mb-16">
       <span class="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2">Engineering Toolkit</span>
@@ -2975,7 +2981,7 @@
   <!-- ===================================================================== -->
   <!-- RESUME BANNER                                                         -->
   <!-- ===================================================================== -->
-  <section class="py-16 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/[0.06] reveal">
+  <section class="py-20 px-6 md:px-12 max-w-6xl mx-auto relative reveal">
     <div class="p-8 sm:p-12 rounded-3xl apple-glass flex flex-col sm:flex-row sm:items-center justify-between gap-6">
       <div>
         <h3 class="font-heading font-extrabold text-2xl text-white">
@@ -3222,14 +3228,44 @@
     }, { passive: true });
 
 
-    // Scroll Reveal Intersection Observer
+    // Smooth Fluid Anchor Scroll Transition (Apple-grade Quintic Deceleration)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#' || targetId === '#!') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const targetY = targetElement.getBoundingClientRect().top + window.pageYOffset - 50;
+          const startY = window.pageYOffset;
+          const distance = targetY - startY;
+          const duration = Math.min(1000, Math.max(600, Math.abs(distance) * 0.45));
+          let startTime = null;
+
+          function stepScroll(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Smooth Quintic ease-out deceleration curve
+            const ease = 1 - Math.pow(1 - progress, 4);
+            window.scrollTo(0, startY + distance * ease);
+            if (progress < 1) {
+              window.requestAnimationFrame(stepScroll);
+            }
+          }
+          window.requestAnimationFrame(stepScroll);
+        }
+      });
+    });
+
+    // Smooth Scroll Reveal Intersection Observer with generous early threshold
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.08 });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
