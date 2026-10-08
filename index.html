@@ -1581,83 +1581,8 @@
           <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-gradient-to-b from-[#090a10] to-[#040407] border border-white/[0.08] shadow-[0_24px_70px_rgba(0,0,0,0.85)] flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10] min-h-[380px] sm:min-h-[440px]">
             <!-- Subtle Ambient Light Reflection -->
             <div class="absolute inset-0 bg-radial from-[#34d399]/[0.07] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
-            <!-- Clean Hero Product Visual -->
-            <svg class="w-full h-full transform transition-transform duration-700 ease-out group-hover:scale-[1.02]" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="p5HandAura" cx="50%" cy="50%" r="65%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.22"/>
-      <stop offset="35%" stop-color="#0284c7" stop-opacity="0.12"/>
-      <stop offset="85%" stop-color="#020617" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="p5HandSkin" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e293b"/>
-      <stop offset="60%" stop-color="#0f172a"/>
-      <stop offset="100%" stop-color="#020617"/>
-    </linearGradient>
-    <linearGradient id="p5SensorRibbon" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#34d399"/>
-      <stop offset="50%" stop-color="#00f0ff"/>
-      <stop offset="100%" stop-color="#3b82f6"/>
-    </linearGradient>
-    <filter id="p5Glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-
-  <rect width="600" height="400" fill="#030509"/>
-  <ellipse cx="300" cy="190" rx="270" ry="190" fill="url(#p5HandAura)"/>
-
-  <!-- 3D Organic Hand Silhouette & Exoskeleton Geometry -->
-  <g transform="translate(40, -10)">
-    <path d="M 120,380 L 160,260 C 160,240 180,230 200,230 L 320,230 C 340,230 360,245 360,270 L 390,380 Z" fill="url(#p5HandSkin)" stroke="#334155" stroke-width="1.8"/>
-    <path d="M 160,260 C 160,210 180,180 220,170 L 340,170 C 370,180 380,210 380,260 Z" fill="url(#p5HandSkin)" stroke="#334155" stroke-width="1.8"/>
-    <path d="M 170,230 C 130,210 110,180 120,150 C 128,125 155,140 175,170 Z" fill="url(#p5HandSkin)" stroke="#475569" stroke-width="1.5"/>
-    <path d="M 220,170 C 215,110 220,70 235,50 C 248,32 265,45 260,80 L 255,170 Z" fill="url(#p5HandSkin)" stroke="#475569" stroke-width="1.5"/>
-    <path d="M 260,170 C 265,100 270,55 285,35 C 298,18 315,30 310,65 L 300,170 Z" fill="url(#p5HandSkin)" stroke="#475569" stroke-width="1.5"/>
-    <path d="M 305,170 C 315,110 325,75 340,60 C 352,45 368,58 360,95 L 345,170 Z" fill="url(#p5HandSkin)" stroke="#475569" stroke-width="1.5"/>
-    <path d="M 350,180 C 365,135 380,105 395,95 C 408,85 420,100 410,130 L 380,200 Z" fill="url(#p5HandSkin)" stroke="#475569" stroke-width="1.5"/>
-
-    <!-- 5 Flexible Polyimide Strain Sensor Ribbons -->
-    <path d="M 200,240 Q 140,200 135,145" stroke="url(#p5SensorRibbon)" stroke-width="3.2" stroke-linecap="round" fill="none" filter="url(#p5Glow)"/>
-    <path d="M 235,240 Q 235,160 245,60" stroke="url(#p5SensorRibbon)" stroke-width="3.2" stroke-linecap="round" fill="none" filter="url(#p5Glow)"/>
-    <path d="M 270,240 Q 275,150 295,45" stroke="url(#p5SensorRibbon)" stroke-width="3.2" stroke-linecap="round" fill="none" filter="url(#p5Glow)"/>
-    <path d="M 305,240 Q 320,155 350,70" stroke="url(#p5SensorRibbon)" stroke-width="3.2" stroke-linecap="round" fill="none" filter="url(#p5Glow)"/>
-    <path d="M 340,240 Q 365,170 400,105" stroke="url(#p5SensorRibbon)" stroke-width="3.2" stroke-linecap="round" fill="none" filter="url(#p5Glow)"/>
-
-    <!-- Kinematic Joint Sensor Nodes -->
-    <circle cx="135" cy="145" r="4.5" fill="#ffffff" filter="url(#p5Glow)"/>
-    <circle cx="245" cy="60" r="4.5" fill="#ffffff" filter="url(#p5Glow)"/>
-    <circle cx="295" cy="45" r="4.5" fill="#ffffff" filter="url(#p5Glow)"/>
-    <circle cx="350" cy="70" r="4.5" fill="#ffffff" filter="url(#p5Glow)"/>
-    <circle cx="400" cy="105" r="4.5" fill="#ffffff" filter="url(#p5Glow)"/>
-
-    <circle cx="240" cy="130" r="3.5" fill="#10b981"/>
-    <circle cx="285" cy="120" r="3.5" fill="#10b981"/>
-    <circle cx="330" cy="130" r="3.5" fill="#10b981"/>
-    <circle cx="375" cy="150" r="3.5" fill="#10b981"/>
-
-    <!-- Wrist Carbon Controller Module (BLE & 9-DOF IMU Unit) -->
-    <rect x="210" y="275" width="105" height="65" rx="14" fill="#090d16" stroke="#10b981" stroke-width="1.8" filter="url(#p5Glow)"/>
-    <circle cx="235" cy="305" r="5" fill="#34d399" filter="url(#p5Glow)"/>
-    <rect x="255" y="295" width="45" height="22" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-
-    <!-- 3D IMU Triad Coordinate Axes (Roll, Pitch, Yaw) -->
-    <g transform="translate(275, 305)">
-      <line x1="0" y1="0" x2="22" y2="0" stroke="#f43f5e" stroke-width="2"/>
-      <line x1="0" y1="0" x2="0" y2="-22" stroke="#10b981" stroke-width="2"/>
-      <line x1="0" y1="0" x2="-14" y2="14" stroke="#00f0ff" stroke-width="2"/>
-    </g>
-
-    <!-- Radiating Bluetooth BLE Wireless Telemetry Waves -->
-    <path d="M 330,290 C 345,295 345,315 330,320" stroke="#38bdf8" stroke-width="1.8" fill="none" opacity="0.8"/>
-    <path d="M 345,280 C 370,290 370,325 345,335" stroke="#38bdf8" stroke-width="1.5" fill="none" opacity="0.6"/>
-    <path d="M 360,270 C 395,285 395,335 360,350" stroke="#38bdf8" stroke-width="1.2" fill="none" opacity="0.4"/>
-  </g>
-</svg>
+            <!-- Real-Time Interactive 3D Cyber-Physical Smart Glove (Three.js / WebGL) -->
+            <div id="three-glove-canvas" class="w-full h-full relative cursor-grab active:cursor-grabbing select-none"></div>
           </div>
         </div>
 
@@ -1716,22 +1641,6 @@
         <!-- Hero Visual Column (~55% on desktop) -->
         <div class="order-2 lg:order-1 lg:col-span-7">
           <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-[#0a0c14]/80 backdrop-blur-2xl border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.85)] flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10] min-h-[380px] sm:min-h-[440px]">
-            <!-- Diagnostic emblem matching Reference Image 4 in top-left -->
-            <div class="absolute top-6 left-6 z-10 pointer-events-none flex items-center justify-center">
-              <div class="w-12 h-12 rounded-full bg-[#f43f5e]/15 border border-[#f43f5e]/40 flex items-center justify-center shadow-[0_0_25px_rgba(244,63,94,0.45)]">
-                <svg class="w-6 h-6 text-[#f43f5e]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="3" fill="#ffffff" />
-                  <circle cx="6" cy="7" r="1.8" fill="#f43f5e" />
-                  <circle cx="18" cy="7" r="1.8" fill="#f43f5e" />
-                  <circle cx="6" cy="17" r="1.8" fill="#f43f5e" />
-                  <circle cx="18" cy="17" r="1.8" fill="#f43f5e" />
-                  <line x1="12" y1="12" x2="6" y2="7" stroke="#f43f5e" stroke-width="1.5" />
-                  <line x1="12" y1="12" x2="18" y2="7" stroke="#f43f5e" stroke-width="1.5" />
-                  <line x1="12" y1="12" x2="6" y2="17" stroke="#f43f5e" stroke-width="1.5" />
-                  <line x1="12" y1="12" x2="18" y2="17" stroke="#f43f5e" stroke-width="1.5" />
-                </svg>
-              </div>
-            </div>
             <!-- Real-Time Interactive 3D Brain (Three.js / WebGL) -->
             <div id="three-brain-canvas" class="w-full h-full relative cursor-grab active:cursor-grabbing select-none"></div>
           </div>

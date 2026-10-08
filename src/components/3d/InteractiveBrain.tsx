@@ -338,11 +338,6 @@ export const InteractiveBrain: React.FC = () => {
           onEnd={() => setIsInteracting(false)}
         />
       </Canvas>
-
-      {/* Subtle Interaction Guide Pill */}
-      <div className="absolute bottom-4 right-4 pointer-events-none text-[10px] font-mono text-[#64748b]/75 tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/50 border border-white/5 backdrop-blur-sm">
-        Click &amp; Drag to Rotate · Scroll to Zoom
-      </div>
     </div>
   );
 };
