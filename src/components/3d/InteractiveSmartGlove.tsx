@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useState, useEffect } from 'react';
+import React, { useRef, useMemo, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
@@ -15,7 +15,7 @@ function createParticleGlowTexture(): THREE.CanvasTexture {
   if (ctx) {
     const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
     gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-    gradient.addColorStop(0.25, 'rgba(56, 189, 248, 0.9)');
+    gradient.addColorStop(0.25, 'rgba(0, 240, 255, 0.9)');
     gradient.addColorStop(0.55, 'rgba(14, 165, 233, 0.35)');
     gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
     ctx.fillStyle = gradient;
@@ -25,17 +25,17 @@ function createParticleGlowTexture(): THREE.CanvasTexture {
 }
 
 // ---------------------------------------------------------------------------
-// 2. Ambient Floating Telemetry Particles (Image 2 Stardust Field)
+// 2. Ambient Floating Telemetry Particles (Unified Neon Cyan & Dark)
 // ---------------------------------------------------------------------------
 const AmbientTelemetryParticles: React.FC = () => {
   const pointsRef = useRef<THREE.Points>(null);
-  const count = 95;
+  const count = 90;
 
   const [geom, tex] = useMemo(() => {
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
-    const cyan = new THREE.Color('#38bdf8');
-    const silver = new THREE.Color('#e0f2fe');
+    const cyan = new THREE.Color('#00f0ff');
+    const deepCyan = new THREE.Color('#38bdf8');
 
     for (let i = 0; i < count; i++) {
       const radius = 0.55 + Math.random() * 1.5;
@@ -48,7 +48,7 @@ const AmbientTelemetryParticles: React.FC = () => {
       positions[i * 3 + 1] = y;
       positions[i * 3 + 2] = z;
 
-      const c = Math.random() < 0.75 ? cyan : silver;
+      const c = Math.random() < 0.65 ? cyan : deepCyan;
       colors[i * 3] = c.r;
       colors[i * 3 + 1] = c.g;
       colors[i * 3 + 2] = c.b;
@@ -89,7 +89,7 @@ const AmbientTelemetryParticles: React.FC = () => {
 };
 
 // ---------------------------------------------------------------------------
-// 3. Cybernetic Forearm Geometry Generator (No Pedestal / Matches Image 2)
+// 3. Cybernetic Forearm Geometry Generator (Preserves Exact 3D Structure)
 // ---------------------------------------------------------------------------
 function createCyberForearmGeometry() {
   const slices = 20;
@@ -98,7 +98,6 @@ function createCyberForearmGeometry() {
   const uvs: number[] = [];
   const indices: number[] = [];
 
-  // Forearm seamlessly meets wrist opening at y = -0.74 and exits past bottom at y = -1.60
   const topY = -0.74;
   const bottomY = -1.60;
   const totalH = topY - bottomY;
@@ -107,10 +106,10 @@ function createCyberForearmGeometry() {
   const cz = 0.272;
 
   for (let i = 0; i <= slices; i++) {
-    const v = i / slices; // 0 = bottom, 1 = top
+    const v = i / slices;
     const y = bottomY + v * totalH;
 
-    const t = 1 - v; // 0 at wrist, 1 at bottom
+    const t = 1 - v;
     const halfWidth = 0.255 + t * 0.07;
     const halfDepth = 0.095 + t * 0.025;
 
@@ -145,22 +144,22 @@ function createCyberForearmGeometry() {
 }
 
 // ---------------------------------------------------------------------------
-// 4. Elongated Cybernetic Forearm Assembly (Matching Image 2 Reference)
+// 4. Elongated Forearm Assembly (Unified Neon Cyan & Dark Palette)
 // ---------------------------------------------------------------------------
 const CyberForearmAssembly: React.FC = () => {
   const forearmGeom = useMemo(() => createCyberForearmGeometry(), []);
 
   return (
     <group>
-      {/* Transparent Glass Forearm Casing */}
+      {/* Translucent Dark Smoked Glass Forearm Casing */}
       <mesh geometry={forearmGeom}>
         <meshPhysicalMaterial
-          color="#bce5fb"
+          color="#061626"
           transparent
           opacity={0.34}
-          roughness={0.06}
+          roughness={0.08}
           metalness={0.16}
-          transmission={0.86}
+          transmission={0.85}
           thickness={0.8}
           ior={1.48}
           clearcoat={1.0}
@@ -168,67 +167,67 @@ const CyberForearmAssembly: React.FC = () => {
         />
       </mesh>
 
-      {/* Subtle Cyan Wireframe Contour Lattice */}
+      {/* Luminous Electric Cyan Wireframe Contour Lattice */}
       <mesh geometry={forearmGeom}>
         <meshBasicMaterial
-          color="#38bdf8"
+          color="#00f0ff"
           wireframe
           transparent
-          opacity={0.30}
+          opacity={0.36}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
         />
       </mesh>
 
-      {/* Dual Internal Structural Columns: Radius & Ulna Titanium Shafts */}
+      {/* Dual Internal Structural Columns: Radius & Ulna Dark Titanium Shafts */}
       <mesh position={[-0.18, -1.18, 0.27]}>
         <cylinderGeometry args={[0.042, 0.048, 0.82, 16]} />
-        <meshStandardMaterial color="#0f172a" roughness={0.3} metalness={0.92} />
+        <meshStandardMaterial color="#08101a" roughness={0.3} metalness={0.94} />
       </mesh>
       <mesh position={[0.01, -1.18, 0.27]}>
         <cylinderGeometry args={[0.042, 0.048, 0.82, 16]} />
-        <meshStandardMaterial color="#0f172a" roughness={0.3} metalness={0.92} />
+        <meshStandardMaterial color="#08101a" roughness={0.3} metalness={0.94} />
       </mesh>
 
-      {/* Internal Central Luminous Telemetry Conduit */}
+      {/* Internal Central Luminous Cyan Telemetry Conduit */}
       <mesh position={[-0.086, -1.18, 0.31]}>
         <cylinderGeometry args={[0.012, 0.012, 0.84, 10]} />
         <meshStandardMaterial
-          color="#0284c7"
+          color="#00f0ff"
           emissive="#00f0ff"
-          emissiveIntensity={1.5}
+          emissiveIntensity={1.8}
           roughness={0.2}
         />
       </mesh>
 
-      {/* High-Tech Microchip Package at Wrist Crease (Matches Image 2) */}
+      {/* Cybernetic Microchip Package at Wrist Crease (Unified Neon Cyan & Dark) */}
       <group position={[-0.086, -0.88, 0.36]} rotation={[0.08, 0, 0]}>
         {/* Dark Ceramic Microchip Carrier */}
         <mesh>
           <boxGeometry args={[0.11, 0.11, 0.024]} />
-          <meshStandardMaterial color="#0f172a" roughness={0.25} metalness={0.88} />
+          <meshStandardMaterial color="#08101a" roughness={0.25} metalness={0.92} />
         </mesh>
-        {/* Golden Silicon Core Die */}
+        {/* Glowing Neon Cyan Silicon Core Die */}
         <mesh position={[0, 0, 0.014]}>
           <boxGeometry args={[0.07, 0.07, 0.008]} />
           <meshStandardMaterial
-            color="#fbbf24"
-            emissive="#38bdf8"
-            emissiveIntensity={0.9}
+            color="#00f0ff"
+            emissive="#00f0ff"
+            emissiveIntensity={1.6}
             roughness={0.2}
             metalness={0.92}
           />
         </mesh>
       </group>
 
-      {/* Luminous Cyan Wrist Articulation Rings */}
+      {/* Luminous Neon Cyan Wrist Articulation Rings */}
       {[-0.75, -0.85].map((wy, idx) => (
         <mesh key={idx} position={[-0.086, wy, 0.272]} rotation={[Math.PI * 0.5, 0, 0]}>
           <torusGeometry args={[0.22 - idx * 0.01, 0.007, 10, 28]} />
           <meshStandardMaterial
-            color="#0284c7"
+            color="#00f0ff"
             emissive="#00f0ff"
-            emissiveIntensity={1.4}
+            emissiveIntensity={1.8}
             roughness={0.2}
           />
         </mesh>
@@ -238,55 +237,31 @@ const CyberForearmAssembly: React.FC = () => {
 };
 
 // ---------------------------------------------------------------------------
-// 5. Internal Palmar Biomechanical Architecture & Circuitry (Image 2)
+// 5. Clean, Minimal Palmar Wiring (Few Wirings / Unified Neon Cyan & Dark)
 // ---------------------------------------------------------------------------
-const InternalPalmarArchitecture: React.FC = () => {
+const CleanPalmarArchitecture: React.FC = () => {
   const ppgPulseRef = useRef<THREE.MeshStandardMaterial>(null);
 
-  // Palmar Circuit Paths
-  const palmCircuitCurves = useMemo(() => {
+  // Minimal, elegant wiring paths (only 3 clean primary channels)
+  const cleanCircuitCurves = useMemo(() => {
     return [
       // Wrist to Thumb Base
       new THREE.CatmullRomCurve3([
         new THREE.Vector3(-0.05, -0.70, 0.28),
-        new THREE.Vector3(0.08, -0.50, 0.30),
-        new THREE.Vector3(0.24, -0.32, 0.28),
-        new THREE.Vector3(0.32, -0.15, 0.24),
+        new THREE.Vector3(0.10, -0.45, 0.30),
+        new THREE.Vector3(0.28, -0.20, 0.26),
       ]),
-      // Wrist to Index Base
-      new THREE.CatmullRomCurve3([
-        new THREE.Vector3(-0.06, -0.70, 0.28),
-        new THREE.Vector3(0.02, -0.45, 0.29),
-        new THREE.Vector3(0.12, -0.20, 0.27),
-        new THREE.Vector3(0.18, 0.12, 0.24),
-      ]),
-      // Wrist to Middle Base
+      // Wrist to Middle Base (Central Line)
       new THREE.CatmullRomCurve3([
         new THREE.Vector3(-0.08, -0.70, 0.28),
-        new THREE.Vector3(-0.06, -0.40, 0.29),
-        new THREE.Vector3(-0.04, -0.10, 0.28),
-        new THREE.Vector3(-0.02, 0.22, 0.25),
-      ]),
-      // Wrist to Ring Base
-      new THREE.CatmullRomCurve3([
-        new THREE.Vector3(-0.10, -0.70, 0.28),
-        new THREE.Vector3(-0.14, -0.42, 0.28),
-        new THREE.Vector3(-0.18, -0.15, 0.26),
-        new THREE.Vector3(-0.20, 0.16, 0.22),
+        new THREE.Vector3(-0.06, -0.35, 0.29),
+        new THREE.Vector3(-0.03, 0.15, 0.26),
       ]),
       // Wrist to Pinky Base
       new THREE.CatmullRomCurve3([
         new THREE.Vector3(-0.12, -0.70, 0.28),
-        new THREE.Vector3(-0.22, -0.48, 0.27),
-        new THREE.Vector3(-0.30, -0.22, 0.24),
-        new THREE.Vector3(-0.34, 0.05, 0.18),
-      ]),
-      // Transverse Palmar Arch Circuit
-      new THREE.CatmullRomCurve3([
-        new THREE.Vector3(-0.28, -0.05, 0.22),
-        new THREE.Vector3(-0.10, -0.12, 0.28),
-        new THREE.Vector3(0.08, -0.08, 0.27),
-        new THREE.Vector3(0.22, -0.16, 0.25),
+        new THREE.Vector3(-0.24, -0.42, 0.27),
+        new THREE.Vector3(-0.32, -0.05, 0.22),
       ]),
     ];
   }, []);
@@ -294,76 +269,73 @@ const InternalPalmarArchitecture: React.FC = () => {
   useFrame((state) => {
     if (ppgPulseRef.current) {
       const pulse = Math.pow(Math.sin(state.clock.elapsedTime * 7.54) * 0.5 + 0.5, 4.0);
-      ppgPulseRef.current.emissiveIntensity = 0.6 + pulse * 2.2;
+      ppgPulseRef.current.emissiveIntensity = 0.8 + pulse * 2.4;
     }
   });
 
   return (
     <group>
-      {/* Internal Metallic Metacarpal Guides */}
+      {/* Internal Dark Titanium Metacarpal Guides */}
       {[
-        { x: -0.26, rotZ: 0.14, len: 0.44 },
-        { x: -0.14, rotZ: 0.05, len: 0.52 },
-        { x: -0.02, rotZ: -0.02, len: 0.56 },
-        { x: 0.10, rotZ: -0.08, len: 0.50 },
+        { x: -0.24, rotZ: 0.12, len: 0.44 },
+        { x: -0.07, rotZ: 0.02, len: 0.54 },
+        { x: 0.10, rotZ: -0.08, len: 0.48 },
       ].map((meta, i) => (
         <mesh key={i} position={[meta.x, -0.24, 0.22]} rotation={[0, 0, meta.rotZ]}>
-          <cylinderGeometry args={[0.018, 0.022, meta.len, 10]} />
-          <meshStandardMaterial color="#0f172a" roughness={0.35} metalness={0.92} />
+          <cylinderGeometry args={[0.016, 0.020, meta.len, 10]} />
+          <meshStandardMaterial color="#08101a" roughness={0.35} metalness={0.94} />
         </mesh>
       ))}
 
-      {/* Luminous Cyan Circuit Tracks */}
-      {palmCircuitCurves.map((curve, idx) => (
+      {/* Sleek Minimal Cyan Telemetry Circuit Tracks (Few Wirings) */}
+      {cleanCircuitCurves.map((curve, idx) => (
         <mesh key={idx}>
-          <tubeGeometry args={[curve, 22, 0.005, 8, false]} />
+          <tubeGeometry args={[curve, 20, 0.005, 8, false]} />
           <meshStandardMaterial
-            color="#0284c7"
+            color="#00f0ff"
             emissive="#00f0ff"
-            emissiveIntensity={1.35}
+            emissiveIntensity={1.6}
             roughness={0.2}
           />
         </mesh>
       ))}
 
-      {/* Palmar Biometric Sensing Nodes */}
+      {/* Minimal Telemetry Node Spheres */}
       {[
-        [-0.08, -0.22, 0.28],   // Center Palm
-        [-0.02, 0.02, 0.27],    // Knuckle Base
-        [0.16, -0.32, 0.27],    // Thenar Node
-        [-0.22, -0.38, 0.25],   // Hypothenar Node
-        [-0.14, -0.06, 0.27],   // Mid-Palmar Transverse Node
+        [-0.06, -0.22, 0.28],   // Center Palm
+        [-0.03, 0.10, 0.27],    // Knuckle
+        [0.18, -0.28, 0.27],    // Thenar
       ].map((pos, idx) => (
         <group key={idx} position={pos as [number, number, number]}>
           <mesh>
             <sphereGeometry args={[0.014, 10, 10]} />
             <meshStandardMaterial
               color="#ffffff"
-              emissive="#38bdf8"
-              emissiveIntensity={2.4}
+              emissive="#00f0ff"
+              emissiveIntensity={2.6}
               roughness={0.1}
             />
           </mesh>
           <mesh rotation={[Math.PI * 0.5, 0, 0]}>
-            <ringGeometry args={[0.020, 0.028, 16]} />
-            <meshBasicMaterial color="#00f0ff" transparent opacity={0.65} side={THREE.DoubleSide} />
+            <ringGeometry args={[0.018, 0.026, 16]} />
+            <meshBasicMaterial color="#00f0ff" transparent opacity={0.7} side={THREE.DoubleSide} />
           </mesh>
         </group>
       ))}
 
-      {/* Optical Pulse Oximeter Biosensor with Real-Time Heartbeat Pulse */}
-      <group position={[0.12, -0.42, 0.28]}>
+      {/* Optical Pulse Biosensor (Unified Neon Cyan & Dark) */}
+      <group position={[0.10, -0.42, 0.28]}>
         <mesh>
-          <boxGeometry args={[0.065, 0.065, 0.020]} />
-          <meshStandardMaterial color="#0f172a" roughness={0.3} metalness={0.88} />
+          <boxGeometry args={[0.06, 0.06, 0.018]} />
+          <meshStandardMaterial color="#08101a" roughness={0.3} metalness={0.90} />
         </mesh>
-        <mesh position={[0, 0, 0.012]}>
-          <circleGeometry args={[0.020, 16]} />
+        <mesh position={[0, 0, 0.011]}>
+          <circleGeometry args={[0.018, 16]} />
           <meshStandardMaterial
             ref={ppgPulseRef}
-            color="#10b981"
-            emissive="#34d399"
-            emissiveIntensity={1.2}
+            color="#00f0ff"
+            emissive="#00f0ff"
+            emissiveIntensity={1.4}
             roughness={0.2}
           />
         </mesh>
@@ -373,7 +345,7 @@ const InternalPalmarArchitecture: React.FC = () => {
 };
 
 // ---------------------------------------------------------------------------
-// 6. Photorealistic Skinned Hand Rig (GLTF + Dual Layer Glass & Wireframe)
+// 6. Photorealistic Skinned Hand Rig (Fingers Bent Forward / All One Color Neon)
 // ---------------------------------------------------------------------------
 interface HandRigProps {
   onActiveChannelChange: (channel: string) => void;
@@ -401,33 +373,33 @@ const CyberneticHandRig: React.FC<HandRigProps> = ({ onActiveChannelChange, isIn
 
     const targetMesh = mesh as THREE.SkinnedMesh;
 
-    // 1. Crystal Smoked Cyan Glass Physical Material (Matching Image 2 Reference)
+    // 1. Unified Translucent Dark Smoked Cyan Glass Shell
     const glassMaterial = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color('#bce5fb'),
-      transmission: 0.88,
+      color: new THREE.Color('#061626'),
+      transmission: 0.85,
       opacity: 0.98,
       transparent: true,
-      roughness: 0.06,
-      metalness: 0.15,
+      roughness: 0.08,
+      metalness: 0.16,
       ior: 1.48,
       thickness: 0.85,
       specularIntensity: 2.0,
       specularColor: new THREE.Color('#ffffff'),
       clearcoat: 1.0,
       clearcoatRoughness: 0.05,
-      attenuationColor: new THREE.Color('#38bdf8'),
+      attenuationColor: new THREE.Color('#00f0ff'),
       attenuationDistance: 0.55,
       depthWrite: false,
       side: THREE.FrontSide,
     });
     targetMesh.material = glassMaterial;
 
-    // 2. Luminous Cyan Cybernetic Wireframe Lattice (Second SkinnedMesh Layer)
+    // 2. Luminous Neon Cyan Wireframe Lattice Overlay
     const wireMaterial = new THREE.MeshBasicMaterial({
-      color: '#38bdf8',
+      color: '#00f0ff',
       wireframe: true,
       transparent: true,
-      opacity: 0.32,
+      opacity: 0.42,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     });
@@ -459,7 +431,7 @@ const CyberneticHandRig: React.FC<HandRigProps> = ({ onActiveChannelChange, isIn
 
     cloneScene.updateMatrixWorld(true);
 
-    // 4. Attach Glowing Sensor Node Diodes & Toroidal Flex Sensor Rings to Each Joint Bone
+    // 4. Attach Glowing Neon Cyan Sensor Nodes & Toroidal Flex Rings
     const nodes: THREE.MeshStandardMaterial[] = [];
     const jointDotGeom = new THREE.SphereGeometry(0.0032, 8, 8);
     const jointRingGeom = new THREE.TorusGeometry(0.0075, 0.0014, 8, 20);
@@ -470,15 +442,15 @@ const CyberneticHandRig: React.FC<HandRigProps> = ({ onActiveChannelChange, isIn
         if (bone) {
           const dotMat = new THREE.MeshStandardMaterial({
             color: '#ffffff',
-            emissive: '#38bdf8',
-            emissiveIntensity: 2.2,
+            emissive: '#00f0ff',
+            emissiveIntensity: 2.4,
             roughness: 0.1,
           });
           nodes.push(dotMat);
           const dot = new THREE.Mesh(jointDotGeom, dotMat);
           bone.add(dot);
 
-          // Glowing Toroidal Flex Sensor Ring at joint
+          // Glowing Neon Cyan Toroidal Sensor Ring at joint
           const ring = new THREE.Mesh(jointRingGeom, dotMat);
           ring.rotation.x = Math.PI * 0.5;
           bone.add(ring);
@@ -514,7 +486,7 @@ const CyberneticHandRig: React.FC<HandRigProps> = ({ onActiveChannelChange, isIn
     return p < 0.5 ? smooth(p * 2) : smooth((1 - p) * 2);
   };
 
-  // Main Kinematic Articulation Frame Loop
+  // Main Kinematic Articulation Frame Loop (Fingers Bent FORWARD into the palm)
   useFrame((state) => {
     const elapsed = state.clock.elapsedTime;
     const cycleDur = 14.0;
@@ -525,7 +497,7 @@ const CyberneticHandRig: React.FC<HandRigProps> = ({ onActiveChannelChange, isIn
     let middleFlex = 0;
     let ringFlex = 0;
     let pinkyFlex = 0;
-    let activeChannel = 'CALIBRATING SENSORS';
+    let activeChannel = 'STANDBY';
 
     if (t < 2.2) {
       thumbFlex = getFingerBell(t, 0.1, 2.0);
@@ -556,55 +528,60 @@ const CyberneticHandRig: React.FC<HandRigProps> = ({ onActiveChannelChange, isIn
 
     const flexValues = [thumbFlex, indexFlex, middleFlex, ringFlex, pinkyFlex];
 
-    // Apply Articulation to Bones
+    // Natural forward relaxed curve base + active forward curl
+    // Negative angle around X bends the finger FORWARD into the palm
     fingerChains.forEach((chain, fIdx) => {
       const flex = flexValues[fIdx];
+
       if (fIdx === 0) {
-        // Opposable Thumb
+        // Opposable Thumb: bends forward and inward into palm
+        const totalFlex = 0.10 + flex * 0.52;
         const meta = clonedScene.getObjectByName(chain[0]);
         const prox = clonedScene.getObjectByName(chain[1]);
         const dist = clonedScene.getObjectByName(chain[2]);
 
         if (meta) {
-          const qX = new THREE.Quaternion().setFromAxisAngle(axisX, flex * 0.22);
-          const qZ = new THREE.Quaternion().setFromAxisAngle(axisZ, flex * 0.18);
+          const qX = new THREE.Quaternion().setFromAxisAngle(axisX, -totalFlex * 0.25);
+          const qZ = new THREE.Quaternion().setFromAxisAngle(axisZ, -totalFlex * 0.20);
           meta.quaternion.copy(restQuats.get(meta.name)!).multiply(qX).multiply(qZ);
         }
         if (prox) {
-          const qX = new THREE.Quaternion().setFromAxisAngle(axisX, flex * 0.42);
-          const qZ = new THREE.Quaternion().setFromAxisAngle(axisZ, flex * 0.18);
+          const qX = new THREE.Quaternion().setFromAxisAngle(axisX, -totalFlex * 0.45);
+          const qZ = new THREE.Quaternion().setFromAxisAngle(axisZ, -totalFlex * 0.20);
           prox.quaternion.copy(restQuats.get(prox.name)!).multiply(qX).multiply(qZ);
         }
         if (dist) {
-          const qX = new THREE.Quaternion().setFromAxisAngle(axisX, flex * 0.48);
+          const qX = new THREE.Quaternion().setFromAxisAngle(axisX, -totalFlex * 0.50);
           dist.quaternion.copy(restQuats.get(dist.name)!).multiply(qX);
         }
       } else {
-        // Fingers: Index, Middle, Ring, Pinky
+        // Non-thumb digits: Index, Middle, Ring, Pinky
+        // Base forward relaxed curve of 0.16 + active forward curl
+        const totalFlex = 0.16 + flex * 0.62;
         const prox = clonedScene.getObjectByName(chain[1]);
         const inter = clonedScene.getObjectByName(chain[2]);
         const dist = clonedScene.getObjectByName(chain[3]);
 
         if (prox) {
-          const qX = new THREE.Quaternion().setFromAxisAngle(axisX, flex * 0.48);
+          const qX = new THREE.Quaternion().setFromAxisAngle(axisX, -totalFlex * 0.48);
           prox.quaternion.copy(restQuats.get(prox.name)!).multiply(qX);
         }
         if (inter) {
-          const qX = new THREE.Quaternion().setFromAxisAngle(axisX, flex * 0.74);
+          const qX = new THREE.Quaternion().setFromAxisAngle(axisX, -totalFlex * 0.72);
           inter.quaternion.copy(restQuats.get(inter.name)!).multiply(qX);
         }
         if (dist) {
-          const qX = new THREE.Quaternion().setFromAxisAngle(axisX, flex * 0.44);
+          const qX = new THREE.Quaternion().setFromAxisAngle(axisX, -totalFlex * 0.44);
           dist.quaternion.copy(restQuats.get(dist.name)!).multiply(qX);
         }
       }
     });
 
-    // Update joint diode glow intensity
+    // Pulse sensor diode glow intensity
     jointNodes.forEach((mat, idx) => {
       const fIdx = Math.floor(idx / 3);
       const flex = flexValues[Math.min(fIdx, 4)];
-      mat.emissiveIntensity = 2.0 + flex * 2.8;
+      mat.emissiveIntensity = 2.2 + flex * 2.8;
     });
 
     clonedScene.updateMatrixWorld(true);
@@ -622,19 +599,18 @@ const CyberneticHandRig: React.FC<HandRigProps> = ({ onActiveChannelChange, isIn
     <group ref={rootRef} position={[0.0, -0.22, 0.0]}>
       {/* 
         The GLTF hand model is scaled by 9.5 and rotated [0, -Math.PI / 2, Math.PI].
-        This ensures:
-        - Fingers point straight UP (+Y)
-        - Wrist points straight DOWN (-Y)
-        - Thumb points to the RIGHT (+X) matching Image 2
-        - Pinky points to the LEFT (-X) matching Image 2
-        - Palm faces FORWARD (+Z) towards the viewer
+        - Fingers point UP (+Y)
+        - Wrist points DOWN (-Y)
+        - Thumb points to the RIGHT (+X)
+        - Pinky points to the LEFT (-X)
+        - Palm faces FORWARD (+Z)
       */}
       <group scale={[9.5, 9.5, 9.5]} rotation={[0, -Math.PI / 2, Math.PI]}>
         <primitive object={clonedScene} />
       </group>
 
-      {/* Internal Palmar Biomechanical Architecture & Circuit Tracks */}
-      <InternalPalmarArchitecture />
+      {/* Clean Minimal Palmar Architecture (Few Wirings / Unified Neon Cyan) */}
+      <CleanPalmarArchitecture />
 
       {/* Elongated Transparent Cybernetic Forearm Assembly (No Pedestal) */}
       <CyberForearmAssembly />
@@ -650,17 +626,17 @@ const CyberneticHandRig: React.FC<HandRigProps> = ({ onActiveChannelChange, isIn
 // ---------------------------------------------------------------------------
 export const InteractiveSmartGlove: React.FC = () => {
   const [isInteracting, setIsInteracting] = useState(false);
-  const [activeChannel, setActiveChannel] = useState('CALIBRATING SENSORS');
+  const [activeChannel, setActiveChannel] = useState('STANDBY');
   const controlsRef = useRef<any>(null);
 
   return (
     <div className="w-full h-full relative cursor-grab active:cursor-grabbing select-none overflow-hidden">
       {/* Subtle Background Radial Ambient Glow */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_45%,rgba(56,189,248,0.14)_0%,rgba(16,185,129,0.05)_45%,transparent_75%)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_45%,rgba(0,240,255,0.14)_0%,rgba(6,22,38,0.06)_45%,transparent_75%)]" />
 
       {/* Real-Time Telemetry HUD Indicator */}
       <div className="absolute top-4 left-4 z-20 pointer-events-none flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/[0.08]">
-        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#38bdf8]" />
+        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#00f0ff]" />
         <span className="font-mono text-[11px] font-medium tracking-wider text-cyan-300">
           {activeChannel}
         </span>
@@ -678,19 +654,19 @@ export const InteractiveSmartGlove: React.FC = () => {
         className="w-full h-full block"
       >
         {/* Deep Cybernetic Ambient Illumination */}
-        <ambientLight intensity={0.7} color="#07101e" />
+        <ambientLight intensity={0.7} color="#040d18" />
 
-        {/* Key Light (Crisp White Specular Glass Edge Highlights matching Image 2) */}
+        {/* Key Light (Crisp White Specular Glass Edge Highlights) */}
         <directionalLight position={[3.5, 4.0, 3.5]} intensity={3.2} color="#ffffff" />
 
-        {/* Cyan Cybernetic Rim Light (Intense Silhouette Contour Glow) */}
-        <directionalLight position={[-3.5, 2.5, -2.5]} intensity={2.8} color="#38bdf8" />
+        {/* Neon Cyan Cybernetic Rim Light */}
+        <directionalLight position={[-3.5, 2.5, -2.5]} intensity={2.8} color="#00f0ff" />
 
         {/* Backlight (Internal Glass Refraction Glow) */}
         <directionalLight position={[0.0, 2.0, -3.5]} intensity={2.0} color="#0284c7" />
 
         {/* Internal Forearm Point Light */}
-        <pointLight position={[-0.08, -0.85, 0.5]} intensity={1.5} color="#38bdf8" distance={4.5} />
+        <pointLight position={[-0.08, -0.85, 0.5]} intensity={1.6} color="#00f0ff" distance={4.5} />
 
         {/* Skinned Cybernetic Hand Rig */}
         <CyberneticHandRig

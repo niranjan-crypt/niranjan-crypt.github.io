@@ -642,22 +642,18 @@
       handRoot.add(ring);
     });
 
-    // C. Curved Spline Telemetry Tracks along Metacarpal Channels
+    // C. Sleek Telemetry Tracks along Metacarpal Channels (Few Wirings / Clean Aesthetic)
     const splinePaths = [
       // Wrist to Thumb
-      [new THREE.Vector3(0.04, -0.42, 0.08), new THREE.Vector3(0.16, -0.22, 0.09), new THREE.Vector3(0.28, -0.06, 0.07), new THREE.Vector3(0.33, 0.02, 0.05)],
-      // Wrist to Index
-      [new THREE.Vector3(0.02, -0.42, 0.08), new THREE.Vector3(0.10, -0.10, 0.09), new THREE.Vector3(0.18, 0.22, 0.07), new THREE.Vector3(0.24, 0.49, 0.04)],
-      // Wrist to Middle
-      [new THREE.Vector3(0.0, -0.42, 0.08), new THREE.Vector3(0.02, -0.05, 0.09), new THREE.Vector3(0.05, 0.28, 0.08), new THREE.Vector3(0.07, 0.55, 0.05)],
-      // Wrist to Ring
-      [new THREE.Vector3(-0.02, -0.42, 0.08), new THREE.Vector3(-0.05, -0.10, 0.08), new THREE.Vector3(-0.08, 0.22, 0.06), new THREE.Vector3(-0.10, 0.50, 0.04)],
+      [new THREE.Vector3(0.04, -0.42, 0.08), new THREE.Vector3(0.16, -0.20, 0.09), new THREE.Vector3(0.28, -0.04, 0.06)],
+      // Wrist to Middle (Central Line)
+      [new THREE.Vector3(0.0, -0.42, 0.08), new THREE.Vector3(0.02, -0.05, 0.09), new THREE.Vector3(0.06, 0.45, 0.05)],
       // Wrist to Pinky
-      [new THREE.Vector3(-0.04, -0.42, 0.08), new THREE.Vector3(-0.14, -0.22, 0.07), new THREE.Vector3(-0.22, 0.10, 0.05), new THREE.Vector3(-0.27, 0.40, 0.02)]
+      [new THREE.Vector3(-0.04, -0.42, 0.08), new THREE.Vector3(-0.16, -0.20, 0.07), new THREE.Vector3(-0.25, 0.30, 0.03)]
     ];
 
     const sensorLineMaterial = new THREE.LineBasicMaterial({
-      color: tealNeonColor,
+      color: cyanNeonColor,
       transparent: true,
       opacity: 0.90
     });
@@ -670,21 +666,19 @@
       handRoot.add(line);
     });
 
-    // Bright White Telemetry Node Spheres
+    // Clean Neon Cyan Telemetry Node Spheres
     const nodeGeo = new THREE.SphereGeometry(0.018, 12, 12);
     const nodeMat = new THREE.MeshStandardMaterial({
       color: 0xffffff,
-      emissive: 0x38bdf8,
+      emissive: 0x00f0ff,
       emissiveIntensity: 2.8,
       roughness: 0.1
     });
 
     [
       [0.02, 0.08, 0.09],
-      [0.08, 0.38, 0.09],
-      [0.22, -0.04, 0.08],
-      [-0.15, -0.14, 0.08],
-      [-0.06, 0.22, 0.09]
+      [0.06, 0.40, 0.08],
+      [-0.15, -0.14, 0.08]
     ].forEach(p => {
       const node = new THREE.Mesh(nodeGeo, nodeMat);
       node.position.set(...p);
@@ -920,18 +914,20 @@
 
       const flexes = [thumb, index, middle, ring, pinky];
 
-      // Articulate Fingers
+      // Articulate Fingers Forward (Natural Relaxed Forward Curve + Active Forward Flexion)
       fingerJointGroups.forEach(f => {
         const amt = flexes[f.id];
         if (f.isThumb) {
-          f.mcp.rotation.x = -amt * 0.42;
-          f.mcp.rotation.z = -amt * 0.34;
-          f.pip.rotation.x = -amt * 0.60;
-          f.dip.rotation.x = -amt * 0.48;
+          const totalAmt = 0.10 + amt * 0.50;
+          f.mcp.rotation.x = -totalAmt * 0.38;
+          f.mcp.rotation.z = -totalAmt * 0.26;
+          f.pip.rotation.x = -totalAmt * 0.55;
+          f.dip.rotation.x = -totalAmt * 0.45;
         } else {
-          f.mcp.rotation.x = -amt * 0.52;
-          f.pip.rotation.x = -amt * 0.78;
-          f.dip.rotation.x = -amt * 0.46;
+          const totalAmt = 0.16 + amt * 0.62;
+          f.mcp.rotation.x = -totalAmt * 0.48;
+          f.pip.rotation.x = -totalAmt * 0.72;
+          f.dip.rotation.x = -totalAmt * 0.44;
         }
       });
 
