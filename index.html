@@ -16,9 +16,8 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <link rel="preload" href="./models/face.glb" as="fetch" crossorigin />
-  <link rel="preload" href="./models/brain.glb" as="fetch" crossorigin />
-  <script type="module" crossorigin src="./assets/three-bundle.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main.css" />
+  <script type="module" crossorigin src="./assets/three-bundle.js?v=2.2"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main.css?v=2.2" />
 
   <!-- Immediate Theme Lock -->
   <script>
@@ -2332,9 +2331,18 @@
 
         <!-- Hero Visual Column (~55% on desktop) -->
         <div class="order-2 lg:order-1 lg:col-span-7">
-          <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-[#08080c]/80 backdrop-blur-2xl border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.85)] flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10] min-h-[380px] sm:min-h-[440px]">
-            <!-- Real-Time Interactive 3D Brain (Three.js / WebGL) -->
-            <div id="three-brain-canvas" class="w-full h-full relative cursor-grab active:cursor-grabbing select-none"></div>
+          <div class="project-hero-container w-full rounded-[28px] sm:rounded-[36px] bg-[#000000] border border-white/[0.08] shadow-[0_24px_70px_rgba(0,0,0,0.85)] flex items-center justify-center relative overflow-hidden group aspect-[16/11] sm:aspect-[16/10] min-h-[380px] sm:min-h-[440px]">
+            <!-- Subtle Ambient Light Reflection -->
+            <div class="absolute inset-0 bg-radial from-[#38bdf8]/[0.10] via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-100"></div>
+            <!-- Specular Surface Light Glare -->
+            <div class="hero-specular-glare"></div>
+            <!-- Top HUD Telemetry Indicator -->
+            <div class="absolute top-4 left-4 z-20 pointer-events-none flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#030c16]/80 backdrop-blur-md border border-[#38bdf8]/30 shadow-[0_0_15px_rgba(56,189,248,0.15)]">
+              <span class="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse shadow-[0_0_8px_#38bdf8]"></span>
+              <span class="font-mono text-[11px] font-semibold tracking-wider text-[#38bdf8]">L-TEMPORAL · SYNAPSE FIRING ACTIVE</span>
+            </div>
+            <!-- High-Resolution Cybernetic Neon 3D Brain Image -->
+            <img src="./assets/images/cybernetic-neon-brain.jpg" alt="Cybernetic Neon 3D Brain Digital Twin with Holographic Reticles" class="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-[1.03]" loading="lazy" />
           </div>
         </div>
       </article>
