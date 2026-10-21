@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { InteractiveFace } from './components/3d/InteractiveFace';
 import { InteractiveBrain } from './components/3d/InteractiveBrain';
-import { InteractiveSmartGlove } from './components/3d/InteractiveSmartGlove';
 import './index.css';
 
 function mountScenes() {
@@ -14,17 +13,6 @@ function mountScenes() {
     ReactDOM.createRoot(faceContainer).render(
       <React.StrictMode>
         <InteractiveFace />
-      </React.StrictMode>
-    );
-  }
-
-  // 2. Mount Interactive 3D Smart Glove into Project 05 container if present
-  const gloveContainer = document.getElementById('three-glove-canvas');
-  if (gloveContainer && !gloveContainer.hasAttribute('data-mounted')) {
-    gloveContainer.setAttribute('data-mounted', 'true');
-    ReactDOM.createRoot(gloveContainer).render(
-      <React.StrictMode>
-        <InteractiveSmartGlove />
       </React.StrictMode>
     );
   }
