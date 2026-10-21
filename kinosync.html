@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KinoSync - Cyber-Physical Smart Glove & 3D Digital Twin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #03060a;
+      color: #e2e8f0;
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1320px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 980px) {
+      .container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    /* Left Column Typography */
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .badge-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #4df8cb;
+      background: rgba(16, 40, 36, 0.55);
+      border: 1px solid rgba(77, 248, 203, 0.25);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .badge-pill::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #4df8cb;
+      box-shadow: 0 0 8px #4df8cb;
+    }
+
+    .badge-pill.subtle {
+      color: #94a3b8;
+      background: rgba(15, 23, 42, 0.6);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .badge-pill.subtle::before {
+      display: none;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      margin-bottom: 1.2rem;
+    }
+
+    .tech-specs {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.90rem;
+      color: #94a3b8;
+      margin-bottom: 1.3rem;
+      line-height: 1.6;
+    }
+
+    .telemetry-card {
+      background: rgba(8, 14, 22, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 0.85rem 1.15rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    .dot-pulse {
+      width: 7px;
+      height: 7px;
+      background: #4df8cb;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #4df8cb;
+      animation: pulse 2s infinite ease-in-out;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    .description {
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: #8b9bb4;
+      margin-bottom: 2.2rem;
+      max-width: 540px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #05070a;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: #4df8cb;
+      box-shadow: 0 0 25px rgba(77, 248, 203, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.75);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 0.92rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.25s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* 3D Canvas Viewport Box */
+    .viewport-card {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 11;
+      min-height: 480px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 50%, #06101c 0%, #000000 100%);
+      border: 1px solid rgba(77, 248, 203, 0.22);
+      box-shadow: inset 0 0 90px rgba(0, 180, 255, 0.08), 0 24px 60px rgba(0, 0, 0, 0.88);
+    }
+
+    #webgl-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: grab;
+    }
+
+    #webgl-canvas:active {
+      cursor: grabbing;
+    }
+
+    /* Overlay HUD elements */
+    .viewport-hud-top {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .hud-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: #38efb8;
+      background: rgba(3, 12, 18, 0.82);
+      border: 1px solid rgba(56, 239, 184, 0.32);
+      padding: 0.42rem 0.90rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    }
+
+    .hud-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #38efb8;
+      box-shadow: 0 0 10px #38efb8;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    .viewport-hud-bottom {
+      position: absolute;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 10;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #94a3b8;
+      background: rgba(3, 10, 18, 0.75);
+      padding: 0.38rem 0.85rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      letter-spacing: 0.05em;
+    }
+  </style>
+
+  <!-- Import maps for clean modern Three.js modules -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <main class="container">
+    <!-- Left Hero Info -->
+    <div class="content-col">
+      <div class="badge-row">
+        <span class="badge-pill">05 · Embedded Systems · IoT · Digital Twin</span>
+      </div>
+      <div class="badge-row">
+        <span class="badge-pill subtle">BLE 5.0 Low-Latency Telemetry</span>
+      </div>
+
+      <h1>KinoSync: Cyber–Physical Smart Glove & 3D Digital Twin</h1>
+
+      <p class="tech-specs">
+        ESP32 · 5-Channel Flex Sensors · MPU6050 6-DoF IMU · MAX30102 · BLE 5.0
+      </p>
+
+      <div class="telemetry-card">
+        <span class="dot-pulse"></span>
+        <span>Real-Time 3D Hand Telemetry in WebGL · Bio-Sensing (SpO2 & Heart Rate)</span>
+      </div>
+
+      <p class="description">
+        Cyber-physical wearable glove capturing 14 joint angles via custom resistive flex sensors, hand orientation via 6-DoF IMU, and vital signs via photoplethysmography. Streams low-latency telemetry over BLE 5.0 to a cross-platform 3D digital twin visualization engine.
+      </p>
+
+      <div class="actions">
+        <a href="#demo" class="btn-primary">Explore Project &rarr;</a>
+        <a href="https://github.com/niranjan-crypt/KinoSync-Cyber-Physical-Smart-Glove-Telemetry-3D-Digital-Twin-System" target="_blank" rel="noopener noreferrer" class="btn-secondary">Code Repository &#8599;</a>
+      </div>
+    </div>
+
+    <!-- Right 3D Viewport Box -->
+    <div class="viewport-card">
+      <div class="viewport-hud-top">
+        <span class="hud-tag" id="active-hud-channel">CH 1 · THUMB FLEXION</span>
+      </div>
+
+      <canvas id="webgl-canvas"></canvas>
+
+      <div class="viewport-hud-bottom">
+        360° Drag · Scroll to Zoom
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+    import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+    import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+    // --- 1. Canvas & Scene Setup ---
+    const container = document.querySelector('.viewport-card');
+    const canvas = document.getElementById('webgl-canvas');
+    const hudTag = document.getElementById('active-hud-channel');
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x010307);
+
+    const camera = new THREE.PerspectiveCamera(
+      38,
+      container.clientWidth / container.clientHeight,
+      0.1,
+      100
+    );
+    camera.position.set(0.0, 0.08, 3.6);
+
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas,
+      antialias: true,
+      alpha: true,
+      powerPreference: 'high-performance'
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.35;
+
+    // Controls: Full 360 drag with inertia damping
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.minDistance = 2.0;
+    controls.maxDistance = 5.6;
+    controls.target.set(0, 0.08, 0);
+
+    // --- 2. UnrealBloomPass Neon Glow Post-Processing ---
+    const composer = new EffectComposer(renderer);
+    const renderPass = new RenderPass(scene, camera);
+    composer.addPass(renderPass);
+
+    const bloomPass = new UnrealBloomPass(
+      new THREE.Vector2(container.clientWidth, container.clientHeight),
+      1.15, // bloom strength
+      0.40, // radius
+      0.22  // threshold
+    );
+    composer.addPass(bloomPass);
+
+    // --- 3. Lighting (Dual Rim Highlights matching Reference Image) ---
+    const ambientLight = new THREE.AmbientLight(0x07111e, 0.8);
+    scene.add(ambientLight);
+
+    // White Key Specular Light (Sharp glass edge reflections on the right)
+    const keyLight = new THREE.DirectionalLight(0xffffff, 3.2);
+    keyLight.position.set(3.5, 4.0, 3.5);
+    scene.add(keyLight);
+
+    // Electric Cyan Cybernetic Rim Light (Silhouette contour glow on the left)
+    const rimLight = new THREE.DirectionalLight(0x38bdf8, 2.8);
+    rimLight.position.set(-3.5, 2.5, -2.5);
+    scene.add(rimLight);
+
+    // Internal Refraction Backlight
+    const backLight = new THREE.DirectionalLight(0x0284c7, 1.8);
+    backLight.position.set(0.0, 2.0, -3.5);
+    scene.add(backLight);
+
+    // Internal Forearm Glow Point Light
+    const wristPointLight = new THREE.PointLight(0x38bdf8, 1.6, 4.0);
+    wristPointLight.position.set(-0.08, -0.7, 0.4);
+    scene.add(wristPointLight);
+
+    // --- 4. Cybernetic Hand Construction ---
+    const handRoot = new THREE.Group();
+    handRoot.position.set(0.0, -0.20, 0.0);
+    scene.add(handRoot);
+
+    // High-Tech Materials
+    const cyanNeonColor = new THREE.Color(0x24e0f2);
+    const tealNeonColor = new THREE.Color(0x4df8cb);
+
+    // Semi-transparent Smoked Cyan Hull
+    const glassHullMaterial = new THREE.MeshPhysicalMaterial({
+      color: 0xbce5fb,
+      transparent: true,
+      opacity: 0.32,
+      roughness: 0.06,
+      metalness: 0.16,
+      transmission: 0.85,
+      thickness: 0.8,
+      ior: 1.48,
+      clearcoat: 1.0,
+      clearcoatRoughness: 0.05
+    });
+
+    // Glowing Cyan Wireframe Cage Overlay
+    const wireframeMaterial = new THREE.MeshBasicMaterial({
+      color: cyanNeonColor,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.40,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+
+    // Dark Titanium Core Bone Material
+    const darkTitaniumMaterial = new THREE.MeshStandardMaterial({
+      color: 0x0f172a,
+      roughness: 0.32,
+      metalness: 0.94
+    });
+
+    // Active Neon Sensor Ring Material
+    const ringMaterial = new THREE.MeshStandardMaterial({
+      color: 0x0284c7,
+      emissive: tealNeonColor,
+      emissiveIntensity: 2.2,
+      roughness: 0.2
+    });
+
+    // Helper: Composite Part (Glass Hull + Wireframe Lattice)
+    function createCyberPart(geom) {
+      const g = new THREE.Group();
+      const solid = new THREE.Mesh(geom, glassHullMaterial);
+      const wire = new THREE.Mesh(geom, wireframeMaterial);
+      g.add(solid);
+      g.add(wire);
+      return g;
+    }
+
+    // A. Organic Contoured Palm Geometry
+    function createPalmGeometry() {
+      const slices = 18;
+      const radialSegs = 28;
+      const positions = [];
+      const uvs = [];
+      const indices = [];
+
+      for (let i = 0; i <= slices; i++) {
+        const v = i / slices;
+        const y = -0.45 + v * 0.95;
+
+        let hw, hd, cx, cz;
+        if (v < 0.2) {
+          const t = v / 0.2;
+          hw = 0.22 + t * 0.08;
+          hd = 0.10 + t * 0.02;
+          cx = 0.02 * t;
+          cz = 0;
+        } else if (v < 0.6) {
+          const t = (v - 0.2) / 0.4;
+          hw = 0.30 + t * 0.04;
+          hd = 0.12 - t * 0.01;
+          cx = 0.02 + Math.sin(t * Math.PI) * 0.03;
+          cz = -0.01 * Math.sin(t * Math.PI);
+        } else {
+          const t = (v - 0.6) / 0.4;
+          hw = 0.34 - t * 0.02;
+          hd = 0.11 - t * 0.03;
+          cx = 0.02 - t * 0.03;
+          cz = 0.01 * t;
+        }
+
+        for (let j = 0; j <= radialSegs; j++) {
+          const u = j / radialSegs;
+          const angle = u * Math.PI * 2;
+          const px = cx + Math.cos(angle) * hw;
+          const pz = cz + Math.sin(angle) * hd;
+          positions.push(px, y, pz);
+          uvs.push(u, v);
+        }
+      }
+
+      for (let i = 0; i < slices; i++) {
+        for (let j = 0; j < radialSegs; j++) {
+          const a = i * (radialSegs + 1) + j;
+          const b = (i + 1) * (radialSegs + 1) + j;
+          const c = (i + 1) * (radialSegs + 1) + (j + 1);
+          const d = i * (radialSegs + 1) + (j + 1);
+          indices.push(a, b, d);
+          indices.push(b, c, d);
+        }
+      }
+
+      const geom = new THREE.BufferGeometry();
+      geom.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+      geom.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+      geom.setIndex(indices);
+      geom.computeVertexNormals();
+      return geom;
+    }
+
+    const palmMesh = createCyberPart(createPalmGeometry());
+    palmMesh.position.set(0, 0, 0);
+    handRoot.add(palmMesh);
+
+    // Internal Titanium Metacarpal Bone Shafts
+    [
+      { x: -0.22, rot: -0.10, len: 0.48 },
+      { x: -0.07, rot: -0.03, len: 0.54 },
+      { x: 0.07, rot: 0.02, len: 0.56 },
+      { x: 0.20, rot: 0.08, len: 0.50 }
+    ].forEach(m => {
+      const shaft = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.018, 0.022, m.len, 12),
+        darkTitaniumMaterial
+      );
+      shaft.position.set(m.x, 0.05, 0.0);
+      shaft.rotation.z = m.rot;
+      handRoot.add(shaft);
+    });
+
+    // B. Elongated Tapered Forearm (No Stand / Matches Image 2)
+    function createForearmGeometry() {
+      const slices = 16;
+      const radialSegs = 24;
+      const positions = [];
+      const uvs = [];
+      const indices = [];
+
+      const topY = -0.45;
+      const botY = -1.50;
+      const totalH = topY - botY;
+
+      for (let i = 0; i <= slices; i++) {
+        const v = i / slices;
+        const y = botY + v * totalH;
+        const t = 1 - v;
+        const hw = 0.20 + t * 0.06;
+        const hd = 0.10 + t * 0.02;
+
+        for (let j = 0; j <= radialSegs; j++) {
+          const u = j / radialSegs;
+          const angle = u * Math.PI * 2;
+          positions.push(Math.cos(angle) * hw, y, Math.sin(angle) * hd);
+          uvs.push(u, v);
+        }
+      }
+
+      for (let i = 0; i < slices; i++) {
+        for (let j = 0; j < radialSegs; j++) {
+          const a = i * (radialSegs + 1) + j;
+          const b = (i + 1) * (radialSegs + 1) + j;
+          const c = (i + 1) * (radialSegs + 1) + (j + 1);
+          const d = i * (radialSegs + 1) + (j + 1);
+          indices.push(a, b, d);
+          indices.push(b, c, d);
+        }
+      }
+
+      const geom = new THREE.BufferGeometry();
+      geom.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+      geom.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+      geom.setIndex(indices);
+      geom.computeVertexNormals();
+      return geom;
+    }
+
+    const forearmMesh = createCyberPart(createForearmGeometry());
+    handRoot.add(forearmMesh);
+
+    // Dual Internal Radius & Ulna Titanium Columns
+    const radiusBone = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.038, 0.044, 0.95, 14),
+      darkTitaniumMaterial
+    );
+    radiusBone.position.set(-0.08, -1.0, 0);
+    handRoot.add(radiusBone);
+
+    const ulnaBone = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.038, 0.044, 0.95, 14),
+      darkTitaniumMaterial
+    );
+    ulnaBone.position.set(0.08, -1.0, 0);
+    handRoot.add(ulnaBone);
+
+    // High-Tech Microchip Package at Wrist Crease
+    const chipGroup = new THREE.Group();
+    chipGroup.position.set(0.01, -0.62, 0.11);
+    chipGroup.rotation.x = 0.06;
+
+    const chipCarrier = new THREE.Mesh(
+      new THREE.BoxGeometry(0.12, 0.12, 0.024),
+      darkTitaniumMaterial
+    );
+    chipGroup.add(chipCarrier);
+
+    const chipDie = new THREE.Mesh(
+      new THREE.BoxGeometry(0.075, 0.075, 0.008),
+      new THREE.MeshStandardMaterial({
+        color: 0xfbbf24,
+        emissive: 0x38bdf8,
+        emissiveIntensity: 0.9,
+        roughness: 0.2,
+        metalness: 0.92
+      })
+    );
+    chipDie.position.z = 0.014;
+    chipGroup.add(chipDie);
+    handRoot.add(chipGroup);
+
+    // Wrist Articulation Rings
+    [-0.48, -0.60].forEach((wy, idx) => {
+      const ring = new THREE.Mesh(
+        new THREE.TorusGeometry(0.20 + idx * 0.015, 0.008, 10, 28),
+        ringMaterial
+      );
+      ring.position.set(0, wy, 0);
+      ring.rotation.x = Math.PI * 0.5;
+      handRoot.add(ring);
+    });
+
+    // C. Curved Spline Telemetry Tracks along Metacarpal Channels
+    const splinePaths = [
+      // Wrist to Thumb
+      [new THREE.Vector3(0.04, -0.42, 0.08), new THREE.Vector3(0.16, -0.22, 0.09), new THREE.Vector3(0.28, -0.06, 0.07), new THREE.Vector3(0.33, 0.02, 0.05)],
+      // Wrist to Index
+      [new THREE.Vector3(0.02, -0.42, 0.08), new THREE.Vector3(0.10, -0.10, 0.09), new THREE.Vector3(0.18, 0.22, 0.07), new THREE.Vector3(0.24, 0.49, 0.04)],
+      // Wrist to Middle
+      [new THREE.Vector3(0.0, -0.42, 0.08), new THREE.Vector3(0.02, -0.05, 0.09), new THREE.Vector3(0.05, 0.28, 0.08), new THREE.Vector3(0.07, 0.55, 0.05)],
+      // Wrist to Ring
+      [new THREE.Vector3(-0.02, -0.42, 0.08), new THREE.Vector3(-0.05, -0.10, 0.08), new THREE.Vector3(-0.08, 0.22, 0.06), new THREE.Vector3(-0.10, 0.50, 0.04)],
+      // Wrist to Pinky
+      [new THREE.Vector3(-0.04, -0.42, 0.08), new THREE.Vector3(-0.14, -0.22, 0.07), new THREE.Vector3(-0.22, 0.10, 0.05), new THREE.Vector3(-0.27, 0.40, 0.02)]
+    ];
+
+    const sensorLineMaterial = new THREE.LineBasicMaterial({
+      color: tealNeonColor,
+      transparent: true,
+      opacity: 0.90
+    });
+
+    splinePaths.forEach(pts => {
+      const curve = new THREE.CatmullRomCurve3(pts);
+      const points = curve.getPoints(24);
+      const geom = new THREE.BufferGeometry().setFromPoints(points);
+      const line = new THREE.Line(geom, sensorLineMaterial);
+      handRoot.add(line);
+    });
+
+    // Bright White Telemetry Node Spheres
+    const nodeGeo = new THREE.SphereGeometry(0.018, 12, 12);
+    const nodeMat = new THREE.MeshStandardMaterial({
+      color: 0xffffff,
+      emissive: 0x38bdf8,
+      emissiveIntensity: 2.8,
+      roughness: 0.1
+    });
+
+    [
+      [0.02, 0.08, 0.09],
+      [0.08, 0.38, 0.09],
+      [0.22, -0.04, 0.08],
+      [-0.15, -0.14, 0.08],
+      [-0.06, 0.22, 0.09]
+    ].forEach(p => {
+      const node = new THREE.Mesh(nodeGeo, nodeMat);
+      node.position.set(...p);
+      handRoot.add(node);
+    });
+
+    // D. Articulated Finger Hierarchies & Toroidal Flex Rings
+    function createPhalanxGeom(rB, rT, len, isTip = false) {
+      const slices = isTip ? 16 : 10;
+      const radialSegs = 18;
+      const positions = [];
+      const uvs = [];
+      const indices = [];
+
+      for (let i = 0; i <= slices; i++) {
+        const v = i / slices;
+        let r, y;
+        if (!isTip) {
+          y = v * len;
+          r = rB + (rT - rB) * v + Math.sin(v * Math.PI) * (rB * 0.06);
+        } else {
+          if (v < 0.65) {
+            const t = v / 0.65;
+            y = t * len * 0.65;
+            r = rB + (rT - rB) * t;
+          } else {
+            const t = (v - 0.65) / 0.35;
+            const dome = t * Math.PI * 0.5;
+            y = len * 0.65 + Math.sin(dome) * rT * 1.05;
+            r = Math.cos(dome) * rT;
+          }
+        }
+
+        for (let j = 0; j <= radialSegs; j++) {
+          const u = j / radialSegs;
+          const a = u * Math.PI * 2;
+          positions.push(Math.cos(a) * r, y, Math.sin(a) * (r * 0.94));
+          uvs.push(u, v);
+        }
+      }
+
+      for (let i = 0; i < slices; i++) {
+        for (let j = 0; j < radialSegs; j++) {
+          const a = i * (radialSegs + 1) + j;
+          const b = (i + 1) * (radialSegs + 1) + j;
+          const c = (i + 1) * (radialSegs + 1) + (j + 1);
+          const d = i * (radialSegs + 1) + (j + 1);
+          indices.push(a, b, d);
+          indices.push(b, c, d);
+        }
+      }
+
+      const geom = new THREE.BufferGeometry();
+      geom.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+      geom.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+      geom.setIndex(indices);
+      geom.computeVertexNormals();
+      return geom;
+    }
+
+    const fingerConfigs = [
+      // Thumb (Rightmost, natural outward angle & opposable anatomy)
+      { id: 0, isThumb: true, basePos: [0.33, 0.02, 0.05], baseRot: [0.22, -0.32, -0.68], pLen: 0.36, iLen: 0.28, dLen: 0.22, r: 0.078 },
+      // Index
+      { id: 1, isThumb: false, basePos: [0.24, 0.49, 0.04], baseRot: [0.02, 0.02, -0.07], pLen: 0.37, iLen: 0.27, dLen: 0.21, r: 0.068 },
+      // Middle (Longest)
+      { id: 2, isThumb: false, basePos: [0.07, 0.55, 0.05], baseRot: [0, 0, 0], pLen: 0.42, iLen: 0.32, dLen: 0.24, r: 0.072 },
+      // Ring
+      { id: 3, isThumb: false, basePos: [-0.10, 0.50, 0.04], baseRot: [0.02, -0.02, 0.06], pLen: 0.38, iLen: 0.28, dLen: 0.22, r: 0.068 },
+      // Pinky (Leftmost)
+      { id: 4, isThumb: false, basePos: [-0.27, 0.40, 0.02], baseRot: [0.04, -0.04, 0.18], pLen: 0.28, iLen: 0.20, dLen: 0.17, r: 0.058 }
+    ];
+
+    const sensorRings = [];
+    const fingerJointGroups = [];
+
+    fingerConfigs.forEach(cfg => {
+      const baseGroup = new THREE.Group();
+      baseGroup.position.set(...cfg.basePos);
+      baseGroup.rotation.set(...cfg.baseRot);
+      handRoot.add(baseGroup);
+
+      // Knuckle MCP Ring
+      const mcpRing = new THREE.Mesh(
+        new THREE.TorusGeometry(cfg.r * 1.15, 0.012, 10, 24),
+        ringMaterial
+      );
+      mcpRing.rotation.x = Math.PI * 0.5;
+      baseGroup.add(mcpRing);
+      sensorRings.push(mcpRing);
+
+      // Proximal
+      const mcpJoint = new THREE.Group();
+      baseGroup.add(mcpJoint);
+
+      const pGeom = createPhalanxGeom(cfg.r, cfg.r * 0.90, cfg.pLen);
+      const pMesh = createCyberPart(pGeom);
+      mcpJoint.add(pMesh);
+
+      // Internal titanium tendon
+      const pTendon = new THREE.Mesh(
+        new THREE.CylinderGeometry(cfg.r * 0.28, cfg.r * 0.28, cfg.pLen * 0.88, 10),
+        darkTitaniumMaterial
+      );
+      pTendon.position.y = cfg.pLen * 0.5;
+      mcpJoint.add(pTendon);
+
+      // Intermediate
+      const pipGroup = new THREE.Group();
+      pipGroup.position.y = cfg.pLen;
+      mcpJoint.add(pipGroup);
+
+      const pipRing = new THREE.Mesh(
+        new THREE.TorusGeometry(cfg.r * 1.05, 0.010, 10, 24),
+        ringMaterial
+      );
+      pipRing.rotation.x = Math.PI * 0.5;
+      pipGroup.add(pipRing);
+      sensorRings.push(pipRing);
+
+      const pipJoint = new THREE.Group();
+      pipGroup.add(pipJoint);
+
+      const iGeom = createPhalanxGeom(cfg.r * 0.90, cfg.r * 0.80, cfg.iLen);
+      const iMesh = createCyberPart(iGeom);
+      pipJoint.add(iMesh);
+
+      const iTendon = new THREE.Mesh(
+        new THREE.CylinderGeometry(cfg.r * 0.26, cfg.r * 0.26, cfg.iLen * 0.88, 10),
+        darkTitaniumMaterial
+      );
+      iTendon.position.y = cfg.iLen * 0.5;
+      pipJoint.add(iTendon);
+
+      // Distal
+      const dipGroup = new THREE.Group();
+      dipGroup.position.y = cfg.iLen;
+      pipJoint.add(dipGroup);
+
+      const dipRing = new THREE.Mesh(
+        new THREE.TorusGeometry(cfg.r * 0.95, 0.009, 10, 24),
+        ringMaterial
+      );
+      dipRing.rotation.x = Math.PI * 0.5;
+      dipGroup.add(dipRing);
+      sensorRings.push(dipRing);
+
+      const dipJoint = new THREE.Group();
+      dipGroup.add(dipJoint);
+
+      const dGeom = createPhalanxGeom(cfg.r * 0.80, cfg.r * 0.65, cfg.dLen, true);
+      const dMesh = createCyberPart(dGeom);
+      dipJoint.add(dMesh);
+
+      fingerJointGroups.push({
+        id: cfg.id,
+        isThumb: cfg.isThumb,
+        mcp: mcpJoint,
+        pip: pipJoint,
+        dip: dipJoint
+      });
+    });
+
+    // --- 5. Ambient Cyber Telemetry Dust ---
+    const dustCount = 140;
+    const dustPos = new Float32Array(dustCount * 3);
+    for (let i = 0; i < dustCount * 3; i += 3) {
+      const r = 0.6 + Math.random() * 1.4;
+      const th = Math.random() * Math.PI * 2;
+      dustPos[i] = Math.cos(th) * r;
+      dustPos[i + 1] = (Math.random() - 0.45) * 2.6;
+      dustPos[i + 2] = Math.sin(th) * r + (Math.random() - 0.5) * 0.6;
+    }
+
+    const dustGeom = new THREE.BufferGeometry();
+    dustGeom.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
+    const dustMat = new THREE.PointsMaterial({
+      color: 0x38bdf8,
+      size: 0.024,
+      transparent: true,
+      opacity: 0.65,
+      blending: THREE.AdditiveBlending
+    });
+    const dustParticles = new THREE.Points(dustGeom, dustMat);
+    scene.add(dustParticles);
+
+    // --- 6. Kinematic Articulation & Render Loop ---
+    const clock = new THREE.Clock();
+    const smooth = t => t * t * (3 - 2 * t);
+    const getBell = (t, s, d) => {
+      if (t < s || t > s + d) return 0;
+      const p = (t - s) / d;
+      return p < 0.5 ? smooth(p * 2) : smooth((1 - p) * 2);
+    };
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const elapsed = clock.getElapsedTime();
+      const cycle = 14.0;
+      const t = elapsed % cycle;
+
+      let thumb = 0, index = 0, middle = 0, ring = 0, pinky = 0;
+      let activeText = 'STANDBY';
+
+      if (t < 2.2) {
+        thumb = getBell(t, 0.1, 2.0);
+        activeText = 'CH 1 · THUMB FLEXION';
+      } else if (t < 4.4) {
+        index = getBell(t, 2.3, 2.0);
+        activeText = 'CH 2 · INDEX FLEXION';
+      } else if (t < 6.6) {
+        middle = getBell(t, 4.5, 2.0);
+        activeText = 'CH 3 · MIDDLE FLEXION';
+      } else if (t < 8.8) {
+        ring = getBell(t, 6.7, 2.0);
+        activeText = 'CH 4 · RING FLEXION';
+      } else if (t < 11.0) {
+        pinky = getBell(t, 8.9, 2.0);
+        activeText = 'CH 5 · PINKY FLEXION';
+      } else {
+        const wt = t - 11.0;
+        thumb = getBell(wt, 0.0, 1.8) * 0.75;
+        index = getBell(wt, 0.2, 1.8) * 0.88;
+        middle = getBell(wt, 0.4, 1.8) * 0.92;
+        ring = getBell(wt, 0.6, 1.8) * 0.85;
+        pinky = getBell(wt, 0.8, 1.8) * 0.72;
+        activeText = 'BLE 5.0 · FULL SYNC WAVE';
+      }
+
+      if (hudTag && hudTag.innerText !== activeText) {
+        hudTag.innerText = activeText;
+      }
+
+      const flexes = [thumb, index, middle, ring, pinky];
+
+      // Articulate Fingers
+      fingerJointGroups.forEach(f => {
+        const amt = flexes[f.id];
+        if (f.isThumb) {
+          f.mcp.rotation.x = -amt * 0.42;
+          f.mcp.rotation.z = -amt * 0.34;
+          f.pip.rotation.x = -amt * 0.60;
+          f.dip.rotation.x = -amt * 0.48;
+        } else {
+          f.mcp.rotation.x = -amt * 0.52;
+          f.pip.rotation.x = -amt * 0.78;
+          f.dip.rotation.x = -amt * 0.46;
+        }
+      });
+
+      // Pulse Sensor Rings Intensity
+      const pulse = 1.6 + Math.sin(elapsed * 4.0) * 0.8;
+      ringMaterial.emissiveIntensity = pulse;
+
+      // Subtle Floating Sway
+      handRoot.position.y = -0.20 + Math.sin(elapsed * 0.7) * 0.015;
+      handRoot.rotation.y = Math.sin(elapsed * 0.45) * 0.04;
+      dustParticles.rotation.y = elapsed * 0.015;
+
+      controls.update();
+      composer.render();
+    }
+    animate();
+
+    // --- 7. Responsive Resizing ---
+    window.addEventListener('resize', () => {
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
+      composer.setSize(w, h);
+    });
+  </script>
+</body>
+</html>

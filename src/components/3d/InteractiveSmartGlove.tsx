@@ -459,9 +459,10 @@ const CyberneticHandRig: React.FC<HandRigProps> = ({ onActiveChannelChange, isIn
 
     cloneScene.updateMatrixWorld(true);
 
-    // 4. Attach Glowing Sensor Node Diodes to Each Joint Bone
+    // 4. Attach Glowing Sensor Node Diodes & Toroidal Flex Sensor Rings to Each Joint Bone
     const nodes: THREE.MeshStandardMaterial[] = [];
     const jointDotGeom = new THREE.SphereGeometry(0.0032, 8, 8);
+    const jointRingGeom = new THREE.TorusGeometry(0.0075, 0.0014, 8, 20);
 
     for (const chain of fingers) {
       for (let i = 1; i < chain.length; i++) {
@@ -476,6 +477,11 @@ const CyberneticHandRig: React.FC<HandRigProps> = ({ onActiveChannelChange, isIn
           nodes.push(dotMat);
           const dot = new THREE.Mesh(jointDotGeom, dotMat);
           bone.add(dot);
+
+          // Glowing Toroidal Flex Sensor Ring at joint
+          const ring = new THREE.Mesh(jointRingGeom, dotMat);
+          ring.rotation.x = Math.PI * 0.5;
+          bone.add(ring);
         }
       }
     }
