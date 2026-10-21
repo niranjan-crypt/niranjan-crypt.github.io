@@ -91,139 +91,15 @@ const AmbientTelemetryParticles: React.FC = () => {
 // ---------------------------------------------------------------------------
 // 3. Cybernetic Forearm Geometry Generator (Preserves Exact 3D Structure)
 // ---------------------------------------------------------------------------
-function createCyberForearmGeometry() {
-  const slices = 20;
-  const radialSegments = 28;
-  const positions: number[] = [];
-  const uvs: number[] = [];
-  const indices: number[] = [];
-
-  const topY = -0.74;
-  const bottomY = -1.60;
-  const totalH = topY - bottomY;
-
-  const cx = -0.086;
-  const cz = 0.272;
-
-  for (let i = 0; i <= slices; i++) {
-    const v = i / slices;
-    const y = bottomY + v * totalH;
-
-    const t = 1 - v;
-    const halfWidth = 0.255 + t * 0.07;
-    const halfDepth = 0.095 + t * 0.025;
-
-    for (let j = 0; j <= radialSegments; j++) {
-      const u = j / radialSegments;
-      const angle = u * Math.PI * 2;
-      const px = cx + Math.cos(angle) * halfWidth;
-      const pz = cz + Math.sin(angle) * halfDepth;
-
-      positions.push(px, y, pz);
-      uvs.push(u, v);
-    }
-  }
-
-  for (let i = 0; i < slices; i++) {
-    for (let j = 0; j < radialSegments; j++) {
-      const a = i * (radialSegments + 1) + j;
-      const b = (i + 1) * (radialSegments + 1) + j;
-      const c = (i + 1) * (radialSegments + 1) + (j + 1);
-      const d = i * (radialSegments + 1) + (j + 1);
-      indices.push(a, b, d);
-      indices.push(b, c, d);
-    }
-  }
-
-  const geom = new THREE.BufferGeometry();
-  geom.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-  geom.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
-  geom.setIndex(indices);
-  geom.computeVertexNormals();
-  return geom;
-}
-
 // ---------------------------------------------------------------------------
-// 4. Elongated Forearm Assembly (Unified Neon Cyan & Dark Palette)
+// 3. Luminous Wrist Collar Accent Rings (Clean Cuff - No Forearm Trunk)
 // ---------------------------------------------------------------------------
-const CyberForearmAssembly: React.FC = () => {
-  const forearmGeom = useMemo(() => createCyberForearmGeometry(), []);
-
+const WristCuffRings: React.FC = () => {
   return (
     <group>
-      {/* Translucent Dark Smoked Glass Forearm Casing */}
-      <mesh geometry={forearmGeom}>
-        <meshPhysicalMaterial
-          color="#061626"
-          transparent
-          opacity={0.34}
-          roughness={0.08}
-          metalness={0.16}
-          transmission={0.85}
-          thickness={0.8}
-          ior={1.48}
-          clearcoat={1.0}
-          clearcoatRoughness={0.05}
-        />
-      </mesh>
-
-      {/* Luminous Electric Cyan Wireframe Contour Lattice */}
-      <mesh geometry={forearmGeom}>
-        <meshBasicMaterial
-          color="#00f0ff"
-          wireframe
-          transparent
-          opacity={0.36}
-          blending={THREE.AdditiveBlending}
-          depthWrite={false}
-        />
-      </mesh>
-
-      {/* Dual Internal Structural Columns: Radius & Ulna Dark Titanium Shafts */}
-      <mesh position={[-0.18, -1.18, 0.27]}>
-        <cylinderGeometry args={[0.042, 0.048, 0.82, 16]} />
-        <meshStandardMaterial color="#08101a" roughness={0.3} metalness={0.94} />
-      </mesh>
-      <mesh position={[0.01, -1.18, 0.27]}>
-        <cylinderGeometry args={[0.042, 0.048, 0.82, 16]} />
-        <meshStandardMaterial color="#08101a" roughness={0.3} metalness={0.94} />
-      </mesh>
-
-      {/* Internal Central Luminous Cyan Telemetry Conduit */}
-      <mesh position={[-0.086, -1.18, 0.31]}>
-        <cylinderGeometry args={[0.012, 0.012, 0.84, 10]} />
-        <meshStandardMaterial
-          color="#00f0ff"
-          emissive="#00f0ff"
-          emissiveIntensity={1.8}
-          roughness={0.2}
-        />
-      </mesh>
-
-      {/* Cybernetic Microchip Package at Wrist Crease (Unified Neon Cyan & Dark) */}
-      <group position={[-0.086, -0.88, 0.36]} rotation={[0.08, 0, 0]}>
-        {/* Dark Ceramic Microchip Carrier */}
-        <mesh>
-          <boxGeometry args={[0.11, 0.11, 0.024]} />
-          <meshStandardMaterial color="#08101a" roughness={0.25} metalness={0.92} />
-        </mesh>
-        {/* Glowing Neon Cyan Silicon Core Die */}
-        <mesh position={[0, 0, 0.014]}>
-          <boxGeometry args={[0.07, 0.07, 0.008]} />
-          <meshStandardMaterial
-            color="#00f0ff"
-            emissive="#00f0ff"
-            emissiveIntensity={1.6}
-            roughness={0.2}
-            metalness={0.92}
-          />
-        </mesh>
-      </group>
-
-      {/* Luminous Neon Cyan Wrist Articulation Rings */}
-      {[-0.75, -0.85].map((wy, idx) => (
+      {[-0.73, -0.77].map((wy, idx) => (
         <mesh key={idx} position={[-0.086, wy, 0.272]} rotation={[Math.PI * 0.5, 0, 0]}>
-          <torusGeometry args={[0.22 - idx * 0.01, 0.007, 10, 28]} />
+          <torusGeometry args={[0.21 - idx * 0.01, 0.007, 10, 28]} />
           <meshStandardMaterial
             color="#00f0ff"
             emissive="#00f0ff"
@@ -591,12 +467,12 @@ const CyberneticHandRig: React.FC<HandRigProps> = ({ onActiveChannelChange, isIn
     if (rootRef.current && !isInteracting) {
       rootRef.current.rotation.y = Math.sin(elapsed * 0.45) * 0.05;
       rootRef.current.rotation.x = 0.04 + Math.cos(elapsed * 0.35) * 0.025;
-      rootRef.current.position.y = -0.22 + Math.sin(elapsed * 0.6) * 0.015;
+      rootRef.current.position.y = -0.25 + Math.sin(elapsed * 0.6) * 0.015;
     }
   });
 
   return (
-    <group ref={rootRef} position={[0.0, -0.22, 0.0]}>
+    <group ref={rootRef} position={[0.0, -0.25, 0.0]}>
       {/* 
         The GLTF hand model is scaled by 9.5 and rotated [0, -Math.PI / 2, Math.PI].
         - Fingers point UP (+Y)
@@ -612,8 +488,8 @@ const CyberneticHandRig: React.FC<HandRigProps> = ({ onActiveChannelChange, isIn
       {/* Clean Minimal Palmar Architecture (Few Wirings / Unified Neon Cyan) */}
       <CleanPalmarArchitecture />
 
-      {/* Elongated Transparent Cybernetic Forearm Assembly (No Pedestal) */}
-      <CyberForearmAssembly />
+      {/* Luminous Wrist Collar Accent Rings (Clean Cuff - No Forearm Trunk) */}
+      <WristCuffRings />
 
       {/* Floating Ambient Stardust Telemetry Particles */}
       <AmbientTelemetryParticles />
@@ -649,7 +525,7 @@ export const InteractiveSmartGlove: React.FC = () => {
 
       {/* Interactive 3D WebGL Canvas */}
       <Canvas
-        camera={{ position: [0.0, 0.05, 3.6], fov: 38 }}
+        camera={{ position: [0.0, 0.0, 3.4], fov: 38 }}
         gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
         className="w-full h-full block"
       >
@@ -665,8 +541,8 @@ export const InteractiveSmartGlove: React.FC = () => {
         {/* Backlight (Internal Glass Refraction Glow) */}
         <directionalLight position={[0.0, 2.0, -3.5]} intensity={2.0} color="#0284c7" />
 
-        {/* Internal Forearm Point Light */}
-        <pointLight position={[-0.08, -0.85, 0.5]} intensity={1.6} color="#00f0ff" distance={4.5} />
+        {/* Internal Wrist Point Light */}
+        <pointLight position={[-0.08, -0.65, 0.4]} intensity={1.6} color="#00f0ff" distance={4.5} />
 
         {/* Skinned Cybernetic Hand Rig */}
         <CyberneticHandRig
@@ -677,7 +553,7 @@ export const InteractiveSmartGlove: React.FC = () => {
         {/* Full 360-Degree Orbit Controls with Smooth Inertia Damping */}
         <OrbitControls
           ref={controlsRef}
-          target={[0, 0.05, 0]}
+          target={[0, 0.0, 0]}
           enablePan={false}
           enableZoom={true}
           minDistance={2.0}

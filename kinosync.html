@@ -344,7 +344,7 @@
       0.1,
       100
     );
-    camera.position.set(0.0, 0.08, 3.6);
+    camera.position.set(0.0, 0.0, 3.4);
 
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas,
@@ -363,7 +363,7 @@
     controls.dampingFactor = 0.05;
     controls.minDistance = 2.0;
     controls.maxDistance = 5.6;
-    controls.target.set(0, 0.08, 0);
+    controls.target.set(0, 0.0, 0);
 
     // --- 2. UnrealBloomPass Neon Glow Post-Processing ---
     const composer = new EffectComposer(renderer);
@@ -404,7 +404,7 @@
 
     // --- 4. Cybernetic Hand Construction ---
     const handRoot = new THREE.Group();
-    handRoot.position.set(0.0, -0.20, 0.0);
+    handRoot.position.set(0.0, -0.05, 0.0);
     scene.add(handRoot);
 
     // High-Tech Materials
@@ -542,106 +542,16 @@
       handRoot.add(shaft);
     });
 
-    // B. Elongated Tapered Forearm (No Stand / Matches Image 2)
-    function createForearmGeometry() {
-      const slices = 16;
-      const radialSegs = 24;
-      const positions = [];
-      const uvs = [];
-      const indices = [];
-
-      const topY = -0.45;
-      const botY = -1.50;
-      const totalH = topY - botY;
-
-      for (let i = 0; i <= slices; i++) {
-        const v = i / slices;
-        const y = botY + v * totalH;
-        const t = 1 - v;
-        const hw = 0.20 + t * 0.06;
-        const hd = 0.10 + t * 0.02;
-
-        for (let j = 0; j <= radialSegs; j++) {
-          const u = j / radialSegs;
-          const angle = u * Math.PI * 2;
-          positions.push(Math.cos(angle) * hw, y, Math.sin(angle) * hd);
-          uvs.push(u, v);
-        }
-      }
-
-      for (let i = 0; i < slices; i++) {
-        for (let j = 0; j < radialSegs; j++) {
-          const a = i * (radialSegs + 1) + j;
-          const b = (i + 1) * (radialSegs + 1) + j;
-          const c = (i + 1) * (radialSegs + 1) + (j + 1);
-          const d = i * (radialSegs + 1) + (j + 1);
-          indices.push(a, b, d);
-          indices.push(b, c, d);
-        }
-      }
-
-      const geom = new THREE.BufferGeometry();
-      geom.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-      geom.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
-      geom.setIndex(indices);
-      geom.computeVertexNormals();
-      return geom;
-    }
-
-    const forearmMesh = createCyberPart(createForearmGeometry());
-    handRoot.add(forearmMesh);
-
-    // Dual Internal Radius & Ulna Titanium Columns
-    const radiusBone = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.038, 0.044, 0.95, 14),
-      darkTitaniumMaterial
-    );
-    radiusBone.position.set(-0.08, -1.0, 0);
-    handRoot.add(radiusBone);
-
-    const ulnaBone = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.038, 0.044, 0.95, 14),
-      darkTitaniumMaterial
-    );
-    ulnaBone.position.set(0.08, -1.0, 0);
-    handRoot.add(ulnaBone);
-
-    // High-Tech Microchip Package at Wrist Crease
-    const chipGroup = new THREE.Group();
-    chipGroup.position.set(0.01, -0.62, 0.11);
-    chipGroup.rotation.x = 0.06;
-
-    const chipCarrier = new THREE.Mesh(
-      new THREE.BoxGeometry(0.12, 0.12, 0.024),
-      darkTitaniumMaterial
-    );
-    chipGroup.add(chipCarrier);
-
-    const chipDie = new THREE.Mesh(
-      new THREE.BoxGeometry(0.075, 0.075, 0.008),
-      new THREE.MeshStandardMaterial({
-        color: 0xfbbf24,
-        emissive: 0x38bdf8,
-        emissiveIntensity: 0.9,
-        roughness: 0.2,
-        metalness: 0.92
-      })
-    );
-    chipDie.position.z = 0.014;
-    chipGroup.add(chipDie);
-    handRoot.add(chipGroup);
-
-    // Wrist Articulation Rings
-    [-0.48, -0.60].forEach((wy, idx) => {
+    // B. Luminous Wrist Collar Accent Rings (Clean Cuff - No Forearm Trunk)
+    [-0.46, -0.52].forEach((wy, idx) => {
       const ring = new THREE.Mesh(
-        new THREE.TorusGeometry(0.20 + idx * 0.015, 0.008, 10, 28),
+        new THREE.TorusGeometry(0.20 - idx * 0.01, 0.008, 10, 28),
         ringMaterial
       );
       ring.position.set(0, wy, 0);
       ring.rotation.x = Math.PI * 0.5;
       handRoot.add(ring);
     });
-
     // C. Sleek Telemetry Tracks along Metacarpal Channels (Few Wirings / Clean Aesthetic)
     const splinePaths = [
       // Wrist to Thumb
