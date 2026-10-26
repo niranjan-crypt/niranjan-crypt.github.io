@@ -2826,17 +2826,28 @@
 .pill-primary {
   background: var(--primary);
   color: var(--primary-foreground);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .pill-primary:hover {
   background: var(--foreground);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
 }
 .pill-ghost {
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: var(--foreground);
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
+  transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .pill-ghost:hover {
   background: var(--foreground);
   color: var(--background);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25);
 }
 .link-u {
   background: linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;
@@ -2865,20 +2876,95 @@
   margin: -40px 0 0 -40px;
 }
 .panel-a {
-  background: radial-gradient(120% 90% at 20% 10%, oklch(0.55 0.15 262), oklch(0.25 0.08 270));
+  background: radial-gradient(120% 90% at 20% 10%, oklch(0.58 0.16 262 / 0.95), oklch(0.24 0.08 270 / 0.98));
 }
 .panel-b {
-  background: radial-gradient(120% 90% at 80% 20%, oklch(0.6 0.14 160), oklch(0.22 0.05 200));
+  background: radial-gradient(120% 90% at 80% 20%, oklch(0.62 0.15 160 / 0.95), oklch(0.22 0.05 200 / 0.98));
 }
 .panel-c {
-  background: radial-gradient(120% 90% at 30% 80%, oklch(0.65 0.17 45), oklch(0.25 0.06 30));
+  background: radial-gradient(120% 90% at 30% 80%, oklch(0.66 0.18 45 / 0.95), oklch(0.25 0.06 30 / 0.98));
 }
 .panel-d {
-  background: radial-gradient(120% 90% at 70% 70%, oklch(0.6 0.2 25), oklch(0.22 0.07 15));
+  background: radial-gradient(120% 90% at 70% 70%, oklch(0.62 0.2 25 / 0.95), oklch(0.22 0.07 15 / 0.98));
 }
 .panel-grid {
   background-image: linear-gradient(oklch(1 0 0 / .08) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0 / .08) 1px, transparent 1px);
   background-size: 32px 32px;
+}
+.liquid-glass-card {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.24),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.35),
+    0 24px 50px -12px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.liquid-glass-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.liquid-glass-pill:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+.status-beacon {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: beacon-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes beacon-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.3); box-shadow: 0 0 14px #10b981; }
+}
+.project-row-item {
+  position: relative;
+  border-top: 1px solid var(--border);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 14px;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.project-row-item:hover, .project-row-item.is-active {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.008) 100%);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+.nav-glass {
+  background: rgba(6, 9, 15, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+}
+.glass-desc-box {
+  background: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.progress-tracer {
+  box-shadow: 0 0 12px var(--primary), 0 0 4px var(--primary);
 }
 @media (prefers-reduced-motion: reduce) {
   .marquee, .grain {
@@ -15670,7 +15756,7 @@ Error generating stack: ` + x.message + `
   }
   function Nav({ ready }) {
     return /* @__PURE__ */ jsx_runtime.jsxs("header", {
-      className: `fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-4 md:px-[4vw] nav-in ${ready ? "is-in" : ""}`,
+      className: `fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-4 md:px-[4vw] nav-glass nav-in ${ready ? "is-in" : ""}`,
       children: [
         /* @__PURE__ */ jsx_runtime.jsxs("a", {
           href: "#top",
@@ -15692,14 +15778,16 @@ Error generating stack: ` + x.message + `
           ]
         }),
         /* @__PURE__ */ jsx_runtime.jsxs("div", {
-          className: "label hidden text-muted-foreground lg:block",
+          className: "label hidden items-center gap-2 text-muted-foreground lg:flex",
           children: [
+            /* @__PURE__ */ jsx_runtime.jsx("span", {
+              className: "status-beacon"
+            }),
             "Coimbatore, IN ",
             /* @__PURE__ */ jsx_runtime.jsx("span", {
               className: "mx-2 text-faint",
               children: "/"
             }),
-            " ",
             /* @__PURE__ */ jsx_runtime.jsx(Clock, {})
           ]
         }),
@@ -15891,10 +15979,10 @@ Error generating stack: ` + x.message + `
                 target: "_blank",
                 rel: "noreferrer",
                 onMouseEnter: () => setActive(i),
-                className: "group grid grid-cols-[3rem_1fr_auto] items-center gap-4 border-t py-14 md:py-20",
+                className: `group grid grid-cols-[3rem_1fr_auto] items-center gap-4 project-row-item py-12 md:py-16 ${active === i ? "is-active" : ""}`,
                 children: [
                   /* @__PURE__ */ jsx_runtime.jsx("span", {
-                    className: `label transition-colors ${active === i ? "text-primary" : "text-faint"}`,
+                    className: `label transition-all duration-300 ${active === i ? "text-primary font-semibold" : "text-faint"}`,
                     children: String(i + 1).padStart(2, "0")
                   }),
                   /* @__PURE__ */ jsx_runtime.jsxs("div", {
@@ -15928,7 +16016,7 @@ Error generating stack: ` + x.message + `
                         children: x.year
                       }),
                       /* @__PURE__ */ jsx_runtime.jsx("div", {
-                        className: `mt-3 transition-opacity ${active === i ? "opacity-100" : "opacity-0"}`,
+                        className: `mt-3 transition-all duration-300 text-primary ${active === i ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"}`,
                         children: "View code →"
                       })
                     ]
@@ -15942,31 +16030,51 @@ Error generating stack: ` + x.message + `
                 className: "sticky top-28",
                 children: [
                   /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                    className: `relative aspect-[4/5] overflow-hidden rounded-xl ${p.panel} transition-all duration-700`,
+                    className: `relative aspect-[4/5] overflow-hidden rounded-2xl ${p.panel} liquid-glass-card transition-all duration-700`,
                     children: [
                       /* @__PURE__ */ jsx_runtime.jsx("div", {
-                        className: "panel-grid absolute inset-0"
+                        className: "panel-grid absolute inset-0 opacity-80"
                       }),
                       /* @__PURE__ */ jsx_runtime.jsxs("div", {
                         className: "absolute inset-0 flex flex-col justify-between p-8 animate-in fade-in zoom-in-95 duration-700",
                         children: [
-                          /* @__PURE__ */ jsx_runtime.jsx("span", {
-                            className: "label",
-                            children: p.tag
+                          /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                            className: "flex items-center justify-between",
+                            children: [
+                              /* @__PURE__ */ jsx_runtime.jsx("span", {
+                                className: "label tracking-widest opacity-85",
+                                children: p.tag
+                              }),
+                              /* @__PURE__ */ jsx_runtime.jsxs("a", {
+                                href: p.url,
+                                target: "_blank",
+                                rel: "noreferrer",
+                                className: "liquid-glass-pill px-3 py-1.5 rounded-full text-xs label text-foreground hover:text-primary",
+                                children: [
+                                  /* @__PURE__ */ jsx_runtime.jsx("span", {
+                                    className: "status-beacon"
+                                  }),
+                                  "REPO ↗"
+                                ]
+                              })
+                            ]
                           }),
                           /* @__PURE__ */ jsx_runtime.jsxs("div", {
                             children: [
                               /* @__PURE__ */ jsx_runtime.jsx("div", {
-                                className: "display text-7xl",
+                                className: "display text-6xl lg:text-7xl drop-shadow-md",
                                 children: p.metric
                               }),
                               /* @__PURE__ */ jsx_runtime.jsx("div", {
-                                className: "wide mt-4 text-2xl",
+                                className: "wide mt-4 text-2xl font-medium tracking-tight",
                                 children: p.title
                               }),
-                              /* @__PURE__ */ jsx_runtime.jsx("p", {
-                                className: "mt-3 text-sm leading-snug opacity-70",
-                                children: p.desc
+                              /* @__PURE__ */ jsx_runtime.jsx("div", {
+                                className: "glass-desc-box mt-4",
+                                children: /* @__PURE__ */ jsx_runtime.jsx("p", {
+                                  className: "text-sm leading-relaxed text-slate-200",
+                                  children: p.desc
+                                })
                               })
                             ]
                           })
@@ -15995,9 +16103,9 @@ Error generating stack: ` + x.message + `
                     ]
                   }),
                   /* @__PURE__ */ jsx_runtime.jsx("div", {
-                    className: "mt-2 h-px bg-border",
+                    className: "mt-3 h-0.5 bg-border/40 rounded-full overflow-hidden",
                     children: /* @__PURE__ */ jsx_runtime.jsx("div", {
-                      className: "h-px bg-primary transition-all duration-700",
+                      className: "h-full bg-primary progress-tracer transition-all duration-700 rounded-full",
                       style: { width: `${(active + 1) / projects.length * 100}%` }
                     })
                   })
@@ -16059,7 +16167,7 @@ Error generating stack: ` + x.message + `
               className: "group w-[78vw] shrink-0 md:w-[30vw]",
               children: [
                 /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                  className: `relative aspect-[4/5] overflow-hidden rounded-xl ${c.panel}`,
+                  className: `relative aspect-[4/5] overflow-hidden rounded-2xl ${c.panel} liquid-glass-card transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl`,
                   children: [
                     /* @__PURE__ */ jsx_runtime.jsx("div", {
                       className: "panel-grid absolute inset-0 transition-transform duration-700 group-hover:scale-110"
@@ -16068,11 +16176,11 @@ Error generating stack: ` + x.message + `
                       className: "absolute inset-0 flex flex-col justify-end p-7",
                       children: [
                         /* @__PURE__ */ jsx_runtime.jsx("span", {
-                          className: "label mb-4",
+                          className: "label mb-4 opacity-85 tracking-wider",
                           children: c.k
                         }),
                         /* @__PURE__ */ jsx_runtime.jsx("div", {
-                          className: "wide text-2xl leading-tight md:text-3xl",
+                          className: "wide text-2xl leading-tight md:text-3xl drop-shadow-sm",
                           children: c.t
                         })
                       ]
@@ -16080,7 +16188,7 @@ Error generating stack: ` + x.message + `
                   ]
                 }),
                 /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                  className: "label mt-3 flex justify-between text-muted-foreground",
+                  className: "label mt-3 flex justify-between text-muted-foreground transition-colors group-hover:text-foreground",
                   children: [
                     /* @__PURE__ */ jsx_runtime.jsxs("span", {
                       children: [
@@ -16091,6 +16199,7 @@ Error generating stack: ` + x.message + `
                       ]
                     }),
                     /* @__PURE__ */ jsx_runtime.jsx("span", {
+                      className: "transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 text-primary",
                       children: "↗"
                     })
                   ]
@@ -16165,10 +16274,10 @@ Error generating stack: ` + x.message + `
         }),
         services.map((s, i) => /* @__PURE__ */ jsx_runtime.jsx(Reveal, {
           children: /* @__PURE__ */ jsx_runtime.jsxs("div", {
-            className: "group grid grid-cols-[3rem_1fr] items-baseline gap-4 border-t py-10 transition-colors hover:bg-card md:grid-cols-[4rem_1fr_1fr_3rem] md:px-4",
+            className: "group grid grid-cols-[3rem_1fr] items-baseline gap-4 border-t border-border/60 py-10 transition-all duration-300 hover:bg-white/[0.035] hover:backdrop-blur-sm rounded-xl md:grid-cols-[4rem_1fr_1fr_3rem] md:px-4",
             children: [
               /* @__PURE__ */ jsx_runtime.jsx("span", {
-                className: "label text-primary",
+                className: "label text-primary transition-transform duration-300 group-hover:scale-110",
                 children: String(i + 1).padStart(2, "0")
               }),
               /* @__PURE__ */ jsx_runtime.jsx("h3", {
@@ -16176,11 +16285,11 @@ Error generating stack: ` + x.message + `
                 children: s.t
               }),
               /* @__PURE__ */ jsx_runtime.jsx("p", {
-                className: "col-start-2 max-w-md text-muted-foreground md:col-start-3",
+                className: "col-start-2 max-w-md text-muted-foreground transition-colors group-hover:text-foreground/90 md:col-start-3",
                 children: s.d
               }),
               /* @__PURE__ */ jsx_runtime.jsx("span", {
-                className: "hidden text-2xl transition-transform duration-500 group-hover:-rotate-45 md:block",
+                className: "hidden text-2xl transition-all duration-500 group-hover:-rotate-45 group-hover:text-primary md:block",
                 children: "→"
               })
             ]
