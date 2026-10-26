@@ -2936,11 +2936,12 @@
   position: relative;
   border-top: 1px solid var(--border);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  border-radius: 14px;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  border-radius: 16px;
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 .project-row-item:hover, .project-row-item.is-active {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.008) 100%);
@@ -15970,6 +15971,7 @@ Error generating stack: ` + x.message + `
           className: "grid gap-12 md:grid-cols-[1.6fr_1fr]",
           children: [
             /* @__PURE__ */ jsx_runtime.jsx("div", {
+              className: "flex flex-col gap-6 md:gap-10",
               children: projects.map((x, i) => /* @__PURE__ */ jsx_runtime.jsxs("a", {
                 ref: (el) => {
                   rows.current[i] = el;
@@ -15979,7 +15981,7 @@ Error generating stack: ` + x.message + `
                 target: "_blank",
                 rel: "noreferrer",
                 onMouseEnter: () => setActive(i),
-                className: `group grid grid-cols-[3rem_1fr_auto] items-center gap-4 project-row-item py-12 md:py-16 ${active === i ? "is-active" : ""}`,
+                className: `group grid grid-cols-[3rem_1fr_auto] items-center gap-4 project-row-item py-16 md:py-24 ${active === i ? "is-active" : ""}`,
                 children: [
                   /* @__PURE__ */ jsx_runtime.jsx("span", {
                     className: `label transition-all duration-300 ${active === i ? "text-primary font-semibold" : "text-faint"}`,
@@ -15992,7 +15994,7 @@ Error generating stack: ` + x.message + `
                         children: x.title
                       }),
                       /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                        className: "label mt-3 text-muted-foreground",
+                        className: "label mt-4 text-muted-foreground",
                         children: [
                           x.tag,
                           " ",
