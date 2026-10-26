@@ -2880,6 +2880,42 @@
   background-image: linear-gradient(oklch(1 0 0 / .08) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0 / .08) 1px, transparent 1px);
   background-size: 32px 32px;
 }
+.liquid-glass {
+  background: radial-gradient(135% 100% at 10% 0%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 
+    0 24px 48px -12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+.liquid-glass-pill {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.liquid-glass-pill:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateX(2px);
+}
+.liquid-glass-pill.active {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border-color: rgba(255, 255, 255, 0.32);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.38),
+    0 0 20px rgba(180, 160, 255, 0.12);
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 @media (prefers-reduced-motion: reduce) {
   .marquee, .grain {
     animation: none;
@@ -3430,78 +3466,6 @@
       --tw-exit-translate-y: 0;
     }
   }
-}
-
-/* Liquid Glass Styling */
-.liquid-glass-sidebar {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
-  border-left: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow:
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
-    0 24px 48px -12px rgba(0, 0, 0, 0.6),
-    0 0 35px -8px oklch(0.74 0.13 262 / 0.15);
-}
-
-.liquid-btn {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.liquid-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-.liquid-btn:hover::before {
-  opacity: 1;
-}
-
-.liquid-btn-active {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  box-shadow:
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25),
-    0 8px 24px -4px rgba(0, 0, 0, 0.4),
-    0 0 20px -2px oklch(0.74 0.13 262 / 0.25) !important;
-}
-
-.liquid-card {
-  position: relative;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.012) 100%);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow:
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.08),
-    0 16px 32px -12px rgba(0, 0, 0, 0.4);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.liquid-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.2);
-  border-top-color: rgba(255, 255, 255, 0.35);
-  box-shadow:
-    inset 0 1px 2px 0 rgba(255, 255, 255, 0.2),
-    0 24px 44px -8px rgba(0, 0, 0, 0.55),
-    0 0 30px -8px oklch(0.74 0.13 262 / 0.22);
-}
-
-.scrollbar-none::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-none {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 </style>
@@ -15506,59 +15470,25 @@ Error generating stack: ` + x.message + `
   };
 
   // src/lib/content.ts
-  var projects = [
-    { title: "Hyperspectral Face ID", tag: "Computer Vision · 3D-CNN", year: "400–1000nm", note: "1200+ bands · ArcFace on S¹²⁷ · Spectral SHAP", metric: "1200+ BANDS", panel: "panel-a", url: "https://github.com/niranjan-crypt/Hyperspectral-Face-Identification-XAI", desc: "Anti-spoofing facial biometrics across 1200+ contiguous spectral bands (400–1000 nm) using 3D-CNN feature fusion, ArcFace loss on S¹²⁷, and SHAP explainability on Raspberry Pi 4." },
-    { title: "Transmission Fault Detection", tag: "Vision · Deep Learning", year: "2025", note: "Dual-stream ResNet50 + classical HOG/GLCM texture", metric: "82.0% ACC", panel: "panel-b", url: "https://github.com/niranjan-crypt/Hybrid-Computer-Vision-and-Deep-Learning-for-Automated-Power-Transmission-Fault-Detection", desc: "Aerial transmission inspection pipeline benchmarking transfer-learning CNNs against classical CV (Hough circles, HOG, GLCM), reaching 82% fault detection accuracy." },
-    { title: "CommerceIQ", tag: "Data Engineering · Cloud", year: "100K+ ORDERS", note: "1.5M records · 22 DQ gates · PostgreSQL 16", metric: "1.5M RECORDS", panel: "panel-c", url: "https://github.com/niranjan-crypt/CommerceIQ", desc: "Enterprise transactional and analytical platform processing 100k+ orders across 1.5M records with 3NF OLTP, Kimball star schema, 22 DQ gates, and 5.35x query speedup." },
-    { title: "IntelliPQ", tag: "Signal Processing · DL", year: "IEEE 1159/519", note: "FFT · THD% · 1D-CNN + BiLSTM · Neuro-symbolic", metric: "98.5% ACC", panel: "panel-d", url: "https://github.com/niranjan-crypt/IntelliPQ-AI-Based-Power-Quality-Monitoring-Fault-Detection", desc: "Smart grid diagnostic intelligence platform combining DSP analytics (FFT, THD%, RMS) and 1D-CNN + BiLSTM with neuro-symbolic arbitration under IEEE standards." },
-    { title: "KinoSync Glove", tag: "Embedded · IoT · Digital Twin", year: "BLE 5.0", note: "5x flex sensors · PPG pulse · ESP32 · 3D twin", metric: "0°–90° FLEX", panel: "panel-a", url: "https://github.com/niranjan-crypt/KinoSync-Cyber-Physical-Smart-Glove-Telemetry-3D-Digital-Twin-System", desc: "Cyber-physical wearable glove streaming 5-finger continuous flexion (0°–90°) and PPG heart rate over low-latency BLE 5.0 GATT to an interactive 3D digital twin." },
-    { title: "PSO-GA MRI Segmentation", tag: "Medical Imaging · Optimisation", year: "PSO+GA+DE", note: "Multilevel Otsu · Haralick GLCM · Random Forest", metric: "HYBRID SWARM", panel: "panel-b", url: "https://github.com/niranjan-crypt/Hybrid-PSO-GA-Based-Multilevel-Otsu-MRI-Segmentation-with-Machine-Learning-Validation", desc: "Bio-inspired metaheuristic framework for Multilevel Otsu brain MRI segmentation combining PSO, GA, and DE with Random Forest validation on GLCM textures." },
-    { title: "TOC-AV Verifier", tag: "Formal Methods · Automata", year: "DFA/NPDA/TM", note: "Timed Automata · DFA · NFA · Turing Machine", metric: "FORMAL PROOF", panel: "panel-c", url: "https://github.com/niranjan-crypt/Computation-and-Compiler-design", desc: "Formal automata models using DFA, NFA, Timed Automata, NPDA, and Turing Machines establishing mathematical safety proofs for collision-free autonomous parking." },
-    { title: "Grid Congestion Relief", tag: "Power Systems · IEEE EPREC", year: "IEEE '26", note: "OOA-KHA-SHO tri-hybrid · DC-OPF · IEEE 14/30-bus", metric: "IEEE EPREC '26", panel: "panel-d", url: "https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems", desc: "Published IEEE EPREC-2026 research formulating DC-OPF PTDF sensitivity and tri-hybrid metaheuristics (OOA, KHA, SHO) for transmission overload relief with zero load shedding." },
-    { title: "Physics-Informed MPPT", tag: "Renewables · IEEE SPICES", year: "IEEE '26", note: "6 diode features · 300-state Markov · <5ms", metric: "R² = 0.9994", panel: "panel-a", url: "https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems", desc: "Accepted IEEE SPICES 2026 research embedding semiconductor diode physics into neural MPPT with 300-state 2D Markov stochastic validation, achieving R² = 0.9994." },
-    { title: "Privacy-Preserving FL", tag: "Distributed AI · Privacy", year: "2025", note: "Flower · FedAvg · Fernet AES · 2-layer LSTM", metric: "FEDAVG + FERNET", panel: "panel-b", url: "https://github.com/niranjan-crypt/Privacy-Preserving-Federated-Learning-FL-System-for-Text-Prediction", desc: "Decentralized next-word prediction platform built with Flower and FedAvg, training local LSTM models with Fernet parameter encryption and device resource monitoring." },
-    { title: "HuntOS", tag: "Full-Stack · AI Copilot", year: "v2.0", note: "React 19 · Node.js · MySQL · Gemini AI · Chrome Ext", metric: "GEMINI COPILOT", panel: "panel-c", url: "https://github.com/niranjan-crypt/HuntOS", desc: "Autonomous career and placement operating system featuring a dual-pipeline Kanban engine, Gemini AI interview copilot, FastClip Chrome extension, and ATS resume scoring." }
+  var projectTopics = [
+    { id: "all", label: "All Projects", icon: "✦", subtitle: "Full Portfolio" },
+    { id: "vision", label: "Vision & Imaging", icon: "◎", subtitle: "Biometrics & Medical" },
+    { id: "power", label: "Power & Energy", icon: "⚡", subtitle: "Grid & Photovoltaic" },
+    { id: "ai", label: "AI & Distributed", icon: "◈", subtitle: "FL, Copilot & Data" },
+    { id: "embedded", label: "Cyber-Physical", icon: "⬡", subtitle: "IoT & Formal Proofs" }
   ];
-  var topicCategories = [
-    {
-      id: "all",
-      name: "All Topics",
-      badge: "11",
-      icon: "✦",
-      desc: "Unified engineering index spanning computer vision, power grid intelligence, cyber-physical systems, and distributed platforms."
-    },
-    {
-      id: "cv-medical",
-      name: "Computer Vision & Medical AI",
-      badge: "03",
-      icon: "◉",
-      desc: "Hyperspectral facial biometrics, automated power transmission inspection, and bio-inspired evolutionary MRI segmentation.",
-      indices: [0, 1, 5]
-    },
-    {
-      id: "physics-energy",
-      name: "Physics-Informed ML & Energy",
-      badge: "03",
-      icon: "⚡",
-      desc: "Accepted & published IEEE research integrating semiconductor physics, Markov chains, and tri-hybrid OPF congestion relief.",
-      indices: [8, 7, 3]
-    },
-    {
-      id: "cyber-physical",
-      name: "Cyber-Physical & Formal Systems",
-      badge: "02",
-      icon: "⬡",
-      desc: "5-finger BLE telemetry glove with real-time 3D twin, and automata-based mathematical verification for autonomous safety.",
-      indices: [4, 6]
-    },
-    {
-      id: "distributed-web",
-      name: "Distributed AI & Full-Stack",
-      badge: "03",
-      icon: "◈",
-      desc: "Decentralized privacy-preserving federated learning, Gemini-powered career operating systems, and high-throughput data platforms.",
-      indices: [9, 10, 2]
-    }
+  var projects = [
+    { title: "Hyperspectral Face ID", topic: "vision", tag: "Computer Vision · 3D-CNN", year: "400–1000nm", note: "1200+ bands · ArcFace on S¹²⁷ · Spectral SHAP", metric: "1200+ BANDS", panel: "panel-a", url: "https://github.com/niranjan-crypt/Hyperspectral-Face-Identification-XAI", desc: "Anti-spoofing facial biometrics across 1200+ contiguous spectral bands (400–1000 nm) using 3D-CNN feature fusion, ArcFace loss on S¹²⁷, and SHAP explainability on Raspberry Pi 4." },
+    { title: "Transmission Fault Detection", topic: "vision", tag: "Vision · Deep Learning", year: "2025", note: "Dual-stream ResNet50 + classical HOG/GLCM texture", metric: "82.0% ACC", panel: "panel-b", url: "https://github.com/niranjan-crypt/Hybrid-Computer-Vision-and-Deep-Learning-for-Automated-Power-Transmission-Fault-Detection", desc: "Aerial transmission inspection pipeline benchmarking transfer-learning CNNs against classical CV (Hough circles, HOG, GLCM), reaching 82% fault detection accuracy." },
+    { title: "PSO-GA MRI Segmentation", topic: "vision", tag: "Medical Imaging · Optimisation", year: "PSO+GA+DE", note: "Multilevel Otsu · Haralick GLCM · Random Forest", metric: "HYBRID SWARM", panel: "panel-c", url: "https://github.com/niranjan-crypt/Hybrid-PSO-GA-Based-Multilevel-Otsu-MRI-Segmentation-with-Machine-Learning-Validation", desc: "Bio-inspired metaheuristic framework for Multilevel Otsu brain MRI segmentation combining PSO, GA, and DE with Random Forest validation on GLCM textures." },
+    { title: "Grid Congestion Relief", topic: "power", tag: "Power Systems · IEEE EPREC", year: "IEEE '26", note: "OOA-KHA-SHO tri-hybrid · DC-OPF · IEEE 14/30-bus", metric: "IEEE EPREC '26", panel: "panel-d", url: "https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems", desc: "Published IEEE EPREC-2026 research formulating DC-OPF PTDF sensitivity and tri-hybrid metaheuristics (OOA, KHA, SHO) for transmission overload relief with zero load shedding." },
+    { title: "Physics-Informed MPPT", topic: "power", tag: "Renewables · IEEE SPICES", year: "IEEE '26", note: "6 diode features · 300-state Markov · <5ms", metric: "R² = 0.9994", panel: "panel-a", url: "https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems", desc: "Accepted IEEE SPICES 2026 research embedding semiconductor diode physics into neural MPPT with 300-state 2D Markov stochastic validation, achieving R² = 0.9994." },
+    { title: "IntelliPQ", topic: "power", tag: "Signal Processing · DL", year: "IEEE 1159/519", note: "FFT · THD% · 1D-CNN + BiLSTM · Neuro-symbolic", metric: "98.5% ACC", panel: "panel-b", url: "https://github.com/niranjan-crypt/IntelliPQ-AI-Based-Power-Quality-Monitoring-Fault-Detection", desc: "Smart grid diagnostic intelligence platform combining DSP analytics (FFT, THD%, RMS) and 1D-CNN + BiLSTM with neuro-symbolic arbitration under IEEE standards." },
+    { title: "Privacy-Preserving FL", topic: "ai", tag: "Distributed AI · Privacy", year: "2025", note: "Flower · FedAvg · Fernet AES · 2-layer LSTM", metric: "FEDAVG + FERNET", panel: "panel-c", url: "https://github.com/niranjan-crypt/Privacy-Preserving-Federated-Learning-FL-System-for-Text-Prediction", desc: "Decentralized next-word prediction platform built with Flower and FedAvg, training local LSTM models with Fernet parameter encryption and device resource monitoring." },
+    { title: "HuntOS", topic: "ai", tag: "Full-Stack · AI Copilot", year: "v2.0", note: "React 19 · Node.js · MySQL · Gemini AI · Chrome Ext", metric: "GEMINI COPILOT", panel: "panel-d", url: "https://github.com/niranjan-crypt/HuntOS", desc: "Autonomous career and placement operating system featuring a dual-pipeline Kanban engine, Gemini AI interview copilot, FastClip Chrome extension, and ATS resume scoring." },
+    { title: "CommerceIQ", topic: "ai", tag: "Data Engineering · Cloud", year: "100K+ ORDERS", note: "1.5M records · 22 DQ gates · PostgreSQL 16", metric: "1.5M RECORDS", panel: "panel-a", url: "https://github.com/niranjan-crypt/CommerceIQ", desc: "Enterprise transactional and analytical platform processing 100k+ orders across 1.5M records with 3NF OLTP, Kimball star schema, 22 DQ gates, and 5.35x query speedup." },
+    { title: "KinoSync Glove", topic: "embedded", tag: "Embedded · IoT · Digital Twin", year: "BLE 5.0", note: "5x flex sensors · PPG pulse · ESP32 · 3D twin", metric: "0°–90° FLEX", panel: "panel-b", url: "https://github.com/niranjan-crypt/KinoSync-Cyber-Physical-Smart-Glove-Telemetry-3D-Digital-Twin-System", desc: "Cyber-physical wearable glove streaming 5-finger continuous flexion (0°–90°) and PPG heart rate over low-latency BLE 5.0 GATT to an interactive 3D digital twin." },
+    { title: "TOC-AV Verifier", topic: "embedded", tag: "Formal Methods · Automata", year: "DFA/NPDA/TM", note: "Timed Automata · DFA · NFA · Turing Machine", metric: "FORMAL PROOF", panel: "panel-c", url: "https://github.com/niranjan-crypt/Computation-and-Compiler-design", desc: "Formal automata models using DFA, NFA, Timed Automata, NPDA, and Turing Machines establishing mathematical safety proofs for collision-free autonomous parking." }
   ];
   var closeUp = [
     { k: "Publication", t: "Hybrid Optimization for Congestion Management in Deregulated Power Systems", s: "IEEE EPREC 2026 · IIT Bhilai", href: "https://doi.org/10.1109/EPREC66546.2026.11412040", panel: "panel-d" },
@@ -15825,11 +15755,6 @@ Error generating stack: ` + x.message + `
               children: "Work"
             }),
             /* @__PURE__ */ jsx_runtime.jsx("a", {
-              href: "#topics",
-              className: "label link-u hidden md:inline",
-              children: "Topics"
-            }),
-            /* @__PURE__ */ jsx_runtime.jsx("a", {
               href: "#about",
               className: "label link-u hidden md:inline",
               children: "About"
@@ -15969,14 +15894,94 @@ Error generating stack: ` + x.message + `
     });
   }
   function Work() {
+    const [selectedTopic, setSelectedTopic] = import_react.useState("all");
     const [active, setActive] = import_react.useState(0);
     const rows = import_react.useRef([]);
+
+    const handleTopicChange = import_react.useCallback((topicId) => {
+      setSelectedTopic(topicId);
+      if (topicId === "all") {
+        setActive(0);
+      } else {
+        const idx = projects.findIndex((p) => p.topic === topicId);
+        if (idx !== -1) setActive(idx);
+      }
+    }, []);
+
     import_react.useEffect(() => {
-      const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && setActive(Number(e.target.dataset["i"]))), { rootMargin: "-45% 0px -45% 0px" });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting && e.target.dataset["i"] !== undefined) {
+            setActive(Number(e.target.dataset["i"]));
+          }
+        });
+      }, { rootMargin: "-40% 0px -40% 0px" });
       rows.current.forEach((r) => r && io.observe(r));
       return () => io.disconnect();
-    }, []);
+    }, [selectedTopic]);
+
     const p = projects[active] ?? projects[0];
+    const filteredProjects = selectedTopic === "all" ? projects : projects.filter((x) => x.topic === selectedTopic);
+    const curTopic = projectTopics.find((t) => t.id === selectedTopic) ?? projectTopics[0];
+
+    const renderProjectRow = (x) => {
+      const globalIdx = projects.findIndex((item) => item.title === x.title);
+      const isCurActive = active === globalIdx;
+      return /* @__PURE__ */ jsx_runtime.jsxs("a", {
+        ref: (el) => {
+          rows.current[globalIdx] = el;
+        },
+        "data-i": globalIdx,
+        href: x.url,
+        target: "_blank",
+        rel: "noreferrer",
+        onMouseEnter: () => setActive(globalIdx),
+        className: "group grid grid-cols-[2.5rem_1fr_auto] md:grid-cols-[3rem_1fr_auto] items-center gap-4 border-t border-border/40 py-10 md:py-16 transition-colors",
+        children: [
+          /* @__PURE__ */ jsx_runtime.jsx("span", {
+            className: `label transition-colors ${isCurActive ? "text-primary font-semibold" : "text-faint"}`,
+            children: String(globalIdx + 1).padStart(2, "0")
+          }),
+          /* @__PURE__ */ jsx_runtime.jsxs("div", {
+            children: [
+              /* @__PURE__ */ jsx_runtime.jsx("h3", {
+                className: `wide text-3xl md:text-5xl transition-all duration-500 ${isCurActive ? "text-foreground" : "text-faint"} group-hover:translate-x-3`,
+                children: x.title
+              }),
+              /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                className: "label mt-2.5 text-muted-foreground text-xs md:text-sm",
+                children: [
+                  x.tag,
+                  " ",
+                  /* @__PURE__ */ jsx_runtime.jsxs("span", {
+                    className: "ml-2 text-primary",
+                    children: [
+                      "(",
+                      x.note,
+                      ")"
+                    ]
+                  })
+                ]
+              })
+            ]
+          }),
+          /* @__PURE__ */ jsx_runtime.jsxs("div", {
+            className: "label text-right",
+            children: [
+              /* @__PURE__ */ jsx_runtime.jsx("div", {
+                className: "text-muted-foreground text-xs md:text-sm",
+                children: x.year
+              }),
+              /* @__PURE__ */ jsx_runtime.jsx("div", {
+                className: `mt-2 text-xs transition-opacity ${isCurActive ? "opacity-100 text-primary" : "opacity-0"}`,
+                children: "View code →"
+              })
+            ]
+          })
+        ]
+      }, x.title);
+    };
+
     return /* @__PURE__ */ jsx_runtime.jsxs("section", {
       id: "work",
       className: "px-6 py-28 md:px-[4vw]",
@@ -15997,63 +16002,231 @@ Error generating stack: ` + x.message + `
           ]
         }),
         /* @__PURE__ */ jsx_runtime.jsxs("div", {
-          className: "grid gap-12 md:grid-cols-[1.6fr_1fr]",
+          className: "grid gap-8 lg:grid-cols-[240px_minmax(0,1.3fr)_340px] xl:grid-cols-[260px_minmax(0,1.4fr)_380px] md:grid-cols-[1.5fr_1fr]",
           children: [
-            /* @__PURE__ */ jsx_runtime.jsx("div", {
-              children: projects.map((x, i) => /* @__PURE__ */ jsx_runtime.jsxs("a", {
-                ref: (el) => {
-                  rows.current[i] = el;
-                },
-                "data-i": i,
-                href: x.url,
-                target: "_blank",
-                rel: "noreferrer",
-                onMouseEnter: () => setActive(i),
-                className: "group grid grid-cols-[3rem_1fr_auto] items-center gap-4 border-t py-14 md:py-20",
+            /* 1. Desktop Liquid Glass Sidebar */
+            /* @__PURE__ */ jsx_runtime.jsx("aside", {
+              className: "hidden lg:block sticky top-28 self-start",
+              children: /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                className: "liquid-glass rounded-2xl p-3.5 flex flex-col gap-1.5 relative overflow-hidden",
                 children: [
-                  /* @__PURE__ */ jsx_runtime.jsx("span", {
-                    className: `label transition-colors ${active === i ? "text-primary" : "text-faint"}`,
-                    children: String(i + 1).padStart(2, "0")
+                  /* Ambient reflection inside glass */
+                  /* @__PURE__ */ jsx_runtime.jsx("div", {
+                    className: "absolute -top-12 -left-12 w-28 h-28 rounded-full pointer-events-none opacity-20 blur-xl",
+                    style: { background: "radial-gradient(circle, var(--primary) 0%, transparent 70%)" }
                   }),
+                  /* Sidebar Header */
                   /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    className: "flex items-center justify-between pb-3 mb-1 border-b border-white/10 px-2",
                     children: [
-                      /* @__PURE__ */ jsx_runtime.jsx("h3", {
-                        className: `wide text-4xl transition-all duration-500 md:text-6xl ${active === i ? "text-foreground" : "text-faint"} group-hover:translate-x-3`,
-                        children: x.title
-                      }),
                       /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                        className: "label mt-3 text-muted-foreground",
+                        className: "flex items-center gap-2",
                         children: [
-                          x.tag,
-                          " ",
-                          /* @__PURE__ */ jsx_runtime.jsxs("span", {
-                            className: "ml-3 text-primary",
-                            children: [
-                              "(",
-                              x.note,
-                              ")"
-                            ]
+                          /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            className: "inline-block w-2 h-2 rounded-full bg-primary animate-pulse"
+                          }),
+                          /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            className: "label text-xs tracking-widest text-foreground font-semibold uppercase",
+                            children: "Topics"
                           })
+                        ]
+                      }),
+                      /* @__PURE__ */ jsx_runtime.jsxs("span", {
+                        className: "label text-[11px] text-muted-foreground",
+                        children: [
+                          String(filteredProjects.length).padStart(2, "0"),
+                          " / ",
+                          String(projects.length).padStart(2, "0")
                         ]
                       })
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                    className: "label text-right",
+                  /* Topic pill buttons */
+                  ...projectTopics.map((t) => {
+                    const count = t.id === "all" ? projects.length : projects.filter((item) => item.topic === t.id).length;
+                    const isSelected = selectedTopic === t.id;
+                    return /* @__PURE__ */ jsx_runtime.jsxs("button", {
+                      type: "button",
+                      onClick: () => handleTopicChange(t.id),
+                      className: `liquid-glass-pill w-full text-left rounded-xl px-3.5 py-2.5 flex items-center justify-between cursor-pointer group transition-all ${isSelected ? "active" : ""}`,
+                      children: [
+                        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                          className: "flex items-center gap-2.5 min-w-0",
+                          children: [
+                            /* @__PURE__ */ jsx_runtime.jsx("span", {
+                              className: `text-sm transition-colors ${isSelected ? "text-primary" : "text-muted-foreground group-hover:text-foreground"}`,
+                              children: t.icon
+                            }),
+                            /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                              className: "min-w-0",
+                              children: [
+                                /* @__PURE__ */ jsx_runtime.jsx("div", {
+                                  className: `text-xs font-medium tracking-tight truncate transition-colors ${isSelected ? "text-foreground font-semibold" : "text-muted-foreground group-hover:text-foreground"}`,
+                                  children: t.label
+                                }),
+                                /* @__PURE__ */ jsx_runtime.jsx("div", {
+                                  className: "text-[10px] text-muted-foreground/70 truncate",
+                                  children: t.subtitle
+                                })
+                              ]
+                            })
+                          ]
+                        }),
+                        /* @__PURE__ */ jsx_runtime.jsx("span", {
+                          className: `label text-[10px] px-1.5 py-0.5 rounded-md border transition-all ${isSelected ? "border-primary/40 text-primary bg-primary/10" : "border-white/5 text-muted-foreground bg-white/5"}`,
+                          children: String(count).padStart(2, "0")
+                        })
+                      ]
+                    }, t.id);
+                  }),
+                  /* Reset button */
+                  selectedTopic !== "all" ? /* @__PURE__ */ jsx_runtime.jsxs("button", {
+                    type: "button",
+                    onClick: () => handleTopicChange("all"),
+                    className: "mt-2 pt-2 border-t border-white/10 text-center label text-[11px] text-primary hover:underline cursor-pointer",
                     children: [
-                      /* @__PURE__ */ jsx_runtime.jsx("div", {
-                        className: "text-muted-foreground",
-                        children: x.year
+                      "View all topics (",
+                      String(projects.length).padStart(2, "0"),
+                      ") →"
+                    ]
+                  }) : null
+                ]
+              })
+            }),
+            /* 2. Middle Column: Mobile Liquid Glass Dock + Project Rows */
+            /* @__PURE__ */ jsx_runtime.jsxs("div", {
+              children: [
+                /* Mobile & Tablet Horizontal Liquid Glass Dock */
+                /* @__PURE__ */ jsx_runtime.jsx("div", {
+                  className: "lg:hidden mb-8 -mx-2 px-2 overflow-x-auto no-scrollbar",
+                  children: /* @__PURE__ */ jsx_runtime.jsx("div", {
+                    className: "liquid-glass rounded-2xl p-1.5 flex gap-1.5 min-w-max",
+                    children: projectTopics.map((t) => {
+                      const count = t.id === "all" ? projects.length : projects.filter((item) => item.topic === t.id).length;
+                      const isSelected = selectedTopic === t.id;
+                      return /* @__PURE__ */ jsx_runtime.jsxs("button", {
+                        type: "button",
+                        onClick: () => handleTopicChange(t.id),
+                        className: `liquid-glass-pill rounded-xl px-3 py-2 flex items-center gap-2 cursor-pointer text-xs ${isSelected ? "active text-foreground font-semibold" : "text-muted-foreground"}`,
+                        children: [
+                          /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            className: isSelected ? "text-primary" : "",
+                            children: t.icon
+                          }),
+                          /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            children: t.label
+                          }),
+                          /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            className: `label text-[10px] px-1.5 py-0.5 rounded ${isSelected ? "text-primary bg-primary/10" : "text-muted-foreground bg-white/5"}`,
+                            children: String(count).padStart(2, "0")
+                          })
+                        ]
+                      }, t.id);
+                    })
+                  })
+                }),
+                /* Project Rows */
+                selectedTopic === "all" ? (
+                  /* Grouped by topic when 'all' is selected */
+                  /* @__PURE__ */ jsx_runtime.jsx("div", {
+                    children: projectTopics.filter((t) => t.id !== "all").map((topic) => {
+                      const topicProjects = projects.filter((p) => p.topic === topic.id);
+                      if (topicProjects.length === 0) return null;
+                      return /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                        className: "mb-14 last:mb-0",
+                        children: [
+                          /* Topic Section Header */
+                          /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                            className: "flex items-center justify-between pb-3 mb-2 border-b border-white/10",
+                            children: [
+                              /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                                className: "flex items-center gap-2.5",
+                                children: [
+                                  /* @__PURE__ */ jsx_runtime.jsx("span", {
+                                    className: "text-primary text-sm",
+                                    children: topic.icon
+                                  }),
+                                  /* @__PURE__ */ jsx_runtime.jsx("span", {
+                                    className: "label text-foreground font-semibold text-xs tracking-widest uppercase",
+                                    children: topic.label
+                                  }),
+                                  /* @__PURE__ */ jsx_runtime.jsxs("span", {
+                                    className: "label text-[11px] text-muted-foreground hidden sm:inline",
+                                    children: [
+                                      "— ",
+                                      topic.subtitle
+                                    ]
+                                  })
+                                ]
+                              }),
+                              /* @__PURE__ */ jsx_runtime.jsx("button", {
+                                type: "button",
+                                onClick: () => handleTopicChange(topic.id),
+                                className: "label text-[11px] text-muted-foreground hover:text-primary transition-colors cursor-pointer",
+                                children: `${topicProjects.length} projects →`
+                              })
+                            ]
+                          }),
+                          /* Projects in this topic */
+                          /* @__PURE__ */ jsx_runtime.jsx("div", {
+                            children: topicProjects.map((x) => renderProjectRow(x))
+                          })
+                        ]
+                      }, topic.id);
+                    })
+                  })
+                ) : (
+                  /* Single filtered topic view */
+                  /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    children: [
+                      /* Filter Active Header */
+                      /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                        className: "flex items-center justify-between pb-4 mb-4 border-b border-white/10",
+                        children: [
+                          /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                            className: "flex items-center gap-2.5",
+                            children: [
+                              /* @__PURE__ */ jsx_runtime.jsx("span", {
+                                className: "text-primary text-base",
+                                children: curTopic.icon
+                              }),
+                              /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                                children: [
+                                  /* @__PURE__ */ jsx_runtime.jsxs("h4", {
+                                    className: "label text-foreground font-semibold text-sm tracking-widest uppercase",
+                                    children: [
+                                      curTopic.label,
+                                      " (",
+                                      String(filteredProjects.length).padStart(2, "0"),
+                                      ")"
+                                    ]
+                                  }),
+                                  /* @__PURE__ */ jsx_runtime.jsx("p", {
+                                    className: "text-xs text-muted-foreground mt-0.5",
+                                    children: curTopic.subtitle
+                                  })
+                                ]
+                              })
+                            ]
+                          }),
+                          /* @__PURE__ */ jsx_runtime.jsx("button", {
+                            type: "button",
+                            onClick: () => handleTopicChange("all"),
+                            className: "liquid-glass-pill rounded-lg px-3 py-1.5 label text-xs text-primary hover:text-foreground cursor-pointer",
+                            children: "View all topics ✕"
+                          })
+                        ]
                       }),
+                      /* Projects in filtered topic */
                       /* @__PURE__ */ jsx_runtime.jsx("div", {
-                        className: `mt-3 transition-opacity ${active === i ? "opacity-100" : "opacity-0"}`,
-                        children: "View code →"
+                        children: filteredProjects.map((x) => renderProjectRow(x))
                       })
                     ]
                   })
-                ]
-              }, x.title))
+                )
+              ]
             }),
+            /* 3. Right Column: Sticky Preview Panel */
             /* @__PURE__ */ jsx_runtime.jsx("div", {
               className: "hidden md:block",
               children: /* @__PURE__ */ jsx_runtime.jsxs("div", {
@@ -16121,227 +16294,6 @@ Error generating stack: ` + x.message + `
                   })
                 ]
               })
-            })
-          ]
-        })
-      ]
-    });
-  }
-  function TopicsExplorer() {
-    const [activeTopic, setActiveTopic] = import_react.useState("all");
-
-    const activeCategory = topicCategories.find((c) => c.id === activeTopic) || topicCategories[0];
-    const visibleGroups = activeTopic === "all"
-      ? topicCategories.filter((c) => c.id !== "all")
-      : [activeCategory];
-
-    return /* @__PURE__ */ jsx_runtime.jsxs("section", {
-      id: "topics",
-      className: "px-6 py-24 md:px-[4vw] border-t border-border/40 relative",
-      children: [
-        /* @__PURE__ */ jsx_runtime.jsxs("div", {
-          className: "mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4",
-          children: [
-            /* @__PURE__ */ jsx_runtime.jsxs("div", {
-              children: [
-                /* @__PURE__ */ jsx_runtime.jsx("span", {
-                  className: "label text-primary",
-                  children: "(Domains & Topics)"
-                }),
-                /* @__PURE__ */ jsx_runtime.jsx("h2", {
-                  className: "wide mt-3 text-4xl md:text-6xl text-foreground",
-                  children: "Explore by topic"
-                })
-              ]
-            }),
-            /* @__PURE__ */ jsx_runtime.jsx("p", {
-              className: "label max-w-md text-muted-foreground",
-              children: "Filter projects across core research domains or view the unified index with the liquid glass directory."
-            })
-          ]
-        }),
-        /* @__PURE__ */ jsx_runtime.jsxs("div", {
-          className: "grid gap-8 lg:grid-cols-[280px_1fr] xl:grid-cols-[320px_1fr] items-start",
-          children: [
-            /* @__PURE__ */ jsx_runtime.jsx("div", {
-              className: "w-full",
-              children: /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                className: "sticky top-28 liquid-glass-sidebar rounded-2xl p-3 md:p-4",
-                children: [
-                  /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                    className: "hidden lg:flex items-center justify-between pb-3 mb-3 border-b border-white/10",
-                    children: [
-                      /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                        className: "flex items-center gap-2",
-                        children: [
-                          /* @__PURE__ */ jsx_runtime.jsx("span", {
-                            className: "inline-block w-2 h-2 rounded-full bg-primary animate-pulse"
-                          }),
-                          /* @__PURE__ */ jsx_runtime.jsx("span", {
-                            className: "label text-xs tracking-widest uppercase text-muted-foreground",
-                            children: "Topics Directory"
-                          })
-                        ]
-                      }),
-                      /* @__PURE__ */ jsx_runtime.jsx("span", {
-                        className: "label text-xs text-primary font-mono",
-                        children: activeTopic === "all" ? "11 / 11" : `${activeCategory.badge} / 11`
-                      })
-                    ]
-                  }),
-                  /* @__PURE__ */ jsx_runtime.jsx("div", {
-                    className: "flex gap-2 overflow-x-auto lg:overflow-visible lg:flex-col pb-1 lg:pb-0 scrollbar-none",
-                    children: topicCategories.map((cat) => /* @__PURE__ */ jsx_runtime.jsxs("button", {
-                      type: "button",
-                      key: cat.id,
-                      onClick: () => setActiveTopic(cat.id),
-                      className: `liquid-btn shrink-0 lg:w-full text-left px-3.5 py-2.5 rounded-xl transition-all duration-300 flex items-center justify-between gap-3 group ${
-                        activeTopic === cat.id
-                          ? "liquid-btn-active text-foreground font-medium"
-                          : "text-muted-foreground hover:text-foreground hover:bg-white/[0.04]"
-                      }`,
-                      children: [
-                        /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                          className: "flex items-center gap-2.5 min-w-0",
-                          children: [
-                            /* @__PURE__ */ jsx_runtime.jsx("span", {
-                              className: `text-sm transition-transform duration-300 ${
-                                activeTopic === cat.id ? "text-primary scale-110" : "text-faint group-hover:text-primary"
-                              }`,
-                              children: cat.icon
-                            }),
-                            /* @__PURE__ */ jsx_runtime.jsx("span", {
-                              className: "label text-xs tracking-wide truncate",
-                              children: cat.name
-                            })
-                          ]
-                        }),
-                        /* @__PURE__ */ jsx_runtime.jsx("span", {
-                          className: `label text-[10px] px-2 py-0.5 rounded-full font-mono transition-colors ${
-                            activeTopic === cat.id
-                              ? "bg-primary/25 text-primary border border-primary/30"
-                              : "bg-white/5 text-muted-foreground border border-white/5"
-                          }`,
-                          children: cat.badge
-                        })
-                      ]
-                    }, cat.id))
-                  }),
-                  /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                    className: "hidden lg:flex mt-4 pt-3 border-t border-white/10 items-center justify-between text-[11px] font-mono text-muted-foreground",
-                    children: [
-                      /* @__PURE__ */ jsx_runtime.jsxs("span", {
-                        children: ["Mode: ", activeTopic === "all" ? "Unified (All)" : "Isolated"]
-                      }),
-                      /* @__PURE__ */ jsx_runtime.jsx("span", {
-                        className: "text-primary",
-                        children: "✦ Liquid Glass"
-                      })
-                    ]
-                  })
-                ]
-              })
-            }),
-            /* @__PURE__ */ jsx_runtime.jsx("div", {
-              className: "space-y-12",
-              children: visibleGroups.map((group) => /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                key: group.id,
-                className: "animate-in fade-in duration-500",
-                children: [
-                  /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                    className: "mb-5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between pb-3 border-b border-border/40 gap-2",
-                    children: [
-                      /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                        className: "flex items-center gap-2.5",
-                        children: [
-                          /* @__PURE__ */ jsx_runtime.jsx("span", {
-                            className: "text-primary text-base",
-                            children: group.icon
-                          }),
-                          /* @__PURE__ */ jsx_runtime.jsx("h3", {
-                            className: "wide text-xl md:text-2xl text-foreground",
-                            children: group.name
-                          }),
-                          /* @__PURE__ */ jsx_runtime.jsxs("span", {
-                            className: "label text-xs text-primary font-mono ml-2",
-                            children: ["(", group.badge, ")"]
-                          })
-                        ]
-                      }),
-                      /* @__PURE__ */ jsx_runtime.jsx("p", {
-                        className: "text-xs text-muted-foreground max-w-md",
-                        children: group.desc
-                      })
-                    ]
-                  }),
-                  /* @__PURE__ */ jsx_runtime.jsx("div", {
-                    className: "grid gap-5 sm:grid-cols-2 xl:grid-cols-3",
-                    children: group.indices.map((idx) => {
-                      const proj = projects[idx];
-                      if (!proj) return null;
-                      return /* @__PURE__ */ jsx_runtime.jsxs("a", {
-                        key: proj.title,
-                        href: proj.url,
-                        target: "_blank",
-                        rel: "noreferrer",
-                        className: "liquid-card group flex flex-col justify-between rounded-xl p-5 md:p-6 transition-all duration-300",
-                        children: [
-                          /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                            children: [
-                              /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                                className: "flex items-center justify-between gap-2 mb-3",
-                                children: [
-                                  /* @__PURE__ */ jsx_runtime.jsx("span", {
-                                    className: "label text-[11px] font-mono text-primary truncate max-w-[70%]",
-                                    children: proj.tag
-                                  }),
-                                  /* @__PURE__ */ jsx_runtime.jsx("span", {
-                                    className: "label text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-muted-foreground shrink-0",
-                                    children: proj.year
-                                  })
-                                ]
-                              }),
-                              /* @__PURE__ */ jsx_runtime.jsxs("h4", {
-                                className: "wide text-xl md:text-2xl text-foreground group-hover:text-primary transition-colors duration-300 flex items-center justify-between",
-                                children: [
-                                  /* @__PURE__ */ jsx_runtime.jsx("span", {
-                                    children: proj.title
-                                  }),
-                                  /* @__PURE__ */ jsx_runtime.jsx("span", {
-                                    className: "text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300",
-                                    children: "↗"
-                                  })
-                                ]
-                              }),
-                              /* @__PURE__ */ jsx_runtime.jsx("p", {
-                                className: "mt-3 text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-3",
-                                children: proj.desc
-                              }),
-                              /* @__PURE__ */ jsx_runtime.jsx("div", {
-                                className: "mt-4 pt-3 border-t border-white/5 text-[11px] font-mono text-faint group-hover:text-muted-foreground transition-colors",
-                                children: proj.note
-                              })
-                            ]
-                          }),
-                          /* @__PURE__ */ jsx_runtime.jsxs("div", {
-                            className: "mt-5 pt-3 border-t border-white/10 flex items-center justify-between",
-                            children: [
-                              /* @__PURE__ */ jsx_runtime.jsx("span", {
-                                className: "display text-xs md:text-sm font-semibold tracking-wider text-foreground",
-                                children: proj.metric
-                              }),
-                              /* @__PURE__ */ jsx_runtime.jsx("span", {
-                                className: "label text-[11px] text-primary flex items-center gap-1 group-hover:underline",
-                                children: "View code ↗"
-                              })
-                            ]
-                          })
-                        ]
-                      }, proj.title);
-                    })
-                  })
-                ]
-              }, group.id))
             })
           ]
         })
@@ -16618,7 +16570,6 @@ Error generating stack: ` + x.message + `
         }),
         /* @__PURE__ */ jsx_runtime.jsx(Marquee, {}),
         /* @__PURE__ */ jsx_runtime.jsx(Work, {}),
-        /* @__PURE__ */ jsx_runtime.jsx(TopicsExplorer, {}),
         /* @__PURE__ */ jsx_runtime.jsx(UpClose, {}),
         /* @__PURE__ */ jsx_runtime.jsx(Hello, {}),
         /* @__PURE__ */ jsx_runtime.jsx(Skills, {}),
