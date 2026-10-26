@@ -3432,6 +3432,78 @@
   }
 }
 
+/* Liquid Glass Styling */
+.liquid-glass-sidebar {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
+    0 24px 48px -12px rgba(0, 0, 0, 0.6),
+    0 0 35px -8px oklch(0.74 0.13 262 / 0.15);
+}
+
+.liquid-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.liquid-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.liquid-btn:hover::before {
+  opacity: 1;
+}
+
+.liquid-btn-active {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25),
+    0 8px 24px -4px rgba(0, 0, 0, 0.4),
+    0 0 20px -2px oklch(0.74 0.13 262 / 0.25) !important;
+}
+
+.liquid-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.012) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.08),
+    0 16px 32px -12px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.liquid-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.2),
+    0 24px 44px -8px rgba(0, 0, 0, 0.55),
+    0 0 30px -8px oklch(0.74 0.13 262 / 0.22);
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 </style>
 </head>
 <body>
@@ -15447,6 +15519,47 @@ Error generating stack: ` + x.message + `
     { title: "Privacy-Preserving FL", tag: "Distributed AI · Privacy", year: "2025", note: "Flower · FedAvg · Fernet AES · 2-layer LSTM", metric: "FEDAVG + FERNET", panel: "panel-b", url: "https://github.com/niranjan-crypt/Privacy-Preserving-Federated-Learning-FL-System-for-Text-Prediction", desc: "Decentralized next-word prediction platform built with Flower and FedAvg, training local LSTM models with Fernet parameter encryption and device resource monitoring." },
     { title: "HuntOS", tag: "Full-Stack · AI Copilot", year: "v2.0", note: "React 19 · Node.js · MySQL · Gemini AI · Chrome Ext", metric: "GEMINI COPILOT", panel: "panel-c", url: "https://github.com/niranjan-crypt/HuntOS", desc: "Autonomous career and placement operating system featuring a dual-pipeline Kanban engine, Gemini AI interview copilot, FastClip Chrome extension, and ATS resume scoring." }
   ];
+  var topicCategories = [
+    {
+      id: "all",
+      name: "All Topics",
+      badge: "11",
+      icon: "✦",
+      desc: "Unified engineering index spanning computer vision, power grid intelligence, cyber-physical systems, and distributed platforms."
+    },
+    {
+      id: "cv-medical",
+      name: "Computer Vision & Medical AI",
+      badge: "03",
+      icon: "◉",
+      desc: "Hyperspectral facial biometrics, automated power transmission inspection, and bio-inspired evolutionary MRI segmentation.",
+      indices: [0, 1, 5]
+    },
+    {
+      id: "physics-energy",
+      name: "Physics-Informed ML & Energy",
+      badge: "03",
+      icon: "⚡",
+      desc: "Accepted & published IEEE research integrating semiconductor physics, Markov chains, and tri-hybrid OPF congestion relief.",
+      indices: [8, 7, 3]
+    },
+    {
+      id: "cyber-physical",
+      name: "Cyber-Physical & Formal Systems",
+      badge: "02",
+      icon: "⬡",
+      desc: "5-finger BLE telemetry glove with real-time 3D twin, and automata-based mathematical verification for autonomous safety.",
+      indices: [4, 6]
+    },
+    {
+      id: "distributed-web",
+      name: "Distributed AI & Full-Stack",
+      badge: "03",
+      icon: "◈",
+      desc: "Decentralized privacy-preserving federated learning, Gemini-powered career operating systems, and high-throughput data platforms.",
+      indices: [9, 10, 2]
+    }
+  ];
   var closeUp = [
     { k: "Publication", t: "Hybrid Optimization for Congestion Management in Deregulated Power Systems", s: "IEEE EPREC 2026 · IIT Bhilai", href: "https://doi.org/10.1109/EPREC66546.2026.11412040", panel: "panel-d" },
     { k: "Publication", t: "Physics-Informed ANN MPPT with Markov-Chain Validation", s: "IEEE SPICES 2026 · Selected", href: "https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems", panel: "panel-a" },
@@ -15710,6 +15823,11 @@ Error generating stack: ` + x.message + `
               href: "#work",
               className: "label link-u hidden md:inline",
               children: "Work"
+            }),
+            /* @__PURE__ */ jsx_runtime.jsx("a", {
+              href: "#topics",
+              className: "label link-u hidden md:inline",
+              children: "Topics"
             }),
             /* @__PURE__ */ jsx_runtime.jsx("a", {
               href: "#about",
@@ -16009,6 +16127,227 @@ Error generating stack: ` + x.message + `
       ]
     });
   }
+  function TopicsExplorer() {
+    const [activeTopic, setActiveTopic] = import_react.useState("all");
+
+    const activeCategory = topicCategories.find((c) => c.id === activeTopic) || topicCategories[0];
+    const visibleGroups = activeTopic === "all"
+      ? topicCategories.filter((c) => c.id !== "all")
+      : [activeCategory];
+
+    return /* @__PURE__ */ jsx_runtime.jsxs("section", {
+      id: "topics",
+      className: "px-6 py-24 md:px-[4vw] border-t border-border/40 relative",
+      children: [
+        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+          className: "mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4",
+          children: [
+            /* @__PURE__ */ jsx_runtime.jsxs("div", {
+              children: [
+                /* @__PURE__ */ jsx_runtime.jsx("span", {
+                  className: "label text-primary",
+                  children: "(Domains & Topics)"
+                }),
+                /* @__PURE__ */ jsx_runtime.jsx("h2", {
+                  className: "wide mt-3 text-4xl md:text-6xl text-foreground",
+                  children: "Explore by topic"
+                })
+              ]
+            }),
+            /* @__PURE__ */ jsx_runtime.jsx("p", {
+              className: "label max-w-md text-muted-foreground",
+              children: "Filter projects across core research domains or view the unified index with the liquid glass directory."
+            })
+          ]
+        }),
+        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+          className: "grid gap-8 lg:grid-cols-[280px_1fr] xl:grid-cols-[320px_1fr] items-start",
+          children: [
+            /* @__PURE__ */ jsx_runtime.jsx("div", {
+              className: "w-full",
+              children: /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                className: "sticky top-28 liquid-glass-sidebar rounded-2xl p-3 md:p-4",
+                children: [
+                  /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    className: "hidden lg:flex items-center justify-between pb-3 mb-3 border-b border-white/10",
+                    children: [
+                      /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                        className: "flex items-center gap-2",
+                        children: [
+                          /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            className: "inline-block w-2 h-2 rounded-full bg-primary animate-pulse"
+                          }),
+                          /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            className: "label text-xs tracking-widest uppercase text-muted-foreground",
+                            children: "Topics Directory"
+                          })
+                        ]
+                      }),
+                      /* @__PURE__ */ jsx_runtime.jsx("span", {
+                        className: "label text-xs text-primary font-mono",
+                        children: activeTopic === "all" ? "11 / 11" : `${activeCategory.badge} / 11`
+                      })
+                    ]
+                  }),
+                  /* @__PURE__ */ jsx_runtime.jsx("div", {
+                    className: "flex gap-2 overflow-x-auto lg:overflow-visible lg:flex-col pb-1 lg:pb-0 scrollbar-none",
+                    children: topicCategories.map((cat) => /* @__PURE__ */ jsx_runtime.jsxs("button", {
+                      type: "button",
+                      key: cat.id,
+                      onClick: () => setActiveTopic(cat.id),
+                      className: `liquid-btn shrink-0 lg:w-full text-left px-3.5 py-2.5 rounded-xl transition-all duration-300 flex items-center justify-between gap-3 group ${
+                        activeTopic === cat.id
+                          ? "liquid-btn-active text-foreground font-medium"
+                          : "text-muted-foreground hover:text-foreground hover:bg-white/[0.04]"
+                      }`,
+                      children: [
+                        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                          className: "flex items-center gap-2.5 min-w-0",
+                          children: [
+                            /* @__PURE__ */ jsx_runtime.jsx("span", {
+                              className: `text-sm transition-transform duration-300 ${
+                                activeTopic === cat.id ? "text-primary scale-110" : "text-faint group-hover:text-primary"
+                              }`,
+                              children: cat.icon
+                            }),
+                            /* @__PURE__ */ jsx_runtime.jsx("span", {
+                              className: "label text-xs tracking-wide truncate",
+                              children: cat.name
+                            })
+                          ]
+                        }),
+                        /* @__PURE__ */ jsx_runtime.jsx("span", {
+                          className: `label text-[10px] px-2 py-0.5 rounded-full font-mono transition-colors ${
+                            activeTopic === cat.id
+                              ? "bg-primary/25 text-primary border border-primary/30"
+                              : "bg-white/5 text-muted-foreground border border-white/5"
+                          }`,
+                          children: cat.badge
+                        })
+                      ]
+                    }, cat.id))
+                  }),
+                  /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    className: "hidden lg:flex mt-4 pt-3 border-t border-white/10 items-center justify-between text-[11px] font-mono text-muted-foreground",
+                    children: [
+                      /* @__PURE__ */ jsx_runtime.jsxs("span", {
+                        children: ["Mode: ", activeTopic === "all" ? "Unified (All)" : "Isolated"]
+                      }),
+                      /* @__PURE__ */ jsx_runtime.jsx("span", {
+                        className: "text-primary",
+                        children: "✦ Liquid Glass"
+                      })
+                    ]
+                  })
+                ]
+              })
+            }),
+            /* @__PURE__ */ jsx_runtime.jsx("div", {
+              className: "space-y-12",
+              children: visibleGroups.map((group) => /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                key: group.id,
+                className: "animate-in fade-in duration-500",
+                children: [
+                  /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    className: "mb-5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between pb-3 border-b border-border/40 gap-2",
+                    children: [
+                      /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                        className: "flex items-center gap-2.5",
+                        children: [
+                          /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            className: "text-primary text-base",
+                            children: group.icon
+                          }),
+                          /* @__PURE__ */ jsx_runtime.jsx("h3", {
+                            className: "wide text-xl md:text-2xl text-foreground",
+                            children: group.name
+                          }),
+                          /* @__PURE__ */ jsx_runtime.jsxs("span", {
+                            className: "label text-xs text-primary font-mono ml-2",
+                            children: ["(", group.badge, ")"]
+                          })
+                        ]
+                      }),
+                      /* @__PURE__ */ jsx_runtime.jsx("p", {
+                        className: "text-xs text-muted-foreground max-w-md",
+                        children: group.desc
+                      })
+                    ]
+                  }),
+                  /* @__PURE__ */ jsx_runtime.jsx("div", {
+                    className: "grid gap-5 sm:grid-cols-2 xl:grid-cols-3",
+                    children: group.indices.map((idx) => {
+                      const proj = projects[idx];
+                      if (!proj) return null;
+                      return /* @__PURE__ */ jsx_runtime.jsxs("a", {
+                        key: proj.title,
+                        href: proj.url,
+                        target: "_blank",
+                        rel: "noreferrer",
+                        className: "liquid-card group flex flex-col justify-between rounded-xl p-5 md:p-6 transition-all duration-300",
+                        children: [
+                          /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                            children: [
+                              /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                                className: "flex items-center justify-between gap-2 mb-3",
+                                children: [
+                                  /* @__PURE__ */ jsx_runtime.jsx("span", {
+                                    className: "label text-[11px] font-mono text-primary truncate max-w-[70%]",
+                                    children: proj.tag
+                                  }),
+                                  /* @__PURE__ */ jsx_runtime.jsx("span", {
+                                    className: "label text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-muted-foreground shrink-0",
+                                    children: proj.year
+                                  })
+                                ]
+                              }),
+                              /* @__PURE__ */ jsx_runtime.jsxs("h4", {
+                                className: "wide text-xl md:text-2xl text-foreground group-hover:text-primary transition-colors duration-300 flex items-center justify-between",
+                                children: [
+                                  /* @__PURE__ */ jsx_runtime.jsx("span", {
+                                    children: proj.title
+                                  }),
+                                  /* @__PURE__ */ jsx_runtime.jsx("span", {
+                                    className: "text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300",
+                                    children: "↗"
+                                  })
+                                ]
+                              }),
+                              /* @__PURE__ */ jsx_runtime.jsx("p", {
+                                className: "mt-3 text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-3",
+                                children: proj.desc
+                              }),
+                              /* @__PURE__ */ jsx_runtime.jsx("div", {
+                                className: "mt-4 pt-3 border-t border-white/5 text-[11px] font-mono text-faint group-hover:text-muted-foreground transition-colors",
+                                children: proj.note
+                              })
+                            ]
+                          }),
+                          /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                            className: "mt-5 pt-3 border-t border-white/10 flex items-center justify-between",
+                            children: [
+                              /* @__PURE__ */ jsx_runtime.jsx("span", {
+                                className: "display text-xs md:text-sm font-semibold tracking-wider text-foreground",
+                                children: proj.metric
+                              }),
+                              /* @__PURE__ */ jsx_runtime.jsx("span", {
+                                className: "label text-[11px] text-primary flex items-center gap-1 group-hover:underline",
+                                children: "View code ↗"
+                              })
+                            ]
+                          })
+                        ]
+                      }, proj.title);
+                    })
+                  })
+                ]
+              }, group.id))
+            })
+          ]
+        })
+      ]
+    });
+  }
   function UpClose() {
     const wrap = import_react.useRef(null);
     const track = import_react.useRef(null);
@@ -16279,6 +16618,7 @@ Error generating stack: ` + x.message + `
         }),
         /* @__PURE__ */ jsx_runtime.jsx(Marquee, {}),
         /* @__PURE__ */ jsx_runtime.jsx(Work, {}),
+        /* @__PURE__ */ jsx_runtime.jsx(TopicsExplorer, {}),
         /* @__PURE__ */ jsx_runtime.jsx(UpClose, {}),
         /* @__PURE__ */ jsx_runtime.jsx(Hello, {}),
         /* @__PURE__ */ jsx_runtime.jsx(Skills, {}),
