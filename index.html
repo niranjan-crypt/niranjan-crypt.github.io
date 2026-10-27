@@ -15478,6 +15478,16 @@ Error generating stack: ` + x.message + `
       }, i))
     });
   }
+  function Kinetic({ text, r = 260, accentLast = false }) {
+    const words = text.split(" ");
+    return /* @__PURE__ */ jsx_runtime.jsxs(jsx_runtime.Fragment, { children: [
+      jsx_runtime.jsx("span", { className: "sr-only", children: text }),
+      words.map((w, wi) => jsx_runtime.jsxs("span", { "aria-hidden": "true", style: { display: "contents" }, children: [
+        wi > 0 && jsx_runtime.jsx("span", { className: "kinetic__space" }),
+        Array.from(w).map((c, ci) => jsx_runtime.jsx("span", { className: accentLast && wi === words.length - 1 && words.length > 1 ? "kinetic__letter kinetic__letter--accent" : "kinetic__letter", "data-char": c, "data-k": String(r) }, ci))
+      ] }, wi))
+    ] });
+  }
   function useInView(threshold = 0.2) {
     const ref = import_react.useRef(null);
     const [inView, set] = import_react.useState(false);
@@ -15743,7 +15753,7 @@ Error generating stack: ` + x.message + `
         h.style.fontSize = "100px";
         const w = line.scrollWidth;
         if (w)
-          setSize(Math.floor(h.clientWidth / w * 100 * 0.99));
+          setSize(Math.floor(h.clientWidth / w * 100 * 0.86));
         h.style.fontSize = "";
       };
       fit();
@@ -15760,7 +15770,8 @@ Error generating stack: ` + x.message + `
           className: "hero__line",
           children: /* @__PURE__ */ jsx_runtime.jsx("span", {
             className: "hero__line-inner",
-            children: "NIRANJAN"
+            "data-kline": true,
+            children: jsx_runtime.jsx(Kinetic, { text: "NIRANJAN" })
           })
         }),
         /* @__PURE__ */ jsx_runtime.jsx("span", {
@@ -15768,8 +15779,9 @@ Error generating stack: ` + x.message + `
           children: /* @__PURE__ */ jsx_runtime.jsx("span", {
             "data-fit": true,
             className: "hero__line-inner",
+            "data-kline": true,
             style: { transitionDelay: ".12s" },
-            children: "KRISHNAKUMAR"
+            children: jsx_runtime.jsx(Kinetic, { text: "KRISHNAKUMAR" })
           })
         })
       ]
@@ -16103,91 +16115,39 @@ Error generating stack: ` + x.message + `
     });
   }
   function Hello() {
-    const ref = import_react.useRef(null);
     const text = "I'm Niranjan, an Electrical & Computer Engineer operating at the convergence of high-dimensional sensor physics, machine learning representations, and embedded silicon execution. Rather than treating AI as an isolated abstraction or hardware as a passive peripheral, I engineer unified systems — embedding governing physical equations, safety bounds, and real-time signal rigour into verified production.";
+    const italic = new Set(["high-dimensional", "sensor", "physics,", "isolated", "abstraction", "passive", "peripheral,", "unified", "systems", "real-time"]);
+    const accent = new Set(["Niranjan,", "silicon", "production."]);
     const words = text.split(" ");
-    const [p, setP] = import_react.useState(0);
-    import_react.useEffect(() => {
-      const f = () => {
-        const el = ref.current;
-        if (!el)
-          return;
-        const r = el.getBoundingClientRect();
-        setP(Math.min(1, Math.max(0, (innerHeight * 0.85 - r.top) / (r.height + innerHeight * 0.3))));
-      };
-      f();
-      addEventListener("scroll", f, { passive: true });
-      return () => removeEventListener("scroll", f);
-    }, []);
-    return /* @__PURE__ */ jsx_runtime.jsxs("section", {
-      id: "about",
-      className: "px-6 py-40 md:px-[4vw]",
-      children: [
-        /* @__PURE__ */ jsx_runtime.jsx("span", {
-          className: "label text-primary",
-          children: "(Hello)"
-        }),
-        /* @__PURE__ */ jsx_runtime.jsx("p", {
-          ref,
-          className: "mt-8 text-[7vw] font-semibold leading-[1.05] tracking-tight md:text-[4.6vw]",
-          children: words.map((w, i) => /* @__PURE__ */ jsx_runtime.jsxs("span", {
-            className: "transition-opacity duration-300",
-            style: { opacity: i / words.length < p ? 1 : 0.15 },
-            children: [
-              w,
-              " "
-            ]
-          }, i))
-        })
-      ]
+    return jsx_runtime.jsx("section", { id: "about", className: "statement", "data-pin": "", children:
+      jsx_runtime.jsxs("div", { className: "statement__sticky", children: [
+        jsx_runtime.jsx("span", { className: "label text-primary statement__label", children: "(Hello)" }),
+        jsx_runtime.jsxs("p", { className: "statement__text", children: [
+          jsx_runtime.jsx("span", { className: "sr-only", children: text }),
+          words.map((w, i) => jsx_runtime.jsx("span", { "aria-hidden": "true", "data-w": "", className: "statement__word" + (italic.has(w) ? " statement__word--italic" : "") + (accent.has(w) ? " statement__word--accent" : ""), children: w }, i))
+        ] })
+      ] })
     });
   }
   function Skills() {
-    return /* @__PURE__ */ jsx_runtime.jsxs("section", {
-      id: "skills",
-      className: "px-6 py-28 md:px-[4vw]",
-      children: [
-        /* @__PURE__ */ jsx_runtime.jsxs("div", {
-          className: "mb-12 flex items-end justify-between",
-          children: [
-            /* @__PURE__ */ jsx_runtime.jsx("h2", {
-              className: "wide text-5xl md:text-7xl",
-              children: "What I do"
-            }),
-            /* @__PURE__ */ jsx_runtime.jsx("a", {
-              href: "https://github.com/niranjan-crypt?tab=repositories",
-              target: "_blank",
-              rel: "noreferrer",
-              className: "label link-u",
-              children: "All repositories →"
-            })
-          ]
-        }),
-        services.map((s, i) => /* @__PURE__ */ jsx_runtime.jsx(Reveal, {
-          children: /* @__PURE__ */ jsx_runtime.jsxs("div", {
-            className: "group grid grid-cols-[3rem_1fr] items-baseline gap-4 border-t py-10 transition-colors hover:bg-card md:grid-cols-[4rem_1fr_1fr_3rem] md:px-4",
-            children: [
-              /* @__PURE__ */ jsx_runtime.jsx("span", {
-                className: "label text-primary",
-                children: String(i + 1).padStart(2, "0")
-              }),
-              /* @__PURE__ */ jsx_runtime.jsx("h3", {
-                className: "wide text-3xl transition-transform duration-500 group-hover:translate-x-3 md:text-5xl",
-                children: s.t
-              }),
-              /* @__PURE__ */ jsx_runtime.jsx("p", {
-                className: "col-start-2 max-w-md text-muted-foreground md:col-start-3",
-                children: s.d
-              }),
-              /* @__PURE__ */ jsx_runtime.jsx("span", {
-                className: "hidden text-2xl transition-transform duration-500 group-hover:-rotate-45 md:block",
-                children: "→"
-              })
-            ]
-          })
-        }, s.t))
-      ]
-    });
+    return jsx_runtime.jsxs("section", { id: "skills", className: "service-tiles", children: [
+      jsx_runtime.jsxs("div", { className: "section-head label", children: [
+        jsx_runtime.jsx("h2", { className: "service-tiles__label", children: "What I do" }),
+        jsx_runtime.jsx("a", { href: "https://github.com/niranjan-crypt?tab=repositories", target: "_blank", rel: "noreferrer", className: "service-tiles__link", children: "All repositories →" })
+      ] }),
+      jsx_runtime.jsx("div", { className: "service-tiles__grid", children: services.map((sv, i) => jsx_runtime.jsx(Reveal, { className: "service-tiles__cell", children:
+        jsx_runtime.jsxs("a", { className: "service-tiles__tile", href: "https://github.com/niranjan-crypt?tab=repositories", target: "_blank", rel: "noreferrer", children: [
+          jsx_runtime.jsx("div", { className: "service-tiles__fill" }),
+          jsx_runtime.jsxs("div", { className: "service-tiles__content", children: [
+            jsx_runtime.jsxs("div", { className: "service-tiles__header", children: [
+              jsx_runtime.jsx("span", { children: String(i + 1).padStart(2, "0") }),
+              jsx_runtime.jsx("span", { className: "service-tiles__arrow", "aria-hidden": "true", children: "→" })
+            ] }),
+            jsx_runtime.jsx("div", { className: "service-tiles__title stretch-safe", "data-text": sv.t, children: jsx_runtime.jsx("span", { className: "stretch-safe__text", children: sv.t }) }),
+            jsx_runtime.jsx("p", { className: "service-tiles__description", children: sv.d })
+          ] })
+        ] }) }, sv.t)) })
+    ] });
   }
   function Footer() {
     const [ref, inView] = useInView(0.3);
@@ -16201,11 +16161,9 @@ Error generating stack: ` + x.message + `
         }),
         /* @__PURE__ */ jsx_runtime.jsx("a", {
           href: `mailto:${EMAIL}`,
-          className: "mt-6 block display text-[13vw] transition-colors hover:text-primary",
-          children: /* @__PURE__ */ jsx_runtime.jsx(Letters, {
-            text: "Let's talk",
-            step: 0.04
-          })
+          className: "footer__big mt-6 block display",
+          "data-kline": true,
+          children: jsx_runtime.jsx(Kinetic, { text: "Let's talk", r: 220, accentLast: true })
         }),
         /* @__PURE__ */ jsx_runtime.jsxs("div", {
           className: "label mt-16 grid gap-4 border-t pt-6 text-muted-foreground md:grid-cols-4",
@@ -16292,5 +16250,110 @@ Error generating stack: ` + x.message + `
 })();
 
 </script>
+<style id="mw-effects">
+:root{--ease-out:cubic-bezier(.16,1,.3,1);--fvs-display:"wdth" 70,"wght" 800}
+.kinetic__letter{font-variation-settings:var(--fvs-display);font-family:var(--font-display);display:inline-block}
+.kinetic__letter:before{content:attr(data-char)}
+.kinetic__letter--accent{color:var(--primary)}
+.kinetic__space{display:inline-block;width:.25em}
+.hero__line-inner{white-space:nowrap}
+.footer__big{font-size:min(18vw,15.5vw);text-transform:uppercase;white-space:nowrap;cursor:pointer;padding:.04em 0;line-height:.86;display:block;overflow:hidden}
+.statement{height:150vh;position:relative}
+.statement__sticky{box-sizing:border-box;flex-direction:column;justify-content:center;height:100vh;padding:0 clamp(20px,4vw,56px);display:flex;position:sticky;top:0}
+.statement__label{margin-bottom:28px;display:block}
+.statement__text{font-family:var(--font-display);letter-spacing:-.02em;font-variation-settings:"wdth" 90,"wght" 600;flex-wrap:wrap;column-gap:.26em;max-width:1200px;margin:0;font-size:min(5.2vw,5.4vh);line-height:1.02;display:flex}
+@media (max-width:767px){.statement__text{font-size:min(8.6vw,5vh)}}
+.statement__word{opacity:.14}
+.statement__word--italic{font-variation-settings:"wdth" 120,"wght" 300;font-style:italic}
+.statement__word--accent{color:var(--primary)}
+.service-tiles{padding:clamp(60px,10vh,120px) clamp(20px,4vw,56px)}
+.service-tiles .section-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
+.service-tiles__label{font:inherit;margin:0}
+.service-tiles__link{color:var(--foreground);transition:color .3s}
+.service-tiles__link:hover{color:var(--primary)}
+.service-tiles__grid{display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--border);border-left:1px solid var(--border)}
+@media (min-width:640px){.service-tiles__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1100px){.service-tiles__grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.service-tiles__cell,.service-tiles__tile{display:block;height:100%}
+.service-tiles__tile{color:inherit;border-bottom:1px solid var(--border);border-right:1px solid var(--border);padding:28px 28px 40px;position:relative;overflow:hidden}
+.service-tiles__fill{background:var(--primary);transform-origin:top;transition:transform .9s var(--ease-out);will-change:transform;position:absolute;inset:0;transform:scaleY(0)}
+.service-tiles__tile:hover .service-tiles__fill{transform-origin:bottom;transform:scaleY(1)}
+.service-tiles__content{transition:opacity .6s;position:relative}
+.service-tiles__grid:has(.service-tiles__tile:hover) .service-tiles__tile:not(:hover) .service-tiles__content{opacity:.35}
+.service-tiles__header{font-family:var(--default-mono-font-family);color:var(--primary);justify-content:space-between;align-items:center;font-size:12px;transition:color .5s;display:flex}
+.service-tiles__arrow{transition:transform .9s var(--ease-out);font-size:18px;display:block;transform:rotate(-45deg)}
+.service-tiles__tile:hover .service-tiles__arrow{transform:rotate(0)}
+.stretch-safe{display:grid}
+.stretch-safe:after{content:attr(data-text);visibility:hidden;font-variation-settings:var(--stretch-to);grid-area:1/1}
+.stretch-safe__text{grid-area:1/1;align-self:end}
+.service-tiles__title{font-family:var(--font-display);letter-spacing:-.02em;color:var(--foreground);font-variation-settings:"wdth" 100,"wght" 500;--stretch-to:"wdth" 118,"wght" 500;transition:color .5s ease,font-variation-settings .9s var(--ease-out),transform .9s var(--ease-out);margin:48px 0 14px;font-size:clamp(28px,2.6vw,40px);line-height:1}
+.service-tiles__description{color:var(--muted-foreground);max-width:30ch;margin:0;font-size:16px;line-height:1.5;transition:color .5s}
+.service-tiles__tile:hover .service-tiles__header,.service-tiles__tile:hover .service-tiles__title,.service-tiles__tile:hover .service-tiles__description{color:var(--background)}
+.service-tiles__tile:hover .service-tiles__title{font-variation-settings:"wdth" 118,"wght" 500;transform:translate(6px)}
+</style>
+<script>
+(function(){
+  var b=function(t){return "'wdth' "+(70+55*t).toFixed(1)+", 'wght' "+(800-540*t).toFixed(0)};
+  var P={x:-999,y:-999,inside:false};
+  addEventListener('pointermove',function(e){P.x=e.clientX;P.y=e.clientY;P.inside=true},{passive:true});
+  document.documentElement.addEventListener('pointerleave',function(){P.inside=false});
+  var fine=matchMedia('(pointer:fine)').matches, reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lines=[], tbl={}, last=0, words=[], pin=null;
+  function interp(a,v){v=v<0?0:v>1?1:v;var i=v*(a.length-1),s=Math.min(Math.floor(i),a.length-2);return a[s]+(a[s+1]-a[s])*(i-s)}
+  function table(host,chars,fam){
+    var box=document.createElement('span');box.style.cssText='position:absolute;width:0;height:0;overflow:hidden;visibility:hidden;white-space:nowrap';
+    chars.forEach(function(c){for(var e=0;e<=16;e++){var l=document.createElement('span');l.className='kinetic__letter';l.dataset.char=c;l.style.fontVariationSettings=b(e/16);box.append(l)}});
+    host.append(box);var fs=parseFloat(getComputedStyle(box).fontSize)||1;
+    chars.forEach(function(c,ci){var r=[].slice.call(box.children,17*ci,17*ci+17),o=r[0].getBoundingClientRect().width,a=new Float32Array(17);for(var t=1;t<=16;t++)a[t]=Math.max(a[t-1],(r[t].getBoundingClientRect().width-o)/fs);tbl[fam+c]=a});
+    box.remove();
+  }
+  function measure(){
+    tbl={};
+    lines=[].slice.call(document.querySelectorAll('[data-kline]')).map(function(line,li){
+      var L=[].slice.call(line.querySelectorAll('.kinetic__letter'));
+      L.forEach(function(l){l.style.fontVariationSettings='';l._v=0});
+      var fam='l'+li+':',chars=[];L.forEach(function(l){if(chars.indexOf(l.dataset.char)<0)chars.push(l.dataset.char)});
+      table(line,chars,fam);
+      var fs=parseFloat(getComputedStyle(line).fontSize)||1;
+      var box=(line.closest('.hero__line')||line);
+      var natural=0;L.forEach(function(l){natural+=l.getBoundingClientRect().width});
+      line.querySelectorAll('.kinetic__space').forEach(function(s){natural+=s.getBoundingClientRect().width});
+      var room=Math.max(0,(box.clientWidth-natural)/fs-.02);
+      var C=L.map(function(l){var r=l.getBoundingClientRect();return{x:r.left+r.width/2,y:r.top+r.height/2+scrollY,r:+l.dataset.k||240}});
+      return{L:L,C:C,W:L.map(function(l){return tbl[fam+l.dataset.char]}),room:room,want:new Float32Array(L.length)};
+    });
+    words=[].slice.call(document.querySelectorAll('[data-w]'));
+    pin=document.querySelector('[data-pin]');
+  }
+  function stretch(ln){
+    var want=ln.want,W=ln.W;
+    for(var i=0;i<ln.L.length;i++)want[i]=ln.L[i]._t||0;
+    function sum(k){var s=0;for(var n=0;n<W.length;n++)s+=interp(W[n],want[n]*k);return s}
+    var k;if(sum(1)<=ln.room)k=1;else if(ln.room<=0)k=0;else{var lo=0,hi=1;for(var j=0;j<12;j++){var m=(lo+hi)/2;sum(m)<=ln.room?lo=m:hi=m}k=lo}
+    var th=k<1?5e-4:.004;
+    for(var i2=0;i2<ln.L.length;i2++){var el=ln.L[i2],o=want[i2]*k;if(Math.abs(o-(el._v||0))>=th){el._v=o;el.style.fontVariationSettings=b(o)}}
+  }
+  function tick(now){
+    var kf=last?Math.min(Math.max(now-last,1)/16.67,4):1;last=now;
+    var y=scrollY,h=innerHeight;
+    if(fine&&!reduce){
+      var lf=1-Math.pow(1-.12,kf);
+      lines.forEach(function(ln){var vis=false;
+        for(var i=0;i<ln.L.length;i++){var c=ln.C[i],el=ln.L[i],ly=c.y-y;if(ly<-c.r||ly>h+c.r)continue;vis=true;var t=0;
+          if(P.inside){var d=Math.hypot(P.x-c.x,P.y-ly);if(d<c.r){t=1-d/c.r;t=t*t*(3-2*t)}}
+          el._t=(el._t||0)+(t-(el._t||0))*lf}
+        if(vis)stretch(ln)});
+    }
+    if(pin&&words.length){var r=pin.getBoundingClientRect();if(r.bottom>0&&r.top<h){
+      var p=reduce?1:Math.max(0,Math.min(1,-r.top/(r.height-h))),n=words.length;
+      for(var i=0;i<n;i++){var e=Math.max(0,Math.min(1,p*n*1.1-i)),w=words[i];if(w._o!==e){w._o=e;w.style.opacity=(.14+.86*e).toFixed(3)}}}}
+    requestAnimationFrame(tick);
+  }
+  function start(){if(!document.querySelector('[data-kline]'))return setTimeout(start,100);measure();setTimeout(measure,1500);setTimeout(measure,3500);(document.fonts&&document.fonts.ready||Promise.resolve()).then(measure);requestAnimationFrame(tick)}
+  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(measure,150)});
+  start();
+})();
+</script>
+
 </body>
 </html>
