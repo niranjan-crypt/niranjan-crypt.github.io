@@ -16055,7 +16055,7 @@ Error generating stack: ` + x.message + `
     }, []);
     return /* @__PURE__ */ jsx_runtime.jsx("section", {
       ref: wrap,
-      className: "relative h-[300vh]",
+      className: "relative h-[300vh] mb-20 md:mb-32",
       children: /* @__PURE__ */ jsx_runtime.jsxs("div", {
         className: "sticky top-0 flex h-screen flex-col justify-center overflow-hidden",
         children: [
@@ -16119,7 +16119,11 @@ Error generating stack: ` + x.message + `
                   ]
                 })
               ]
-            }, c.t))
+            }, c.t)).concat(/* @__PURE__ */ jsx_runtime.jsx("div", {
+              key: "spacer",
+              className: "w-[24vw] shrink-0 md:w-[35vw]",
+              "aria-hidden": "true"
+            }))
           })
         ]
       })
