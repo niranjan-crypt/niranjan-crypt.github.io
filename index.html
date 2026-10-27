@@ -2799,6 +2799,17 @@
   display: flex;
   width: max-content;
   animation: marquee 30s linear infinite;
+  font-style: italic;
+}
+.marquee .text-primary {
+  font-style: normal;
+  display: inline-block;
+}
+.italic {
+  font-style: italic;
+}
+.not-italic {
+  font-style: normal;
 }
 .marquee.rev {
   animation-direction: reverse;
@@ -15848,13 +15859,13 @@ Error generating stack: ` + x.message + `
     return /* @__PURE__ */ jsx_runtime.jsx("div", {
       className: "overflow-hidden border-y py-6",
       children: /* @__PURE__ */ jsx_runtime.jsx("div", {
-        className: "marquee wide text-[6vw] leading-none md:text-[4vw]",
+        className: "marquee wide text-[6vw] leading-none md:text-[4vw] italic",
         children: row.map((t, i) => /* @__PURE__ */ jsx_runtime.jsxs("span", {
           className: "flex items-center px-6",
           children: [
             t,
             /* @__PURE__ */ jsx_runtime.jsx("span", {
-              className: "ml-12 text-primary",
+              className: "ml-12 text-primary not-italic",
               children: "✦"
             })
           ]
