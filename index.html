@@ -15889,73 +15889,45 @@ Error generating stack: ` + x.message + `
 
   function HeroName() {
     return /* @__PURE__ */ jsx_runtime.jsxs("div", {
-      className: "hero__split-wrapper relative z-10 w-full flex flex-col md:flex-row items-center justify-between my-auto px-2 md:px-6 pointer-events-none py-4",
+      className: "hero__split-wrapper relative z-10 w-full flex flex-col md:flex-row items-center justify-between my-auto px-4 md:px-8 lg:px-14 pointer-events-none py-2",
       children: [
-        /* Left Flank: NIRANJAN */
-        /* @__PURE__ */ jsx_runtime.jsxs("div", {
-          className: "hero__flank hero__flank--left flex flex-col items-center md:items-start text-center md:text-left pointer-events-auto max-w-[280px] lg:max-w-xs xl:max-w-sm fade-up",
+        /* Left Flank: NIRANJAN (a bit up & closer towards the metal face without overlapping) */
+        /* @__PURE__ */ jsx_runtime.jsx("div", {
+          className: "hero__flank hero__flank--left flex flex-col items-center md:items-end text-center md:text-right pointer-events-auto z-10 md:-translate-y-8 lg:-translate-y-12 md:translate-x-6 lg:translate-x-10 fade-up",
           style: { transitionDelay: ".1s" },
-          children: [
-            /* @__PURE__ */ jsx_runtime.jsx("div", {
-              className: "hero__mono-tag",
-              children: "[SYS.01 // INTELLIGENT SYSTEMS]"
-            }),
-            /* @__PURE__ */ jsx_runtime.jsx("h1", {
-              className: "hero__flank-title display my-1",
+          children: /* @__PURE__ */ jsx_runtime.jsx("h1", {
+            className: "hero__flank-title display",
+            children: /* @__PURE__ */ jsx_runtime.jsx("span", {
+              className: "hero__line",
               children: /* @__PURE__ */ jsx_runtime.jsx("span", {
-                className: "hero__line",
-                children: /* @__PURE__ */ jsx_runtime.jsx("span", {
-                  className: "hero__line-inner",
-                  children: "NIRANJAN"
-                })
+                className: "hero__line-inner",
+                children: "NIRANJAN"
               })
-            }),
-            /* @__PURE__ */ jsx_runtime.jsx("div", {
-              className: "hero__flank-desc mt-1",
-              children: "Neural Vision · Signal Architectures"
-            }),
-            /* @__PURE__ */ jsx_runtime.jsx("div", {
-              className: "text-[9px] font-mono text-cyan-400/60 tracking-widest mt-1 uppercase",
-              children: "// NODE: 0x7E1 · CORE LAB"
             })
-          ]
+          })
         }),
 
         /* Center Sculpture Clearance Spacer */
         /* @__PURE__ */ jsx_runtime.jsx("div", {
-          className: "hero__sculpture-spacer hidden md:block flex-1 min-w-[240px] lg:min-w-[360px] xl:min-w-[440px] pointer-events-none",
+          className: "hero__sculpture-spacer hidden md:block flex-1 min-w-[180px] lg:min-w-[260px] xl:min-w-[320px] pointer-events-none",
           "aria-hidden": "true"
         }),
 
-        /* Right Flank: KRISHNAKUMAR */
-        /* @__PURE__ */ jsx_runtime.jsxs("div", {
-          className: "hero__flank hero__flank--right flex flex-col items-center md:items-end text-center md:text-right pointer-events-auto max-w-[280px] lg:max-w-xs xl:max-w-sm mt-6 md:mt-0 fade-up",
-          style: { transitionDelay: ".25s" },
-          children: [
-            /* @__PURE__ */ jsx_runtime.jsx("div", {
-              className: "hero__mono-tag",
-              children: "[SYS.02 // PHYSICS · EDGE SILICON]"
-            }),
-            /* @__PURE__ */ jsx_runtime.jsx("h1", {
-              className: "hero__flank-title display my-1",
+        /* Right Flank: KRISHNAKUMAR (a bit down & clear of metal head) */
+        /* @__PURE__ */ jsx_runtime.jsx("div", {
+          className: "hero__flank hero__flank--right flex flex-col items-center md:items-start text-center md:text-left pointer-events-auto z-10 md:translate-y-10 lg:translate-y-14 md:translate-x-2 fade-up",
+          style: { transitionDelay: ".2s" },
+          children: /* @__PURE__ */ jsx_runtime.jsx("h1", {
+            className: "hero__flank-title display",
+            children: /* @__PURE__ */ jsx_runtime.jsx("span", {
+              className: "hero__line",
               children: /* @__PURE__ */ jsx_runtime.jsx("span", {
-                className: "hero__line",
-                children: /* @__PURE__ */ jsx_runtime.jsx("span", {
-                  className: "hero__line-inner",
-                  style: { transitionDelay: ".12s" },
-                  children: "KRISHNAKUMAR"
-                })
+                className: "hero__line-inner",
+                style: { transitionDelay: ".12s" },
+                children: "KRISHNAKUMAR"
               })
-            }),
-            /* @__PURE__ */ jsx_runtime.jsx("div", {
-              className: "hero__flank-desc mt-1",
-              children: "Markov Grids · RISC-V Silicon · PINN"
-            }),
-            /* @__PURE__ */ jsx_runtime.jsx("div", {
-              className: "text-[9px] font-mono text-cyan-400/60 tracking-widest mt-1 uppercase",
-              children: "// BUS: 64-BIT HARDWARE INTERFACE"
             })
-          ]
+          })
         })
       ]
     });
@@ -18614,24 +18586,15 @@ function Index() {
 }
 .hero__flank-title {
   font-family: var(--font-display);
-  font-size: clamp(34px, 4.5vw, 68px);
-  letter-spacing: -0.02em;
-  font-variation-settings: "wdth" 105, "wght" 600;
-  text-shadow: 0 4px 30px rgba(1, 1, 2, 0.95), 0 0 50px rgba(0, 0, 0, 0.8);
-  margin: 0;
-  line-height: 0.92;
-}
-.hero__mono-tag {
-  font-family: var(--font-mono, monospace);
-  font-size: clamp(9px, 0.75vw, 11px);
-  letter-spacing: 0.24em;
+  font-size: clamp(46px, 6.4vw, 92px);
+  font-variation-settings: "wdth" 70, "wght" 800;
+  letter-spacing: -0.01em;
+  line-height: 0.86;
   text-transform: uppercase;
-  color: rgba(191, 233, 255, 0.75);
-}
-.hero__flank-desc {
-  font-size: clamp(11px, 0.85vw, 13px);
-  color: var(--muted-foreground);
-  line-height: 1.4;
+  color: #FFFFFF;
+  text-shadow: 0 4px 32px rgba(1, 1, 2, 0.95), 0 0 50px rgba(0, 0, 0, 0.9);
+  margin: 0;
+  white-space: nowrap;
 }
 
 /* Typography & Palette Variations */
