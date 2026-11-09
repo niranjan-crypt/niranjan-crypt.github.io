@@ -2670,26 +2670,36 @@
 }
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.18 0.002 60);
-  --foreground: oklch(0.94 0.008 85);
-  --card: oklch(0.22 0.003 60);
-  --card-foreground: oklch(0.94 0.008 85);
-  --popover: oklch(0.22 0.003 60);
-  --popover-foreground: oklch(0.94 0.008 85);
-  --primary: oklch(0.74 0.13 262);
-  --primary-foreground: oklch(0.16 0.01 262);
-  --secondary: oklch(0.25 0.003 60);
-  --secondary-foreground: oklch(0.94 0.008 85);
-  --muted: oklch(0.25 0.003 60);
-  --muted-foreground: oklch(0.62 0.006 80);
-  --faint: oklch(0.4 0.004 70);
-  --accent: oklch(0.74 0.13 262);
-  --accent-foreground: oklch(0.16 0.01 262);
-  --destructive: oklch(0.6 0.2 27);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.32 0.004 60);
-  --input: oklch(0.32 0.004 60);
-  --ring: oklch(0.74 0.13 262);
+  --background: #010102;
+  --foreground: #FFFFFF;
+  --card: #080f12;
+  --card-foreground: #FFFFFF;
+  --popover: #080f12;
+  --popover-foreground: #FFFFFF;
+  --primary: #BFE9FF;
+  --primary-foreground: #010102;
+  --secondary: #0e1c20;
+  --secondary-foreground: #FFFFFF;
+  --muted: #080f12;
+  --muted-foreground: #A8C9C8;
+  --accent: #172d31;
+  --accent-foreground: #FFFFFF;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #FFFFFF;
+  --border: #182e31;
+  --input: #182e31;
+  --ring: #BFE9FF;
+  --faint: #3e6164;
+  --c-night: #010102;
+  --c-midnight: #091316;
+  --c-steel-dark: #122427;
+  --c-steel-mid: #254448;
+  --c-pewter: #A8C9C8;
+  --c-frost: #E6F4FB;
+  --powder-blue: #A8C9C8;
+  --glacier-blue: #BFE9FF;
+  --cobalt-black: #010102;
+  --pure-white: #FFFFFF;
 }
 @layer base {
   * {
@@ -2699,7 +2709,7 @@
     background: var(--color-background);
   }
   body {
-    background-color: var(--color-background);
+    background-color: #010102;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -2801,15 +2811,8 @@
   animation: marquee 30s linear infinite;
   font-style: italic;
 }
-.marquee .text-primary {
-  font-style: normal;
-  display: inline-block;
-}
-.italic {
+.marquee span.italic {
   font-style: italic;
-}
-.not-italic {
-  font-style: normal;
 }
 .marquee.rev {
   animation-direction: reverse;
@@ -2876,19 +2879,78 @@
   margin: -40px 0 0 -40px;
 }
 .panel-a {
-  background: radial-gradient(120% 90% at 20% 10%, oklch(0.55 0.15 262), oklch(0.25 0.08 270));
+  background: radial-gradient(120% 90% at 20% 10%, #1d393d 0%, #0e1c1f 55%, #010102 100%);
+  border: 1px solid rgba(168, 201, 200, 0.25);
 }
 .panel-b {
-  background: radial-gradient(120% 90% at 80% 20%, oklch(0.6 0.14 160), oklch(0.22 0.05 200));
+  background: radial-gradient(120% 90% at 80% 20%, #294b4e 0%, #0f2024 60%, #010102 100%);
+  border: 1px solid rgba(168, 201, 200, 0.25);
 }
 .panel-c {
-  background: radial-gradient(120% 90% at 30% 80%, oklch(0.65 0.17 45), oklch(0.25 0.06 30));
+  background: radial-gradient(120% 90% at 30% 80%, #1a3539 0%, #0d1b1d 50%, #010102 100%);
+  border: 1px solid rgba(168, 201, 200, 0.25);
 }
 .panel-d {
-  background: radial-gradient(120% 90% at 70% 70%, oklch(0.6 0.2 25), oklch(0.22 0.07 15));
+  background: radial-gradient(120% 90% at 70% 70%, #234448 0%, #122427 50%, #010102 100%);
+  border: 1px solid rgba(168, 201, 200, 0.25);
+}
+.panel-cyan {
+  background: radial-gradient(120% 90% at 80% 20%, #0d4657 0%, #06232c 55%, #01080a 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(56, 189, 248, 0.2);
+}
+.panel-gold {
+  background: radial-gradient(120% 90% at 30% 20%, #523808 0%, #291b03 55%, #0a0701 100%);
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(234, 179, 8, 0.2);
+}
+.panel-blue {
+  background: radial-gradient(120% 90% at 20% 15%, #182b63 0%, #0b1533 55%, #02040b 100%);
+  border: 1px solid rgba(99, 140, 255, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(59, 130, 246, 0.2);
+}
+.panel-violet {
+  background: radial-gradient(120% 90% at 75% 25%, #461d66 0%, #230d35 55%, #08020e 100%);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(168, 85, 247, 0.2);
+}
+.panel-emerald {
+  background: radial-gradient(120% 90% at 80% 20%, #134e44 0%, #082924 55%, #010907 100%);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(20, 184, 166, 0.2);
+}
+.panel-pink {
+  background: radial-gradient(120% 90% at 70% 30%, #5e1346 0%, #2e0821 55%, #0c0209 100%);
+  border: 1px solid rgba(236, 72, 153, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(236, 72, 153, 0.2);
+}
+.panel-indigo {
+  background: radial-gradient(120% 90% at 30% 30%, #301f66 0%, #160e33 55%, #04020d 100%);
+  border: 1px solid rgba(129, 140, 248, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(129, 140, 248, 0.2);
+}
+.panel-orange {
+  background: radial-gradient(120% 90% at 80% 30%, #5a2608 0%, #2e1203 55%, #0c0401 100%);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(249, 115, 22, 0.2);
+}
+.panel-forest {
+  background: radial-gradient(120% 90% at 20% 80%, #184220 0%, #0a210f 55%, #020803 100%);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(34, 197, 94, 0.2);
+}
+.panel-ruby {
+  background: radial-gradient(120% 90% at 25% 75%, #5e192a 0%, #300a14 55%, #0b0104 100%);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(244, 63, 94, 0.2);
+}
+.panel-copper {
+  background: radial-gradient(120% 90% at 30% 80%, #5a2e10 0%, #2d1606 55%, #0b0501 100%);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(245, 158, 11, 0.2);
 }
 .panel-grid {
-  background-image: linear-gradient(oklch(1 0 0 / .08) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0 / .08) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(168, 201, 200, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(168, 201, 200, 0.08) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3052,33 +3114,86 @@
 }
 .nav-in {
   opacity: 0;
-  transition: opacity .6s ease .2s;
+  transition: opacity .6s ease .2s, background-color .3s ease, border-color .3s ease;
 }
 .nav-in.is-in {
   opacity: 1;
+  background: rgba(1, 1, 2, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(168, 201, 200, 0.18);
 }
 .hero__name {
+  font-size: clamp(28px, 4.2vw, 68px);
   display: flex;
   flex-direction: column;
-  margin: clamp(24px,5vh,56px) 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: clamp(16px, 2.5vh, 32px) auto;
+  text-shadow: 0 4px 32px rgba(0,0,0,0.92);
+  perspective: 1200px;
+  width: 100%;
 }
 .hero__line {
   display: block;
   overflow: hidden;
   white-space: nowrap;
-  padding: .04em 0;
-  line-height: .86;
+  padding: .08em 0;
+  line-height: .88;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  text-align: center;
 }
 .hero__line--second {
-  text-align: right;
+  text-align: center;
 }
 .hero__line-inner {
   display: inline-block;
-  transform: translateY(105%);
-  transition: transform 1.2s cubic-bezier(.16,1,.3,1);
+  white-space: nowrap;
+  transform-style: preserve-3d;
 }
-.is-in .hero__line-inner {
-  transform: translateY(0);
+.hero__char {
+  display: inline-block;
+  white-space: pre;
+  opacity: 0;
+  transform: translateY(120%) rotateX(45deg) scale(0.92);
+  filter: blur(8px);
+  text-shadow: 0 0 24px rgba(191, 233, 255, 0.85), 0 4px 32px rgba(1, 1, 2, 0.95);
+  will-change: transform, opacity, filter, text-shadow;
+  transition: transform 1.05s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+              text-shadow 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--char-delay, 0s);
+}
+.is-in .hero__char {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg) scale(1);
+  filter: blur(0px);
+  text-shadow: 0 4px 32px rgba(1, 1, 2, 0.95);
+}
+@media (hover: hover) {
+  .hero__char {
+    cursor: default;
+  }
+  .is-in .hero__char:hover {
+    color: #FFFFFF;
+    transform: translateY(-5px) scale(1.06);
+    text-shadow: 0 0 24px rgba(191, 233, 255, 0.95), 0 4px 28px rgba(1, 1, 2, 0.95);
+    transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+                color 0.22s ease,
+                text-shadow 0.22s ease;
+    transition-delay: 0s !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__char {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
 }
 @property --tw-translate-x {
   syntax: "*";
@@ -15446,25 +15561,25 @@ Error generating stack: ` + x.message + `
 
   // src/lib/content.ts
   var projects = [
-    { title: "Privacy-Preserving FL", tag: "Distributed AI · Privacy", year: "2025", note: "Flower · FedAvg · Fernet AES · 2-layer LSTM", metric: "FEDAVG + FERNET", panel: "panel-a", url: "https://github.com/niranjan-crypt/Privacy-Preserving-Federated-Learning-FL-System-for-Text-Prediction", desc: "Decentralized next-word prediction platform built with Flower and FedAvg, training local LSTM models with Fernet parameter encryption and device resource monitoring." },
-    { title: "CommerceIQ", tag: "Data Engineering · Cloud", year: "100K+ ORDERS", note: "1.5M records · 22 DQ gates · PostgreSQL 16", metric: "1.5M RECORDS", panel: "panel-b", url: "https://github.com/niranjan-crypt/CommerceIQ", desc: "Enterprise transactional and analytical platform processing 100k+ orders across 1.5M records with 3NF OLTP, Kimball star schema, 22 DQ gates, and 5.35x query speedup." },
-    { title: "Hyperspectral Face ID", tag: "Computer Vision · 3D-CNN", year: "400–1000nm", note: "1200+ bands · ArcFace on S¹²⁷ · Spectral SHAP", metric: "1200+ BANDS", panel: "panel-c", url: "https://github.com/niranjan-crypt/Hyperspectral-Face-Identification-XAI", desc: "Anti-spoofing facial biometrics across 1200+ contiguous spectral bands (400–1000 nm) using 3D-CNN feature fusion, ArcFace loss on S¹²⁷, and SHAP explainability on Raspberry Pi 4." },
-    { title: "Transmission Fault Detection", tag: "Vision · Deep Learning", year: "2025", note: "Dual-stream ResNet50 + classical HOG/GLCM texture", metric: "82.0% ACC", panel: "panel-d", url: "https://github.com/niranjan-crypt/Hybrid-Computer-Vision-and-Deep-Learning-for-Automated-Power-Transmission-Fault-Detection", desc: "Aerial transmission inspection pipeline benchmarking transfer-learning CNNs against classical CV (Hough circles, HOG, GLCM), reaching 82% fault detection accuracy." },
-    { title: "IntelliPQ", tag: "Signal Processing · DL", year: "IEEE 1159/519", note: "FFT · THD% · 1D-CNN + BiLSTM · Neuro-symbolic", metric: "98.5% ACC", panel: "panel-a", url: "https://github.com/niranjan-crypt/IntelliPQ-AI-Based-Power-Quality-Monitoring-Fault-Detection", desc: "Smart grid diagnostic intelligence platform combining DSP analytics (FFT, THD%, RMS) and 1D-CNN + BiLSTM with neuro-symbolic arbitration under IEEE standards." },
-    { title: "KinoSync Glove", tag: "Embedded · IoT · Digital Twin", year: "BLE 5.0", note: "5x flex sensors · PPG pulse · ESP32 · 3D twin", metric: "0°–90° FLEX", panel: "panel-b", url: "https://github.com/niranjan-crypt/KinoSync-Cyber-Physical-Smart-Glove-Telemetry-3D-Digital-Twin-System", desc: "Cyber-physical wearable glove streaming 5-finger continuous flexion (0°–90°) and PPG heart rate over low-latency BLE 5.0 GATT to an interactive 3D digital twin." },
-    { title: "PSO-GA MRI Segmentation", tag: "Medical Imaging · Optimisation", year: "PSO+GA+DE", note: "Multilevel Otsu · Haralick GLCM · Random Forest", metric: "HYBRID SWARM", panel: "panel-c", url: "https://github.com/niranjan-crypt/Hybrid-PSO-GA-Based-Multilevel-Otsu-MRI-Segmentation-with-Machine-Learning-Validation", desc: "Bio-inspired metaheuristic framework for Multilevel Otsu brain MRI segmentation combining PSO, GA, and DE with Random Forest validation on GLCM textures." },
-    { title: "TOC-AV Verifier", tag: "Formal Methods · Automata", year: "DFA/NPDA/TM", note: "Timed Automata · DFA · NFA · Turing Machine", metric: "FORMAL PROOF", panel: "panel-d", url: "https://github.com/niranjan-crypt/Computation-and-Compiler-design", desc: "Formal automata models using DFA, NFA, Timed Automata, NPDA, and Turing Machines establishing mathematical safety proofs for collision-free autonomous parking." },
-    { title: "Grid Congestion Relief", tag: "Power Systems · IEEE EPREC", year: "IEEE '26", note: "OOA-KHA-SHO tri-hybrid · DC-OPF · IEEE 14/30-bus", metric: "IEEE EPREC '26", panel: "panel-a", url: "https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems", desc: "Published IEEE EPREC-2026 research formulating DC-OPF PTDF sensitivity and tri-hybrid metaheuristics (OOA, KHA, SHO) for transmission overload relief with zero load shedding." },
-    { title: "Physics-Informed MPPT", tag: "Renewables · IEEE SPICES", year: "IEEE '26", note: "6 diode features · 300-state Markov · <5ms", metric: "R² = 0.9994", panel: "panel-b", url: "https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems", desc: "Accepted IEEE SPICES 2026 research embedding semiconductor diode physics into neural MPPT with 300-state 2D Markov stochastic validation, achieving R² = 0.9994." },
-    { title: "HuntOS", tag: "Full-Stack · AI Copilot", year: "v2.0", note: "React 19 · Node.js · MySQL · Gemini AI · Chrome Ext", metric: "GEMINI COPILOT", panel: "panel-c", url: "https://github.com/niranjan-crypt/HuntOS", desc: "Autonomous career and placement operating system featuring a dual-pipeline Kanban engine, Gemini AI interview copilot, FastClip Chrome extension, and ATS resume scoring." }
+    { title: "Hyperspectral Face ID", tag: "Computer Vision · 3D-CNN", year: "400–1000nm", note: "1200+ bands · ArcFace on S¹²⁷ · Spectral SHAP", metric: "1200+ BANDS", panel: "panel-cyan", url: "https://github.com/niranjan-crypt/Hyperspectral-Face-Identification-XAI", desc: "Anti-spoofing facial biometrics across 1200+ contiguous spectral bands (400–1000 nm) using 3D-CNN feature fusion, ArcFace loss on S¹²⁷, and SHAP explainability on Raspberry Pi 4." },
+    { title: "Transmission Fault Detection", tag: "Vision · Deep Learning", year: "2025", note: "Dual-stream ResNet50 + classical HOG/GLCM texture", metric: "82.0% ACC", panel: "panel-gold", url: "https://github.com/niranjan-crypt/Hybrid-Computer-Vision-and-Deep-Learning-for-Automated-Power-Transmission-Fault-Detection", desc: "Aerial transmission inspection pipeline benchmarking transfer-learning CNNs against classical CV (Hough circles, HOG, GLCM), reaching 82% fault detection accuracy." },
+    { title: "CommerceIQ", tag: "Data Engineering · Cloud", year: "100K+ ORDERS", note: "1.5M records · 22 DQ gates · PostgreSQL 16", metric: "1.5M RECORDS", panel: "panel-blue", url: "https://github.com/niranjan-crypt/CommerceIQ", desc: "Enterprise transactional and analytical platform processing 100k+ orders across 1.5M records with 3NF OLTP, Kimball star schema, 22 DQ gates, and 5.35x query speedup." },
+    { title: "IntelliPQ", tag: "Signal Processing · DL", year: "IEEE 1159/519", note: "FFT · THD% · 1D-CNN + BiLSTM · Neuro-symbolic", metric: "98.5% ACC", panel: "panel-violet", url: "https://github.com/niranjan-crypt/IntelliPQ-AI-Based-Power-Quality-Monitoring-Fault-Detection", desc: "Smart grid diagnostic intelligence platform combining DSP analytics (FFT, THD%, RMS) and 1D-CNN + BiLSTM with neuro-symbolic arbitration under IEEE standards." },
+    { title: "KinoSync Glove", tag: "Embedded · IoT · Digital Twin", year: "BLE 5.0", note: "5x flex sensors · PPG pulse · ESP32 · 3D twin", metric: "0°–90° FLEX", panel: "panel-emerald", url: "https://github.com/niranjan-crypt/KinoSync-Cyber-Physical-Smart-Glove-Telemetry-3D-Digital-Twin-System", desc: "Cyber-physical wearable glove streaming 5-finger continuous flexion (0°–90°) and PPG heart rate over low-latency BLE 5.0 GATT to an interactive 3D digital twin." },
+    { title: "PSO-GA MRI Segmentation", tag: "Medical Imaging · Optimisation", year: "PSO+GA+DE", note: "Multilevel Otsu · Haralick GLCM · Random Forest", metric: "HYBRID SWARM", panel: "panel-pink", url: "https://github.com/niranjan-crypt/Hybrid-PSO-GA-Based-Multilevel-Otsu-MRI-Segmentation-with-Machine-Learning-Validation", desc: "Bio-inspired metaheuristic framework for Multilevel Otsu brain MRI segmentation combining PSO, GA, and DE with Random Forest validation on GLCM textures." },
+    { title: "TOC-AV Verifier", tag: "Formal Methods · Automata", year: "DFA/NPDA/TM", note: "Timed Automata · DFA · NFA · Turing Machine", metric: "FORMAL PROOF", panel: "panel-indigo", url: "https://github.com/niranjan-crypt/Computation-and-Compiler-design", desc: "Formal automata models using DFA, NFA, Timed Automata, NPDA, and Turing Machines establishing mathematical safety proofs for collision-free autonomous parking." },
+    { title: "Grid Congestion Relief", tag: "Power Systems · IEEE EPREC", year: "IEEE '26", note: "OOA-KHA-SHO tri-hybrid · DC-OPF · IEEE 14/30-bus", metric: "IEEE EPREC '26", panel: "panel-orange", url: "https://github.com/niranjan-crypt/Hybrid-Optimization-for-Congestion-Management-in-Deregulated-Power-Systems", desc: "Published IEEE EPREC-2026 research formulating DC-OPF PTDF sensitivity and tri-hybrid metaheuristics (OOA, KHA, SHO) for transmission overload relief with zero load shedding." },
+    { title: "Physics-Informed MPPT", tag: "Renewables · IEEE SPICES", year: "IEEE '26", note: "6 diode features · 300-state Markov · <5ms", metric: "R² = 0.9994", panel: "panel-forest", url: "https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems", desc: "Accepted IEEE SPICES 2026 research embedding semiconductor diode physics into neural MPPT with 300-state 2D Markov stochastic validation, achieving R² = 0.9994." },
+    { title: "Privacy-Preserving FL", tag: "Distributed AI · Privacy", year: "2025", note: "Flower · FedAvg · Fernet AES · 2-layer LSTM", metric: "FEDAVG + FERNET", panel: "panel-ruby", url: "https://github.com/niranjan-crypt/Privacy-Preserving-Federated-Learning-FL-System-for-Text-Prediction", desc: "Decentralized next-word prediction platform built with Flower and FedAvg, training local LSTM models with Fernet parameter encryption and device resource monitoring." },
+    { title: "HuntOS", tag: "Full-Stack · AI Copilot", year: "v2.0", note: "React 19 · Node.js · MySQL · Gemini AI · Chrome Ext", metric: "GEMINI COPILOT", panel: "panel-copper", url: "https://github.com/niranjan-crypt/HuntOS", desc: "Autonomous career and placement operating system featuring a dual-pipeline Kanban engine, Gemini AI interview copilot, FastClip Chrome extension, and ATS resume scoring." }
   ];
   var closeUp = [
-    { k: "Publication", t: "Hybrid Optimization for Congestion Management in Deregulated Power Systems", s: "IEEE EPREC 2026 · IIT Bhilai", href: "https://doi.org/10.1109/EPREC66546.2026.11412040", panel: "panel-d" },
-    { k: "Publication", t: "Physics-Informed ANN MPPT with Markov-Chain Validation", s: "IEEE SPICES 2026 · Selected", href: "https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems", panel: "panel-a" },
-    { k: "Experience", t: "Industry Intern — Larsen & Toubro, Chennai", s: "June 2026 · EV powertrain & railway systems", href: "#", panel: "panel-c" },
-    { k: "Credential", t: "AWS Academy Graduate — Cloud Foundations", s: "Verified Credly badge", href: "https://www.credly.com/badges/eaed5b78-e6d1-426e-8be1-6a1c66f2bc7e/print", panel: "panel-b" },
-    { k: "Education", t: "B.Tech Electrical & Computer Engineering", s: "Amrita Vishwa Vidyapeetham · 2027", href: "#", panel: "panel-a" },
-    { k: "Resume", t: "Curriculum Vitae", s: "Print-ready, full breakdown", href: "https://niranjan-crypt.github.io/resume.html", panel: "panel-d" }
+    { k: "Publication", t: "Hybrid Optimization for Congestion Management in Deregulated Power Systems", s: "IEEE EPREC 2026 · IIT Bhilai", href: "https://doi.org/10.1109/EPREC66546.2026.11412040", panel: "panel-orange" },
+    { k: "Publication", t: "Physics-Informed ANN MPPT with Markov-Chain Validation", s: "IEEE SPICES 2026 · Selected", href: "https://github.com/niranjan-crypt/Physics-Informed-ANN-Based-MPPT-with-Markov-Chain-Based-Dynamic-Validation-for-Photovoltaic-Systems", panel: "panel-emerald" },
+    { k: "Experience", t: "Industry Intern — Larsen & Toubro, Chennai", s: "June 2026 · EV powertrain & railway systems", href: "#", panel: "panel-copper" },
+    { k: "Credential", t: "AWS Academy Graduate — Cloud Foundations", s: "Verified Credly badge", href: "https://www.credly.com/badges/eaed5b78-e6d1-426e-8be1-6a1c66f2bc7e/print", panel: "panel-violet" },
+    { k: "Education", t: "B.Tech Electrical & Computer Engineering", s: "Amrita Vishwa Vidyapeetham · 2027", href: "#", panel: "panel-ruby" },
+    { k: "Resume", t: "Curriculum Vitae", s: "Print-ready, full breakdown", href: "https://niranjan-crypt.github.io/resume.html", panel: "panel-cyan" }
   ];
   var services = [
     { t: "Languages & Systems", d: "Python, SQL, C, C++, MATLAB, Bash, Git, Linux, Docker, DSA." },
@@ -15713,14 +15828,16 @@ Error generating stack: ` + x.message + `
           ]
         }),
         /* @__PURE__ */ jsx_runtime.jsxs("div", {
-          className: "label hidden text-muted-foreground lg:block",
+          className: "label hidden text-[#A8C9C8] lg:flex items-center gap-2 font-mono text-xs tracking-wider",
           children: [
-            "Coimbatore, IN ",
             /* @__PURE__ */ jsx_runtime.jsx("span", {
-              className: "mx-2 text-faint",
-              children: "/"
+              className: "inline-block h-1.5 w-1.5 rounded-full bg-[#BFE9FF] shadow-[0_0_8px_#BFE9FF] animate-pulse"
             }),
-            " ",
+            "CHENNAI, IN",
+            /* @__PURE__ */ jsx_runtime.jsx("span", {
+              className: "mx-1 text-[#A8C9C8]/40",
+              children: "—"
+            }),
             /* @__PURE__ */ jsx_runtime.jsx(Clock, {})
           ]
         }),
@@ -15729,17 +15846,22 @@ Error generating stack: ` + x.message + `
           children: [
             /* @__PURE__ */ jsx_runtime.jsx("a", {
               href: "#work",
-              className: "label link-u hidden md:inline",
+              className: "label link-u hidden md:inline text-[#A8C9C8] hover:text-white transition-colors",
               children: "Work"
             }),
             /* @__PURE__ */ jsx_runtime.jsx("a", {
+              href: "#process",
+              className: "label link-u hidden md:inline text-[#A8C9C8] hover:text-white transition-colors",
+              children: "Process"
+            }),
+            /* @__PURE__ */ jsx_runtime.jsx("a", {
               href: "#about",
-              className: "label link-u hidden md:inline",
+              className: "label link-u hidden md:inline text-[#A8C9C8] hover:text-white transition-colors",
               children: "About"
             }),
             /* @__PURE__ */ jsx_runtime.jsx("a", {
               href: "#skills",
-              className: "label link-u hidden md:inline",
+              className: "label link-u hidden md:inline text-[#A8C9C8] hover:text-white transition-colors",
               children: "Skills"
             }),
             /* @__PURE__ */ jsx_runtime.jsx("a", {
@@ -15752,6 +15874,7 @@ Error generating stack: ` + x.message + `
       ]
     });
   }
+
   function HeroName() {
     const ref = import_react.useRef(null);
     const [size, setSize] = import_react.useState(null);
@@ -15763,8 +15886,10 @@ Error generating stack: ` + x.message + `
           return;
         h.style.fontSize = "100px";
         const w = line.scrollWidth;
-        if (w)
-          setSize(Math.floor(h.clientWidth / w * 100 * 0.86));
+        if (w) {
+          const targetRatio = window.innerWidth < 768 ? 0.88 : 0.62;
+          setSize(Math.min(110, Math.max(36, Math.floor(h.clientWidth / w * 100 * targetRatio))));
+        }
         h.style.fontSize = "";
       };
       fit();
@@ -15772,39 +15897,103 @@ Error generating stack: ` + x.message + `
       addEventListener("resize", fit);
       return () => removeEventListener("resize", fit);
     }, []);
-    return /* @__PURE__ */ jsx_runtime.jsxs("h1", {
-      ref,
-      className: "hero__name display relative",
-      style: { fontSize: size ? `${size}px` : "15vw" },
+    return /* @__PURE__ */ jsx_runtime.jsxs("div", {
+      className: "hero__name-wrapper relative z-10 w-full flex flex-col items-center justify-center text-center my-auto",
       children: [
-        /* @__PURE__ */ jsx_runtime.jsx("span", {
-          className: "hero__line",
-          children: /* @__PURE__ */ jsx_runtime.jsx("span", {
-            className: "hero__line-inner",
-            "data-kline": true,
-            children: jsx_runtime.jsx(Kinetic, { text: "NIRANJAN" })
-          })
+        /* @__PURE__ */ jsx_runtime.jsxs("h1", {
+          ref,
+          className: "hero__name display relative z-10",
+          style: { fontSize: size ? `${size}px` : "clamp(38px, 6.4vw, 98px)" },
+          children: [
+            /* @__PURE__ */ jsx_runtime.jsx("span", {
+              className: "hero__line",
+              children: /* @__PURE__ */ jsx_runtime.jsx("span", {
+                className: "hero__line-inner",
+                children: "NIRANJAN"
+              })
+            }),
+            /* @__PURE__ */ jsx_runtime.jsx("span", {
+              className: "hero__line hero__line--second",
+              children: /* @__PURE__ */ jsx_runtime.jsx("span", {
+                "data-fit": true,
+                className: "hero__line-inner",
+                style: { transitionDelay: ".12s" },
+                children: "KRISHNAKUMAR"
+              })
+            })
+          ]
         }),
-        /* @__PURE__ */ jsx_runtime.jsx("span", {
-          className: "hero__line hero__line--second",
-          children: /* @__PURE__ */ jsx_runtime.jsx("span", {
-            "data-fit": true,
-            className: "hero__line-inner",
-            "data-kline": true,
-            style: { transitionDelay: ".12s" },
-            children: jsx_runtime.jsx(Kinetic, { text: "KRISHNAKUMAR" })
-          })
+        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+          className: "hero__subtitle label text-center text-sky-300/80 tracking-widest uppercase mt-3 fade-up",
+          style: { transitionDelay: ".35s", fontSize: "clamp(10px, 0.9vw, 13px)" },
+          children: [
+            "// Intelligent Systems ",
+            /* @__PURE__ */ jsx_runtime.jsx("span", { className: "opacity-40", children: "·" }),
+            " Physics ",
+            /* @__PURE__ */ jsx_runtime.jsx("span", { className: "opacity-40", children: "·" }),
+            " Edge Silicon"
+          ]
         })
       ]
     });
   }
+
+  function MetalHumanBackground() {
+    const videoRef = import_react.useRef(null);
+    const [isLoaded, setIsLoaded] = import_react.useState(false);
+
+    import_react.useEffect(() => {
+      const v = videoRef.current;
+      if (!v) return;
+      const onReady = () => setIsLoaded(true);
+      if (v.readyState >= 2) setIsLoaded(true);
+      v.addEventListener("canplay", onReady);
+      v.addEventListener("loadeddata", onReady);
+      return () => {
+        v.removeEventListener("canplay", onReady);
+        v.removeEventListener("loadeddata", onReady);
+      };
+    }, []);
+
+    return /* @__PURE__ */ jsx_runtime.jsxs("div", {
+      className: "hero-stage",
+      "aria-hidden": "true",
+      children: [
+        /* @__PURE__ */ jsx_runtime.jsx("img", {
+          src: "metal-human.jpg",
+          alt: "Metal Human",
+          className: "hero-stage__poster-img"
+        }),
+        /* @__PURE__ */ jsx_runtime.jsx("video", {
+          ref: videoRef,
+          className: `hero-stage__video ${isLoaded ? "is-loaded" : ""}`,
+          autoPlay: true,
+          loop: true,
+          muted: true,
+          playsInline: true,
+          preload: "auto",
+          poster: "metal-human.jpg",
+          children: /* @__PURE__ */ jsx_runtime.jsx("source", {
+            src: "metal-human.mp4",
+            type: "video/mp4"
+          })
+        }),
+        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__aura" }),
+        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__vignette" }),
+        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__grad-top" }),
+        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__grad-bottom" })
+      ]
+    });
+  }
+
   function Hero({ ready }) {
     return /* @__PURE__ */ jsx_runtime.jsxs("section", {
       id: "top",
-      className: `relative flex min-h-screen flex-col justify-between px-6 pb-10 pt-28 md:px-[4vw] ${ready ? "is-in" : ""}`,
+      className: `relative flex min-h-screen flex-col justify-between px-6 pb-10 pt-28 md:px-[4vw] overflow-hidden ${ready ? "is-in" : ""}`,
       children: [
+        /* @__PURE__ */ jsx_runtime.jsx(MetalHumanBackground, {}),
         /* @__PURE__ */ jsx_runtime.jsxs("div", {
-          className: "label grid grid-cols-3 text-muted-foreground fade-up",
+          className: "label relative z-10 grid grid-cols-3 text-muted-foreground fade-up",
           style: { transitionDelay: ".5s" },
           children: [
             /* @__PURE__ */ jsx_runtime.jsx("span", {
@@ -15822,7 +16011,7 @@ Error generating stack: ` + x.message + `
         }),
         /* @__PURE__ */ jsx_runtime.jsx(HeroName, {}),
         /* @__PURE__ */ jsx_runtime.jsxs("div", {
-          className: "grid items-end gap-8 md:grid-cols-3",
+          className: "relative z-10 grid items-end gap-8 md:grid-cols-3",
           children: [
             /* @__PURE__ */ jsx_runtime.jsx("p", {
               className: "max-w-sm text-lg leading-snug fade-up md:text-xl",
@@ -15834,7 +16023,7 @@ Error generating stack: ` + x.message + `
               style: { transitionDelay: ".8s" },
               children: [
                 /* @__PURE__ */ jsx_runtime.jsx("span", {
-                  className: "inline-block animate-bounce",
+                  className: "inline-block animate-bounce text-[#BFE9FF]",
                   children: "↓"
                 }),
                 " Scroll, gently"
@@ -15861,11 +16050,14 @@ Error generating stack: ` + x.message + `
       children: /* @__PURE__ */ jsx_runtime.jsx("div", {
         className: "marquee wide text-[6vw] leading-none md:text-[4vw] italic",
         children: row.map((t, i) => /* @__PURE__ */ jsx_runtime.jsxs("span", {
-          className: "flex items-center px-6",
+          className: "flex items-center px-6 italic font-normal tracking-tight",
           children: [
-            t,
             /* @__PURE__ */ jsx_runtime.jsx("span", {
-              className: "ml-12 text-primary not-italic",
+              className: "italic",
+              children: t
+            }),
+            /* @__PURE__ */ jsx_runtime.jsx("span", {
+              className: "ml-12 text-primary not-italic inline-block",
               children: "✦"
             })
           ]
@@ -15970,6 +16162,7 @@ Error generating stack: ` + x.message + `
                       /* @__PURE__ */ jsx_runtime.jsx("div", {
                         className: "panel-grid absolute inset-0"
                       }),
+                      
                       /* @__PURE__ */ jsx_runtime.jsxs("div", {
                         className: "absolute inset-0 flex flex-col justify-between p-8 animate-in fade-in zoom-in-95 duration-700",
                         children: [
@@ -16055,7 +16248,7 @@ Error generating stack: ` + x.message + `
     }, []);
     return /* @__PURE__ */ jsx_runtime.jsx("section", {
       ref: wrap,
-      className: "relative h-[300vh] mb-20 md:mb-32",
+      className: "relative h-[300vh]",
       children: /* @__PURE__ */ jsx_runtime.jsxs("div", {
         className: "sticky top-0 flex h-screen flex-col justify-center overflow-hidden",
         children: [
@@ -16119,101 +16312,2040 @@ Error generating stack: ` + x.message + `
                   ]
                 })
               ]
-            }, c.t)).concat(/* @__PURE__ */ jsx_runtime.jsx("div", {
-              key: "spacer",
-              className: "w-[24vw] shrink-0 md:w-[35vw]",
-              "aria-hidden": "true"
-            }))
+            }, c.t))
           })
         ]
       })
     });
   }
-  function Hello() {
-    const text = "I'm Niranjan, an Electrical & Computer Engineer operating at the convergence of high-dimensional sensor physics, machine learning representations, and embedded silicon execution. Rather than treating AI as an isolated abstraction or hardware as a passive peripheral, I engineer unified systems — embedding governing physical equations, safety bounds, and real-time signal rigour into verified production.";
-    const italic = new Set(["high-dimensional", "sensor", "physics,", "isolated", "abstraction", "passive", "peripheral,", "unified", "systems", "real-time"]);
-    const accent = new Set(["Niranjan,", "silicon", "production."]);
-    const words = text.split(" ");
-    return jsx_runtime.jsx("section", { id: "about", className: "statement", "data-pin": "", children:
-      jsx_runtime.jsxs("div", { className: "statement__sticky", children: [
-        jsx_runtime.jsx("span", { className: "label text-primary statement__label", children: "(Hello)" }),
-        jsx_runtime.jsxs("p", { className: "statement__text", children: [
-          jsx_runtime.jsx("span", { className: "sr-only", children: text }),
-          words.map((w, i) => jsx_runtime.jsx("span", { "aria-hidden": "true", "data-w": "", className: "statement__word" + (italic.has(w) ? " statement__word--italic" : "") + (accent.has(w) ? " statement__word--accent" : ""), children: w }, i))
-        ] })
-      ] })
-    });
-  }
-  function Skills() {
-    return jsx_runtime.jsxs("section", { id: "skills", className: "service-tiles", children: [
-      jsx_runtime.jsxs("div", { className: "section-head label", children: [
-        jsx_runtime.jsx("h2", { className: "service-tiles__label", children: "What I do" }),
-        jsx_runtime.jsx("a", { href: "https://github.com/niranjan-crypt?tab=repositories", target: "_blank", rel: "noreferrer", className: "service-tiles__link", children: "All repositories →" })
-      ] }),
-      jsx_runtime.jsx("div", { className: "service-tiles__grid", children: services.map((sv, i) => jsx_runtime.jsx(Reveal, { className: "service-tiles__cell", children:
-        jsx_runtime.jsxs("a", { className: "service-tiles__tile", href: "https://github.com/niranjan-crypt?tab=repositories", target: "_blank", rel: "noreferrer", children: [
-          jsx_runtime.jsx("div", { className: "service-tiles__fill" }),
-          jsx_runtime.jsxs("div", { className: "service-tiles__content", children: [
-            jsx_runtime.jsxs("div", { className: "service-tiles__header", children: [
-              jsx_runtime.jsx("span", { children: String(i + 1).padStart(2, "0") }),
-              jsx_runtime.jsx("span", { className: "service-tiles__arrow", "aria-hidden": "true", children: "→" })
-            ] }),
-            jsx_runtime.jsx("div", { className: "service-tiles__title stretch-safe", "data-text": sv.t, children: jsx_runtime.jsx("span", { className: "stretch-safe__text", children: sv.t }) }),
-            jsx_runtime.jsx("p", { className: "service-tiles__description", children: sv.d })
-          ] })
-        ] }) }, sv.t)) })
-    ] });
-  }
-  function Footer() {
-    const [ref, inView] = useInView(0.3);
-    return /* @__PURE__ */ jsx_runtime.jsxs("footer", {
-      ref,
-      className: `px-6 pb-8 pt-28 md:px-[4vw] ${inView ? "is-in" : ""}`,
+
+  /* =====================================================================
+     UNIFIED PROCESS -> ABOUT & BULB -> SKILLS -> FOOTER JOURNEY
+     ===================================================================== */
+  function UnifiedJourney() {
+    const journeyWrapRef = import_react.useRef(null);
+    const journeySvgRef = import_react.useRef(null);
+    const journeyPathRef = import_react.useRef(null);
+    const trackLineBaseRef = import_react.useRef(null);
+    const startDotRef = import_react.useRef(null);
+    const packetDotRef = import_react.useRef(null);
+    const packetDot2Ref = import_react.useRef(null);
+    const endDotRef = import_react.useRef(null);
+    const filamentGlowRef = import_react.useRef(null);
+    const filamentAuraRef = import_react.useRef(null);
+    const filamentAuraOuterRef = import_react.useRef(null);
+    const filamentGlowWideRef = import_react.useRef(null);
+    const filamentGlowMidRef = import_react.useRef(null);
+    const filamentCoreRef = import_react.useRef(null);
+    const lenFilamentFormedRef = import_react.useRef(0);
+
+    const pullCordActiveRef = import_react.useRef(null);
+    const pullCordGlowRef = import_react.useRef(null);
+    const cordAnchorRef = import_react.useRef(null);
+    const isDraggingRef = import_react.useRef(false);
+    const dragStartXRef = import_react.useRef(0);
+    const dragStartYRef = import_react.useRef(0);
+    const hasMovedRef = import_react.useRef(false);
+    const currentPullXRef = import_react.useRef(0);
+    const currentPullYRef = import_react.useRef(0);
+    const fpParamsRef = import_react.useRef(null);
+    const pullAnimRafRef = import_react.useRef(0);
+    const pullBadgeRef = import_react.useRef(null);
+    const basePathRef = import_react.useRef("");
+
+    const [isModalOpen, setIsModalOpen] = import_react.useState(false);
+    const [formData, setFormData] = import_react.useState({ name: "", email: "", message: "" });
+    const [formStatus, setFormStatus] = import_react.useState("idle");
+    const [formError, setFormError] = import_react.useState("");
+    const startedRef = import_react.useRef(false);
+
+    const stageProcessRef = import_react.useRef(null);
+    const stageBulbRef = import_react.useRef(null);
+    const bulbStageBoxRef = import_react.useRef(null);
+    const labelIntentRef = import_react.useRef(null);
+    const labelInteractionRef = import_react.useRef(null);
+    const labelSystemRef = import_react.useRef(null);
+
+    const stageSkillsRef = import_react.useRef(null);
+    const stageFooterRef = import_react.useRef(null);
+    const fingerprintStageRef = import_react.useRef(null);
+
+    const stepItemsRef = import_react.useRef([]);
+    const stepDotsRef = import_react.useRef([]);
+
+    const totalLenRef = import_react.useRef(0);
+    const stepMilestonesRef = import_react.useRef([]);
+    const lenIntentRef = import_react.useRef(0);
+    const lenInteractionRef = import_react.useRef(0);
+    const lenSystemRef = import_react.useRef(0);
+    const sectionProgressRef = import_react.useRef({ p1: 0.18, p2: 0.45, p3: 0.62 });
+
+    const currentProgRef = import_react.useRef(0);
+    const targetProgRef = import_react.useRef(0);
+
+    const getFlowingCablePath = import_react.useCallback((pullX, pullY, tSec = 0) => {
+      const params = fpParamsRef.current;
+      if (!params) return { d: "", cordSeg: "", hx: 0, hy: 0, c1x: 0, c1y: 0, c2x: 0, c2y: 0 };
+      const { exitX, exitY } = params;
+
+      // Natural flow rest position: seamlessly aligned with fingerprint ridge sweep
+      const restX = -20;
+      const restY = 66;
+
+      const hx = exitX + restX + pullX;
+      const hy = exitY + restY + pullY;
+
+      // True continuous tangent matching the fingerprint ridge exit (-0.809, 0.588)
+      // Completely eliminates kinks and ensures 100% seamless alignment and flow
+      const tx = -0.809;
+      const ty = 0.588;
+
+      const dTravel = Math.hypot(pullX, pullY);
+      const l1 = 28.0 + dTravel * 0.12;
+      const c1x = exitX + tx * l1;
+      const c1y = exitY + ty * l1;
+
+      // Fluid vertical entry into the top of the knob
+      const l2 = 26.0 + dTravel * 0.10;
+      const c2x = hx - pullX * 0.12;
+      const c2y = hy - l2;
+
+      const d = `M ${exitX.toFixed(1)},${exitY.toFixed(1)} C ${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${hx.toFixed(1)},${hy.toFixed(1)}`;
+      const cordSeg = `C ${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${hx.toFixed(1)},${hy.toFixed(1)}`;
+      return { d, cordSeg, hx, hy, c1x, c1y, c2x, c2y };
+    }, []);
+
+    const updateCable = import_react.useCallback((pullX, pullY) => {
+      const params = fpParamsRef.current;
+      if (!params) return;
+
+      currentPullXRef.current = pullX;
+      currentPullYRef.current = pullY;
+
+      const { d, cordSeg, hx, hy } = getFlowingCablePath(pullX, pullY);
+
+      if (journeyPathRef.current && basePathRef.current) {
+        journeyPathRef.current.setAttribute("d", basePathRef.current + " " + cordSeg);
+        journeyPathRef.current.style.strokeDasharray = "none";
+        journeyPathRef.current.style.strokeDashoffset = "0";
+      }
+
+      if (pullCordGlowRef.current) {
+        pullCordGlowRef.current.setAttribute("d", d);
+        pullCordGlowRef.current.classList.toggle("is-visible", pullY > 10 || isDraggingRef.current);
+      }
+
+      if (endDotRef.current) {
+        endDotRef.current.style.left = hx.toFixed(1) + "px";
+        endDotRef.current.style.top = hy.toFixed(1) + "px";
+        endDotRef.current.style.transform = "translate(-50%, -50%)";
+      }
+
+      if (pullBadgeRef.current) {
+        if (pullY >= 50) {
+          pullBadgeRef.current.textContent = "[ CIRCUIT PRIMED · RELEASE TO ENGAGE ⚡ ]";
+          pullBadgeRef.current.classList.add("is-primed");
+          pullBadgeRef.current.classList.remove("is-pulling");
+          if (endDotRef.current) endDotRef.current.classList.add("is-primed");
+        } else if (pullY > 16) {
+          const pct = Math.min(99, Math.round((pullY / 50) * 100));
+          pullBadgeRef.current.textContent = `[ TENSION ${pct}% · KEEP PULLING ]`;
+          pullBadgeRef.current.classList.add("is-pulling");
+          pullBadgeRef.current.classList.remove("is-primed");
+          if (endDotRef.current) endDotRef.current.classList.remove("is-primed");
+        } else {
+          pullBadgeRef.current.textContent = "[ PULL TO INITIALIZE ↓ ]";
+          pullBadgeRef.current.classList.remove("is-pulling", "is-primed");
+          if (endDotRef.current) endDotRef.current.classList.remove("is-primed");
+        }
+      }
+    }, [getFlowingCablePath]);
+
+    const springCable = import_react.useCallback((targetX, targetY, onComplete) => {
+      if (pullAnimRafRef.current) {
+        cancelAnimationFrame(pullAnimRafRef.current);
+        pullAnimRafRef.current = 0;
+      }
+
+      let curX = currentPullXRef.current || 0;
+      let curY = currentPullYRef.current || 0;
+      let vx = 0;
+      let vy = 0;
+      // Silky, fluid harmonic wave spring physics
+      const k = 0.28;
+      const damping = 0.74;
+
+      function step() {
+        const fx = (targetX - curX) * k;
+        vx = (vx + fx) * damping;
+        curX += vx;
+
+        const fy = (targetY - curY) * k;
+        vy = (vy + fy) * damping;
+        curY += vy;
+
+        if (Math.abs(targetX - curX) < 0.2 && Math.abs(vx) < 0.2 && Math.abs(targetY - curY) < 0.2 && Math.abs(vy) < 0.2) {
+          updateCable(targetX, targetY);
+          pullAnimRafRef.current = 0;
+          if (journeyPathRef.current && totalLenRef.current > 0) {
+            journeyPathRef.current.style.strokeDasharray = `${totalLenRef.current} ${totalLenRef.current}`;
+            journeyPathRef.current.style.strokeDashoffset = "0";
+          }
+          if (pullCordGlowRef.current) {
+            pullCordGlowRef.current.classList.remove("is-visible");
+          }
+          if (onComplete) onComplete();
+          return;
+        }
+
+        updateCable(curX, curY);
+        pullAnimRafRef.current = requestAnimationFrame(step);
+      }
+
+      pullAnimRafRef.current = requestAnimationFrame(step);
+    }, [updateCable]);
+
+    const triggerActivationPulse = import_react.useCallback(() => {
+      // Optical light burst flowing up the S-curve into fingerprint
+      if (packetDotRef.current && fpParamsRef.current) {
+        const { exitX, exitY } = fpParamsRef.current;
+        const { hx, hy } = getFlowingCablePath(0, 0);
+        packetDotRef.current.style.display = "block";
+        packetDotRef.current.style.transform = `translate(${hx}px, ${hy}px) translate(-50%, -50%) scale(1.8)`;
+        setTimeout(() => {
+          if (packetDotRef.current) {
+            packetDotRef.current.style.transform = `translate(${exitX}px, ${exitY}px) translate(-50%, -50%) scale(2.4)`;
+          }
+        }, 50);
+        setTimeout(() => {
+          if (packetDotRef.current) packetDotRef.current.style.display = "none";
+        }, 240);
+      }
+      setIsModalOpen(true);
+    }, [getFlowingCablePath]);
+
+    const closeModal = import_react.useCallback(() => {
+      setIsModalOpen(false);
+      setFormError("");
+    }, []);
+
+    import_react.useEffect(() => {
+      const handleKeyDown = (e) => {
+        if (e.key === "Escape" && isModalOpen) {
+          closeModal();
+        }
+      };
+      if (isModalOpen) {
+        document.body.style.overflow = "hidden";
+        if (window.lenisInstance) window.lenisInstance.stop();
+        window.addEventListener("keydown", handleKeyDown);
+      } else {
+        document.body.style.overflow = "";
+        if (window.lenisInstance) window.lenisInstance.start();
+      }
+      return () => {
+        document.body.style.overflow = "";
+        if (window.lenisInstance) window.lenisInstance.start();
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }, [isModalOpen, closeModal]);
+
+    const handlePullClick = import_react.useCallback(() => {
+      if (hasMovedRef.current) return;
+      // Quick tactile dip & snap simulation
+      springCable(0, 48, () => {
+        springCable(0, 0, () => {
+          triggerActivationPulse();
+        });
+      });
+    }, [springCable, triggerActivationPulse]);
+
+    import_react.useEffect(() => {
+      const handle = endDotRef.current;
+      if (!handle) return;
+
+      const onPointerDown = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (window.getSelection) {
+          window.getSelection().removeAllRanges();
+        }
+
+        document.body.style.userSelect = "none";
+        document.body.style.webkitUserSelect = "none";
+        document.body.style.cursor = "grabbing";
+
+        if (window.lenisInstance) {
+          window.lenisInstance.stop();
+        }
+
+        if (pullAnimRafRef.current) {
+          cancelAnimationFrame(pullAnimRafRef.current);
+          pullAnimRafRef.current = 0;
+        }
+
+        isDraggingRef.current = true;
+        dragStartXRef.current = e.clientX ?? 0;
+        dragStartYRef.current = e.clientY ?? 0;
+        hasMovedRef.current = false;
+        handle.classList.add("is-dragging");
+
+        try {
+          handle.setPointerCapture(e.pointerId);
+        } catch (err) {}
+      };
+
+      const onPointerMove = (e) => {
+        if (!isDraggingRef.current) return;
+        e.preventDefault();
+        e.stopPropagation();
+
+        const clientX = e.clientX ?? 0;
+        const clientY = e.clientY ?? 0;
+        const rawDx = clientX - dragStartXRef.current;
+        const rawDy = Math.max(0, clientY - dragStartYRef.current);
+
+        if (rawDy > 4 || Math.abs(rawDx) > 4) hasMovedRef.current = true;
+
+        // Dynamic 2D catenary tension displacement
+        const pullX = Math.max(-55, Math.min(55, rawDx * 0.42));
+        const maxTravel = window.innerWidth < 900 ? 95 : 125;
+        const pullY = Math.min(maxTravel, rawDy * 0.70);
+
+        updateCable(pullX, pullY);
+      };
+
+      const onPointerUp = (e) => {
+        if (!isDraggingRef.current) return;
+        isDraggingRef.current = false;
+        handle.classList.remove("is-dragging");
+        document.body.style.userSelect = "";
+        document.body.style.webkitUserSelect = "";
+        document.body.style.cursor = "";
+
+        if (window.lenisInstance && !isModalOpen) {
+          window.lenisInstance.start();
+        }
+
+        try {
+          handle.releasePointerCapture(e.pointerId);
+        } catch (err) {}
+
+        if (!hasMovedRef.current) {
+          handlePullClick();
+          return;
+        }
+
+        const finalPullY = currentPullYRef.current;
+        if (finalPullY >= 50) {
+          // Snap cord back and fire activation pulse into modal reveal!
+          springCable(0, 0, () => {
+            triggerActivationPulse();
+          });
+        } else {
+          // Released before threshold: spring back to resting
+          springCable(0, 0);
+        }
+      };
+
+      const onPointerCancel = (e) => {
+        if (!isDraggingRef.current) return;
+        isDraggingRef.current = false;
+        handle.classList.remove("is-dragging");
+        document.body.style.userSelect = "";
+        document.body.style.webkitUserSelect = "";
+        document.body.style.cursor = "";
+        if (window.lenisInstance && !isModalOpen) {
+          window.lenisInstance.start();
+        }
+        try {
+          handle.releasePointerCapture(e.pointerId);
+        } catch (err) {}
+        springCable(0, 0);
+      };
+
+      handle.addEventListener("pointerdown", onPointerDown);
+      handle.addEventListener("pointermove", onPointerMove);
+      handle.addEventListener("pointerup", onPointerUp);
+      handle.addEventListener("pointercancel", onPointerCancel);
+
+      return () => {
+        handle.removeEventListener("pointerdown", onPointerDown);
+        handle.removeEventListener("pointermove", onPointerMove);
+        handle.removeEventListener("pointerup", onPointerUp);
+        handle.removeEventListener("pointercancel", onPointerCancel);
+        document.body.style.userSelect = "";
+        document.body.style.webkitUserSelect = "";
+        document.body.style.cursor = "";
+      };
+    }, [updateCable, springCable, triggerActivationPulse, handlePullClick, isModalOpen]);
+
+    const FINGERPRINT_POINTS = [[124.5,-585.5],[92.5,-597.5],[106.5,-595.5],[142.5,-578.5],[220.5,-530.5],[269.5,-488.5],[297.5,-458.5],[349.5,-380.5],[367.5,-332.5],[367.5,-308.5],[355.5,-306.5],[347.5,-314.5],[312.5,-374.5],[275.5,-424.5],[238.5,-463.5],[188.5,-504.5],[132.5,-538.5],[96.5,-553.5],[12.5,-574.5],[-59.5,-574.5],[-119.5,-561.5],[-155.5,-548.5],[-203.5,-523.5],[-265.5,-478.5],[-305.5,-440.5],[-312.5,-430.5],[-313.5,-418.5],[-305.5,-413.5],[-293.5,-419.5],[-253.5,-452.5],[-177.5,-501.5],[-141.5,-517.5],[-93.5,-532.5],[-57.5,-537.5],[2.5,-535.5],[38.5,-527.5],[86.5,-509.5],[134.5,-483.5],[204.5,-428.5],[269.5,-359.5],[309.5,-310.5],[359.5,-232.5],[380.5,-184.5],[391.5,-136.5],[384.5,-112.5],[372.5,-117.5],[364.5,-126.5],[327.5,-210.5],[297.5,-258.5],[254.5,-318.5],[195.5,-388.5],[145.5,-432.5],[111.5,-455.5],[51.5,-483.5],[15.5,-493.5],[-44.5,-498.5],[-104.5,-490.5],[-140.5,-479.5],[-188.5,-457.5],[-256.5,-412.5],[-306.5,-368.5],[-332.5,-338.5],[-354.5,-304.5],[-357.5,-280.5],[-346.5,-276.5],[-334.5,-282.5],[-282.5,-338.5],[-203.5,-401.5],[-131.5,-437.5],[-83.5,-451.5],[-35.5,-456.5],[12.5,-451.5],[72.5,-430.5],[108.5,-410.5],[166.5,-365.5],[214.5,-315.5],[259.5,-255.5],[328.5,-137.5],[368.5,-53.5],[384.5,6.5],[384.5,30.5],[379.5,42.5],[368.5,47.5],[358.5,39.5],[333.5,-44.5],[314.5,-92.5],[261.5,-188.5],[204.5,-270.5],[162.5,-318.5],[104.5,-368.5],[80.5,-384.5],[32.5,-405.5],[-27.5,-416.5],[-75.5,-413.5],[-111.5,-403.5],[-159.5,-382.5],[-215.5,-347.5],[-274.5,-300.5],[-341.5,-232.5],[-374.5,-187.5],[-390.5,-151.5],[-386.5,-127.5],[-375.5,-124.5],[-354.5,-138.5],[-260.5,-247.5],[-201.5,-298.5],[-125.5,-346.5],[-65.5,-368.5],[-29.5,-373.5],[6.5,-371.5],[66.5,-352.5],[100.5,-331.5],[130.5,-306.5],[134.5,-294.5],[131.5,-282.5],[107.5,-284.5],[73.5,-308.5],[37.5,-324.5],[-10.5,-331.5],[-34.5,-329.5],[-70.5,-320.5],[-118.5,-294.5],[-155.5,-260.5],[-194.5,-207.5],[-230.5,-215.5],[-252.5,-205.5],[-328.5,-117.5],[-379.5,-69.5],[-391.5,-47.5],[-390.5,-35.5],[-378.5,-31.5],[-366.5,-33.5],[-342.5,-48.5],[-290.5,-104.5],[-237.5,-172.5],[-225.5,-174.5],[-216.5,-168.5],[-217.5,-156.5],[-228.5,-132.5],[-264.5,-74.5],[-308.5,-25.5],[-348.5,6.5],[-366.5,26.5],[-374.5,74.5],[-368.5,146.5],[-347.5,206.5],[-324.5,237.5],[-292.5,260.5],[-268.5,267.5],[-220.5,266.5],[-184.5,255.5],[-148.5,235.5],[-38.5,123.5],[-7.5,79.5],[3.5,55.5],[13.5,-4.5],[10.5,-28.5],[5.5,-40.5],[-4.5,-48.5],[-14.5,-44.5],[-21.5,-32.5],[-21.5,15.5],[-26.5,39.5],[-37.5,63.5],[-51.5,83.5],[-108.5,143.5],[-146.5,178.5],[-202.5,210.5],[-238.5,222.5],[-250.5,222.5],[-260.5,215.5],[-261.5,203.5],[-254.5,192.5],[-207.5,167.5],[-165.5,138.5],[-108.5,85.5],[-86.5,53.5],[-70.5,17.5],[-53.5,-66.5],[-42.5,-90.5],[-23.5,-108.5],[0.5,-111.5],[12.5,-107.5],[30.5,-89.5],[45.5,-41.5],[46.5,6.5],[40.5,42.5],[22.5,90.5],[-6.5,150.5],[-3.5,162.5],[8.5,168.5],[29.5,153.5],[51.5,121.5],[71.5,73.5],[81.5,25.5],[82.5,-34.5],[67.5,-94.5],[48.5,-128.5],[16.5,-153.5],[-7.5,-157.5],[-43.5,-143.5],[-71.5,-113.5],[-90.5,-77.5],[-128.5,18.5],[-150.5,54.5],[-175.5,83.5],[-213.5,116.5],[-261.5,142.5],[-273.5,145.5],[-285.5,142.5],[-290.5,130.5],[-287.5,118.5],[-226.5,68.5],[-195.5,30.5],[-165.5,-17.5],[-119.5,-113.5],[-91.5,-157.5],[-72.5,-177.5],[-40.5,-198.5],[-16.5,-206.5],[7.5,-206.5],[43.5,-193.5],[71.5,-167.5],[86.5,-143.5],[101.5,-107.5],[110.5,-71.5],[114.5,-35.5],[112.5,36.5],[105.5,72.5],[84.5,132.5],[49.5,186.5],[19.5,212.5],[-16.5,230.5],[-76.5,243.5],[-112.5,255.5],[-208.5,301.5],[-229.5,316.5],[-226.5,327.5],[-214.5,332.5],[-202.5,330.5],[-94.5,290.5],[25.5,260.5],[69.5,234.5],[96.5,207.5],[111.5,185.5],[128.5,149.5],[145.5,89.5],[152.5,29.5],[152.5,-6.5],[145.5,-66.5],[125.5,-138.5],[100.5,-186.5],[64.5,-223.5],[40.5,-237.5],[16.5,-245.5],[-19.5,-247.5],[-43.5,-241.5],[-67.5,-230.5],[-97.5,-206.5],[-129.5,-164.5],[-191.5,-44.5],[-226.5,9.5],[-262.5,46.5],[-306.5,76.5],[-318.5,74.5],[-328.5,66.5],[-329.5,54.5],[-324.5,43.5],[-305.5,28.5],[-260.5,-19.5],[-216.5,-87.5],[-159.5,-193.5],[-126.5,-235.5],[-106.5,-253.5],[-72.5,-274.5],[-24.5,-286.5],[11.5,-284.5],[59.5,-268.5],[101.5,-236.5],[133.5,-192.5],[161.5,-132.5],[179.5,-72.5],[192.5,-0.5],[195.5,83.5],[185.5,143.5],[173.5,179.5],[154.5,215.5],[124.5,254.5],[94.5,279.5],[58.5,301.5],[22.5,315.5],[-133.5,351.5],[-167.5,369.5],[-176.5,378.5],[-176.5,390.5],[-164.5,397.5],[-128.5,396.5],[27.5,360.5],[75.5,343.5],[99.5,331.5],[131.5,308.5],[167.5,269.5],[200.5,211.5],[220.5,139.5],[224.5,103.5],[222.5,43.5],[229.5,31.5],[238.5,33.5],[255.5,93.5],[258.5,153.5],[253.5,189.5],[233.5,237.5],[167.5,317.5],[146.5,351.5],[148.5,363.5],[160.5,370.5],[194.5,350.5],[237.5,303.5],[265.5,257.5],[285.5,209.5],[291.5,185.5],[296.5,137.5],[293.5,89.5],[275.5,29.5],[232.5,-52.5],[181.5,-172.5],[149.5,-230.5],[146.5,-242.5],[149.5,-254.5],[161.5,-258.5],[173.5,-253.5],[215.5,-183.5],[286.5,-39.5],[320.5,44.5],[332.5,104.5],[333.5,140.5],[325.5,200.5],[305.5,260.5],[263.5,328.5],[227.5,365.5],[194.5,389.5]];
+
+    const steps = [
+      {
+        num: "01",
+        title: "Physics",
+        desc: "Start from governing equations — diode models, DC-OPF, spectral reflectance — not from a dataset."
+      },
+      {
+        num: "02",
+        title: "Signal",
+        desc: "Condition and transform: FFT, GLCM, HOG, 400–1000 nm bands. Features that mean something."
+      },
+      {
+        num: "03",
+        title: "Model",
+        desc: "Learn what physics can't: 3D-CNN, BiLSTM, ANN, federated LSTM, swarm optimisers."
+      },
+      {
+        num: "04",
+        title: "Silicon",
+        desc: "Quantise and ship to ESP32 and Raspberry Pi. Real-time budgets, under 5 ms."
+      },
+      {
+        num: "05",
+        title: "Proof",
+        desc: "Explain with SHAP and LIME, validate on IEEE 14/30-bus and Markov chains, then publish."
+      }
+    ];
+
+    /* ===================================================================
+       BUILD CONTINUOUS MASTER SVG PATH (ACROSS ALL 4 SECTIONS)
+       100% Single Unbroken Flow, Zero Jump / Teleport commands!
+       =================================================================== */
+    const buildPath = import_react.useCallback(() => {
+      if (!stepDotsRef.current.length || !stepDotsRef.current[0]) return;
+      if (!journeyWrapRef.current || !journeySvgRef.current || !journeyPathRef.current) return;
+      if (!bulbStageBoxRef.current || !stageSkillsRef.current || !stageFooterRef.current || !fingerprintStageRef.current) return;
+
+      const wrap = journeyWrapRef.current;
+      const svg = journeySvgRef.current;
+      const path = journeyPathRef.current;
+      const wrapRect = wrap.getBoundingClientRect();
+      const wrapW = wrap.clientWidth;
+      const wrapH = wrap.clientHeight;
+      const winW = window.innerWidth;
+      const isDesktop = winW >= 900;
+      const isMobile = !isDesktop;
+
+      svg.setAttribute("width", wrapW);
+      svg.setAttribute("height", wrapH);
+      svg.style.width = wrapW + "px";
+      svg.style.height = wrapH + "px";
+
+      // 1. Step Dots Coordinates
+      const dotsXY = stepDotsRef.current.map(d => {
+        if (!d) return { x: 0, y: 0 };
+        const r = d.getBoundingClientRect();
+        return {
+          x: (r.left - wrapRect.left) + r.width / 2,
+          y: (r.top - wrapRect.top) + r.height / 2
+        };
+      });
+
+      const d1 = dotsXY[0];
+      const d5 = dotsXY[dotsXY.length - 1];
+
+      if (startDotRef.current) {
+        startDotRef.current.style.left = d1.x + "px";
+        startDotRef.current.style.top = d1.y + "px";
+      }
+
+      if (trackLineBaseRef.current) {
+        if (isDesktop) {
+          trackLineBaseRef.current.style.left = d1.x + "px";
+          trackLineBaseRef.current.style.top = d1.y + "px";
+          trackLineBaseRef.current.style.width = (d5.x - d1.x) + "px";
+          trackLineBaseRef.current.style.height = "1px";
+        } else {
+          trackLineBaseRef.current.style.left = d1.x + "px";
+          trackLineBaseRef.current.style.top = d1.y + "px";
+          trackLineBaseRef.current.style.width = "1px";
+          trackLineBaseRef.current.style.height = (d5.y - d1.y) + "px";
+        }
+      }
+
+      // Step 05 clearance: calculate the right & bottom bounds of Step 05 card
+      const step5Item = stepItemsRef.current[4];
+      const step5Rect = step5Item ? step5Item.getBoundingClientRect() : null;
+      const step5Right = step5Rect ? (step5Rect.right - wrapRect.left) : (d5.x + 220);
+      const step5Bottom = step5Rect ? (step5Rect.bottom - wrapRect.top) : (d5.y + 160);
+
+      // Past Proof: at least 48px past the rightmost edge of Proof, within screen bounds
+      const turnX = Math.min(wrapW - 56, Math.max(d5.x + 240, step5Right + 48));
+      const cornerR = 52;
+      const turnY = Math.max(d5.y + 190, step5Bottom + 45);
+
+      // 2. Lightbulb Stage Box Coordinates (Exact Reference Bulb from approved photo)
+      const bRect = bulbStageBoxRef.current.getBoundingClientRect();
+      const cx = (bRect.left - wrapRect.left) + bRect.width * (isMobile ? 0.5 : 0.44);
+      const cy = (bRect.top - wrapRect.top) + bRect.height * 0.40;
+
+      // Authentic Edison Globe Geometry
+      const r = isMobile ? 104 : 155;
+      const y_top = cy - r;
+      const y_waist_start = cy + r * 0.45;
+      const y_neck = cy + r * 1.28;
+      const hn = isMobile ? 38 : 52; // neck half-width
+
+      // Vertical support stems & Filament (matching authentic bulb filament)
+      const f_hw = isMobile ? 32.0 : 48.0; // reduced filament half-width
+      const y_fil_top = cy - r * 0.38; // filament top peaks line
+      const f_h = isMobile ? 16.0 : 22.0; // reduced filament tooth height
+      const y_fil_bot = y_fil_top + f_h; // filament bottom valleys line
+      const stem_bot_w = isMobile ? 9.0 : 12.0; // lower parallel stem half-width
+      const y_flare_start = cy + r * 0.46; // where vertical lower stem begins fillet
+      const fillet_h = isMobile ? 22.0 : 32.0;
+      const y_fillet_top = y_flare_start - fillet_h;
+      const diag_slope = (f_hw - stem_bot_w) / (y_flare_start - y_fil_top + fillet_h * 0.20);
+      const stem_flare_x = stem_bot_w + diag_slope * fillet_h * 0.40;
+
+      // Better Edison Screw Base / Holder (matching authentic reference)
+      const sock_w = isMobile ? 38.0 : 56.0; // screw thread half-width
+      const pitch = isMobile ? 13.0 : 18.0; // thread pitch
+      const y_sock_start = y_neck + (isMobile ? 10.0 : 14.0);
+      const tangent_dy = isMobile ? 4.0 : 6.0; // vertical arrival/departure at cylinder edge
+      const curl_w = isMobile ? 10.0 : 14.0;
+      const curl_h = isMobile ? 24.0 : 36.0;
+      const y_end_turn = y_sock_start + pitch * 3 + pitch * 0.44;
+      const y_cup_bot = y_end_turn + (isMobile ? 14.0 : 20.0);
+      const y_contact = y_cup_bot + curl_h;
+
+      // Position Labels to the right of the bulb
+      const bStageLocalLeft = bRect.left - wrapRect.left;
+      const bStageLocalTop = bRect.top - wrapRect.top;
+      const labelLocalX = (cx - bStageLocalLeft) + r + (isMobile ? 22 : 36);
+
+      if (labelIntentRef.current) {
+        labelIntentRef.current.style.left = labelLocalX + "px";
+        labelIntentRef.current.style.top = ((y_fil_top + f_h * 0.5 - bStageLocalTop) - 16) + "px";
+      }
+      if (labelInteractionRef.current) {
+        labelInteractionRef.current.style.left = labelLocalX + "px";
+        labelInteractionRef.current.style.top = ((y_sock_start + pitch * 1.5 - bStageLocalTop) - 10) + "px";
+      }
+      if (labelSystemRef.current) {
+        labelSystemRef.current.style.left = labelLocalX + "px";
+        labelSystemRef.current.style.top = ((y_end_turn - bStageLocalTop) - 10) + "px";
+      }
+
+      // 3. Skills Coordinates & Horizontal Wave Behind Cards
+      const skRect = stageSkillsRef.current.getBoundingClientRect();
+      const skTopY = skRect.top - wrapRect.top;
+      const skH = skRect.height;
+
+      const tileEls = stageSkillsRef.current ? stageSkillsRef.current.querySelectorAll('.service-tiles__tile') : [];
+      let xStart = wrapW * 0.08;
+      let xEnd = wrapW * 0.92;
+      let yWave = skTopY + skH * 0.52;
+
+      if (tileEls.length >= 2) {
+        const firstRect = tileEls[0].getBoundingClientRect();
+        const lastRect = tileEls[tileEls.length - 1].getBoundingClientRect();
+        xStart = (firstRect.left - wrapRect.left) + 24;
+        xEnd = (lastRect.right - wrapRect.left) - 24;
+        yWave = (firstRect.top - wrapRect.top) + firstRect.height * 0.52;
+      }
+
+      // 4. Biometric Fingerprint Stage Coordinates in Footer (next to "Let's talk")
+      const fpStage = fingerprintStageRef.current;
+      const fpRect = fpStage.getBoundingClientRect();
+      const fcX = (fpRect.left - wrapRect.left) + fpRect.width * 0.5;
+      const fcY = (fpRect.top - wrapRect.top) + fpRect.height * 0.48;
+
+      const targetFpH = isMobile ? Math.min(460, fpRect.height * 0.8) : Math.min(650, fpRect.height * 0.88);
+      const fpScale = targetFpH / 1195.0;
+
+      // =================================================================
+      // STAGE 1: Process Timeline + turn + S-curve into bulb top (cx, y_top)
+      // =================================================================
+      const d1Arr = [];
+      if (isDesktop) {
+        d1Arr.push(`M ${d1.x.toFixed(1)},${d1.y.toFixed(1)}`);
+        d1Arr.push(`L ${(turnX - cornerR).toFixed(1)},${d5.y.toFixed(1)}`);
+
+        // 100% Smooth Rounded Turn around Step 05
+        d1Arr.push(`C ${(turnX - cornerR * 0.45).toFixed(1)},${d5.y.toFixed(1)} ${turnX.toFixed(1)},${(d5.y + cornerR * 0.45).toFixed(1)} ${turnX.toFixed(1)},${(d5.y + cornerR).toFixed(1)}`);
+        d1Arr.push(`L ${turnX.toFixed(1)},${(turnY - cornerR).toFixed(1)}`);
+        d1Arr.push(`C ${turnX.toFixed(1)},${(turnY - cornerR * 0.45).toFixed(1)} ${(turnX - cornerR * 0.45).toFixed(1)},${turnY.toFixed(1)} ${(turnX - cornerR).toFixed(1)},${turnY.toFixed(1)}`);
+
+        // Smooth Tangent S-Curve into Bulb Top (cx, y_top)
+        const dxS = (turnX - cornerR) - cx;
+        const cp1x = (turnX - cornerR) - dxS * 0.5;
+        const cp1y = turnY;
+        const cp2x = cx + dxS * 0.35;
+        const cp2y = y_top;
+        d1Arr.push(`C ${cp1x.toFixed(1)},${cp1y.toFixed(1)} ${cp2x.toFixed(1)},${cp2y.toFixed(1)} ${cx.toFixed(1)},${y_top.toFixed(1)}`);
+      } else {
+        // Mobile: straight vertical line through all 5 step dots, then smooth curve into bulb top
+        d1Arr.push(`M ${d1.x.toFixed(1)},${d1.y.toFixed(1)}`);
+        d1Arr.push(`L ${d1.x.toFixed(1)},${(d5.y + 24).toFixed(1)}`);
+        const turnMobileY = d5.y + 50;
+        const cp1x = d1.x;
+        const cp1y = turnMobileY + (y_top - turnMobileY) * 0.4;
+        const cp2x = cx;
+        const cp2y = turnMobileY + (y_top - turnMobileY) * 0.4;
+        d1Arr.push(`C ${cp1x.toFixed(1)},${cp1y.toFixed(1)} ${cp2x.toFixed(1)},${cp2y.toFixed(1)} ${cx.toFixed(1)},${y_top.toFixed(1)}`);
+      }
+
+      // =================================================================
+      // STAGE 2: Continuous Single-Flow Bulb (Zero M jumps!)
+      // Left Dome -> Retrace to Apex -> Right Dome -> Stems & Filament -> Holder Base
+      // =================================================================
+      const d2Arr = [];
+      // 1. Left Dome down to neck
+      d2Arr.push(`C ${(cx - r * 0.552).toFixed(1)},${y_top.toFixed(1)} ${(cx - r).toFixed(1)},${(cy - r * 0.552).toFixed(1)} ${(cx - r).toFixed(1)},${cy.toFixed(1)}`);
+      d2Arr.push(`C ${(cx - r).toFixed(1)},${(cy + r * 0.4).toFixed(1)} ${(cx - r * 0.88).toFixed(1)},${y_waist_start.toFixed(1)} ${(cx - r * 0.72).toFixed(1)},${(y_waist_start + 30).toFixed(1)}`);
+      d2Arr.push(`C ${(cx - r * 0.55).toFixed(1)},${(y_waist_start + 65).toFixed(1)} ${(cx - hn - 16).toFixed(1)},${(y_neck - 35).toFixed(1)} ${(cx - hn).toFixed(1)},${y_neck.toFixed(1)}`);
+
+      // 2. Seamless continuous retrace back UP Left Dome to apex (Zero M break!)
+      d2Arr.push(`C ${(cx - hn - 16).toFixed(1)},${(y_neck - 35).toFixed(1)} ${(cx - r * 0.55).toFixed(1)},${(y_waist_start + 65).toFixed(1)} ${(cx - r * 0.72).toFixed(1)},${(y_waist_start + 30).toFixed(1)}`);
+      d2Arr.push(`C ${(cx - r * 0.88).toFixed(1)},${y_waist_start.toFixed(1)} ${(cx - r).toFixed(1)},${(cy + r * 0.4).toFixed(1)} ${(cx - r).toFixed(1)},${cy.toFixed(1)}`);
+      d2Arr.push(`C ${(cx - r).toFixed(1)},${(cy - r * 0.552).toFixed(1)} ${(cx - r * 0.552).toFixed(1)},${y_top.toFixed(1)} ${cx.toFixed(1)},${y_top.toFixed(1)}`);
+
+      // 3. Right Dome down to right neck
+      d2Arr.push(`C ${(cx + r * 0.552).toFixed(1)},${y_top.toFixed(1)} ${(cx + r).toFixed(1)},${(cy - r * 0.552).toFixed(1)} ${(cx + r).toFixed(1)},${cy.toFixed(1)}`);
+      d2Arr.push(`C ${(cx + r).toFixed(1)},${(cy + r * 0.4).toFixed(1)} ${(cx + r * 0.88).toFixed(1)},${y_waist_start.toFixed(1)} ${(cx + r * 0.72).toFixed(1)},${(y_waist_start + 30).toFixed(1)}`);
+      d2Arr.push(`C ${(cx + r * 0.55).toFixed(1)},${(y_waist_start + 65).toFixed(1)} ${(cx + hn + 16).toFixed(1)},${(y_neck - 35).toFixed(1)} ${(cx + hn).toFixed(1)},${y_neck.toFixed(1)}`);
+
+      // 4. Right neck shelf into right stem
+      d2Arr.push(`C ${(cx + hn - 4).toFixed(1)},${(y_neck + 10).toFixed(1)} ${(cx + stem_bot_w + 14).toFixed(1)},${(y_neck + 8).toFixed(1)} ${(cx + stem_bot_w).toFixed(1)},${y_neck.toFixed(1)}`);
+
+      // 5. Right stem wire: straight vertical lower part, smooth fillet, pure straight diagonal line to peak crest
+      d2Arr.push(`L ${(cx + stem_bot_w).toFixed(1)},${y_flare_start.toFixed(1)}`);
+      const cp1x = cx + stem_bot_w;
+      const cp1y = y_flare_start - fillet_h * 0.55;
+      const diag_dx = f_hw - stem_flare_x;
+      const diag_dy = y_fillet_top - y_fil_top;
+      const diag_m = diag_dx / diag_dy;
+      const cp2x = cx + stem_flare_x - diag_m * fillet_h * 0.35;
+      const cp2y = y_fillet_top + fillet_h * 0.35;
+      d2Arr.push(`C ${cp1x.toFixed(1)},${cp1y.toFixed(1)} ${cp2x.toFixed(1)},${cp2y.toFixed(1)} ${(cx + stem_flare_x).toFixed(1)},${y_fillet_top.toFixed(1)}`);
+      // Pure straight diagonal wire right to Peak 6 crest (NO vertical notch/kink)
+      d2Arr.push(`L ${(cx + f_hw).toFixed(1)},${y_fil_top.toFixed(1)}`);
+
+      // 6. Filament: exactly 6 peaks and 5 valleys (compact delicate bulb filament)
+      const N_peaks = 6;
+      const N_valleys = N_peaks - 1;
+      const dx_fil = (2 * f_hw) / N_valleys;
+      const dFilArr = [`M ${(cx + f_hw).toFixed(1)},${y_fil_top.toFixed(1)}`];
+      for (let i = N_valleys; i > 0; i--) {
+        const px_cur = cx - f_hw + i * dx_fil;
+        const vx = cx - f_hw + (i - 0.5) * dx_fil;
+        const px_next = cx - f_hw + (i - 1) * dx_fil;
+
+        // Down to rounded valley
+        const v_cp1x = px_cur - dx_fil * 0.15;
+        const v_cp1y = y_fil_top + f_h * 0.55;
+        const v_cp2x = vx + dx_fil * 0.20;
+        const v_cp2y = y_fil_bot;
+        const cVal = `C ${v_cp1x.toFixed(1)},${v_cp1y.toFixed(1)} ${v_cp2x.toFixed(1)},${v_cp2y.toFixed(1)} ${vx.toFixed(1)},${y_fil_bot.toFixed(1)}`;
+        d2Arr.push(cVal);
+        dFilArr.push(cVal);
+
+        // Up to rounded peak
+        const p_cp3x = vx - dx_fil * 0.20;
+        const p_cp3y = y_fil_bot;
+        const p_cp4x = px_next + dx_fil * 0.15;
+        const p_cp4y = y_fil_top + f_h * 0.55;
+        const cPk = `C ${p_cp3x.toFixed(1)},${p_cp3y.toFixed(1)} ${p_cp4x.toFixed(1)},${p_cp4y.toFixed(1)} ${px_next.toFixed(1)},${y_fil_top.toFixed(1)}`;
+        d2Arr.push(cPk);
+        dFilArr.push(cPk);
+      }
+      const filPathD = dFilArr.join(" ");
+      const filMilestonePath = d1Arr.concat(d2Arr).join(" ");
+
+      if (filamentGlowWideRef.current) filamentGlowWideRef.current.setAttribute("d", filPathD);
+      if (filamentGlowMidRef.current) filamentGlowMidRef.current.setAttribute("d", filPathD);
+      if (filamentCoreRef.current) filamentCoreRef.current.setAttribute("d", filPathD);
+
+      const filCenterY = y_fil_top + f_h * 0.5;
+      if (filamentAuraRef.current) {
+        filamentAuraRef.current.setAttribute("cx", cx.toFixed(1));
+        filamentAuraRef.current.setAttribute("cy", filCenterY.toFixed(1));
+        filamentAuraRef.current.setAttribute("rx", (f_hw * 1.5).toFixed(1));
+        filamentAuraRef.current.setAttribute("ry", (f_h * 2.2).toFixed(1));
+      }
+      if (filamentAuraOuterRef.current) {
+        filamentAuraOuterRef.current.setAttribute("cx", cx.toFixed(1));
+        filamentAuraOuterRef.current.setAttribute("cy", filCenterY.toFixed(1));
+        filamentAuraOuterRef.current.setAttribute("rx", (f_hw * 2.1).toFixed(1));
+        filamentAuraOuterRef.current.setAttribute("ry", (f_h * 3.2).toFixed(1));
+      }
+
+      // 7. Left stem wire: straight diagonal down from Peak 1, smooth fillet, straight vertical to neck
+      d2Arr.push(`L ${(cx - stem_flare_x).toFixed(1)},${y_fillet_top.toFixed(1)}`);
+      const lcp2x = cx - stem_flare_x + diag_m * fillet_h * 0.35;
+      const lcp2y = y_fillet_top + fillet_h * 0.35;
+      const lcp1x = cx - stem_bot_w;
+      const lcp1y = y_flare_start - fillet_h * 0.55;
+      d2Arr.push(`C ${lcp2x.toFixed(1)},${lcp2y.toFixed(1)} ${lcp1x.toFixed(1)},${lcp1y.toFixed(1)} ${(cx - stem_bot_w).toFixed(1)},${y_flare_start.toFixed(1)}`);
+      d2Arr.push(`L ${(cx - stem_bot_w).toFixed(1)},${y_neck.toFixed(1)}`);
+
+      // 8. Superior Edison Screw Base Holder (Authentic 3D Cylinder with vertical tangent edge turns)
+      // Collar sweep from left stem to left thread start:
+      d2Arr.push(`C ${(cx - stem_bot_w - 14).toFixed(1)},${(y_neck + 6).toFixed(1)} ${(cx - sock_w + 6).toFixed(1)},${(y_sock_start - 6).toFixed(1)} ${(cx - sock_w).toFixed(1)},${y_sock_start.toFixed(1)}`);
+
+      let y_cur_sock = y_sock_start;
+      for (let c = 0; c < 3; c++) {
+        const taper_r = 1.0 - c * 0.04;
+        const taper_l = 0.98 - c * 0.04;
+        const w_r = sock_w * taper_r;
+        const w_l = sock_w * taper_l;
+
+        const y_r = y_cur_sock + pitch * 0.44;
+        // Thread sloping down-right with vertical arrival at right edge
+        d2Arr.push(`C ${(cx - w_l * 0.3).toFixed(1)},${(y_cur_sock + pitch * 0.08).toFixed(1)} ${(cx + w_r).toFixed(1)},${(y_r - tangent_dy).toFixed(1)} ${(cx + w_r).toFixed(1)},${y_r.toFixed(1)}`);
+
+        const y_l = y_cur_sock + pitch;
+        // Thread sloping down-left with vertical departure from right edge and vertical arrival at left edge
+        d2Arr.push(`C ${(cx + w_r).toFixed(1)},${(y_r + tangent_dy).toFixed(1)} ${(cx - w_l).toFixed(1)},${(y_l - tangent_dy).toFixed(1)} ${(cx - w_l).toFixed(1)},${y_l.toFixed(1)}`);
+        y_cur_sock = y_l;
+      }
+
+      // Final sweep to right base
+      const w_end = sock_w * 0.80;
+      const y_end = y_cur_sock + pitch * 0.44;
+      d2Arr.push(`C ${(cx - sock_w * 0.86).toFixed(1)},${(y_cur_sock + tangent_dy).toFixed(1)} ${(cx + w_end * 0.3).toFixed(1)},${(y_end - pitch * 0.08).toFixed(1)} ${(cx + w_end).toFixed(1)},${y_end.toFixed(1)}`);
+
+      // Symmetrical rounded insulator cup
+      d2Arr.push(`C ${(cx + w_end * 0.65).toFixed(1)},${(y_end + 16).toFixed(1)} ${(cx + w_end * 0.25).toFixed(1)},${y_cup_bot.toFixed(1)} ${cx.toFixed(1)},${y_cup_bot.toFixed(1)}`);
+      d2Arr.push(`C ${(cx - w_end * 0.25).toFixed(1)},${y_cup_bot.toFixed(1)} ${(cx - w_end * 0.65).toFixed(1)},${(y_end + 14).toFixed(1)} ${(cx - w_end * 0.72).toFixed(1)},${(y_end + 5).toFixed(1)}`);
+
+      // Bottom terminal contact curl
+      d2Arr.push(`C ${(cx - w_end * 0.5).toFixed(1)},${(y_cup_bot + 6).toFixed(1)} ${(cx + curl_w).toFixed(1)},${(y_cup_bot + curl_h * 0.26).toFixed(1)} ${(cx + curl_w * 0.8).toFixed(1)},${(y_cup_bot + curl_h * 0.40).toFixed(1)}`);
+      d2Arr.push(`C ${(cx + curl_w * 0.35).toFixed(1)},${(y_cup_bot + curl_h * 0.55).toFixed(1)} ${(cx - curl_w).toFixed(1)},${(y_cup_bot + curl_h * 0.65).toFixed(1)} ${(cx - curl_w * 0.65).toFixed(1)},${(y_cup_bot + curl_h * 0.78).toFixed(1)}`);
+      d2Arr.push(`C ${(cx - curl_w * 0.2).toFixed(1)},${(y_cup_bot + curl_h * 0.92).toFixed(1)} ${(cx + 4).toFixed(1)},${(y_contact - 4).toFixed(1)} ${cx.toFixed(1)},${y_contact.toFixed(1)}`);
+
+      // =================================================================
+      // STAGE 3: Exit line & Skills waves across service tiles
+      // =================================================================
+      const d3Arr = [];
+      const bendY = y_contact + Math.min(80, (yWave - y_contact) * 0.35);
+      d3Arr.push(`C ${(cx - 14).toFixed(1)},${(y_contact + 40).toFixed(1)} ${(cx - 60).toFixed(1)},${bendY.toFixed(1)} ${(cx - 160).toFixed(1)},${bendY.toFixed(1)}`);
+      d3Arr.push(`C ${(xStart + 80).toFixed(1)},${bendY.toFixed(1)} ${(xStart - 40).toFixed(1)},${(bendY + 30).toFixed(1)} ${(xStart - 20).toFixed(1)},${(yWave - 40).toFixed(1)}`);
+      d3Arr.push(`C ${(xStart - 10).toFixed(1)},${(yWave - 15).toFixed(1)} ${(xStart - 5).toFixed(1)},${yWave.toFixed(1)} ${xStart.toFixed(1)},${yWave.toFixed(1)}`);
+
+      const waveSpan = xEnd - xStart;
+      const cycles = 5;
+      const halfCycles = cycles * 2;
+      const segDx = waveSpan / halfCycles;
+      const waveAmp = isMobile ? 24 : 44;
+
+      let curWaveX = xStart;
+      for (let k = 0; k < halfCycles; k++) {
+        const nextWaveX = curWaveX + segDx;
+        const isUp = (k % 2 === 0);
+        const peakY = isUp ? (yWave - waveAmp) : (yWave + waveAmp);
+
+        const cp1X = curWaveX + segDx * 0.364;
+        const cp1Y = peakY;
+        const cp2X = nextWaveX - segDx * 0.364;
+        const cp2Y = peakY;
+
+        d3Arr.push(`C ${cp1X.toFixed(1)},${cp1Y.toFixed(1)} ${cp2X.toFixed(1)},${cp2Y.toFixed(1)} ${nextWaveX.toFixed(1)},${yWave.toFixed(1)}`);
+        curWaveX = nextWaveX;
+      }
+
+      // =================================================================
+      // STAGE 4: Biometric Fingerprint (Daksh Gajjar reference)
+      // =================================================================
+      const d4Arr = [];
+      const p0 = FINGERPRINT_POINTS[0];
+      const fpEntryX = fcX + p0[0] * fpScale;
+      const fpEntryY = fcY + p0[1] * fpScale;
+
+      const p1 = FINGERPRINT_POINTS[1];
+      const Tx = (p1[0] - p0[0]) * fpScale;
+      const Ty = (p1[1] - p0[1]) * fpScale;
+      const factor = 5.5;
+      const fpCp1x = xEnd + 90;
+      const fpCp1y = yWave;
+      const fpCp2x = fpEntryX - Tx * factor;
+      const fpCp2y = fpEntryY - Ty * factor;
+
+      d4Arr.push(`C ${fpCp1x.toFixed(1)},${fpCp1y.toFixed(1)} ${fpCp2x.toFixed(1)},${fpCp2y.toFixed(1)} ${fpEntryX.toFixed(1)},${fpEntryY.toFixed(1)}`);
+
+      for (let i = 0; i < FINGERPRINT_POINTS.length - 1; i++) {
+        const pt0 = i > 0 ? FINGERPRINT_POINTS[i - 1] : FINGERPRINT_POINTS[0];
+        const pt1 = FINGERPRINT_POINTS[i];
+        const pt2 = FINGERPRINT_POINTS[i + 1];
+        const pt3 = i < FINGERPRINT_POINTS.length - 2 ? FINGERPRINT_POINTS[i + 2] : pt2;
+
+        const cp1x = fcX + (pt1[0] + (pt2[0] - pt0[0]) / 6.0) * fpScale;
+        const cp1y = fcY + (pt1[1] + (pt2[1] - pt0[1]) / 6.0) * fpScale;
+        const cp2x = fcX + (pt2[0] - (pt3[0] - pt1[0]) / 6.0) * fpScale;
+        const cp2y = fcY + (pt2[1] - (pt3[1] - pt1[1]) / 6.0) * fpScale;
+        const p2x = fcX + pt2[0] * fpScale;
+        const p2y = fcY + pt2[1] * fpScale;
+
+        d4Arr.push(`C ${cp1x.toFixed(1)},${cp1y.toFixed(1)} ${cp2x.toFixed(1)},${cp2y.toFixed(1)} ${p2x.toFixed(1)},${p2y.toFixed(1)}`);
+      }
+
+      const lastPt = FINGERPRINT_POINTS[FINGERPRINT_POINTS.length - 1];
+      const exitX = fcX + lastPt[0] * fpScale;
+      const exitY = fcY + lastPt[1] * fpScale;
+
+      cordAnchorRef.current = {
+        exitX,
+        exitY
+      };
+      fpParamsRef.current = {
+        fcX,
+        fcY,
+        fpScale,
+        xEnd,
+        yWave,
+        exitX,
+        exitY
+      };
+      const { d: initD, cordSeg: initCordSeg, hx, hy } = getFlowingCablePath(0, 0);
+
+      if (endDotRef.current) {
+        endDotRef.current.style.left = hx.toFixed(1) + "px";
+        endDotRef.current.style.top = hy.toFixed(1) + "px";
+        endDotRef.current.style.transform = "translate(-50%, -50%)";
+      }
+
+      if (pullCordActiveRef.current) {
+        pullCordActiveRef.current.setAttribute("d", initD);
+      }
+      if (pullCordGlowRef.current) {
+        pullCordGlowRef.current.setAttribute("d", initD);
+      }
+
+      // Store base path (Stages 1 through 4 fingerprint ridges)
+      const baseD = d1Arr.concat(d2Arr, d3Arr, d4Arr).join(" ");
+      basePathRef.current = baseD;
+
+      // Master Full Path: pull string directly emerges from the fingerprint thread as one continuous path
+      const fullPath = baseD + " " + initCordSeg;
+      path.setAttribute("d", fullPath);
+      const totalLen = path.getTotalLength();
+      totalLenRef.current = totalLen;
+
+      // Measure precise section length milestones on SVG element
+      path.setAttribute("d", d1Arr.join(" "));
+      const lenS1 = path.getTotalLength(); // timeline to bulb entrance
+
+      path.setAttribute("d", d1Arr.concat(d2Arr).join(" "));
+      const lenS2 = path.getTotalLength(); // bulb exit
+
+      path.setAttribute("d", d1Arr.concat(d2Arr, d3Arr).join(" "));
+      const lenS3 = path.getTotalLength(); // skills end / fingerprint start
+
+      path.setAttribute("d", filMilestonePath);
+      const lenFilamentFormed = path.getTotalLength();
+      lenFilamentFormedRef.current = lenFilamentFormed;
+
+      // Restore complete master path
+      path.setAttribute("d", fullPath);
+
+      path.style.strokeDasharray = `${totalLen} ${totalLen}`;
+      path.style.strokeDashoffset = `${(totalLen * (1 - currentProgRef.current)).toFixed(1)}`;
+
+      // Save progress ratios for Section-Synchronized Scrolling
+      sectionProgressRef.current = {
+        p1: Math.max(0.01, lenS1 / totalLen),
+        p2: Math.max(0.02, lenS2 / totalLen),
+        p3: Math.max(0.03, lenS3 / totalLen)
+      };
+
+      stepMilestonesRef.current = [];
+      const totalSteps = steps.length;
+      for (let i = 0; i < totalSteps; i++) {
+        if (dotsXY[i]) {
+          const distFromStart = isDesktop ? (dotsXY[i].x - d1.x) : (dotsXY[i].y - d1.y);
+          stepMilestonesRef.current.push(Math.max(0, distFromStart));
+        } else {
+          stepMilestonesRef.current.push(i * 100);
+        }
+      }
+
+      // Precise bulb stage label activations
+      lenIntentRef.current = lenFilamentFormed; // exact filament formed milestone
+      lenInteractionRef.current = lenS1 + (lenS2 - lenS1) * 0.70; // screw base holder
+      lenSystemRef.current = lenS1 + (lenS2 - lenS1) * 0.90; // contact base
+    }, [steps.length]);
+
+    /* ===================================================================
+       PAGE-SYNCHRONIZED PROGRESSIVE THREAD ENGINE
+       "SLOW AND GRADUAL MOVING ACCORDING TO THE PAGE"
+       Each page's animation builds smoothly as you move through that page,
+       completing the whole object on that page!
+       =================================================================== */
+    const onScroll = import_react.useCallback(() => {
+      if (!journeyWrapRef.current) return;
+      if (!stageProcessRef.current || !stageBulbRef.current || !stageSkillsRef.current || !stageFooterRef.current) return;
+
+      const rectP = stageProcessRef.current.getBoundingClientRect();
+      const rectB = stageBulbRef.current.getBoundingClientRect();
+      const rectS = stageSkillsRef.current.getBoundingClientRect();
+      const rectF = stageFooterRef.current.getBoundingClientRect();
+
+      const winH = window.innerHeight;
+      const { p1, p2, p3 } = sectionProgressRef.current;
+
+      const isAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60);
+
+      // Map progress SLOWLY and GRADUALLY ACCORDING TO THE PAGE:
+      // When entering a page, the object builds smoothly as you move through it.
+      // When in that page, the whole animation for that object is completed!
+      let target = 0;
+
+      if (isAtBottom) {
+        // At the bottom of the document: 100% completed
+        target = 1.0;
+      } else if (rectF.top < winH * 0.90) {
+        // Page 4: Footer (Biometric Fingerprint)
+        // Builds gradually from p3 to 1.0 as the user moves into the Footer
+        const t4 = Math.max(0, Math.min(1, (winH * 0.90 - rectF.top) / (winH * 0.65)));
+        target = p3 + t4 * (1.0 - p3);
+      } else if (rectS.top < winH * 0.90) {
+        // Page 3: Skills (Undulating Wave through cards)
+        // Builds gradually from p2 to p3 as the user moves into Skills
+        const t3 = Math.max(0, Math.min(1, (winH * 0.90 - rectS.top) / (winH * 0.68)));
+        target = p2 + t3 * (p3 - p2);
+      } else if (rectB.top < winH * 0.90) {
+        // Page 2: About / Lightbulb
+        // Builds gradually from p1 to p2 as the user moves into About/Bulb
+        const t2 = Math.max(0, Math.min(1, (winH * 0.90 - rectB.top) / (winH * 0.72)));
+        target = p1 + t2 * (p2 - p1);
+      } else if (rectP.top < winH * 0.90) {
+        // Page 1: Process (Timeline Steps 01 -> 05 and turn)
+        // Builds gradually from 0 to p1 as the user moves into Process
+        const t1 = Math.max(0, Math.min(1, (winH * 0.90 - rectP.top) / (winH * 0.68)));
+        target = t1 * p1;
+      } else {
+        // Above Process (Hero, Marquee, Work, UpClose)
+        target = 0.0;
+      }
+
+      targetProgRef.current = Math.max(0, Math.min(1, target));
+    }, []);
+
+    import_react.useEffect(() => {
+      let animId = 0;
+
+      function animLoop() {
+        const target = targetProgRef.current;
+        const current = currentProgRef.current;
+
+        const diff = target - current;
+        if (Math.abs(diff) > 0.0001) {
+          // SLOW AND GRADUAL MOVING ACCORDING TO THE PAGE:
+          // Gentle, organic damping (0.055 lerp) giving smooth, weighted liquid motion
+          currentProgRef.current += diff * 0.055;
+        } else {
+          currentProgRef.current = target;
+        }
+
+        const p = currentProgRef.current;
+        const totalLen = totalLenRef.current;
+
+        if (totalLen > 0 && journeyPathRef.current) {
+          const isInteracting = isDraggingRef.current || (currentPullXRef.current !== 0 || currentPullYRef.current !== 0);
+
+          if (!isInteracting) {
+            const drawLen = totalLen * p;
+            journeyPathRef.current.style.strokeDashoffset = `${totalLen - drawLen}`;
+            journeyPathRef.current.style.strokeDasharray = `${totalLen} ${totalLen}`;
+
+            // Glowing packet dot travels at the active drawing head
+            if (packetDotRef.current && !isModalOpen) {
+              if (drawLen > 2 && p < 0.995) {
+                const pt = journeyPathRef.current.getPointAtLength(drawLen);
+                packetDotRef.current.style.display = "block";
+                packetDotRef.current.style.transform = `translate(${pt.x}px, ${pt.y}px) translate(-50%, -50%)`;
+              } else {
+                packetDotRef.current.style.display = "none";
+              }
+            }
+
+            if (packetDot2Ref.current) {
+              packetDot2Ref.current.style.display = "none";
+            }
+
+            // Filament glows gold-yellow once it is fully formed
+            if (filamentGlowRef.current) {
+              filamentGlowRef.current.classList.toggle("is-glowing", drawLen >= lenFilamentFormedRef.current);
+            }
+
+            // Sequential step activation as the thread arrives at each dot
+            stepItemsRef.current.forEach((item, index) => {
+              if (!item) return;
+              const threshold = stepMilestonesRef.current[index] || 0;
+              item.classList.toggle("is-active", drawLen >= (threshold - 10));
+            });
+
+            // Bulb labels activate when thread reaches filament crown and screw base
+            if (labelIntentRef.current) labelIntentRef.current.classList.toggle("is-active", drawLen >= lenIntentRef.current);
+            if (labelInteractionRef.current) labelInteractionRef.current.classList.toggle("is-active", drawLen >= lenInteractionRef.current);
+            if (labelSystemRef.current) labelSystemRef.current.classList.toggle("is-active", drawLen >= lenSystemRef.current);
+
+            // Precision pull handle is revealed once the thread reaches the end of the cord
+            const isAtKnob = drawLen >= (totalLen - 4) || isModalOpen;
+            if (endDotRef.current) {
+              endDotRef.current.classList.toggle("is-visible", isAtKnob);
+            }
+          }
+        }
+
+        animId = requestAnimationFrame(animLoop);
+      }
+
+      animId = requestAnimationFrame(animLoop);
+
+      const handleScroll = () => onScroll();
+      const handleResize = () => {
+        buildPath();
+        onScroll();
+      };
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      window.addEventListener("resize", handleResize, { passive: true });
+
+      const t1 = setTimeout(() => { buildPath(); onScroll(); }, 100);
+      const t2 = setTimeout(() => { buildPath(); onScroll(); }, 400);
+      const t3 = setTimeout(() => { buildPath(); onScroll(); }, 1200);
+      (document.fonts && document.fonts.ready || Promise.resolve()).then(() => {
+        buildPath();
+        onScroll();
+      });
+
+      return () => {
+        cancelAnimationFrame(animId);
+        window.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("resize", handleResize);
+        clearTimeout(t1);
+        clearTimeout(t2);
+        clearTimeout(t3);
+      };
+    }, [buildPath, onScroll]);
+
+    const handleStepClick = (index) => {
+      if (!stageProcessRef.current) return;
+      const s1Top = window.scrollY + stageProcessRef.current.getBoundingClientRect().top;
+      const targetScroll = s1Top - 20;
+
+      if (window.lenisInstance) {
+        window.lenisInstance.scrollTo(targetScroll);
+      } else {
+        window.scrollTo({ top: targetScroll, behavior: "smooth" });
+      }
+    };
+
+    const handleTitleMouseEnter = (e, originalText) => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const el = e.currentTarget;
+      const glyphs = "0123456789ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz!#$%-+*<>_~^/[]";
+      const startTime = performance.now();
+      const duration = 440;
+
+      function frame(now) {
+        const elapsed = now - startTime;
+        const p = Math.min(elapsed / duration, 1);
+        const resolvedLen = Math.floor(p * originalText.length);
+
+        let out = "";
+        for (let i = 0; i < originalText.length; i++) {
+          if (originalText[i] === " ") {
+            out += " ";
+          } else if (i < resolvedLen) {
+            out += originalText[i];
+          } else {
+            out += glyphs[Math.floor(Math.random() * glyphs.length)];
+          }
+        }
+
+        el.textContent = out;
+
+        if (p < 1) {
+          requestAnimationFrame(frame);
+        } else {
+          el.textContent = originalText;
+        }
+      }
+
+      requestAnimationFrame(frame);
+    };
+
+    return /* @__PURE__ */ jsx_runtime.jsxs("div", {
+      className: "unified-journey-wrap relative",
+      id: "journeyWrap",
+      ref: journeyWrapRef,
       children: [
-        /* @__PURE__ */ jsx_runtime.jsx("span", {
-          className: "label text-primary",
-          children: "(Next)"
-        }),
-        /* @__PURE__ */ jsx_runtime.jsx("a", {
-          href: `mailto:${EMAIL}`,
-          className: "footer__big mt-6 block display",
-          "data-kline": true,
-          children: jsx_runtime.jsx(Kinetic, { text: "Let's talk", r: 220, accentLast: true })
-        }),
+        /* Master Continuous Single SVG Overlay */
         /* @__PURE__ */ jsx_runtime.jsxs("div", {
-          className: "label mt-16 grid gap-4 border-t pt-6 text-muted-foreground md:grid-cols-4",
+          className: "journey-thread-overlay",
+          "aria-hidden": "true",
           children: [
-            /* @__PURE__ */ jsx_runtime.jsx("a", {
-              className: "link-u",
-              href: `mailto:${EMAIL}`,
-              children: EMAIL
+            /* @__PURE__ */ jsx_runtime.jsxs("svg", {
+              className: "journey-svg",
+              ref: journeySvgRef,
+              id: "journeySvg",
+              children: [
+                /* @__PURE__ */ jsx_runtime.jsxs("defs", {
+                  children: [
+                    /* @__PURE__ */ jsx_runtime.jsxs("radialGradient", {
+                      id: "filamentAuraGrad",
+                      cx: "50%",
+                      cy: "50%",
+                      r: "50%",
+                      children: [
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "0%", stopColor: "#FFF9C4", stopOpacity: "0.8" }),
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "30%", stopColor: "#FFD54F", stopOpacity: "0.5" }),
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "60%", stopColor: "#FFA000", stopOpacity: "0.2" }),
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "90%", stopColor: "#FF6F00", stopOpacity: "0.05" }),
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "100%", stopColor: "#FF6F00", stopOpacity: "0" })
+                      ]
+                    }),
+                    /* @__PURE__ */ jsx_runtime.jsxs("radialGradient", {
+                      id: "filamentOuterAuraGrad",
+                      cx: "50%",
+                      cy: "50%",
+                      r: "50%",
+                      children: [
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "0%", stopColor: "#FFE082", stopOpacity: "0.35" }),
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "40%", stopColor: "#FFB300", stopOpacity: "0.18" }),
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "75%", stopColor: "#FF8F00", stopOpacity: "0.06" }),
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "100%", stopColor: "#FF6F00", stopOpacity: "0" })
+                      ]
+                    }),
+                    /* @__PURE__ */ jsx_runtime.jsxs("radialGradient", {
+                      id: "fingerprintGlowGrad",
+                      cx: "50%",
+                      cy: "50%",
+                      r: "50%",
+                      children: [
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "0%", stopColor: "#38BDF8", stopOpacity: "0.65" }),
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "40%", stopColor: "#0284C7", stopOpacity: "0.35" }),
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "75%", stopColor: "#0369A1", stopOpacity: "0.12" }),
+                        /* @__PURE__ */ jsx_runtime.jsx("stop", { offset: "100%", stopColor: "#082f49", stopOpacity: "0" })
+                      ]
+                    })
+                  ]
+                }),
+                /* @__PURE__ */ jsx_runtime.jsx("path", {
+                  ref: journeyPathRef,
+                  className: "journey-thread-path",
+                  id: "journeyPath",
+                  d: ""
+                }),
+                /* Flowing wide ambient glow under cord */
+                /* @__PURE__ */ jsx_runtime.jsx("path", {
+                  ref: pullCordGlowRef,
+                  className: "pull-cord-glow-flow",
+                  d: ""
+                }),
+                /* Active elastic pull cord overlay */
+                /* @__PURE__ */ jsx_runtime.jsx("path", {
+                  ref: pullCordActiveRef,
+                  className: "pull-cord-active-path",
+                  d: ""
+                }),
+                /* @__PURE__ */ jsx_runtime.jsxs("g", {
+                  ref: filamentGlowRef,
+                  className: "filament-glow-group",
+                  id: "filamentGlowGroup",
+                  children: [
+                    /* @__PURE__ */ jsx_runtime.jsx("ellipse", {
+                      ref: filamentAuraOuterRef,
+                      className: "filament-light-aura-outer",
+                      cx: "0",
+                      cy: "0",
+                      rx: "0",
+                      ry: "0",
+                      fill: "url(#filamentOuterAuraGrad)"
+                    }),
+                    /* @__PURE__ */ jsx_runtime.jsx("ellipse", {
+                      ref: filamentAuraRef,
+                      className: "filament-light-aura",
+                      cx: "0",
+                      cy: "0",
+                      rx: "0",
+                      ry: "0",
+                      fill: "url(#filamentAuraGrad)"
+                    }),
+                    /* @__PURE__ */ jsx_runtime.jsx("path", {
+                      ref: filamentGlowWideRef,
+                      className: "filament-glow-wide",
+                      d: ""
+                    }),
+                    /* @__PURE__ */ jsx_runtime.jsx("path", {
+                      ref: filamentGlowMidRef,
+                      className: "filament-glow-mid",
+                      d: ""
+                    }),
+                    /* @__PURE__ */ jsx_runtime.jsx("path", {
+                      ref: filamentCoreRef,
+                      className: "filament-glow-core",
+                      d: ""
+                    })
+                  ]
+                })
+              ]
             }),
-            /* @__PURE__ */ jsx_runtime.jsx("a", {
-              className: "link-u",
-              href: "tel:+918883813030",
-              children: "+91 88838 13030"
+            /* @__PURE__ */ jsx_runtime.jsx("div", {
+              ref: trackLineBaseRef,
+              className: "track-line-base",
+              id: "trackLineBase"
             }),
-            /* @__PURE__ */ jsx_runtime.jsx("a", {
-              className: "link-u",
-              href: "https://github.com/niranjan-crypt",
-              target: "_blank",
-              rel: "noreferrer",
-              children: "GitHub ↗"
+            /* @__PURE__ */ jsx_runtime.jsx("div", {
+              ref: startDotRef,
+              className: "thread-start-dot",
+              id: "startDot"
             }),
-            /* @__PURE__ */ jsx_runtime.jsx("span", {
-              className: "md:text-right",
-              children: "Coimbatore, India · ©2026"
+            /* @__PURE__ */ jsx_runtime.jsx("div", {
+              ref: packetDotRef,
+              className: "thread-packet-dot",
+              id: "packetDot"
+            }),
+            /* @__PURE__ */ jsx_runtime.jsx("div", {
+              ref: packetDot2Ref,
+              className: "thread-packet-dot thread-packet-dot--secondary",
+              id: "packetDot2"
+            }),
+            /* Precision Reticle Pull Handle & Telemetry Badge */
+            /* @__PURE__ */ jsx_runtime.jsxs("div", {
+              ref: endDotRef,
+              className: "thread-end-dot",
+              id: "endDot",
+              role: "button",
+              tabIndex: 0,
+              "aria-label": "Pull to connect",
+              children: [
+                /* Reticle indexing halo */
+                /* @__PURE__ */ jsx_runtime.jsx("span", {
+                  className: "reticle-halo"
+                }),
+                /* Telemetry Monospace Badge */
+                /* @__PURE__ */ jsx_runtime.jsx("span", {
+                  ref: pullBadgeRef,
+                  className: "pull-badge",
+                  children: "[ PULL TO INITIALIZE ↓ ]"
+                })
+              ]
             })
           ]
+        }),
+
+        /* =============================================================
+           STAGE 1: "HOW I BUILD" PROCESS TIMELINE
+           ============================================================= */
+        /* @__PURE__ */ jsx_runtime.jsx("section", {
+          className: "section-process",
+          id: "process",
+          ref: stageProcessRef,
+          children: /* @__PURE__ */ jsx_runtime.jsxs("div", {
+            className: "process-container",
+            children: [
+              /* Header row */
+              /* @__PURE__ */ jsx_runtime.jsxs("header", {
+                className: "process-header",
+                children: [
+                  /* @__PURE__ */ jsx_runtime.jsx("span", {
+                    className: "label-left",
+                    children: "(HOW I BUILD)"
+                  }),
+                  /* @__PURE__ */ jsx_runtime.jsx("span", {
+                    className: "label-right",
+                    children: "PHYSICS → PUBLICATION"
+                  })
+                ]
+              }),
+              /* Headline */
+              /* @__PURE__ */ jsx_runtime.jsxs("h2", {
+                className: "process-headline",
+                children: [
+                  /* @__PURE__ */ jsx_runtime.jsx("span", {
+                    className: "headline-line",
+                    children: "From first principles"
+                  }),
+                  /* @__PURE__ */ jsx_runtime.jsxs("span", {
+                    className: "headline-line",
+                    children: [
+                      "to ",
+                      /* @__PURE__ */ jsx_runtime.jsx("em", {
+                        className: "accent-italic",
+                        children: "edge silicon."
+                      })
+                    ]
+                  })
+                ]
+              }),
+              /* Timeline Container */
+              /* @__PURE__ */ jsx_runtime.jsx("div", {
+                className: "timeline-container",
+                id: "timelineContainer",
+                children: /* @__PURE__ */ jsx_runtime.jsx("div", {
+                  className: "steps-list",
+                  id: "stepsList",
+                  children: steps.map((s, i) => /* @__PURE__ */ jsx_runtime.jsxs("article", {
+                    ref: (el) => {
+                      stepItemsRef.current[i] = el;
+                    },
+                    onClick: () => handleStepClick(i),
+                    className: `step-item ${i === 0 ? "is-active" : ""}`,
+                    tabIndex: 0,
+                    role: "group",
+                    "aria-label": `Step ${s.num}: ${s.title}`,
+                    children: [
+                      /* @__PURE__ */ jsx_runtime.jsx("div", {
+                        className: "step-dot-anchor",
+                        children: /* @__PURE__ */ jsx_runtime.jsx("div", {
+                          ref: (el) => {
+                            stepDotsRef.current[i] = el;
+                          },
+                          className: "step-dot",
+                          "aria-hidden": "true"
+                        })
+                      }),
+                      /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                        className: "step-content",
+                        children: [
+                          /* @__PURE__ */ jsx_runtime.jsx("div", {
+                            className: "step-num",
+                            children: s.num
+                          }),
+                          /* @__PURE__ */ jsx_runtime.jsx("h3", {
+                            className: "step-title",
+                            onMouseEnter: (e) => handleTitleMouseEnter(e, s.title),
+                            children: s.title
+                          }),
+                          /* @__PURE__ */ jsx_runtime.jsx("p", {
+                            className: "step-desc",
+                            children: s.desc
+                          })
+                        ]
+                      })
+                    ]
+                  }, s.num))
+                })
+              }),
+              /* Extension prompt */
+              /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                className: "process-extension-prompt",
+                children: [
+                  /* @__PURE__ */ jsx_runtime.jsx("span", {
+                    children: "STEP 05 CONNECTS INTO THE SYSTEM"
+                  }),
+                  /* @__PURE__ */ jsx_runtime.jsx("span", {
+                    className: "prompt-accent",
+                    children: "FOLLOW THE THREAD ↓"
+                  })
+                ]
+              })
+            ]
+          })
+        }),
+
+        /* =============================================================
+           STAGE 2: ABOUT ME & THE BULB (ZERO OVERLAP)
+           Description on LEFT side, Bulb on RIGHT side
+           ============================================================= */
+        /* @__PURE__ */ jsx_runtime.jsx("section", {
+          className: "section-bulb-about",
+          id: "about",
+          ref: stageBulbRef,
+          children: /* @__PURE__ */ jsx_runtime.jsx("div", {
+            className: "about-bulb-container",
+            children: /* @__PURE__ */ jsx_runtime.jsxs("div", {
+              className: "about-bulb-grid",
+              children: [
+                /* LEFT COLUMN: ABOUT ME DESCRIPTION */
+                /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                  className: "about-me-col",
+                  children: [
+                    /* @__PURE__ */ jsx_runtime.jsx("span", {
+                      className: "about-me-label",
+                      children: "(HELLO)"
+                    }),
+                    /* @__PURE__ */ jsx_runtime.jsxs("p", {
+                      className: "about-me-text",
+                      children: [
+                        "I'm ",
+                        /* @__PURE__ */ jsx_runtime.jsx("span", {
+                          className: "accent-word",
+                          children: "Niranjan,"
+                        }),
+                        " an Electrical & Computer Engineer operating at the convergence of ",
+                        /* @__PURE__ */ jsx_runtime.jsx("em", {
+                          className: "italic-word",
+                          children: "high-dimensional"
+                        }),
+                        " ",
+                        /* @__PURE__ */ jsx_runtime.jsx("em", {
+                          className: "italic-word",
+                          children: "sensor physics,"
+                        }),
+                        " machine learning representations, and embedded ",
+                        /* @__PURE__ */ jsx_runtime.jsx("span", {
+                          className: "accent-word",
+                          children: "silicon"
+                        }),
+                        " execution. Rather than treating AI as an ",
+                        /* @__PURE__ */ jsx_runtime.jsx("em", {
+                          className: "italic-word",
+                          children: "isolated abstraction"
+                        }),
+                        " or hardware as a ",
+                        /* @__PURE__ */ jsx_runtime.jsx("em", {
+                          className: "italic-word",
+                          children: "passive peripheral,"
+                        }),
+                        " I engineer ",
+                        /* @__PURE__ */ jsx_runtime.jsx("em", {
+                          className: "italic-word",
+                          children: "unified systems"
+                        }),
+                        " — embedding governing physical equations, safety bounds, and ",
+                        /* @__PURE__ */ jsx_runtime.jsx("em", {
+                          className: "italic-word",
+                          children: "real-time"
+                        }),
+                        " signal rigour into verified ",
+                        /* @__PURE__ */ jsx_runtime.jsx("span", {
+                          className: "accent-word",
+                          children: "production."
+                        })
+                      ]
+                    })
+                  ]
+                }),
+
+                /* RIGHT COLUMN: THE LIGHTBULB STAGE */
+                /* @__PURE__ */ jsx_runtime.jsx("div", {
+                  className: "bulb-col",
+                  children: /* @__PURE__ */ jsx_runtime.jsx("div", {
+                    className: "bulb-stage-box",
+                    id: "bulbStageBox",
+                    ref: bulbStageBoxRef,
+                    children: /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                      className: "bulb-stage-labels",
+                      children: [
+                        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                          className: "bulb-label-item",
+                          id: "labelIntent",
+                          ref: labelIntentRef,
+                          children: [
+                            /* @__PURE__ */ jsx_runtime.jsx("span", { className: "label-dash" }),
+                            /* @__PURE__ */ jsx_runtime.jsx("span", { children: "INTENT" })
+                          ]
+                        }),
+                        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                          className: "bulb-label-item",
+                          id: "labelInteraction",
+                          ref: labelInteractionRef,
+                          children: [
+                            /* @__PURE__ */ jsx_runtime.jsx("span", { className: "label-dash" }),
+                            /* @__PURE__ */ jsx_runtime.jsx("span", { children: "INTERACTION" })
+                          ]
+                        }),
+                        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                          className: "bulb-label-item",
+                          id: "labelSystem",
+                          ref: labelSystemRef,
+                          children: [
+                            /* @__PURE__ */ jsx_runtime.jsx("span", { className: "label-dash" }),
+                            /* @__PURE__ */ jsx_runtime.jsx("span", { children: "SYSTEM" })
+                          ]
+                        })
+                      ]
+                    })
+                  })
+                })
+              ]
+            })
+          })
+        }),
+
+        /* =============================================================
+           STAGE 3: SKILLS SECTION (THREAD FLOWS HORIZONTALLY IN WAVES BEHIND)
+           ============================================================= */
+        /* @__PURE__ */ jsx_runtime.jsxs("section", {
+          id: "skills",
+          className: "service-tiles relative",
+          ref: stageSkillsRef,
+          children: [
+            /* @__PURE__ */ jsx_runtime.jsxs("div", {
+              className: "section-head label relative z-30",
+              children: [
+                /* @__PURE__ */ jsx_runtime.jsx("h2", {
+                  className: "service-tiles__label",
+                  children: "What I do"
+                }),
+                /* @__PURE__ */ jsx_runtime.jsx("a", {
+                  href: "https://github.com/niranjan-crypt?tab=repositories",
+                  target: "_blank",
+                  rel: "noreferrer",
+                  className: "service-tiles__link",
+                  children: "All repositories →"
+                })
+              ]
+            }),
+            /* @__PURE__ */ jsx_runtime.jsx("div", {
+              className: "service-tiles__grid relative z-30",
+              children: services.map((sv, i) => /* @__PURE__ */ jsx_runtime.jsx(Reveal, {
+                className: "service-tiles__cell",
+                children: /* @__PURE__ */ jsx_runtime.jsxs("a", {
+                  className: "service-tiles__tile",
+                  href: "https://github.com/niranjan-crypt?tab=repositories",
+                  target: "_blank",
+                  rel: "noreferrer",
+                  children: [
+                    /* @__PURE__ */ jsx_runtime.jsx("div", {
+                      className: "service-tiles__fill"
+                    }),
+                    /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                      className: "service-tiles__content",
+                      children: [
+                        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                          className: "service-tiles__header",
+                          children: [
+                            /* @__PURE__ */ jsx_runtime.jsx("span", {
+                              children: String(i + 1).padStart(2, "0")
+                            }),
+                            /* @__PURE__ */ jsx_runtime.jsx("span", {
+                              className: "service-tiles__arrow",
+                              "aria-hidden": "true",
+                              children: "→"
+                            })
+                          ]
+                        }),
+                        /* @__PURE__ */ jsx_runtime.jsx("div", {
+                          className: "service-tiles__title stretch-safe",
+                          "data-text": sv.t,
+                          children: /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            className: "stretch-safe__text",
+                            children: sv.t
+                          })
+                        }),
+                        /* @__PURE__ */ jsx_runtime.jsx("p", {
+                          className: "service-tiles__description",
+                          children: sv.d
+                        })
+                      ]
+                    })
+                  ]
+                })
+              }, sv.t))
+            })
+          ]
+        }),
+
+        /* =============================================================
+           STAGE 4: FOOTER (LET'S TALK ON LEFT, BIOMETRIC FINGERPRINT ON RIGHT)
+           ============================================================= */
+        /* @__PURE__ */ jsx_runtime.jsxs("footer", {
+          id: "footer",
+          className: "section-footer relative is-in",
+          ref: stageFooterRef,
+          children: [
+            /* @__PURE__ */ jsx_runtime.jsx("span", {
+              className: "label text-primary relative z-30",
+              children: "(Next)"
+            }),
+            /* Two-column layout: Let's talk on left, Fingerprint on right */
+            /* @__PURE__ */ jsx_runtime.jsxs("div", {
+              className: "footer-headline-row relative z-30",
+              children: [
+                /* Left Column: Scaled down "Let's talk" & editorial copy */
+                /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                  className: "footer-talk-col",
+                  children: [
+                    /* @__PURE__ */ jsx_runtime.jsx("button", {
+                      type: "button",
+                      onClick: handlePullClick,
+                      className: "footer-talk-title block display relative z-30 text-left cursor-pointer",
+                      "data-kline": true,
+                      children: /* @__PURE__ */ jsx_runtime.jsx(Kinetic, {
+                        text: "Let's talk",
+                        r: 160,
+                        accentLast: true
+                      })
+                    }),
+                    /* @__PURE__ */ jsx_runtime.jsx("p", {
+                      className: "footer-talk-desc",
+                      children: "Operating at the convergence of physics, machine learning, and embedded edge systems. Let's build what's next."
+                    }),
+                    /* Contact actions */
+                    /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                      className: "footer-talk-actions",
+                      children: [
+                        /* @__PURE__ */ jsx_runtime.jsxs("button", {
+                          type: "button",
+                          onClick: handlePullClick,
+                          className: "footer-action-btn cursor-pointer",
+                          children: [
+                            /* @__PURE__ */ jsx_runtime.jsx("span", { children: "SEND EMAIL" }),
+                            /* @__PURE__ */ jsx_runtime.jsx("span", { children: "↗" })
+                          ]
+                        }),
+                        /* @__PURE__ */ jsx_runtime.jsxs("a", {
+                          className: "footer-action-btn ghost",
+                          href: "https://github.com/niranjan-crypt",
+                          target: "_blank",
+                          rel: "noreferrer",
+                          children: [
+                            /* @__PURE__ */ jsx_runtime.jsx("span", { children: "GITHUB" }),
+                            /* @__PURE__ */ jsx_runtime.jsx("span", { children: "↗" })
+                          ]
+                        })
+                      ]
+                    })
+                  ]
+                }),
+
+                /* Right Column: Large Biometric Fingerprint Canvas Stage */
+                /* @__PURE__ */ jsx_runtime.jsx("div", {
+                  className: "fingerprint-stage",
+                  id: "fingerprintStage",
+                  ref: fingerprintStageRef,
+                  children: /* @__PURE__ */ jsx_runtime.jsx("div", {
+                    className: "fingerprint-stage-inner"
+                  })
+                })
+              ]
+            }),
+
+            /* Contact links row */
+            /* @__PURE__ */ jsx_runtime.jsxs("div", {
+              className: "label mt-16 grid gap-4 border-t pt-6 text-muted-foreground md:grid-cols-4 relative z-30",
+              children: [
+                /* @__PURE__ */ jsx_runtime.jsx("a", {
+                  className: "link-u",
+                  href: `mailto:${EMAIL}`,
+                  children: EMAIL
+                }),
+                /* @__PURE__ */ jsx_runtime.jsx("a", {
+                  className: "link-u",
+                  href: "tel:+918883813030",
+                  children: "+91 88838 13030"
+                }),
+                /* @__PURE__ */ jsx_runtime.jsx("a", {
+                  className: "link-u",
+                  href: "https://github.com/niranjan-crypt",
+                  target: "_blank",
+                  rel: "noreferrer",
+                  children: "GitHub ↗"
+                }),
+                /* @__PURE__ */ jsx_runtime.jsx("span", {
+                  className: "md:text-right",
+                  children: "Coimbatore, India · ©2026"
+                })
+              ]
+            })
+          ]
+        }),
+
+        /* =============================================================
+           CONTACT POPUP MODAL ("LET'S TALK.") — ACTIVATED BY PULL CORD
+           ============================================================= */
+        /* @__PURE__ */ jsx_runtime.jsx("div", {
+          className: `contact-modal-backdrop ${isModalOpen ? "is-open" : ""}`,
+          onClick: (e) => {
+            if (e.target === e.currentTarget) closeModal();
+          },
+          children: /* @__PURE__ */ jsx_runtime.jsxs("div", {
+            className: "contact-modal-card",
+            children: [
+              /* Close button */
+              /* @__PURE__ */ jsx_runtime.jsx("button", {
+                type: "button",
+                onClick: closeModal,
+                className: "modal-close-btn",
+                "aria-label": "Close",
+                children: "✕"
+              }),
+              /* Modal Content Grid */
+              /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                className: "grid grid-cols-1 md:grid-cols-[1.1fr_1.4fr] gap-8 md:gap-14 items-start",
+                children: [
+                  /* Left Column */
+                  /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    className: "flex flex-col justify-between h-full pt-2",
+                    children: [
+                      /* Headline */
+                      /* @__PURE__ */ jsx_runtime.jsxs("h2", {
+                        className: "display text-6xl md:text-8xl font-black tracking-tight leading-[0.9]",
+                        children: [
+                          /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            className: "text-white block",
+                            children: "LET'S"
+                          }),
+                          /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            className: "text-[#FF3B14] block",
+                            children: "TALK."
+                          })
+                        ]
+                      }),
+                      /* Subtext */
+                      /* @__PURE__ */ jsx_runtime.jsxs("p", {
+                        className: "text-neutral-400 text-base md:text-lg leading-relaxed mt-6 md:mt-12",
+                        children: [
+                          "A problem, an idea,",
+                          /* @__PURE__ */ jsx_runtime.jsx("br", {}),
+                          "a possibility."
+                        ]
+                      })
+                    ]
+                  }),
+
+                  /* Right Column: Interactive Form */
+                  /* @__PURE__ */ jsx_runtime.jsx("div", {
+                    className: "w-full",
+                    children: formStatus === "sent" ? /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                      className: "py-8 space-y-5 animate-in fade-in duration-500",
+                      children: [
+                        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                          className: "inline-flex items-center gap-3 text-emerald-400 text-xl font-bold",
+                          children: [
+                            /* @__PURE__ */ jsx_runtime.jsx("span", { className: "text-2xl", children: "✓" }),
+                            /* @__PURE__ */ jsx_runtime.jsx("span", { children: "Message Prepared!" })
+                          ]
+                        }),
+                        /* @__PURE__ */ jsx_runtime.jsxs("p", {
+                          className: "text-neutral-300 text-sm md:text-base leading-relaxed",
+                          children: [
+                            "Opening your default email client with your message for ",
+                            /* @__PURE__ */ jsx_runtime.jsx("strong", { className: "text-white", children: EMAIL }),
+                            "."
+                          ]
+                        }),
+                        /* @__PURE__ */ jsx_runtime.jsxs("p", {
+                          className: "text-neutral-400 text-xs font-mono",
+                          children: [
+                            "If your mail client didn't open automatically, write directly to ",
+                            /* @__PURE__ */ jsx_runtime.jsx("a", {
+                              href: `mailto:${EMAIL}`,
+                              className: "text-[#FF3B14] underline underline-offset-4",
+                              children: EMAIL
+                            })
+                          ]
+                        }),
+                        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                          className: "pt-4 flex items-center gap-6",
+                          children: [
+                            /* @__PURE__ */ jsx_runtime.jsx("button", {
+                              type: "button",
+                              onClick: () => {
+                                setFormStatus("idle");
+                                setFormData({ name: "", email: "", message: "" });
+                              },
+                              className: "text-xs font-mono uppercase tracking-widest text-neutral-400 hover:text-white underline underline-offset-4 cursor-pointer",
+                              children: "Send Another"
+                            }),
+                            /* @__PURE__ */ jsx_runtime.jsx("button", {
+                              type: "button",
+                              onClick: closeModal,
+                              className: "text-xs font-mono uppercase tracking-widest text-[#FF3B14] hover:text-white underline underline-offset-4 cursor-pointer",
+                              children: "Done"
+                            })
+                          ]
+                        })
+                      ]
+                    }) : /* @__PURE__ */ jsx_runtime.jsxs("form", {
+                      onSubmit: (e) => {
+                        e.preventDefault();
+                        if (!formData.name.trim() || !formData.email.trim()) {
+                          setFormError("Please enter your name and email.");
+                          return;
+                        }
+                        setFormError("");
+                        const subject = `Portfolio Inquiry from ${formData.name}`;
+                        const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message || "(No message provided)"}`;
+                        const mailtoUrl = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                        window.location.href = mailtoUrl;
+                        setFormStatus("sent");
+                      },
+                      className: "space-y-6 md:space-y-8",
+                      children: [
+                        /* Error banner */
+                        formError && /* @__PURE__ */ jsx_runtime.jsx("div", {
+                          className: "text-xs font-mono text-red-400 bg-red-950/50 border border-red-500/30 px-3 py-2 rounded",
+                          children: formError
+                        }),
+
+                        /* Name & Email Row */
+                        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                          className: "grid grid-cols-1 md:grid-cols-2 gap-6",
+                          children: [
+                            /* Name field */
+                            /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                              children: [
+                                /* @__PURE__ */ jsx_runtime.jsx("label", {
+                                  className: "block text-[11px] font-mono tracking-widest text-neutral-400 uppercase mb-2",
+                                  children: "YOUR NAME"
+                                }),
+                                /* @__PURE__ */ jsx_runtime.jsx("input", {
+                                  type: "text",
+                                  value: formData.name,
+                                  onChange: (e) => setFormData({ ...formData, name: e.target.value }),
+                                  placeholder: "Your name",
+                                  className: "w-full bg-transparent border-b border-neutral-700 focus:border-white py-2 text-white placeholder-neutral-600 outline-none text-base transition-colors",
+                                  required: true
+                                })
+                              ]
+                            }),
+                            /* Email field */
+                            /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                              children: [
+                                /* @__PURE__ */ jsx_runtime.jsx("label", {
+                                  className: "block text-[11px] font-mono tracking-widest text-neutral-400 uppercase mb-2",
+                                  children: "YOUR EMAIL"
+                                }),
+                                /* @__PURE__ */ jsx_runtime.jsx("input", {
+                                  type: "email",
+                                  value: formData.email,
+                                  onChange: (e) => setFormData({ ...formData, email: e.target.value }),
+                                  placeholder: "you@example.com",
+                                  className: "w-full bg-transparent border-b border-neutral-700 focus:border-white py-2 text-white placeholder-neutral-600 outline-none text-base transition-colors",
+                                  required: true
+                                })
+                              ]
+                            })
+                          ]
+                        }),
+
+                        /* Message field */
+                        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                          children: [
+                            /* @__PURE__ */ jsx_runtime.jsx("label", {
+                              className: "block text-[11px] font-mono tracking-widest text-neutral-400 uppercase mb-2",
+                              children: "WHAT'S ON YOUR MIND?"
+                            }),
+                            /* @__PURE__ */ jsx_runtime.jsx("textarea", {
+                              rows: 3,
+                              value: formData.message,
+                              onChange: (e) => setFormData({ ...formData, message: e.target.value }),
+                              placeholder: "A problem, an idea, or something you're figuring out.",
+                              className: "w-full bg-transparent border-b border-neutral-700 focus:border-white py-3 text-white placeholder-neutral-600 outline-none text-base transition-colors resize-none"
+                            })
+                          ]
+                        }),
+
+                        /* Submit button */
+                        /* @__PURE__ */ jsx_runtime.jsx("div", {
+                          className: "flex justify-end pt-4",
+                          children: /* @__PURE__ */ jsx_runtime.jsxs("button", {
+                            type: "submit",
+                            className: "group inline-flex items-center gap-2 border-b-2 border-white pb-1 font-bold text-sm md:text-base tracking-widest text-white hover:text-[#FF3B14] hover:border-[#FF3B14] transition-colors cursor-pointer",
+                            children: [
+                              /* @__PURE__ */ jsx_runtime.jsx("span", { children: "SEND MESSAGE" }),
+                              /* @__PURE__ */ jsx_runtime.jsx("span", {
+                                className: "transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1",
+                                children: "↗"
+                              })
+                            ]
+                          })
+                        })
+                      ]
+                    })
+                  })
+                ]
+              })
+            ]
+          })
         })
       ]
     });
   }
-  function Index() {
+  /* =====================================================================
+     TOP OPTICAL WAVEGUIDE HORIZON
+     Creative full-site progress line across the top edge.
+     Zero numerical representations. Pure cyber-physical light.
+     ===================================================================== */
+  function TopJourneyHorizon() {
+    const trackRef = import_react.useRef(null);
+    const beamRef = import_react.useRef(null);
+    const beadRef = import_react.useRef(null);
+    const [milestones, setMilestones] = import_react.useState([]);
+    const isDraggingRef = import_react.useRef(false);
+
+    // Calculate milestone positions along the document
+    import_react.useEffect(() => {
+      const updateMilestones = () => {
+        const sections = [
+          { id: "top", name: "INTRO" },
+          { id: "work", name: "WORK" },
+          { id: "process", name: "PROCESS" },
+          { id: "about", name: "SYSTEM" },
+          { id: "skills", name: "SKILLS" },
+          { id: "footer", name: "CONTACT" }
+        ];
+
+        const totalH = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        const list = [];
+        sections.forEach((s) => {
+          let el = document.getElementById(s.id);
+          if (!el && s.id === "top") {
+            el = document.querySelector("#top") || document.querySelector("header") || document.body;
+          }
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            const topOffset = rect.top + window.scrollY;
+            const pct = Math.max(0, Math.min(1, topOffset / totalH));
+            list.push({ id: s.id, name: s.name, pct });
+          }
+        });
+        setMilestones(list);
+      };
+
+      updateMilestones();
+      window.addEventListener("resize", updateMilestones);
+      const timer = setTimeout(updateMilestones, 1200);
+      return () => {
+        window.removeEventListener("resize", updateMilestones);
+        clearTimeout(timer);
+      };
+    }, []);
+
+    // Smooth continuous optical beam tracking
+    import_react.useEffect(() => {
+      let raf = 0;
+      let currentProgress = 0;
+
+      const loop = () => {
+        const totalH = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        const targetProgress = Math.max(0, Math.min(1, window.scrollY / totalH));
+
+        if (!isDraggingRef.current) {
+          currentProgress += (targetProgress - currentProgress) * 0.16;
+        } else {
+          currentProgress = targetProgress;
+        }
+
+        const pct = currentProgress * 100;
+
+        if (beamRef.current) {
+          beamRef.current.style.width = `${pct}%`;
+        }
+        if (beadRef.current) {
+          beadRef.current.style.left = `${pct}%`;
+        }
+
+        // Toggle ignition on milestone nodes
+        if (trackRef.current) {
+          const nodes = trackRef.current.querySelectorAll(".horizon-pip");
+          nodes.forEach((node) => {
+            const nodePct = parseFloat(node.dataset.pct || "0");
+            if (currentProgress >= (nodePct - 0.008)) {
+              node.classList.add("is-ignited");
+            } else {
+              node.classList.remove("is-ignited");
+            }
+          });
+        }
+
+        raf = requestAnimationFrame(loop);
+      };
+
+      raf = requestAnimationFrame(loop);
+      return () => cancelAnimationFrame(raf);
+    }, []);
+
+    // Scrub full site on click or drag
+    const seekToX = (clientX) => {
+      const w = window.innerWidth;
+      const ratio = Math.max(0, Math.min(1, clientX / w));
+      const totalH = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const targetY = ratio * totalH;
+      if (window.lenisInstance) {
+        window.lenisInstance.scrollTo(targetY);
+      } else {
+        window.scrollTo({ top: targetY });
+      }
+    };
+
+    const handlePointerDown = (e) => {
+      isDraggingRef.current = true;
+      try { e.currentTarget.setPointerCapture(e.pointerId); } catch (_) {}
+      seekToX(e.clientX);
+    };
+
+    const handlePointerMove = (e) => {
+      if (isDraggingRef.current) {
+        seekToX(e.clientX);
+      }
+    };
+
+    const handlePointerUp = (e) => {
+      if (isDraggingRef.current) {
+        isDraggingRef.current = false;
+        try { e.currentTarget.releasePointerCapture(e.pointerId); } catch (_) {}
+      }
+    };
+
+    const jumpToSection = (e, id) => {
+      e.stopPropagation();
+      const el = id === "top" ? document.body : document.getElementById(id);
+      if (el) {
+        if (window.lenisInstance) {
+          window.lenisInstance.scrollTo(el);
+        } else {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+
+    return /* @__PURE__ */ jsx_runtime.jsxs("div", {
+      className: "top-journey-horizon",
+      ref: trackRef,
+      onPointerDown: handlePointerDown,
+      onPointerMove: handlePointerMove,
+      onPointerUp: handlePointerUp,
+      onPointerCancel: handlePointerUp,
+      children: [
+        /* Base Laser Datum Track */
+        /* @__PURE__ */ jsx_runtime.jsx("div", {
+          className: "top-horizon-track"
+        }),
+
+        /* Active Optical Waveguide Beam */
+        /* @__PURE__ */ jsx_runtime.jsx("div", {
+          ref: beamRef,
+          className: "top-horizon-beam"
+        }),
+
+        /* Leading Photon Bead */
+        /* @__PURE__ */ jsx_runtime.jsx("div", {
+          ref: beadRef,
+          className: "top-horizon-bead"
+        }),
+
+        /* Milestone Constellation Nodes (Zero numbers!) */
+        milestones.map((m) => /* @__PURE__ */ jsx_runtime.jsxs("button", {
+          key: m.id,
+          type: "button",
+          className: "horizon-pip",
+          "data-pct": m.pct,
+          style: { left: `${m.pct * 100}%` },
+          onClick: (e) => jumpToSection(e, m.id),
+          children: [
+            /* Diamond node gem */
+            /* @__PURE__ */ jsx_runtime.jsx("span", {
+              className: "horizon-pip-gem"
+            }),
+            /* Monospace micro-tooltip on hover */
+            /* @__PURE__ */ jsx_runtime.jsx("span", {
+              className: "horizon-pip-label",
+              children: m.name
+            })
+          ]
+        }, m.id))
+      ]
+    });
+  }
+
+function Index() {
     const [ready, setReady] = import_react.useState(false);
     const done = import_react.useCallback(() => setReady(true), []);
     import_react.useEffect(() => {
       const lenis = new Lenis({ lerp: 0.09 });
+      window.lenisInstance = lenis;
       let raf = 0;
       const loop = (t) => {
         lenis.raf(t);
@@ -16244,6 +18376,7 @@ Error generating stack: ` + x.message + `
           className: "grain"
         }),
         /* @__PURE__ */ jsx_runtime.jsx(Cursor, {}),
+        /* @__PURE__ */ jsx_runtime.jsx(TopJourneyHorizon, {}),
         /* @__PURE__ */ jsx_runtime.jsx(Nav, {
           ready
         }),
@@ -16253,9 +18386,7 @@ Error generating stack: ` + x.message + `
         /* @__PURE__ */ jsx_runtime.jsx(Marquee, {}),
         /* @__PURE__ */ jsx_runtime.jsx(Work, {}),
         /* @__PURE__ */ jsx_runtime.jsx(UpClose, {}),
-        /* @__PURE__ */ jsx_runtime.jsx(Hello, {}),
-        /* @__PURE__ */ jsx_runtime.jsx(Skills, {}),
-        /* @__PURE__ */ jsx_runtime.jsx(Footer, {})
+        /* @__PURE__ */ jsx_runtime.jsx(UnifiedJourney, {})
       ]
     });
   }
@@ -16273,16 +18404,10 @@ Error generating stack: ` + x.message + `
 .kinetic__space{display:inline-block;width:.25em}
 .hero__line-inner{white-space:nowrap}
 .footer__big{font-size:min(18vw,15.5vw);text-transform:uppercase;white-space:nowrap;cursor:pointer;padding:.04em 0;line-height:.86;display:block;overflow:hidden}
-.statement{height:150vh;position:relative}
-.statement__sticky{box-sizing:border-box;flex-direction:column;justify-content:center;height:100vh;padding:0 clamp(20px,4vw,56px);display:flex;position:sticky;top:0}
-.statement__label{margin-bottom:28px;display:block}
-.statement__text{font-family:var(--font-display);letter-spacing:-.02em;font-variation-settings:"wdth" 90,"wght" 600;flex-wrap:wrap;column-gap:.26em;max-width:1200px;margin:0;font-size:min(5.2vw,5.4vh);line-height:1.02;display:flex}
-@media (max-width:767px){.statement__text{font-size:min(8.6vw,5vh)}}
-.statement__word{opacity:.14}
-.statement__word--italic{font-variation-settings:"wdth" 120,"wght" 300;font-style:italic}
-.statement__word--accent{color:var(--primary)}
-.service-tiles{padding:clamp(60px,10vh,120px) clamp(20px,4vw,56px)}
-.service-tiles .section-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
+
+/* Service tiles */
+.service-tiles{padding:clamp(70px,10vh,130px) clamp(20px,4vw,56px);background:transparent !important;position:relative;z-index:28}
+.service-tiles .section-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px}
 .service-tiles__label{font:inherit;margin:0}
 .service-tiles__link{color:var(--foreground);transition:color .3s}
 .service-tiles__link:hover{color:var(--primary)}
@@ -16305,6 +18430,1289 @@ Error generating stack: ` + x.message + `
 .service-tiles__description{color:var(--muted-foreground);max-width:30ch;margin:0;font-size:16px;line-height:1.5;transition:color .5s}
 .service-tiles__tile:hover .service-tiles__header,.service-tiles__tile:hover .service-tiles__title,.service-tiles__tile:hover .service-tiles__description{color:var(--background)}
 .service-tiles__tile:hover .service-tiles__title{font-variation-settings:"wdth" 118,"wght" 500;transform:translate(6px)}
+
+/* Ambient video hero stage */
+.hero-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  background: #010102;
+  isolation: isolate;
+}
+.hero-stage__poster-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  opacity: 1;
+  filter: contrast(1.12) brightness(1.04);
+  z-index: 0;
+}
+.hero-stage__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  opacity: 0;
+  transition: opacity 1.4s cubic-bezier(.16,1,.3,1);
+  filter: contrast(1.12) brightness(1.04);
+  z-index: 1;
+}
+.hero-stage__video.is-loaded {
+  opacity: 1;
+}
+.hero-stage__aura {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(85vw, 680px);
+  height: min(85vw, 680px);
+  border-radius: 50%;
+  pointer-events: none;
+  /* Cinematic Glacier Blue & Powder Blue studio ambience */
+  background: radial-gradient(
+    ellipse 58% 52% at 50% 40%,
+    rgba(191, 233, 255, 0.22) 0%,
+    rgba(168, 201, 200, 0.12) 38%,
+    rgba(191, 233, 255, 0.03) 65%,
+    transparent 80%
+  );
+  mix-blend-mode: screen;
+  opacity: 0.95;
+  z-index: 2;
+  animation: heroAuraBreath 10s ease-in-out infinite alternate;
+}
+@keyframes heroAuraBreath {
+  0% { opacity: 0.75; transform: translate(-50%, -50%) scale(0.97); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.03); }
+  100% { opacity: 0.85; transform: translate(-50%, -50%) scale(1); }
+}
+.hero-stage__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 44%, transparent 22%, rgba(1,1,2,.38) 55%, #010102 92%);
+  pointer-events: none;
+}
+.hero-stage__grad-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(180deg, #010102 0%, rgba(1,1,2,.75) 45%, transparent 100%);
+  pointer-events: none;
+}
+.hero-stage__grad-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 260px;
+  background: linear-gradient(0deg, #010102 0%, rgba(1,1,2,.8) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Typography & Palette Variations */
+::selection {
+  background: #BFE9FF;
+  color: #010102;
+}
+.hero__name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: clamp(16px, 2.5vh, 32px) auto;
+  text-shadow: 0 4px 32px rgba(1, 1, 2, 0.95), 0 0 50px rgba(0, 0, 0, 0.9);
+  color: #FFFFFF;
+  width: 100%;
+}
+.hero__line {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: .04em 0;
+  line-height: .86;
+  text-align: center;
+}
+.hero__line--second {
+  text-align: center;
+}
+.hero__line-inner {
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateY(105%);
+  transition: transform 1.2s cubic-bezier(.16, 1, .3, 1);
+}
+.is-in .hero__line-inner {
+  transform: translateY(0);
+}
+.pill-primary {
+  background: linear-gradient(135deg, #FFFFFF 0%, #BFE9FF 100%) !important;
+  color: #010102 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 22px rgba(191, 233, 255, 0.35) !important;
+  transition: all 0.3s ease !important;
+}
+.pill-primary:hover {
+  background: #FFFFFF !important;
+  color: #010102 !important;
+  box-shadow: 0 0 30px rgba(191, 233, 255, 0.65) !important;
+  transform: translateY(-2px);
+}
+.logo__box {
+  background: linear-gradient(135deg, #FFFFFF 0%, #BFE9FF 100%) !important;
+  color: #010102 !important;
+  font-weight: 800 !important;
+}
+.pill-ghost {
+  background: rgba(168, 201, 200, 0.05) !important;
+  border: 1px solid rgba(168, 201, 200, 0.22) !important;
+  color: #FFFFFF !important;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease !important;
+}
+.pill-ghost:hover {
+  border-color: #BFE9FF !important;
+  background: rgba(191, 233, 255, 0.12) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 24px rgba(191, 233, 255, 0.35) !important;
+  transform: translateY(-2px);
+}
+.cursor {
+  border-color: #BFE9FF;
+  box-shadow: 0 0 10px rgba(191, 233, 255, 0.4);
+}
+.cursor.big {
+  border-color: #BFE9FF;
+  background: rgba(191, 233, 255, 0.15);
+  box-shadow: 0 0 24px rgba(191, 233, 255, 0.5);
+}
+
+/* =====================================================================
+   UNIFIED JOURNEY: CONTINUOUS SINGLE MASTER SVG THREAD
+   ===================================================================== */
+.unified-journey-wrap {
+  position: relative;
+  width: 100%;
+  background: #010102 !important;
+  overflow: visible;
+}
+
+.journey-thread-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 20;
+  overflow: visible;
+}
+
+.journey-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.journey-thread-path {
+  fill: none;
+  stroke: #BFE9FF;
+  stroke-width: 3.2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 4px rgba(191, 233, 255, 0.65));
+}
+
+/* ===================================================================
+   PRECISION RETICLE PULL HANDLE & TELEMETRY CORD
+   =================================================================== */
+.thread-end-dot {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #BFE9FF 45%, #0284C7 100%);
+  border: 2px solid #38BDF8;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.75), 0 0 32px rgba(56, 189, 248, 0.35), 0 4px 12px rgba(0, 0, 0, 0.9);
+  transform: translate(-50%, -50%);
+  pointer-events: auto !important;
+  cursor: grab;
+  z-index: 45;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  touch-action: none !important;
+  will-change: transform, left, top;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.thread-end-dot::before {
+  content: '';
+  position: absolute;
+  inset: -24px;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+
+.thread-end-dot::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0369A1;
+  box-shadow: 0 0 4px #FFFFFF;
+}
+
+.thread-end-dot.is-visible {
+  display: flex !important;
+}
+
+.thread-end-dot.is-dragging {
+  cursor: grabbing !important;
+  transform: translate(-50%, -50%) scale(1.18);
+  box-shadow: 0 0 28px rgba(56, 189, 248, 0.95), 0 0 50px rgba(56, 189, 248, 0.5), 0 8px 20px rgba(0, 0, 0, 0.95);
+}
+
+.thread-end-dot.is-primed {
+  border-color: #FF3B14;
+  background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #FFA896 45%, #FF3B14 100%);
+  box-shadow: 0 0 25px rgba(255, 59, 20, 0.9), 0 0 45px rgba(255, 59, 20, 0.5);
+}
+
+.thread-end-dot.is-primed::after {
+  background: #991B1B;
+  box-shadow: 0 0 4px #FFE4E6;
+}
+
+.reticle-halo {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px dashed rgba(56, 189, 248, 0.4);
+  pointer-events: none;
+  animation: reticleSpin 12s linear infinite;
+}
+
+@keyframes reticleSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.pull-badge {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  transform: translateY(-50%);
+  background: rgba(6, 18, 30, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #BFE9FF;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 12px rgba(56, 189, 248, 0.2);
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pull-badge.is-pulling {
+  border-color: rgba(56, 189, 248, 0.85);
+  color: #E0F2FE;
+  background: rgba(8, 28, 48, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 18px rgba(56, 189, 248, 0.45);
+}
+
+.pull-badge.is-primed {
+  border-color: #FF3B14;
+  color: #FFFFFF;
+  background: rgba(45, 10, 6, 0.95);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.8), 0 0 24px rgba(255, 59, 20, 0.65);
+  animation: badgePulse 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes badgePulse {
+  0% { transform: translateY(-50%) scale(1); }
+  100% { transform: translateY(-50%) scale(1.04); }
+}
+
+.pull-cord-active-path {
+  fill: none;
+  stroke: #BFE9FF;
+  stroke-width: 2.8px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+  opacity: 0;
+  display: none !important;
+}
+
+.pull-cord-glow-flow {
+  fill: none;
+  stroke: rgba(56, 189, 248, 0.45);
+  stroke-width: 9px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: blur(5px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.pull-cord-glow-flow.is-visible {
+  opacity: 1;
+}
+
+/* ===================================================================
+   CONTACT POPUP MODAL ("LET'S TALK.") — ACTIVATED BY PULL CORD
+   =================================================================== */
+.contact-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 5, 8, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 3.5vw, 48px);
+  box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.contact-modal-card {
+  position: relative;
+  background: #090A0E;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 28px;
+  box-shadow: 0 35px 95px rgba(0, 0, 0, 0.92), 0 0 1px 1px rgba(255, 255, 255, 0.08);
+  max-width: 880px;
+  width: 100%;
+  max-height: min(90vh, 720px);
+  overflow-y: auto;
+  padding: clamp(28px, 4.5vw, 56px);
+  box-sizing: border-box;
+  transform: scale(0.92) translateY(24px);
+  transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-modal-backdrop.is-open .contact-modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: clamp(16px, 2.5vw, 24px);
+  right: clamp(16px, 2.5vw, 24px);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #A8C9C8;
+  font-size: 15px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  z-index: 10;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transform: scale(1.08);
+}
+
+/* Filament Incandescent Gold Glow Effect */
+.filament-glow-group {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.filament-glow-group.is-glowing {
+  opacity: 1;
+}
+
+.filament-light-aura-outer {
+  pointer-events: none;
+  filter: blur(14px);
+  animation: filamentAuraBreathe 3.6s ease-in-out infinite alternate;
+}
+
+.filament-light-aura {
+  pointer-events: none;
+  filter: blur(6px);
+  animation: filamentAuraBreathe 3.6s ease-in-out infinite alternate;
+}
+
+.filament-glow-wide {
+  fill: none;
+  stroke: #F59E0B;
+  stroke-width: 14px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: blur(7px);
+  opacity: 0.6;
+}
+
+.filament-glow-mid {
+  fill: none;
+  stroke: #FBBF24;
+  stroke-width: 6.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: blur(2.5px);
+  opacity: 0.85;
+}
+
+.filament-glow-core {
+  fill: none;
+  stroke: #FFFDF2;
+  stroke-width: 2.8px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 5px #FDE047) drop-shadow(0 0 12px #F59E0B) drop-shadow(0 0 24px #D97706);
+  animation: filamentCoreShimmer 3.6s ease-in-out infinite alternate;
+}
+
+@keyframes filamentAuraBreathe {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes filamentCoreShimmer {
+  0% {
+    filter: drop-shadow(0 0 4px #FDE047) drop-shadow(0 0 11px #F59E0B) drop-shadow(0 0 20px rgba(217, 119, 6, 0.7));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px #FEF08A) drop-shadow(0 0 18px #FBBF24) drop-shadow(0 0 32px rgba(234, 88, 12, 0.85));
+  }
+}
+
+.thread-packet-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 14px #FFFFFF, 0 0 26px #BFE9FF, 0 0 42px #A8C9C8;
+  pointer-events: none;
+  z-index: 22;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  display: none;
+}
+
+.thread-packet-dot--secondary {
+  width: 9px;
+  height: 9px;
+  background: #BFE9FF;
+  box-shadow: 0 0 10px #BFE9FF, 0 0 20px #FFFFFF, 0 0 32px #A8C9C8;
+  z-index: 21;
+}
+
+.thread-start-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #BFE9FF;
+  box-shadow: 0 0 14px #BFE9FF, 0 0 24px #FFFFFF;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 35;
+}
+
+
+
+.track-line-base {
+  position: absolute;
+  background: rgba(168, 201, 200, 0.16);
+  pointer-events: none;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+@media (max-width: 899px) {
+  .track-line-base {
+    transform: translateX(-50%);
+  }
+}
+
+/* STAGE 1: Process Timeline */
+.section-process {
+  position: relative;
+  width: 100%;
+  padding: clamp(100px, 14vh, 180px) clamp(20px, 4vw, 56px) clamp(50px, 7vh, 90px);
+  box-sizing: border-box;
+  background: transparent !important;
+}
+
+.process-container {
+  max-width: 1380px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 30;
+}
+
+.process-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(20px, 3.5vh, 42px);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #A8C9C8;
+}
+
+.process-headline {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 6.2vw, 96px);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin: 0 0 clamp(32px, 5.5vh, 64px) 0;
+  color: #FFFFFF;
+  overflow-wrap: break-word;
+}
+
+.process-headline .headline-line {
+  display: block;
+  font-weight: 700;
+  font-variation-settings: "wdth" 90, "wght" 700;
+}
+
+.process-headline .headline-line .accent-italic {
+  font-style: italic;
+  color: #BFE9FF;
+  font-weight: 250;
+  font-variation-settings: "wdth" 120, "wght" 250;
+  display: inline-block;
+}
+
+.timeline-container {
+  position: relative;
+  width: 100%;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 30;
+}
+
+.step-item {
+  position: relative;
+  padding-left: 28px;
+  padding-bottom: 24px;
+  opacity: 0.38;
+  transition: opacity 0.45s ease;
+  cursor: pointer;
+}
+
+.step-item:last-child {
+  padding-bottom: 0;
+}
+
+.step-item.is-active {
+  opacity: 1;
+}
+
+.step-dot-anchor {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: #010102;
+  border: 1px solid rgba(168, 201, 200, 0.35);
+  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.step-item.is-active .step-dot {
+  background: #FFFFFF;
+  border-color: #BFE9FF;
+  box-shadow: 0 0 16px #BFE9FF, 0 0 28px rgba(168, 201, 200, 0.6);
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #A8C9C8;
+  margin-bottom: 8px;
+}
+
+.step-item.is-active .step-num {
+  color: #BFE9FF;
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.2vw, 36px);
+  line-height: 1.1;
+  font-weight: 600;
+  font-variation-settings: "wdth" 105, "wght" 600;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin: 0 0 10px 0;
+  display: inline-block;
+  user-select: none;
+}
+
+.step-desc {
+  font-family: var(--font-display);
+  font-size: 14.5px;
+  line-height: 1.48;
+  color: #A8C9C8;
+  max-width: 27ch;
+  font-weight: 400;
+  margin: 0;
+}
+
+@media (min-width: 900px) {
+  .steps-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: clamp(16px, 2.2vw, 38px);
+  }
+
+  .step-item {
+    padding-left: 0;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step-dot-anchor {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .step-num {
+    margin-bottom: 10px;
+  }
+
+  .step-title {
+    margin-bottom: 12px;
+  }
+}
+
+.process-extension-prompt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: clamp(28px, 4.5vh, 52px);
+  padding-top: 18px;
+  border-top: 1px solid rgba(168, 201, 200, 0.18);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(168, 201, 200, 0.6);
+}
+
+.prompt-accent {
+  color: #BFE9FF;
+  font-weight: 500;
+}
+
+/* STAGE 2: About Me (Left) & The Bulb (Right) */
+.section-bulb-about {
+  position: relative;
+  width: 100%;
+  padding: clamp(80px, 11vh, 150px) clamp(20px, 4vw, 56px);
+  box-sizing: border-box;
+  background: transparent !important;
+}
+
+.about-bulb-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 30;
+  box-sizing: border-box;
+}
+
+.about-bulb-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .about-bulb-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(48px, 6vw, 100px);
+  }
+}
+
+.about-me-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 580px;
+}
+
+.about-me-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #A8C9C8;
+  margin-bottom: clamp(16px, 2.5vh, 28px);
+  display: block;
+}
+
+.about-me-text {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 1.95vw, 30px);
+  line-height: 1.34;
+  font-weight: 500;
+  font-variation-settings: "wdth" 95, "wght" 500;
+  letter-spacing: -0.018em;
+  color: #EAF4F9;
+  margin: 0;
+}
+
+.about-me-text .accent-word {
+  color: #BFE9FF;
+  font-weight: 600;
+  text-shadow: 0 0 14px rgba(191, 233, 255, 0.5);
+}
+
+.about-me-text .italic-word {
+  font-style: italic;
+  font-variation-settings: "wdth" 120, "wght" 300;
+  color: #FFFFFF;
+}
+
+.bulb-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.bulb-stage-box {
+  position: relative;
+  width: 100%;
+  height: clamp(560px, 75vh, 760px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bulb-stage-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.bulb-label-item {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(168, 201, 200, 0.5);
+  opacity: 0.55;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: opacity 0.4s ease, color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bulb-label-item.is-active {
+  opacity: 1;
+  color: #FFFFFF;
+  transform: translateX(4px);
+  font-weight: 600;
+  text-shadow: 0 0 14px #BFE9FF;
+}
+
+.bulb-label-item .label-dash {
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* STAGE 3: Skills Section - Clean Black Background with Waves Behind */
+.service-tiles {
+  background: transparent !important;
+  position: relative;
+  z-index: 28;
+  padding: clamp(90px, 12vh, 150px) clamp(20px, 4vw, 56px);
+}
+
+.service-tiles__grid {
+  border-top: 1px solid rgba(168, 201, 200, 0.18);
+  border-left: 1px solid rgba(168, 201, 200, 0.18);
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .service-tiles__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .service-tiles__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.service-tiles__cell, .service-tiles__tile {
+  display: block;
+  height: 100%;
+}
+
+.service-tiles__tile {
+  background: rgba(3, 5, 8, 0.93) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: inherit;
+  border-bottom: 1px solid rgba(168, 201, 200, 0.18);
+  border-right: 1px solid rgba(168, 201, 200, 0.18);
+  padding: 28px 28px 40px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.service-tiles__tile:hover {
+  border-color: rgba(191, 233, 255, 0.4);
+}
+
+.service-tiles__fill {
+  background: linear-gradient(145deg, #0e1e21 0%, #1d393d 100%);
+  transform-origin: top;
+  transition: transform 0.9s var(--ease-out);
+  will-change: transform;
+  position: absolute;
+  inset: 0;
+  transform: scaleY(0);
+}
+
+.service-tiles__tile:hover .service-tiles__fill {
+  transform-origin: bottom;
+  transform: scaleY(1);
+}
+
+.service-tiles__content {
+  transition: opacity 0.6s;
+  position: relative;
+  z-index: 3;
+}
+
+.service-tiles__grid:has(.service-tiles__tile:hover) .service-tiles__tile:not(:hover) .service-tiles__content {
+  opacity: 0.4;
+}
+
+.service-tiles__header {
+  font-family: var(--default-mono-font-family);
+  color: #A8C9C8;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  transition: color 0.5s;
+  display: flex;
+}
+
+.service-tiles__arrow {
+  transition: transform 0.9s var(--ease-out), color 0.5s;
+  font-size: 18px;
+  display: block;
+  transform: rotate(-45deg);
+  color: #A8C9C8;
+}
+
+.service-tiles__tile:hover .service-tiles__arrow {
+  transform: rotate(0);
+  color: #FFFFFF;
+}
+
+.service-tiles__title {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  font-variation-settings: "wdth" 100, "wght" 500;
+  --stretch-to: "wdth" 118, "wght" 500;
+  transition: color 0.5s ease, font-variation-settings 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+  margin: 48px 0 14px;
+  font-size: clamp(28px, 2.6vw, 40px);
+  line-height: 1;
+}
+
+.service-tiles__description {
+  color: #A8C9C8;
+  max-width: 30ch;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: color 0.5s;
+}
+
+.service-tiles__tile:hover .service-tiles__header,
+.service-tiles__tile:hover .service-tiles__title,
+.service-tiles__tile:hover .service-tiles__description {
+  color: #FFFFFF;
+}
+
+.service-tiles__tile:hover .service-tiles__title {
+  font-variation-settings: "wdth" 118, "wght" 500;
+  transform: translate(6px);
+}
+
+/* STAGE 4: Footer - Pure Black Background & Large Biometric Fingerprint */
+.section-footer {
+  background: #010102 !important;
+  padding: clamp(90px, 12vh, 160px) clamp(20px, 4vw, 56px) clamp(40px, 6vh, 80px);
+  position: relative;
+}
+
+.footer-headline-row {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-top: 24px;
+}
+
+@media (min-width: 900px) {
+  .footer-headline-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(48px, 6vw, 100px);
+  }
+}
+
+.footer-talk-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 540px;
+}
+
+/* Reduced size for "Let's talk" */
+.footer-talk-title {
+  font-family: var(--font-display) !important;
+  font-size: clamp(38px, 4.8vw, 76px) !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  padding: .04em 0 !important;
+  line-height: .96 !important;
+  display: block !important;
+  overflow: hidden !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  color: #FFFFFF !important;
+  transition: color 0.4s ease;
+}
+
+.footer-talk-title:hover {
+  color: #BFE9FF !important;
+}
+
+.footer-talk-desc {
+  font-family: var(--font-display);
+  font-size: clamp(15px, 1.25vw, 19px);
+  line-height: 1.55;
+  color: #A8C9C8;
+  margin: 20px 0 28px 0;
+  max-width: 42ch;
+}
+
+.footer-talk-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #BFE9FF 100%);
+  border: 1px solid #BFE9FF;
+  color: #010102;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(191, 233, 255, 0.25);
+}
+
+.footer-action-btn:hover {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: #010102;
+  box-shadow: 0 0 24px rgba(191, 233, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.footer-action-btn.ghost {
+  background: rgba(14, 27, 29, 0.65);
+  border: 1px solid rgba(168, 201, 200, 0.25);
+  color: #FFFFFF;
+  box-shadow: none;
+}
+
+.footer-action-btn.ghost:hover {
+  border-color: #BFE9FF;
+  background: rgba(22, 42, 45, 0.85);
+  color: #BFE9FF;
+}
+
+/* Fingerprint Stage - Large & Clean on Pure Black */
+.fingerprint-stage {
+  position: relative;
+  width: 100%;
+  height: clamp(520px, 66vh, 720px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #010102 !important;
+}
+
+.fingerprint-stage-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 12px;
+}
+
+.fingerprint-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #A8C9C8;
+  opacity: 0.7;
+}
+
+
+/* =====================================================================
+   TOP OPTICAL WAVEGUIDE HORIZON (CREATIVE FULL-SITE PROGRESS LINE)
+   Zero numerical representation. Pure living cyber-physical light.
+   ===================================================================== */
+.top-journey-horizon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 14px;
+  z-index: 10000;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  pointer-events: auto;
+}
+
+/* Base laser datum guide */
+.top-horizon-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: rgba(168, 201, 200, 0.14);
+  pointer-events: none;
+}
+
+/* Active optical waveguide beam with luminous photon gradient */
+.top-horizon-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.25) 0%, rgba(56, 189, 248, 0.85) 60%, #BFE9FF 92%, #FFFFFF 100%);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.95), 0 0 20px rgba(191, 233, 255, 0.6), 0 1px 3px rgba(255, 255, 255, 0.8);
+  border-radius: 0 2px 2px 0;
+  pointer-events: none;
+  will-change: width;
+}
+
+/* Leading photon bead riding at the leading head of the beam */
+.top-horizon-bead {
+  position: absolute;
+  top: 1px;
+  left: 0%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 8px #FFFFFF, 0 0 18px #BFE9FF, 0 0 32px #38BDF8;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  will-change: left;
+  transition: transform 0.2s ease;
+}
+
+.top-journey-horizon:hover .top-horizon-bead {
+  transform: translate(-50%, -50%) scale(1.4);
+}
+
+/* Milestone constellation pips along the top line */
+.horizon-pip {
+  position: absolute;
+  top: 1px;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  outline: none;
+}
+
+.horizon-pip-gem {
+  width: 4px;
+  height: 4px;
+  background: rgba(168, 201, 200, 0.35);
+  transform: rotate(45deg);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 0.5px;
+}
+
+.horizon-pip:hover .horizon-pip-gem,
+.horizon-pip.is-ignited .horizon-pip-gem {
+  background: #FFFFFF;
+  box-shadow: 0 0 6px #FFFFFF, 0 0 14px #BFE9FF, 0 0 24px #38BDF8;
+  transform: rotate(45deg) scale(1.3);
+}
+
+/* Elegant number-free monospace micro-tooltip on hover */
+.horizon-pip-label {
+  position: absolute;
+  top: 16px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #BFE9FF;
+  background: rgba(6, 14, 22, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8), 0 0 10px rgba(56, 189, 248, 0.25);
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.horizon-pip:hover .horizon-pip-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 </style>
 <script>
 (function(){
@@ -16364,11 +19772,10 @@ Error generating stack: ` + x.message + `
       for(var i=0;i<n;i++){var e=Math.max(0,Math.min(1,p*n*1.1-i)),w=words[i];if(w._o!==e){w._o=e;w.style.opacity=(.14+.86*e).toFixed(3)}}}}
     requestAnimationFrame(tick);
   }
-  function start(){if(!document.querySelector('[data-kline]'))return setTimeout(start,100);measure();setTimeout(measure,1500);setTimeout(measure,3500);(document.fonts&&document.fonts.ready||Promise.resolve()).then(measure);requestAnimationFrame(tick)}
+  function start(){measure();setTimeout(measure,1500);setTimeout(measure,3500);(document.fonts&&document.fonts.ready||Promise.resolve()).then(measure);requestAnimationFrame(tick)}
   var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(measure,150)});
   start();
 })();
 </script>
-
 </body>
 </html>
