@@ -2899,6 +2899,11 @@
   border: 1px solid rgba(45, 212, 191, 0.35);
   box-shadow: 0 15px 35px -10px rgba(45, 212, 191, 0.2);
 }
+.panel-amber {
+  background: radial-gradient(120% 90% at 75% 25%, #4a2800 0%, #251400 55%, #0a0500 100%);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(245, 158, 11, 0.2);
+}
 .panel-cyan {
   background: radial-gradient(120% 90% at 80% 20%, #0d4657 0%, #06232c 55%, #01080a 100%);
   border: 1px solid rgba(56, 189, 248, 0.35);
@@ -15567,6 +15572,7 @@ Error generating stack: ` + x.message + `
   // src/lib/content.ts
   var projects = [
     { title: "DocLens", tag: "Enterprise RAG · Financial NLP", year: "SEC 10-K · SEBI", note: "BM25 + Dense RRF · Cross-Encoder · 16 DQ Gates", metric: "95.0% RECALL", panel: "panel-teal", url: "https://github.com/niranjan-crypt/DocLens", desc: "Citation-grounded RAG assistant over SEC 10-K filings and SEBI disclosure rulebooks featuring hybrid BM25 + dense retrieval, Reciprocal Rank Fusion, cross-encoder reranking, and 16 automated data quality gates." },
+    { title: "RiskOptix", tag: "Quantitative FinTech · Derivatives", year: "NSE / BSE F&O", note: "Black-Scholes Greeks · Payoff Engine · Sequenced Routing", metric: "83% SPEEDUP", panel: "panel-amber", url: "https://github.com/niranjan-crypt/RiskOptix", desc: "Pre-trade multi-leg options risk engine featuring real-time Black-Scholes Greeks, interactive payoff diagrams, automated slippage warnings, and sequenced hedge-first order routing." },
     { title: "Hyperspectral Face ID", tag: "Computer Vision · 3D-CNN", year: "400–1000nm", note: "1200+ bands · ArcFace on S¹²⁷ · Spectral SHAP", metric: "1200+ BANDS", panel: "panel-cyan", url: "https://github.com/niranjan-crypt/Hyperspectral-Face-Identification-XAI", desc: "Anti-spoofing facial biometrics across 1200+ contiguous spectral bands (400–1000 nm) using 3D-CNN feature fusion, ArcFace loss on S¹²⁷, and SHAP explainability on Raspberry Pi 4." },
     { title: "Transmission Fault Detection", tag: "Vision · Deep Learning", year: "2025", note: "Dual-stream ResNet50 + classical HOG/GLCM texture", metric: "82.0% ACC", panel: "panel-gold", url: "https://github.com/niranjan-crypt/Hybrid-Computer-Vision-and-Deep-Learning-for-Automated-Power-Transmission-Fault-Detection", desc: "Aerial transmission inspection pipeline benchmarking transfer-learning CNNs against classical CV (Hough circles, HOG, GLCM), reaching 82% fault detection accuracy." },
     { title: "CommerceIQ", tag: "Data Engineering · Cloud", year: "100K+ ORDERS", note: "1.5M records · 22 DQ gates · PostgreSQL 16", metric: "1.5M RECORDS", panel: "panel-blue", url: "https://github.com/niranjan-crypt/CommerceIQ", desc: "Enterprise transactional and analytical platform processing 100k+ orders across 1.5M records with 3NF OLTP, Kimball star schema, 22 DQ gates, and 5.35x query speedup." },
@@ -15593,7 +15599,7 @@ Error generating stack: ` + x.message + `
     { t: "Applied ML & Data", d: "Star schemas, ETL, Streamlit, pandas, scikit-learn, XGBoost, SHAP / LIME." },
     { t: "Edge, Cyber-Physical & Cloud", d: "Raspberry Pi, ESP32 BLE, DSP, EV powertrains, PSO / GA / DC-OPF, AWS." }
   ];
-  var tags = ["Enterprise RAG", "Physics-Informed ML", "Computer Vision", "Cyber-Physical AI", "Edge AI", "Data Engineering", "Power Grids", "Signal Processing"];
+  var tags = ["Enterprise RAG", "Quantitative FinTech", "Physics-Informed ML", "Computer Vision", "Cyber-Physical AI", "Edge AI", "Data Engineering", "Power Grids", "Signal Processing"];
   var EMAIL = "niranjankrishnakumar2005@gmail.com";
 
   // ../tmp/portfolio-export/main.tsx
