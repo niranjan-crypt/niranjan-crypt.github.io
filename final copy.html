@@ -15899,8 +15899,8 @@ Error generating stack: ` + x.message + `
         h.style.fontSize = "100px";
         const w = line.scrollWidth;
         if (w) {
-          const targetRatio = window.innerWidth < 768 ? 0.88 : 0.62;
-          setSize(Math.min(110, Math.max(36, Math.floor(h.clientWidth / w * 100 * targetRatio))));
+          const targetRatio = window.innerWidth < 768 ? 0.62 : 0.35;
+          setSize(Math.min(50, Math.max(26, Math.floor(h.clientWidth / w * 100 * targetRatio))));
         }
         h.style.fontSize = "";
       };
@@ -15910,12 +15910,12 @@ Error generating stack: ` + x.message + `
       return () => removeEventListener("resize", fit);
     }, []);
     return /* @__PURE__ */ jsx_runtime.jsxs("div", {
-      className: "hero__name-wrapper relative z-10 w-full flex flex-col items-center justify-center text-center my-auto",
+      className: "hero__name-wrapper relative z-10 w-full flex flex-col items-center justify-center text-center my-auto pt-10 md:pt-16",
       children: [
         /* @__PURE__ */ jsx_runtime.jsxs("h1", {
           ref,
           className: "hero__name display relative z-10",
-          style: { fontSize: size ? `${size}px` : "clamp(38px, 6.4vw, 98px)" },
+          style: { fontSize: size ? `${size}px` : "clamp(26px, 3.6vw, 50px)" },
           children: [
             /* @__PURE__ */ jsx_runtime.jsx("span", {
               className: "hero__line",
@@ -15951,22 +15951,6 @@ Error generating stack: ` + x.message + `
   }
 
   function MetalHumanBackground() {
-    const videoRef = import_react.useRef(null);
-    const [isLoaded, setIsLoaded] = import_react.useState(false);
-
-    import_react.useEffect(() => {
-      const v = videoRef.current;
-      if (!v) return;
-      const onReady = () => setIsLoaded(true);
-      if (v.readyState >= 2) setIsLoaded(true);
-      v.addEventListener("canplay", onReady);
-      v.addEventListener("loadeddata", onReady);
-      return () => {
-        v.removeEventListener("canplay", onReady);
-        v.removeEventListener("loadeddata", onReady);
-      };
-    }, []);
-
     return /* @__PURE__ */ jsx_runtime.jsxs("div", {
       className: "hero-stage",
       "aria-hidden": "true",
@@ -15975,20 +15959,6 @@ Error generating stack: ` + x.message + `
           src: "metal-human.jpg",
           alt: "Metal Human",
           className: "hero-stage__poster-img"
-        }),
-        /* @__PURE__ */ jsx_runtime.jsx("video", {
-          ref: videoRef,
-          className: `hero-stage__video ${isLoaded ? "is-loaded" : ""}`,
-          autoPlay: true,
-          loop: true,
-          muted: true,
-          playsInline: true,
-          preload: "auto",
-          poster: "metal-human.jpg",
-          children: /* @__PURE__ */ jsx_runtime.jsx("source", {
-            src: "metal-human.mp4",
-            type: "video/mp4"
-          })
         }),
         /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__aura" }),
         /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__vignette" }),
@@ -18550,7 +18520,7 @@ function Index() {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: clamp(16px, 2.5vh, 32px) auto;
+  margin: clamp(10px, 1.8vh, 22px) auto;
   text-shadow: 0 4px 32px rgba(1, 1, 2, 0.95), 0 0 50px rgba(0, 0, 0, 0.9);
   color: #FFFFFF;
   width: 100%;
