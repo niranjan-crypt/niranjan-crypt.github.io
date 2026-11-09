@@ -3125,76 +3125,29 @@
   border-bottom: 1px solid rgba(168, 201, 200, 0.18);
 }
 .hero__name {
-  font-size: clamp(28px, 4.2vw, 68px);
+  text-shadow: 0 4px 32px rgba(0,0,0,0.85);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: clamp(16px, 2.5vh, 32px) auto;
-  text-shadow: 0 4px 32px rgba(0,0,0,0.92);
-  perspective: 1200px;
-  width: 100%;
+  gap: clamp(16px, 3vh, 40px);
+  margin: clamp(24px, 5vh, 56px) 0;
 }
 .hero__line {
   display: block;
   overflow: hidden;
   white-space: nowrap;
-  padding: .08em 0;
-  line-height: .88;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  text-align: center;
+  padding: .04em 0;
+  line-height: .86;
 }
 .hero__line--second {
-  text-align: center;
+  text-align: right;
 }
 .hero__line-inner {
   display: inline-block;
-  white-space: nowrap;
-  transform-style: preserve-3d;
+  transform: translateY(105%);
+  transition: transform 1.2s cubic-bezier(.16,1,.3,1);
 }
-.hero__char {
-  display: inline-block;
-  white-space: pre;
-  opacity: 0;
-  transform: translateY(120%) rotateX(45deg) scale(0.92);
-  filter: blur(8px);
-  text-shadow: 0 0 24px rgba(191, 233, 255, 0.85), 0 4px 32px rgba(1, 1, 2, 0.95);
-  will-change: transform, opacity, filter, text-shadow;
-  transition: transform 1.05s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.95s cubic-bezier(0.16, 1, 0.3, 1),
-              text-shadow 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: var(--char-delay, 0s);
-}
-.is-in .hero__char {
-  opacity: 1;
-  transform: translateY(0) rotateX(0deg) scale(1);
-  filter: blur(0px);
-  text-shadow: 0 4px 32px rgba(1, 1, 2, 0.95);
-}
-@media (hover: hover) {
-  .hero__char {
-    cursor: default;
-  }
-  .is-in .hero__char:hover {
-    color: #FFFFFF;
-    transform: translateY(-5px) scale(1.06);
-    text-shadow: 0 0 24px rgba(191, 233, 255, 0.95), 0 4px 28px rgba(1, 1, 2, 0.95);
-    transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
-                color 0.22s ease,
-                text-shadow 0.22s ease;
-    transition-delay: 0s !important;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__char {
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-    transition: none !important;
-  }
+.is-in .hero__line-inner {
+  transform: translateY(0);
 }
 @property --tw-translate-x {
   syntax: "*";
@@ -15888,7 +15841,7 @@ Error generating stack: ` + x.message + `
         h.style.fontSize = "100px";
         const w = line.scrollWidth;
         if (w)
-          setSize(Math.floor(h.clientWidth / w * 100 * 0.68));
+          setSize(Math.min(94, Math.max(26, Math.floor(h.clientWidth / w * 100 * 0.42))));
         h.style.fontSize = "";
       };
       fit();
@@ -15899,7 +15852,7 @@ Error generating stack: ` + x.message + `
     return /* @__PURE__ */ jsx_runtime.jsxs("h1", {
       ref,
       className: "hero__name display relative z-10",
-      style: { fontSize: size ? `${size}px` : "9.5vw" },
+      style: { fontSize: size ? `${size}px` : "5.8vw" },
       children: [
         /* @__PURE__ */ jsx_runtime.jsx("span", {
           className: "hero__line",
@@ -18404,8 +18357,8 @@ function Index() {
   height: 100%;
   object-fit: cover;
   object-position: center 44%;
-  opacity: .94;
-  filter: hue-rotate(180deg) saturate(1.4) contrast(1.24) brightness(.98);
+  opacity: .96;
+  filter: hue-rotate(204deg) saturate(1.75) contrast(1.22) brightness(1.04);
 }
 .hero-stage__vignette {
   position: absolute;
@@ -18440,6 +18393,7 @@ function Index() {
 .hero__name {
   display: flex;
   flex-direction: column;
+  gap: clamp(16px, 3vh, 40px);
   margin: clamp(16px, 3.2vh, 36px) 0;
   text-shadow: 0 4px 32px rgba(0,0,0,0.92);
 }
