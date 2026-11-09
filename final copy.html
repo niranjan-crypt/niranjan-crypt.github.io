@@ -15841,7 +15841,7 @@ Error generating stack: ` + x.message + `
         h.style.fontSize = "100px";
         const w = line.scrollWidth;
         if (w)
-          setSize(Math.min(94, Math.max(26, Math.floor(h.clientWidth / w * 100 * 0.42))));
+          setSize(Math.min(68, Math.max(20, Math.floor(h.clientWidth / w * 100 * 0.31))));
         h.style.fontSize = "";
       };
       fit();
@@ -15852,7 +15852,7 @@ Error generating stack: ` + x.message + `
     return /* @__PURE__ */ jsx_runtime.jsxs("h1", {
       ref,
       className: "hero__name display relative z-10",
-      style: { fontSize: size ? `${size}px` : "5.8vw" },
+      style: { fontSize: size ? `${size}px` : "4.2vw" },
       children: [
         /* @__PURE__ */ jsx_runtime.jsx("span", {
           className: "hero__line",
@@ -18357,8 +18357,8 @@ function Index() {
   height: 100%;
   object-fit: cover;
   object-position: center 44%;
-  opacity: .96;
-  filter: hue-rotate(204deg) saturate(1.75) contrast(1.22) brightness(1.04);
+  opacity: .98;
+  filter: saturate(0.15) contrast(1.35) brightness(1.18);
 }
 .hero-stage__vignette {
   position: absolute;
