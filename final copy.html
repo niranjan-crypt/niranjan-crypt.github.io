@@ -2670,36 +2670,27 @@
 }
 :root {
   --radius: 0.75rem;
-  --background: #010102;
-  --foreground: #FFFFFF;
-  --card: #080f12;
-  --card-foreground: #FFFFFF;
-  --popover: #080f12;
-  --popover-foreground: #FFFFFF;
-  --primary: #BFE9FF;
-  --primary-foreground: #010102;
-  --secondary: #0e1c20;
-  --secondary-foreground: #FFFFFF;
-  --muted: #080f12;
-  --muted-foreground: #A8C9C8;
-  --accent: #172d31;
-  --accent-foreground: #FFFFFF;
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #050507;
+  --card-foreground: #ffffff;
+  --popover: #050507;
+  --popover-foreground: #ffffff;
+  --primary: #ABC9C8;
+  --primary-foreground: #000000;
+  --secondary: #111114;
+  --secondary-foreground: #ABC9C8;
+  --muted: #0d0d10;
+  --muted-foreground: #8a8a92;
+  --accent: #111115;
+  --accent-foreground: #ABC9C8;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: #FFFFFF;
-  --border: #182e31;
-  --input: #182e31;
-  --ring: #BFE9FF;
-  --faint: #3e6164;
-  --c-night: #010102;
-  --c-midnight: #091316;
-  --c-steel-dark: #122427;
-  --c-steel-mid: #254448;
-  --c-pewter: #A8C9C8;
-  --c-frost: #E6F4FB;
-  --powder-blue: #A8C9C8;
-  --glacier-blue: #BFE9FF;
-  --cobalt-black: #010102;
-  --pure-white: #FFFFFF;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: #ABC9C8;
+  --faint: rgba(255, 255, 255, 0.28);
+  --powder-blue: #ABC9C8;
 }
 @layer base {
   * {
@@ -2709,7 +2700,7 @@
     background: var(--color-background);
   }
   body {
-    background-color: #010102;
+    background-color: #000000;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -15840,16 +15831,14 @@ Error generating stack: ` + x.message + `
           ]
         }),
         /* @__PURE__ */ jsx_runtime.jsxs("div", {
-          className: "label hidden text-[#A8C9C8] lg:flex items-center gap-2 font-mono text-xs tracking-wider",
+          className: "label hidden text-muted-foreground lg:block",
           children: [
+            "Coimbatore, IN ",
             /* @__PURE__ */ jsx_runtime.jsx("span", {
-              className: "inline-block h-1.5 w-1.5 rounded-full bg-[#BFE9FF] shadow-[0_0_8px_#BFE9FF] animate-pulse"
+              className: "mx-2 text-faint",
+              children: "/"
             }),
-            "CHENNAI, IN",
-            /* @__PURE__ */ jsx_runtime.jsx("span", {
-              className: "mx-1 text-[#A8C9C8]/40",
-              children: "—"
-            }),
+            " ",
             /* @__PURE__ */ jsx_runtime.jsx(Clock, {})
           ]
         }),
@@ -15888,45 +15877,44 @@ Error generating stack: ` + x.message + `
   }
 
   function HeroName() {
-    return /* @__PURE__ */ jsx_runtime.jsxs("div", {
-      className: "hero__split-wrapper relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center my-auto px-4 md:px-6 pointer-events-none py-2",
+    const ref = import_react.useRef(null);
+    const [size, setSize] = import_react.useState(null);
+    import_react.useEffect(() => {
+      const fit = () => {
+        const h = ref.current;
+        const line = h?.querySelector("[data-fit]");
+        if (!h || !line)
+          return;
+        h.style.fontSize = "100px";
+        const w = line.scrollWidth;
+        if (w)
+          setSize(Math.floor(h.clientWidth / w * 100 * 0.68));
+        h.style.fontSize = "";
+      };
+      fit();
+      document.fonts?.ready.then(fit);
+      addEventListener("resize", fit);
+      return () => removeEventListener("resize", fit);
+    }, []);
+    return /* @__PURE__ */ jsx_runtime.jsxs("h1", {
+      ref,
+      className: "hero__name display relative z-10",
+      style: { fontSize: size ? `${size}px` : "9.5vw" },
       children: [
-        /* Left Flank: NIRANJAN (elevated moderately & close to face) */
-        /* @__PURE__ */ jsx_runtime.jsx("div", {
-          className: "hero__flank hero__flank--left flex-1 flex flex-col items-center md:items-end text-center md:text-right pointer-events-auto z-10 md:-translate-y-8 lg:-translate-y-10 md:pr-3 lg:pr-6 fade-up",
-          style: { transitionDelay: ".1s" },
-          children: /* @__PURE__ */ jsx_runtime.jsx("h1", {
-            className: "hero__flank-title display",
-            children: /* @__PURE__ */ jsx_runtime.jsx("span", {
-              className: "hero__line",
-              children: /* @__PURE__ */ jsx_runtime.jsx("span", {
-                className: "hero__line-inner",
-                children: "NIRANJAN"
-              })
-            })
+        /* @__PURE__ */ jsx_runtime.jsx("span", {
+          className: "hero__line",
+          children: /* @__PURE__ */ jsx_runtime.jsx("span", {
+            className: "hero__line-inner",
+            children: "NIRANJAN"
           })
         }),
-
-        /* Center Sculpture Clearance Spacer */
-        /* @__PURE__ */ jsx_runtime.jsx("div", {
-          className: "hero__sculpture-spacer hidden md:block w-[240px] lg:w-[320px] xl:w-[380px] shrink-0 pointer-events-none",
-          "aria-hidden": "true"
-        }),
-
-        /* Right Flank: KRISHNAKUMAR (lowered moderately along shoulder line) */
-        /* @__PURE__ */ jsx_runtime.jsx("div", {
-          className: "hero__flank hero__flank--right flex-1 flex flex-col items-center md:items-start text-center md:text-left pointer-events-auto z-10 md:translate-y-10 lg:translate-y-12 md:pl-3 lg:pl-6 fade-up",
-          style: { transitionDelay: ".2s" },
-          children: /* @__PURE__ */ jsx_runtime.jsx("h1", {
-            className: "hero__flank-title display",
-            children: /* @__PURE__ */ jsx_runtime.jsx("span", {
-              className: "hero__line",
-              children: /* @__PURE__ */ jsx_runtime.jsx("span", {
-                className: "hero__line-inner",
-                style: { transitionDelay: ".12s" },
-                children: "KRISHNAKUMAR"
-              })
-            })
+        /* @__PURE__ */ jsx_runtime.jsx("span", {
+          className: "hero__line hero__line--second",
+          children: /* @__PURE__ */ jsx_runtime.jsx("span", {
+            "data-fit": true,
+            className: "hero__line-inner",
+            style: { transitionDelay: ".12s" },
+            children: "KRISHNAKUMAR"
           })
         })
       ]
@@ -15943,20 +15931,6 @@ Error generating stack: ` + x.message + `
           alt: "Metal Human",
           className: "hero-stage__poster-img"
         }),
-        /* Silicon Lithography Coordinate Grid */
-        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__silicon-grid" }),
-        /* Circuit Calibration Crosshairs */
-        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__circuit-overlay" }),
-        /* Pulsing Silicon Bus Lines */
-        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__trace hero-stage__trace--left" }),
-        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__trace hero-stage__trace--right" }),
-        /* Quantum Signal Particles */
-        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__node", style: { top: "26%", left: "14%", width: "4px", height: "4px", animationDelay: "0s" } }),
-        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__node", style: { top: "60%", left: "20%", width: "3px", height: "3px", animationDelay: "-2.5s" } }),
-        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__node", style: { top: "30%", right: "16%", width: "4px", height: "4px", animationDelay: "-4.2s" } }),
-        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__node", style: { top: "64%", right: "22%", width: "3px", height: "3px", animationDelay: "-6.1s" } }),
-        /* Lighting & Vignette Atmosphere */
-        /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__aura" }),
         /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__vignette" }),
         /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__grad-top" }),
         /* @__PURE__ */ jsx_runtime.jsx("div", { className: "hero-stage__grad-bottom" })
@@ -16001,7 +15975,7 @@ Error generating stack: ` + x.message + `
               style: { transitionDelay: ".8s" },
               children: [
                 /* @__PURE__ */ jsx_runtime.jsx("span", {
-                  className: "inline-block animate-bounce text-[#BFE9FF]",
+                  className: "inline-block animate-bounce",
                   children: "↓"
                 }),
                 " Scroll, gently"
@@ -18409,16 +18383,16 @@ function Index() {
 .service-tiles__tile:hover .service-tiles__header,.service-tiles__tile:hover .service-tiles__title,.service-tiles__tile:hover .service-tiles__description{color:var(--background)}
 .service-tiles__tile:hover .service-tiles__title{font-variation-settings:"wdth" 118,"wght" 500;transform:translate(6px)}
 
-/* Ambient video hero stage */
+/* --- Metal Human Ambient Hero Stage (Permanent Exact Tone & Extra Definition) --- */
 .hero-stage {
   position: absolute;
   inset: 0;
   overflow: hidden;
   z-index: 0;
   pointer-events: none;
-  background: #010102;
-  isolation: isolate;
+  background: #000000;
 }
+.hero-stage__video,
 .hero-stage__poster-img {
   position: absolute;
   top: 50%;
@@ -18429,61 +18403,14 @@ function Index() {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
-  opacity: 1;
-  filter: contrast(1.12) brightness(1.04);
-  z-index: 0;
-}
-.hero-stage__video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 38%;
-  opacity: 0;
-  transition: opacity 1.4s cubic-bezier(.16,1,.3,1);
-  filter: contrast(1.12) brightness(1.04);
-  z-index: 1;
-}
-.hero-stage__video.is-loaded {
-  opacity: 1;
-}
-.hero-stage__aura {
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(85vw, 680px);
-  height: min(85vw, 680px);
-  border-radius: 50%;
-  pointer-events: none;
-  /* Cinematic Glacier Blue & Powder Blue studio ambience */
-  background: radial-gradient(
-    ellipse 58% 52% at 50% 40%,
-    rgba(191, 233, 255, 0.22) 0%,
-    rgba(168, 201, 200, 0.12) 38%,
-    rgba(191, 233, 255, 0.03) 65%,
-    transparent 80%
-  );
-  mix-blend-mode: screen;
-  opacity: 0.95;
-  z-index: 2;
-  animation: heroAuraBreath 10s ease-in-out infinite alternate;
-}
-@keyframes heroAuraBreath {
-  0% { opacity: 0.75; transform: translate(-50%, -50%) scale(0.97); }
-  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.03); }
-  100% { opacity: 0.85; transform: translate(-50%, -50%) scale(1); }
+  object-position: center 44%;
+  opacity: .94;
+  filter: hue-rotate(180deg) saturate(1.4) contrast(1.24) brightness(.98);
 }
 .hero-stage__vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 44%, transparent 22%, rgba(1,1,2,.38) 55%, #010102 92%);
+  background: radial-gradient(circle at 50% 48%, transparent 20%, rgba(0,0,0,.35) 52%, #000000 90%);
   pointer-events: none;
 }
 .hero-stage__grad-top {
@@ -18492,7 +18419,7 @@ function Index() {
   left: 0;
   right: 0;
   height: 200px;
-  background: linear-gradient(180deg, #010102 0%, rgba(1,1,2,.75) 45%, transparent 100%);
+  background: linear-gradient(180deg, #000000 0%, rgba(0,0,0,.75) 45%, transparent 100%);
   pointer-events: none;
 }
 .hero-stage__grad-bottom {
@@ -18501,117 +18428,20 @@ function Index() {
   left: 0;
   right: 0;
   height: 260px;
-  background: linear-gradient(0deg, #010102 0%, rgba(1,1,2,.8) 50%, transparent 100%);
+  background: linear-gradient(0deg, #000000 0%, rgba(0,0,0,.8) 50%, transparent 100%);
   pointer-events: none;
 }
 
-/* Silicon Lithography Coordinate Grid */
-.hero-stage__silicon-grid {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(191, 233, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(191, 233, 255, 0.05) 1px, transparent 1px);
-  background-size: 64px 64px;
-  background-position: center center;
-  mask-image: radial-gradient(circle at 50% 45%, transparent 20%, black 75%);
-  -webkit-mask-image: radial-gradient(circle at 50% 45%, transparent 20%, black 75%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Silicon Die Crosshairs & Calibration Overlay */
-.hero-stage__circuit-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.6;
-  background-image:
-    radial-gradient(circle at 15% 25%, rgba(191, 233, 255, 0.4) 1.5px, transparent 2px),
-    radial-gradient(circle at 85% 25%, rgba(191, 233, 255, 0.4) 1.5px, transparent 2px),
-    radial-gradient(circle at 15% 75%, rgba(191, 233, 255, 0.4) 1.5px, transparent 2px),
-    radial-gradient(circle at 85% 75%, rgba(191, 233, 255, 0.4) 1.5px, transparent 2px);
-}
-
-/* Pulsing Silicon Bus Lines */
-.hero-stage__trace {
-  position: absolute;
-  width: 1px;
-  background: linear-gradient(180deg, transparent 0%, rgba(191, 233, 255, 0.55) 50%, transparent 100%);
-  pointer-events: none;
-  z-index: 1;
-  animation: heroTracePulse 6s ease-in-out infinite;
-}
-.hero-stage__trace--left {
-  left: 11%;
-  top: 18%;
-  height: 52%;
-}
-.hero-stage__trace--right {
-  right: 11%;
-  top: 24%;
-  height: 48%;
-  animation-delay: -3s;
-}
-
-@keyframes heroTracePulse {
-  0%, 100% { opacity: 0.2; transform: scaleY(0.95); }
-  50% { opacity: 0.85; transform: scaleY(1.05); }
-}
-
-/* Floating Quantum / Signal Nodes */
-.hero-stage__node {
-  position: absolute;
-  border-radius: 50%;
-  background: #BFE9FF;
-  box-shadow: 0 0 10px rgba(191, 233, 255, 0.8), 0 0 20px rgba(168, 201, 200, 0.4);
-  pointer-events: none;
-  z-index: 1;
-  animation: heroNodeFloat 8s ease-in-out infinite alternate;
-}
-
-@keyframes heroNodeFloat {
-  0% { transform: translateY(0px) scale(0.9); opacity: 0.35; }
-  50% { transform: translateY(-12px) scale(1.15); opacity: 0.85; }
-  100% { transform: translateY(6px) scale(1); opacity: 0.45; }
-}
-
-/* Split-Flank Hero Typography */
-.hero__split-wrapper {
-  width: 100%;
-}
-.hero__flank {
-  transition: transform 0.8s cubic-bezier(.16, 1, .3, 1), opacity 0.8s ease;
-}
-.hero__flank-title {
-  font-family: var(--font-display);
-  font-size: clamp(46px, 6.4vw, 92px);
-  font-variation-settings: "wdth" 70, "wght" 800;
-  letter-spacing: -0.01em;
-  line-height: 0.86;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  text-shadow: 0 4px 32px rgba(1, 1, 2, 0.95), 0 0 50px rgba(0, 0, 0, 0.9);
-  margin: 0;
-  white-space: nowrap;
-}
-
-/* Typography & Palette Variations */
+/* Typography & Powder Blue #ABC9C8 Accents */
 ::selection {
-  background: #BFE9FF;
-  color: #010102;
+  background: #ABC9C8;
+  color: #000000;
 }
 .hero__name {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: clamp(10px, 1.8vh, 22px) auto;
-  text-shadow: 0 4px 32px rgba(1, 1, 2, 0.95), 0 0 50px rgba(0, 0, 0, 0.9);
-  color: #FFFFFF;
-  width: 100%;
+  margin: clamp(16px, 3.2vh, 36px) 0;
+  text-shadow: 0 4px 32px rgba(0,0,0,0.92);
 }
 .hero__line {
   display: block;
@@ -18619,60 +18449,44 @@ function Index() {
   white-space: nowrap;
   padding: .04em 0;
   line-height: .86;
-  text-align: center;
 }
 .hero__line--second {
-  text-align: center;
+  text-align: right;
 }
 .hero__line-inner {
   display: inline-block;
   white-space: nowrap;
   transform: translateY(105%);
-  transition: transform 1.2s cubic-bezier(.16, 1, .3, 1);
+  transition: transform 1.2s cubic-bezier(.16,1,.3,1);
 }
 .is-in .hero__line-inner {
   transform: translateY(0);
 }
 .pill-primary {
-  background: linear-gradient(135deg, #FFFFFF 0%, #BFE9FF 100%) !important;
-  color: #010102 !important;
-  font-weight: 700 !important;
-  box-shadow: 0 4px 22px rgba(191, 233, 255, 0.35) !important;
-  transition: all 0.3s ease !important;
+  background: #ABC9C8 !important;
+  color: #000000 !important;
+  font-weight: 600;
 }
 .pill-primary:hover {
-  background: #FFFFFF !important;
-  color: #010102 !important;
-  box-shadow: 0 0 30px rgba(191, 233, 255, 0.65) !important;
-  transform: translateY(-2px);
+  background: #c4dbda !important;
+  color: #000000 !important;
+  transform: translateY(-1px);
 }
 .logo__box {
-  background: linear-gradient(135deg, #FFFFFF 0%, #BFE9FF 100%) !important;
-  color: #010102 !important;
-  font-weight: 800 !important;
-}
-.pill-ghost {
-  background: rgba(168, 201, 200, 0.05) !important;
-  border: 1px solid rgba(168, 201, 200, 0.22) !important;
-  color: #FFFFFF !important;
-  backdrop-filter: blur(12px);
-  transition: all 0.3s ease !important;
+  background: #ABC9C8 !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
 }
 .pill-ghost:hover {
-  border-color: #BFE9FF !important;
-  background: rgba(191, 233, 255, 0.12) !important;
-  color: #FFFFFF !important;
-  box-shadow: 0 0 24px rgba(191, 233, 255, 0.35) !important;
-  transform: translateY(-2px);
+  border-color: #ABC9C8;
+  color: #ABC9C8;
 }
 .cursor {
-  border-color: #BFE9FF;
-  box-shadow: 0 0 10px rgba(191, 233, 255, 0.4);
+  border-color: #ABC9C8;
 }
 .cursor.big {
-  border-color: #BFE9FF;
-  background: rgba(191, 233, 255, 0.15);
-  box-shadow: 0 0 24px rgba(191, 233, 255, 0.5);
+  border-color: #ABC9C8;
+  background: rgba(171, 201, 200, 0.15);
 }
 
 /* =====================================================================
@@ -18681,7 +18495,7 @@ function Index() {
 .unified-journey-wrap {
   position: relative;
   width: 100%;
-  background: #010102 !important;
+  background: #000000 !important;
   overflow: visible;
 }
 
