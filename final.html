@@ -3138,6 +3138,9 @@
   padding: .04em 0;
   line-height: .86;
 }
+.hero__line--first {
+  padding-left: clamp(24px, 7vw, 130px);
+}
 .hero__line--second {
   text-align: right;
 }
@@ -15841,7 +15844,7 @@ Error generating stack: ` + x.message + `
         h.style.fontSize = "100px";
         const w = line.scrollWidth;
         if (w)
-          setSize(Math.min(68, Math.max(20, Math.floor(h.clientWidth / w * 100 * 0.31))));
+          setSize(Math.min(102, Math.max(26, Math.floor(h.clientWidth / w * 100 * 0.465))));
         h.style.fontSize = "";
       };
       fit();
@@ -15852,10 +15855,10 @@ Error generating stack: ` + x.message + `
     return /* @__PURE__ */ jsx_runtime.jsxs("h1", {
       ref,
       className: "hero__name display relative z-10",
-      style: { fontSize: size ? `${size}px` : "4.2vw" },
+      style: { fontSize: size ? `${size}px` : "6.3vw" },
       children: [
         /* @__PURE__ */ jsx_runtime.jsx("span", {
-          className: "hero__line",
+          className: "hero__line hero__line--first",
           children: /* @__PURE__ */ jsx_runtime.jsx("span", {
             className: "hero__line-inner",
             children: "NIRANJAN"
@@ -18403,6 +18406,9 @@ function Index() {
   white-space: nowrap;
   padding: .04em 0;
   line-height: .86;
+}
+.hero__line--first {
+  padding-left: clamp(24px, 7vw, 130px);
 }
 .hero__line--second {
   text-align: right;
